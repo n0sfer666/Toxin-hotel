@@ -1,0 +1,15 @@
+.textField {
+    width: 320px;
+    height: 44px;
+    padding: 13px 15px;
+    line-height: 18px;
+	background: #fff;
+	font: normal normal 14px/18px Montserrat;
+    border: 1px solid $dShade25;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+.textField:hover, .textField:focus {
+    border: 1px solid $dShade50;
+    outline: none;
+}
