@@ -1,0 +1,7 @@
+// mixin font-face($name, $path, $weight, $style, $exts: eot woff2 woff ttf svg)
+@import "./_mixin__font-face.scss";
+
+@include font-face(Quicksand, fonts/Quicksand-Bold, bold, normal, eot woff ttf svg);
+@include font-face(Quicksand, fonts/Quicksand-Regular, normal, normal, eot woff ttf svg);
+@include font-face(Montserrat, fonts/Montserrat-Bold, bold, normal, eot woff ttf svg);
+@include font-face(Montserrat, fonts/Montserrat-Regular, normal, normal, eot woff ttf svg);

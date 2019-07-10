@@ -1,0 +1,11 @@
+//- mixin base(title, css, js)
+include ./_components/_base/_pug/_base
+//- mixin logo
+include ./_components/_base/_pug/_logo
+
+doctype html
+html
+    +base("Form Elements", "main.css", "main.js")
+    body    
+        +logo
+        
