@@ -1,0 +1,17 @@
+//- mixin dropdown__line(text, id, count)
+include /dropdown__line/dropdown__line
+mixin dropdown (isGuests, label)
+    -
+        var text, mainID, linkID, textID, containerID
+        text = isGuests ? "Сколько гостей" : "2 спальни, 2 кровати..."
+        mainID = isGuests ? "_dropdownGuests" : "_dropdownRooms"
+        linkID = mainID + "__link"
+        textID = mainID + "__text"
+
+    h3(class = 'label') #{label}
+    div(id = mainID, class = "dropdown")
+        a(href="#", id = linkID, class = "dropdown__link")
+            span(id = textID) #{text}
+    div(id = containerID, class = "dropdown__container")
+        if isGuests
+            +dropdown__line("взрослые", "adults", "0")

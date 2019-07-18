@@ -1,5 +1,6 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const Webpack = require('webpack');
 
 module.exports = {
     plugins: [
@@ -11,6 +12,10 @@ module.exports = {
             filename: 'index.html',
             template: 'src/index.pug',
             inject: false
+        }),
+        new Webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery'
         })
     ],
     module: {

@@ -1,0 +1,7 @@
+mixin buttons__plusMinus (id, isPlus)
+    -
+        var value;
+        value = isPlus ? "+" : "-"
+        var style;
+        style = isPlus ? "float: right;" : "float: left;"
+    button(id = id, class = "buttons__plusMinus", style = style) #{value}

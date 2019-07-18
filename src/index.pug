@@ -4,6 +4,8 @@ include ./_components/_base/_pug/_base
 include ./_components/_base/_pug/_logo
 //- mixin textField (id, label, placeholder)
 include ./_components/_formElements/_textField/textField
+//- mixin dropdown (isGuests, label)
+include ./_components/_formElements/_dropdown/dropdown
 
 doctype html
 html
@@ -12,4 +14,7 @@ html
         +logo
         .container
             form(action="", method="post")
-            +textField("textField", "text field", "Email")
+                div(style = "width: 320px;")
+                    +textField("textField", "text field", "Email")
+                div(style = "width: 320px;")
+                    +dropdown(true, "dropdown")
