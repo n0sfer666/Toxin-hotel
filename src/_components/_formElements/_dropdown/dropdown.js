@@ -1,3 +1,10 @@
 $(document).ready(function() {
- console.log('well done');
+    var adults,
+        children,
+        babies,
+        bedrooms,
+        beds,
+        bathrooms,
+        flagChanger,
+        btnClass,
 });

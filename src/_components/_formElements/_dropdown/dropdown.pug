@@ -7,6 +7,7 @@ mixin dropdown (isGuests, label)
         mainID = isGuests ? "_dropdownGuests" : "_dropdownRooms"
         linkID = mainID + "__link"
         textID = mainID + "__text"
+        containerID = mainID + "__container"
 
     h3(class = 'label') #{label}
     div(id = mainID, class = "dropdown")
@@ -15,3 +16,15 @@ mixin dropdown (isGuests, label)
     div(id = containerID, class = "dropdown__container")
         if isGuests
             +dropdown__line("взрослые", "adults", "0")
+            +dropdown__line("дети", "children", "0")
+            +dropdown__line("младенцы", "babies", "0")
+            .dropdown__confirmLine
+                a(href="#", class="dropdown__cleanLink", id= mainID + "__cleanLink")
+                    h3 очистить
+                a(href="#", class="dropdown__applyLink", id= mainID + "__applyLink")
+                    h3 применить
+        else
+            +dropdown__line("спальни", "bedrooms", "2")
+            +dropdown__line("кровати", "beds", "2")
+            +dropdown__line("ванные комнаты", "bathrooms", "0")
+        

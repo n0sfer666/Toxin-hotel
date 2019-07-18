@@ -4,15 +4,21 @@ body, h1, h2, h3, p {
     padding: 0;
 }
 /* fix placeholder in diferent browsers */
-::-webkit-input-placeholder { color: rgba(31, 32, 65, 0.25); } /* Chrome */
-::-moz-placeholder          { color: rgba(31, 32, 65, 0.25); } /* Firefox 19+ */
-:-moz-placeholder           { color: rgba(31, 32, 65, 0.25); } /* Firefox 18- */
+// Chrome
+::-webkit-input-placeholder { color: rgba(31, 32, 65, 0.25); }
+// Firefox 19+
+::-moz-placeholder          { color: rgba(31, 32, 65, 0.25); }
+// Firefox 18- 
+:-moz-placeholder           { color: rgba(31, 32, 65, 0.25); }
 // import base components
 @import './_components/_base/_scss/fonts';
 @import './_components/_base/_scss/var__colors';
 // change text tags
-body, h1, h2, h3 {
+body {
     color: $dShade100;
+}
+h1, h2, h3 {
+    color: inherit;
 }
 body {
 	font: normal normal 14px/24px Montserrat;
@@ -37,6 +43,7 @@ h3 {
 }
 // not reuse
 // .container {
+//
 // }
 @import './_components/_formElements/_textField/textField.scss';
 @import './_components/_formElements/_buttons/_plusMinus/buttons__plusMinus.scss';
