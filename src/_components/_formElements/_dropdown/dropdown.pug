@@ -1,5 +1,5 @@
 //- mixin dropdown__line(text, id, count)
-include /dropdown__line/dropdown__line
+include /pugMixins/dropdown__line
 mixin dropdown (isGuests, label)
     -
         var text, mainID, linkID, textID, containerID
@@ -18,13 +18,12 @@ mixin dropdown (isGuests, label)
             +dropdown__line("взрослые", "adults", "0")
             +dropdown__line("дети", "children", "0")
             +dropdown__line("младенцы", "babies", "0")
-            .dropdown__confirmLine
-                a(href="#", class="dropdown__cleanLink", id= mainID + "__cleanLink")
-                    h3 очистить
-                a(href="#", class="dropdown__applyLink", id= mainID + "__applyLink")
-                    h3 применить
         else
             +dropdown__line("спальни", "bedrooms", "2")
             +dropdown__line("кровати", "beds", "2")
             +dropdown__line("ванные комнаты", "bathrooms", "0")
-        
+        .dropdown__confirmLine
+            a(href="#", class="dropdown__cleanLink", id= mainID + "__cleanLink")
+                h3 очистить
+            a(href="#", class="dropdown__applyLink", id= mainID + "__applyLink")
+                h3 применить

@@ -9,7 +9,13 @@
 	outline: none;
 }
 .buttons__plusMinus_active {
-    border: 1px solid $dShade50;
+	width: 30px;
+	height: 30px;
+	background: #fff;
+	border: 1px solid $dShade50;
+	border-radius: 50%;
 	color: $dShade50;
+	font: normal normal 18px/22px Montserrat;
+	outline: none;
 	cursor: pointer;
 }
