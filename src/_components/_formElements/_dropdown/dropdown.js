@@ -1,6 +1,6 @@
 $(document).ready(function() {
-    // variables
-        // 
+// variables
+    // 
     var main = {
             guests: "#_dropdownGuests",
             rooms: "#_dropdownRooms"
@@ -29,7 +29,7 @@ $(document).ready(function() {
             guests: "#_dropdownGuests__applyLink",
             rooms: "#_dropdownRooms__applyLink"
         },
-        // 
+    // 
         btnPlus = {
             adults: "#adultsPlus",
             children: "#childrenPlus",
@@ -55,14 +55,14 @@ $(document).ready(function() {
             bathrooms: "#bathroomsCounter"
         },
         amount = {
-            adults: "#adultsAmount",
-            children: "#childrenAmount",
-            babies: "#babiesAmount",
-            bedrooms: "#bedroomsAmount",
-            beds: "#bedsAmount",
-            bathrooms: "#bathroomsAmount"
+            adults: "",
+            children: "",
+            babies: "",
+            bedrooms: "",
+            beds: "",
+            bathrooms: ""
         },
-        // 
+    // 
         btnClass = {
             normal: "buttons__plusMinus",
             active: "buttons__plusMinus_active"
@@ -75,8 +75,37 @@ $(document).ready(function() {
             normal: "dropdown__applyLink",
             active: "dropdown__applyLink_active"
         };
+
     // magic
-    
-    // functions
-    // $(element).removeClass(classRm).addClass(classAdd);
+    for(key in amount) {
+        amount[key] = Number($(counter[key]).text());
+    }
+    $(link.guests).click(function(){
+        slider(true);
+    });
+    $(link.rooms).click(function(){
+        slider(false);
+    });
+    document.body.addEventListener("click", function(){
+        var currentTurgetId = event.target.id;
+        if(currentTurgetId != "")
+            console.log(currentTurgetId);
+    })
+    // for(key in btnPlus) {
+    //     console.log("btnPlus[" + key + "]: " + btnPlus[key]);
+    // }
+
+// functions
+// $(element).removeClass(classRm).addClass(classAdd);
+function slider (isGuest) {
+    var type = "guests" ? "guests" : "rooms";
+    flag[type] = flag[type] ? false : true;
+    $(container[type]).slideToggle("slow", function() {
+        if(!flag[type])
+            $(main[type]).removeClass(mainClass.active).addClass(mainClass.normal);
+    });
+    if(flag[type])
+        $(main[type]).removeClass(mainClass.normal).addClass(mainClass.active);
+}
+
 });

@@ -34,14 +34,12 @@
     display: table;
 	width: 95.625%;
     height: 24px;
-	padding: 8px 0 0 4.375%;
+	padding: 8px 0 10px 4.375%;
 	font: normal normal 14px/24px Montserrat;
 	text-decoration: none;
     color: rgba(31, 32, 65, 0.75);
 }
-.dropdown__link:visited,
-.dropdown__cleanLink,
-.dropdown__applyLink {
+.dropdown__link:visited {
 	color: initial;
 }
 .dropdown__container {
@@ -98,9 +96,13 @@
 .dropdown__cleanLink_active {
 	display: block;
 	float: left;
-	color: rgba(31, 32, 65, 0.5);
+    color: rgba(31, 32, 65, 0.5);
 }
 .dropdown__applyLink {
 	float: right;
     color: #BC9CFF;
+}
+.dropdown__cleanLink,
+.dropdown__applyLink {
+    cursor: pointer;
 }

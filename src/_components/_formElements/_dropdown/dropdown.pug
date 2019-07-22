@@ -6,13 +6,11 @@ mixin dropdown (isGuests, label)
         text = isGuests ? "Сколько гостей" : "2 спальни, 2 кровати..."
         mainID = isGuests ? "_dropdownGuests" : "_dropdownRooms"
         linkID = mainID + "__link"
-        textID = mainID + "__text"
         containerID = mainID + "__container"
 
     h3(class = 'label') #{label}
     div(id = mainID, class = "dropdown")
-        a(href="#", id = linkID, class = "dropdown__link")
-            span(id = textID) #{text}
+        a(href="#", id = linkID, class = "dropdown__link") #{text}
     div(id = containerID, class = "dropdown__container")
         if isGuests
             +dropdown__line("взрослые", "adults", "0")
@@ -23,7 +21,5 @@ mixin dropdown (isGuests, label)
             +dropdown__line("кровати", "beds", "2")
             +dropdown__line("ванные комнаты", "bathrooms", "0")
         .dropdown__confirmLine
-            a(href="#", class="dropdown__cleanLink", id= mainID + "__cleanLink")
-                h3 очистить
-            a(href="#", class="dropdown__applyLink", id= mainID + "__applyLink")
-                h3 применить
+            h3(href="#", class="dropdown__cleanLink", id= mainID + "__cleanLink") очистить
+            h3(href="#", class="dropdown__applyLink", id= mainID + "__applyLink") применить

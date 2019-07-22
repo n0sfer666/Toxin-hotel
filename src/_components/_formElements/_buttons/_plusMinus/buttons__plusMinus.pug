@@ -4,4 +4,6 @@ mixin buttons__plusMinus (id, isPlus)
         value = isPlus ? "+" : "-"
         var style;
         style = isPlus ? "float: right;" : "float: left;"
-    button(id = id, class = "buttons__plusMinus", style = style) #{value}
+        var className;
+        className = isPlus ? "buttons__plusMinus_active" : "buttons__plusMinus";
+    button(id = id, class = className, style = style, type = "button") #{value}
