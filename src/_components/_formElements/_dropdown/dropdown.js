@@ -9,10 +9,6 @@ $(document).ready(function() {
             guests: "#_dropdownGuests__link",
             rooms: "#_dropdownRooms__link"
         },
-        text = {
-            guests: "#_dropdownGuests__text",
-            rooms: "#_dropdownRooms__text"
-        },
         container = {
             guests: "#_dropdownGuests__container",
             rooms: "#_dropdownRooms__container"
@@ -55,12 +51,12 @@ $(document).ready(function() {
             bathrooms: "#bathroomsCounter"
         },
         amount = {
-            adults: "",
-            children: "",
-            babies: "",
-            bedrooms: "",
-            beds: "",
-            bathrooms: ""
+            adults: NaN,
+            children: NaN,
+            babies: NaN,
+            bedrooms: NaN,
+            beds: NaN,
+            bathrooms: NaN
         },
     // 
         btnClass = {
@@ -72,40 +68,66 @@ $(document).ready(function() {
             active: "dropdown_active"
         },
         cleanLinkClass = {
-            normal: "dropdown__applyLink",
-            active: "dropdown__applyLink_active"
+            normal: "dropdown__cleanLink",
+            active: "dropdown__cleanLink_active"
         };
 
     // magic
     for(key in amount) {
         amount[key] = Number($(counter[key]).text());
+        if(amount[key] > 0)
+            $(btnMinus[key]).removeClass(btnClass.normal).addClass(btnClass.active);
     }
-    $(link.guests).click(function(){
-        slider(true);
-    });
-    $(link.rooms).click(function(){
-        slider(false);
-    });
     document.body.addEventListener("click", function(){
-        var currentTurgetId = event.target.id;
-        if(currentTurgetId != "")
-            console.log(currentTurgetId);
-    })
-    // for(key in btnPlus) {
-    //     console.log("btnPlus[" + key + "]: " + btnPlus[key]);
-    // }
+        doDependingOn(event.target.id);
+    });
 
 // functions
 // $(element).removeClass(classRm).addClass(classAdd);
-function slider (isGuest) {
-    var type = "guests" ? "guests" : "rooms";
-    flag[type] = flag[type] ? false : true;
-    $(container[type]).slideToggle("slow", function() {
-        if(!flag[type])
-            $(main[type]).removeClass(mainClass.active).addClass(mainClass.normal);
+function slider (param) {
+    flag[param] = flag[param] ? false : true;
+    $(container[param]).slideToggle("slow", function() {
+        if(!flag[param])
+            $(main[param]).removeClass(mainClass.active).addClass(mainClass.normal);
     });
-    if(flag[type])
-        $(main[type]).removeClass(mainClass.normal).addClass(mainClass.active);
+    if(flag[param])
+        $(main[param]).removeClass(mainClass.normal).addClass(mainClass.active);
 }
-
-});
+function counterPlus (param) {
+    if(amount[param] >= 0 && amount[param] <= 99) {
+        amount[param]++;
+        changeButtonClassAndTextCounter(param);
+    }
+}
+function counterMinus (param) {
+    if(amount[param] >= 1){
+        amount[param]--;
+        changeButtonClassAndTextCounter(param);
+    }
+}
+function changeButtonClassAndTextCounter (param) {
+    if(amount[param] == 0)
+        $(btnMinus[param]).removeClass(btnClass.active).addClass(btnClass.normal);
+    else
+        $(btnMinus[param]).removeClass(btnClass.normal).addClass(btnClass.active);
+    $(counter[param]).text(amount[param]);  
+}
+function doDependingOn (targetId) {
+    var regExpForSearch  = new RegExp(targetId);
+    if(/Plus/.test(targetId))
+        for(key in btnPlus)
+            if(regExpForSearch.test(btnPlus[key]))
+                counterPlus(key);
+    if(/Minus/.test(targetId))
+        for(key in btnMinus)
+            if(regExpForSearch.test(btnMinus[key]))
+                counterMinus(key);
+    if(/__link/.test(targetId)){
+        var param = /Guests/.test(targetId) ? "guests" : "rooms";
+        slider(param);
+    }
+}
+capitalize = function(str1){
+    return str1.charAt(0).toUpperCase() + str1.slice(1);
+  }
+})
