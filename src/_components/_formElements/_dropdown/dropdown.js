@@ -70,6 +70,10 @@ $(document).ready(function() {
         cleanLinkClass = {
             normal: "dropdown__cleanLink",
             active: "dropdown__cleanLink_active"
+        },
+        specifiedElement = {
+            guests: NaN,
+            rooms: NaN
         };
 
     // magic
@@ -78,8 +82,17 @@ $(document).ready(function() {
         if(amount[key] > 0)
             $(btnMinus[key]).removeClass(btnClass.normal).addClass(btnClass.active);
     }
+    for(key in specifiedElement)
+        specifiedElement[key] = document.getElementById(cutFirstChar(container[key]));
     document.body.addEventListener("click", function(){
         doDependingOn(event.target.id);
+        // remove dropdown if click was made outside the container
+        for(key in specifiedElement) {
+            var condition = new RegExp(capitalize(key));   
+            if(!specifiedElement[key].contains(event.target))
+                if(flag[key] && !condition.test(event.target.id))
+                    slider(key);
+        }
     });
 
 // functions
@@ -131,3 +144,6 @@ capitalize = function(str1){
     return str1.charAt(0).toUpperCase() + str1.slice(1);
   }
 })
+cutFirstChar = function(str){
+    return str.slice(1);
+}
