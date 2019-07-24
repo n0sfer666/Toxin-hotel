@@ -17,14 +17,8 @@ $(document).ready(function() {
             guests: false,
             rooms: false
         },
-        cleanLink = {
-            guests: "#_dropdownGuests__cleanLink",
-            rooms: "#_dropdownRooms__cleanLink"
-        },
-        applyLink = {
-            guests: "#_dropdownGuests__applyLink",
-            rooms: "#_dropdownRooms__applyLink"
-        },
+        cleanLink = "#_dropdownGuests__cleanLink",
+        applyLink = "#_dropdownGuests__applyLink",
     // 
         btnPlus = {
             adults: "#adultsPlus",
@@ -139,11 +133,52 @@ function doDependingOn (targetId) {
         var param = /Guests/.test(targetId) ? "guests" : "rooms";
         slider(param);
     }
+    if(/__applyLink/.test(targetId))
+        resultCountGuests();    
+    if(/__cleanLink/.test(targetId)){
+        amount.adults = 0, amount.babies = 0, amount.children = 0;
+        $(link.guests).text('Сколько гостей');
+        $(counter.adults).text(amount.adults);
+        $(counter.children).text(amount.children);
+        $(counter.babies).text(amount.babies);
+        $(cleanLink).removeClass(cleanLinkClass.active).addClass(cleanLinkClass.normal);
+    }
 }
+function resultCountGuests() {
+    var sum = amount.adults + amount.children;
+    if(sum == 1) {
+        countGuests(sum, 'гость');
+    }
+    if(sum > 1 && sum < 5) {
+        countGuests(sum, 'гостя');
+    }
+    if( sum >= 5) {
+        countGuests(sum, 'гостей');
+    }
+}
+function countGuests(sum, str1) {
+    $(link.guests).text(sum + ' ' + str1 + countBabies());
+    $(cleanLink).removeClass(cleanLinkClass.normal).addClass(cleanLinkClass.active);
+}
+function countBabies() {
+    if (amount.babies == 0) {
+        return '';
+    }
+    if(amount.babies == 1) {
+        return ', ' + amount.babies + ' младенец';
+    }
+    if(amount.babies > 1 && amount.babies < 5) {
+        return ', ' + amount.babies + ' младенца';
+    }
+    if(amount.babies >= 5) {
+        return ', ' + amount.babies + ' младенцев';
+    }
+}
+function countRoom
+})
 capitalize = function(str1){
     return str1.charAt(0).toUpperCase() + str1.slice(1);
-  }
-})
-cutFirstChar = function(str){
-    return str.slice(1);
+}
+cutFirstChar = function(str1){
+    return str1.slice(1);
 }
