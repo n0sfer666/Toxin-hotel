@@ -37,6 +37,7 @@
     "webpack-cli": "^3.3.5"
   },
   "dependencies": {
+    "air-datepicker": "^2.2.3",
     "imask": "^5.1.7"
   }
 }
