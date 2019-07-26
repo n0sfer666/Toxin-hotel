@@ -32,3 +32,5 @@ $(document).ready(function() {
 })
 // add dropdown (guests and romms) script
 import './_components/_formElements/_dropdown/dropdown';
+// add datepicker
+
