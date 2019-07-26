@@ -6,6 +6,8 @@ include ./_components/_base/_pug/_logo
 include ./_components/_formElements/_textField/textField
 //- mixin dropdown (isGuests, label)
 include ./_components/_formElements/_dropdown/dropdown
+//- mixin dateDropdown (idLeft, idRight, labelLeft, labelRight)
+include ./_components/_formElements/_dateDropdown/_dateDropdown
 
 doctype html
 html
@@ -22,3 +24,5 @@ html
                     +dropdown(false, "dropdown")
                 div(style = "width: 320px; margin-bottom: 10px;")  
                     +textField("maskedTextField", "masked text field", "ДД.ММ.ГГГГ")
+                div(style = "width: 320px; margin-bottom: 10px;")  
+                    +dateDropdown("dateDropdownLeft", "dateDropdownRight", "date Left", "date Right")
