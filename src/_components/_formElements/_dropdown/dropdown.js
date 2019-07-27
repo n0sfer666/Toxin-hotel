@@ -73,7 +73,7 @@ $(document).ready(function() {
     // magic
     for(key in amount) {
         amount[key] = Number($(counter[key]).text());
-        if(amount[key] > 0)
+        if(amount[key] > 0 && !(key == "bedrooms" || key == "beds"))
             $(btnMinus[key]).removeClass(btnClass.normal).addClass(btnClass.active);
     }
     for(key in specifiedElement)
@@ -90,10 +90,9 @@ $(document).ready(function() {
     });
 
 // functions
-// $(element).removeClass(classRm).addClass(classAdd);
 function slider (param) {
     flag[param] = flag[param] ? false : true;
-    $(container[param]).slideToggle("slow", function() {
+    $(container[param]).slideToggle("fast", function() {
         if(!flag[param])
             $(main[param]).removeClass(mainClass.active).addClass(mainClass.normal);
     });
@@ -104,12 +103,22 @@ function counterPlus (param) {
     if(amount[param] >= 0 && amount[param] <= 99) {
         amount[param]++;
         changeButtonClassAndTextCounter(param);
+        changeTextInRoomsContainer();
     }
 }
 function counterMinus (param) {
     if(amount[param] >= 1){
-        amount[param]--;
-        changeButtonClassAndTextCounter(param);
+        if(param == "adults" || param == "children" || param == "babies" || param == "bathrooms"){
+            amount[param]--;
+            changeButtonClassAndTextCounter(param);
+        }
+        else if(amount[param] >= 2) {
+            amount[param]--;
+            changeButtonClassAndTextCounter(param);
+            changeTextInRoomsContainer();
+            if(amount[param] == 1)
+                $(btnMinus[param]).removeClass(btnClass.active).addClass(btnClass.normal);
+        }
     }
 }
 function changeButtonClassAndTextCounter (param) {
@@ -118,6 +127,31 @@ function changeButtonClassAndTextCounter (param) {
     else
         $(btnMinus[param]).removeClass(btnClass.normal).addClass(btnClass.active);
     $(counter[param]).text(amount[param]);  
+}
+function changeTextInRoomsContainer () {
+    if(amount["bedrooms"] == 1) {
+        bedsCountAndChangeText("спальня");
+    }
+    if(amount["bedrooms"] > 1 && amount["bedrooms"] < 5) {
+        bedsCountAndChangeText("спальни");
+    }
+    if(amount["bedrooms"] >= 5) {
+        bedsCountAndChangeText("спален");
+    }
+    function bedsCountAndChangeText(str) {
+        if(amount["beds"] == 1) {
+            changeText(str, "кровать");
+        }
+        if(amount["beds"] > 1 && amount["beds"] < 5) {
+            changeText(str, "кровати");
+        }
+        if(amount["beds"] >= 5) {
+            changeText(str, "кроватей");
+        }
+        function changeText(str1, str2) {
+            $(link.rooms).text(amount.bedrooms + " " + str1 + ", " + amount.beds + " " + str2 + "...");
+        }
+    }
 }
 function doDependingOn (targetId) {
     var regExpForSearch  = new RegExp(targetId);
