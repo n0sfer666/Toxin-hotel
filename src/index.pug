@@ -8,6 +8,8 @@ include ./_components/_formElements/_textField/textField
 include ./_components/_formElements/_dropdown/dropdown
 //- mixin dateDropdown (idLeft, idRight, labelLeft, labelRight)
 include ./_components/_formElements/_dateDropdown/_dateDropdown
+//- mixin filterDateDropdown(id, label)
+include ./_components/_formElements/_filterDateDropdown/_filterDateDropdown
 
 doctype html
 html
@@ -16,11 +18,14 @@ html
         +logo
         .container
             form(action="", method="post")
-                div(style = "width: 320px; margin-bottom: 20px;")
+                div(style = "width: 320px; margin-bottom: 20.44px;")
                     +textField("textField", "text field", "Email")
-                div(style = "width: 320px; margin-bottom: 20px;")
+                div(style = "width: 320px; margin-bottom: 22.56px;")
                     +dropdown(true, "dropdown")
                 div(style = "width: 320px; margin-bottom: 40px;")  
                     +textField("maskedTextField", "masked text field", "ДД.ММ.ГГГГ")
-                div(style = "width: 320px; margin-bottom: 20px;")  
+                div(style = "width: 320px; height: 65px; margin-bottom: 40.56px;")  
                     +dateDropdown("dateDropdownLeft", "dateDropdownRight", "date dropdown", "date dropdown")
+                div(style = "width: 266px; margin-bottom: 41px;")  
+                    +filterDateDropdown("filterDateDropdown", "filter date dropdown")
+

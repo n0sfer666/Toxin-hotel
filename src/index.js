@@ -4,5 +4,7 @@ import './main.scss';
 import './_components/_formElements/_maskedTextField/_maskedTextField';
 // add dropdown (guests and romms) script
 import './_components/_formElements/_dropdown/dropdown';
-// add datepicker
+// add date dropdown
 import './_components/_formElements/_dateDropdown/_dateDropdown';
+//ad filter date dropdown
+import './_components/_formElements/_filterDateDropdown/_filterDateDropdown';
