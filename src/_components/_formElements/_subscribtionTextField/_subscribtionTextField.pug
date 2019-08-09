@@ -1,0 +1,5 @@
+mixin SubscribtionTextField (textId, buttonId, label, placeholder)
+    label(for = textId)
+        h3(class = "label") #{label}
+    input(type="text", id = textId, class = "textField subscribeTextField", placeholder = placeholder)
+    button(type="submit", id = buttonId, class = "subscribButton")

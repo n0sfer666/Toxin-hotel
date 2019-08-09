@@ -1,5 +1,5 @@
 // reset
-body, h1, h2, h3, p {
+body, h1, h2, h3, p, button {
     margin: 0;
     padding: 0;
 }
@@ -51,3 +51,4 @@ h3 {
 @import './_components/_formElements/_buttons/_plusMinus/buttons__plusMinus.scss';
 @import './_components/_formElements/_dropdown/dropdown.scss';
 @import './_components/_formElements/_dateDropdown/dateDropdown';
+@import './_components/_formElements/_subscribtionTextField/subscribtionTextField';

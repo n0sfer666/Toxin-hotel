@@ -1,0 +1,19 @@
+.subscribButton {
+    display: inline-block;
+    position: absolute;
+    z-index: 9;
+    right: 0px;
+    top: 20px;
+    height: 44px;
+    width: 44px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="-12 -12 44 44" enable-background="new -12 -12 44 44" xml:space="preserve" height="44px" width="44px"><path fill="rgb(188, 156, 255)" d="M9 0.984375L17.0156 9L9 17.0156L7.59375 15.6094L13.1719 9.98438H0.984375V8.01562H13.1719L7.59375 2.39062L9 0.984375Z" /><g></g></svg>') no-repeat center;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.subscribButton:hover, .subscribButton:focus {
+
+}
+.subscribeTextField {
+    padding-right: 44px;
+}

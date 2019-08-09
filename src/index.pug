@@ -10,6 +10,8 @@ include ./_components/_formElements/_dropdown/dropdown
 include ./_components/_formElements/_dateDropdown/_dateDropdown
 //- mixin filterDateDropdown(id, label)
 include ./_components/_formElements/_filterDateDropdown/_filterDateDropdown
+//- mixin SubscribtionTextField (textId, buttonId, label, placeholder)
+include ./_components/_formElements/_subscribtionTextField/_subscribtionTextField
 
 doctype html
 html
@@ -28,4 +30,5 @@ html
                     +dateDropdown("dateDropdownLeft", "dateDropdownRight", "date dropdown", "date dropdown")
                 div(style = "width: 266px; margin-bottom: 41px;")  
                     +filterDateDropdown("filterDateDropdown", "filter date dropdown")
-
+                div(style = "width: 266px; margin-bottom: 100px; position: relative;")  
+                    +SubscribtionTextField("SubscribtionTextField", "SubscribtionButton", "subscription text field", "Email")
