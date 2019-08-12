@@ -13,6 +13,8 @@ include ./_components/_formElements/_filterDateDropdown/_filterDateDropdown
 //- mixin SubscribtionTextField (textId, buttonId, label, placeholder)
 include ./_components/_formElements/_subscribtionTextField/_subscribtionTextField
 
+include ./_components/_formElements/_buttons/_checkbox/buttons__checkbox
+
 doctype html
 html
     +base("Form Elements", "main.css", "main.js")
@@ -32,3 +34,10 @@ html
                     +filterDateDropdown("filterDateDropdown", "filter date dropdown")
                 div(style = "width: 266px; margin-bottom: 100px; position: relative;")  
                     +SubscribtionTextField("SubscribtionTextField", "SubscribtionButton", "subscription text field", "Email")
+                div(style = "width: 266px; margin-bottom: 41px;")  
+                    +checkboxButton("test", "Test", true)
+                    +checkboxButton("test", "Test", true)
+                    +checkboxButton("test", "Test", true)
+                    +checkboxButton("test", "Test", false)
+                    +checkboxButton("test", "Test", false)
+                    +checkboxButton("test", "Test", false)

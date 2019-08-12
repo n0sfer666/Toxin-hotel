@@ -1,0 +1,8 @@
+mixin checkboxButton (id, label, isChecked)
+    div
+        label(class="buttons__checkbox-label") #{label}
+            if isChecked
+                input(type="checkbox", id = id, class = "buttons__checkbox", checked)
+            else
+                input(type="checkbox", id = id, class = "buttons__checkbox")
+            span(class="buttons__checkbox-checkmark")
