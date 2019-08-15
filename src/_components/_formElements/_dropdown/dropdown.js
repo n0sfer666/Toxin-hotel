@@ -163,7 +163,7 @@ function doDependingOn (targetId) {
         for(key in btnMinus)
             if(regExpForSearch.test(btnMinus[key]))
                 counterMinus(key);
-    if(/__link/.test(targetId)){
+    if(/[^drop]__link/.test(targetId)){
         var param = /Guests/.test(targetId) ? "guests" : "rooms";
         slider(param);
     }

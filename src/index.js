@@ -6,5 +6,7 @@ import './_components/_formElements/_maskedTextField/_maskedTextField';
 import './_components/_formElements/_dropdown/dropdown';
 // add date dropdown
 import './_components/_formElements/_dateDropdown/_dateDropdown';
-//ad filter date dropdown
+//add filter date dropdown
 import './_components/_formElements/_filterDateDropdown/_filterDateDropdown';
+//add expandable checkbox list
+import './_components/_formElements/_expandableCheckboxList/_expandableCheckboxList';

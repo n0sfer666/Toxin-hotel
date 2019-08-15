@@ -3,6 +3,12 @@ body, h1, h2, h3, p, button {
     margin: 0;
     padding: 0;
 }
+a {
+	text-decoration: none;
+}
+a:visited {
+    color: initial;
+}
 /* fix placeholder in diferent browsers */
 // Chrome
 ::-webkit-input-placeholder { color: rgba(31, 32, 65, 0.25); }
@@ -53,3 +59,4 @@ h3 {
 @import './_components/_formElements/_dateDropdown/dateDropdown';
 @import './_components/_formElements/_subscribtionTextField/subscribtionTextField';
 @import './_components/_formElements/_buttons/_checkbox/buttons__checkbox.scss';
+@import './_components/_formElements/_expandableCheckboxList/expandableCheckboxList';
