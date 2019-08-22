@@ -14,6 +14,8 @@ include ./_components/_formElements/_filterDateDropdown/_filterDateDropdown
 include ./_components/_formElements/_subscribtionTextField/_subscribtionTextField
 //- mixin expandableCheckboxList(id, title)
 include ./_components/_formElements/_expandableCheckboxList/_expandableCheckboxList
+//- mixin condition(pict, title, description)
+include ./_components/_formElements/_conditions/conditions
 
 doctype html
 html
@@ -36,3 +38,6 @@ html
                     +SubscribtionTextField("SubscribtionTextField", "SubscribtionButton", "subscription text field", "Email")
                 div(style = "width: 266px; margin-bottom: 40px;")  
                     +expandableCheckboxList("expList", "expandable checkbox list")
+                div(style = "width: 291px;")
+                    +condition("smile", "Комфорт", "Шумопоглащающие стены")
+                    +condition("building", "Удобство", "Окно в каджой из спален")

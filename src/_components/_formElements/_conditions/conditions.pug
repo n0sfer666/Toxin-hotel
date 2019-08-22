@@ -1,0 +1,10 @@
+mixin condition(pict, title, description)
+    -
+        var pictClass = "condition__pict condition__pict_" + pict
+    .condition__container
+        div(class=pictClass)
+        .condition__text
+            b #{title}
+            br
+            p(class="condition__text_normal") #{description}
+    .condition__hr
