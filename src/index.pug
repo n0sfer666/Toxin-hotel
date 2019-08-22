@@ -16,6 +16,8 @@ include ./_components/_formElements/_subscribtionTextField/_subscribtionTextFiel
 include ./_components/_formElements/_expandableCheckboxList/_expandableCheckboxList
 //- mixin condition(pict, title, description)
 include ./_components/_formElements/_conditions/conditions
+//- mixin radioButtons
+include ./_components/_formElements/_buttons/_radio/_buttons__radio
 
 doctype html
 html
@@ -41,3 +43,5 @@ html
                 div(style = "width: 291px;")
                     +condition("smile", "Комфорт", "Шумопоглащающие стены")
                     +condition("building", "Удобство", "Окно в каджой из спален")
+                div(style = "width: 291px;")
+                    +radioButtons

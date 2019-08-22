@@ -2,7 +2,8 @@
     display: inline-block;
     position: relative;
     cursor: pointer;
-    line-height: 18px;
+    font: normal normal 14px/18px Montserrat;
+    color: $dShade50;
     padding-left: 30px;
     margin-bottom: 11px;
 }
