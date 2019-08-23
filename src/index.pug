@@ -18,6 +18,8 @@ include ./_components/_formElements/_expandableCheckboxList/_expandableCheckboxL
 include ./_components/_formElements/_conditions/conditions
 //- mixin radioButtons
 include ./_components/_formElements/_buttons/_radio/_buttons__radio
+//- mixin toggleButtons(text)
+include ./_components/_formElements/_buttons/_toggle/_buttons__toggle
 
 doctype html
 html
@@ -43,6 +45,8 @@ html
                 div(style = "width: 291px;")
                     +condition("smile", "Комфорт", "Шумопоглащающие стены")
                     +condition("building", "Удобство", "Окно в каджой из спален")
-                div(style = "width: 291px;")
+                div(style = "width: 291px; margin-bottom: 20px;")
                     h3(style="margin-bottom: 16px;") radio buttons
                     +radioButtons
+                div(style = "width: 266px;")
+                    +toggleButton("Получать спецпредложение")
