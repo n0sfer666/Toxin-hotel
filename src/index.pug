@@ -20,6 +20,8 @@ include ./_components/_formElements/_conditions/conditions
 include ./_components/_formElements/_buttons/_radio/_buttons__radio
 //- mixin toggleButtons(text)
 include ./_components/_formElements/_buttons/_toggle/_buttons__toggle
+//- mixin likeButton(id)
+include ./_components/_formElements/_buttons/_like/_buttons__like
 
 doctype html
 html
@@ -48,5 +50,10 @@ html
                 div(style = "width: 291px; margin-bottom: 20px;")
                     h3(style="margin-bottom: 16px;") radio buttons
                     +radioButtons
-                div(style = "width: 266px;")
+                div(style = "width: 266px; margin-bottom: 16px;")
                     +toggleButton("Получать спецпредложение")
+                div(style = "width: 266px;")
+                    h3(style="margin-bottom: 10px;") like button
+                    +likeButton("test", "2")
+                div(style = "width: 266px;")
+                    h3(style="margin-bottom: 10px;") rate button

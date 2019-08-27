@@ -1,0 +1,5 @@
+mixin likeButton(id, startVal)
+    -
+        var containerId = "likeButton__container__" + id, counterId = "likeButton__counter__" + id
+    button(type="button", class = "buttons__like-container buttons__like-container_normal", id = containerId)
+        span(class = "buttons__like-counter buttons__like-counter_normal", id = counterId) #{startVal}
