@@ -1,5 +1,5 @@
 // reset
-body, h1, h2, h3, p, button {
+body, h1, h2, h3, p, button, br {
     margin: 0;
     padding: 0;
 }
@@ -8,6 +8,10 @@ a {
 }
 a:visited {
     color: initial;
+}
+br {
+    width: 0;
+    height: 0;
 }
 /* fix placeholder in diferent browsers */
 // Chrome
@@ -65,3 +69,4 @@ h3 {
 @import './_components/_formElements/_buttons/_toggle/buttons__toggle';
 @import './_components/_formElements/_buttons/_like/buttons__like';
 @import './_components/_formElements/_buttons/_rate/_buttons_rate';
+@import './_components/_formElements/_buttons/_checkbox_rich/checkbox_rich';

@@ -22,8 +22,10 @@ include ./_components/_formElements/_buttons/_radio/_buttons__radio
 include ./_components/_formElements/_buttons/_toggle/_buttons__toggle
 //- mixin likeButton(id)
 include ./_components/_formElements/_buttons/_like/_buttons__like
-//- 
+//- mixin rateButton(id)
 include ./_components/_formElements/_buttons/_rate/_buttons_rate
+//- mixin richCheckboxButton(id, title, description)
+include ./_components/_formElements/_buttons/_checkbox_rich/_checkbox_rich
 
 doctype html
 html
@@ -54,9 +56,12 @@ html
                     +radioButtons
                 div(style = "width: 266px; margin-bottom: 16px;")
                     +toggleButton("Получать спецпредложение")
-                div(style = "width: 266px;")
+                div(style = "width: 266px; margin-bottom: 10px;")
                     h3(style="margin-bottom: 10px;") like button
                     +likeButton("test", "2")
-                div(style = "width: 266px;")
+                div(style = "width: 266px; margin-bottom: 10px;")
                     h3(style="margin-bottom: 10px;") rate button
                     +rateButton("test")
+                div(style = "width: 266px; margin-bottom: 10px;")
+                    h3(style="margin-bottom: 10px;") Rich Checkbox Buttons
+                    +richCheckboxButton("wideCorridor", "Широкий коридор", "Ширина коридоров в номере не менее 91 см.")

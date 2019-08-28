@@ -1,0 +1,55 @@
+.buttons__richCheckbox-container {
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    & .buttons__richCheckbox-checkmark:after {
+        left: 5px;
+        top: 3px;
+        width: 5px;
+        height: 7px;
+        border: 1px solid transparent;
+        border-image:  linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+        border-image-slice: 1;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+    }
+}
+.buttons__richCheckbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    &:checked ~ .buttons__richCheckbox-checkmark {
+        border: 1px solid #BC9CFF;
+        content: "";
+    }
+    &:checked ~ .buttons__richCheckbox-checkmark:after {
+        display: block;
+    }
+}
+.buttons__richCheckbox-checkmark {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    border: 1px solid $dShade25;
+    box-sizing: border-box;
+    border-radius: 4px;
+    &:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+}
+.buttons__richCheckbox-title {
+    font: normal bold 14px/18px Montserrat;
+    color: $dShade75;
+}
+.buttons__richCheckbox-description {
+    padding-top: 3px;
+    font: normal normal 12px/14px Montserrat;
+    color: $dShade50;
+}
