@@ -1,0 +1,39 @@
+.review__container {
+    display: flex;
+    width: 100%;
+}
+.review__pict {
+    width: 48px;
+    height: 48px;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.1);
+    border: 2px solid #FFFFFF;
+    box-sizing: border-box;
+    margin-bottom: 12px;
+    border-radius: 32px;
+}
+.review__pict_Sarafanov {
+    background: url("./_components/_formElements/_review/review_image1.png");
+}
+.review__leftColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 48px;
+}
+.review__rightColumn {
+    width: calc(100% - 48px);
+    padding-left: 10px;
+}
+.review__name {
+    font: normal bold 14px/24px Montserrat;
+    color: $dShade75;
+}
+.review__daysAgo {
+    font: normal normal 14px/24px Montserrat;
+    color: $dShade75;
+}
+.review__text {
+    display: inline-block;
+    margin-top: 10px;
+    @extend .review__daysAgo;
+}

@@ -1,0 +1,14 @@
+include ../_buttons/_like/_buttons__like
+mixin review(pict, name, daysAgo, review)
+    -
+        var classPict = "review__pict review__pict_" + pict
+    .review__container
+        .review__leftColumn
+            div(class = classPict)
+            +likeButton("review_1", "11")
+        .review__rightColumn
+            span(class="review__name") #{name}
+            br
+            span(class="review__daysAgo") #{daysAgo}
+            br
+            p(class="review__text") #{review}

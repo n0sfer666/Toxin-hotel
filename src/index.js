@@ -1,5 +1,7 @@
 // add css
 import './main.scss';
+// add revew_image1.png
+import './_components/_formElements/_review/review_image1.png';
 // add masked text field
 import './_components/_formElements/_maskedTextField/_maskedTextField';
 // add dropdown (guests and romms) script

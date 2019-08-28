@@ -26,6 +26,8 @@ include ./_components/_formElements/_buttons/_like/_buttons__like
 include ./_components/_formElements/_buttons/_rate/_buttons_rate
 //- mixin richCheckboxButton(id, title, description)
 include ./_components/_formElements/_buttons/_checkbox_rich/_checkbox_rich
+//- mixin review(pict, name, daysAgo, review)
+include ./_components/_formElements/_review/_review
 
 doctype html
 html
@@ -65,3 +67,6 @@ html
                 div(style = "width: 266px; margin-bottom: 10px;")
                     h3(style="margin-bottom: 10px;") Rich Checkbox Buttons
                     +richCheckboxButton("wideCorridor", "Широкий коридор", "Ширина коридоров в номере не менее 91 см.")
+                div(style = "width: 711px; margin-bottom: 10px;")
+                    h3(style="margin-bottom: 10px;") Review
+                    +review("Sarafanov", "Мурад Сарафанов", "5 дней назад", "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.")

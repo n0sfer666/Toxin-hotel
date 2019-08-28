@@ -12,9 +12,7 @@ $(document).ready(function() {
                 var str1 = counter.id.slice(19);
             var containerId = "#likeButton__container" + str1;
             counter.id = "#likeButton__counter" + str1;
-            console.log(counter.id);
             counter.count = Number($(counter.id).text());
-            console.log(counter.count);
             if($(containerId).hasClass("buttons__like-container_normal")) {
                 counter.count++;
                 $(containerId).removeClass("buttons__like-container_normal").addClass("buttons__like-container_active");
