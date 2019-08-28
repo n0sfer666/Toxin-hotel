@@ -12,3 +12,5 @@ import './_components/_formElements/_filterDateDropdown/_filterDateDropdown';
 import './_components/_formElements/_expandableCheckboxList/_expandableCheckboxList';
 // add listener for like buttons
 import './_components/_formElements/_buttons/_like/_buttons__like';
+//  add listener for rate buttons
+import './_components/_formElements/_buttons/_rate/_buttons_rate';
