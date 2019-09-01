@@ -17,6 +17,12 @@ module.exports = {
         new Webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery'
+        }),
+        new Webpack.ProvidePlugin({
+            noUiSlider: 'nouislider'
+        }),
+        new Webpack.ProvidePlugin({
+            wNumb: 'wnumb'
         })
     ],
     module: {
