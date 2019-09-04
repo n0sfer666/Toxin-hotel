@@ -1,0 +1,58 @@
+.button_medium {
+    height: 44px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 22px;
+    outline: none;
+    cursor: pointer;
+}
+.button_toPay {
+    height: 44px;
+    border-radius: 22px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    padding-left: 95px;
+    padding-right: 95px;
+    background: url("data:image/svg+xml,%3Csvg width='44' height='44' viewBox='-12 -13 44 44' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 0.984375L17.0156 9L9 17.0156L7.59375 15.6094L13.1719 9.98438H0.984375V8.01562H13.1719L7.59375 2.39062L9 0.984375Z' fill='white'/%3E%3C/svg%3E%0A") no-repeat 100% 50%, linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+}
+.button_gradient {
+    border: none;
+    color: #fff;
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+}
+.button_gradientOpacity {
+    @extend .button_gradient;
+    opacity: 0.5;
+}
+.button_border {
+    display: flex;
+    align-items: center;
+ 
+    position: relative;
+    box-sizing: border-box;
+  
+    $border: 2px;
+    color: $purple;
+    background: #fff;
+    background-clip: padding-box; 
+    border: solid $border transparent; 
+    border-radius: 22px;
+  
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      z-index: -1;
+      margin: -$border; 
+      border-radius: inherit; 
+      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    }
+}
+.button_borderOpacity {
+    @extend .button_border;
+    &:before {
+        opacity: 0.5;
+    }
+}
