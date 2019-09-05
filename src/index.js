@@ -18,3 +18,5 @@ import './_components/_formElements/_buttons/_like/_buttons__like';
 import './_components/_formElements/_buttons/_rate/_buttons_rate';
 // add range slider
 import './_components/_formElements/_range_slider/_range_slider';
+//add pagination
+import './_components/_formElements/_pagination/_pagination';
