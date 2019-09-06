@@ -36,7 +36,7 @@ include ./_components/_formElements/_range_slider/_range_slider
 //- title: whatever
 include ./_components/_formElements/_buttons/_button/_button
 //- 
-//- include ./_components/_formElements/_pagination/_pagination
+include ./_components/_formElements/_bulletList/_bulletList
 
 doctype html
 html
@@ -91,3 +91,6 @@ html
                     h3(style="margin-bottom: 10px;") pagination
                     #data
                     #pagination
+                div(style = "width: 266px;margin-bottom: 10px;")
+                    h3(style="margin-bottom: 10px;") bullet list
+                    +bulletList(["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"])
