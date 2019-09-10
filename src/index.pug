@@ -1,96 +1,47 @@
 //- mixin base(title, css, js)
 include ./_components/_base/_pug/_base
-//- mixin logo
+//- mixin logo(isFull)
 include ./_components/_base/_pug/_logo
-//- mixin textField (id, label, placeholder)
-include ./_components/_formElements/_textField/textField
-//- mixin dropdown (isGuests, label)
-include ./_components/_formElements/_dropdown/dropdown
-//- mixin dateDropdown (idLeft, idRight, labelLeft, labelRight)
-include ./_components/_formElements/_dateDropdown/_dateDropdown
-//- mixin filterDateDropdown(id, label)
-include ./_components/_formElements/_filterDateDropdown/_filterDateDropdown
-//- mixin SubscribtionTextField (textId, buttonId, label, placeholder)
-include ./_components/_formElements/_subscribtionTextField/_subscribtionTextField
-//- mixin expandableCheckboxList(id, title)
-include ./_components/_formElements/_expandableCheckboxList/_expandableCheckboxList
-//- mixin condition(pict, title, description)
-include ./_components/_formElements/_conditions/conditions
-//- mixin radioButtons
-include ./_components/_formElements/_buttons/_radio/_buttons__radio
-//- mixin toggleButtons(text)
-include ./_components/_formElements/_buttons/_toggle/_buttons__toggle
-//- mixin likeButton(id)
-include ./_components/_formElements/_buttons/_like/_buttons__like
-//- mixin rateButton(id)
-include ./_components/_formElements/_buttons/_rate/_buttons_rate
-//- mixin richCheckboxButton(id, title, description)
-include ./_components/_formElements/_buttons/_checkbox_rich/_checkbox_rich
-//- mixin review(pict, name, daysAgo, review)
-include ./_components/_formElements/_review/_review
-//- mixin rangeSlider
-include ./_components/_formElements/_range_slider/_range_slider
-//- mixin button(option)
-//- size: medium or whithout {size: } for class button_toPay
-//- theme: for {size: medium}: gradient, gradientOpacity, border, borderOpacity,
-//- title: whatever
-include ./_components/_formElements/_buttons/_button/_button
-//- 
-include ./_components/_formElements/_bulletList/_bulletList
+//- //- mixin textField (id, label, placeholder)
+//- include ./_components/_formElements/_textField/textField
+//- //- mixin dropdown (isGuests, label)
+//- include ./_components/_formElements/_dropdown/dropdown
+//- //- mixin dateDropdown (idLeft, idRight, labelLeft, labelRight)
+//- include ./_components/_formElements/_dateDropdown/_dateDropdown
+//- //- mixin filterDateDropdown(id, label)
+//- include ./_components/_formElements/_filterDateDropdown/_filterDateDropdown
+//- //- mixin SubscribtionTextField (textId, buttonId, label, placeholder)
+//- include ./_components/_formElements/_subscribtionTextField/_subscribtionTextField
+//- //- mixin expandableCheckboxList(id, title)
+//- include ./_components/_formElements/_expandableCheckboxList/_expandableCheckboxList
+//- //- mixin condition(pict, title, description)
+//- include ./_components/_formElements/_conditions/conditions
+//- //- mixin radioButtons
+//- include ./_components/_formElements/_buttons/_radio/_buttons__radio
+//- //- mixin toggleButtons(text)
+//- include ./_components/_formElements/_buttons/_toggle/_buttons__toggle
+//- //- mixin likeButton(id)
+//- include ./_components/_formElements/_buttons/_like/_buttons__like
+//- //- mixin rateButton(id)
+//- include ./_components/_formElements/_buttons/_rate/_buttons_rate
+//- //- mixin richCheckboxButton(id, title, description)
+//- include ./_components/_formElements/_buttons/_checkbox_rich/_checkbox_rich
+//- //- mixin review(pict, name, daysAgo, review)
+//- include ./_components/_formElements/_review/_review
+//- //- mixin rangeSlider
+//- include ./_components/_formElements/_range_slider/_range_slider
+//- //- mixin button(option)
+//- //- size: medium or whithout {size: } for class button_toPay
+//- //- theme: for {size: medium}: gradient, gradientOpacity, border, borderOpacity,
+//- //- title: whatever
+//- include ./_components/_formElements/_buttons/_button/_button
+//- //- 
+//- include ./_components/_formElements/_bulletList/_bulletList
 
 doctype html
 html
     +base("Form Elements", "main.css", "main.js")
     body    
-        +logo
+        +logo(true)
         .container
-            form(action="", method="post")
-                div(style = "width: 320px; margin-bottom: 20.44px;")
-                    +textField("textField", "text field", "Email")
-                div(style = "width: 320px; margin-bottom: 22.56px;")
-                    +dropdown(true, "dropdown")
-                div(style = "width: 320px; margin-bottom: 40px;")  
-                    +textField("maskedTextField", "masked text field", "ДД.ММ.ГГГГ")
-                div(style = "width: 320px; height: 65px; margin-bottom: 40.56px;")  
-                    +dateDropdown("dateDropdownLeft", "dateDropdownRight", "date dropdown", "date dropdown")
-                div(style = "width: 266px; margin-bottom: 41px;")  
-                    +filterDateDropdown("filterDateDropdown", "filter date dropdown")
-                div(style = "width: 266px; margin-bottom: 100px; position: relative;")  
-                    +SubscribtionTextField("SubscribtionTextField", "SubscribtionButton", "subscription text field", "Email")
-                div(style = "width: 266px; margin-bottom: 40px;")  
-                    +expandableCheckboxList("expList", "expandable checkbox list")
-                div(style = "width: 291px;")
-                    +condition("smile", "Комфорт", "Шумопоглащающие стены")
-                    +condition("building", "Удобство", "Окно в каджой из спален")
-                div(style = "width: 291px; margin-bottom: 20px;")
-                    h3(style="margin-bottom: 16px;") radio buttons
-                    +radioButtons
-                div(style = "width: 266px; margin-bottom: 16px;")
-                    +toggleButton("Получать спецпредложение")
-                div(style = "width: 266px; margin-bottom: 10px;")
-                    h3(style="margin-bottom: 10px;") like button
-                    +likeButton("test", "2")
-                div(style = "width: 266px; margin-bottom: 10px;")
-                    h3(style="margin-bottom: 10px;") rate button
-                    +rateButton("test")
-                div(style = "width: 266px; margin-bottom: 10px;")
-                    h3(style="margin-bottom: 10px;") Rich Checkbox Buttons
-                    +richCheckboxButton("wideCorridor", "Широкий коридор", "Ширина коридоров в номере не менее 91 см.")
-                div(style = "width: 711px; margin-bottom: 10px;")
-                    h3(style="margin-bottom: 10px;") Review
-                    +review("Sarafanov", "Мурад Сарафанов", "5 дней назад", "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.")
-                div(style = "width: 266px; margin-bottom: 10px;")
-                    +rangeSlider("диапазон цен")
-                div(style = "width: 450px; margin-bottom: 10px;")
-                    h3(style="margin-bottom: 10px;") buttons
-                    +button({title: "click me", size: "medium", theme: "gradient"})
-                    +button({title: "click me", size: "medium", theme: "gradientOpacity"})
-                    +button({title: "click me", size: "medium", theme: "border"})
-                    +button({title: "click me", size: "medium", theme: "borderOpacity"})
-                div(style = "margin-bottom: 10px;")
-                    h3(style="margin-bottom: 10px;") pagination
-                    #data
-                    #pagination
-                div(style = "width: 266px;margin-bottom: 10px;")
-                    h3(style="margin-bottom: 10px;") bullet list
-                    +bulletList(["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"])
+        
