@@ -24,9 +24,6 @@ br {
 @import './_components/_base/_scss/fonts';
 @import './_components/_base/_scss/var__colors';
 // change text tags
-h1, h2, h3, body {
-    color: $dShade100;
-}
 body {
     font: normal normal 14px/24px Montserrat;
 }
@@ -44,9 +41,6 @@ h3 {
 .label {
     margin-bottom: 5px;
 }
-// not reuse
-.container {
-    width: 1440px;
-    height: 1853px;
-    padding-left: 141px;
-}
+// components
+@import "./_components/_header/header";
+@import "./_components/_formElements/_buttons/_button/button";

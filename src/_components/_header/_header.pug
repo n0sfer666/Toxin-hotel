@@ -1,0 +1,24 @@
+include ../_formElements/_buttons/_button/_button
+include ../_base/_pug/_logo
+include ./_menuLink
+
+mixin header(Auth)
+    header
+        .header__container
+            .header__logo
+                +logo(true)
+            .header__auth
+                if Auth
+                    +button({size: "medium", theme: "border", title: "login", height: "34px"})
+                    +button({size: "medium", theme: "gradient", title: "register", height: "34px"})
+                else
+                    .header__vRow
+                    a(href="#", style="color: rgba(31, 32, 65, 0.5);") Cosmin Negoita
+
+            .header__menu
+                +menuLink("home")
+                +menuLink("link", "About Us")
+                +menuLink("submenu", "Services")
+                +menuLink("link", "Careers")
+                +menuLink("link", "News")
+                +menuLink("link", "Documentation")
