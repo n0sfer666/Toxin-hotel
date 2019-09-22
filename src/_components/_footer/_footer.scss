@@ -1,0 +1,96 @@
+// short
+.footer__container_short {
+    height: 367px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #FFFFFF;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+}
+.footer__logo_short {
+    margin-bottom: 10px;
+}
+.footer__description_short {
+    display: inline-block;
+    text-align: center;
+    width: 560px;
+    font: normal normal 14px/24px Montserrat;
+    color: $dShade75;
+    margin-bottom: 29px;
+}
+.footer__social > .footer__socIcon:not(:last-child) {
+    margin-right: 20px;
+}
+.footer__socIcon {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+}
+// full
+@import '../_formElements/_textField/_subscribtionTextField/subscribtionTextField';
+.footer__container {
+    display: flex;
+    height: 372px;
+    width: 100%;
+    background: white;
+    box-shadow: 0px 1px 0px rgba(31, 32, 65, 0.1);
+
+}
+.footer__description, .footer__navigation, .footer__aboutUs, .footer__support, .footer__subscribe  {
+    display: inline-block;
+    margin-top: 100px;
+    & h3 {
+        margin-bottom: 1px;
+        margin-top: 4px;
+    }
+}
+.footer__description {
+    width: 260px;
+    margin: 100px 40px 116px 140px;
+    & p {
+        display: inline-block;
+        margin-top: 10px;
+        font: normal normal 14px/24px Montserrat;
+        color: $dShade75;
+    }
+}
+.footer__link {
+    display: block;
+    font: normal normal 14px/17px Montserrat;
+    color: $dShade50;
+    margin-top: 21px;
+}
+.footer__navigation {
+    margin-right: 119px;
+}
+.footer__aboutUs {
+    margin-right: 118px;
+}
+.footer__support {
+    margin-right: 87px;
+}
+.footer__subscribe {
+    & p {
+        display: inline-block;
+        width: 196px;
+        font: normal normal 14px/24px Montserrat;
+        color: $dShade75;
+        margin-top: 16px;
+        margin-bottom: 24px;
+    }
+}
+.footer__copyright {
+    background: white;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    margin-top: 1px;
+    padding: 0 140px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    & .footer__social {
+        margin-top: 4px;
+    }
+}

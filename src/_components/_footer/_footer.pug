@@ -1,0 +1,51 @@
+include ../_base/_pug/_logo
+include _social
+include ../_formElements/_textField/_subscribtionTextField/_subscribtionTextField
+mixin footer(isShort)
+    if isShort
+        footer
+            .footer__container_short 
+                .footer__logo_short
+                    +logo(true)
+                .footer__description_short
+                    p
+                    | Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
+                .footer__social
+                    +socialTwitter
+                    +socialFacebook
+                    +socialInstagram
+    else
+        footer
+            .footer__container
+                .footer__description
+                    .footer__logo
+                        +logo(true)
+                    p Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
+                .footer__navigation
+                    h3 navigation
+                    a(href="#", class="footer__link") About Us
+                    a(href="#", class="footer__link") News
+                    a(href="#", class="footer__link") Support
+                    a(href="#", class="footer__link") Products
+                .footer__aboutUs
+                    h3 about us
+                    a(href="#", class="footer__link") Who we are
+                    a(href="#", class="footer__link") Our team
+                    a(href="#", class="footer__link") Careers
+                    a(href="#", class="footer__link") Inverstors
+                .footer__support
+                    h3 support
+                    a(href="#", class="footer__link") Documentation
+                    a(href="#", class="footer__link") Community
+                    a(href="#", class="footer__link") Get in Touch
+                .footer__subscribe
+                    h3 subscribe to our newsletter
+                    p Receive our latest news and promotions in your inbox!
+                    +SubscribtionTextField("_footer__subscribe", "_footer__subscribeButton", "Your email address")
+            .footer__copyright
+                p Copyright © 2018 Toxin UI Kit. All rights reserved.
+                .footer__social
+                    +socialTwitter
+                    +socialFacebook
+                    +socialInstagram
+
