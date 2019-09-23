@@ -1,5 +1,5 @@
 //- mixin buttons__plusMinus (id, isPlus)
-include ../../_buttons/_plusMinus/buttons__plusMinus
+include ../_buttons/_plusMinus/buttons__plusMinus
 mixin dropdown__line(text, id, count)
     -
         var buttonIDminus, buttonIDplus, counterID
@@ -7,7 +7,7 @@ mixin dropdown__line(text, id, count)
         buttonIDplus = id + "Plus"
         counterID = id + "Counter"
     .dropdown__line
-        .dropdown__text
+        div
             h3 #{text}
         .dropdown__changeBox
             +buttons__plusMinus(buttonIDminus, false)

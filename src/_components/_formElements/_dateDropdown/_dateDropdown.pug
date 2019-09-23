@@ -1,9 +1,10 @@
-mixin dateDropdown (idLeft, idRight, labelLeft, labelRight)
-    div(style = "float: left; margin-right: 20px; width: 150px")
-        label(for = idLeft)
-            h3(class = "label") #{labelLeft}
-        input(type="text", id = idLeft, class = "textField dateDropdown", placeholder = "ДД.ММ.ГГГГ")
-    div(style = "float: right; width: 150px")
-        label(for = idRight)
-            h3(class = "label") #{labelRight}
-        input(type="text", id = idRight, class = "textField dateDropdown", placeholder = "ДД.ММ.ГГГГ")
+mixin dateDropdown (labelLeft, labelRight)
+    .dateDropdown__container
+        div
+            label(for = idLeft)
+                h3(class = "label") #{labelLeft}
+            input(type="text", id = 'dateDropdownLeft', class = "textField dateDropdown", placeholder = "ДД.ММ.ГГГГ")
+        div
+            label(for = idRight)
+                h3(class = "label") #{labelRight}
+            input(type="text", id = 'dateDropdownRight', class = "textField dateDropdown", placeholder = "ДД.ММ.ГГГГ")

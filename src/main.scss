@@ -28,13 +28,14 @@ body {
     font: normal normal 14px/24px Montserrat;
     color: $dShade75;
     background: #E5E5E5;
-    padding-top: 20px;
+    padding: 20px;
 }
 h1 {
-    font: normal bold 24px/30px Quicksand;
+    font: normal bold 24px/30px Quicksand, Montserrat;
+    color: $dShade100;
 }
 h2 {
-    font: normal bold 19px/24px Quicksand;
+    font: normal bold 19px/24px Quicksand, Montserrat;
 }
 h3 {
     font: normal bold 12px/15px Montserrat;
@@ -46,4 +47,4 @@ h3 {
     margin-bottom: 5px;
 }
 // components
-@import "./_components/_footer/footer";
+@import './_components/_cards/_findAppart/findAppart';
