@@ -1,0 +1,30 @@
+@import '../../_formElements/_textField/textField.scss';
+@import '../../_formElements/_buttons/_button/button';
+
+.login__container {
+    width: 380px;
+    height: 358px;
+    padding: 40px 30px 32px 30px;
+
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+.login__loginInfo, .login__loginButton {
+    margin-top: 20px;
+}
+.login__block {
+    margin-top: 10px;
+}
+.login__signup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 29px;
+}
+.login__signupButton {
+    width: 99px;
+}

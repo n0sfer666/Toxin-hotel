@@ -1,0 +1,16 @@
+include ../../_formElements/_textField/textField
+include ../../_formElements/_buttons/_button/_button
+mixin login
+    .login__container
+        h1 Войти
+        .login__loginInfo
+            .login__block
+                +textField("email","","Email")
+            .login__block
+                +textField("password", "", "Пароль", true)
+        .login__loginButton
+            +button({title: "Войти"})
+        .login__signup
+            p Нет аккаунта на Toxin?
+            .login__signupButton
+                +button({size: "medium", theme: "border", title: "Создать"})
