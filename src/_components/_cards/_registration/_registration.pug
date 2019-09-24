@@ -1,0 +1,30 @@
+include ../../_formElements/_textField/textField
+include ../../_formElements/_buttons/_radio/_buttons__radio
+include ../../_formElements/_buttons/_toggle/_buttons__toggle
+include ../../_formElements/_buttons/_button/_button
+
+mixin registration
+    .regustration__container
+        h1 Регистрация аккаунта
+        .registration__nameField
+            .registration__block
+                +textField("firstName", "", "Имя")
+            .registration__block
+                +textField("lastName", "", "Фамилия")
+        .registration__block
+            +radioButtons
+        .registration__birthday
+            .registration__block
+                +textField("birthday", "дата рождения", "ДД.ММ.ГГГГ")
+        .registration__loginInfo
+            .registration__block
+                +textField("login", "данные для входа в сервис", "Email")
+            .registration__block
+                +textField("password", "", "Пароль", true)
+        .registration__block
+            +toggleButton("Получать спецпредложения")
+        .registration__payButton
+            +button({title: "Перейти к оплате"})
+        .registration__entry
+            p Уже есть аккаунт на Toxin
+            +button({size: "medium", theme: "border", title: "Войти"})

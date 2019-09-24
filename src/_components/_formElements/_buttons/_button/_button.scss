@@ -1,14 +1,13 @@
 .button_medium {
-    // height: 44px;
-    padding-left: 20px;
-    padding-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 22px;
     box-sizing: border-box;
     outline: none;
     cursor: pointer;
 }
 .button_toPay {
-    // height: 44px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -35,27 +34,15 @@
 .button_border {
     display: flex;
     align-items: center;
- 
-    position: relative;
-    box-sizing: border-box;
-    padding-left: 18px;
-    padding-right: 18px;
-  
-    $border: 2px;
-    color: $purple;
-    background: #fff;
-    background-clip: padding-box; 
-    border: solid $border transparent; 
+
+    border: double 2px transparent;
     border-radius: 22px;
-  
-    &:before {
-      content: '';
-      position: absolute;
-      top: 0; right: 0; bottom: 0; left: 0;
-      z-index: -1;
-      margin: -$border; 
-      border-radius: inherit; 
-      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    background-image: linear-gradient(white, white), linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    & h3 {
+        margin: 0 24px 0 24px;
+        color: $purple;
     }
 }
 .button_borderOpacity {

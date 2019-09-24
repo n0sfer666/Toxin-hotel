@@ -1,0 +1,39 @@
+@import '../../_formElements/_textField/textField.scss';
+@import '../../_formElements/_buttons/_radio/buttons__radio';
+@import '../../_formElements/_buttons/_toggle/buttons__toggle';
+@import '../../_formElements/_buttons/_button/button';
+
+.regustration__container {
+    width: 380px;
+    height: 646px;
+
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+
+    padding: 40px 30px 30px 30px;
+}
+.registration__block {
+    margin-top: 10px;
+}
+.registration__nameField {
+    margin-top: 20px;
+}
+.registration__birthday {
+    margin-top: 25px;
+} 
+.registration__loginInfo {
+    margin-top: 20px;
+}
+.registration__payButton {
+    margin-top: 25px;
+}
+.registration__entry {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 29px;
+}
