@@ -1,0 +1,66 @@
+include ../../_formElements/_dateDropdown/_dateDropdown
+include ../../_formElements/_dropdown/dropdown
+include ../../_formElements/_buttons/_button/_button
+
+mixin exclamation
+    .booking__exclamation
+        h3 i
+
+//- appartNumber - номер аппартамента (выводится как № 123 в тегах h1)
+//- price - стоимость за одни сутки пребывания в аппартаментах
+//- isLux - true - после № 123 Люкс, false - просто № 123
+//- discount - скидка
+//- additional - сборы
+//- complementary - доп. сборы
+
+mixin booking(options)
+    -
+        var flagDiscount = options.discount != undefined ? true : false
+        var flagComplementary = options.complementary != undefined ? true : false
+        var additional = options.additional != undefined ? options.additional : "0"
+    .booking__container    
+        .booking__header
+            div
+                h1="№ "
+                h1=options.appartNumber
+                if options.isLux
+                    h3 люкс
+            span
+                b(id="booking__price")= options.price
+                b="₽ "
+                | в сутки
+        .booking__dateOfStay
+            +dateDropdown("прибытие", "выезд")
+        .booking__guests
+            +dropdown(true, "гости")
+        .booking__calculation
+            .booking__calcLine
+                p
+                    span(id="booking__priceCalc")=options.price + "₽ X "
+                    span(id="booking__daysOfStay")="0 суток"
+                span(id="booking__cost")="0₽"
+            .booking__calcLine
+                span="Сбор за услуги: "
+                    if flagDiscount
+                        span="скидка "
+                        span(id="booking__discount")=options.discount
+                        span="₽"
+                div
+                    +exclamation
+                    span(id="booking__additional")=additional + "₽"
+            .booking__calcLine
+                pre
+                    | Сбор за дополнительные
+                    | услуги
+                div
+                    +exclamation
+                    if flagComplementary
+                        span(id="booking__complementary")=options.complementary + "₽"
+                    else
+                        span(id="booking__complementary")="0₽"
+        .booking__total
+            h2="Итого"
+            div
+            h2(id="booking__total")="0₽"
+        .booking__button
+            +button({title: "забронировать"})

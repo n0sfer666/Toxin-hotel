@@ -1,5 +1,5 @@
 // reset
-body, h1, h2, h3, p, button, br, ul, li {
+body, h1, h2, h3, p, button, br, ul, li, pre {
     margin: 0;
     padding: 0;
 }
@@ -47,4 +47,4 @@ h3 {
     margin-bottom: 5px;
 }
 // components
-@import './_components/_cards/_login/login';
+@import './_components/_cards/_booking/booking';

@@ -1,0 +1,116 @@
+@import '../../_formElements/_dateDropdown/_dateDropdown';
+@import '../../_formElements/_dropdown/dropdown';
+@import '../../_formElements/_buttons/_button/button';
+
+.booking__container {
+    width: 380px;
+    height: 511px;
+
+    padding: 40px 30px 30px 30px;
+
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+.booking__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    & div {
+        & h1 {
+            display: inline-block;
+        }
+        & h1:first-child {
+            font-size: 14px;
+            line-height: 17px;
+            margin-right: 5px;
+        }
+        & h3 {
+            display: inline-block;
+            color: $purple;
+            margin-left: 5px;
+            margin-bottom: 3px;
+        }
+    }
+    & span {
+        display: inline-block;
+        margin-bottom: 4px;
+        color: $dShade50;
+        font-size: 12px;
+        line-height: 18px;
+        & b {
+            font-size: 14px;
+        }
+    }
+}
+.booking__dateOfStay {
+    margin-top: 20px;
+}
+.booking__guests {
+    margin-top: 20px;
+}
+.booking__calculation {
+    margin-top: 16px;
+}
+.booking__calcLine {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    &:last-child {
+        align-items: flex-start;
+        & pre {
+            margin-top: 1px;
+            font: normal normal 14px/20px Montserrat;
+        }
+    }
+    & div:not(.booking__exclamation) {
+        width: 100px;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.booking__exclamation {
+    width: 20px;
+    height: 20px;
+    border: 1px solid $dShade25; 
+    box-sizing: border-box;
+    border-radius: 50%;
+    
+    display: inline-block;
+    margin-top: 2px;
+    & h3 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        text-transform: none;
+        color: $dShade25;
+        line-height: 18px;
+    }
+}
+.booking__total {
+    display: flex;
+    justify-content: space-between;
+    color: $dShade100;
+
+
+    margin-top: 28px;
+    & * {
+        display: inline-block;
+        white-space: nowrap;
+    }
+    & div {
+        width: 90%;
+        height: 18px;
+        border-bottom: 1px dotted $dShade25;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+}
+.booking__button {
+    margin-top: 20px;
+}

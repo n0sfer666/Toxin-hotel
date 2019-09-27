@@ -1,9 +1,9 @@
 //- mixin base(title, css, js)
 include ./_components/_base/_pug/_base
 //- 
-include ./_components/_cards/_login/_login
+include ./_components/_cards/_booking/_booking
 doctype html
 html
     +base("Sample", "main.css", "main.js")
     body
-        +login
+        +booking({appartNumber: "888",price: "9990", isLux: true, discount: "2179", complementary: "300"})

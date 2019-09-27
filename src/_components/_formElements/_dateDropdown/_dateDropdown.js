@@ -5,7 +5,7 @@ $(document).ready(function() {
         var month = DateText.getMonth();
         var year =  DateText.getFullYear();
         day = (day < 10) ? ("0" + day) : day ;
-        month = (month < 10) ? ("0" + (month + 1)) : (month + 1) ;
+        month = (month < 9) ? ("0" + (month + 1)) : (month + 1) ;
         return (day + "." + month + "." + year);
     };
     let datepickerWrapLeft = $('#dateDropdownLeft').datepicker({
