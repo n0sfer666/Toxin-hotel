@@ -28,11 +28,9 @@ body {
     font: normal normal 14px/24px Montserrat;
     color: $dShade75;
     background: #E5E5E5;
-    padding: 20px;
 }
 h1 {
     font: normal bold 24px/30px Quicksand, Montserrat;
-    color: $dShade100;
 }
 h2 {
     font: normal bold 19px/24px Quicksand, Montserrat;
@@ -40,11 +38,9 @@ h2 {
 h3 {
     font: normal bold 12px/15px Montserrat;
     text-transform: uppercase;
-    color: $dShade100;
 }
 // label
 .label {
     margin-bottom: 5px;
 }
 // components
-@import './_components/_cards/_booking/booking';

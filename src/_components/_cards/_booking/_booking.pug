@@ -6,7 +6,7 @@ mixin exclamation
     .booking__exclamation
         h3 i
 
-//- appartNumber - номер аппартамента (выводится как № 123 в тегах h1)
+//- apartNumber - номер аппартамента (выводится как № 123 в тегах h1)
 //- price - стоимость за одни сутки пребывания в аппартаментах
 //- isLux - true - после № 123 Люкс, false - просто № 123
 //- discount - скидка
@@ -22,7 +22,7 @@ mixin booking(options)
         .booking__header
             div
                 h1="№ "
-                h1=options.appartNumber
+                h1=options.apartNumber
                 if options.isLux
                     h3 люкс
             span

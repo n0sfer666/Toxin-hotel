@@ -2,8 +2,11 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Webpack = require('webpack');
 
-
 module.exports = {
+    entry: {
+        index: "./src/index.js",
+        colorsTypes: "./src/colors-types.js"
+    },
     plugins: [
         new MiniCssExtractPlugin({
             filename: "[name].css",
@@ -12,6 +15,11 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: 'src/index.pug',
+            inject: false
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'colors-types.html',
+            template: 'src/colors-types.pug',
             inject: false
         }),
         new Webpack.ProvidePlugin({
@@ -49,7 +57,7 @@ module.exports = {
                 }
             },
             {
-                test: /\.(png|jpeg)$/,
+                test: /\.(png|jpeg|gif)$/,
                 loader: 'file-loader',
                 options: {
                     name: "img/[name].[ext]"

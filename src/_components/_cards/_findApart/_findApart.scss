@@ -1,7 +1,7 @@
 @import '../../_formElements/_dateDropdown/dateDropdown';
 @import '../../_formElements/_dropdown/dropdown.scss';
 @import '../../_formElements/_buttons/_button/button';
-.findAppart__container {
+.findApart__container {
     width: 382px;
     height: 374px;
     padding: 40px 30px 30px 30px;
@@ -12,10 +12,10 @@
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
 }
-.findAppart__dateDropdown {
+.findApart__dateDropdown {
     margin-top: 20px;
 }
-.findAppart__dropdown {
+.findApart__dropdown {
     margin-top: 20px;
     margin-bottom: 31px;
 }

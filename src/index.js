@@ -1,4 +1,3 @@
 // add css
-import './main.scss';
+import './index.scss';
 // 
-import './_components/_cards/_booking/_booking';

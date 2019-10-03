@@ -1,11 +1,11 @@
 include ../../_formElements/_dateDropdown/_dateDropdown
 include ../../_formElements/_dropdown/dropdown
 include ../../_formElements/_buttons/_button/_button
-mixin findAppart
-    .findAppart__container
+mixin findApart
+    .findApart__container
         h1 Найдём номера под ваши пожелания
-        .findAppart__dateDropdown    
+        .findApart__dateDropdown    
             +dateDropdown("Прибытие", "Выезд")
-        .findAppart__dropdown
+        .findApart__dropdown
             +dropdown(true, "гости")
         +button({title: "Подобрать номер", height: "44px"})

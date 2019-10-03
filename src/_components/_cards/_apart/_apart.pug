@@ -1,0 +1,42 @@
+//- options:
+//-     apartNumber
+include ../../_formElements/_buttons/_rate/_buttons_rate
+
+mixin apart(options)
+    -
+        var slides = ["","","",""]
+        for(var i=1; i<=slides.length; i++)
+            slides[i-1] = "img/" + options.apartNumber + "-" + i + ".png"
+    .apart__container
+        .apart__slider
+            each val in slides
+                div
+                    img(src=val)
+        .apart__textBlock    
+            .apart__header
+                div
+                    h1="№ "
+                    h1=options.apartNumber
+                    if options.isLux
+                        h3 люкс
+                span
+                    b(id="apart__price")= options.price
+                    b="₽ "
+                    | в сутки
+            .apart__hr
+            .apart__rating
+                div
+                    +rateButton("888", options.rating)
+                div
+                    if(options.reviews == 0 || options.reviews == undefined)
+                        b="0"
+                        span= " Отзывов"
+                    if(options.reviews == 1)
+                        b= options.reviews
+                        span= " Отзыв"
+                    if(options.reviews > 1 && options.reviews < 5)
+                        b= options.reviews
+                        span= " Отзыва"
+                    if(options.reviews >= 5)
+                        b= options.reviews
+                        span= " Отзывов"

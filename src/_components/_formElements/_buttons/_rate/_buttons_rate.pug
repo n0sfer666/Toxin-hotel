@@ -1,9 +1,15 @@
-mixin rateButton(id)
+mixin rateButton(id, rated)
     -
+        var rating = rated != undefined ? rated : 0
         var rateId = ['', '', '', '', '']
         for (var i = 1; i <= 5; i++)
             rateId[i-1] = "rateButton__" + i + "__" + id
     div(style="display: flex;")
-        each val in rateId
-            button(type = "button", class = "buttons__rate buttons__rate_normal", id = val)
-
+        each val, index in rateId
+            if(rated != undefined)
+                if (index + 1 <= rating)
+                    div(class = "buttons__rate buttons__rate_active", id = val)
+                else
+                    div(class = "buttons__rate buttons__rate_normal", id = val)
+            else
+                button(type = "button", class = "buttons__rate buttons__rate_normal buttons__rate_button", id = val)
