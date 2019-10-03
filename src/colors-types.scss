@@ -1,1 +1,181 @@
 @import './main.scss';
+
+body {
+    background-color: #fff;
+}
+
+.colors {
+    display: inline-block;
+    width: 270px;
+}
+.type {
+    display: inline-block;
+    vertical-align: top;
+}
+@media only screen and (min-width: 1315px) {
+    .logo {
+        margin: 30px 0 60px 30px;
+    }
+    .container {
+        width: 76.3195%;
+        margin: 0 13.2639% 0 10.4167%;
+    }
+    .colors {
+        width: 24.5678%;
+        margin-right: 38.7625%;
+    }
+    .type {
+        width: 36.6697%;
+        min-width: 368px;
+        max-width: 403px;
+    }
+}
+@media only screen and (min-width: 969px) and (max-width: 1314px) {
+    .logo {
+        margin: 30px 0 60px 30px;
+    }
+    .container {
+        width: 76.3195%;
+        margin: 0 13.2639% 0 10.4167%;
+    }
+    .colors {
+        width: 270px;
+        float: left;
+    }
+    .type {
+        width: 368px;
+        float: right;
+    }
+}
+@media only screen and (min-width: 750px) and (max-width: 968px) {
+    .logo {
+        margin: 30px 0 60px 30px;
+    }
+    .container {
+        max-width: 740px;
+        min-width: 680px;
+        width: 76.3195%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-right: 3.2639%;
+    }
+    .colors {
+        width: 270px;
+        float: left;
+    }
+    .type {
+        width: 368px;
+        float: right;
+    }
+}
+@media only screen and (min-width: 300px) and (max-width: 749px) {
+    .logo {
+        margin: 30px 0 24px 30px;
+    }
+    .colors, .type {
+        display: block;
+        margin: 0 auto;
+    }
+    .colors {
+        margin-bottom: 40px;
+    }
+    .type {
+        width: 368px;
+    }
+}
+// elements
+.colors__block {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.colors__cell {
+    flex: none;
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;
+    margin-right: 40px;
+}
+.colors__text {
+    min-width: 159px;
+    font: normal bold 19px/29px Quicksand;
+    text-transform: capitalize;
+}
+// modificators
+.colors__cell_DarkShade100 {
+    background-color: $dShade100;
+}
+.colors__cell_DarkShade075 {
+    background-color: $dShade75;
+}
+.colors__cell_DarkShade050 {
+    background-color: $dShade50;
+}
+.colors__cell_DarkShade025 {
+    background-color: $dShade25;
+}
+.colors__cell_DarkShade005 {
+    background-color: $dShade5;
+}
+.colors__cell_Purple {
+    background-color: $purple;
+}
+.colors__cell_Green {
+    background-color: $green;
+}
+.colors__text_regular {
+    font-weight: normal;
+    text-transform: uppercase;
+}
+// elements
+.type__block {
+    display: flex;
+    margin-bottom: 50px;
+}
+.type__title {
+    flex: none;
+    margin-right: 30px;
+    width: 37px;
+    text-align: right;
+    text-transform: capitalize;
+    font: normal normal Montserrat;
+    color: rgba(31, 32, 65, 0.25);
+}
+.type__line {        
+    min-width: 301px;
+    text-align: left;
+}
+// modificators
+.type__title_h1 {
+    font-size: 24px;
+    line-height: 29px;
+}
+.type__title_h2 {
+    font-size: 19px;
+    line-height: 23px;
+}
+.type__title_h3 {
+    font-size: 12px;
+    line-height: 15px;
+}
+.type__title_body {
+    font-size: 14px;
+    line-height: 24px;
+}
+.h1 {
+    font: normal bold 24px/30px Quicksand;
+    color: #1F2041;
+}
+.h2 {
+    font: normal bold 19px/24px Quicksand;
+    color: #1F2041;
+}
+.h3 {
+    font: normal bold 12px/15px Montserrat;
+    color: #1F2041;
+    text-transform: uppercase;
+}
+.body {
+    font: normal normal 14px/24px Montserrat;
+    color: rgba(31, 32, 65, 0.75);
+}
