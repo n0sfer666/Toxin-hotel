@@ -1,13 +1,20 @@
 //- mixin base(title, css, js)
 include ./_components/_base/_pug/_base
 //- 
+//- mixin logo
+include ./_components/_base/_pug/_logo
 doctype html
 html
     +base("index", "index.css", "index.js")
     body
         .index__container
+            .logo
+                +logo(false)  
             .index__uiKit
                 .index__item
                     a(href="colors-types.html")
                         h3="Colors & Types"
+                .index__item
+                    a(href="elements.html")
+                        h3="Form Elements"
             .index__websites

@@ -30,12 +30,12 @@
  /* Wrapper for all connect elements.
   */
  .noUi-connects {
-   overflow: hidden;
-   z-index: 0;
+  //  overflow: hidden;
+  //  z-index: 0;
  }
  .noUi-connect,
  .noUi-origin {
-   will-change: transform;
+  //  will-change: transform;
    position: absolute;
    z-index: 1;
    top: 0;
@@ -47,8 +47,10 @@
    transform-style: flat;
  }
  .noUi-connect {
-   height: 100%;
+   height: calc(100% + 2px);
+   top: -1px;
    width: 100%;
+   z-index: 2;
  }
  .noUi-origin {
    height: 10%;

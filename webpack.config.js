@@ -5,7 +5,8 @@ const Webpack = require('webpack');
 module.exports = {
     entry: {
         index: "./src/index.js",
-        colorsTypes: "./src/colors-types.js"
+        colorsTypes: "./src/colors-types.js",
+        elements: "./src/elements.js"
     },
     plugins: [
         new MiniCssExtractPlugin({
@@ -20,6 +21,11 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'colors-types.html',
             template: 'src/colors-types.pug',
+            inject: false
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'elements.html',
+            template: 'src/elements.pug',
             inject: false
         }),
         new Webpack.ProvidePlugin({

@@ -1,0 +1,26 @@
+@import './main.scss';
+@import './_components/_formElements/_textField/textField.scss';
+@import './_components/_formElements/_dropdown/dropdown.scss';
+@import './_components/_formElements/_dateDropdown/dateDropdown';
+@import './_components/_formElements/_expandableCheckboxList/expandableCheckboxList';
+@import './_components/_formElements/_conditions/conditions.scss';
+@import './_components/_formElements/_buttons/_checkbox/buttons__checkbox.scss';
+@import './_components/_formElements/_buttons/_radio/buttons__radio';
+@import './_components/_formElements/_buttons/_toggle/buttons__toggle';
+@import './_components/_formElements/_buttons/_like/buttons__like';
+@import './_components/_formElements/_buttons/_rate/buttons_rate';
+@import './_components/_formElements/_buttons/_checkbox_rich/checkbox_rich';
+@import './_components/_formElements/_range_slider/range_slider';
+@import './_components/_formElements/_buttons/_button/button';
+@import './_components/_formElements/_pagination/pagination';
+@import './_components/_formElements/_bulletList/bulletList';
+@import './_components/_formElements/_review/review';
+
+.logo {
+    margin: 30px 0 60px 30px;
+}
+.container {
+    margin: 0 141px;
+    display: flex;
+    justify-content: space-between;
+}

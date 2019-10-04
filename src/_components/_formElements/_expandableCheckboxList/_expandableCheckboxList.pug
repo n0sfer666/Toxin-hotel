@@ -1,11 +1,9 @@
 //- mixin checkboxButton (id, label, isChecked)
 include ../_buttons/_checkbox/buttons__checkbox
-mixin expandableCheckboxList(id, title)
-    -
-        var linkId = id + "__link", containerId = id + "__container"
+mixin expandableCheckboxList(title)
     a(href="#", class = "expandableCheckboxList__link expandableCheckboxList__link_deactive", type = "button")
-        h3(id = linkId) #{title}
-    div(id = containerId, class = "expandableCheckboxList__container")
+        h3(id = "expList__link") #{title}
+    div(id = "expList__container", class = "expandableCheckboxList__container")
         +checkboxButton("brekfast", "Завтрак", false)
         +checkboxButton("table", "Писменный стол", true)
         +checkboxButton("feedingChair", "Стул для кормления", true)

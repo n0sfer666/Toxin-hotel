@@ -1,6 +1,5 @@
 $(document).ready(function() {
     var flag = false;
-    specifiedElement = document.getElementById("#expList__container");
     document.body.addEventListener('click', function() {
         if(event.target.id == "expList__link"){
             flag = flag ? false : true;

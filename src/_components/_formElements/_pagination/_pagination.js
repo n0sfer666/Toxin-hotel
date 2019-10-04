@@ -7,5 +7,9 @@ $(document).ready(function() {
         dataSource: array,
         showPrevious: false,
         nextText: "",
+        pageRange: 1,
+        pageSize: 12,
+        showNavigator: true,
+        formatNavigator: '<%= currentPage %>, <%= totalPage %> pages, <%= totalNumber %> entries'
     })
 })

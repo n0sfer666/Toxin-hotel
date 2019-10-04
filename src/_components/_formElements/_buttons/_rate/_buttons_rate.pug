@@ -8,8 +8,8 @@ mixin rateButton(id, rated)
         each val, index in rateId
             if(rated != undefined)
                 if (index + 1 <= rating)
-                    div(class = "buttons__rate buttons__rate_active", id = val)
+                    button(type = "button", class = "buttons__rate buttons__rate_active", id = val)
                 else
-                    div(class = "buttons__rate buttons__rate_normal", id = val)
+                    button(type = "button", class = "buttons__rate buttons__rate_normal", id = val)
             else
-                button(type = "button", class = "buttons__rate buttons__rate_normal buttons__rate_button", id = val)
+                button(type = "button", class = "buttons__rate buttons__rate_normal", id = val)

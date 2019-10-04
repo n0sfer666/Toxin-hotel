@@ -1,11 +1,11 @@
 //- size: medium or whithout {size: } for class button_toPay
-//- theme:  for {size: little}: clickPurple, clickGray
+//- theme:  for {size: small}: clickPurple, clickGray
 //-         for {size: medium}: gradient, gradientOpacity, border, borderOpacity,
 //- title: whatever
 //- height: whatever
 mixin button(option)
     -
-        var styleHeight = height == undefined ? "height: 44px;" : "height: " + option.height + ";"
+        //- var styleHeight = height == undefined ? "height: 44px;" : "height: " + option.height + ";"
         var className = option.size == undefined ? "button_toPay": "button_" + option.size + " button_" + option.theme
     button(type="button", class=className, style=styleHeight)
         h3 #{option.title}

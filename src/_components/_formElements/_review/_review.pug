@@ -1,14 +1,20 @@
 include ../_buttons/_like/_buttons__like
-mixin review(pict, name, daysAgo, review)
+mixin review(option)
     -
-        var classPict = "review__pict review__pict_" + pict
+        var classPict = "review__pict review__pict_" + option.pict
+        if(option.daysAgo == 1)
+            var dAgo = "1 день назад"
+        if(option.daysAgo > 1 && option.daysAgo < 5)
+            var dAgo = option.daysAgo + " дня назад"
+        if(option.daysAgo >= 5)
+            var dAgo = option.daysAgo + " дней назад"
     .review__container
         .review__leftColumn
             div(class = classPict)
-            +likeButton("review_1", "11")
+            +likeButton(option.likeId, option.likeCount, option.isLiked)
         .review__rightColumn
-            span(class="review__name") #{name}
+            span(class="review__name") #{option.name}
             br
-            span(class="review__daysAgo") #{daysAgo}
+            span(class="review__daysAgo")=dAgo
             br
-            p(class="review__text") #{review}
+            p(class="review__text") #{option.review}

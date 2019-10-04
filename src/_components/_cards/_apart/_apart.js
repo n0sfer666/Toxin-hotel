@@ -11,6 +11,7 @@ $(document).ready(function(){
         dots: true,
         slidesToShow: 1,
         adaptiveHeight: true
-    }
-    );
+    });
+    var str = $("#apart__price").text();
+    $("#apart__price").text(str.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 '));
   });
