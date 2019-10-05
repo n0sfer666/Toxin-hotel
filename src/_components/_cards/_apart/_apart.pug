@@ -1,5 +1,9 @@
 //- options:
 //-     apartNumber
+//-     isLux
+//-     price
+//-     rating
+//-     reviews
 include ../../_formElements/_buttons/_rate/_buttons_rate
 
 mixin apart(options)
@@ -20,7 +24,7 @@ mixin apart(options)
                     if options.isLux
                         h3 люкс
                 span
-                    b(id="apart__price")= options.price
+                    b(id="apart__price_" + options.apartNumber)= options.price
                     b="₽ "
                     | в сутки
             .apart__hr

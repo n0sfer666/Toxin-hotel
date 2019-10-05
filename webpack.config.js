@@ -6,7 +6,8 @@ module.exports = {
     entry: {
         index: "./src/index.js",
         colorsTypes: "./src/colors-types.js",
-        elements: "./src/elements.js"
+        elements: "./src/elements.js",
+        cards: "./src/cards.js"
     },
     plugins: [
         new MiniCssExtractPlugin({
@@ -26,6 +27,11 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'elements.html',
             template: 'src/elements.pug',
+            inject: false
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'cards.html',
+            template: 'src/cards.pug',
             inject: false
         }),
         new Webpack.ProvidePlugin({
