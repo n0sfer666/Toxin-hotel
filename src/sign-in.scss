@@ -1,8 +1,12 @@
-//- mixin base(title, css, js)
-include ./_components/_base/_pug/_base
-//- 
-doctype html
-html
-    +base("Sample", "main.css", "main.js")
-    body
-        
+@import './main.scss';
+@import './_components/_header/header';
+@import './_components/_footer/footer';
+@import './_components/_cards/_login/login';
+.signin__container {
+    padding: 163px ;
+    display: flex;
+    justify-content: center;
+    background: url(./img/registration.png) no-repeat;
+    background-size: 100%;
+    background-position-y: 80%;
+}

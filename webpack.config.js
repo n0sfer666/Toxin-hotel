@@ -10,7 +10,8 @@ module.exports = {
         cards: "./src/cards.js",
         headersFooters: "./src/headers-footers.js",
         landingPage: "./src/landing-page.js",
-        registration: "./src/registration.js"
+        registration: "./src/registration.js",
+        signin: "./src/sign-in.js"
     },
     plugins: [
         new MiniCssExtractPlugin({
@@ -50,6 +51,11 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'registration.html',
             template: 'src/registration.pug',
+            inject: false
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'sign-in.html',
+            template: 'src/sign-in.pug',
             inject: false
         }),
         new Webpack.ProvidePlugin({
