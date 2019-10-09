@@ -1,24 +1,28 @@
 include ../_formElements/_buttons/_button/_button
 include ../_base/_pug/_logo
 include ./_menuLink
-
-mixin header(Auth)
+//- isAuth: true or false
+//- login: string (for isAuth: true)
+//- lButton, rButton: {
+//-             width: string
+//-             title: string
+//- }
+//- menuLinks: ["home", ["link", "About Us"], ["submenu", "Services"], etc]
+mixin header(options)
     header
         .header__container
             .header__logo
                 +logo(true)
             .header__auth
-                if Auth
-                    +button({size: "medium", theme: "border", title: "login", height: "34px"})
-                    +button({size: "medium", theme: "gradient", title: "register", height: "34px"})
-                else
+                if options.isAuth
                     .header__vRow
-                    a(href="#", style="color: rgba(31, 32, 65, 0.5);") Cosmin Negoita
+                    a(href="#", style="color: rgba(31, 32, 65, 0.5);") #{options.login}
+                else
+                    div(style="width: " + options.lButton.width+ "px; margin-right: 20px;")
+                        +button({size: "medium", theme: "border", title: options.lButton.title, height: "34px"})
+                    div(style="width: " + options.rButton.width + "px;")
+                        +button({size: "medium", theme: "gradient", title: options.rButton.title, height: "34px"})
 
             .header__menu
-                +menuLink("home")
-                +menuLink("link", "About Us")
-                +menuLink("submenu", "Services")
-                +menuLink("link", "Careers")
-                +menuLink("link", "News")
-                +menuLink("link", "Documentation")
+                each val in options.menuLinks
+                    +menuLink(val)

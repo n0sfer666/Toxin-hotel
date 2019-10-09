@@ -32,23 +32,27 @@
 @import '../_formElements/_textField/_subscribtionTextField/subscribtionTextField';
 .footer__container {
     display: flex;
-    height: 372px;
+    // justify-content: space-between;
+    align-items: flex-start;
+    // height: 372px;
     width: 100%;
-    background: white;
+    padding: 100px 9.7223% 100px 9.7223%;
+    box-sizing: border-box;
+    background-color: #fff;
     box-shadow: 0px 1px 0px rgba(31, 32, 65, 0.1);
 
 }
 .footer__description, .footer__navigation, .footer__aboutUs, .footer__support, .footer__subscribe  {
     display: inline-block;
-    margin-top: 100px;
     & h3 {
         margin-bottom: 1px;
         margin-top: 4px;
+        // white-space: nowrap;
     }
 }
 .footer__description {
-    width: 260px;
-    margin: 100px 40px 116px 140px;
+    width: 22.4138%;
+    margin-right: 3.4483%;
     & p {
         display: inline-block;
         margin-top: 10px;
@@ -56,36 +60,47 @@
         color: $dShade75;
     }
 }
+.footer__menu {
+    display: flex;
+    align-items: flex-start;
+    width: 74.1380%;
+}
 .footer__link {
     display: block;
     font: normal normal 14px/17px Montserrat;
     color: $dShade50;
     margin-top: 21px;
+    // white-space: nowrap;
 }
 .footer__navigation {
-    margin-right: 119px;
+    margin-right: 6.6279%;
+    width: 16.6279%;
 }
 .footer__aboutUs {
-    margin-right: 118px;
+    margin-right: 10.6977%;
+    width: 12.5581%;
 }
 .footer__support {
-    margin-right: 87px;
+    margin-right: 5.9302%;
+    width: 17.3256%;
 }
 .footer__subscribe {
+    width: 30.2326%;
     & p {
         display: inline-block;
-        width: 196px;
+        // width: 196px;
         font: normal normal 14px/24px Montserrat;
         color: $dShade75;
         margin-top: 16px;
         margin-bottom: 24px;
+        white-space: normal;
     }
 }
 .footer__copyright {
     background: white;
     box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
     margin-top: 1px;
-    padding: 0 140px;
+    padding: 0 9.7223%;
     display: flex;
     align-items: center;
     justify-content: space-between;

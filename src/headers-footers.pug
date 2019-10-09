@@ -1,0 +1,23 @@
+//- mixin base(title, css, js)
+include ./_components/_base/_pug/_base
+//- 
+//- mixin logo
+include ./_components/_base/_pug/_logo
+//- 
+//- 
+include ./_components/_header/_header
+include ./_components/_footer/_footer
+doctype html
+html
+    +base("Headers & Footers", "headersFooters.css", "headersFooters.js")
+    body
+        .logo
+            +logo(false)
+        .headers-footers__block
+            +header({isAuth: false, lButton: {width: "79", title: "login"}, rButton: {width: "101", title: "register"}, menuLinks: [{mod: "home", text: "Home"}, {mod: "link", text: "About Us"}, {mod: "submenu", text: "Services"}, {mod: "link", text: "Careers"}, {mod: "link", text: "News"}, {mod: "link", text: "Documentation"}]})
+        .headers-footers__block
+            +header({isAuth: true, login: "Cosmin Negoita", menuLinks: [{mod: "home", text: "Home"}, {mod: "link", text: "About Us"}, {mod: "submenu", text: "Services"}, {mod: "link", text: "Careers"}, {mod: "link", text: "News"}, {mod: "link", text: "Documentation"}]})
+        .headers-footers__block
+            +footer({isShort: false, description: "Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.", navigation: {title: "Navigation", links: ["About Us","News","Support","Products"]}, aboutUs: {title: "About Us", links: ["Who we are","Our team","Careers","Investors"]}, support: {title: "Support", links: ["Documentations","Community","Get in touch"]}, subscribe: {title: "Subscribe to our newsletter", description: "Receive our latest news and promotions in your inbox!", placeholder: "Your email address"}, copyright: "Copyright © 2018 Toxin UI Kit. All rights reserved."})
+        .headers-footers__block
+            +footer({isShort: true, description: "Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis."})

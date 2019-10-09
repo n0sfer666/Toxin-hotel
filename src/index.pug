@@ -7,9 +7,9 @@ doctype html
 html
     +base("index", "index.css", "index.js")
     body
+        .logo
+            +logo(false)  
         .index__container
-            .logo
-                +logo(false)  
             .index__uiKit
                 .index__item
                     a(href="colors-types.html")
@@ -20,4 +20,13 @@ html
                 .index__item
                     a(href="cards.html")
                         h3="Cards"
+                .index__item
+                    a(href="headers-footers.html")
+                        h3="Headers & Footers"
             .index__websites
+                .index__item
+                    a(href="landing-page.html")
+                        h3="Landing Page"
+                index__item
+                    a(href="registration.html")
+                        h3="registration"

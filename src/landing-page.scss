@@ -1,0 +1,20 @@
+@import './main.scss';
+@import './_components/_header/header';
+@import './_components/_cards/_findApart/findApart';
+@import './_components/_footer/footer';
+.landing__container {
+    padding: 70px 9.3056% 18px 9.7223%;
+    background: url(img/landing.png) no-repeat;
+    background-position-y: 100%; 
+    background-size: 100%;
+}
+// .landing__findApart {
+//     margin-left: 9.7223%;
+//     margin-top: 70px;
+// }
+.landing__description {
+    margin-top: 320px;
+    & p {
+        text-align: right;
+    }
+}

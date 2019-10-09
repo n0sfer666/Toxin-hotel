@@ -30,7 +30,7 @@ mixin booking(options)
                 b="₽ "
                 | в сутки
         .booking__dateOfStay
-            +dateDropdown("прибытие", "выезд")
+            +dateDropdown("прибытие", "выезд", "booking")
         .booking__guests
             +dropdown(true, "гости")
         .booking__calculation

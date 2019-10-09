@@ -5,7 +5,7 @@ mixin findApart
     .findApart__container
         h1 Найдём номера под ваши пожелания
         .findApart__dateDropdown    
-            +dateDropdown("Прибытие", "Выезд")
+            +dateDropdown("Прибытие", "Выезд", "findApart")
         .findApart__dropdown
             +dropdown(true, "гости")
-        +button({title: "Подобрать номер", height: "44px"})
+        +button({title: "Подобрать номер"})

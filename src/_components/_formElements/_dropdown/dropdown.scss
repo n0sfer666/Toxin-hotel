@@ -45,6 +45,7 @@
 .dropdown__container {
 	display: none;
 	position: absolute;
+	width: inherit;
 	height: 159px;
 	background: #FFFFFF;
 	border: 1px solid rgba(31, 32, 65, 0.5);
@@ -57,7 +58,7 @@
 	padding: 0 7px 0 15px;
 }
 .dropdown__container_guests {
-	width: 320px;
+	width: 318px;
 }
 .dropdown__container_rooms {
 	width: 266px;

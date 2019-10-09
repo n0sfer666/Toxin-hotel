@@ -1,0 +1,12 @@
+@import './main.scss';
+body {
+    background-color: #E5E5E5;
+}
+.logo {
+    margin: 30px 0 60px 30px;
+}
+.headers-footers__block {
+    margin-bottom: 40px;
+}
+@import './_components/_header/header';
+@import './_components/_footer/footer';

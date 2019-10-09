@@ -5,7 +5,7 @@
 //- height: whatever
 mixin button(option)
     -
-        //- var styleHeight = height == undefined ? "height: 44px;" : "height: " + option.height + ";"
+        var styleHeight = option.height == undefined ? "height: 44px;" : "height: " + option.height + ";"
         var className = option.size == undefined ? "button_toPay": "button_" + option.size + " button_" + option.theme
     button(type="button", class=className, style=styleHeight)
         h3 #{option.title}

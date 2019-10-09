@@ -7,7 +7,10 @@ module.exports = {
         index: "./src/index.js",
         colorsTypes: "./src/colors-types.js",
         elements: "./src/elements.js",
-        cards: "./src/cards.js"
+        cards: "./src/cards.js",
+        headersFooters: "./src/headers-footers.js",
+        landingPage: "./src/landing-page.js",
+        registration: "./src/registration.js"
     },
     plugins: [
         new MiniCssExtractPlugin({
@@ -32,6 +35,21 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'cards.html',
             template: 'src/cards.pug',
+            inject: false
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'headers-footers.html',
+            template: 'src/headers-footers.pug',
+            inject: false
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'landing-page.html',
+            template: 'src/landing-page.pug',
+            inject: false
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'registration.html',
+            template: 'src/registration.pug',
             inject: false
         }),
         new Webpack.ProvidePlugin({

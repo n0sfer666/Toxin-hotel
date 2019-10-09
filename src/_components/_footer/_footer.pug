@@ -1,15 +1,30 @@
 include ../_base/_pug/_logo
 include _social
 include ../_formElements/_textField/_subscribtionTextField/_subscribtionTextField
-mixin footer(isShort)
-    if isShort
+//-  isShort: true or false
+//-  description: "string"
+//-  navigation, aboutUs support: {
+//-                 title: "string"
+//-                 links: ["1", "2", "3", "4"] 
+//- }
+//-  subscribe: {
+//-                 title: "string"
+//-                 description: "string"
+//-                 placeholder: "string"
+//- }
+//- copyright: "string"
+mixin vMenu(options)
+    h3=options.title
+    each val in options.links
+        a(href="#", class="footer__link")=val
+mixin footer(options)
+    if options.isShort
         footer
             .footer__container_short 
                 .footer__logo_short
                     +logo(true)
                 .footer__description_short
-                    p
-                    | Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
+                    p #{options.description}
                 .footer__social
                     +socialTwitter
                     +socialFacebook
@@ -20,30 +35,20 @@ mixin footer(isShort)
                 .footer__description
                     .footer__logo
                         +logo(true)
-                    p Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
-                .footer__navigation
-                    h3 navigation
-                    a(href="#", class="footer__link") About Us
-                    a(href="#", class="footer__link") News
-                    a(href="#", class="footer__link") Support
-                    a(href="#", class="footer__link") Products
-                .footer__aboutUs
-                    h3 about us
-                    a(href="#", class="footer__link") Who we are
-                    a(href="#", class="footer__link") Our team
-                    a(href="#", class="footer__link") Careers
-                    a(href="#", class="footer__link") Inverstors
-                .footer__support
-                    h3 support
-                    a(href="#", class="footer__link") Documentation
-                    a(href="#", class="footer__link") Community
-                    a(href="#", class="footer__link") Get in Touch
-                .footer__subscribe
-                    h3 subscribe to our newsletter
-                    p Receive our latest news and promotions in your inbox!
-                    +SubscribtionTextField("_footer__subscribe", "_footer__subscribeButton", "Your email address")
+                    p #{options.description}
+                .footer__menu
+                    .footer__navigation
+                        +vMenu({title: options.navigation.title, links: options.navigation.links})
+                    .footer__aboutUs
+                        +vMenu({title: options.aboutUs.title, links: options.aboutUs.links})
+                    .footer__support
+                        +vMenu({title: options.support.title, links: options.support.links})
+                    .footer__subscribe
+                        h3= options.subscribe.title
+                        p= options.subscribe.description
+                        +SubscribtionTextField("_footer__subscribe", "_footer__subscribeButton", options.subscribe.placeholder)
             .footer__copyright
-                p Copyright © 2018 Toxin UI Kit. All rights reserved.
+                p= options.copyright
                 .footer__social
                     +socialTwitter
                     +socialFacebook

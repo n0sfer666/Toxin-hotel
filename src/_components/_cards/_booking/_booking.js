@@ -13,7 +13,8 @@ $(document).ready(function() {
         str = $(separator[0][i]).text();
         $(separator[0][i]).text(str.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 '));
     }
-    var options = {
+    function settings (isLeft) {
+    return {
         language: "ru",
         minDate: new Date(),
         range: true,
@@ -27,11 +28,17 @@ $(document).ready(function() {
             days: 'MM yyyy'
         },
         onSelect: function(fd, startDateText, endDateText) {
-            startDateText = datepickerWrapLeft.selectedDates[0];
-            endDateText = datepickerWrapLeft.selectedDates[1];
+            if(isLeft) {
+                startDateText = datepickerBookingLeft.selectedDates[0];
+                endDateText = datepickerBookingLeft.selectedDates[1];
+            }
+            else {
+                startDateText = datepickerBookingRight.selectedDates[0];
+                endDateText = datepickerBookingRight.selectedDates[1];
+            }
             daysOfStay = endDateText != undefined ? (Number(endDateText) - Number(startDateText)) / 1000 / 60 / 60 / 24 : 0;
-            $("#dateDropdownLeft").val(getValue(startDateText));
-            $("#dateDropdownRight").val(getValue(endDateText));
+            $("#dateDropdownLeft_booking").val(getValue(startDateText));
+            $("#dateDropdownRight_booking").val(getValue(endDateText));
         },
         onShow: function (dp, animationCompleted) {
             if (!animationCompleted) {
@@ -53,15 +60,16 @@ $(document).ready(function() {
                     dp.hide();
                   });
                   dp.$datepicker.find('button').click(function(event) {
-                    $("#dateDropdownLeft").val("");
-                    $("#dateDropdownRight").val("");
-                    datepickerWrapLeft.clear();
-                    datepickerWrapRight.clear();
+                    $("#dateDropdownLeft_booking").val("");
+                    $("#dateDropdownRight_booking").val("");
+                    datepickerBookingLeft.clear();
+                    datepickerBookingRight.clear();
                  });
                }
             }
          }
     }
+    }  
     function getValue (DateText) {
         var day = DateText.getDate();
         var month = DateText.getMonth();
@@ -70,6 +78,6 @@ $(document).ready(function() {
         month = (month < 9) ? ("0" + (month + 1)) : (month + 1);
         return (day + "." + month + "." + year);
     };
-    let datepickerWrapLeft = $('#dateDropdownLeft').datepicker(options).data('datepicker');
-    let datepickerWrapRight = $('#dateDropdownRight').datepicker(options).data('datepicker');
+    let datepickerBookingLeft = $('#dateDropdownLeft_booking').datepicker(settings(true)).data('datepicker');
+    let datepickerBookingRight = $('#dateDropdownRight_booking').datepicker(settings(false)).data('datepicker');
 });
