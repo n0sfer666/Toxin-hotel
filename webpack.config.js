@@ -4,15 +4,15 @@ const Webpack = require('webpack');
 
 module.exports = {
     entry: {
-        index: "./src/index.js",
-        colorsTypes: "./src/colors-types.js",
-        elements: "./src/elements.js",
-        cards: "./src/cards.js",
-        headersFooters: "./src/headers-footers.js",
-        landingPage: "./src/landing-page.js",
-        registration: "./src/registration.js",
-        signin: "./src/sign-in.js",
-        roomDetail: "./src/room-detail.js"
+        index: "./src/pages/index/index.js",
+        colorsTypes: "./src/pages/colors-types/colors-types.js",
+        elements: "./src/pages/elements/elements.js",
+        cards: "./src/pages/cards/cards.js",
+        headersFooters: "./src/pages/headers-footers/headers-footers.js",
+        landingPage: "./src/pages/landing-page/landing-page.js",
+        registration: "./src/pages/registration/registration.js",
+        signin: "./src/pages/sign-in/sign-in.js",
+        roomDetail: "./src/pages/room-detail/room-detail.js"
     },
     plugins: [
         new MiniCssExtractPlugin({
@@ -21,47 +21,47 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            template: 'src/index.pug',
+            template: 'src/pages/index/index.pug',
             inject: false
         }),
         new HtmlWebpackPlugin({
             filename: 'colors-types.html',
-            template: 'src/colors-types.pug',
+            template: 'src/pages/colors-types/colors-types.pug',
             inject: false
         }),
         new HtmlWebpackPlugin({
             filename: 'elements.html',
-            template: 'src/elements.pug',
+            template: 'src/pages/elements/elements.pug',
             inject: false
         }),
         new HtmlWebpackPlugin({
             filename: 'cards.html',
-            template: 'src/cards.pug',
+            template: 'src/pages/cards/cards.pug',
             inject: false
         }),
         new HtmlWebpackPlugin({
             filename: 'headers-footers.html',
-            template: 'src/headers-footers.pug',
+            template: 'src/pages/headers-footers/headers-footers.pug',
             inject: false
         }),
         new HtmlWebpackPlugin({
             filename: 'landing-page.html',
-            template: 'src/landing-page.pug',
+            template: 'src/pages/landing-page/landing-page.pug',
             inject: false
         }),
         new HtmlWebpackPlugin({
             filename: 'registration.html',
-            template: 'src/registration.pug',
+            template: 'src/pages/registration/registration.pug',
             inject: false
         }),
         new HtmlWebpackPlugin({
             filename: 'sign-in.html',
-            template: 'src/sign-in.pug',
+            template: 'src/pages/sign-in/sign-in.pug',
             inject: false
         }),
         new HtmlWebpackPlugin({
             filename: 'room-detail.html',
-            template: 'src/room-detail.pug',
+            template: 'src/pages/room-detail/room-detail.pug',
             inject: false
         }),
         new Webpack.ProvidePlugin({
