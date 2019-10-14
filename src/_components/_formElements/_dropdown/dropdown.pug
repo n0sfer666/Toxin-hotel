@@ -10,7 +10,7 @@ mixin dropdown (isGuests, label)
 
     h3(class = 'label') #{label}
     div(id = mainID, class = "dropdown")
-        a(href="#", id = linkID, class = "dropdown__link") #{text}
+        a(href="#" + mainID, id = linkID, class = "dropdown__link") #{text}
     if isGuests
         div(id = containerID, class = "dropdown__container", style = style)
             +dropdown__line("взрослые", "adults", "0")

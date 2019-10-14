@@ -1,12 +1,14 @@
 //- pict:
-//-  smile, building
-mixin condition(pict, title, description)
+//-  smile, building, fire
+mixin condition(options)
     -
-        var pictClass = "condition__pict condition__pict_" + pict
+        var pictClass = "condition__pict condition__pict_" + options.pict
+        var needHR = options.isHR == undefined ? true : options.isHR
     .condition__container
         div(class=pictClass)
         .condition__text
-            b #{title}
+            b #{options.title}
             br
-            p(class="condition__text_normal") #{description}
-    .condition__hr
+            p(class="condition__text_normal") #{options.description}
+    if(needHR)
+        .condition__hr

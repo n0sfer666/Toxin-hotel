@@ -1,3 +1,4 @@
+@import '../_buttons/_like/buttons__like';
 .review__container {
     display: flex;
     width: 100%;
@@ -10,10 +11,14 @@
     box-sizing: border-box;
     margin-bottom: 12px;
     border-radius: 32px;
+    background-size: 100%;
 }
 .review__pict_Sarafanov {
     background: url("./_components/_formElements/_review/review_image1.png");
 }
+.review__pict_Steklishkova {
+    background: url("./_components/_formElements/_review/review_image2.png");
+};
 .review__leftColumn {
     display: flex;
     flex-direction: column;

@@ -11,7 +11,8 @@ module.exports = {
         headersFooters: "./src/headers-footers.js",
         landingPage: "./src/landing-page.js",
         registration: "./src/registration.js",
-        signin: "./src/sign-in.js"
+        signin: "./src/sign-in.js",
+        roomDetail: "./src/room-detail.js"
     },
     plugins: [
         new MiniCssExtractPlugin({
@@ -56,6 +57,11 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'sign-in.html',
             template: 'src/sign-in.pug',
+            inject: false
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'room-detail.html',
+            template: 'src/room-detail.pug',
             inject: false
         }),
         new Webpack.ProvidePlugin({
