@@ -6,7 +6,6 @@ import '../../_components/_formElements/_expandableCheckboxList/_expandableCheck
 import '../../_components/_cards/_apart/_apart';
 import 'paginationjs';
 $(document).ready(function() {
-    var dataContainer = document.getElementById('searchRoom__data');
     var array = [];
     for(var i=0; i<200; i++)
         array.push(i);
@@ -18,18 +17,22 @@ $(document).ready(function() {
         pageSize: 12,
         showNavigator: true,
         formatNavigator: '<br><br><br><%= currentPage %>, <%= totalPage %> pages, <%= totalNumber %> entries',
-        callback: function(data, pagination) {
-            // template method of yourself
-            var html = simpleTemplating(data);
-            $('#searchRoom__data').html(html);
-        }
+        // callback: function(data, pagination) {
+        //     // template method of yourself
+        //     var html = simpleTemplating(data);
+        //     $('#searchRoom__data').html(html);
+        // }
     });
-    function simpleTemplating(data) {
-        var html = '<ul>';
-        $.each(data, function(index, item){
-            html += '<li>'+ item +'</li>';
-        });
-        html += '</ul>';
-        return html;
-    }
+    // function simpleTemplating(data) {
+    //     var html = '<ul>';
+    //     $.each(data, function(index, item){
+    //         html += '<li>'+ item +'</li>';
+    //     });
+    //     html += '</ul>';
+    //     return html;
+    // }
+
+    var testA = $('div[class="apart__container"');
+    $("#test").html(testA[0]);
+
 })
