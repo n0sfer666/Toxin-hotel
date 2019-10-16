@@ -1,0 +1,52 @@
+//- mixin base(title, css, js)
+include ../../_components/_base/_pug/_base
+//- 
+//-
+include ../../_components/_header/_header
+include ../../_components/_formElements/_dateDropdown/_filterDateDropdown/_filterDateDropdown
+include ../../_components/_formElements/_dropdown/dropdown
+include ../../_components/_formElements/_range_slider/_range_slider
+include ../../_components/_formElements/_buttons/_checkbox/buttons__checkbox
+include ../../_components/_formElements/_buttons/_checkbox_rich/_checkbox_rich
+include ../../_components/_formElements/_expandableCheckboxList/_expandableCheckboxList
+include ../../_components/_cards/_apart/_apart
+include ../../_components/_footer/_footer
+- 
+    var optApart = [{apartNumber: 888, isLux: true, price: 9990, rating: 5,reviews: 145}, {apartNumber: 840, isLux: false, price: 9900, rating: 4,reviews: 65},{apartNumber: 980, isLux: true, price: 8500, rating: 4,reviews: 35},{apartNumber: 856, isLux: false, price: 7300, rating: 5,reviews: 19},{apartNumber: 740, isLux: false, price: 6000, rating: 4,reviews: 44},{apartNumber: 982, isLux: false, price: 5800, rating: 3,reviews: 56},{apartNumber: 678, isLux: false, price: 5500, rating: 5,reviews: 45},{apartNumber: 450, isLux: false, price: 5300, rating: 4,reviews: 39},{apartNumber: 350, isLux: false, price: 5000, rating: 3,reviews: 77},{apartNumber: 666, isLux: false, price: 5000, rating: 5,reviews: 25},{apartNumber: 444, isLux: false, price: 5000, rating: 3,reviews: 15},{apartNumber: 352, isLux: false, price: 5000, rating: 3,reviews: 55}]
+doctype html
+html
+    +base("Search room", "searchRoom.css", "searchRoom.js")
+    body
+        +header({isAuth: false, lButton: {width: "87", title: "Войти"}, rButton: {width: "196", title: "Зарегистрироваться"}, menuLinks: [{mod: "link", text: "О нас", mr: "20"}, {mod: "submenu", text: "Услуги", mr: "20"}, {mod: "link", text: "Вакансии", mr: "20"}, {mod: "link", text: "Новости", mr: "20"}, {mod: "submenu", text: "Соглашения", mr: "20"}]})
+        
+        section
+            .searchRoom__container
+                aside(class="searchRoom__sidebar")
+                    div(style="margin-bottom: 20px;")
+                        +filterDateDropdown("Даты пребывания в отеле")
+                    div(style="width: inherit; margin-bottom: 30px;")
+                        +dropdown(true,"гости")
+                    div(style="margin-bottom: 28px;")
+                        +rangeSlider("диапазон цены")
+                        span(style="font: 12px/14px Montserrat; color: rgba(31, 32, 65, 0.5);display: inline-block; margin-top: 14px;") Стоимость за сутки пребывания в номере
+                    div(style="width: 222px; margin-bottom: 22px;")
+                        h3(style="margin-bottom: 10px;") checkbox buttons
+                        +checkboxButton("", "Можно курить", false)
+                        +checkboxButton("", "Можно с питомцами", true)
+                        +checkboxButton("", "Можно пригласить гостей (до 10 человек)", true)
+                    div(style="margin-bottom: 30px;")
+                        h3(style="margin-bottom: 16px;") Доступность
+                        +richCheckboxButton("", "Широкий коридор", "Ширина коридора в номере не менее 91см.")
+                        +richCheckboxButton("", "Помощник для инвалидов", "На 1 этаже вас встретит специалист и проводит до номера.")
+                    div(style="width: inherit; margin-bottom: 18px;")
+                        +dropdown(false,"удобства номера")
+                    div
+                        +expandableCheckboxList("дополнительные удобства")
+                .searchRoom__rooms
+                    h1 Номера, которые мы для вас подобрали
+                    .searchRoom__aparts
+                        each val in optApart
+                            +apart(val)
+                    #searchRoom__data
+                    #searchRoom__pagination
+        +footer({isShort: false, description: "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»", navigation: {title: "Навигация", links: ["О нас","Новости","Служба поддержки","Услуги"]}, aboutUs: {title: "О нас", links: ["О сервисе","Наша команда","Вакансии","Ивесторы"]}, support: {title: "Служба поддержки", links: ["Соглашения","Сообщество","Связь с нами"]}, subscribe: {title: "подписка", description: "Получайте специальные предложения и новости сервиса", placeholder: "Email"}, copyright: "Copyright © 2018 Toxin отель. Все права зачищены."})

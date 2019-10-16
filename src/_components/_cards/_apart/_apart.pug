@@ -10,7 +10,7 @@ mixin apart(options)
     -
         var slides = ["","","",""]
         for(var i=1; i<=slides.length; i++)
-            slides[i-1] = "img/" + options.apartNumber + "-" + i + ".png"
+            slides[i-1] = "img/" + options.apartNumber + "/img-" + options.apartNumber + "-" + i + ".png"
     .apart__container
         .apart__slider
             each val in slides

@@ -95,10 +95,10 @@
     border-radius: 3px;
  }
  .noUi-horizontal .noUi-handle {
-   width: 12px;
-   height: 12px;
-   left: -6px;
-   top: -4px;
+   width: 16px;
+   height: 16px;
+  //  left: -6px;
+   top: -6px;
  }
  html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
    right: -6px;

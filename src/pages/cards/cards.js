@@ -1,8 +1,8 @@
 import './cards.scss';
 
-import './_components/_cards/_findApart/_findApart';
-import './_components/_cards/_registration/_registration';
-import './_components/_cards/_booking/_booking';
+import '../../_components/_cards/_findApart/_findApart';
+import '../../_components/_cards/_registration/_registration';
+import '../../_components/_cards/_booking/_booking';
 $(document).ready(function() {
     let inlineDatePicker = $('#cards__datepicker').datepicker({
         inline: true,
@@ -36,4 +36,4 @@ $(document).ready(function() {
          }
     }).data('datepicker');
 });
-import './_components/_cards/_apart/_apart';
+import '../../_components/_cards/_apart/_apart';

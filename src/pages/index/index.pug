@@ -1,8 +1,8 @@
 //- mixin base(title, css, js)
-include ./_components/_base/_pug/_base
+include ../../_components/_base/_pug/_base
 //- 
 //- mixin logo
-include ./_components/_base/_pug/_logo
+include ../../_components/_base/_pug/_logo
 doctype html
 html
     +base("index", "index.css", "index.js")
@@ -36,3 +36,6 @@ html
                 .index__item
                     a(href="room-detail.html")
                         h3="Room details"
+                .index__item
+                    a(href="search-room.html")
+                        h3="Search-room"

@@ -1,0 +1,43 @@
+@import '../../main.scss';
+@import '../../_components/_header/header';
+@import '../../_components/_footer/footer';
+@import '../../_components/_formElements/_dateDropdown/dateDropdown';
+@import '../../_components/_formElements/_dropdown/dropdown.scss';
+@import '../../_components/_formElements/_range_slider/range_slider';
+@import '../../_components/_formElements/_buttons/_checkbox/buttons__checkbox.scss';
+@import '../../_components/_formElements/_buttons/_checkbox_rich/checkbox_rich';
+@import '../../_components/_formElements/_expandableCheckboxList/expandableCheckboxList';
+@import '../../_components/_cards/_apart/apart';
+@import '../../_components/_formElements/_pagination/pagination';
+
+
+.searchRoom__container {
+    padding: 30px 9.7223% 70px 9.7223%;
+    display: flex;
+    box-sizing: border-box;
+    // justify-content: space-between;
+}
+.searchRoom__sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 266px;
+    & div {
+        & .buttons__richCheckbox-container {
+            margin-bottom: 2px;
+        }
+    }
+}
+.searchRoom__rooms {
+    margin-left: 60px;
+    box-sizing: border-box;
+    & .apart__container {
+        margin-right: 8px;
+        margin-top: 16px;
+    }
+}
+.searchRoom__aparts {
+    display: none;
+}
+#rooms {
+    margin: 0 auto;
+}

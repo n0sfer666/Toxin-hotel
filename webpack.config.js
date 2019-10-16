@@ -1,6 +1,7 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -12,13 +13,17 @@ module.exports = {
         landingPage: "./src/pages/landing-page/landing-page.js",
         registration: "./src/pages/registration/registration.js",
         signin: "./src/pages/sign-in/sign-in.js",
-        roomDetail: "./src/pages/room-detail/room-detail.js"
+        roomDetail: "./src/pages/room-detail/room-detail.js",
+        searchRoom: "./src/pages/search-room/search-room.js"
     },
     plugins: [
         new MiniCssExtractPlugin({
             filename: "[name].css",
             chunkFilename: "[id].css"
         }),
+        new CopyWebpackPlugin([
+            {from:'src/_components/_cards/_apart/img', to:'img'} 
+        ]),
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: 'src/pages/index/index.pug',
@@ -62,6 +67,11 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'room-detail.html',
             template: 'src/pages/room-detail/room-detail.pug',
+            inject: false
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'search-room.html',
+            template: 'src/pages/search-room/search-room.pug',
             inject: false
         }),
         new Webpack.ProvidePlugin({

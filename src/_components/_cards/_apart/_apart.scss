@@ -246,6 +246,8 @@
 .apart__container {
     width: 270px;
     height: 257px;
+
+    display: inline-block;
     
     overflow: hidden;
 
@@ -300,4 +302,7 @@
     align-items: center;
     margin-top: 8px;
     padding-right: 3px;
+    & b {
+        color: $dShade50;
+    }
 }

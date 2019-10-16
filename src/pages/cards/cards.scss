@@ -1,4 +1,4 @@
-@import './main.scss';
+@import '../../main.scss';
 body {
     background-color: #E5E5E5;
 }
@@ -19,8 +19,8 @@ body {
     margin-bottom: 40px;
 }
 
-@import './_components/_cards/_findApart/findApart';
-@import './_components/_cards/_registration/registration';
-@import './_components/_cards/_booking/booking';
-@import './_components/_cards/_login/login';
-@import './_components/_cards/_apart/apart';
+@import '../../_components/_cards/_findApart/findApart';
+@import '../../_components/_cards/_registration/registration';
+@import '../../_components/_cards/_booking/booking';
+@import '../../_components/_cards/_login/login';
+@import '../../_components/_cards/_apart/apart';

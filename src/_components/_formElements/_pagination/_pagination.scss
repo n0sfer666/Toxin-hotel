@@ -1,7 +1,10 @@
 .paginationjs {
     font: normal normal 12px/15px Montserrat;
     text-transform: uppercase;
-    box-sizing: initial;
+    box-sizing: border-box;
+}
+.paginationjs-nav {
+  text-align: center;
 }
 .paginationjs:after {
   display: table;

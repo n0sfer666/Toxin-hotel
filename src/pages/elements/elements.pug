@@ -1,24 +1,24 @@
 //- mixin base(title, css, js)
-include ./_components/_base/_pug/_base
+include ../../_components/_base/_pug/_base
 //- 
 //- 
-include ./_components/_base/_pug/_logo
-include ./_components/_formElements/_textField/textField
-include ./_components/_formElements/_dropdown/dropdown
-include ./_components/_formElements/_dateDropdown/_dateDropdown
-include ./_components/_formElements/_dateDropdown/_filterDateDropdown/_filterDateDropdown
-include ./_components/_formElements/_expandableCheckboxList/_expandableCheckboxList
-include ./_components/_formElements/_conditions/conditions
-include ./_components/_formElements/_buttons/_checkbox/buttons__checkbox
-include ./_components/_formElements/_buttons/_radio/_buttons__radio
-include ./_components/_formElements/_buttons/_toggle/_buttons__toggle
-include ./_components/_formElements/_buttons/_like/_buttons__like
-include ./_components/_formElements/_buttons/_rate/_buttons_rate
-include ./_components/_formElements/_buttons/_checkbox_rich/_checkbox_rich
-include ./_components/_formElements/_range_slider/_range_slider
-include ./_components/_formElements/_buttons/_button/_button
-include ./_components/_formElements/_bulletList/_bulletList
-include ./_components/_formElements/_review/_review
+include ../../_components/_base/_pug/_logo
+include ../../_components/_formElements/_textField/textField
+include ../../_components/_formElements/_dropdown/dropdown
+include ../../_components/_formElements/_dateDropdown/_dateDropdown
+include ../../_components/_formElements/_dateDropdown/_filterDateDropdown/_filterDateDropdown
+include ../../_components/_formElements/_expandableCheckboxList/_expandableCheckboxList
+include ../../_components/_formElements/_conditions/conditions
+include ../../_components/_formElements/_buttons/_checkbox/buttons__checkbox
+include ../../_components/_formElements/_buttons/_radio/_buttons__radio
+include ../../_components/_formElements/_buttons/_toggle/_buttons__toggle
+include ../../_components/_formElements/_buttons/_like/_buttons__like
+include ../../_components/_formElements/_buttons/_rate/_buttons_rate
+include ../../_components/_formElements/_buttons/_checkbox_rich/_checkbox_rich
+include ../../_components/_formElements/_range_slider/_range_slider
+include ../../_components/_formElements/_buttons/_button/_button
+include ../../_components/_formElements/_bulletList/_bulletList
+include ../../_components/_formElements/_review/_review
 //- 
 //- 
 doctype html
@@ -44,8 +44,10 @@ html
                 div(style="width: 266px; margin-bottom: 20px;")
                     +expandableCheckboxList("expandable checkbox list")
                 div(style="width: 299px; margin-bottom: 20px;")
-                    +condition("smile", "Комфорт", "Шумопоглощающие стены")
-                    +condition("building", "Удобство", "Окно в каждой из спален")
+                    div(style="width: 299px; margin-bottom: 20px;")
+                        +condition({pict: "smile", title: "Комфорт", description: "Шумопоглощающие стены"})
+                    div(style="width: 299px; margin-bottom: 20px;")
+                        +condition({pict: "building", title: "Удобство", description: "Окно в каждой из спален"})
             .container_center
                 div(style="width: 222px; margin-bottom: 20px;")
                     h3(style="margin-bottom: 16px;") checkbox buttons
