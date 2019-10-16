@@ -1,7 +1,9 @@
 .paginationjs {
-    font: normal normal 12px/15px Montserrat;
-    text-transform: uppercase;
     box-sizing: border-box;
+    display: inline-block;
+}
+.paginationjs-pages {
+  @extend h3;
 }
 .paginationjs-nav {
   text-align: center;
@@ -23,6 +25,7 @@
   justify-content: center;
   display: flex;
   background: #fff;
+  font-weight: normal;
   color: $dShade50;
 }
 .paginationjs .paginationjs-pages li.paginationjs-next > a {

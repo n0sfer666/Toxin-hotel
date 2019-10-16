@@ -36,8 +36,9 @@
     }
 }
 .searchRoom__aparts {
-    display: inline-block;
+    display: none;
 }
-#rooms {
-    margin: 0 auto;
+#searchRoom__pagination {
+    margin-top: 40px;
+    text-align: center;
 }

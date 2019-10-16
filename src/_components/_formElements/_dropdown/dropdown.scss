@@ -45,6 +45,7 @@
 .dropdown__container {
 	display: none;
 	position: absolute;
+	z-index: 100;
 	width: inherit;
 	height: 159px;
 	background: #FFFFFF;
