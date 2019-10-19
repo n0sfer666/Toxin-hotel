@@ -26,6 +26,8 @@ $(document).ready(function() {
             var first= elementsOnPage * currentPage - (elementsOnPage - 1), 
                 last = elementsOnPage * currentPage, 
                 total= totalNumber > 100 ? "100+" : totalNumber;
+                if(last>totalNumber)
+                    last = totalNumber;
             return String(first + " - " + last + " из " + total + " вариантов аренды");
         },
         callback: function(data, pagination) {

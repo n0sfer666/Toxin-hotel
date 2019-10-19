@@ -49,8 +49,58 @@
     }
 }
 .roomDetail__pieChart {
+    vertical-align: top;
     display: inline-block;
+    & #pieChart {
+        display: inline-block;
+        vertical-align: top;
+        & svg {
+            margin-top: 20px;
+            margin-right: 32px;
+        }
+    }
+    & .roomDetail__legend {
+        display: inline-block;
+        vertical-align: bottom;
+        text-align: left;
+        margin-bottom: 5px;
+        & p {
+            display: inline-block;
+        }
+        & .roomDetail__legend-circle {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+        & .roomDetail__legend-circle_perfect {
+            background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%)
+        }
+        & .roomDetail__legend-circle_good {
+            background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+        }
+        & .roomDetail__legend-circle_satisfact {
+            background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+        }
+        & .roomDetail__legend-circle_disappoint {
+            background: linear-gradient(180deg, #919191 0%, #3D4975 100%);
+        }
+    }
+    & .roomDetail__chartLabel {
+        fill: $purple;
+        text-anchor: middle;
+    }
+    & .roomDetail__chartNumber {
+        @extend h1;
+        // transform: translateY(-15px);
+    }
+    & .roomDetail__chartText {
+        @extend h3;
+        transform: translateY(15px);
+    }
 }
+
 .roomDetail__reviews {
     width: 100%;
     margin-top: 24px;
