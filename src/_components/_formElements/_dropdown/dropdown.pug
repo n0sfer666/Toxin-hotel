@@ -17,8 +17,8 @@ mixin dropdown (isGuests, label)
             +dropdown__line("дети", "children", "0")
             +dropdown__line("младенцы", "babies", "0")
             .dropdown__confirmLine
-                h3(href="#", class="dropdown__cleanLink", id= mainID + "__cleanLink") очистить
-                h3(href="#", class="dropdown__applyLink", id= mainID + "__applyLink") применить
+                h3(class="dropdown__cleanLink", id= mainID + "__cleanLink") очистить
+                h3(class="dropdown__applyLink", id= mainID + "__applyLink") применить
     else
         div(id = containerID, class = "dropdown__container", style = style)
             +dropdown__line("спальни", "bedrooms", "1")
