@@ -16,6 +16,10 @@ module.exports = {
         roomDetail: "./src/pages/room-detail/room-detail.js",
         searchRoom: "./src/pages/search-room/search-room.js"
     },
+    output: {
+      filename: '[name].js',
+      path: __dirname + '/docs'
+    }   ,
     plugins: [
         new MiniCssExtractPlugin({
             filename: "[name].css",
