@@ -28,78 +28,77 @@ html
         .logo
             +logo(false)
         .container
-        //-     .container_left
-        //-         div(style="width: 320px; margin-bottom: 20px;")
-        //-             +textField("","text field","Email",false)
-        //-         div(style="width: 320px; margin-bottom: 20px;")
-        //-             +dropdown(true,"dropdown (guests)")
-        //-         div(style="width: 266px; margin-bottom: 20px;")
-        //-             +dropdown(false,"dropdown (rooms)")
-        //-         div(style="width: 320px; margin-bottom: 20px;")
-        //-             +textField("masked","masked text field","ДД.ММ.ГГГГ",false)
-        //-         div(style="width: 320px; margin-bottom: 20px;")
-        //-             +dateDropdown("date dropdown","date dropdown")
-        //-         div(style="width: 266px; margin-bottom: 20px;")
-        //-             +filterDateDropdown("filter date")
-        //-         div(style="width: 266px; margin-bottom: 20px;")
-        //-             +expandableCheckboxList("expandable checkbox list")
-        //-         div(style="width: 299px; margin-bottom: 20px;")
-        //-             div(style="width: 299px; margin-bottom: 20px;")
-        //-                 +condition({pict: "smile", title: "Комфорт", description: "Шумопоглощающие стены"})
-        //-             div(style="width: 299px; margin-bottom: 20px;")
-        //-                 +condition({pict: "building", title: "Удобство", description: "Окно в каждой из спален"})
-        //-     .container_center
-        //-         div(style="width: 222px; margin-bottom: 20px;")
-        //-             h3(style="margin-bottom: 16px;") checkbox buttons
-        //-             +checkboxButton("", "Можно курить", false)
-        //-             +checkboxButton("", "Можно с питомцами", true)
-        //-             +checkboxButton("", "Можно пригласить гостей (до 10 человек)", true)
-        //-         div(style="width: 222px; margin-bottom: 20px;")
-        //-             h3(style="margin-bottom: 16px;") radio buttons
-        //-             +radioButtons
-        //-         div(style="width: 260px; margin-bottom: 20px;")
-        //-             h3(style="margin-bottom: 16px;") toggle
-        //-             +toggleButton("Получать спецпредложения")
-        //-         div(style="width: 260px; margin-bottom: 20px; ")
-        //-             h3(style="margin-bottom: 16px;") like button
-        //-             div(style="display: flex;")
-        //-                 div(style="margin-right: 10px;")
-        //-                     +likeButton("1", 2, false)
-        //-                 +likeButton("2", 12, true)
-        //-         div(style="width: 260px; margin-bottom: 20px; ")
-        //-             h3(style="margin-bottom: 16px;") rate button
-        //-             div(style="display: flex;")
-        //-                 div(style="margin-right: 10px;")
-        //-                     +rateButton("1", 4)
-        //-                 +rateButton("2", 5)
-        //-         div(style="width: 260px; margin-bottom: 20px; ")
-        //-             h3(style="margin-bottom: 16px;") rich checkbox buttons
-        //-             +richCheckboxButton("", "Широкий коридор", "Ширина коридора в номере не менее 91см.")
-        //-             +richCheckboxButton("", "Помощник для инвалидов", "На 1 этаже вас встретит специалист и проводит до номера.")
-        //-     .container_right
-        //-         div(style="width: 266px; margin-bottom: 20px;")
-        //-             +rangeSlider("range slider")
-        //-         div(style="width: 320px; margin-bottom: 20px; ")
-        //-             h3(style="margin-bottom: 16px;") buttons
-        //-             div(style="width: 99px; display: inline-block; margin-right: 19px; margin-bottom: 30px;")
-        //-                 +button({size: "medium", theme: "gradient", title: "click me"})
-        //-             div(style="width: 99px; display: inline-block;")
-        //-                 +button({size: "medium", theme: "gradientOpacity", title: "click me"})
-        //-             div(style="width: 99px; display: inline-block; margin-right: 19px; margin-bottom: 31px;")
-        //-                 +button({size: "medium", theme: "border", title: "click me"})
-        //-             div(style="width: 99px; display: inline-block;")
-        //-                 +button({size: "medium", theme: "borderOpacity", title: "click me"})
-        //-             <br>
-        //-             div(style="width: 61px; display: inline-block; margin-right: 20px; margin-bottom: 30px;")
-        //-                 +button({size: "small", theme: "clickPurple", title: "click me"})
-        //-             div(style="width: 61px; display: inline-block;")
-        //-                 +button({size: "small", theme: "clickGray", title: "click me"})
-        //-             +button({title:"перейти к оплате"})
-        //-         div(style="width: 241px; margin-bottom: 20px; ")
-        //-             h3(style="margin-bottom: 16px;") pagination
-        //-             #pagination
-        //-         div(style="width: 292px; margin-bottom: 20px; ")
-        //-             h3(style="margin-bottom: 16px;") bullet list
-        //-             +bulletList(["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия - после 13:00, а выезд до 12:00"])
-        //- div(style="width: 711px; margin-bottom: -20px; margin-left: 50%;")
-        +review({pict: "Sarafanov", likeId: "review_1", likeCount: "12", isLiked: true, name: "Мурад Сарафанов", daysAgo: "5 дней назад", review: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."})
+            .container_left
+                div(style="width: 320px; margin-bottom: 20px;")
+                    +textField("","text field","Email",false)
+                div(style="width: 320px; margin-bottom: 20px;")
+                    +dropdown(true,"dropdown (guests)")
+                div(style="width: 266px; margin-bottom: 20px;")
+                    +dropdown(false,"dropdown (rooms)")
+                div(style="width: 320px; margin-bottom: 20px;")
+                    +textField("masked","masked text field","ДД.ММ.ГГГГ",false)
+                div(style="width: 320px; margin-bottom: 20px;")
+                    +dateDropdown("date dropdown","date dropdown")
+                div(style="width: 266px; margin-bottom: 20px;")
+                    +filterDateDropdown("filter date")
+                div(style="width: 266px; margin-bottom: 20px;")
+                    +expandableCheckboxList("expandable checkbox list")
+                div(style="width: 299px; margin-bottom: 20px;")
+                    div(style="width: 299px; margin-bottom: 20px;")
+                        +condition({pict: "smile", title: "Комфорт", description: "Шумопоглощающие стены"})
+                    div(style="width: 299px; margin-bottom: 20px;")
+                        +condition({pict: "building", title: "Удобство", description: "Окно в каждой из спален"})
+            .container_center
+                div(style="width: 222px; margin-bottom: 20px;")
+                    h3(style="margin-bottom: 16px;") checkbox buttons
+                    +checkboxButton("", "Можно курить", false)
+                    +checkboxButton("", "Можно с питомцами", true)
+                    +checkboxButton("", "Можно пригласить гостей (до 10 человек)", true)
+                div(style="width: 222px; margin-bottom: 20px;")
+                    h3(style="margin-bottom: 16px;") radio buttons
+                    +radioButtons
+                div(style="width: 260px; margin-bottom: 20px;")
+                    h3(style="margin-bottom: 16px;") toggle
+                    +toggleButton("Получать спецпредложения")
+                div(style="width: 260px; margin-bottom: 20px; ")
+                    h3(style="margin-bottom: 16px;") like button
+                    div(style="display: flex;")
+                        div(style="margin-right: 10px;")
+                            +likeButton("1", 2, false)
+                        +likeButton("2", 12, true)
+                div(style="width: 260px; margin-bottom: 20px; ")
+                    h3(style="margin-bottom: 16px;") rate button
+                    div(style="display: flex;")
+                        div(style="margin-right: 10px;")
+                            +rateButton("1", 4)
+                        +rateButton("2", 5)
+                div(style="width: 260px; margin-bottom: 20px; ")
+                    h3(style="margin-bottom: 16px;") rich checkbox buttons
+                    +richCheckboxButton("", "Широкий коридор", "Ширина коридора в номере не менее 91см.")
+                    +richCheckboxButton("", "Помощник для инвалидов", "На 1 этаже вас встретит специалист и проводит до номера.")
+            .container_right
+                div(style="width: 266px; margin-bottom: 20px;")
+                    +rangeSlider("range slider")
+                div(style="width: 320px; margin-bottom: 20px; ")
+                    h3(style="margin-bottom: 16px;") buttons
+                    div(style="width: 99px; display: inline-block; margin-right: 19px; margin-bottom: 30px;")
+                        +button({size: "medium", theme: "gradient", title: "click me"})
+                    div(style="width: 99px; display: inline-block;")
+                        +button({size: "medium", theme: "gradientOpacity", title: "click me"})
+                    div(style="width: 99px; display: inline-block; margin-right: 19px; margin-bottom: 31px;")
+                        +button({size: "medium", theme: "border", title: "click me"})
+                    div(style="width: 99px; display: inline-block;")
+                        +button({size: "medium", theme: "borderOpacity", title: "click me"})
+                    <br>
+                    div(style="width: 61px; display: inline-block; margin-right: 20px; margin-bottom: 30px;")
+                        +button({size: "small", theme: "clickPurple", title: "click me"})
+                    div(style="width: 61px; display: inline-block;")
+                        +button({size: "small", theme: "clickGray", title: "click me"})
+                    +button({title:"перейти к оплате"})
+                div(style="width: 320px; margin-bottom: 20px; ")
+                    h3(style="margin-bottom: 16px;") pagination
+                    #pagination
+                div(style="width: 292px; margin-bottom: 20px; ")
+                    h3(style="margin-bottom: 16px;") bullet list
+                    +bulletList(["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия - после 13:00, а выезд до 12:00"])
+            +review({pict: "Sarafanov", likeId: "review_1", likeCount: "12", isLiked: true, name: "Мурад Сарафанов", daysAgo: "5 дней назад", review: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."})
