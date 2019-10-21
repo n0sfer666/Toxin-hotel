@@ -1,14 +1,15 @@
 include ../_buttons/_like/_buttons__like
-mixin review(option)
+mixin review(options)
     -
-        var classPict = "review__pict review__pict_" + option.pict
+        var pict = "./img/" + options.pict + ".png"
     .review__container
         .review__leftColumn
-            div(class = classPict)
-            +likeButton(option.likeId, option.likeCount, option.isLiked)
+            .review__pict
+                img(src=pict, alt=options.name)
+            +likeButton(options.likeId, options.likeCount, options.isLiked)
         .review__rightColumn
-            span(class="review__name") #{option.name}
+            span(class="review__name") #{options.name}
             br
-            span(class="review__daysAgo") #{option.daysAgo}
+            span(class="review__daysAgo") #{options.daysAgo}
             br
-            p(class="review__text") #{option.review}
+            p(class="review__text") #{options.review}

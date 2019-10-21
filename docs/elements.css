@@ -1586,17 +1586,16 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   width: 48px;
   height: 48px;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.1);
-  border: 2px solid #FFFFFF;
   box-sizing: border-box;
+  background-color: #fff;
   margin-bottom: 12px;
   border-radius: 32px;
-  background-size: 100%; }
-
-.review__pict_Sarafanov {
-  background: url(img/review_image1.png); }
-
-.review__pict_Steklishkova {
-  background: url(img/review_image2.png); }
+  overflow: hidden;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.1); }
+  .review__pict img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; }
 
 .review__leftColumn {
   display: flex;
