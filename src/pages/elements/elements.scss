@@ -19,19 +19,15 @@
 .logo {
     margin: 30px 0 60px 30px;
 }
-.container {
-    margin: 0 9.7917%;
-    width: calc(100% - 9.7917% * 2);
+.elements__container {
+    margin: 0 9.791666667%;
+    width: 80.41666667%;
+    display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
 }
-.container_left, .container_right, .container_center {
-    display: inline-block;
-    vertical-align: top;
-}
-.container_left {
-    margin-right: 10.8810%;
-    
-}
-.container_center {
-    margin-right: 11.3992%;
+@media only screen and (min-width: 300px) and (max-width: 350px) {
+    .elements__container, .elements__container_left, .elements__container_right, .elements__container_center {
+        margin: 0 2px;
+    }
 }

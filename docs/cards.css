@@ -71,16 +71,21 @@ body {
   margin: 30px 0 60px 30px; }
 
 .cards__container {
-  margin: 0 140px;
+  margin: 0 9.722222222%;
+  width: 80.55555556%;
   display: flex;
-  justify-content: space-between; }
-
-.cards__leftBlock, .cards__centerBlock, .cards__rightBlock {
-  display: flex;
-  flex-direction: column; }
+  justify-content: space-between;
+  flex-wrap: wrap; }
 
 .cards__block, #cards__datepicker {
   margin-bottom: 40px; }
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .cards__container {
+    width: initial;
+    margin: 0 calc((100% - 380px) / 2); }
+  .cards__leftBlock, .cards__centerBlock, .cards__rightBlock {
+    margin: 0 auto; } }
 
 .textField {
   width: 100%;
@@ -1020,9 +1025,9 @@ body {
   color: rgba(31, 32, 65, 0.5); }
 
 .findApart__container {
-  width: 382px;
+  width: 380px;
   height: 374px;
-  padding: 40px 30px 30px 30px;
+  padding: 39px 7.936507937% 29px 7.936507937%;
   background-color: #FFFFFF;
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-sizing: border-box;
@@ -1222,7 +1227,7 @@ body {
   box-sizing: border-box;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  padding: 40px 30px 30px 30px; }
+  padding: 39px 7.936507937% 29px 7.936507937%; }
 
 .registration__block {
   margin-top: 10px; }
@@ -2188,7 +2193,7 @@ body {
 .booking__container {
   width: 380px;
   height: 511px;
-  padding: 40px 30px 30px 30px;
+  padding: 39px 7.936507937% 29px 7.936507937%;
   background: #FFFFFF;
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-sizing: border-box;
@@ -2356,7 +2361,7 @@ body {
 .login__container {
   width: 380px;
   height: 358px;
-  padding: 40px 30px 32px 30px;
+  padding: 39px 7.936507937% 31px 7.936507937%;
   background-color: #FFFFFF;
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-sizing: border-box;

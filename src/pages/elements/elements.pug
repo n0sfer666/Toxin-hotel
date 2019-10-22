@@ -27,8 +27,8 @@ html
     body
         .logo
             +logo(false)
-        .container
-            .container_left
+        .elements__container
+            .elements__container_left
                 div(style="width: 320px; margin-bottom: 20px;")
                     +textField("","text field","Email",false)
                 div(style="width: 320px; margin-bottom: 20px;")
@@ -48,7 +48,7 @@ html
                         +condition({pict: "smile", title: "Комфорт", description: "Шумопоглощающие стены"})
                     div(style="width: 299px; margin-bottom: 20px;")
                         +condition({pict: "building", title: "Удобство", description: "Окно в каждой из спален"})
-            .container_center
+            .elements__container_center
                 div(style="width: 222px; margin-bottom: 20px;")
                     h3(style="margin-bottom: 16px;") checkbox buttons
                     +checkboxButton("", "Можно курить", false)
@@ -76,7 +76,7 @@ html
                     h3(style="margin-bottom: 16px;") rich checkbox buttons
                     +richCheckboxButton("", "Широкий коридор", "Ширина коридора в номере не менее 91см.")
                     +richCheckboxButton("", "Помощник для инвалидов", "На 1 этаже вас встретит специалист и проводит до номера.")
-            .container_right
+            .elements__container_right
                 div(style="width: 266px; margin-bottom: 20px;")
                     +rangeSlider("range slider")
                 div(style="width: 320px; margin-bottom: 20px; ")
