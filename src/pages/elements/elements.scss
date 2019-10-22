@@ -26,8 +26,12 @@
     justify-content: space-between;
     flex-wrap: wrap;
 }
-@media only screen and (min-width: 300px) and (max-width: 350px) {
-    .elements__container, .elements__container_left, .elements__container_right, .elements__container_center {
-        margin: 0 2px;
+@media only screen and (min-width: 300px) and (max-width: 767px) {
+    .elements__container {
+        width: initial;
+        margin: 0 calc((100% - 320px) / 2);
+    }
+    .elements__container_left, .elements__container_right, .elements__container_center {
+        margin: 0 auto;
     }
 }
