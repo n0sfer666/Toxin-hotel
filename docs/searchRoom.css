@@ -127,33 +127,50 @@ h3, .paginationjs-pages {
 
 .header__container {
   width: 100%;
-  height: 70px;
-  padding: 0 9.7223%;
+  min-height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 10px 9.7223%;
   box-sizing: border-box;
   background-color: #FFFFFF;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05); }
 
-.header__logo {
-  margin-top: 15px;
-  display: inline-block; }
+.header__container_left {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px; }
+  .header__container_left svg {
+    vertical-align: middle;
+    margin: 0 auto; }
+
+.header__container_right {
+  display: flex;
+  flex-wrap: nowrap; }
 
 .header__auth {
-  margin-top: 20px;
-  float: right;
   display: flex;
-  align-items: flex-end; }
-  .header__auth .button_border, .header__auth .button_borderOpacity {
-    margin-right: 19px; }
+  align-items: center; }
+  .header__auth a {
+    display: inline;
+    white-space: nowrap;
+    line-height: 30px; }
 
-.header__vRow {
-  width: 1px;
+.header__loginLink {
+  color: rgba(31, 32, 65, 0.5);
   height: 30px;
-  background: rgba(31, 32, 65, 0.1);
-  margin-right: 30px; }
+  border-left: 1px solid rgba(31, 32, 65, 0.1);
+  padding-left: 30px; }
 
 .header__menu {
-  float: right;
-  margin-top: 25px; }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 10px 0; }
+  .header__menu a {
+    margin-right: 30px; }
 
 .header__menuLink {
   font: normal normal 14px/17px Montserrat;
@@ -162,9 +179,41 @@ h3, .paginationjs-pages {
 .header__menuLink_home {
   font-weight: bold; }
 
+@media only screen and (min-width: 300px) and (max-width: 767px) {
+  .header__container {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    justify-content: center;
+    flex-wrap: wrap; }
+  .header__menu {
+    margin: 10px auto; }
+    .header__menu a {
+      margin: 5px 14%; } }
+
+@media only screen and (min-width: 300px) and (max-width: 873px) {
+  .header__auth {
+    margin: 0 auto;
+    margin-top: 10px;
+    width: 75%;
+    justify-content: center; }
+  .header__loginLink {
+    width: 100%;
+    padding-top: 15px;
+    text-align: center;
+    border-top: 1px solid rgba(31, 32, 65, 0.1);
+    border-left: none; }
+  .header__menu {
+    margin: 0 auto; } }
+
+@media only screen and (max-width: 1024px) {
+  .header__container_right {
+    flex-wrap: wrap; }
+  .header__container {
+    flex-wrap: wrap; } }
+
 .footer__container_short {
-  height: 367px;
   width: 100%;
+  padding: 100px 0 110px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -178,7 +227,7 @@ h3, .paginationjs-pages {
 .footer__description_short {
   display: inline-block;
   text-align: center;
-  width: 560px;
+  width: 38.88888889%;
   font: normal normal 14px/24px Montserrat;
   color: rgba(31, 32, 65, 0.75);
   margin-bottom: 29px; }
@@ -193,7 +242,7 @@ h3, .paginationjs-pages {
 
 .subscribeContainer {
   position: relative;
-  width: 260px; }
+  width: 100%; }
 
 .subscribeButton {
   display: inline-block;
@@ -228,6 +277,7 @@ h3, .paginationjs-pages {
 .footer__container {
   display: flex;
   align-items: flex-start;
+  flex-wrap: wrap;
   width: 100%;
   padding: 100px 9.7223% 100px 9.7223%;
   box-sizing: border-box;
@@ -238,11 +288,12 @@ h3, .paginationjs-pages {
   display: inline-block; }
   .footer__description h3, .footer__description .paginationjs-pages, .footer__navigation h3, .footer__navigation .paginationjs-pages, .footer__aboutUs h3, .footer__aboutUs .paginationjs-pages, .footer__support h3, .footer__support .paginationjs-pages, .footer__subscribe h3, .footer__subscribe .paginationjs-pages {
     margin-bottom: 1px;
-    margin-top: 4px; }
+    margin-top: 4px;
+    white-space: nowrap; }
 
 .footer__description {
-  width: 22.4138%;
-  margin-right: 3.4483%; }
+  min-width: 150px;
+  width: 22.4138%; }
   .footer__description p {
     display: inline-block;
     margin-top: 10px;
@@ -252,6 +303,8 @@ h3, .paginationjs-pages {
 .footer__menu {
   display: flex;
   align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
   width: 74.1380%; }
 
 .footer__link {
@@ -261,19 +314,22 @@ h3, .paginationjs-pages {
   margin-top: 21px; }
 
 .footer__navigation {
-  margin-right: 6.6279%;
+  min-width: 120px;
   width: 16.6279%; }
 
 .footer__aboutUs {
-  margin-right: 10.6977%;
+  min-width: 105px;
   width: 12.5581%; }
 
 .footer__support {
-  margin-right: 5.9302%;
+  min-width: 140px;
   width: 17.3256%; }
 
 .footer__subscribe {
+  min-width: 200px;
   width: 30.2326%; }
+  .footer__subscribe h3, .footer__subscribe .paginationjs-pages {
+    white-space: normal; }
   .footer__subscribe p {
     display: inline-block;
     font: normal normal 14px/24px Montserrat;
@@ -290,9 +346,23 @@ h3, .paginationjs-pages {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 70px; }
+  flex-wrap: wrap;
+  min-height: 70px; }
   .footer__copyright .footer__social {
     margin-top: 4px; }
+
+@media only screen and (max-width: 946px) {
+  .footer__subscribe {
+    margin: 15px auto; }
+  .footer__menu {
+    justify-content: none;
+    margin: 0 auto; } }
+
+@media only screen and (max-width: 719px) {
+  .footer__description {
+    margin: 0 auto; }
+  .footer__navigation, .footer__aboutUs, .footer__support {
+    margin: 15px auto 0 auto; } }
 
 .textField {
   width: 100%;

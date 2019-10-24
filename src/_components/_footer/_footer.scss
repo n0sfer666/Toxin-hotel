@@ -1,7 +1,8 @@
 // short
 .footer__container_short {
-    height: 367px;
+    // height: 367px;
     width: 100%;
+    padding: 100px 0 110px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -15,7 +16,7 @@
 .footer__description_short {
     display: inline-block;
     text-align: center;
-    width: 560px;
+    width: 38.88888889%;
     font: normal normal 14px/24px Montserrat;
     color: $dShade75;
     margin-bottom: 29px;
@@ -34,6 +35,7 @@
     display: flex;
     // justify-content: space-between;
     align-items: flex-start;
+    flex-wrap: wrap;
     // height: 372px;
     width: 100%;
     padding: 100px 9.7223% 100px 9.7223%;
@@ -47,12 +49,14 @@
     & h3 {
         margin-bottom: 1px;
         margin-top: 4px;
-        // white-space: nowrap;
+        
+        white-space: nowrap;
     }
 }
 .footer__description {
+    min-width: 150px;
     width: 22.4138%;
-    margin-right: 3.4483%;
+    // margin-right: 3.4483%;
     & p {
         display: inline-block;
         margin-top: 10px;
@@ -63,6 +67,8 @@
 .footer__menu {
     display: flex;
     align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
     width: 74.1380%;
 }
 .footer__link {
@@ -73,19 +79,26 @@
     // white-space: nowrap;
 }
 .footer__navigation {
-    margin-right: 6.6279%;
+    min-width: 120px;
+    // margin-right: 6.6279%;
     width: 16.6279%;
 }
 .footer__aboutUs {
-    margin-right: 10.6977%;
+    min-width: 105px;
+    // margin-right: 10.6977%;
     width: 12.5581%;
 }
 .footer__support {
-    margin-right: 5.9302%;
+    min-width: 140px;
+    // margin-right: 5.9302%;
     width: 17.3256%;
 }
 .footer__subscribe {
+    min-width: 200px;
     width: 30.2326%;
+    & h3 {
+        white-space: normal;
+    }
     & p {
         display: inline-block;
         // width: 196px;
@@ -104,8 +117,26 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 70px;
+    flex-wrap: wrap;
+    min-height: 70px;
     & .footer__social {
         margin-top: 4px;
     }
 }
+@media only screen and (max-width: 946px) {
+    .footer__subscribe {
+        margin: 15px auto;
+    }
+    .footer__menu {
+        justify-content: none;
+        margin: 0 auto;
+    }
+ }
+ @media only screen and (max-width: 719px) {
+    .footer__description {
+        margin: 0 auto;
+    }
+    .footer__navigation, .footer__aboutUs, .footer__support {
+        margin: 15px auto 0 auto;
+    }
+ }

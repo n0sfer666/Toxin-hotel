@@ -10,19 +10,34 @@ include ./_menuLink
 //- menuLinks: ["home", ["link", "About Us"], ["submenu", "Services"], etc]
 mixin header(options)
     header
-        .header__container
-            .header__logo
-                +logo(true)
-            .header__auth
-                if options.isAuth
-                    .header__vRow
-                    a(href="#", style="color: rgba(31, 32, 65, 0.5);") #{options.login}
-                else
+        //- .header__container
+        //-     .header__logo
+        //-         +logo(true)
+        //-     .header__auth
+        //-         if options.isAuth
+        //-             .header__vRow
+        //-             a(href="#", style="color: rgba(31, 32, 65, 0.5);") #{options.login}
+        //-         else
                     div(style="width: " + options.lButton.width+ "px; margin-right: 20px;")
                         +button({size: "medium", theme: "border", title: options.lButton.title, height: "34px"})
                     div(style="width: " + options.rButton.width + "px;")
                         +button({size: "medium", theme: "gradient", title: options.rButton.title, height: "34px"})
 
-            .header__menu
-                each val in options.menuLinks
-                    +menuLink(val)
+        //-     .header__menu
+        //-         each val in options.menuLinks
+        //-             +menuLink(val)
+        .header__container
+            .header__container_left
+                +logo(true)
+            .header__container_right
+                .header__menu
+                    each val in options.menuLinks
+                        +menuLink(val)
+                .header__auth
+                    if options.isAuth
+                        a(href="#", class="header__loginLink") #{options.login}
+                    else
+                        div(style="width: " + options.lButton.width+ "px; margin-right: 20px;")
+                            +button({size: "medium", theme: "border", title: options.lButton.title, height: "34px"})
+                        div(style="width: " + options.rButton.width + "px;")
+                            +button({size: "medium", theme: "gradient", title: options.rButton.title, height: "34px"})
