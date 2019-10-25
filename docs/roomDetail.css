@@ -1530,34 +1530,40 @@ h3, .roomDetail__pieChart .roomDetail__chartText {
 
 .roomDetail__galery {
   width: 100%;
-  display: flex;
-  flex-flow: wrap; }
+  display: flex; }
   .roomDetail__galery img {
     width: 100%;
-    background-size: 100%; }
+    background-size: cover; }
 
 .roomDetail__image_main {
   width: 68.125%; }
 
-.rootDetail__image {
+.roomDetail__image {
   width: 31.875%;
   display: flex;
   flex-flow: column wrap; }
-  .rootDetail__image img:last-child {
+  .roomDetail__image img:last-child {
     margin: -1px 0; }
 
 .roomDetail__container {
   display: flex;
   justify-content: space-between;
-  padding: 64px 140px 70px 140px;
+  flex-wrap: wrap;
+  padding: 64px 9.722222222% 70px 9.722222222%;
   border-bottom: 1px solid rgba(31, 32, 65, 0.05); }
 
 .roomDetail__leftColumn {
-  margin-right: 70px; }
+  width: 100%;
+  vertical-align: top; }
+
+.roomDetail__rightColumn {
+  display: inline-block;
+  width: 380px; }
 
 .roomDetail__conditions {
   display: inline-block;
-  margin-right: 81px;
+  vertical-align: top;
+  margin-right: 6.982758621%;
   margin-left: -5px; }
   .roomDetail__conditions h2 {
     margin-bottom: 22px; }
@@ -1567,6 +1573,7 @@ h3, .roomDetail__pieChart .roomDetail__chartText {
     margin-top: -6px; }
 
 .roomDetail__pieChart {
+  margin-right: 6.034482759%;
   vertical-align: top;
   display: inline-block; }
   .roomDetail__pieChart #pieChart {
@@ -1614,7 +1621,8 @@ h3, .roomDetail__pieChart .roomDetail__chartText {
 
 .roomDetail__bottom {
   margin-top: 33px;
-  display: flex; }
+  display: flex;
+  flex-wrap: wrap; }
 
 .roomDetail__rules {
   width: 250px;
@@ -1624,7 +1632,23 @@ h3, .roomDetail__pieChart .roomDetail__chartText {
     margin-bottom: 18px; }
 
 .roomDetail__cancel {
-  width: 341px; }
+  width: 341px;
+  min-width: 320px; }
   .roomDetail__cancel h2 {
     margin-bottom: 18px; }
+
+@media only screen and (max-width: 1396px) {
+  .roomDetail__rightColumn {
+    margin: 25px auto;
+    text-align: center; }
+  .roomDetail__pieChart {
+    margin: 25px auto; } }
+
+@media only screen and (max-width: 450px) {
+  .roomDetail__image {
+    display: none; }
+  .roomDetail__image_main {
+    width: 100%; }
+  .roomDetail__container {
+    padding: 50px 0; } }
 

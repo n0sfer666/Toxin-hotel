@@ -8,90 +8,7 @@ include ../../_components/_cards/_booking/_booking
 include ../../_components/_formElements/_review/_review
 include ../../_components/_formElements/_bulletList/_bulletList
 include ../../_components/_footer/_footer
-
-//- total: number (total number of voices)
-//- perfect: number (number of 5 stars voices)
-//- good: number (number of 4 stars voices)
-//- satisfact: number (number of 3 stars voices)
-//- disappoint: number (number of 2 stars voices)
-mixin piechart(options)
-    -
-        //- c for r = 55px
-        var c55 = 345.6
-        //- c for r = 58px
-        var c58 = 364.4
-        var perfect = options.perfect != undefined ? options.perfect : 0
-        var good = options.good != undefined ? options.good : 0
-        var satisfact = options.satisfact != undefined ? options.satisfact : 0
-        var disappoint = options.disappoint != undefined ? options.disappoint : 0
-        var total = perfect + good + satisfact + disappoint
-        //- perentage
-        var percent5 = perfect / total
-        var percent4 = good / total
-        var percent3 = satisfact / total
-        var percent2 = disappoint / total
-        //- dashForN:
-        //-     0: number for Stroke-dasharray (first - stroke)
-        //-     1: number for Stroke-dasharray (second - space)
-        //-     2: number for stroke-dashoffset
-        var dashFor5 = [0,0,272.8]
-        dashFor5[0] = (c58 * percent5).toFixed(1)
-        if(dashFor5[0] != 0)
-            dashFor5[0] -= 2
-            dashFor5[1] = (c58 - dashFor5[0]).toFixed(1)
-        var dashFor4 = [0,0,0]
-        dashFor4[0] = (c55 * percent4).toFixed(1)
-        if(dashFor4[0] != 0)
-            dashFor4[0] -= 1
-            dashFor4[1] = (c55 - dashFor4[0]).toFixed(1)
-            dashFor4[2] = ((dashFor5[2] - dashFor5[0] - 1.5) * 0.9482).toFixed(1)
-        if(dashFor4[0] == 0)
-                dashFor4[2] = dashFor5[2]
-        var dashFor3 = [0,0,0]
-        dashFor3[0] = (c58 * percent3).toFixed(1)
-        if(dashFor3[0] != 0)
-            dashFor3[0] -= 2
-            dashFor3[1] = (c58 - dashFor3[0]).toFixed(1) 
-            dashFor3[2] = ((dashFor4[2] - dashFor4[0] - 1.5) * 1.0647).toFixed(1)
-        if(dashFor3[0] == 0)
-            dashFor3[2] = dashFor4[2]
-        var dashFor2 = [0,0,0]
-        dashFor2[0] = (c58 * percent2).toFixed(1)
-        if(dashFor2[0] != 0)
-            dashFor2[0] -= 2
-            dashFor2[1] = (c58 - dashFor2[0]).toFixed(1) 
-            dashFor2[2] = (dashFor3[2] - dashFor3[0] - 1.5).toFixed(1)
-        if(dashFor2[0] == 0)
-            //- dashFor2[1] = 0
-            dashFor2[2] = dashFor3[2]
-        //- 
-        var text
-        if(total == 0 || total > 4)
-            text = "голосов"
-        if(total > 0 && total < 5)
-            text = "голоса"
-    svg(width="120", height="120", viewbox="0 0 120 120", fill="none")
-        circle(cx="60", cy="60", r="59.5", fill="white")
-        circle(cx="60", cy="60", r="58", stroke="url(#grad-5)", stroke-width="4", Stroke-dasharray=dashFor5[0] + " " + dashFor5[1], stroke-dashoffset=dashFor5[2])
-        circle(cx="60", cy="60", r="55", stroke="url(#grad-4)", stroke-width="10", Stroke-dasharray=dashFor4[0] + " " + dashFor4[1], stroke-dashoffset=dashFor4[2])
-        circle(cx="60", cy="60", r="58", stroke="url(#grad-3)", stroke-width="4", Stroke-dasharray=dashFor3[0] + " " + dashFor3[1], stroke-dashoffset=dashFor3[2])
-        circle(cx="60", cy="60", r="58", stroke="url(#grad-2)", stroke-width="4", Stroke-dasharray=dashFor2[0] + " " + dashFor2[1], stroke-dashoffset=dashFor2[2])
-        g( class="roomDetail__chartLabel")
-            text(x="60", y="60", class="roomDetail__chartNumber")= total
-            text(x="60", y="60", class="roomDetail__chartText")= text
-        defs
-            linearGradient(id="grad-5", x1="60", y1="0", x2="60", y2="120", gradientUnits="userSpaceOnUse")
-                stop(stop-color="#FFE39C")
-                stop(offset="1", stop-color="#FFBA9C")
-            linearGradient(id="grad-4", x1="0", y1="0", x2="0", y2="120", gradientUnits="userSpaceOnUse")
-                stop(stop-color="#BC9CFF")
-                stop(offset="1", stop-color="#8BA4F9")
-            linearGradient(id="grad-3", x1="0", y1="-120", x2="0", y2="120", gradientUnits="userSpaceOnUse")
-                stop(stop-color="#66D2EA")
-                stop(offset="1", stop-color="#6FCF97")
-            linearGradient(id="grad-2", x1="0", y1="-120", x2="0", y2="120", gradientUnits="userSpaceOnUse")
-                stop(stop-color="#919191")
-                stop(offset="1", stop-color="#3D4975")
+include ./piechart
 
 
 doctype html
@@ -103,48 +20,49 @@ html
             .roomDetail__galery
                 .roomDetail__image_main
                     img(src="./img/rDetails-888-1.png")
-                .rootDetail__image
+                .roomDetail__image
                     img(src="./img/rDetails-888-2.png")
                     img(src="./img/rDetails-888-3.png")
             .roomDetail__container
                 .roomDetail__leftColumn
-                    div
-                        .roomDetail__conditions
-                            h2 Сведения о номере
-                            +condition({pict: "smile", title: "Комфорт", description: "Шумопоглащающие стены"})
-                            +condition({pict: "building", title: "Удобство", description: "Окно в каждой из спален"})
-                            +condition({pict: "fire", title: "Уют", description: "Номер оснащен камином", isHR: false})
-                        .roomDetail__pieChart
-                            h2 Впечатление от номера
-                            #pieChart
-                                +piechart({perfect: 130, good: 65, satisfact: 65})
-                            .roomDetail__legend
-                                div
-                                    div(class="roomDetail__legend-circle roomDetail__legend-circle_perfect")
-                                    p Великолепно
-                                div
-                                    div(class="roomDetail__legend-circle roomDetail__legend-circle_good")
-                                    p Хорошо
-                                div
-                                    div(class="roomDetail__legend-circle roomDetail__legend-circle_satisfact")
-                                    p Удовлетворительно
-                                div
-                                    div(class="roomDetail__legend-circle roomDetail__legend-circle_disappoint")
-                                    p Разочарован
-
-                    .roomDetail__reviews
-                        .roomDetail__reviews_header
-                            h2 Отзывы посетителей номера
-                            p 2 отзыва
-                        +review({pict: "Sarafanov", likeId: "review_1", likeCount: "12", isLiked: true, name: "Мурад Сарафанов", daysAgo: "5 дней назад", review: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."})
-                        +review({pict: "Steklishkova", likeId: "review_2", likeCount: "2", isLiked: false, name: "Патрисия Стёклышкова", daysAgo: "неделю назад", review: "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент"})
-                    .roomDetail__bottom
-                        .roomDetail__rules
-                            h2 Правила
-                            +bulletList(["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия - после 13:00, а выезд до 12:00"])
-                        .roomDetail__cancel
-                            h2 Отмена
-                            p Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
-                .roomDetail__rightColumn
-                    +booking({apartNumber: "888", isLux: true, price: "9990", discount: "2179", additional: "0", complementary: "300"})
+                    //- div
+                    .roomDetail__conditions
+                        h2 Сведения о номере
+                        +condition({pict: "smile", title: "Комфорт", description: "Шумопоглащающие стены"})
+                        +condition({pict: "building", title: "Удобство", description: "Окно в каждой из спален"})
+                        +condition({pict: "fire", title: "Уют", description: "Номер оснащен камином", isHR: false})
+                    .roomDetail__pieChart
+                        h2 Впечатление от номера
+                        #pieChart
+                            +piechart({perfect: 130, good: 65, satisfact: 65})
+                        .roomDetail__legend
+                            div
+                                div(class="roomDetail__legend-circle roomDetail__legend-circle_perfect")
+                                p Великолепно
+                            div
+                                div(class="roomDetail__legend-circle roomDetail__legend-circle_good")
+                                p Хорошо
+                            div
+                                div(class="roomDetail__legend-circle roomDetail__legend-circle_satisfact")
+                                p Удовлетворительно
+                            div
+                                div(class="roomDetail__legend-circle roomDetail__legend-circle_disappoint")
+                                p Разочарован
+                    .roomDetail__rightColumn
+                        +booking({apartNumber: "888", isLux: true, price: "9990", discount: "2179", additional: "0", complementary: "300"})
+                .roomDetail__reviews
+                    .roomDetail__reviews_header
+                        h2 Отзывы посетителей номера
+                        p 2 отзыва
+                    +review({pict: "Sarafanov", likeId: "review_1", likeCount: "12", isLiked: true, name: "Мурад Сарафанов", daysAgo: "5 дней назад", review: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."})
+                    +review({pict: "Steklishkova", likeId: "review_2", likeCount: "2", isLiked: false, name: "Патрисия Стёклышкова", daysAgo: "неделю назад", review: "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент"})
+                .roomDetail__bottom
+                    .roomDetail__rules
+                        h2 Правила
+                        +bulletList(["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия - после 13:00, а выезд до 12:00"])
+                    .roomDetail__cancel
+                        h2 Отмена
+                        p Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+                //- .roomDetail__rightColumn
+                //-     +booking({apartNumber: "888", isLux: true, price: "9990", discount: "2179", additional: "0", complementary: "300"})
         +footer({isShort: false, description: "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»", navigation: {title: "Навигация", links: ["О нас","Новости","Служба поддержки","Услуги"]}, aboutUs: {title: "О нас", links: ["О сервисе","Наша команда","Вакансии","Ивесторы"]}, support: {title: "Служба поддержки", links: ["Соглашения","Сообщество","Связь с нами"]}, subscribe: {title: "подписка", description: "Получайте специальные предложения и новости сервиса", placeholder: "Email"}, copyright: "Copyright © 2018 Toxin отель. Все права зачищены."})
