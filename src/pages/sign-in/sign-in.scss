@@ -3,10 +3,18 @@
 @import '../../_components/_footer/footer';
 @import '../../_components/_cards/_login/login';
 .signin__container {
-    padding: 163px ;
+    padding: 163px 0;
     display: flex;
     justify-content: center;
     background: url(../../img/registration.png) no-repeat;
-    background-size: 100%;
-    background-position-y: 80%;
+    background-position: center 100%;
+    background-size: cover;
+}
+.signin__loginBlock {
+    width: 380px;
+}
+@media only screen and (max-width: 380px) {
+    .signin__container {
+        width: 380px;
+    }
 }

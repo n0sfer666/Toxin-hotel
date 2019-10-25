@@ -12,5 +12,10 @@
 }
 .registration__regBlock {
     width: 380px;
-    margin: 0 auto;
+    // margin: 0 auto;
+}
+@media only screen and (max-width: 380px) {
+    .registration__container {
+        width: 380px;
+    }
 }
