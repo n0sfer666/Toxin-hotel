@@ -7,6 +7,10 @@
     display: flex;
     justify-content: center;
     background: url(../../img/registration.png) no-repeat;
-    background-size: 100%;
-    background-position-y: 100%;
+    background-size: cover;
+    background-position: center 100%;
+}
+.registration__regBlock {
+    width: 380px;
+    margin: 0 auto;
 }
