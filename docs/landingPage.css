@@ -1322,11 +1322,29 @@ h3 {
 .landing__container {
   padding: 70px 9.3056% 18px 9.7223%;
   background: url(img/landing.png) no-repeat;
-  background-position-y: 100%;
-  background-size: 100%; }
+  background-position: center 100%;
+  background-size: cover; }
+
+.landing__findApart {
+  max-width: 380px; }
 
 .landing__description {
   margin-top: 320px; }
   .landing__description p {
     text-align: right; }
+
+@media only screen and (max-width: 425px) {
+  .landing__container {
+    padding-left: 0;
+    padding-right: 0; }
+  .landing__findApart {
+    margin: 0 auto; }
+  .landing__description {
+    margin: 30px auto; }
+    .landing__description p {
+      text-align: center; } }
+
+@media only screen and (max-width: 380px) {
+  .landing__container {
+    width: 380px; } }
 
