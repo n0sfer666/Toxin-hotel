@@ -1,4 +1,4 @@
-@import '../../main.scss';
+    @import '../../main.scss';
 @import '../../_components/_header/header';
 @import '../../_components/_footer/footer';
 @import '../../_components/_formElements/_dateDropdown/dateDropdown';
@@ -20,6 +20,7 @@
 .searchRoom__sidebar {
     display: flex;
     flex-direction: column;
+    height: min-content;
     width: 266px;
     & div {
         & .buttons__richCheckbox-container {
@@ -28,10 +29,10 @@
     }
 }
 .searchRoom__rooms {
-    margin-left: 60px;
+    margin-left: 5.172413793%;
     box-sizing: border-box;
     & .apart__container {
-        margin-right: 8px;
+        margin-right: 0.9592326139%;
         margin-top: 16px;
     }
 }
@@ -41,4 +42,22 @@
 #searchRoom__pagination {
     margin-top: 40px;
     text-align: center;
+}
+@media only screen and (min-width: 320px) and (max-width: 645px) {
+    .searchRoom__sidebar {
+        margin: 10px auto;
+    }
+    .searchRoom__rooms {
+        width: 266px;
+        margin: 10px auto;
+    }
+    .searchRoom__container {
+        flex-wrap: wrap;
+        padding: 0;
+    }
+}
+@media only screen and (min-width: 646px) and (max-width: 1068px) {
+    .searchRoom__container {
+        padding: 30px 5.7223% 70px 5.7223%;
+    }
 }
