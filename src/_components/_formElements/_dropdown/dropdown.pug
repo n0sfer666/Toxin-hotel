@@ -1,26 +1,25 @@
-//- mixin dropdown__line(text, id, count)
-include dropdown__line
-mixin dropdown (isGuests, label)
-    -
-        var text, mainID, linkID, textID, containerID, style
-        text = isGuests ? "Сколько гостей" : "1 спальня, 1 кровать..."
-        mainID = isGuests ? "_dropdownGuests" : "_dropdownRooms"
-        linkID = mainID + "__link"
-        containerID = mainID + "__container"
-
-    h3(class = 'label') #{label}
-    div(id = mainID, class = "dropdown")
-        p(id = linkID, class = "dropdown__link") #{text}
-    if isGuests
-        div(id = containerID, class = "dropdown__container", style = style)
-            +dropdown__line("взрослые", "adults", "0")
-            +dropdown__line("дети", "children", "0")
-            +dropdown__line("младенцы", "babies", "0")
-            .dropdown__confirmLine
-                h3(class="dropdown__cleanLink", id= mainID + "__cleanLink") очистить
-                h3(class="dropdown__applyLink", id= mainID + "__applyLink") применить
-    else
-        div(id = containerID, class = "dropdown__container", style = style)
-            +dropdown__line("спальни", "bedrooms", "1")
-            +dropdown__line("кровати", "beds", "1")
-            +dropdown__line("ванные комнаты", "bathrooms", "0")
+mixin dropdown (isGuests)
+  .iqdropdown
+    p(class="iqdropdown-selection")
+      if isGuests
+        .iqdropdown-menu
+          div(class="iqdropdown-menu-option", data-id="adults")
+            div
+              p.iqdropdown-item взрослые
+          div(class="iqdropdown-menu-option", data-id="children")
+            div
+              p.iqdropdown-item дети
+          div(class="iqdropdown-menu-option", data-id="babies")
+            div
+              p.iqdropdown-item младенцы
+      else
+        div(class="iqdropdown-menu", style="height: 119px;")
+          div(class="iqdropdown-menu-option", data-id="bedrooms", data-defaultcount="2")
+            div
+              p(class="iqdropdown-item") спальни
+          div(class="iqdropdown-menu-option", data-id="beds", data-defaultcount="2")
+            div
+              p(class="iqdropdown-item") кровати
+          div(class="iqdropdown-menu-option", data-id="bathrooms")
+            div
+              p(class="iqdropdown-item") ванные комнаты

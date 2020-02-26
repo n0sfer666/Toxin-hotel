@@ -25,7 +25,8 @@ html
                     div(style="margin-bottom: 20px;")
                         +filterDateDropdown("Даты пребывания в отеле")
                     div(style="width: inherit; margin-bottom: 30px;")
-                        +dropdown(true,"гости")
+                        h3.label гости
+                        +dropdown(true)
                     div(style="margin-bottom: 28px;")
                         +rangeSlider("диапазон цены")
                         span(style="font: 12px/14px Montserrat; color: rgba(31, 32, 65, 0.5);display: inline-block; margin-top: 14px;") Стоимость за сутки пребывания в номере
@@ -39,7 +40,8 @@ html
                         +richCheckboxButton("", "Широкий коридор", "Ширина коридора в номере не менее 91см.")
                         +richCheckboxButton("", "Помощник для инвалидов", "На 1 этаже вас встретит специалист и проводит до номера.")
                     div(style="width: inherit; margin-bottom: 18px;")
-                        +dropdown(false,"удобства номера")
+                        h3.label удобства номера
+                        +dropdown(false)
                     div
                         +expandableCheckboxList("дополнительные удобства")
                 .searchRoom__rooms

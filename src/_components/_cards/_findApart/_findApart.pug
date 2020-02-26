@@ -7,5 +7,6 @@ mixin findApart
         .findApart__dateDropdown    
             +dateDropdown("Прибытие", "Выезд", "findApart")
         .findApart__dropdown
-            +dropdown(true, "гости")
+            h3.label гости
+            +dropdown(true)
         +button({title: "Подобрать номер"})

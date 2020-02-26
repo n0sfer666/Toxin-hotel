@@ -32,7 +32,8 @@ mixin booking(options)
         .booking__dateOfStay
             +dateDropdown("прибытие", "выезд", "booking")
         .booking__guests
-            +dropdown(true, "гости")
+            h3.label гости
+            +dropdown(true)
         .booking__calculation
             .booking__calcLine
                 p
