@@ -90,6 +90,11 @@ module.exports = {
 			wNumb: 'wnumb'
 		})
 	],
+	devServer: {
+		contentBase: __dirname + '/docs',
+		compress: true,
+		port: 9090 
+	},
 	module: {
 		rules: [
 			{
