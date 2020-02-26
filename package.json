@@ -5,10 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "rm  -dr docs && webpack --mode production",
-    "build:watch": "rm -dr docs && webpack --mode production --watch",
-    "dev": "rm -dr docs && webpack --mode development",
-    "dev:watch": "rm -dr docs && webpack --mode development --watch",
-    "postcss": "postcss dist/index.css -o dist/index.css"
+    "dev": "rm -dr docs && webpack --mode development"
   },
   "browserslist": [
     "> 1%",
