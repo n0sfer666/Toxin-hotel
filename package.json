@@ -30,7 +30,7 @@
     "jquery": "^3.4.1",
     "jqueryui": "^1.11.1",
     "mini-css-extract-plugin": "^0.7.0",
-    "node-sass": "^4.13.0",
+    "node-sass": "^4.13.1",
     "nouislider": "^14.1.0",
     "paginationjs": "^2.1.5",
     "postcss-cli": "^6.1.3",
