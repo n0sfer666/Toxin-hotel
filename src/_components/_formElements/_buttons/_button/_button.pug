@@ -1,11 +1,17 @@
-//- size: medium or whithout {size: } for class button_toPay
-//- theme:  for {size: small}: clickPurple, clickGray
-//-         for {size: medium}: gradient, gradientOpacity, border, borderOpacity,
+//- size: small, medium, big
+//- theme:  for {size: small}: isGray (true) - gray color, else purple
+//-         for {size: medium}: gradient, border
+//- isOpacity: true - add button_opacity class for medium size
 //- title: whatever
-//- height: whatever
-mixin button(option)
+mixin button(options)
     -
-        var styleHeight = option.height == undefined ? "height: 44px;" : "height: " + option.height + ";"
-        var className = option.size == undefined ? "button_toPay": "button_" + option.size + " button_" + option.theme
-    button(type="button", class=className, style=styleHeight)
-        h3 #{option.title}
+        var className = options.size == undefined ? "button_big": "button_" + options.size
+        if(options.size === 'medium')
+            className += ' button_' + options.theme
+            if(options.isOpacity)
+                className += ' button_opacity'
+        if(options.size === 'small')
+            className += options.isGray ? ' button_gray' : ' button_purple'
+
+    button(type="button", class=className)
+        h3 #{options.title}
