@@ -2,13 +2,13 @@ import 'air-datepicker';
 import '../../_formElements/_dropdown/dropdown'
 $(document).ready(function() {
     var daysOfStay;
-    var price = Number($("#booking__price").text());
-    var discount = Number($("#booking__discount").text());
-    var str = $("#booking__complementary").text();
+    var price = Number($("#booking--price").text());
+    var discount = Number($("#booking--discount").text());
+    var str = $("#booking--complementary").text();
     var complementary = Number(str.substring(0, str.length - 1));
-    str = $("#booking__additional").text();
+    str = $("#booking--additional").text();
     var additional = Number(str.substring(0, str.length - 1));
-    var separator = [["#booking__price", "#booking__priceCalc", "#booking__discount"],["#booking__cost", "#booking__additional", "#booking__complementary", "#booking__total"]];
+    var separator = [["#booking--price", "#booking--priceCalc", "#booking--discount"],["#booking--cost", "#booking--additional", "#booking--complementary", "#booking--total"]];
     for(var i=0; i <= separator[0].length - 1; i++) {
         str = $(separator[0][i]).text();
         $(separator[0][i]).text(str.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 '));
@@ -43,16 +43,16 @@ $(document).ready(function() {
         onShow: function (dp, animationCompleted) {
             if (!animationCompleted) {
                if (dp.$datepicker.find('h3').html()===undefined) { /*ONLY when button don't existis*/
-                  dp.$datepicker.append('<button type="button" class="datepicker__clearLink">Очистить</button>');
-                  dp.$datepicker.append('<h3 href="#" class="datepicker__applyLink">Применить</h3>');
+                  dp.$datepicker.append('<button type="button" class="datepicker--clearLink">Очистить</button>');
+                  dp.$datepicker.append('<h3 href="#" class="datepicker--applyLink">Применить</h3>');
                   dp.$datepicker.find('h3').click(function(event) {
                     if(daysOfStay == 1)
-                        $("#booking__daysOfStay").text(daysOfStay + " сутки");
+                        $("#booking--daysOfStay").text(daysOfStay + " сутки");
                     else if(daysOfStay >= 2)
-                        $("#booking__daysOfStay").text(daysOfStay + " суток");
+                        $("#booking--daysOfStay").text(daysOfStay + " суток");
                     var cost = daysOfStay*price;
-                    $("#booking__cost").text(cost + "₽");
-                    $("#booking__total").text(cost - discount + additional + complementary + "₽");
+                    $("#booking--cost").text(cost + "₽");
+                    $("#booking--total").text(cost - discount + additional + complementary + "₽");
                     for(var i=0; i <= separator[1].length - 1; i++) {
                         str = $(separator[1][i]).text();
                         $(separator[1][i]).text(str.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 '));

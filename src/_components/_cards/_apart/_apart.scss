@@ -243,7 +243,7 @@
 
 
 // custom
-.apart__container {
+.apart--container {
     width: 270px;
     height: 257px;
 
@@ -255,15 +255,15 @@
     box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
     border-radius: 4px;
 }
-.apart__textBlock {
+.apart--textBlock {
     margin: 10px 17px 19px 20px;
-    & .apart__hr {
+    & .apart--hr {
         margin-top: 6px;
         height: 1px;
         background: rgba(31, 32, 65, 0.1);
     }
 }
-.apart__header {
+.apart--header {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -296,7 +296,7 @@
         }
     }
 }
-.apart__rating {
+.apart--rating {
     display: flex;
     justify-content: space-between;
     align-items: center;

@@ -3,7 +3,7 @@
 @import '../../_formElements/_buttons/_toggle/buttons__toggle';
 @import '../../_formElements/_buttons/_button/button';
 
-.regustration__container {
+.regustration--container {
     width: 380px;
     
     height: 646px;
@@ -16,30 +16,30 @@
 
     padding: 39px 7.936507937% 29px 7.936507937%;
 }
-.registration__block {
+.registration--block {
     margin-top: 10px;
 }
-.registration__nameField {
+.registration--nameField {
     margin-top: 20px;
 }
-.registration__birthday {
+.registration--birthday {
     margin-top: 25px;
 } 
-.registration__loginInfo {
+.registration--loginInfo {
     margin-top: 20px;
 }
-.registration__payButton {
+.registration--payButton {
     height: 44px;
     margin-top: 25px;
 }
-.registration__entry {
+.registration--entry {
     display: flex;
     align-items: center;
     justify-content: space-between;
 
     margin-top: 29px;
 }
-.registration__login {
+.registration--login {
     height: 44px;
     width: 99px;
 }

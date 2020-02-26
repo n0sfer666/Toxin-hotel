@@ -3,7 +3,7 @@ include ../../_formElements/_dropdown/dropdown
 include ../../_formElements/_buttons/_button/_button
 
 mixin exclamation
-    .booking__exclamation
+    .booking--exclamation
         h3 i
 
 //- apartNumber - номер аппартамента (выводится как № 123 в тегах h1)
@@ -18,50 +18,50 @@ mixin booking(options)
         var flagDiscount = options.discount != undefined ? true : false
         var flagComplementary = options.complementary != undefined ? true : false
         var additional = options.additional != undefined ? options.additional : "0"
-    .booking__container    
-        .booking__header
+    .booking--container    
+        .booking--header
             div
                 h1="№ "
                 h1=options.apartNumber
                 if options.isLux
                     h3 люкс
             span
-                b(id="booking__price")= options.price
+                b(id="booking--price")= options.price
                 b="₽ "
                 | в сутки
-        .booking__dateOfStay
+        .booking--dateOfStay
             +dateDropdown("прибытие", "выезд", "booking")
-        .booking__guests
+        .booking--guests
             h3.label гости
             +dropdown(true)
-        .booking__calculation
-            .booking__calcLine
+        .booking--calculation
+            .booking--calcLine
                 p
-                    span(id="booking__priceCalc")=options.price + "₽ X "
-                    span(id="booking__daysOfStay")="0 суток"
-                span(id="booking__cost")="0₽"
-            .booking__calcLine
+                    span(id="booking--priceCalc")=options.price + "₽ X "
+                    span(id="booking--daysOfStay")="0 суток"
+                span(id="booking--cost")="0₽"
+            .booking--calcLine
                 span="Сбор за услуги: "
                     if flagDiscount
                         span="скидка "
-                        span(id="booking__discount")=options.discount
+                        span(id="booking--discount")=options.discount
                         span="₽"
                 div
                     +exclamation
-                    span(id="booking__additional")=additional + "₽"
-            .booking__calcLine
+                    span(id="booking--additional")=additional + "₽"
+            .booking--calcLine
                 pre
                     | Сбор за дополнительные
                     | услуги
                 div
                     +exclamation
                     if flagComplementary
-                        span(id="booking__complementary")=options.complementary + "₽"
+                        span(id="booking--complementary")=options.complementary + "₽"
                     else
-                        span(id="booking__complementary")="0₽"
-        .booking__total
+                        span(id="booking--complementary")="0₽"
+        .booking--total
             h2="Итого"
             div
-            h2(id="booking__total")="0₽"
-        .booking__button
+            h2(id="booking--total")="0₽"
+        .booking--button
             +button({title: "забронировать"})

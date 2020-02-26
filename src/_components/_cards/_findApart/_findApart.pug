@@ -2,12 +2,12 @@ include ../../_formElements/_dateDropdown/_dateDropdown
 include ../../_formElements/_dropdown/dropdown
 include ../../_formElements/_buttons/_button/_button
 mixin findApart
-    .findApart__container
+    .findApart--container
         h1 Найдём номера под ваши пожелания
-        .findApart__dateDropdown    
+        .findApart--dateDropdown    
             +dateDropdown("Прибытие", "Выезд", "findApart")
-        .findApart__dropdown
+        .findApart--dropdown
             h3.label гости
             +dropdown(true)
-        .findApart__button
+        .findApart--button
             +button({title: "Подобрать номер"})

@@ -1,7 +1,7 @@
 @import '../../_formElements/_dateDropdown/dateDropdown';
 @import '../../_formElements/_dropdown/dropdown.scss';
 @import '../../_formElements/_buttons/_button/button';
-.findApart__container {
+.findApart--container {
     width: 380px;
     
     height: 374px;
@@ -14,14 +14,14 @@
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
 }
-.findApart__dateDropdown {
+.findApart--dateDropdown {
     margin-top: 20px;
 }
-.findApart__dropdown {
+.findApart--dropdown {
     width: 320px;
     margin-top: 20px;
     margin-bottom: 31px;
 }
-.findApart__button {
+.findApart--button {
     height: 44px;
 }

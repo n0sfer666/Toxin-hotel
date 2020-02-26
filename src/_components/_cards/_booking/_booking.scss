@@ -2,7 +2,7 @@
 @import '../../_formElements/_dropdown/dropdown';
 @import '../../_formElements/_buttons/_button/button';
 
-.booking__container {
+.booking--container {
     width: 380px;
     
     height: 511px;
@@ -15,7 +15,7 @@
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
 }
-.booking__header {
+.booking--header {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -47,17 +47,17 @@
         }
     }
 }
-.booking__dateOfStay {
+.booking--dateOfStay {
     margin-top: 20px;
 }
-.booking__guests {
+.booking--guests {
     width: 320px;
     margin-top: 20px;
 }
-.booking__calculation {
+.booking--calculation {
     margin-top: 16px;
 }
-.booking__calcLine {
+.booking--calcLine {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -69,13 +69,13 @@
             font: normal normal 14px/20px Montserrat;
         }
     }
-    & div:not(.booking__exclamation) {
+    & div:not(.booking--exclamation) {
         width: 100px;
         display: flex;
         justify-content: space-between;
     }
 }
-.booking__exclamation {
+.booking--exclamation {
     width: 20px;
     height: 20px;
     border: 1px solid $dShade25; 
@@ -94,7 +94,7 @@
         line-height: 18px;
     }
 }
-.booking__total {
+.booking--total {
     display: flex;
     justify-content: space-between;
     color: $dShade100;
@@ -113,7 +113,7 @@
         margin-right: 5px;
     }
 }
-.booking__button {
+.booking--button {
     height: 44px;
     margin-top: 20px;
 }

@@ -1,10 +1,10 @@
 @import '../_textField/textField.scss';
-.datepicker__applyLink {
+.datepicker--applyLink {
   float: right;
   cursor: pointer;
   color: $purple;
 }
-.datepicker__clearLink {
+.datepicker--clearLink {
   float: left;
   border: none;
   outline: none;
@@ -14,10 +14,10 @@
   color: $dShade50;
   cursor: pointer;
 }
-.datepicker__clearLink, .datepicker__applyLink {
+.datepicker--clearLink, .datepicker--applyLink {
   margin-top: 20px;
 }
-.dateDropdown__container {
+.dateDropdown--container {
   display: flex;
   justify-content: space-between;
   & div {
@@ -283,53 +283,13 @@
     opacity: 1;
     -webkit-transform: none;
             transform: none; }
-  
-  // .datepicker-inline .datepicker--pointer {
-  //   display: none; }
-  
+
   .datepicker--content {
     box-sizing: content-box;
     padding: 4px; }
     .-only-timepicker- .datepicker--content {
       display: none; }
-  
-  // .datepicker--pointer {
-  //   position: absolute;
-  //   background: #fff;
-  //   border-top: 1px solid #dbdbdb;
-  //   border-right: 1px solid #dbdbdb;
-  //   width: 10px;
-  //   height: 10px;
-  //   z-index: -1; }
-  //   .-top-left- .datepicker--pointer, .-top-center- .datepicker--pointer, .-top-right- .datepicker--pointer {
-  //     top: calc(100% - 4px);
-  //     -webkit-transform: rotate(135deg);
-  //             transform: rotate(135deg); }
-  //   .-right-top- .datepicker--pointer, .-right-center- .datepicker--pointer, .-right-bottom- .datepicker--pointer {
-  //     right: calc(100% - 4px);
-  //     -webkit-transform: rotate(225deg);
-  //             transform: rotate(225deg); }
-  //   .-bottom-left- .datepicker--pointer, .-bottom-center- .datepicker--pointer, .-bottom-right- .datepicker--pointer {
-  //     bottom: calc(100% - 4px);
-  //     -webkit-transform: rotate(315deg);
-  //             transform: rotate(315deg); }
-  //   .-left-top- .datepicker--pointer, .-left-center- .datepicker--pointer, .-left-bottom- .datepicker--pointer {
-  //     left: calc(100% - 4px);
-  //     -webkit-transform: rotate(45deg);
-  //             transform: rotate(45deg); }
-  //   .-top-left- .datepicker--pointer, .-bottom-left- .datepicker--pointer {
-  //     left: 10px; }
-  //   .-top-right- .datepicker--pointer, .-bottom-right- .datepicker--pointer {
-  //     right: 10px; }
-  //   .-top-center- .datepicker--pointer, .-bottom-center- .datepicker--pointer {
-  //     left: calc(50% - 10px / 2); }
-  //   .-left-top- .datepicker--pointer, .-right-top- .datepicker--pointer {
-  //     top: 10px; }
-  //   .-left-bottom- .datepicker--pointer, .-right-bottom- .datepicker--pointer {
-  //     bottom: 10px; }
-  //   .-left-center- .datepicker--pointer, .-right-center- .datepicker--pointer {
-  //     top: calc(50% - 10px / 2); }
-  
+ 
   .datepicker--body {
     display: none; }
     .datepicker--body.active {
@@ -390,31 +350,14 @@
        -moz-user-select: none;
         -ms-user-select: none;
             user-select: none; }
-    // .datepicker--nav-action:hover {
-    //   background: #f0f0f0; }
     .datepicker--nav-action.-disabled- {
       visibility: hidden; }
     .datepicker--nav-action svg {
       width: 24px;
       height: 24px; }
-    // .datepicker--nav-action path {
-    //   fill: none;
-    //   stroke: #9c9c9c;
-    //   stroke-width: 2px; }
-  
   .datepicker--nav-title {
     border-radius: 4px;
     padding: 0 8px; }
-    // .datepicker--nav-title i {
-    //   font-style: normal;
-    //   color: #9c9c9c;
-    //   margin-left: 5px; }
-    // .datepicker--nav-title:hover {
-    //   background: #f0f0f0; }
-    // .datepicker--nav-title.-disabled- {
-    //   cursor: default;
-    //   background: none; }
-  
   .datepicker--buttons {
     display: -webkit-flex;
     display: -ms-flexbox;

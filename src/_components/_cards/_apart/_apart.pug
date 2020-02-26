@@ -11,24 +11,24 @@ mixin apart(options)
         var slides = ["","","",""]
         for(var i=1; i<=slides.length; i++)
             slides[i-1] = "img/" + options.apartNumber + "/img-" + options.apartNumber + "-" + i + ".png"
-    .apart__container
-        .apart__slider
+    .apart--container
+        .apart--slider
             each val in slides
                 div
                     img(src=val)
-        .apart__textBlock    
-            .apart__header
+        .apart--textBlock    
+            .apart--header
                 div
                     h1="№ "
                     h1=options.apartNumber
                     if options.isLux
                         h3 люкс
                 span
-                    b(id="apart__price_" + options.apartNumber)= options.price
+                    b(id="apart--price-" + options.apartNumber)= options.price
                     b="₽ "
                     | в сутки
-            .apart__hr
-            .apart__rating
+            .apart--hr
+            .apart--rating
                 div
                     +rateButton(options.apartNumber, options.rating)
                 div
