@@ -16,40 +16,40 @@ include ../_formElements/_textField/_subscribtionTextField/_subscribtionTextFiel
 mixin vMenu(options)
     h3=options.title
     each val in options.links
-        a(href="#", class="footer__link")=val
+        a(href="#", class="footer--link")=val
 mixin footer(options)
     if options.isShort
         footer
-            .footer__container_short 
-                .footer__logo_short
+            .footer--container_short 
+                .footer--logo_short
                     +logo(true)
-                .footer__description_short
+                .footer--description_short
                     p #{options.description}
-                .footer__social
+                .footer--social
                     +socialTwitter
                     +socialFacebook
                     +socialInstagram
     else
         footer
-            .footer__container
-                .footer__description
-                    .footer__logo
+            .footer--container
+                .footer--description
+                    .footer--logo
                         +logo(true)
                     p #{options.description}
-                .footer__menu
-                    .footer__navigation
+                .footer--menu
+                    .footer--navigation
                         +vMenu({title: options.navigation.title, links: options.navigation.links})
-                    .footer__aboutUs
+                    .footer--aboutUs
                         +vMenu({title: options.aboutUs.title, links: options.aboutUs.links})
-                    .footer__support
+                    .footer--support
                         +vMenu({title: options.support.title, links: options.support.links})
-                    .footer__subscribe
+                    .footer--subscribe
                         h3= options.subscribe.title
                         p= options.subscribe.description
-                        +SubscribtionTextField("_footer__subscribe", "_footer__subscribeButton", options.subscribe.placeholder)
-            .footer__copyright
+                        +SubscribtionTextField("_footer--subscribe", "_footer--subscribeButton", options.subscribe.placeholder)
+            .footer--copyright
                 p= options.copyright
-                .footer__social
+                .footer--social
                     +socialTwitter
                     +socialFacebook
                     +socialInstagram

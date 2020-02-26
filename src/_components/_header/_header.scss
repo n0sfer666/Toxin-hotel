@@ -1,5 +1,5 @@
 @import '../_formElements/_buttons/_button/button';
-.header__container {
+.header--container {
     width: 100%;
     min-height: 70px;
     display: flex;
@@ -11,7 +11,7 @@
     background-color: #FFFFFF;
     box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 }
-.header__container_left {
+.header--container_left {
     display: inline-block;
     vertical-align: middle;
     margin-right: 10px;
@@ -20,11 +20,11 @@
         margin: 0 auto;
     }
 }
-.header__container_right {
+.header--container_right {
     display: flex;
     flex-wrap: nowrap;
 }
-.header__auth {
+.header--auth {
     display: flex;
     align-items: center;
     & a {
@@ -33,13 +33,13 @@
         line-height: 30px;
     }
 }
-.header__loginLink {
+.header--loginLink {
     color: $dShade50;
     height: 30px;
     border-left: 1px solid rgba(31, 32, 65, 0.1);
     padding-left: 30px;
 }
-.header__menu {
+.header--menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -49,21 +49,21 @@
         margin-right: 30px;
     }
 }
-.header__menuLink {
+.header--menuLink {
     font: normal normal 14px/17px Montserrat;
     color: $dShade75;
 }
-.header__menuLink_home {
+.header--menuLink_home {
     font-weight: bold;
 }
 @media only screen and (min-width: 300px) and (max-width: 767px) {
-    .header__container {
+    .header--container {
         padding-top: 15px;
         padding-bottom: 15px;
         justify-content: center;
         flex-wrap: wrap;
     }
-    .header__menu {
+    .header--menu {
         margin: 10px auto;
         & a {
             margin: 5px 14%;
@@ -72,28 +72,28 @@
 
 }
 @media only screen and (min-width: 300px) and (max-width: 873px) {
-    .header__auth {
+    .header--auth {
         margin: 0 auto;
         margin-top: 10px;
         width: 75%;
         justify-content: center;
     }
-    .header__loginLink {
+    .header--loginLink {
         width: 100%;
         padding-top: 15px;
         text-align: center;
         border-top: 1px solid rgba(31, 32, 65, 0.1);
         border-left: none;
     }
-    .header__menu {
+    .header--menu {
         margin: 0 auto;        
     }
 }
 @media only screen and (max-width: 1024px) {
-    .header__container_right {
+    .header--container_right {
         flex-wrap: wrap;
     }
-    .header__container {
+    .header--container {
         flex-wrap: wrap;
     }
  }

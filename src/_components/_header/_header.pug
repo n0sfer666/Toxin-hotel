@@ -9,16 +9,16 @@ include ./_menuLink
 //- }
 //- menuLinks: ["home", ["link", "About Us"], ["submenu", "Services"], etc]
 mixin header(options)
-        .header__container
-            .header__container_left
+        .header--container
+            .header--container_left
                 +logo(true)
-            .header__container_right
-                .header__menu
+            .header--container_right
+                .header--menu
                     each val in options.menuLinks
                         +menuLink(val)
-                .header__auth
+                .header--auth
                     if options.isAuth
-                        a(href="#", class="header__loginLink") #{options.login}
+                        a(href="#", class="header--loginLink") #{options.login}
                     else
                         div(style="width: " + options.lButton.width + "px; margin-right: 20px; height: 34px;")
                             +button({size: "medium", theme: "border", title: options.lButton.title})
