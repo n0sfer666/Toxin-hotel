@@ -91,6 +91,7 @@ module.exports = {
 		})
 	],
 	devServer: {
+		clientLogLevel: 'error',
 		contentBase: __dirname + '/docs',
 		compress: true,
 		port: 9090 

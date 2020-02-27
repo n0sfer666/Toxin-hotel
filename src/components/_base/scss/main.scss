@@ -1,5 +1,5 @@
 // reset
-body, h1, h2, h3, p, button, br, ul, li, pre {
+html, body, h1, h2, h3, p, button, br, ul, li, pre {
     margin: 0;
     padding: 0;
 }
@@ -21,10 +21,10 @@ br {
 // Firefox 18- 
 :-moz-placeholder           { color: rgba(31, 32, 65, 0.25); }
 // import base components
-@import './_components/_base/_scss/fonts';
-@import './_components/_base/_scss/var__colors';
+@import './fonts/fonts.scss';
+@import './variables/colors.scss';
 // change text tags
-body {
+html {
     font: normal normal 14px/24px Montserrat;
     color: $dShade75;
 }
@@ -43,4 +43,3 @@ h3 {
 .label {
     margin-bottom: 5px;
 }
-// components
