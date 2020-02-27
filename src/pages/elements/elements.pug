@@ -9,10 +9,10 @@ include ../../_components/_formElements/_dateDropdown/_dateDropdown
 include ../../_components/_formElements/_dateDropdown/_filterDateDropdown/_filterDateDropdown
 include ../../_components/_formElements/_expandableCheckboxList/_expandableCheckboxList
 include ../../_components/_formElements/_conditions/conditions
-include ../../_components/_formElements/_buttons/_checkbox/buttons__checkbox
-include ../../_components/_formElements/_buttons/_radio/_buttons__radio
+include ../../_components/_formElements/_buttons/_checkbox/_checkbox
+include ../../_components/_formElements/_buttons/_radio/_radio
 include ../../_components/_formElements/_buttons/_toggle/_buttons__toggle
-include ../../_components/_formElements/_buttons/_like/_buttons__like
+include ../../_components/_formElements/_buttons/_like/_like
 include ../../_components/_formElements/_buttons/_rate/_buttons_rate
 include ../../_components/_formElements/_buttons/_checkbox_rich/_checkbox_rich
 include ../../_components/_formElements/_range_slider/_range_slider
@@ -53,12 +53,14 @@ html
             .elements__container_center
                 div(style="width: 222px; margin-bottom: 20px;")
                     h3(style="margin-bottom: 16px;") checkbox buttons
-                    +checkboxButton("", "Можно курить", false)
-                    +checkboxButton("", "Можно с питомцами", true)
-                    +checkboxButton("", "Можно пригласить гостей (до 10 человек)", true)
+                    +checkbox("", "Можно курить", false)
+                    +checkbox("", "Можно с питомцами", true)
+                    +checkbox("", "Можно пригласить гостей (до 10 человек)", true)
                 div(style="width: 222px; margin-bottom: 20px;")
                     h3(style="margin-bottom: 16px;") radio buttons
-                    +radioButtons
+                    div(style="display: flex;")
+                        +radio('Мужчина', "sex", true)
+                        +radio('Женщина', "sex")
                 div(style="width: 260px; margin-bottom: 20px;")
                     h3(style="margin-bottom: 16px;") toggle
                     +toggleButton("Получать спецпредложения")
@@ -66,8 +68,8 @@ html
                     h3(style="margin-bottom: 16px;") like button
                     div(style="display: flex;")
                         div(style="margin-right: 10px;")
-                            +likeButton("1", 2, false)
-                        +likeButton("2", 12, true)
+                            +like(2, false)
+                        +like(12, true)
                 div(style="width: 260px; margin-bottom: 20px; ")
                     h3(style="margin-bottom: 16px;") rate button
                     div(style="display: flex;")
@@ -76,8 +78,8 @@ html
                         +rateButton("2", 5)
                 div(style="width: 260px; margin-bottom: 20px; ")
                     h3(style="margin-bottom: 16px;") rich checkbox buttons
-                    +richCheckboxButton("", "Широкий коридор", "Ширина коридора в номере не менее 91см.")
-                    +richCheckboxButton("", "Помощник для инвалидов", "На 1 этаже вас встретит специалист и проводит до номера.")
+                    +rich-checkbox("", "Широкий коридор", "Ширина коридора в номере не менее 91см.")
+                    +rich-checkbox("", "Помощник для инвалидов", "На 1 этаже вас встретит специалист и проводит до номера.")
             .elements__container_right
                 div(style="width: 266px; margin-bottom: 20px;")
                     +rangeSlider("range slider")

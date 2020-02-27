@@ -1,14 +1,14 @@
 //- mixin checkboxButton (id, label, isChecked)
-include ../_buttons/_checkbox/buttons__checkbox
+include ../_buttons/_checkbox/_checkbox
 mixin expandableCheckboxList(title)
     a(href="#", class = "expandableCheckboxList__link expandableCheckboxList__link_deactive", type = "button")
         h3(id = "expList__link") #{title}
     div(id = "expList__container", class = "expandableCheckboxList__container")
-        +checkboxButton("brekfast", "Завтрак", false)
-        +checkboxButton("table", "Писменный стол", true)
-        +checkboxButton("feedingChair", "Стул для кормления", true)
-        +checkboxButton("cot", "Кроватка", true)
-        +checkboxButton("TV", "Телевизор", false)
-        +checkboxButton("shampoo", "Шампунь", false)
-        +checkboxButton("TV1", "Телевизор", false)
-        +checkboxButton("shampoo1", "Шампунь", false)
+        +checkbox("brekfast", "Завтрак", false)
+        +checkbox("table", "Писменный стол", true)
+        +checkbox("feedingChair", "Стул для кормления", true)
+        +checkbox("cot", "Кроватка", true)
+        +checkbox("TV", "Телевизор", false)
+        +checkbox("shampoo", "Шампунь", false)
+        +checkbox("TV1", "Телевизор", false)
+        +checkbox("shampoo1", "Шампунь", false)

@@ -1,5 +1,5 @@
 include ../../_formElements/_textField/textField
-include ../../_formElements/_buttons/_radio/_buttons__radio
+include ../../_formElements/_buttons/_radio/_radio
 include ../../_formElements/_buttons/_toggle/_buttons__toggle
 include ../../_formElements/_buttons/_button/_button
 
@@ -12,7 +12,9 @@ mixin registration
             .registration--block
                 +textField("lastName", "", "Фамилия")
         .registration--block
-            +radioButtons
+            div(style="display: flex;")
+                +radio('Мужчина', "sex", true)
+                +radio('Женщина', "sex")
         .registration--birthday
             .registration--block
                 +textField("birthday", "дата рождения", "ДД.ММ.ГГГГ")

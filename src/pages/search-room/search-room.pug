@@ -6,7 +6,7 @@ include ../../_components/_header/_header
 include ../../_components/_formElements/_dateDropdown/_filterDateDropdown/_filterDateDropdown
 include ../../_components/_formElements/_dropdown/dropdown
 include ../../_components/_formElements/_range_slider/_range_slider
-include ../../_components/_formElements/_buttons/_checkbox/buttons__checkbox
+include ../../_components/_formElements/_buttons/_checkbox/_checkbox
 include ../../_components/_formElements/_buttons/_checkbox_rich/_checkbox_rich
 include ../../_components/_formElements/_expandableCheckboxList/_expandableCheckboxList
 include ../../_components/_cards/_apart/_apart
@@ -32,13 +32,13 @@ html
                         span(style="font: 12px/14px Montserrat; color: rgba(31, 32, 65, 0.5);display: inline-block; margin-top: 14px;") Стоимость за сутки пребывания в номере
                     div(style="width: 222px; margin-bottom: 22px;")
                         h3(style="margin-bottom: 10px;") checkbox buttons
-                        +checkboxButton("", "Можно курить", false)
-                        +checkboxButton("", "Можно с питомцами", true)
-                        +checkboxButton("", "Можно пригласить гостей (до 10 человек)", true)
+                        +checkbox("", "Можно курить", false)
+                        +checkbox("", "Можно с питомцами", true)
+                        +checkbox("", "Можно пригласить гостей (до 10 человек)", true)
                     div(style="margin-bottom: 30px;")
                         h3(style="margin-bottom: 16px;") Доступность
-                        +richCheckboxButton("", "Широкий коридор", "Ширина коридора в номере не менее 91см.")
-                        +richCheckboxButton("", "Помощник для инвалидов", "На 1 этаже вас встретит специалист и проводит до номера.")
+                        +rich-checkbox("", "Широкий коридор", "Ширина коридора в номере не менее 91см.")
+                        +rich-checkbox("", "Помощник для инвалидов", "На 1 этаже вас встретит специалист и проводит до номера.")
                     div(style="width: inherit; margin-bottom: 18px;")
                         h3.label удобства номера
                         +dropdown(false)

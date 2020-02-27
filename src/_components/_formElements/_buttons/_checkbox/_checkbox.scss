@@ -1,4 +1,4 @@
-.buttons__checkbox-label {
+.checkbox-label {
     display: inline-block;
     position: relative;
     cursor: pointer;
@@ -7,14 +7,14 @@
     padding-left: 30px;
     margin-bottom: 11px;
 }
-.buttons__checkbox {
+.checkbox {
     position: absolute;
     opacity: 0;
     cursor: pointer;
     height: 0;
     width: 0;
 }
-.buttons__checkbox-checkmark {
+.checkbox-checkmark {
     position: absolute;
     top: 0;
     left: 0;
@@ -25,19 +25,19 @@
     box-sizing: border-box;
     border-radius: 4px;
 }
-.buttons__checkbox:checked ~ .buttons__checkbox-checkmark {
+.checkbox:checked ~ .checkbox-checkmark {
     border: 1px solid #BC9CFF;
     content: "";
 }
-.buttons__checkbox-checkmark:after {
+.checkbox-checkmark:after {
     content: "";
     position: absolute;
     display: none;
 }
-.buttons__checkbox:checked ~ .buttons__checkbox-checkmark:after {
+.checkbox:checked ~ .checkbox-checkmark:after {
     display: block;
 }
-.buttons__checkbox-label .buttons__checkbox-checkmark:after {
+.checkbox-label .checkbox-checkmark:after {
     left: 5px;
     top: 3px;
     width: 5px;

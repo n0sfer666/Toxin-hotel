@@ -1,17 +1,18 @@
 //- size: small, medium, big
 //- theme:  for {size: small}: isGray (true) - gray color, else purple
 //-         for {size: medium}: gradient, border
-//- isOpacity: true - add button_opacity class for medium size
+//- isOpacity: true - add button-opacity class for medium size
 //- title: whatever
 mixin button(options)
     -
-        var className = options.size == undefined ? "button_big": "button_" + options.size
+        var type = options.type === undefined ? 'button' : options.type
+        var className = options.size == undefined ? "button-big": "button-" + options.size
         if(options.size === 'medium')
-            className += ' button_' + options.theme
+            className += ' button-' + options.theme
             if(options.isOpacity)
-                className += ' button_opacity'
+                className += ' button-opacity'
         if(options.size === 'small')
-            className += options.isGray ? ' button_gray' : ' button_purple'
+            className += options.isGray ? ' button-gray' : ' button-purple'
 
-    button(type="button", class=className)
+    button(type=type, class=className)
         h3 #{options.title}

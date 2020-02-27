@@ -1,4 +1,4 @@
-include ../_buttons/_like/_buttons__like
+include ../_buttons/_like/_like
 mixin review(options)
     -
         var pict = "./img/" + options.pict + ".png"
@@ -6,7 +6,7 @@ mixin review(options)
         .review__leftColumn
             .review__pict
                 img(src=pict, alt=options.name)
-            +likeButton(options.likeId, options.likeCount, options.isLiked)
+            +like(options.likeCount, options.isLiked)
         .review__rightColumn
             span(class="review__name") #{options.name}
             br

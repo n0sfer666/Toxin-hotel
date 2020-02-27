@@ -91,7 +91,7 @@ $(document).ready(function() {
 });
 import '../../_components/_formElements/_dateDropdown/_filterDateDropdown/_filterDateDropdown';
 import '../../_components/_formElements/_expandableCheckboxList/_expandableCheckboxList';
-import '../../_components/_formElements/_buttons/_like/_buttons__like';
+import '../../_components/_formElements/_buttons/_like/_like';
 import '../../_components/_formElements/_buttons/_rate/_buttons_rate';
 import '../../_components/_formElements/_range_slider/_range_slider';
 import '../../_components/_formElements/_pagination/_pagination';

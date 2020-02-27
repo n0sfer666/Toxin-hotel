@@ -1,9 +1,0 @@
-mixin buttons__plusMinus (id, isPlus)
-    -
-        var value;
-        value = isPlus ? "+" : "-"
-        var style;
-        style = isPlus ? "float: right;" : "float: left;"
-        var className;
-        className = isPlus ? "buttons__plusMinus_active" : "buttons__plusMinus";
-    button(id = id, class = className, style = style, type = "button") #{value}

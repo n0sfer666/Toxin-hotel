@@ -1,9 +1,9 @@
-mixin richCheckboxButton(id, title, description)
+mixin rich-checkbox(id, title, description)
     div
-        label(class="buttons__richCheckbox-container")
-            input(type="checkbox", id = id, class = "buttons__richCheckbox")
-            span(class="buttons__richCheckbox-checkmark")
+        label(class="rich-checkbox--container")
+            input(type="checkbox", id = id, class = "rich-checkbox")
+            span(class="rich-checkbox--checkmark")
             div(style="padding-left: 30px;")
-                span(class="buttons__richCheckbox-title") #{title}
+                span(class="rich-checkbox--title") #{title}
                 br
-                p(class="buttons__richCheckbox-description") #{description}
+                p(class="rich-checkbox--description") #{description}
