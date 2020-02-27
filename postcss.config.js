@@ -1,7 +1,7 @@
 module.exports = {
   plugins: {
     'autoprefixer': {},
-    'postcss-discard-comments': {},
-    // 'cssnano': {}
+    // 'postcss-discard-comments': {},
+    'cssnano': {}
   }
 }
