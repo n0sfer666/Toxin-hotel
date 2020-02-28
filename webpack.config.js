@@ -17,9 +17,9 @@ plugins.push(
 		filename: '[name].css',
 		chunkFilename: '[id].css'
 	}),
-	new CopyWebpackPlugin([
-		{ from: 'src/components/cards/apart/img', to: 'img' }
-	]),
+	// new CopyWebpackPlugin([
+	// 	{ from: 'src/components/cards/apart/img', to: 'img' }
+	// ]),
 	new Webpack.ProvidePlugin({
 		$: 'jquery',
 		jQuery: 'jquery',
