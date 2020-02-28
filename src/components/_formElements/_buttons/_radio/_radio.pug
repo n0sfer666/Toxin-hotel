@@ -1,8 +1,0 @@
-mixin radio(title, name, isChecked)
-    label(class="radio--container")
-        if isChecked
-            input(type="radio",class="radio", name=name, checked)
-        else
-            input(type="radio",class="radio", name=name)
-        span(class="radio--checkmark")
-        span(class="radio--label") #{title}
