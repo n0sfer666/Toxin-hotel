@@ -1,19 +1,19 @@
 .bullet-list {
-    list-style-type: none;
+	list-style-type: none;
 }
 .bullet-list--item {
-    margin-bottom: 10px;
-    padding-left: 20px;
-    position: relative;
-    color: $dShade75;
-    &:before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 7px;
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background: $dShade25;
-    }
+	margin-bottom: 10px;
+	padding-left: 20px;
+	position: relative;
+	color: $dShade75;
+	&:before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 7px;
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+		background: $dShade25;
+	}
 }
