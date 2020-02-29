@@ -1,6 +1,0 @@
-mixin textField(id, label, placeholder, isPassword)
-    -
-        var fieldType = isPassword ? "password" : "text"
-    label(for = id)
-        h3(class = "label") #{label}
-    input(type=fieldType, id = id, class = "textField", placeholder = placeholder)
