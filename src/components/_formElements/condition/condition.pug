@@ -1,0 +1,12 @@
+//- pict:
+//-  smile, building, fire
+mixin condition(options)
+	.condition
+		p.condition--icon #{options.icon}
+		.condition--text
+			p.condition--description
+				b #{options.title}
+				br
+			| #{options.description}    
+	if(options.isRowed)
+		.condition--hrow

@@ -1,0 +1,26 @@
+.condition {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+
+  &--icon {
+    display: inline-block;
+    width: 48px;
+    font: normal normal 48px/48px materialIcons;
+    // gradient text
+    background: linear-gradient(180deg, $purple 0%, #8BA4F9 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  &--text {
+    display: inline-block;
+    margin-left: 10px;
+  }
+
+  &--hrow {
+    width: 96.2199%;
+    margin: 15px auto 0 auto;
+    border: .5px solid $dShade5;
+  }
+}

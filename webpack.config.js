@@ -85,13 +85,13 @@ module.exports = {
 						name: "fonts/[name].[ext]"
 				}
 			},
-			{
-				test: /\.(png|jpeg|gif)$/,
-				loader: 'file-loader',
-				options: {
-						name: "img/[name].[ext]"
-				}
-			}
+			// {
+			// 	test: /\.(png|jpeg|gif)$/,
+			// 	loader: 'file-loader',
+			// 	options: {
+			// 			name: "img/[name].[ext]"
+			// 	}
+			// }
 		]
 	}
 }
