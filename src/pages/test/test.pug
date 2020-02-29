@@ -1,6 +1,6 @@
 include ../../components/_base/pug/head
 
-include ../../components/_formElements/text-field/subscribe-field/subscribtion-field
+include ../../components/_formElements/review/review
 
 
 doctype html
@@ -8,5 +8,5 @@ html
   +head('test', 'test.css', 'test.js')
   body
     div(style='margin: 10px; width: 320px;')
-      +subscribe-field('test')
-      
+    div
+      +review({login: 'user-1',likeCount: '10', isLiked: true, name: 'Контантин Константинопольский', daysAgo: '5 дней назад', review: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей'})

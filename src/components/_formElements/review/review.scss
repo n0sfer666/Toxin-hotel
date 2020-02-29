@@ -1,0 +1,43 @@
+@import '../_buttons/like/like.scss';
+.review--container {
+	display: flex;
+	width: 100%;
+}
+.review--pict {
+	width: 48px;
+	height: 48px;
+	box-sizing: border-box;
+	background-color: #fff;
+	margin-bottom: 12px;
+	border-radius: 32px;
+	overflow: hidden;
+	box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.1);
+	& img {
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+	}
+}
+.review--leftColumn {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 48px;
+}
+.review--rightColumn {
+	width: calc(100% - 48px);
+	padding-left: 10px;
+}
+.review--name {
+	font: normal bold 14px/24px Montserrat;
+	color: $dShade75;
+}
+.review--daysAgo {
+	font: normal normal 14px/24px Montserrat;
+	color: $dShade75;
+}
+.review--text {
+	display: inline-block;
+	margin-top: 10px;
+	@extend .review--daysAgo;
+}
