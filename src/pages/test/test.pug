@@ -1,6 +1,6 @@
 include ../../components/_base/pug/head
 
-//- include ../../components/_formElements/text-field/
+include ../../components/_formElements/text-field/subscribe-field/subscribtion-field
 
 
 doctype html
@@ -8,4 +8,5 @@ html
   +head('test', 'test.css', 'test.js')
   body
     div(style='margin: 10px; width: 320px;')
+      +subscribe-field('test')
       
