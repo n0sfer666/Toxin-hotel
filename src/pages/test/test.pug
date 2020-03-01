@@ -1,6 +1,6 @@
 include ../../components/_base/pug/head
 
-include ../../components/_formElements/condition/condition
+include ../../components/_formElements/range-slider/range-slider
 
 
 doctype html
@@ -8,5 +8,6 @@ html
   +head('test', 'test.css', 'test.js')
   body
     div(style='margin: 10px; width: 320px;')
-      +condition({icon: 'tag_faces', title: 'Комфорт', description: 'Шумопоглощающие стены', isRowed: true})
-    div
+      +range-slider('test 320px')
+    div(style='margin: 10px;')
+      +range-slider('test 100%')
