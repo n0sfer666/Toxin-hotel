@@ -1,13 +1,11 @@
 include ../../components/_base/pug/head
 
-include ../../components/_formElements/range-slider/range-slider
-
+include ../../components/_formElements/expandable-checkbox-list/expandable-checkbox-list
 
 doctype html
 html
   +head('test', 'test.css', 'test.js')
   body
     div(style='margin: 10px; width: 320px;')
-      +range-slider('test 320px')
+      +expandable-checkbox-list({title: 'test list', list: [{title: 'Завтрак', isChecked: false}, {title: 'Шампунь', isChecked: true}]})
     div(style='margin: 10px;')
-      +range-slider('test 100%')

@@ -1,0 +1,9 @@
+include ../_buttons/checkbox/checkbox
+mixin expandable-checkbox-list(options)
+	.expandable-checkbox-list.js-expandable-checkbox-list
+		h3 #{options.title}
+		p.expandable-checkbox-list--arrow.js-expandable-checkbox-list--arrow-down keyboard_arrow_down
+		p.expandable-checkbox-list--arrow.js-expandable-checkbox-list--arrow-up keyboard_arrow_up
+	.expandable-checkbox-list--container.js-expandable-checkbox-list--container
+		each val in options.list
+			+checkbox(val)

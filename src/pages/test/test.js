@@ -1,3 +1,3 @@
 import './test.scss';
 
-import '../../components/_formElements/range-slider/range-slider.js';
+import '../../components/_formElements/expandable-checkbox-list/expandable-checkbox-list.js';

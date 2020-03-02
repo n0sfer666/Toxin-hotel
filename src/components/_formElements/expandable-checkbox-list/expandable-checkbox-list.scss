@@ -1,0 +1,24 @@
+@import '../_buttons/checkbox/checkbox.scss';
+.expandable-checkbox-list {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	width: 100%;
+	height: 44px;
+
+	cursor: pointer;
+
+	&--arrow {
+		display: inline-block;
+		width: 44px;
+		text-align: center;
+
+		font: normal normal 24px/24px materialIcons;
+		color: $dShade50;
+	}
+
+	&--container {
+		position: relative;
+	}
+}
