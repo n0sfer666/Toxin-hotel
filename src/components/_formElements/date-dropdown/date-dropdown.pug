@@ -1,0 +1,10 @@
+mixin date-dropdown(type)
+	case type
+		when 'left'
+			input(type="text", class = "text-field js-date-dropdown-left", placeholder = "ДД.ММ.ГГГГ")
+		when 'right'
+			input(type="text", class = "text-field js-date-dropdown-right", placeholder = "ДД.ММ.ГГГГ")
+		when 'filter'
+			input(type="text", class = "text-field js-date-dropdown-filter", placeholder = "Выберите даты пребывания")
+		default
+			input(type="text", class = "text-field js-date-dropdown-filter", placeholder = "Выберите даты пребывания")

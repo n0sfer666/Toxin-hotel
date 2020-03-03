@@ -3,10 +3,12 @@
 	height: 44px;
 	padding: 13px 15px;
 	background-color: #fff;
-	font: normal normal 14px/18px Montserrat;
 	border: 1px solid $dShade25;
 	box-sizing: border-box;
 	border-radius: 4px;
+
+	font: normal normal 14px/18px Montserrat;
+	color: $dShade75;
 }
 .text-field:hover, .text-field:focus {
 	border: 1px solid $dShade50;
