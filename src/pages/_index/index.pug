@@ -1,0 +1,41 @@
+//- mixin head(title, css, js)
+include ../../components/_base/pug/head
+//- 
+//- mixin logo
+include ../../components/_base/pug/logo
+doctype html
+html
+  +head("index", "index.css", "index.js")
+  body
+    .logo
+      +logo(false)  
+    .index--container
+      .index--ui-kit
+        .index--item
+          a(href="colors-and-types.html")
+            h3="Colors & Types"
+        .index--item
+          a(href="elements.html")
+            h3="Form Elements"
+        .index--item
+          a(href="cards.html")
+            h3="Cards"
+        .index--item
+          a(href="headers-footers.html")
+            h3="Headers & Footers"
+      .index--pages
+        .index--item
+          a(href="landing-page.html")
+            h3="Landing Page"
+        .index--item
+          a(href="registration.html")
+            h3="registration"
+        .index--item
+          a(href="sign-in.html")
+            h3="Sign-in"
+        .index--item
+          a(href="room-detail.html")
+            h3="Room details"
+        .index--item
+          a(href="search-room.html")
+            h3="Search-room"

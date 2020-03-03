@@ -39,7 +39,7 @@
     & span {
         display: inline-block;
         margin-bottom: 4px;
-        color: $dShade50;
+        color: $dark-shade-50;
         font-size: 12px;
         line-height: 18px;
         & b {
@@ -78,7 +78,7 @@
 .booking--exclamation {
     width: 20px;
     height: 20px;
-    border: 1px solid $dShade25; 
+    border: 1px solid $dark-shade-25; 
     box-sizing: border-box;
     border-radius: 50%;
     
@@ -90,14 +90,14 @@
         align-items: center;
 
         text-transform: none;
-        color: $dShade25;
+        color: $dark-shade-25;
         line-height: 18px;
     }
 }
 .booking--total {
     display: flex;
     justify-content: space-between;
-    color: $dShade100;
+    color: $dark-shade-100;
 
 
     margin-top: 28px;
@@ -108,7 +108,7 @@
     & div {
         width: 90%;
         height: 18px;
-        border-bottom: 1px dotted $dShade25;
+        border-bottom: 1px dotted $dark-shade-25;
         margin-left: 5px;
         margin-right: 5px;
     }

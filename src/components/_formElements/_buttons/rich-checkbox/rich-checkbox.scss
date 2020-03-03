@@ -38,7 +38,7 @@
 	height: 20px;
 	width: 20px;
 	background-color: #fff;
-	border: 1px solid $dShade25;
+	border: 1px solid $dark-shade-25;
 	box-sizing: border-box;
 	border-radius: 4px;
 	&:after {
@@ -49,10 +49,10 @@
 }
 .rich-checkbox--title {
 	font: normal bold 14px/18px Montserrat;
-	color: $dShade75;
+	color: $dark-shade-75;
 }
 .rich-checkbox--description {
 	padding-top: 3px;
 	font: normal normal 12px/14px Montserrat;
-	color: $dShade50;
+	color: $dark-shade-50;
 }

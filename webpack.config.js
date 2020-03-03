@@ -5,8 +5,12 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const pages = [
 	{
-		name: "test",
-		path: "src/pages/test/test"
+		name: "index",
+		path: "src/pages/_index/"
+	},
+	{
+		name: "colors-and-types",
+		path: "src/pages/colors-and-types/"
 	}
 ]
 const entry = {};
@@ -34,10 +38,10 @@ plugins.push(
 )
 
 pages.forEach( (page) => {
-	entry[page.name] = './' + page.path + '.js';
+	entry[page.name] = './' + page.path + page.name + '.js';
 	plugins.push(new HtmlWebpackPlugin({
 		filename: page.name + '.html',
-		template: page.path + '.pug',
+		template: page.path + page.name + '.pug',
 		inject: false
 	}))
 })

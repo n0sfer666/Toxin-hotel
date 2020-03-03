@@ -14,7 +14,7 @@
   & i {
     font: normal normal 24px/44px materialIcons;
     vertical-align: middle;
-    color: $dShade50;
+    color: $dark-shade-50;
   }
 }
 .js-date-dropdown--apply-button {
@@ -212,7 +212,7 @@ Datepicker
   border-radius: 4px;
   padding: 20px;
   font: normal normal 12px/15px Montserrat;
-  color: $dShade50;
+  color: $dark-shade-50;
   width: 320px;
 
   position: absolute;
@@ -294,7 +294,7 @@ Navigation
   align-items: center;
   justify-content: center;
   font: normal bold 19px/24px Quicksand, Montserrat;
-  color: $dShade100; }
+  color: $dark-shade-100; }
 
 .datepicker--nav-action {
   width: 24px;

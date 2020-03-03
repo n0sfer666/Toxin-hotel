@@ -10,11 +10,11 @@
   color: rgba(31, 32, 65, 0.5);
 
   &:hover {
-    border: 1px solid $dShade50;
+    border: 1px solid $dark-shade-50;
   }
 }
 .iqdropdown.menu-open {
-  border-color: $dShade50;
+  border-color: $dark-shade-50;
   border-bottom: none;
 	border-bottom-left-radius:0;
 	border-bottom-right-radius: 0;
@@ -27,7 +27,7 @@
 	height: 100%;
 	padding-left: 4.375%;
 	font: normal normal 14px/24px Montserrat;
-	color: $dShade75;
+	color: $dark-shade-75;
   cursor: pointer;
 }
 
@@ -87,14 +87,14 @@
 	width: 30px;
 	height: 30px;
 	background: #fff;
-	border: 1px solid $dShade25;
+	border: 1px solid $dark-shade-25;
 	border-radius: 50%;
-	color: $dShade25;
+	color: $dark-shade-25;
 	font: normal normal 18px/22px Montserrat;
   outline: none;
 }
 .iqdropdown .iqdropdown-item-controls button:hover {
-box-shadow: 0 0 10px $dShade25;
+box-shadow: 0 0 10px $dark-shade-25;
 }
 .iqdropdown .iqdropdown-item-controls button.button-decrement {
   &::after {
@@ -103,8 +103,8 @@ box-shadow: 0 0 10px $dShade25;
 }
 .iqdropdown .iqdropdown-item-controls button.button-increment {
   cursor: pointer;
-  border-color: $dShade50;
-  color: $dShade50;
+  border-color: $dark-shade-50;
+  color: $dark-shade-50;
   &::after {
     content: '+';
   }

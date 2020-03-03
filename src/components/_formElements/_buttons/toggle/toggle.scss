@@ -25,7 +25,7 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	border: 1px solid $dShade25;
+	border: 1px solid $dark-shade-25;
 	background-color: #fff;
 	-webkit-transition: .4s;
 	transition: .4s;
@@ -37,7 +37,7 @@
 		width: 12px;
 		left: 3px;
 		bottom: 3px;
-		background-color: $dShade25;
+		background-color: $dark-shade-25;
 		-webkit-transition: .4s;
 		transition: .4s;
 		border-radius: 50%;
@@ -46,6 +46,6 @@
 .toggle--label {
 	white-space: nowrap;
 	padding-left: 44px;
-	color: $dShade75;
+	color: $dark-shade-75;
 	font: normal normal 14px/19px Montserrat;
 }

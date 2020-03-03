@@ -110,7 +110,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 .noUi-target {
   background: #fff;
   border-radius: 3px;
-  border: 1px solid $dShade25;
+  border: 1px solid $dark-shade-25;
 }
 .noUi-connects {
   border-radius: 3px;
@@ -137,5 +137,5 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 .range-slider--value {
   font: normal normal 12px/15px Montserrat;
   text-transform: uppercase;
-  color: $dShade50;
+  color: $dark-shade-50;
 }
