@@ -1,18 +1,11 @@
 include ../../components/_base/pug/head
 
-include ../../components/_formElements/date-dropdown/date-dropdown
+//- include ../../components/_formElements/
 
 doctype html
 html
   +head('test', 'test.css', 'test.js')
   body
     div(style='margin: 10px; width: 320px;')
-      div(style='display: flex; justify-content: space-between;')
-        div(style='width: 150px;')
-          h3.label left
-          +date-dropdown('left')
-        div(style='width: 150px;')
-          h3.label right
-          +date-dropdown('right')
-      +date-dropdown()
+      
     div(style='margin: 10px;')
