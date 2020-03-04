@@ -11,6 +11,10 @@ const pages = [
 	{
 		name: "colors-and-types",
 		path: "src/pages/colors-and-types/"
+	},
+	{
+		name: "form-elements",
+		path: "src/pages/form-elements/"
 	}
 ]
 const entry = {};

@@ -1,4 +1,6 @@
-mixin subscribe-field(placeholder)
+mixin subscription-field(placeholder)
+	-
+		placeholder = placeholder.charAt(0).toUpperCase() + placeholder.slice(1);
 	.subscribe--container
 		input(type="Email", class = "text-field", placeholder = placeholder)
 		button(type="submit", class = "subscribe--button") arrow_forward

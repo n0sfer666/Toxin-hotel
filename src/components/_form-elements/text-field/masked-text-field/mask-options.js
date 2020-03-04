@@ -1,3 +1,4 @@
+import IMask from 'imask';
 let maskOptions = {
 	mask: 'd.m.y',
 	lazy: true,  // make placeholder always visible
@@ -22,4 +23,4 @@ let maskOptions = {
 		},
 	}
 }
-export { maskOptions }
+export { maskOptions, IMask }
