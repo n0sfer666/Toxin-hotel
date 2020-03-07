@@ -15,6 +15,10 @@ const pages = [
 	{
 		name: "form-elements",
 		path: "src/pages/form-elements/"
+	},
+	{
+		name: "cards",
+		path: "src/pages/cards/"
 	}
 ]
 const entry = {};
@@ -49,8 +53,6 @@ plugins.push(
 		wNumb: 'wnumb'
 	})
 )
-
-console.log(plugins);
 
 
 module.exports = {
@@ -93,14 +95,7 @@ module.exports = {
 				options: {
 						name: "fonts/[name].[ext]"
 				}
-			},
-			// {
-			// 	test: /\.(png|jpeg|gif)$/,
-			// 	loader: 'file-loader',
-			// 	options: {
-			// 			name: "img/[name].[ext]"
-			// 	}
-			// }
+			}
 		]
 	}
 }

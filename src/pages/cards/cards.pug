@@ -1,35 +1,11 @@
-//- mixin base(title, css, js)
-include ../../_components/_base/_pug/_base
+//- mixin head(title, css, js)
+include ../../components/_base/pug/head
 //- 
 //- mixin logo
-include ../../_components/_base/_pug/_logo
-//- 
-//- 
-include ../../_components/_cards/_findApart/_findApart
-include ../../_components/_cards/_registration/_registration
-include ../../_components/_cards/_booking/_booking
-include ../../_components/_cards/_login/_login
-include ../../_components/_cards/_apart/_apart
+include ../../components/_base/pug/logo
 doctype html
 html
-    +base("Cards", "cards.css", "cards.js")
-    body
-        .logo
-            +logo(false) 
-        .cards__container
-            .cards__leftBlock
-                .cards__block
-                    +findApart
-                .cards__block
-                    +registration
-            .cards__centerBlock
-                .cards__block
-                    +booking({apartNumber: 888, isLux: true, price: 9990, discount: 2179, additional: 0, complementary: 300})
-                .cards__block
-                    +login
-            .cards__rightBlock
-                #cards__datepicker
-                .cards__block
-                    +apart({apartNumber: 888, isLux: true, price: 9990, rating: 5,reviews: 145})
-                .cards__block
-                    +apart({apartNumber: 840, isLux: false, price: 9900, rating: 4,reviews: 65})
+  +head({title: "Cards", page: "cards"})
+  body
+    .logo
+        +logo({})  
