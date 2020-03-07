@@ -5,18 +5,74 @@
 @import '../../components/_form-elements/date-dropdown/date-dropdown.scss';
 @import '../../components/_form-elements/expandable-checkbox-list/expandable-checkbox-list.scss';
 @import '../../components/_form-elements/condition/condition.scss';
+@import '../../components/_form-elements/_buttons/checkbox/checkbox.scss';
+@import '../../components/_form-elements/_buttons/radio/radio.scss';
+@import '../../components/_form-elements/_buttons/toggle/toggle.scss';
+@import '../../components/_form-elements/_buttons/like/like.scss';
+@import '../../components/_form-elements/_buttons/rate/rate.scss';
+@import '../../components/_form-elements/_buttons/button/button.scss';
+@import '../../components/_form-elements/_buttons/rich-checkbox/rich-checkbox.scss';
+@import '../../components/_form-elements/range-slider/range-slider.scss';
+@import '../../components/_form-elements/pagination/pagination.scss';
+@import '../../components/_form-elements/bullet-list/bullet-list.scss';
+@import '../../components/_form-elements/review/review.scss';
 
+.container {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin: 0 141px;
 
+	@media screen and (min-width: $old-phones) and (max-width: $pads) {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin: 0;
+	}
+}
 .section {
+	width: 320px;
+	margin-bottom: 40px;
+
+	@media screen and (min-width: $old-phones) and (max-width: $pads) {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin: 0;
+	}
+
 	&--block {
+		&-222-px {
+			width: 222px;
+			margin-bottom: 40px;
+			
+			& .toggle--container {
+				margin-bottom: 14px;
+			}
+			& .like {
+				margin-right: 10px;
+			}
+		}
 		&-266-px {
 			width: 266px;
 			margin-bottom: 20px;
+			box-sizing: border-box;
+
+			& .rich-checkbox--container {
+				margin-bottom: 10px;
+				width: 260px;
+			}
 		}
 		&-320-px {
 			max-width: 320px;
 			min-width: 300px;
 			margin-bottom: 20px;
+			
+			& .rate {
+				margin-right: 20px;
+				margin-bottom: 40px;
+			}
 		}
 		&-flex {
 			display: flex;
@@ -26,24 +82,32 @@
 				width: 150px;
 			}
 		}
+		&-radio {
+			display: flex;
+		}
+	}
+
+	&--button-container {
+		&-medium {
+			display: inline-block;
+			
+			width: 99px;
+			height: 44px;
+
+			margin-right: 20px;
+		}
+		&-small {
+			display: inline-block;
+
+			margin-right: 20px;
+			margin-bottom: 30px;
+		}
+		&-big {
+			height: 44px;
+			margin-bottom: 40px;
+		}
 	}
 }
-
-
-
-// .elements__container {
-//     margin: 0 9.791666667%;
-//     width: 80.41666667%;
-//     display: flex;
-//     justify-content: space-between;
-//     flex-wrap: wrap;
-// }
-// @media only screen and (min-width: 300px) and (max-width: 768px) {
-//     .elements__container {
-//         width: initial;
-//         margin: 0 calc((100% - 320px) / 2);
-//     }
-//     .elements__container_left, .elements__container_right, .elements__container_center {
-//         margin: 0 auto;
-//     }
-// }
+.label-20 {
+	margin-bottom: 20px;
+}

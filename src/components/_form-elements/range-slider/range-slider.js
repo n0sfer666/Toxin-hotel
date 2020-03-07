@@ -4,7 +4,7 @@ $(document).ready(function() {
 
 	for( let i = 0; i < $slidersContainer.length; i++ ) {
 
-		noUiSlider.create($slidersContainer[i], {
+		noUiSlider.create($slidersContainer[String(i)], {
 			start: [5000, 10000],
 			connect: true,
 			range: {
@@ -18,8 +18,8 @@ $(document).ready(function() {
 			})
 		})
 		
-		$slidersContainer[i].noUiSlider.on('update', (values, handle) => {
-			$slidersValues[i].innerText = values[0] + ' - ' + values[1];
+		$slidersContainer[String(i)].noUiSlider.on('update', (values, handle) => {
+			$slidersValues[String(i)].innerText = values[0] + ' - ' + values[1];
 		})
 	}
 })

@@ -4,15 +4,15 @@
 //- isOpacity: true - add button-opacity class for medium size
 //- title: whatever
 mixin button(options)
-    -
-        var type = options.type === undefined ? 'button' : options.type
-        var className = options.size == undefined ? "button-big": "button-" + options.size
-        if(options.size === 'medium')
-            className += ' button-' + options.theme
-            if(options.isOpacity)
-                className += ' button-opacity'
-        if(options.size === 'small')
-            className += options.isGray ? ' button-gray' : ' button-purple'
+  -
+    var type = options.type === undefined ? 'button' : options.type
+    var className = options.size == undefined ? "button-big": "button-" + options.size
+    if(options.size === 'medium')
+      className += ' button-' + options.theme
+      if(options.isOpacity)
+        className += ' button-opacity'
+    if(options.size === 'small')
+      className += options.isGray ? ' button-gray' : ' button-purple'
 
-    button(type=type, class=className)
-        h3 #{options.title}
+  button(type=type, class=className)
+    h3 #{options.title}

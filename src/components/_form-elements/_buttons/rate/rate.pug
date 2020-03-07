@@ -1,13 +1,13 @@
-mixin rate(rate, name)
-	-
-		let stars = [5, 4, 3, 2, 1]
-	.rate
-		each value, i in stars
-			-
-				let isRated = (rate == value)
-				let id = name + value
-			if isRated
-				input(type="radio", name=name, id=id, value=value, checked)
-			else
-				input(type="radio", name=name, id=id, value=value)
-			label(for=id, title=value) #{value} stars
+mixin rate(options)
+  -
+    let stars = [5, 4, 3, 2, 1]
+  .rate
+    each value, i in stars
+      -
+        let isRated = (options.rate == value)
+        let id = options.name + value
+      if isRated
+        input(type="radio", name=options.name, id=id, value=value, checked)
+      else
+        input(type="radio", name=options.name, id=id, value=value)
+      label(for=id, title=value) #{value} stars

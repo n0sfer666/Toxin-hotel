@@ -9,149 +9,131 @@ include ../../components/_form-elements/dropdown/dropdown
 include ../../components/_form-elements/date-dropdown/date-dropdown
 include ../../components/_form-elements/expandable-checkbox-list/expandable-checkbox-list
 include ../../components/_form-elements/condition/condition
+include ../../components/_form-elements/_buttons/checkbox/checkbox
+include ../../components/_form-elements/_buttons/radio/radio
+include ../../components/_form-elements/_buttons/toggle/toggle
+include ../../components/_form-elements/_buttons/like/like
+include ../../components/_form-elements/_buttons/rate/rate
+include ../../components/_form-elements/_buttons/button/button
+include ../../components/_form-elements/_buttons/rich-checkbox/rich-checkbox
+include ../../components/_form-elements/range-slider/range-slider
+include ../../components/_form-elements/bullet-list/bullet-list
+include ../../components/_form-elements/review/review
 
 doctype html
 html
-  +head("Form Elements", "form-elements.css", "form-elements.js")
+  +head({title: "Form Elements", page: "form-elements"})
   body
     .logo
-      +logo(false)
-    section.section.section-left
-      .section--block-320-px
-        h3.label text field
-        +text-field('Email')
-      .section--block-320-px
-        h3.label dropdown
-        +dropdown(true)
-      .section--block-320-px
-        h3.label masked text field
-        +text-field('ДД.ММ.ГГГГ', 'masked')
-      .section--block-320-px.section--block-flex
-        div
-          h3.label date dropdown
-          +date-dropdown('left')
-        div
-          h3.label date dropdown
-          +date-dropdown('right')
-      .section--block-266-px
-        h3.label filter date
-        +date-dropdown()
-      .section--block-266-px
-        h3.label subscribteon text field
-        +subscription-field('email')
-      .section--block-266-px
-        h3.label dropdown
-          +dropdown(false)
-      .section--block-266-px
+      +logo({})
+    .container
+      section.section
+        .section--block-320-px
+          h3.label text field
+          +text-field({placeholder: 'Email'})
+        .section--block-320-px
+          h3.label dropdown
+          +dropdown({})
+        .section--block-320-px
+          h3.label masked text field
+          +text-field({placeholder: 'ДД.ММ.ГГГГ', jsClass: 'masked'})
+        .section--block-320-px.section--block-flex
+          div
+            h3.label date dropdown
+            +date-dropdown({type: 'left'})
+          div
+            h3.label date dropdown
+            +date-dropdown({type: 'right'})
+        .section--block-266-px
+          h3.label filter date
+          +date-dropdown({type: 'filter'})
+        .section--block-266-px
+          h3.label subscribteon text field
+          +subscription-field({placeholder: 'email'})
+        .section--block-266-px
+          h3.label dropdown
+            +dropdown({isGuest: false})
+        .section--block-266-px
+          -
+            let expandList = []
+            expandList.push({title: 'Завтрак'})
+            expandList.push({title: 'Письменный стол', isChecked: true})
+            expandList.push({title: 'Стул для кормления', isChecked: true})
+            expandList.push({title: 'Кроватка', isChecked: true})
+            expandList.push({title: 'Телевизор'})
+            expandList.push({title: 'Шампунь'})
+            expandList.push({title: 'Телевизор'})
+            expandList.push({title: 'Шампунь'})
+          +expandable-checkbox-list({title: 'expandable checkbox list', list: expandList})
+        .section--block-266-px
+          +condition({icon: 'tag_faces', isRowed: true, title: 'Комфорт', description: 'Шумопоглощающие стены'})
+          +condition({icon: 'location_city', isRowed: true, title: 'Удобство', description: 'Окно в каждой из спален'})
+
+      section.section
+        .section--block-222-px
+          h3.label-20 checkbox buttons
+          +checkbox({title: "Можно курить"})
+          +checkbox({title: "Можно с питомцами", isChecked: true})
+          +checkbox({title: "Можно пригласить гостей (до 10 человек)", isChecked: true})
+        .section--block-222-px
+          h3.label-20 radio buttons
+          .section--block-radio
+            +radio({name: 'sex', title: 'Мужчина', isChecked: true})
+            +radio({name: 'sex', title: 'Женщина'})
+        .section--block-222-px
+          h3.label-20 toggle
+          +toggle({title: 'Получать спецпредложения', isChecked: true})
+          +toggle({title: 'Получать спецпредложения'})
+        .section--block-222-px
+          h3.label-20 like button
+          div(style = "display:flex;")
+            +like({counter: '2'})
+            +like({counter: '12', isChecked: true})
+        .section--block-320-px
+          h3.label-20 rate button
+          +rate({rate: '4', name: 'demo-1'})
+          +rate({rate: '5', name: 'demo-2'})
+        .section--block-266-px
+          h3.label-20 rich checkbox buttons
+          +rich-checkbox({title: 'Широкий коридор', description: 'Ширина коридоров в номере не менее 91 см.'})
+          +rich-checkbox({title: 'Помощник для инвалидов', description: 'На 1 этаже вас встретит специалист и проводит до номера.'})
+
+      section.section
+        .section--block-266-px
+          +range-slider({title: 'range slider'})
+        .section--block-266-px
+          h3.label buttons
+          div(style="margin: 11px 0 30px 0;")
+            .section--button-container-medium
+              +button({size: 'medium', theme: 'gradient', title: 'click me'})
+            .section--button-container-medium
+              +button({size: 'medium', theme: 'gradient', isOpacity: true, title: 'click me'})
+          div(style="margin-bottom: 30px;")
+            .section--button-container-medium
+              +button({size: 'medium', theme: 'border', title: 'click me'})
+            .section--button-container-medium
+              +button({size: 'medium', theme: 'border', isOpacity: true, title: 'click me'})
+          .section--button-container-small
+            +button({size: 'small', isGray: true, title: 'click me'})
+          .section--button-container-small
+            +button({size: 'small', title: 'click me'})
+        .section--block-320-px
+          .section--button-container-big
+            +button({size: 'big', title: 'Перейти к оплате'})
+        .section--block-320-px
+          h3.label-20 pagination
+          .js-pagination
+        .section--block-320-px
+          h3.label-20 bullet list
+          -
+            let bullets = []
+            bullets.push('Нельзя с питомцами')
+            bullets.push('Без вечеринок и мероприятий')
+            bullets.push('Время прибытия — после 13:00, а выезд до 12:00')
+          +bullet-list(bullets)
+
+      footer.footer
         -
-          let expandList = []
-          expandList.push({title: 'Завтрак'})
-          expandList.push({title: 'Письменный стол', isChecked: true})
-          expandList.push({title: 'Стул для кормления', isChecked: true})
-          expandList.push({title: 'Кроватка', isChecked: true})
-          expandList.push({title: 'Телевизор'})
-          expandList.push({title: 'Шампунь'})
-          expandList.push({title: 'Телевизор'})
-          expandList.push({title: 'Шампунь'})
-        +expandable-checkbox-list({title: 'expandable checkbox list', list: expandList})
-        +expandable-checkbox-list({title: 'expandable checkbox list', list: expandList})
-        +expandable-checkbox-list({title: 'expandable checkbox list', list: expandList})
-        +expandable-checkbox-list({title: 'expandable checkbox list', list: expandList})
-      .section--block-266-px
-        +condition({icon: 'tag_faces', isRowed: true, title: 'Комфорт', description: 'Шумопоглощающие стены'})
-        +condition({icon: 'location_city', isRowed: true, title: 'Удобство', description: 'Окно в каждой из спален'})
-
-    section.section.section-center
-
-    section.section.section-right
-
-    section.section.section-bottom
-
-//- //- 
-//- //- 
-//- doctype html
-//- html
-//-     +base("Form Elements", "elements.css", "elements.js")
-//-     body
-//-         .logo
-//-             +logo(false)
-//-         .elements__container
-//-             .elements__container_left
-//-                 div(style="width: 320px; margin-bottom: 20px;")
-//-                     +textField("","text field","Email",false)
-//-                 div(style="width: 320px; margin-bottom: 20px;")
-//-                     h3.label dropdown (guests)
-//-                     +dropdown(true)
-//-                 div(style="width: 266px; margin-bottom: 20px;")
-//-                     h3.label dropdown (rooms)
-//-                     +dropdown(false)
-//-                 div(style="width: 320px; margin-bottom: 20px;")
-//-                     +textField("masked","masked text field","ДД.ММ.ГГГГ",false)
-//-                 div(style="width: 320px; margin-bottom: 20px;")
-//-                     +dateDropdown("date dropdown","date dropdown")
-//-                 div(style="width: 266px; margin-bottom: 20px;")
-//-                     +filterDateDropdown("filter date")
-//-                 div(style="width: 266px; margin-bottom: 20px;")
-//-                     +expandableCheckboxList("expandable checkbox list")
-//-                 div(style="width: 299px; margin-bottom: 20px;")
-//-                     div(style="width: 299px; margin-bottom: 20px;")
-//-                         +condition({pict: "smile", title: "Комфорт", description: "Шумопоглощающие стены"})
-//-                     div(style="width: 299px; margin-bottom: 20px;")
-//-                         +condition({pict: "building", title: "Удобство", description: "Окно в каждой из спален"})
-//-             .elements__container_center
-//-                 div(style="width: 222px; margin-bottom: 20px;")
-//-                     h3(style="margin-bottom: 16px;") checkbox buttons
-//-                     +checkbox("", "Можно курить", false)
-//-                     +checkbox("", "Можно с питомцами", true)
-//-                     +checkbox("", "Можно пригласить гостей (до 10 человек)", true)
-//-                 div(style="width: 222px; margin-bottom: 20px;")
-//-                     h3(style="margin-bottom: 16px;") radio buttons
-//-                     div(style="display: flex;")
-//-                         +radio('Мужчина', "sex", true)
-//-                         +radio('Женщина', "sex")
-//-                 div(style="width: 260px; margin-bottom: 20px;")
-//-                     h3(style="margin-bottom: 16px;") toggle
-//-                     +toggleButton("Получать спецпредложения")
-//-                 div(style="width: 260px; margin-bottom: 20px; ")
-//-                     h3(style="margin-bottom: 16px;") like button
-//-                     div(style="display: flex;")
-//-                         div(style="margin-right: 10px;")
-//-                             +like(2, false)
-//-                         +like(12, true)
-//-                 div(style="width: 260px; margin-bottom: 20px; ")
-//-                     h3(style="margin-bottom: 16px;") rate button
-//-                     div(style="display: flex;")
-//-                         div(style="margin-right: 10px;")
-//-                             +rateButton("1", 4)
-//-                         +rateButton("2", 5)
-//-                 div(style="width: 260px; margin-bottom: 20px; ")
-//-                     h3(style="margin-bottom: 16px;") rich checkbox buttons
-//-                     +rich-checkbox("", "Широкий коридор", "Ширина коридора в номере не менее 91см.")
-//-                     +rich-checkbox("", "Помощник для инвалидов", "На 1 этаже вас встретит специалист и проводит до номера.")
-//-             .elements__container_right
-//-                 div(style="width: 266px; margin-bottom: 20px;")
-//-                     +rangeSlider("range slider")
-//-                 div(style="width: 320px; margin-bottom: 20px; ")
-//-                     h3(style="margin-bottom: 16px;") buttons
-//-                     div(style="width: 99px; height: 44px; display: inline-block; margin-right: 19px; margin-bottom: 30px;")
-//-                         +button({size: "medium", theme: "gradient", title: "click me"})
-//-                     div(style="width: 99px; height: 44px; display: inline-block;")
-//-                         +button({size: "medium", theme: "gradient", isOpacity: true, title: "click me"})
-//-                     div(style="width: 99px; height: 44px; display: inline-block; margin-right: 19px; margin-bottom: 31px;")
-//-                         +button({size: "medium", theme: "border", title: "click me"})
-//-                     div(style="width: 99px; height: 44px; display: inline-block;")
-//-                         +button({size: "medium", theme: "border", isOpacity: true, title: "click me"})
-//-                     <br>
-//-                     div(style="width: 61px; display: inline-block; margin-right: 20px; margin-bottom: 30px;")
-//-                         +button({size: "small", title: "click me"})
-//-                     div(style="width: 61px; display: inline-block;")
-//-                         +button({size: "small", isGray: true, title: "click me"})
-//-                     div(style="height: 44px")
-//-                         +button({title:"перейти к оплате"})
-//-                 div(style="width: 320px; margin-bottom: 20px; ")
-//-                     h3(style="margin-bottom: 16px;") pagination
-//-                     #pagination
-//-                 div(style="width: 292px; margin-bottom: 20px; ")
-//-                     h3(style="margin-bottom: 16px;") bullet list
-//-                     +bulletList(["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия - после 13:00, а выезд до 12:00"])
-//-             +review({pict: "Sarafanov", likeId: "review_1", likeCount: "12", isLiked: true, name: "Мурад Сарафанов", daysAgo: "5 дней назад", review: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."})
+          let name = 'Контантин Константинопольский'
+          let review = 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей'
+        +review({login: 'user-1', likeCount: '10', isLiked: true, name: name, timeAgo: '5 дней назад', review: review})

@@ -1,7 +1,7 @@
-mixin like(counter, isPressed)
-	if isPressed
+mixin like(options)
+	if options.isChecked
 		button(type="button", class="like like-active")
-			span.like--counter.like--counter-active #{counter}
+			span.like--counter.like--counter-active #{options.counter}
 	else
 		button(type="button", class="like")
-			span.like--counter #{counter}
+			span.like--counter #{options.counter}

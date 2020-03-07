@@ -1,6 +1,5 @@
-import { pagination } from 'paginationjs';
-
-let getPaginationConfig = function(dataSource) {
+import 'paginationjs';
+let getPaginationConfig = function(dataSource, elementsOnPage) {
 	return {
 		dataSource: dataSource,
 		showPrevious: false,
@@ -19,4 +18,4 @@ let getPaginationConfig = function(dataSource) {
 	}
 }
 
-export { pagination, getPaginationConfig };
+export {getPaginationConfig};

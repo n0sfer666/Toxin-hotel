@@ -1,5 +1,4 @@
-mixin text-field(placeholder, jsClass)
-	-
-		placeholder = placeholder.charAt(0).toUpperCase() + placeholder.slice(1);
-		let className = jsClass === undefined ? "text-field" : ("text-field js-" + jsClass + "-text-field")
-	input(type=placeholder, class = className, placeholder = placeholder)
+mixin text-field(options)
+  -
+    let className = options.jsClass === undefined ? "text-field" : ("text-field js-" + options.jsClass + "-text-field")
+  input(type=options.placeholder, class = className, placeholder = options.placeholder)

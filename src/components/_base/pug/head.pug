@@ -1,8 +1,11 @@
-mixin head(title, css, js)
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        meta(http-equiv="X-UA-Compatible", content="ie=edge")
-        title #{title}
-        link(rel="stylesheet", href=css)
-        script(src=js)
+mixin head(options)
+  -
+    let css = options.page + '.css'
+    let js = options.page + '.js'
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title #{options.title}
+    link(rel="stylesheet", href=css)
+    script(src=js)

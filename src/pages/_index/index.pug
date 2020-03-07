@@ -5,10 +5,10 @@ include ../../components/_base/pug/head
 include ../../components/_base/pug/logo
 doctype html
 html
-  +head("index", "index.css", "index.js")
+  +head({title: "index", page: "index"})
   body
     .logo
-      +logo(false)  
+      +logo({})  
     .index--container
       .index--ui-kit
         .index--item

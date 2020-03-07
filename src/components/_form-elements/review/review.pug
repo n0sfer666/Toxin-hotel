@@ -6,12 +6,12 @@ mixin review(options)
 		.review--leftColumn
 			.review--pict
 				img(src=pict, alt=options.name)
-			+like(options.likeCount, options.isLiked)
+			+like({counter: options.likeCount, isChecked: options.isLiked})
 		.review--rightColumn
 			span(class="review--name") #{options.name}
 			br
-			span(class="review--daysAgo") #{options.daysAgo}
+			span(class="review--daysAgo") #{options.timeAgo}
 			br
 			p(class="review--text") #{options.review}
 
-//- +review({login: 'user-1',likeCount: '10', isLiked: true, name: 'Контантин Константинопольский', daysAgo: '5 дней назад', review: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей'})
+//- +review({login: 'user-1',likeCount: '10', isLiked: true, name: 'Контантин Константинопольский', timeAgo: '5 дней назад', review: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей'})

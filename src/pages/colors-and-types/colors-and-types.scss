@@ -8,7 +8,7 @@
 	width: 76.3195%;
 	margin: 0 13.2639% 0 10.4167%;
 
-	@media screen and (min-width: $old-phones-min) and (max-width: $old-phones-max) {
+	@media screen and (min-width: $old-phones) and (max-width: $new-phones) {
 		margin: 0 auto;
 		flex-direction: column;
 		align-items: center;

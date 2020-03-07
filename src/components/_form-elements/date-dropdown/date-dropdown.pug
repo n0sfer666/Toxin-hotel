@@ -1,5 +1,5 @@
-mixin date-dropdown(type)
-	case type
+mixin date-dropdown(options)
+	case options.type
 		when 'left'
 			input(type="text", class = "text-field js-date-dropdown-left", placeholder = "ДД.ММ.ГГГГ")
 		when 'right'

@@ -1,6 +1,9 @@
-mixin toggle(text)
-	label(class="toggle--container")
-		div(style="display: flex;")
-			input(type="checkbox", class="toggle")
-			div(class="toggle--switch")
-			span(class="toggle--label") #{text}
+mixin toggle(options)
+  label(class="toggle--container")
+    div(style="display: flex;")
+      if options.isChecked
+        input(type="checkbox", class="toggle", checked)
+      else
+        input(type="checkbox", class="toggle")
+      div(class="toggle--switch")
+      span(class="toggle--label") #{options.title}

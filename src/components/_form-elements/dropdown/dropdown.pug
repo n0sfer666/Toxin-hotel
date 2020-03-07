@@ -1,5 +1,7 @@
 include ../_buttons/button/button
-mixin dropdown (isGuests)
+mixin dropdown (options)
+  -
+    let isGuests = options.isGuests === undefined ? true : options.isGuests
   .iqdropdown
     p(class="iqdropdown-selection")
       if isGuests

@@ -20,6 +20,15 @@ const pages = [
 const entry = {};
 const plugins = [];
 
+pages.forEach( (page) => {
+	entry[page.name] = './' + page.path + page.name + '.js';
+	plugins.push(new HtmlWebpackPlugin({
+		filename: page.name + '.html',
+		template: page.path + page.name + '.pug',
+		inject: false
+	}))
+})
+
 plugins.push(
 	new MiniCssExtractPlugin({
 		filename: '[name].css',
@@ -31,7 +40,7 @@ plugins.push(
 	new Webpack.ProvidePlugin({
 		$: 'jquery',
 		jQuery: 'jquery',
-		'windows.jQuery': 'jquery'
+		'window.jQuery': 'jquery'
 	}),
 	new Webpack.ProvidePlugin({
 		noUiSlider: 'nouislider'
@@ -41,15 +50,7 @@ plugins.push(
 	})
 )
 
-pages.forEach( (page) => {
-	entry[page.name] = './' + page.path + page.name + '.js';
-	plugins.push(new HtmlWebpackPlugin({
-		filename: page.name + '.html',
-		template: page.path + page.name + '.pug',
-		inject: false
-	}))
-})
-
+console.log(plugins);
 
 
 module.exports = {
@@ -76,7 +77,7 @@ module.exports = {
 			{
 				test: /\.js$/,
 				exclude: /node_modules/,
-				use: ['babel-loader']    
+				use: ['babel-loader']
 			},
 			{
 				test: /\.scss$/,

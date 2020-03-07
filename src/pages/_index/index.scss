@@ -8,15 +8,29 @@
 	flex-direction: column;
 }
 .index--ui-kit {
-	border: 4px dotted $purple;
-	padding: 10px;
-	box-sizing: border-box;
 	margin-bottom: 20px;
+	padding: 10px;
+
+	border: 4px dotted $purple;
+	box-sizing: border-box;
+
+	& .index--item:hover {
+		border-radius: 5px;
+		background-color: $purple;
+		box-shadow: 0 0 10px $purple;
+	}
 }
 .index--pages {
-	border: 4px dotted $green;
 	padding: 10px;
+
+	border: 4px dotted $green;
 	box-sizing: border-box;
+
+	& .index--item:hover {
+		border-radius: 5px;
+		background-color: $green;
+		box-shadow: 0 0 10px $green;
+	}
 }
 .index--item {
 	text-align: center;
@@ -27,8 +41,5 @@
 
 	& a h3 {
 		color: $dark-shade-75;
-	}
-	&:hover a h3 {
-		box-shadow: 0 0 5px $purple;
 	}
 }

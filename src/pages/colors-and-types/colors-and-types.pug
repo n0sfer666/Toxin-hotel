@@ -35,10 +35,10 @@ include ../../components/_base/pug/head
 include ../../components/_base/pug/logo
 doctype html
 html
-  +head("Colors & Types", "colors-and-types.css", "colors-and-types.js")
+  +head({title: "Colors & Types", page: "colors-and-types"})
   body
     .logo
-      +logo(false)    
+      +logo({})
 
     .container
       .colors
