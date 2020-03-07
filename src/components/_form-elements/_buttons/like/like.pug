@@ -1,7 +1,7 @@
 mixin like(options)
-	if options.isChecked
-		button(type="button", class="like like-active")
-			span.like--counter.like--counter-active #{options.counter}
-	else
-		button(type="button", class="like")
-			span.like--counter #{options.counter}
+  if options.isChecked
+    button(type="button", class="like like-active")
+      span.like--counter.like--counter-active #{options.counter}
+  else
+    button(type="button", class="like")
+      span.like--counter #{options.counter}
