@@ -1,0 +1,39 @@
+@import '../../_form-elements/date-dropdown/date-dropdown.scss';
+@import '../../_form-elements/dropdown/dropdown.scss';
+@import '../../_form-elements/_buttons/button/button.scss';
+
+.find-appart {
+  width: 380px;
+  height: fit-content;
+
+  padding: 39px 7.936507937% 29px 7.936507937%;
+
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  & h1 {
+    margin-bottom: 20px;
+  }
+
+  &--arival-departure {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+
+    & div {
+      width: 47.875%;
+    }
+  }
+
+  &--guests {
+    margin-bottom: 31px;
+  }
+
+  &--submit-button {
+    height: 44px;
+  }
+}

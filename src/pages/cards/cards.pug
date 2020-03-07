@@ -3,9 +3,19 @@ include ../../components/_base/pug/head
 //- 
 //- mixin logo
 include ../../components/_base/pug/logo
+
+include ../../components/cards/find-appart/find-appart
+
 doctype html
 html
   +head({title: "Cards", page: "cards"})
   body
     .logo
-        +logo({})  
+        +logo({})
+    .container
+      section.section
+        .section--find-appart
+          +find-appart
+      section.section
+
+      section.section

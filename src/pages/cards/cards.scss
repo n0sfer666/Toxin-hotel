@@ -1,1 +1,19 @@
 @import '../../components/_base/scss/main.scss';
+
+@import '../../components/cards/find-appart/find-appart.scss';
+
+.container {
+
+}
+
+.section {
+	width: 380px;
+
+	@media screen and (min-width: $old-phones) and (max-width: 380px) {
+		width: 320px;
+	}
+
+	// &--find-appart {
+
+	// }
+}
