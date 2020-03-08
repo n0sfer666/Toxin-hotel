@@ -5,6 +5,7 @@ include ../../components/_base/pug/head
 include ../../components/_base/pug/logo
 
 include ../../components/cards/find-appart/find-appart
+include ../../components/cards/registration/registration
 
 doctype html
 html
@@ -14,8 +15,11 @@ html
         +logo({})
     .container
       section.section
-        .section--find-appart
+        .section--block
           +find-appart
+        div
+          +registration
+
       section.section
 
       section.section

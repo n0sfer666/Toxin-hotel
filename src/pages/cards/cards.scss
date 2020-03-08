@@ -1,19 +1,24 @@
 @import '../../components/_base/scss/main.scss';
 
 @import '../../components/cards/find-appart/find-appart.scss';
+@import '../../components/cards/registration/registration.scss';
 
 .container {
-
+	padding: 0 9.7223% 140px;
+	@media screen and (min-width: $old-phones) and (max-width: 380px) {
+		padding: 0 5px;
+	}
 }
 
 .section {
 	width: 380px;
 
 	@media screen and (min-width: $old-phones) and (max-width: 380px) {
-		width: 320px;
+		width: 310px;
 	}
 
-	// &--find-appart {
+	&--block {
+		margin-bottom: 40px;
+	}
 
-	// }
 }

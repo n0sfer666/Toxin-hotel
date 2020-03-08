@@ -1,0 +1,55 @@
+@import '../../_form-elements/text-field/text-field.scss';
+@import '../../_form-elements/_buttons/radio/radio.scss';
+@import '../../_form-elements/_buttons/toggle/toggle.scss';
+@import '../../_form-elements/_buttons/button/button.scss';
+
+.registration {
+	height: fit-content;
+
+	padding: 39px 7.936507937% 29px 7.936507937%;
+
+	box-sizing: border-box;
+	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+	background-color: #FFFFFF;
+	border: 1px solid rgba(0, 0, 0, 0.12);
+	border-radius: 4px;
+
+	& h1 {
+		margin-bottom: 20px;
+	}
+
+	&--block {
+		&:not(:nth-child(6)) {
+			margin-bottom: 20px;
+		}
+
+		&:nth-child(2) {
+			margin-bottom: 24px;
+		}
+
+		& input[type=text]:not(:last-child),
+		& input[type=Email],
+		& input[type=Password] {
+			margin-bottom: 10px;
+		}
+
+		&:nth-child(5) {
+			margin-bottom: 30px;
+			height: 44px;
+		}
+		
+		&:nth-child(6) {
+			& button {
+				width: 99px;
+				height: 44px;	
+			}
+		}
+
+		&-flexed {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+	}
+}
