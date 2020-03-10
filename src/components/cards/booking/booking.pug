@@ -1,0 +1,71 @@
+include ../../_form-elements/date-dropdown/date-dropdown
+include ../../_form-elements/dropdown/dropdown
+include ../../_form-elements/_buttons/button/button
+
+mixin booking(options)
+  -
+    let isDiscounted = options.discount === undefined ? false : true
+    let complementary = options.complementary === undefined ? '0' : options.complementary
+
+    let apartNumber = options.apartNumber === undefined ? 'номер не введён' : options.apartNumber
+    let price = options.price === undefined ? 'цена не введена' : options.price
+    let isLuxed = options.isLuxed === undefined ? false : options.isLuxed
+    let additional = options.additional === undefined ? 'сборы не введены' : options.additional
+
+  .booking
+    .booking--header
+      div
+        h1 
+          span № 
+          | #{apartNumber}
+        if isLuxed
+          h3  люкс
+      span
+        b.js-booking--price #{price}
+        b ₽ 
+        | в сутки
+    .booking--arival-departure
+      div
+        h3.label прибытие
+        +date-dropdown({type: 'left', jsClass: 'booking'})
+      div
+        h3.label отъезд
+        +date-dropdown({type: 'right', jsClass: 'booking'})
+    .booking--guests
+      h3.label гости
+      +dropdown({})
+    .booking--calculation
+      .booking--calculation-line
+        p
+          span.js-booking--price #{price}
+          soan ₽ X 
+          span.js-booking--daysIn 0 суток
+        span.js-booking--cost 0
+          span ₽
+      .booking--calculation-line
+        div
+          p Сбор за услуги: 
+            if isDiscounted
+              span скидка 
+              span.js-booking--discount #{options.discount}
+              span ₽
+          span.booking--exclamation
+            b i
+        div
+          span.js-booking--additional #{additional}
+          span ₽
+      .booking--calculation-line
+        div
+          p Сбор за дополнительные услуги
+          span.booking--exclamation
+            b i
+        div
+          span.js-booking--complementary #{complementary}
+          span ₽
+    .booking--total
+      h2 Итого
+      .booking--total-line-dashed
+      h2.js-booking--total 0
+      h2 ₽
+    .booking--submit-button
+      +button({size: 'big', title: 'забронировать'})

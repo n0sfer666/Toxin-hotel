@@ -8,10 +8,10 @@ mixin find-appart(titles)
     .find-appart--arival-departure
       div
         h3.label прибытие
-        +date-dropdown({type: 'left'})
+        +date-dropdown({type: 'left', jsClass: 'find-appart'})
       div
         h3.label выезд
-        +date-dropdown({type: 'right'})
+        +date-dropdown({type: 'right', jsClass: 'find-appart'})
     .find-appart--guests
       h3.label гости
       +dropdown({})

@@ -2,10 +2,17 @@
 
 @import '../../components/cards/find-appart/find-appart.scss';
 @import '../../components/cards/registration/registration.scss';
+@import '../../components/cards/booking/booking.scss';
 
 .container {
 	padding: 0 9.7223% 140px;
+
+	display: flex;
+	justify-content: space-between;
+
 	@media screen and (min-width: $old-phones) and (max-width: 380px) {
+		flex-direction: column;
+		align-items: center;
 		padding: 0 5px;
 	}
 }
@@ -21,4 +28,11 @@
 		margin-bottom: 40px;
 	}
 
+	&-320-px {
+		width: 320px;
+
+		@media screen and (min-width: $old-phones) and (max-width: 380px) {
+			width: 310px;
+		}
+	}
 }

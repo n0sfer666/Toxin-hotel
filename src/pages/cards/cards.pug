@@ -6,6 +6,7 @@ include ../../components/_base/pug/logo
 
 include ../../components/cards/find-appart/find-appart
 include ../../components/cards/registration/registration
+include ../../components/cards/booking/booking
 
 doctype html
 html
@@ -17,9 +18,19 @@ html
       section.section
         .section--block
           +find-appart
-        div
+        .section--block
           +registration
 
       section.section
+        .section--block
+          -
+            let bookingConfig = {}
+            bookingConfig.apartNumber = '888'
+            bookingConfig.isLuxed = true
+            bookingConfig.price = '9990'
+            bookingConfig.discount =  '2179'
+            bookingConfig.additional = '0'
+            bookingConfig.complementary = '300'
+          +booking(bookingConfig)
 
-      section.section
+      section.section-320-px
