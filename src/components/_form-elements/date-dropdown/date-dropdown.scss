@@ -151,9 +151,14 @@ Datepicker cells
   text-transform: uppercase;}
 
 .datepicker--cell-day {
-  width: 38.5px;
-  height: 38.5px;
+  width: 38.578px;
+  height: 38.578px;
   border-radius: 50%;
+
+  @media screen and (min-width: $old-phones) and (max-width: 380px) {
+    width: 37.141px;
+    height: 37.141px;
+	}
 }
 
 .datepicker--cells-months {
@@ -215,6 +220,10 @@ Datepicker
   font: normal normal 12px/15px Montserrat;
   color: $dark-shade-50;
   width: 320px;
+
+  @media screen and (min-width: $old-phones) and (max-width: 380px) {
+		width: 310px;
+	}
 
   position: absolute;
   left: -100000px;

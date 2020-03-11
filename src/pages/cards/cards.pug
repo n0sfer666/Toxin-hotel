@@ -7,6 +7,8 @@ include ../../components/_base/pug/logo
 include ../../components/cards/find-appart/find-appart
 include ../../components/cards/registration/registration
 include ../../components/cards/booking/booking
+include ../../components/cards/login/login
+include ../../components/cards/appart/appart
 
 doctype html
 html
@@ -32,5 +34,26 @@ html
             bookingConfig.additional = '0'
             bookingConfig.complementary = '300'
           +booking(bookingConfig)
+        .section--block
+          +login
 
       section.section-320-px
+        .section--block
+          .js-inline-datepicker
+        .section--block.section--block-appart
+          -
+            let appartConfig = {}
+            appartConfig.appart = '888'
+            appartConfig.isLux = true
+            appartConfig.price = '9990'
+            appartConfig.rate = '5'
+            appartConfig.reviews = 145
+          +appart(appartConfig)
+        .section--block.section--block-appart
+          -
+            appartConfig.appart = '840'
+            appartConfig.isLux = false
+            appartConfig.price = '9900'
+            appartConfig.rate = '4'
+            appartConfig.reviews = 65
+          +appart(appartConfig)
