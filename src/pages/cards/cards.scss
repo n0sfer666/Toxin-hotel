@@ -6,10 +6,15 @@
 @import '../../components/cards/login/login.scss';
 @import '../../components/cards/appart/appart.scss';
 
+body {
+	background-color: #e5e5e5;
+}
+
 .container {
 	padding: 0 9.7223% 140px;
 
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
 
 	@media screen and (min-width: $old-phones) and (max-width: 380px) {
@@ -31,6 +36,10 @@
 
 		&-appart {
 			width: 270px;
+
+			@media screen and (min-width: $old-phones) and (max-width: 380px) {
+				margin: 0 auto 40px;
+			}
 		}
 	}
 
