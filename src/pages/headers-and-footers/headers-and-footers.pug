@@ -1,0 +1,29 @@
+//- mixin head(title, css, js)
+include ../../components/_base/pug/head
+//- 
+//- mixin logo
+include ../../components/_base/pug/logo
+include ../../components/header/header
+
+doctype html
+html
+  +head({title: "Headers & Footers", page: "headers-and-footers"})
+  body
+    .logo
+      +logo({})
+    header
+      -
+        let headerConfig = {}
+        let links = []
+        links.push({type: "home", title: "Home"})
+        links.push({title: "Abous Us"})
+        links.push({type: "popup", title: "Services"})
+        links.push({title: "Careers"})
+        links.push({title: "News"})
+        links.push({title: "Documentation"})
+        headerConfig.links = links
+      +header(headerConfig)
+    header
+      -
+        headerConfig.isAuth = true
+      +header(headerConfig)

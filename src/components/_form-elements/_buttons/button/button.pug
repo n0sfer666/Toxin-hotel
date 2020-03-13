@@ -5,8 +5,9 @@
 //- title: whatever
 mixin button(options)
   -
-    var type = options.type === undefined ? 'button' : options.type
-    var className = options.size == undefined ? "button-big": "button-" + options.size
+    let isLink = options.href === undefined ? false : true
+    let type = options.type === undefined ? 'button' : options.type
+    let className = options.size == undefined ? "button-big": "button-" + options.size
     if(options.size === 'medium')
       className += ' button-' + options.theme
       if(options.isOpacity)
@@ -14,5 +15,9 @@ mixin button(options)
     if(options.size === 'small')
       className += options.isGray ? ' button-gray' : ' button-purple'
 
-  button(type=type, class=className)
-    h3 #{options.title}
+  if isLink
+    button(type=type, class=className, href=href)
+      h3 #{options.title}
+  else
+    button(type=type, class=className)
+      h3 #{options.title}

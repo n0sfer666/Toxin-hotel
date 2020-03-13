@@ -1,0 +1,26 @@
+mixin menu-link(options)
+  -
+    let type = options.type === undefined ? "link" : options.type
+    let href = options.href === undefined ? "change_me" : options.href
+    let title = options.title === undefined ? "change_me" : options.title
+    let popupItems = [{href: "change_me_1", title: "change_me_1"}]
+    popupItems.push({href: "change_me_2", title: "change_me_2"})
+    let popup = options.popup === undefined ? popupItems : options.popup
+  case type
+    when "link"
+      a(href = href, class = "header--link") #{title}
+    when "home"
+      a(href = href, class = "header--link") 
+        b #{title}
+    when "popup"
+      .header--link.header--link-popup #{title}
+        .header--popup
+          each val in popup
+            +popup-link(val)
+        span.header--arrow-down keyboard_arrow_down
+    default
+      a(href = href, class = "header--link") #{title}
+
+mixin popup-link(options)
+  a(href = options.href, class = "header--link") #{options.title}
+  <br>

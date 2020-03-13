@@ -19,6 +19,10 @@ const pages = [
 	{
 		name: "cards",
 		path: "src/pages/cards/"
+	},
+	{
+		name: "headers-and-footers",
+		path: "src/pages/headers-and-footers/"
 	}
 ]
 const entry = {};
@@ -69,6 +73,7 @@ module.exports = {
 
 	devServer: {
 		clientLogLevel: 'error',
+		stats: 'errors-only',
 		contentBase: __dirname + '/docs',
 		compress: true,
 		port: 9090 
@@ -83,7 +88,13 @@ module.exports = {
 			},
 			{
 				test: /\.scss$/,
-				use: ['style-loader', MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader']
+				use: [
+					'style-loader', 
+					MiniCssExtractPlugin.loader, 
+					'css-loader', 
+					'postcss-loader', 
+					'sass-loader'
+				]
 			},
 			{
 				test: /\.pug$/,

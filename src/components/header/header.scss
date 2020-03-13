@@ -1,0 +1,151 @@
+@import '../_form-elements/_buttons/button/button.scss';
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	width: inherit;
+	height: fit-content;
+
+	padding: 15px 9.7223%;
+
+	background-color: #fff;
+	box-sizing: border-box;
+	box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+
+	@media screen and (min-width: $notebook) and (max-width: $desktop) {
+		padding: 15px 5%;
+	}
+	@media screen and (min-width: $new-phones) and (max-width: $notebook) {
+		padding: 15px 2%;
+	}
+	@media screen and (min-width: $old-phones) and (max-width: $pads) {
+		justify-content: unset;
+		flex-direction: column;
+	}
+	
+	&--nav-bar {
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			flex-wrap: nowrap;
+			@media screen and (min-width: $old-phones) and (max-width: $pads) {
+				justify-content: unset;
+				flex-direction: column;
+			}
+	}	
+
+	&--menu {
+		@media screen and (min-width: $pads) and (max-width: $notebook) {
+			width: 35%;
+		}
+		@media screen and (min-width: $old-phones) and (max-width: $pads) {
+			display: flex;
+			flex-direction: column;
+			margin-bottom: 15px;
+		}
+	}
+
+	&--arrow-down {
+		cursor: pointer;
+		display: inline-block;
+		margin-right: 30px;
+
+		font: normal normal 24px/18px materialIcons;
+		color: $dark-shade-75;
+
+		vertical-align: middle;
+
+		@media screen and (min-width: $old-phones) and (max-width: $pads) {
+			margin-right: 0;
+		}
+	}
+
+	&--link {
+		display: inline-block;
+
+		text-align: center;
+		line-height: 17px;
+		color: $dark-shade-50;
+
+		& b {
+			color: $dark-shade-75;
+		}
+
+		&-popup {
+			cursor: pointer;
+			position: relative;
+			display: inline-block;
+		}
+
+		@media screen and (min-width: $old-phones) and (max-width: $pads) {
+			margin-right: 0;
+		}
+		@media screen and (min-width: $pads) {
+			&:not(&-popup) {
+				margin-right: 30px;
+			}
+		}
+	}
+
+	&--link-popup:hover &--popup,
+	&--link-popup:focus &--popup,
+	&--arrow-down:hover &--popup,
+	&--arrow-down:focus &--popup {
+		visibility: visible;
+	}
+
+	&--popup {
+		visibility: hidden;
+
+		position: absolute;
+		z-index: 5;
+		left: 0;
+		top: 17px;
+
+		padding: 20px;
+
+		background-color: #fff;
+
+		& .header--link {
+			margin: 0;
+			box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+		}
+
+		& .header--link:hover,
+		& .header--link:focus {
+			color: $dark-shade-75;
+		}
+	}
+
+	&--buttons {
+		display: flex;
+		flex-wrap: nowrap;
+
+		height: 34px;
+
+		& button:first-child {
+			width: 79px;
+			margin-right: 20px;
+		}
+		& button:last-child {
+			width: 101px;
+		}
+	}
+
+	&--login {
+		display: inline-block;
+		white-space: nowrap;
+
+		line-height: 30px;
+		color: $dark-shade-50;
+
+		height: 30px;
+
+		@media screen and (min-width: $pads) {
+			padding-left: 30px;
+			border-left: 1px solid rgba(31, 32, 65, 0.1);
+		}
+	}
+}

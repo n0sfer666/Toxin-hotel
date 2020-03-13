@@ -1,0 +1,24 @@
+
+include ../_base/pug/logo
+include ./menu-link
+include ../_form-elements/_buttons/button/button
+
+mixin header(options)
+  -
+    let isAuth = options.isAuth === undefined ? false : options.isAuth 
+    let login = options.login === undefined ? "Константин Константинопольский" : options.login
+    let loginButtonTitle = options.loginTitle === undefined ? "login" : options.loginTitle
+    let signupButtonTitle = options.signupTitle === undefined ? "register" : options.signupTitle
+  .header
+    .header--logo
+      +logo({isFull: true})
+    .header--nav-bar
+      .header--menu
+        each val in options.links
+          +menu-link(val)
+      if isAuth
+        p.header--login #{login}
+      else
+        .header--buttons
+          +button({size: "medium", theme: "border", title: loginButtonTitle})
+          +button({size: "medium", theme: "gradient", title: signupButtonTitle})

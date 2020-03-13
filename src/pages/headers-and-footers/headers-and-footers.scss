@@ -1,0 +1,23 @@
+@import '../../components/_base/scss/main.scss';
+@import '../../components/header/header.scss';
+
+body {
+    background-color: #e5e5e5;
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+// @import '../../main.scss';
+// body {
+//     background-color: #E5E5E5;
+// }
+// .logo {
+//     margin: 30px 0 60px 30px;
+// }
+// .headers-footers__block {
+//     margin-bottom: 40px;
+// }
+// @import '../../_components/_header/header';
+// @import '../../_components/_footer/footer';
