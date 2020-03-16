@@ -1,40 +1,86 @@
-@import '../../main.scss';
-@import '../../_components/_header/header';
-@import '../../_components/_cards/_findApart/findApart';
-@import '../../_components/_footer/footer';
-.landing__container {
-    padding: 70px 9.3056% 18px 9.7223%;
-    background: url(../../img/landing.png) no-repeat;
-    background-position: center 100%;
-    background-size: cover;
-    // background-attachment: fixed; 
+@import '../../components/_base/scss/main.scss';
+
+@import '../../components/header/header.scss';
+@import '../../components/footer/footer.scss';
+
+@import '../../components/cards/find-appart/find-appart.scss';
+
+
+
+.landing {
+	padding: 70px 9.3056% 18px 9.7223%;
+
+	background-image: url(../../img/background/landing.png);
+	background-repeat: no-repeat;
+	background-position: center right;
+	background-size: cover;
+
+	@media screen and (min-width: $old-phones) and (max-width: 500px) {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		padding: 70px 0 18px;
+	}
+
+	&--find-appart {
+		width: 380px;
+
+		@media screen and (min-width: $old-phones) and (max-width: 500px) {
+			width: 310px;
+		}
+	}
+
+	&--description {
+		display: flex;
+		justify-content: flex-end;
+		margin-top: 320px;
+
+		& p {
+			max-width: 280px;
+			text-align: right;
+		}
+	}
 }
-.landing__findApart {
-    max-width: 380px;
-}
-.landing__description {
-    margin-top: 320px;
-    & p {
-        text-align: right;
-    }
-}
-@media only screen and (max-width: 425px) {
-    .landing__container {
-        padding-left: 0;
-        padding-right: 0;
-    }
-    .landing__findApart {
-        margin: 0 auto;
-    }
-    .landing__description {
-        margin: 30px auto;
-        & p {
-            text-align: center;
-        }
-    }
-}
-@media only screen and (max-width: 380px) {
-    .landing__container {
-        width: 380px;
-    }
-}
+
+
+// @import '../../main.scss';
+// @import '../../_components/_header/header';
+// @import '../../_components/_cards/_findApart/findApart';
+// @import '../../_components/_footer/footer';
+// .landing__container {
+//     padding: 70px 9.3056% 18px 9.7223%;
+//     background: url(../../img/landing.png) no-repeat;
+//     background-position: center 100%;
+//     background-size: cover;
+//     // background-attachment: fixed; 
+// }
+// .landing__findApart {
+//     max-width: 380px;
+// }
+// .landing__description {
+//     margin-top: 320px;
+//     & p {
+//         text-align: right;
+//     }
+// }
+// @media only screen and (max-width: 425px) {
+//     .landing__container {
+//         padding-left: 0;
+//         padding-right: 0;
+//     }
+//     .landing__findApart {
+//         margin: 0 auto;
+//     }
+//     .landing__description {
+//         margin: 30px auto;
+//         & p {
+//             text-align: center;
+//         }
+//     }
+// }
+// @media only screen and (max-width: 380px) {
+//     .landing__container {
+//         width: 380px;
+//     }
+// }

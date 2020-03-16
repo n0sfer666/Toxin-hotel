@@ -4,6 +4,7 @@ const Webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const pages = [
+	// ui-kit
 	{
 		name: "index",
 		path: "src/pages/_index/"
@@ -23,6 +24,11 @@ const pages = [
 	{
 		name: "headers-and-footers",
 		path: "src/pages/headers-and-footers/"
+	},
+	// website
+	{
+		name: "landing-page",
+		path: "src/pages/landing-page/"
 	}
 ]
 const entry = {};
@@ -43,7 +49,8 @@ plugins.push(
 		chunkFilename: '[id].css'
 	}),
 	new CopyWebpackPlugin([
-		{ from: 'src/img', to: 'img' }
+		{ from: 'src/img', to: 'img' },
+		{ from: 'src/favicons/', to: 'favicons'}
 	]),
 	new Webpack.ProvidePlugin({
 		$: 'jquery',
@@ -105,6 +112,13 @@ module.exports = {
 				loader: 'file-loader',
 				options: {
 						name: "fonts/[name].[ext]"
+				},
+			},
+			{
+				test: /\.(png|jpeg|gif)$/,
+				loader: 'file-loader',
+				options: {
+						name: "img/background/[name].[ext]"
 				}
 			}
 		]

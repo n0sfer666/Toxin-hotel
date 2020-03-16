@@ -1,3 +1,5 @@
 import './landing-page.scss';
-import '../../img/landing.png';
-import '../../_components/_cards/_findApart/_findApart';
+
+import '../../components/cards/find-appart/find-appart';
+// import '../../img/landing.png';
+// import '../../_components/_cards/_findApart/_findApart';
