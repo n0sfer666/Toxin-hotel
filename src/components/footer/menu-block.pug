@@ -1,0 +1,5 @@
+mixin menu-block(options)
+  .footer--block
+    h3 #{options.title}
+    each val in options.links
+      a(href="change me", class="footer--menu-link") #{val}

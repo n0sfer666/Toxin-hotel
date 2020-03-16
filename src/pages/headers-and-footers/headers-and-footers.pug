@@ -4,6 +4,7 @@ include ../../components/_base/pug/head
 //- mixin logo
 include ../../components/_base/pug/logo
 include ../../components/header/header
+include ../../components/footer/footer
 
 doctype html
 html
@@ -22,8 +23,55 @@ html
         links.push({title: "News"})
         links.push({title: "Documentation"})
         headerConfig.links = links
+
       +header(headerConfig)
+
     header
       -
         headerConfig.isAuth = true
+
       +header(headerConfig)
+
+    footer
+      -
+        let footerConfig = {}
+        footerConfig.description = "Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis."
+        
+        footerConfig.navigation = {title: "navigation"}
+        links = []
+        links.push("About Us")
+        links.push("News")
+        links.push("Support")
+        links.push("Products")
+        footerConfig.navigation.links = links
+
+        footerConfig.aboutUs = {title: "about us"}
+        links = []
+        links.push("Who we are")
+        links.push("Our teem")
+        links.push("Careers")
+        links.push("Investors")
+        footerConfig.aboutUs.links = links
+
+        footerConfig.support = {title: "support"}
+        links = []
+        links.push("Documentation")
+        links.push("Community")
+        links.push("Get in Touch")
+        footerConfig.support.links = links
+
+        footerConfig.subscription = {title: "subscribe to our newsletter"}
+        footerConfig.subscription.description = "Receive our latest news and promotions in your inbox!"
+        footerConfig.subscription.placeholder = "Your email address"
+
+        footerConfig.copyright = "UI Kit. All rights reserved."
+
+      +footer(footerConfig)
+
+    footer
+      -
+        footerConfig = {}
+        footerConfig.isShort = true
+        footerConfig.description = "Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis."
+
+      +footer(footerConfig)

@@ -1,0 +1,33 @@
+include ../_base/pug/logo
+include ../_form-elements/text-field/subscription-field/subscription-field
+
+include ./menu-block
+
+mixin footer(options)
+  if options.isShort
+    .footer.footer-short
+      +logo({isFull: true})
+      p.footer--description.footer--description-short #{options.description}
+      .footer--icons
+        a(href = "change me", class = " footer--icon footer--icon-tweeter")
+        a(href = "change me", class = " footer--icon footer--icon-facebook")
+        a(href = "change me", class = " footer--icon footer--icon-instagram")
+  else
+    .footer.footer-full
+      .footer--block
+        +logo({isFull: true})
+        p #{options.description}
+      .footer--menu
+        +menu-block(options.navigation)
+        +menu-block(options.aboutUs)
+        +menu-block(options.support)
+      .footer--block
+        h3 #{options.subscription.title}
+        p #{options.subscription.description}
+        +subscription-field({placeholder: options.subscription.placeholder})
+    .footer--copyright
+      p Copyright © 2018 Toxin #{options.copyright}
+      .footer--icons
+        a(href = "change me", class = " footer--icon footer--icon-tweeter")
+        a(href = "change me", class = " footer--icon footer--icon-facebook")
+        a(href = "change me", class = " footer--icon footer--icon-instagram")

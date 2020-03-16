@@ -37,9 +37,14 @@
 	}	
 
 	&--menu {
+		@media screen and (min-width: $notebook) and (max-width: $desktop) {
+			width: 45%;
+		}
+
 		@media screen and (min-width: $pads) and (max-width: $notebook) {
 			width: 35%;
 		}
+
 		@media screen and (min-width: $old-phones) and (max-width: $pads) {
 			display: flex;
 			flex-direction: column;
