@@ -29,6 +29,14 @@ const pages = [
 	{
 		name: "landing-page",
 		path: "src/pages/landing-page/"
+	},
+	{
+		name: "registration",
+		path: "src/pages/registration/"
+	},
+	{
+		name: "sign-in",
+		path: "src/pages/sign-in/"
 	}
 ]
 const entry = {};

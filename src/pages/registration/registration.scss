@@ -1,21 +1,26 @@
-@import '../../main.scss';
-@import '../../_components/_header/header';
-@import '../../_components/_footer/footer';
-@import '../../_components/_cards/_registration/registration';
-.registration__container {
-    padding: 35px 0 26px 0;
-    display: flex;
-    justify-content: center;
-    background: url(../../img/registration.png) no-repeat;
-    background-size: cover;
-    background-position: center 100%;
+@import '../../components/_base/scss/main.scss';
+
+@import '../../components/header/header.scss';
+@import '../../components/footer/footer.scss';
+
+@import '../../components/cards/registration/registration.scss';
+
+main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	background-image: url(../../img/background/registration.png);
+	background-repeat: no-repeat;
+	background-position: center 100%;
+	background-size: cover;
 }
-.registration__regBlock {
-    width: 380px;
-    // margin: 0 auto;
-}
-@media only screen and (max-width: 380px) {
-    .registration__container {
-        width: 380px;
-    }
+
+.container {
+	margin: 30px 0;
+	width: 380px;
+
+	@media screen and (min-width: $old-phones) and (max-width: 400px) {
+		width: 310px;
+	}
 }

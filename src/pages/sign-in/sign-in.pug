@@ -1,16 +1,70 @@
-//- mixin base(title, css, js)
-include ../../_components/_base/_pug/_base
-//- 
-//-
-include ../../_components/_header/_header
-include ../../_components/_cards/_login/_login
-include ../../_components/_footer/_footer
+include ../../components/_base/pug/head
+
+include ../../components/header/header
+include ../../components/footer/footer
+
+include ../../components/cards/sign-in/sign-in
+
+
 doctype html
 html
-    +base("Sign-in", "signin.css", "signin.js")
-    body
-        +header({isAuth: false, lButton: {width: "87", title: "Войти"}, rButton: {width: "196", title: "Зарегистрироваться"}, menuLinks: [{mod: "link", text: "О нас", mr: "20"}, {mod: "submenu", text: "Услуги", mr: "20"}, {mod: "link", text: "Вакансии", mr: "20"}, {mod: "link", text: "Новости", mr: "20"}, {mod: "submenu", text: "Соглашения", mr: "20"}]})
-        section(class="signin__container")
-            .signin__loginBlock
-                +login
-        +footer({isShort: false, description: "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»", navigation: {title: "Навигация", links: ["О нас","Новости","Служба поддержки","Услуги"]}, aboutUs: {title: "О нас", links: ["О сервисе","Наша команда","Вакансии","Ивесторы"]}, support: {title: "Служба поддержки", links: ["Соглашения","Сообщество","Связь с нами"]}, subscribe: {title: "подписка", description: "Получайте специальные предложения и новости сервиса", placeholder: "Email"}, copyright: "Copyright © 2018 Toxin отель. Все права зачищены."})
+  +head({title: "Sign-in", page: "sign-in"})
+  body
+    header
+      -
+        let config = {}
+        let links = []
+
+        links.push({title: "О нас"})
+        links.push({type: "popup", title: "Услуги"})
+        links.push({title: "Вакансии"})
+        links.push({title: "Новости"})
+        links.push({type: "popup", title: "Соглашения"})
+
+        config.links = links
+        config.loginTitle = "Войти"
+        config.signupTitle = "Зарегистрироваться"
+
+      +header(config)
+      
+    main
+      section.container
+        +sign-in
+
+    footer
+      -
+        config = {}
+        links = []
+
+        config.description = "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"
+        
+        config.navigation = {title: "навигация"}
+        links = []
+        links.push("О нас")
+        links.push("Новости")
+        links.push("Служба поддержки")
+        links.push("Услуги")
+        config.navigation.links = links
+
+        config.aboutUs = {title: "о нас"}
+        links = []
+        links.push("О сервисе")
+        links.push("Наша команда")
+        links.push("Вакансии")
+        links.push("Инвесторы")
+        config.aboutUs.links = links
+
+        config.support = {title: "служба поддержки"}
+        links = []
+        links.push("Соглашения")
+        links.push("Сообщества")
+        links.push("Связь с нами")
+        config.support.links = links
+
+        config.subscription = {title: "Подписка"}
+        config.subscription.description = "Получайте специальные предложения и новости сервиса"
+        config.subscription.placeholder = "Email"
+
+        config.copyright = "отель. Все права зачищены."
+      
+      +footer(config)

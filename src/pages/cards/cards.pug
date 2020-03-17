@@ -7,7 +7,7 @@ include ../../components/_base/pug/logo
 include ../../components/cards/find-appart/find-appart
 include ../../components/cards/registration/registration
 include ../../components/cards/booking/booking
-include ../../components/cards/login/login
+include ../../components/cards/sign-in/sign-in
 include ../../components/cards/appart/appart
 
 doctype html
@@ -35,7 +35,7 @@ html
             bookingConfig.complementary = '300'
           +booking(bookingConfig)
         .section--block
-          +login
+          +sign-in
 
       section.section-320-px
         .section--block

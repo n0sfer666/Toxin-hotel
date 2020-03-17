@@ -86,6 +86,7 @@
 
 		@media screen and (min-width: $old-phones) and (max-width: $pads) {
 			margin-right: 0;
+			margin-bottom: 5px;
 		}
 		@media screen and (min-width: $pads) {
 			&:not(&-popup) {
