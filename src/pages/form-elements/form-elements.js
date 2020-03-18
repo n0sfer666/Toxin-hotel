@@ -14,7 +14,8 @@ $(document).ready(function() {
 	let maskedObj = IMask(maskedField, maskOptions);
 
 	let leftDpClass = 'js-undefined-date-dropdown-left',
-			rightDpClass = 'js-undefined-date-dropdown-right';
+			rightDpClass = 'js-undefined-date-dropdown-right',
+			filterDpClass = 'js-undefined-date-dropdown-filter';
 	let datepickerConfig = getDatepickerConfig(leftDpClass, rightDpClass)
 	let leftDatepicker = $('.' + leftDpClass)
 		.datepicker(datepickerConfig)
@@ -22,11 +23,15 @@ $(document).ready(function() {
 	let rightDatepicker = $('.' + rightDpClass)
 		.datepicker(datepickerConfig)
 		.data('datepicker');
+		datepickerConfig = getDatepickerConfig();
+	let filterDatepicker = $('.' + filterDpClass)
+		.datepicker(datepickerConfig)
+		.data('datepicker');
 
 	let demoArr = [];
 	for( let i = 0; i < 200; i++ ) {
 		demoArr.push(i);
 	}
-	let paginationConfig = getPaginationConfig(demoArr, 12);
+	let paginationConfig = getPaginationConfig(demoArr, 'change me', 12);
 		$('.js-pagination').pagination(paginationConfig);
 })

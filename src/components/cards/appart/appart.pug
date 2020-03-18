@@ -24,7 +24,7 @@ mixin appart(options)
       .appart--hrow
       .appart--rate
         div
-          +rate({rate: options.rate, name: options.appart})
+          +rate({rate: options.rate})
         div
           -
             let isNullReviews = options.reviews === 0 || options.reviews === undefined

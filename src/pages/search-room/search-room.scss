@@ -1,63 +1,93 @@
-    @import '../../main.scss';
-@import '../../_components/_header/header';
-@import '../../_components/_footer/footer';
-@import '../../_components/_formElements/_dateDropdown/dateDropdown';
-@import '../../_components/_formElements/_dropdown/dropdown.scss';
-@import '../../_components/_formElements/_range_slider/range_slider';
-@import '../../_components/_formElements/_buttons/_checkbox/_checkbox';
-@import '../../_components/_formElements/_buttons/_checkbox_rich/_checkbox_rich';
-@import '../../_components/_formElements/_expandableCheckboxList/expandableCheckboxList';
-@import '../../_components/_cards/_apart/apart';
-@import '../../_components/_formElements/_pagination/pagination';
+@import '../../components/_base/scss/main.scss';
+
+@import '../../components/header/header.scss';
+@import '../../components/footer/footer.scss';
+
+@import '../../components/cards/appart/appart.scss';
+
+@import '../../components/_form-elements/date-dropdown/date-dropdown.scss';
+@import '../../components/_form-elements/dropdown/dropdown.scss';
+@import '../../components/_form-elements/expandable-checkbox-list/expandable-checkbox-list.scss';
+@import '../../components/_form-elements/range-slider/range-slider.scss';
+@import '../../components/_form-elements/pagination/pagination.scss';
+@import '../../components/_form-elements/_buttons/button/button.scss';
+@import '../../components/_form-elements/_buttons/checkbox/checkbox.scss';
+@import '../../components/_form-elements/_buttons/rich-checkbox/rich-checkbox.scss';
+
+.search-room {
+	display: flex;
+	flex-wrap: nowrap;
+
+	margin: 0 auto;
+	padding: 30px 10px 70px;
+
+	width: fit-content;
+
+	@media screen and (min-width: $old-phones) and (max-width: $new-phones) {
+		flex-wrap: wrap;
+		flex-direction: column;
+		align-items: center;
+	}
 
 
-.searchRoom__container {
-    padding: 30px 9.7223% 70px 9.7223%;
-    display: flex;
-    box-sizing: border-box;
-    // justify-content: space-between;
-}
-.searchRoom__sidebar {
-    display: flex;
-    flex-direction: column;
-    height: min-content;
-    width: 266px;
-    & div {
-        & .buttons__richCheckbox-container {
-            margin-bottom: 2px;
-        }
-    }
-}
-.searchRoom__rooms {
-    margin-left: 5.172413793%;
-    box-sizing: border-box;
-    & .apart__container {
-        margin-right: 0.9592326139%;
-        margin-top: 16px;
-    }
-}
-.searchRoom__aparts {
-    display: none;
-}
-#searchRoom__pagination {
-    margin-top: 40px;
-    text-align: center;
-}
-@media only screen and (min-width: 320px) and (max-width: 645px) {
-    .searchRoom__sidebar {
-        margin: 10px auto;
-    }
-    .searchRoom__rooms {
-        width: 266px;
-        margin: 10px auto;
-    }
-    .searchRoom__container {
-        flex-wrap: wrap;
-        padding: 0;
-    }
-}
-@media only screen and (min-width: 646px) and (max-width: 1068px) {
-    .searchRoom__container {
-        padding: 30px 5.7223% 70px 5.7223%;
-    }
+	&--menu {
+		flex-shrink: 0;
+		margin-right: 60px;
+		width: 266px;
+
+		@media screen and (min-width: $new-phones) and (max-width: $pads) {
+			margin-right: 45px;
+		}
+
+		@media screen and (min-width: $old-phones) and (max-width: $new-phones) {
+			flex-shrink: unset;
+			margin-right: 0;
+			margin-bottom: 40px;
+		}
+
+		& .label:not(:first-child),
+		& .expandable-checkbox-list,
+		& .range-slider--container {
+			margin-top: 30px;
+		}
+
+		& .search-room--description {
+			margin-top: 10px;
+
+			font-size: 12px;
+			line-height: 14px;
+			color: $dark-shade-50;
+		} 
+	}
+
+	&--result {
+		min-width: 310px;
+		width: fit-content;
+		max-width: 848px;
+
+		& > h1 {
+			margin-bottom: 21px;
+		}
+	}
+
+	&--data-output {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	&--pagination {
+		display: flex;
+		justify-content: center;
+
+		margin-top: 20px;
+	}
+
+	&--appart {
+		margin-right: 2px;
+		margin-bottom: 21px;
+
+		width: 270px;
+	}
 }

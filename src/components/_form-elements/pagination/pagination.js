@@ -1,5 +1,5 @@
 import 'paginationjs';
-let getPaginationConfig = function(dataSource, elementsOnPage) {
+let getPaginationConfig = function(dataSource, dataOutput, elementsOnPage, callback) {
 	return {
 		dataSource: dataSource,
 		showPrevious: false,
@@ -14,6 +14,11 @@ let getPaginationConfig = function(dataSource, elementsOnPage) {
 				if(last>totalNumber)
 					last = totalNumber;
 			return String(first + " - " + last + " из " + total + " вариантов аренды");
+		},
+		callback: function(data) {
+			var html = data;
+			$(dataOutput).html(html);
+			callback();
 		}
 	}
 }

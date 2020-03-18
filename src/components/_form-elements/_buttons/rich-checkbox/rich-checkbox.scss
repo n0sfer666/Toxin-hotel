@@ -16,6 +16,12 @@
 		border-bottom-width: 2px;
 		transform: rotate(45deg);
 	}
+
+	&:hover .rich-checkbox--checkmark,
+	&:active .rich-checkbox--checkmark,
+	&:focus .rich-checkbox--checkmark {
+		box-shadow: 0 0 5px $dark-shade-25;
+	}
 }
 .rich-checkbox {
 	position: absolute;

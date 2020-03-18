@@ -6,6 +6,12 @@
 	color: $dark-shade-50;
 	padding-left: 30px;
 	margin-bottom: 11px;
+
+	&:hover .checkbox--checkmark,
+	&:active .checkbox--checkmark,
+	&:focus .checkbox--checkmark {
+		box-shadow: 0 0 5px $dark-shade-25;
+	}
 }
 .checkbox {
 	position: absolute;

@@ -37,6 +37,10 @@ const pages = [
 	{
 		name: "sign-in",
 		path: "src/pages/sign-in/"
+	},
+	{
+		name: "search-room",
+		path: "src/pages/search-room/"
 	}
 ]
 const entry = {};

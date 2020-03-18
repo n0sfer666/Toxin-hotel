@@ -1,6 +1,6 @@
 import { slick } from 'slick-carousel';
 
-$(document).ready(function() {
+let setSlick = function() {
 	$('.js-appart--slider').slick({
 		accessibility: false,
 		dots: true,
@@ -14,4 +14,6 @@ $(document).ready(function() {
 				.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
 		priceComponents[i].innerText = strSeparated;
 	}
-})
+}
+
+export {setSlick};
