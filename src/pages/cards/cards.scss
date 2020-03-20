@@ -17,7 +17,7 @@ body {
 	flex-wrap: wrap;
 	justify-content: space-between;
 
-	@media screen and (min-width: $old-phones) and (max-width: 380rem) {
+	@media screen and (min-width: $old-phones) and (max-width: 380px) {
 		flex-direction: column;
 		align-items: center;
 		padding: 0 1.5625%;
@@ -27,7 +27,7 @@ body {
 .section {
 	width: 380rem;
 
-	@media screen and (min-width: $old-phones) and (max-width: 380rem) {
+	@media screen and (min-width: $old-phones) and (max-width: 380px) {
 		width: 310rem;
 	}
 
@@ -37,7 +37,7 @@ body {
 		&-appart {
 			width: 270rem;
 
-			@media screen and (min-width: $old-phones) and (max-width: 380rem) {
+			@media screen and (min-width: $old-phones) and (max-width: 380px) {
 				margin: 0 auto 40rem;
 			}
 		}
@@ -46,7 +46,7 @@ body {
 	&-320-rem {
 		width: 320rem;
 
-		@media screen and (min-width: $old-phones) and (max-width: 380rem) {
+		@media screen and (min-width: $old-phones) and (max-width: 380px) {
 			width: 310rem;
 		}
 	}

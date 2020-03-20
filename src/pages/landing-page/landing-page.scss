@@ -15,7 +15,7 @@
 	background-position: center 100%;
 	background-size: cover;
 
-	@media screen and (min-width: $old-phones) and (max-width: 500rem) {
+	@media screen and (min-width: $old-phones) and (max-width: 500px) {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -26,7 +26,7 @@
 	&--find-appart {
 		width: 380rem;
 
-		@media screen and (min-width: $old-phones) and (max-width: 500rem) {
+		@media screen and (min-width: $old-phones) and (max-width: 500px) {
 			width: 310rem;
 		}
 	}
@@ -42,45 +42,3 @@
 		}
 	}
 }
-
-
-// @import '../../main.scss';
-// @import '../../_components/_header/header';
-// @import '../../_components/_cards/_findApart/findApart';
-// @import '../../_components/_footer/footer';
-// .landing__container {
-//     padding: 70rem 9.3056% 18rem 9.7223%;
-//     background: url(../../img/landing.png) no-repeat;
-//     background-position: center 100%;
-//     background-size: cover;
-//     // background-attachment: fixed; 
-// }
-// .landing__findApart {
-//     max-width: 380rem;
-// }
-// .landing__description {
-//     margin-top: 320rem;
-//     & p {
-//         text-align: right;
-//     }
-// }
-// @media only screen and (max-width: 425rem) {
-//     .landing__container {
-//         padding-left: 0;
-//         padding-right: 0;
-//     }
-//     .landing__findApart {
-//         margin: 0 auto;
-//     }
-//     .landing__description {
-//         margin: 30rem auto;
-//         & p {
-//             text-align: center;
-//         }
-//     }
-// }
-// @media only screen and (max-width: 380rem) {
-//     .landing__container {
-//         width: 380rem;
-//     }
-// }

@@ -18,7 +18,8 @@ let getPaginationConfig = function(dataSource, dataOutput, elementsOnPage, callb
 		callback: function(data) {
 			var html = data;
 			$(dataOutput).html(html);
-			callback();
+			if(callback)
+				callback();
 		}
 	}
 }

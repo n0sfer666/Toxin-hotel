@@ -57,7 +57,7 @@
 			margin-bottom: 20rem;
 		}
 
-		@media screen and (min-width: $old-phones) and (max-width: 840rem) {
+		@media screen and (min-width: $old-phones) and (max-width: 840px) {
 			flex-direction: column-reverse;
 		}
 	}
@@ -78,7 +78,7 @@
 			margin-bottom: 30rem;
 		}
 
-		@media screen and (min-width: $old-phones) and (max-width: 450rem) {
+		@media screen and (min-width: $old-phones) and (max-width: 450px) {
 			margin-right: 0;
 		}
 	}
@@ -88,7 +88,7 @@
 
 		width: 280rem;
 
-		@media screen and (min-width: $old-phones) and (max-width: 450rem) {
+		@media screen and (min-width: $old-phones) and (max-width: 450px) {
 			margin-right: 0;
 		}
 	}
@@ -112,7 +112,7 @@
 		margin-bottom: 30rem;
 		width: 380rem;
 
-		@media screen and (min-width: $old-phones) and (max-width: 400rem) {
+		@media screen and (min-width: $old-phones) and (max-width: 400px) {
 			width: 310rem;
 		}
 	}

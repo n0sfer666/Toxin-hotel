@@ -20,7 +20,7 @@ main {
 	margin: 30rem 0;
 	width: 380rem;
 
-	@media screen and (min-width: $old-phones) and (max-width: 400rem) {
+	@media screen and (min-width: $old-phones) and (max-width: 400px) {
 		width: 310rem;
 	}
 }

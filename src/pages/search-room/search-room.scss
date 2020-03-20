@@ -28,7 +28,7 @@
 		flex-direction: column;
 		align-items: center;
 	}
-	@media screen and (min-width: $old-phones) and (max-width: 340rem) {
+	@media screen and (min-width: $old-phones) and (max-width: 340px) {
 		padding: 30rem 0rem 70rem;
 	}
 
@@ -79,7 +79,7 @@
 		flex-direction: row;
 		justify-content: space-between;
 
-		@media screen and (min-width: $old-phones) and (max-width: 340rem) {
+		@media screen and (min-width: $old-phones) and (max-width: 340px) {
 			justify-content: center;
 		}
 	

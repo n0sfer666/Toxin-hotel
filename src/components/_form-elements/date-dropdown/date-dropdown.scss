@@ -166,7 +166,7 @@ Datepicker cells
   height: 38.578rem;
   border-radius: 50%;
 
-  @media screen and (min-width: $old-phones) and (max-width: 380rem) {
+  @media screen and (min-width: $old-phones) and (max-width: 380px) {
     width: 37.141rem;
     height: 37.141rem;
 	}
@@ -232,7 +232,7 @@ Datepicker
   color: $dark-shade-50;
   width: 320rem;
 
-  @media screen and (min-width: $old-phones) and (max-width: 380rem) {
+  @media screen and (min-width: $old-phones) and (max-width: 380px) {
 		width: 310rem;
 	}
 
