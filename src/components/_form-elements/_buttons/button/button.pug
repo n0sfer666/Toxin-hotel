@@ -7,7 +7,7 @@ mixin button(options)
   -
     let isLink = options.href === undefined ? false : true
     let type = options.type === undefined ? "button" : options.type
-    let className = options.size == undefined ? "button-big": "button-" + options.size
+    let className = options.size == undefined ? "button button-big": "button button-" + options.size
     if(options.size === "medium")
       className += " button-" + options.theme
       if(options.isOpacity)
