@@ -1,28 +1,3 @@
-.rich-checkbox--container {
-	display: flex;
-	position: relative;
-	cursor: pointer;
-	
-	& .rich-checkbox--checkmark:after {
-		left: 5rem;
-		top: 3rem;
-		width: 5rem;
-		height: 7rem;
-		border-image:  linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-		border-image-slice: 1;
-		border-right-style: solid;
-		border-right-width: 2rem;
-		border-bottom-style: solid;
-		border-bottom-width: 2rem;
-		transform: rotate(45deg);
-	}
-
-	&:hover .rich-checkbox--checkmark,
-	&:active .rich-checkbox--checkmark,
-	&:focus .rich-checkbox--checkmark {
-		box-shadow: 0 0 5rem $dark-shade-25;
-	}
-}
 .rich-checkbox {
 	position: absolute;
 	opacity: 0;
@@ -35,6 +10,31 @@
 	}
 	&:checked ~ .rich-checkbox--checkmark:after {
 		display: block;
+	}
+	&--container {
+		display: flex;
+		position: relative;
+		cursor: pointer;
+		
+		& .rich-checkbox--checkmark:after {
+			left: 5rem;
+			top: 3rem;
+			width: 5rem;
+			height: 7rem;
+			border-image:  linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+			border-image-slice: 1;
+			border-right-style: solid;
+			border-right-width: 2rem;
+			border-bottom-style: solid;
+			border-bottom-width: 2rem;
+			transform: rotate(45deg);
+		}
+	
+		&:hover .rich-checkbox--checkmark,
+		&:active .rich-checkbox--checkmark,
+		&:focus .rich-checkbox--checkmark {
+			box-shadow: 0 0 5rem $dark-shade-25;
+		}
 	}
 }
 .rich-checkbox--checkmark {
