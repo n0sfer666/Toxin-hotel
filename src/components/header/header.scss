@@ -74,6 +74,10 @@
 		line-height: 17rem;
 		color: $dark-shade-50;
 
+		&:active, &:focus, &:hover {
+			text-shadow: 0 0 5rem $dark-shade-25;
+		}
+
 		& b {
 			color: $dark-shade-75;
 		}
@@ -113,14 +117,12 @@
 		padding: 20rem;
 
 		background-color: #fff;
-
-		& .header--link {
-			margin: 0;
-			box-shadow: 0rem 10rem 20rem rgba(31, 32, 65, 0.05);
-		}
+		box-shadow: 0 0 5rem $dark-shade-50;
+		text-align: left;
 
 		& .header--link:hover,
-		& .header--link:focus {
+		& .header--link:focus,
+		& .header--link:hover {
 			color: $dark-shade-75;
 		}
 	}

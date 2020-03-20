@@ -1,10 +1,3 @@
-.toggle--container {
-	cursor: pointer;
-	position: relative;
-	display: block;
-	width: 40rem;
-	height: 20rem;
-}
 .toggle {
 	opacity: 0;
 	width: 0;
@@ -18,34 +11,47 @@
 			transform: translateX(19rem);
 		}
 	}
-}
-.toggle--switch {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	border: 1rem solid $dark-shade-25;
-	background-color: #fff;
-	-webkit-transition: .4s;
-	transition: .4s;
-	border-radius: 34rem;
-	&::before {
+	&--container {
+		cursor: pointer;
+		position: relative;
+		display: block;
+		width: 40rem;
+		height: 20rem;
+
+		&:focus .toggle--switch,
+		&:active .toggle--switch,
+		&:hover .toggle--switch {
+			box-shadow: 0 0 5rem $dark-shade-50;
+		}
+	}
+	&--switch {
 		position: absolute;
-		content: "";
-		height: 12rem;
-		width: 12rem;
-		left: 3rem;
-		bottom: 3rem;
-		background-color: $dark-shade-25;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		border: 1rem solid $dark-shade-25;
+		background-color: #fff;
 		-webkit-transition: .4s;
 		transition: .4s;
-		border-radius: 50%;
+		border-radius: 34rem;
+		&::before {
+			position: absolute;
+			content: "";
+			height: 12rem;
+			width: 12rem;
+			left: 3rem;
+			bottom: 3rem;
+			background-color: $dark-shade-25;
+			-webkit-transition: .4s;
+			transition: .4s;
+			border-radius: 50%;
+		}
 	}
-}
-.toggle--label {
-	white-space: nowrap;
-	padding-left: 44rem;
-	color: $dark-shade-75;
-	font: normal normal 14rem/19rem Montserrat;
+	&--label {
+		white-space: nowrap;
+		padding-left: 44rem;
+		color: $dark-shade-75;
+		font: normal normal 14rem/19rem Montserrat;
+	}
 }
