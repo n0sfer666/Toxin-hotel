@@ -12,17 +12,17 @@
 		flex-direction: column;
 		align-items: center;
 
-		padding: 100px 0;
+		padding: 100rem 0;
 
 		& svg {
-			margin-bottom: 20px;
+			margin-bottom: 20rem;
 		}
 
 		& p {
-			margin-bottom: 25px;
+			margin-bottom: 25rem;
 
 			width: 70%;
-			max-width: 516px;
+			max-width: 516rem;
 
 			text-align: center;
 		}
@@ -30,9 +30,9 @@
 
 	&-full {
 		justify-content: space-between;
-		padding: 100px 9.7223%;
+		padding: 100rem 9.7223%;
 
-		box-shadow: 0px 1px 0px rgba(31, 32, 65, 0.1);
+		box-shadow: 0rem 1rem 0rem rgba(31, 32, 65, 0.1);
 
 		@media screen and (min-width: $old-phones) and (max-width: $desktop) {
 			flex-direction: column;
@@ -46,21 +46,21 @@
 		justify-content: left;
 		align-items: flex-start;
 
-		max-width: 260px;
+		max-width: 260rem;
 
 		& a {
-			line-height: 17px;
+			line-height: 17rem;
 			color: $dark-shade-50;
 		}
 		@media screen and (min-width: $old-phones) and (max-width: $desktop) {
 
 			& * {
-				margin-bottom: 10px;
+				margin-bottom: 10rem;
 			}
 		}
 		@media screen and (min-width: $desktop) {
 			& *:not(:last-child) {
-				margin-bottom: 20px;
+				margin-bottom: 20rem;
 			}
 		}
 		@media screen and (min-width: $old-phones) and (max-width: $new-phones) {
@@ -68,7 +68,7 @@
 			align-items: center;
 			text-align: center;
 
-			margin-bottom: 10px;
+			margin-bottom: 10rem;
 		}
 	}
 
@@ -86,7 +86,7 @@
 		@media screen and (min-width: $old-phones) and (max-width: $new-phones) {
 			flex-direction: column;
 
-			margin:  40px 0;
+			margin:  40rem 0;
 		}
 	}
 
@@ -95,18 +95,18 @@
 		justify-content: space-between;
 		align-items: center;
 
-		padding: 23px 9.7223%;
+		padding: 23rem 9.7223%;
 
 		background-color: #fff;
-		box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+		box-shadow: 0rem 10rem 20rem rgba(31, 32, 65, 0.05);
 
 		@media screen and (min-width: $old-phones) and (max-width: $new-phones) {
 			flex-direction: column-reverse;
 
-			padding: 23px 0;
+			padding: 23rem 0;
 
 			& a {
-				margin-bottom: 20px;
+				margin-bottom: 20rem;
 			}
 			& p {
 				text-align: center;
@@ -122,10 +122,10 @@
 		background-clip: text;
     -webkit-text-fill-color: transparent;
 
-		font: normal normal 24px/24px FontAwesomeBrands;
+		font: normal normal 24rem/24rem FontAwesomeBrands;
 
 		&:not(:last-child) {
-			margin-right: 20px;
+			margin-right: 20rem;
 		}
 		
 		&-tweeter {

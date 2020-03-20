@@ -21,7 +21,7 @@
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
-	margin: 0 141px;
+	margin: 0 141rem;
 
 	@media screen and (min-width: $old-phones) and (max-width: $pads) {
 		flex-direction: column;
@@ -31,8 +31,8 @@
 	}
 }
 .section {
-	width: 320px;
-	margin-bottom: 40px;
+	width: 320rem;
+	margin-bottom: 40rem;
 
 	@media screen and (min-width: $old-phones) and (max-width: $pads) {
 		display: flex;
@@ -43,35 +43,35 @@
 	}
 
 	&--block {
-		&-222-px {
-			width: 222px;
-			margin-bottom: 40px;
+		&-222-rem {
+			width: 222rem;
+			margin-bottom: 40rem;
 			
 			& .toggle--container {
-				margin-bottom: 14px;
+				margin-bottom: 14rem;
 			}
 			& .like {
-				margin-right: 10px;
+				margin-right: 10rem;
 			}
 		}
-		&-266-px {
-			width: 266px;
-			margin-bottom: 20px;
+		&-266-rem {
+			width: 266rem;
+			margin-bottom: 20rem;
 			box-sizing: border-box;
 
 			& .rich-checkbox--container {
-				margin-bottom: 10px;
-				width: 260px;
+				margin-bottom: 10rem;
+				width: 260rem;
 			}
 		}
-		&-320-px {
-			max-width: 320px;
-			min-width: 300px;
-			margin-bottom: 20px;
+		&-320-rem {
+			max-width: 320rem;
+			min-width: 300rem;
+			margin-bottom: 20rem;
 			
 			& .rate {
-				margin-right: 20px;
-				margin-bottom: 40px;
+				margin-right: 20rem;
+				margin-bottom: 40rem;
 			}
 		}
 		&-flex {
@@ -91,25 +91,25 @@
 		&-medium {
 			display: inline-block;
 			
-			height: 44px;
+			height: 44rem;
 
-			margin-right: 20px;
+			margin-right: 20rem;
 		}
 		&-small {
 			display: inline-block;
 
-			margin-right: 20px;
-			margin-bottom: 30px;
+			margin-right: 20rem;
+			margin-bottom: 30rem;
 		}
 		&-big {
-			height: 44px;
-			margin-bottom: 40px;
+			height: 44rem;
+			margin-bottom: 40rem;
 		}
 	}
 }
 .label-20 {
-	margin-bottom: 20px;
+	margin-bottom: 20rem;
 }
 .footer {
-	margin-bottom: 40px;
+	margin-bottom: 40rem;
 }

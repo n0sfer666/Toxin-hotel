@@ -6,14 +6,14 @@
 mixin button(options)
   -
     let isLink = options.href === undefined ? false : true
-    let type = options.type === undefined ? 'button' : options.type
+    let type = options.type === undefined ? "button" : options.type
     let className = options.size == undefined ? "button-big": "button-" + options.size
-    if(options.size === 'medium')
-      className += ' button-' + options.theme
+    if(options.size === "medium")
+      className += " button-" + options.theme
       if(options.isOpacity)
-        className += ' button-opacity'
-    if(options.size === 'small')
-      className += options.isGray ? ' button-gray' : ' button-purple'
+        className += " button-opacity"
+    if(options.size === "small")
+      className += options.isGray ? " button-gray" : " button-purple"
 
   if isLink
     button(type=type, class=className, href=href)

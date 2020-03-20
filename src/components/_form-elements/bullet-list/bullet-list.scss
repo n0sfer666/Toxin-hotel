@@ -2,17 +2,17 @@
 	list-style-type: none;
 }
 .bullet-list--item {
-	margin-bottom: 10px;
-	padding-left: 20px;
+	margin-bottom: 10rem;
+	padding-left: 20rem;
 	position: relative;
 	color: $dark-shade-75;
 	&:before {
 		content: '';
 		position: absolute;
 		left: 0;
-		top: 7px;
-		width: 10px;
-		height: 10px;
+		top: 7rem;
+		width: 10rem;
+		height: 10rem;
 		border-radius: 50%;
 		background: $dark-shade-25;
 	}

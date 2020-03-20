@@ -1,14 +1,14 @@
 mixin date-dropdown(options)
   -
-    let type = options.type === undefined ? 'filter' : options.type
-    let className = 'text-field date-dropdown-' + type +' js-' + options.jsClass + '-date-dropdown-' + type
+    let type = options.type === undefined ? "filter" : options.type
+    let className = "text-field date-dropdown-" + type +" js-" + options.jsClass + "-date-dropdown-" + type
 
   case options.type
-    when 'left'
+    when "left"
       input(type="text", class = className, placeholder = "ДД.ММ.ГГГГ")
-    when 'right'
+    when "right"
       input(type="text", class = className, placeholder = "ДД.ММ.ГГГГ")
-    when 'filter'
+    when "filter"
       input(type="text", class = className, placeholder = "Выберите даты пребывания")
     default
       input(type="text", class = className, placeholder = "Выберите даты пребывания")

@@ -7,21 +7,21 @@ mixin registration()
   form.registration
     h1 Регистрация аккаунта
     .registration--block
-      +text-field({placeholder: 'Имя'})
-      +text-field({placeholder: 'Фамилия'})
-      div(style = 'display: flex;')
-        +radio({title: 'Мужчина', name: 'sex', isChecked: true})
-        +radio({title: 'Женщина', name: 'sex', isChecked: false})
+      +text-field({placeholder: "Имя"})
+      +text-field({placeholder: "Фамилия"})
+      div(style = "display: flex;")
+        +radio({title: "Мужчина", name: "sex", isChecked: true})
+        +radio({title: "Женщина", name: "sex", isChecked: false})
     .registration--block
       h3.label День рождения
-      +text-field({placeholder: 'ДД.ММ.ГГГГ', jsClass: 'birthday'})
+      +text-field({placeholder: "ДД.ММ.ГГГГ", jsClass: "birthday"})
     .registration--block
       h3.label данные для входа в сервис
-      +text-field({placeholder: 'Email', type: 'Email'})
-      +text-field({placeholder: 'Пароль', type: 'Password'})
-      +toggle({title: 'Получать спецпредложения'})
+      +text-field({placeholder: "Email", type: "Email"})
+      +text-field({placeholder: "Пароль", type: "Password"})
+      +toggle({title: "Получать спецпредложения"})
     .registration--block
-      +button({size: 'big', title: 'зарегистрироваться'})
+      +button({size: "big", title: "зарегистрироваться"})
     .registration--block.registration--block-flexed
       p Уже есть аккаунт на Toxin
-      +button({size: 'medium', theme: 'border', title: 'войти'})
+      +button({size: "medium", theme: "border", title: "войти"})

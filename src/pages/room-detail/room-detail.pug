@@ -78,28 +78,28 @@ html
             p 2 отзыва
             -
               config = {}
-              config.login = 'user-1'
-              config.likeCount = '10'
+              config.login = "user-1"
+              config.likeCount = "10"
               config.isLiked = true
-              config.name = 'Мурад Сарафанов'
-              config.timeAgo = '5 дней назад'
+              config.name = "Мурад Сарафанов"
+              config.timeAgo = "5 дней назад"
               config.review = "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей"
             +review(config)
             -
               config = {}
-              config.login = 'user-2'
-              config.likeCount = '2'
-              config.name = 'Патрисия Стёклышкова'
-              config.timeAgo = 'Неделю назад'
+              config.login = "user-2"
+              config.likeCount = "2"
+              config.name = "Патрисия Стёклышкова"
+              config.timeAgo = "Неделю назад"
               config.review = "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент"
             +review(config)
           .room-detail--rules
             h2 Правила
             -
               let bullets = []
-              bullets.push('Нельзя с питомцами')
-              bullets.push('Без вечеринок и мероприятий')
-              bullets.push('Время прибытия — после 13:00, а выезд до 12:00')
+              bullets.push("Нельзя с питомцами")
+              bullets.push("Без вечеринок и мероприятий")
+              bullets.push("Время прибытия — после 13:00, а выезд до 12:00")
             +bullet-list(bullets)
           .room-detail--cancel
             h2 Отмена
@@ -108,11 +108,11 @@ html
         .room-detail--booking
           -
             config = {}
-            config.appart = '888'
+            config.appart = "888"
             config.isLux = true
-            config.price = '9990'
-            config.discount = '2179'
-            config.complementary = '300'
+            config.price = "9990"
+            config.discount = "2179"
+            config.complementary = "300"
           +booking(config)
 
     footer

@@ -5,20 +5,20 @@
 .booking {
 	height: fit-content;
 
-	padding: 39px 7.895% 29px;
+	padding: 39rem 7.895% 29rem;
 
 	box-sizing: border-box;
-	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+	box-shadow: 0rem 0rem 25rem rgba(0, 0, 0, 0.2);
 	background-color: #FFFFFF;
-	border: 1px solid rgba(0, 0, 0, 0.12);
-	border-radius: 4px;
+	border: 1rem solid rgba(0, 0, 0, 0.12);
+	border-radius: 4rem;
 
 	&--header {
 		display: flex;
 		justify-content: space-between;
 		align-items: flex-end;
 
-		margin-bottom: 20px;
+		margin-bottom: 20rem;
 
 		& div {
 
@@ -26,8 +26,8 @@
 				display: inline-block;
 
 				& span{
-					font-size: 14px;
-					line-height: 17px;
+					font-size: 14rem;
+					line-height: 17rem;
 					color: $dark-shade-75;
 				}
 			}
@@ -48,7 +48,7 @@
 		display: flex;
 		justify-content: space-between;
 
-		margin-bottom: 20px;
+		margin-bottom: 20rem;
 
 		& div {
 			width: 47.217%;
@@ -56,7 +56,7 @@
 	}
 
 	&--guests {
-		margin-bottom: 20px;
+		margin-bottom: 20rem;
 	}
 
 	&--exclamation {
@@ -65,20 +65,20 @@
 		text-align: center;
 		vertical-align: middle;
 
-		font-size: 12px;
-		line-height: 18px;
+		font-size: 12rem;
+		line-height: 18rem;
 		color: $dark-shade-25;
 
-		width: 20px;
-		height: 20px;
+		width: 20rem;
+		height: 20rem;
 
-		border: 1px solid $dark-shade-25; 
+		border: 1rem solid $dark-shade-25; 
 		box-sizing: border-box;
 		border-radius: 50%;
 	}
 
 	&--calculation {
-		margin-bottom: 30px;
+		margin-bottom: 30rem;
 
 		&-line {
 			display: flex;
@@ -105,23 +105,23 @@
 		display: flex;
 		justify-content: space-between;
 
-		margin-bottom: 20px;
+		margin-bottom: 20rem;
 
 		& h2 {
 			white-space: nowrap;
 		}
 
 		&-line-dashed {
-			margin: 0 5px;
+			margin: 0 5rem;
 
 			width: 100%;
-			height: 18px;
+			height: 18rem;
 
-			border-bottom: 1px dotted $dark-shade-25;
+			border-bottom: 1rem dotted $dark-shade-25;
 		}
 	}
 
 	&--submit-button {
-		height: 44px;
+		height: 44rem;
 	}
 }

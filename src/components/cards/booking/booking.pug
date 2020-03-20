@@ -5,12 +5,12 @@ include ../../_form-elements/_buttons/button/button
 mixin booking(options)
   -
     let isDiscounted = options.discount === undefined ? false : true
-    let complementary = options.complementary === undefined ? '0' : options.complementary
+    let complementary = options.complementary === undefined ? "0" : options.complementary
 
-    let appart = options.appart === undefined ? 'номер не введён' : options.appart
-    let price = options.price === undefined ? 'цена не введена' : options.price
+    let appart = options.appart === undefined ? "номер не введён" : options.appart
+    let price = options.price === undefined ? "цена не введена" : options.price
     let isLuxed = options.isLux === undefined ? false : options.isLux
-    let additional = options.additional === undefined ? '0' : options.additional
+    let additional = options.additional === undefined ? "0" : options.additional
 
   .booking
     .booking--header
@@ -27,10 +27,10 @@ mixin booking(options)
     .booking--arival-departure
       div
         h3.label прибытие
-        +date-dropdown({type: 'left', jsClass: 'booking'})
+        +date-dropdown({type: "left", jsClass: "booking"})
       div
         h3.label отъезд
-        +date-dropdown({type: 'right', jsClass: 'booking'})
+        +date-dropdown({type: "right", jsClass: "booking"})
     .booking--guests
       h3.label гости
       +dropdown({})
@@ -68,4 +68,4 @@ mixin booking(options)
       h2.js-booking--total 0
       h2 ₽
     .booking--submit-button
-      +button({size: 'big', title: 'забронировать'})
+      +button({size: "big", title: "забронировать"})

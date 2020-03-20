@@ -29,7 +29,7 @@
 
 			@media screen and (min-width: $old-phones) and (max-width: $new-phones) {
 				width: 100%;
-				margin-bottom: -7px;
+				margin-bottom: -7rem;
 			}
 		}
 
@@ -49,15 +49,15 @@
 		display: flex;
 
 		margin: 0 auto;
-		padding: 70px 5px;
+		padding: 70rem 5rem;
 
 		width: fit-content;
 
 		& h2 {
-			margin-bottom: 20px;
+			margin-bottom: 20rem;
 		}
 
-		@media screen and (min-width: $old-phones) and (max-width: 840px) {
+		@media screen and (min-width: $old-phones) and (max-width: 840rem) {
 			flex-direction: column-reverse;
 		}
 	}
@@ -68,52 +68,52 @@
 		flex-direction: row;
 		justify-content: space-between;
 
-		margin-right: 70px;
+		margin-right: 70rem;
 
-		min-width: 310px;
+		min-width: 310rem;
 		width: fit-content;
-		max-width: 711px;
+		max-width: 711rem;
 
 		& > div {
-			margin-bottom: 30px;
+			margin-bottom: 30rem;
 		}
 
-		@media screen and (min-width: $old-phones) and (max-width: 450px) {
+		@media screen and (min-width: $old-phones) and (max-width: 450rem) {
 			margin-right: 0;
 		}
 	}
 
 	&--conditions {
-		margin-right: 80px;
+		margin-right: 80rem;
 
-		width: 280px;
+		width: 280rem;
 
-		@media screen and (min-width: $old-phones) and (max-width: 450px) {
+		@media screen and (min-width: $old-phones) and (max-width: 450rem) {
 			margin-right: 0;
 		}
 	}
 
 	&--reviews {
 		& .review--container:not(:last-child) {
-			margin-bottom: 25px;
+			margin-bottom: 25rem;
 		}
 	}
 
 	&--rules {
-		width: 310px;
+		width: 310rem;
 	}
 
 	&--cancel {
-		width: 310px;
+		width: 310rem;
 	}
 
 	&--booking {
 		flex-shrink: 0;
-		margin-bottom: 30px;
-		width: 380px;
+		margin-bottom: 30rem;
+		width: 380rem;
 
-		@media screen and (min-width: $old-phones) and (max-width: 400px) {
-			width: 310px;
+		@media screen and (min-width: $old-phones) and (max-width: 400rem) {
+			width: 310rem;
 		}
 	}
 }

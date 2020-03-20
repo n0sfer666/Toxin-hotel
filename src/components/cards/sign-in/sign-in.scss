@@ -2,29 +2,29 @@
 @import '../../_form-elements/_buttons/button/button.scss';
 
 .sign-in {
-	padding: 40px 30px 32px;
+	padding: 40rem 30rem 32rem;
 
 	background: #FFFFFF;
-	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+	box-shadow: 0rem 0rem 25rem rgba(0, 0, 0, 0.2);
 
-	border: 1px solid rgba(0, 0, 0, 0.12);
-	border-radius: 4px;
+	border: 1rem solid rgba(0, 0, 0, 0.12);
+	border-radius: 4rem;
 	box-sizing: border-box;
 
 	& h1 {
-		margin-bottom: 20px;
+		margin-bottom: 20rem;
 	}
 
 	&--details {
-		margin-bottom: 10px;
+		margin-bottom: 10rem;
 
 		& input {
-			margin-bottom: 10px;
+			margin-bottom: 10rem;
 		}
 	}
 
 	& button {
-		height: 44px;
+		height: 44rem;
 	}
 
 	&--signup {
@@ -32,6 +32,6 @@
 		justify-content: space-between;
 		align-items: center;
 
-		margin-top: 30px;
+		margin-top: 30rem;
 	}
 }

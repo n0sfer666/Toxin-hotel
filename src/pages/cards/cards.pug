@@ -27,33 +27,33 @@ html
         .section--block
           -
             let bookingConfig = {}
-            bookingConfig.apartNumber = '888'
+            bookingConfig.apartNumber = "888"
             bookingConfig.isLuxed = true
-            bookingConfig.price = '9990'
-            bookingConfig.discount =  '2179'
-            bookingConfig.additional = '0'
-            bookingConfig.complementary = '300'
+            bookingConfig.price = "9990"
+            bookingConfig.discount =  "2179"
+            bookingConfig.additional = "0"
+            bookingConfig.complementary = "300"
           +booking(bookingConfig)
         .section--block
           +sign-in
 
-      section.section-320-px
+      section.section-320-rem
         .section--block
           .js-inline-datepicker
         .section--block.section--block-appart
           -
             let appartConfig = {}
-            appartConfig.appart = '888'
+            appartConfig.appart = "888"
             appartConfig.isLux = true
-            appartConfig.price = '9990'
-            appartConfig.rate = '5'
+            appartConfig.price = "9990"
+            appartConfig.rate = "5"
             appartConfig.reviews = 145
           +appart(appartConfig)
         .section--block.section--block-appart
           -
-            appartConfig.appart = '840'
+            appartConfig.appart = "840"
             appartConfig.isLux = false
-            appartConfig.price = '9900'
-            appartConfig.rate = '4'
+            appartConfig.price = "9900"
+            appartConfig.rate = "4"
             appartConfig.reviews = 65
           +appart(appartConfig)

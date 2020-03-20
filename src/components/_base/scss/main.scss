@@ -28,30 +28,33 @@ br {
 :-moz-placeholder           { color: rgba(31, 32, 65, 0.25); }
 
 html {
-	font: normal normal 14px/24px Montserrat;
+	font-size: 1px;
+}
+body {
+	font: normal normal 14rem/24rem Montserrat;
 	color: $dark-shade-75;
 }
 .h1, h1 {
-	font: normal bold 24px/30px Quicksand, Montserrat;
+	font: normal bold 24rem/30rem Quicksand, Montserrat;
 	color: $dark-shade-100;
 }
 .h2, h2 {
-	font: normal bold 19px/24px Quicksand, Montserrat;
+	font: normal bold 19rem/24rem Quicksand, Montserrat;
 	color: $dark-shade-100;
 }
 .h3, h3 {
-	font: normal bold 12px/15px Montserrat;
+	font: normal bold 12rem/15rem Montserrat;
 	text-transform: uppercase;
 	color: $dark-shade-100;
 }
 
 .label {
-	margin-bottom: 5px;
+	margin-bottom: 5rem;
 }
 .logo {
-	margin: 30px 0 60px 30px;
+	margin: 30rem 0 60rem 30rem;
 
 	@media screen and (min-width: $old-phones) and (max-width: $new-phones) {
-		margin: 30px 0 30px 30px;
+		margin: 30rem 0 30rem 30rem;
 	}
 }

@@ -8,36 +8,36 @@
 
 
 .landing {
-	padding: 70px 9.3056% 18px 9.7223%;
+	padding: 70rem 9.3056% 18rem 9.7223%;
 
 	background-image: url(../../img/background/landing.png);
 	background-repeat: no-repeat;
 	background-position: center 100%;
 	background-size: cover;
 
-	@media screen and (min-width: $old-phones) and (max-width: 500px) {
+	@media screen and (min-width: $old-phones) and (max-width: 500rem) {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 
-		padding: 70px 0 18px;
+		padding: 70rem 0 18rem;
 	}
 
 	&--find-appart {
-		width: 380px;
+		width: 380rem;
 
-		@media screen and (min-width: $old-phones) and (max-width: 500px) {
-			width: 310px;
+		@media screen and (min-width: $old-phones) and (max-width: 500rem) {
+			width: 310rem;
 		}
 	}
 
 	&--description {
 		display: flex;
 		justify-content: flex-end;
-		margin-top: 320px;
+		margin-top: 320rem;
 
 		& p {
-			max-width: 280px;
+			max-width: 280rem;
 			text-align: right;
 		}
 	}
@@ -49,22 +49,22 @@
 // @import '../../_components/_cards/_findApart/findApart';
 // @import '../../_components/_footer/footer';
 // .landing__container {
-//     padding: 70px 9.3056% 18px 9.7223%;
+//     padding: 70rem 9.3056% 18rem 9.7223%;
 //     background: url(../../img/landing.png) no-repeat;
 //     background-position: center 100%;
 //     background-size: cover;
 //     // background-attachment: fixed; 
 // }
 // .landing__findApart {
-//     max-width: 380px;
+//     max-width: 380rem;
 // }
 // .landing__description {
-//     margin-top: 320px;
+//     margin-top: 320rem;
 //     & p {
 //         text-align: right;
 //     }
 // }
-// @media only screen and (max-width: 425px) {
+// @media only screen and (max-width: 425rem) {
 //     .landing__container {
 //         padding-left: 0;
 //         padding-right: 0;
@@ -73,14 +73,14 @@
 //         margin: 0 auto;
 //     }
 //     .landing__description {
-//         margin: 30px auto;
+//         margin: 30rem auto;
 //         & p {
 //             text-align: center;
 //         }
 //     }
 // }
-// @media only screen and (max-width: 380px) {
+// @media only screen and (max-width: 380rem) {
 //     .landing__container {
-//         width: 380px;
+//         width: 380rem;
 //     }
 // }

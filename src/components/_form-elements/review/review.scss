@@ -4,14 +4,14 @@
 	width: 100%;
 }
 .review--pict {
-	width: 48px;
-	height: 48px;
+	width: 48rem;
+	height: 48rem;
 	box-sizing: border-box;
 	background-color: #fff;
-	margin-bottom: 12px;
-	border-radius: 32px;
+	margin-bottom: 12rem;
+	border-radius: 32rem;
 	overflow: hidden;
-	box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.1);
+	box-shadow: 0rem 10rem 20rem rgba(31, 32, 65, 0.1);
 	& img {
 			height: 100%;
 			width: 100%;
@@ -22,22 +22,22 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	width: 48px;
+	width: 48rem;
 }
 .review--rightColumn {
-	width: calc(100% - 48px);
-	padding-left: 10px;
+	width: calc(100% - 48rem);
+	padding-left: 10rem;
 }
 .review--name {
-	font: normal bold 14px/24px Montserrat;
+	font: normal bold 14rem/24rem Montserrat;
 	color: $dark-shade-75;
 }
 .review--daysAgo {
-	font: normal normal 14px/24px Montserrat;
+	font: normal normal 14rem/24rem Montserrat;
 	color: $dark-shade-75;
 }
 .review--text {
 	display: inline-block;
-	margin-top: 10px;
+	margin-top: 10rem;
 	@extend .review--daysAgo;
 }
