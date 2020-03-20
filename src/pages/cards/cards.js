@@ -4,6 +4,7 @@ import '../../components/cards/find-appart/find-appart';
 import '../../components/cards/registration/registration';
 import '../../components/cards/booking/booking';
 import '../../components/cards/appart/appart';
+import { setSlick } from '../../components/cards/appart/appart';
 
 $(document).ready(function() {
   let inlineDatePicker = $('.js-inline-datepicker').datepicker({
@@ -20,5 +21,7 @@ $(document).ready(function() {
 		navTitles: {
 			days: 'MM yyyy'
 		}
-  }).data('datepicker');
+	}).data('datepicker');
+	
+	setSlick();
 })

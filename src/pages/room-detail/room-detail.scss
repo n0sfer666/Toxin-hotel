@@ -1,164 +1,119 @@
-@import '../../main.scss';
-@import '../../_components/_header/header';
-@import '../../_components/_footer/footer';
-@import '../../_components/_formElements/_conditions/conditions.scss';
-@import '../../_components/_cards/_booking/booking';
-@import '../../_components/_formElements/_review/review';
-@import '../../_components/_formElements/_bulletList/bulletList';
-.roomDetail__galery {
-    width: 100%;
-    display: flex;
-    // flex-flow: wrap;
-    & img {
-        width: 100%;
-        background-size: cover;
-    }
-}
-.roomDetail__image_main {
-    width: 68.125%;
-}
-.roomDetail__image {
-    width: 31.875%;
-    display: flex;
-    flex-flow: column wrap;
-    & img:last-child {
-        margin: -1px 0;
-    }
-}
-.roomDetail__container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding: 64px 9.722222222% 70px 9.722222222%;
-    border-bottom: 1px solid $dark-shade-5;
-}
-.roomDetail__leftColumn {
-    // margin-right: 6.034482759%;
-    width: 100%;
-    vertical-align: top;
-}
-.roomDetail__rightColumn {
-    display: inline-block;
-    width: 380px;
-}
-.roomDetail__conditions {
-    display: inline-block;
-    vertical-align: top;
-    margin-right: 6.982758621%;
-    margin-left: -5px;
-    & h2 {
-        margin-bottom: 22px;
-    }
-    & .condition__hr:not(:last-child) {
-        margin-bottom: 28px;
-    }
-    & .condition__container:last-child {
-        margin-top: -6px;
-    }
-}
-.roomDetail__pieChart {
-    margin-right: 6.034482759%;
-    vertical-align: top;
-    display: inline-block;
-    & #pieChart {
-        display: inline-block;
-        vertical-align: top;
-        & svg {
-            margin-top: 20px;
-            margin-right: 32px;
-        }
-    }
-    & .roomDetail__legend {
-        display: inline-block;
-        vertical-align: bottom;
-        text-align: left;
-        margin-bottom: 5px;
-        & p {
-            display: inline-block;
-        }
-        & .roomDetail__legend-circle {
-            display: inline-block;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            margin-right: 5px;
-        }
-        & .roomDetail__legend-circle_perfect {
-            background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%)
-        }
-        & .roomDetail__legend-circle_good {
-            background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-        }
-        & .roomDetail__legend-circle_satisfact {
-            background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-        }
-        & .roomDetail__legend-circle_disappoint {
-            background: linear-gradient(180deg, #919191 0%, #3D4975 100%);
-        }
-    }
-    & .roomDetail__chartLabel {
-        fill: $purple;
-        text-anchor: middle;
-    }
-    & .roomDetail__chartNumber {
-        @extend h1;
-        // transform: translateY(-15px);
-    }
-    & .roomDetail__chartText {
-        @extend h3;
-        transform: translateY(15px);
-    }
-}
+@import '../../components/_base/scss/main.scss';
 
-.roomDetail__reviews {
-    width: 100%;
-    margin-top: 24px;
-    & .roomDetail__reviews_header {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 20px;
-    }
-    & .review__container:not(:last-child) {
-        margin-bottom: 22px;
-    }
-}
-.roomDetail__bottom {
-    margin-top: 33px;
-    display: flex;
-    flex-wrap: wrap;
-}
-.roomDetail__rules {
-    width: 250px;
-    margin-right: 110px;
-    & h2 {
-        margin-left: 20px;
-        margin-bottom: 18px;
-    }
-}
-.roomDetail__cancel {
-    width: 341px;
-    min-width: 320px;
-    & h2 {
-        margin-bottom: 18px;
-    }
-}
-@media only screen and (max-width: 1396px) {
-    .roomDetail__rightColumn {
-        margin: 25px auto;
-        text-align: center;
-    }
-    .roomDetail__pieChart {
-        margin: 25px auto;
-    }
-}
-@media only screen and (max-width: 450px) {
-    .roomDetail__image {
-        display: none;
-    }
-    .roomDetail__image_main {
-        width: 100%;
-    }
-    .roomDetail__container {
-        padding: 50px 0;
-    }
+@import '../../components/header/header.scss';
+@import '../../components/footer/footer.scss';
+
+@import '../../components/cards/booking/booking.scss';
+
+@import '../../components/_form-elements/condition/condition.scss';
+@import '../../components/_form-elements/review/review.scss';
+@import '../../components/_form-elements/bullet-list/bullet-list.scss';
+
+@import '../../components/piechart/piechart.scss';
+
+.room-detail {
+	
+	&--galary {
+		display: flex;
+		flex-wrap: wrap;
+
+		width: 100%;
+
+		& img {
+			width: 100%;
+			background-size: cover;
+		}
+
+		&-main {
+			width: 68.125%;
+
+			@media screen and (min-width: $old-phones) and (max-width: $new-phones) {
+				width: 100%;
+				margin-bottom: -7px;
+			}
+		}
+
+		&-addition {
+			display: flex;
+			flex-direction: column;
+
+			width: 31.875%;
+
+			@media screen and (min-width: $old-phones) and (max-width: $new-phones) {
+				width: 100%;
+			}
+		}
+	}
+
+	&--container {
+		display: flex;
+
+		margin: 0 auto;
+		padding: 70px 5px;
+
+		width: fit-content;
+
+		& h2 {
+			margin-bottom: 20px;
+		}
+
+		@media screen and (min-width: $old-phones) and (max-width: 840px) {
+			flex-direction: column-reverse;
+		}
+	}
+
+	&--details {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		justify-content: space-between;
+
+		margin-right: 70px;
+
+		min-width: 310px;
+		width: fit-content;
+		max-width: 711px;
+
+		& > div {
+			margin-bottom: 30px;
+		}
+
+		@media screen and (min-width: $old-phones) and (max-width: 450px) {
+			margin-right: 0;
+		}
+	}
+
+	&--conditions {
+		margin-right: 80px;
+
+		width: 280px;
+
+		@media screen and (min-width: $old-phones) and (max-width: 450px) {
+			margin-right: 0;
+		}
+	}
+
+	&--reviews {
+		& .review--container:not(:last-child) {
+			margin-bottom: 25px;
+		}
+	}
+
+	&--rules {
+		width: 310px;
+	}
+
+	&--cancel {
+		width: 310px;
+	}
+
+	&--booking {
+		flex-shrink: 0;
+		margin-bottom: 30px;
+		width: 380px;
+
+		@media screen and (min-width: $old-phones) and (max-width: 400px) {
+			width: 310px;
+		}
+	}
 }

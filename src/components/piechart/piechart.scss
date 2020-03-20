@@ -1,0 +1,60 @@
+.piechart {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-end;
+	justify-content: space-between;
+
+	width: 310px;
+
+	& svg {
+		width: 120px;
+		height: 120px;
+	}
+
+	&--label {
+		fill: $purple;
+		text-anchor: middle;
+	}
+	&--total {
+		@extend h1;
+	}
+	&--text {
+		@extend h3;
+		transform: translateY(15px);
+	}
+	&--legend {
+		display: inline-block;
+
+		width: 161px;
+
+		vertical-align: bottom;
+		text-align: left;
+
+		& p {
+			display: inline-block;
+		}
+
+		&-circle {
+			display: inline-block;
+			margin-right: 5px;
+
+			width: 10px;
+			height: 10px;
+
+			border-radius: 50%;
+
+			&-perfect {
+				background-image: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
+			}
+			&-good {
+				background-image: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+			}
+			&-satisfact {
+				background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+			}
+			&-disappoint {
+				background-image: linear-gradient(180deg, #919191 0%, #3D4975 100%);
+			}
+		}
+	}
+}

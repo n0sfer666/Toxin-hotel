@@ -7,17 +7,17 @@ mixin booking(options)
     let isDiscounted = options.discount === undefined ? false : true
     let complementary = options.complementary === undefined ? '0' : options.complementary
 
-    let apartNumber = options.apartNumber === undefined ? 'номер не введён' : options.apartNumber
+    let appart = options.appart === undefined ? 'номер не введён' : options.appart
     let price = options.price === undefined ? 'цена не введена' : options.price
-    let isLuxed = options.isLuxed === undefined ? false : options.isLuxed
-    let additional = options.additional === undefined ? 'сборы не введены' : options.additional
+    let isLuxed = options.isLux === undefined ? false : options.isLux
+    let additional = options.additional === undefined ? '0' : options.additional
 
   .booking
     .booking--header
       div
         h1 
           span № 
-          | #{apartNumber}
+          | #{appart}
         if isLuxed
           h3  люкс
       span

@@ -41,6 +41,10 @@ const pages = [
 	{
 		name: "search-room",
 		path: "src/pages/search-room/"
+	},
+	{
+		name: "room-detail",
+		path: "src/pages/room-detail/"
 	}
 ]
 const entry = {};
