@@ -37,7 +37,7 @@ $container-size: $star-size * 5;
 
 .rate:not(:checked) > label:hover,
 .rate:not(:checked) > label:hover ~ label {
-	color: rgba(188, 156, 255, 0.75);
+	text-shadow: 0 0 5px $dark-shade-50;
 }
 
 .rate > input:checked + label:hover,
@@ -45,7 +45,7 @@ $container-size: $star-size * 5;
 .rate > input:checked ~ label:hover,
 .rate > input:checked ~ label:hover ~ label,
 .rate > label:hover ~ input:checked ~ label {
-	color: rgba(188, 156, 255, 0.75);
+	text-shadow: 0 0 5px $dark-shade-50;
 }
 
 .rate > label:active {

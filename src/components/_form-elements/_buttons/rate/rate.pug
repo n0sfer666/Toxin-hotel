@@ -2,12 +2,13 @@ mixin rate(options)
   -
     let stars = [5, 4, 3, 2, 1]
   .rate
+    -
+      let name = Math.floor(Math.random() * 10000)
+      name += Math.floor(Math.random() * 1000)
+      name += Math.floor(Math.random() * 100)
     each value, i in stars
       -
         let isRated = (options.rate == value)
-        let name = Math.floor(Math.random() * 10000)
-        name += Math.floor(Math.random() * 1000)
-        name += Math.floor(Math.random() * 100)
         let id = Math.floor(Math.random() * 10000)
         id += Math.floor(Math.random() * 1000)
         id += Math.floor(Math.random() * 100)
