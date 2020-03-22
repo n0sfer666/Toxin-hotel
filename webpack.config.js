@@ -83,6 +83,7 @@ plugins.push(
 
 
 module.exports = {
+	stats: 'errors-warnings',
 	entry: entry,
 
 	output: {
