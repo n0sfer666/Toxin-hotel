@@ -10,17 +10,17 @@ main {
 	justify-content: center;
 	align-items: center;
 
-	background-image: url(../../img/background/registration.png);
+	background-image: url(../../img/background/registration.jpg);
 	background-repeat: no-repeat;
 	background-position: center 100%;
 	background-size: cover;
 }
 
 .container {
-	margin: 163 0;
-	width: 380;
+	margin: 163px 0;
+	width: 380px;
 
 	@media screen and (min-width: $old-phones) and (max-width: 400px) {
-		width: 310;
+		width: 310px;
 	}
 }

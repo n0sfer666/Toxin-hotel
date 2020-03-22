@@ -6,42 +6,42 @@
 .registration {
 	height: fit-content;
 
-	padding: 39 7.936507937% 29 7.936507937%;
+	padding: 39px 7.936507937% 29px 7.936507937%;
 
 	box-sizing: border-box;
-	box-shadow: 0 0 25 rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
 	background-color: #FFFFFF;
-	border: 1 solid rgba(0, 0, 0, 0.12);
-	border-radius: 4;
+	border: 1px solid rgba(0, 0, 0, 0.12);
+	border-radius: 4px;
 
 	& h1 {
-		margin-bottom: 20;
+		margin-bottom: 20px;
 	}
 
 	&--block {
 		&:not(:nth-child(6)) {
-			margin-bottom: 20;
+			margin-bottom: 20px;
 		}
 
 		&:nth-child(2) {
-			margin-bottom: 24;
+			margin-bottom: 24px;
 		}
 
 		& input[type=text]:not(:last-child),
 		& input[type=Email],
 		& input[type=Password] {
-			margin-bottom: 10;
+			margin-bottom: 10px;
 		}
 
 		&:nth-child(5) {
-			margin-bottom: 30;
-			height: 44;
+			margin-bottom: 30px;
+			height: 44px;
 		}
 		
 		&:nth-child(6) {
 			& button {
-				width: 99;
-				height: 44;	
+				width: 99px;
+				height: 44px;	
 			}
 		}
 

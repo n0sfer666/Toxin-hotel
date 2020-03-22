@@ -47,8 +47,8 @@
   transform-style: flat;
 }
 .noUi-connect {
-  height: calc(100% + 2);
-  top: -1;
+  height: calc(100% + 2px);
+  top: -1px;
   width: 100%;
   z-index: 2;
 }
@@ -91,17 +91,17 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-origin {
 /* Slider size and handle placement;
 */
 .noUi-horizontal {
-  height: 6;
-  border-radius: 3;
+  height: 6px;
+  border-radius: 3px;
 }
 .noUi-horizontal .noUi-handle {
-  width: 16;
-  height: 16;
-  //  left: -6;
-  top: -6;
+  width: 16px;
+  height: 16px;
+  //  left: -6px;
+  top: -6px;
 }
 html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
-  right: -6;
+  right: -6px;
   left: auto;
 }
 /* Styling;
@@ -109,11 +109,11 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 */
 .noUi-target {
   background: #fff;
-  border-radius: 3;
-  border: 1 solid $dark-shade-25;
+  border-radius: 3px;
+  border: 1px solid $dark-shade-25;
 }
 .noUi-connects {
-  border-radius: 3;
+  border-radius: 3px;
 }
 .noUi-connect {
   background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);;
@@ -121,7 +121,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 /* Handles and cursors;
 */
 .noUi-handle {
-  border: 2 solid #FFFFFF;
+  border: 2px solid #FFFFFF;
   border-radius: 50%;
   background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);;
   cursor: pointer;
@@ -135,11 +135,11 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 .range-slider--container {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 23;
+  margin-bottom: 23px;
   width: 100%;
 }
 .range-slider--value {
-  font: normal normal 12/15 Montserrat;
+  font: normal normal 12px/15px Montserrat, sans-serif;
   text-transform: uppercase;
   color: $dark-shade-50;
 }

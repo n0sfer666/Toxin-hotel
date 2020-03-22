@@ -5,8 +5,8 @@
 
   &--icon {
     display: inline-block;
-    width: 48;
-    font: normal normal 48/48 materialIcons;
+    width: 48px;
+    font: normal normal 48px/48px materialIcons;
     // gradient text
     background: linear-gradient(180deg, $purple 0%, #8BA4F9 100%);
     background-clip: text;
@@ -15,11 +15,11 @@
   
   &--text {
     display: inline-block;
-    margin-left: 10;
+    margin-left: 10px;
   }
 
   &--hrow {
-    margin: 15 0;
-    border: .5 solid $dark-shade-5;
+    margin: 15px 0;
+    border: .5px solid $dark-shade-5;
   }
 }

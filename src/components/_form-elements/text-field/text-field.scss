@@ -1,16 +1,16 @@
 .text-field {
 	width: 100%;
-	height: 44;
-	padding: 13 15;
+	height: 44px;
+	padding: 13px 15px;
 	background-color: #fff;
-	border: 1 solid $dark-shade-25;
+	border: 1px solid $dark-shade-25;
 	box-sizing: border-box;
-	border-radius: 4;
+	border-radius: 4px;
 
-	font: normal normal 14/18 Montserrat;
+	font: normal normal 14px/18px Montserrat, sans-serif;
 	color: $dark-shade-75;
 }
 .text-field:hover, .text-field:focus {
-	border: 1 solid $dark-shade-50;
+	border: 1px solid $dark-shade-50;
 	outline: none;
 }

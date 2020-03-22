@@ -5,23 +5,23 @@
 .find-appart {
   height: fit-content;
 
-  padding: 39 7.936507937% 29 7.936507937%;
+  padding: 39px 7.936507937% 29px 7.936507937%;
 
   background-color: #FFFFFF;
-  border: 1 solid rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   box-sizing: border-box;
-  box-shadow: 0 0 25 rgba(0, 0, 0, 0.2);
-  border-radius: 4;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
 
   & h1 {
-    margin-bottom: 20;
+    margin-bottom: 20px;
   }
 
   &--arival-departure {
     display: flex;
     justify-content: space-between;
 
-    margin-bottom: 20;
+    margin-bottom: 20px;
 
     & div {
       width: 47.875%;
@@ -29,10 +29,10 @@
   }
 
   &--guests {
-    margin-bottom: 31;
+    margin-bottom: 31px;
   }
 
   &--submit-button {
-    height: 44;
+    height: 44px;
   }
 }

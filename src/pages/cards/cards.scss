@@ -11,7 +11,7 @@ body {
 }
 
 .container {
-	padding: 0 9.7223% 140;
+	padding: 0 9.7223% 140px;
 
 	display: flex;
 	flex-wrap: wrap;
@@ -25,29 +25,29 @@ body {
 }
 
 .section {
-	width: 380;
+	width: 380px;
 
 	@media screen and (min-width: $old-phones) and (max-width: 380px) {
-		width: 310;
+		width: 310px;
 	}
 
 	&--block {
-		margin-bottom: 40;
+		margin-bottom: 40px;
 
 		&-appart {
-			width: 270;
+			width: 270px;
 
 			@media screen and (min-width: $old-phones) and (max-width: 380px) {
-				margin: 0 auto 40;
+				margin: 0 auto 40px;
 			}
 		}
 	}
 
-	&-320- {
-		width: 320;
+	&-320-px {
+		width: 320px;
 
 		@media screen and (min-width: $old-phones) and (max-width: 380px) {
-			width: 310;
+			width: 310px;
 		}
 	}
 }

@@ -28,32 +28,32 @@ html
       +logo({})
     .container
       section.section
-        .section--block-320-rem
+        .section--block-320-px
           h3.label text field
           +text-field({placeholder: "Email"})
-        .section--block-320-rem
+        .section--block-320-px
           h3.label dropdown
           +dropdown({})
-        .section--block-320-rem
+        .section--block-320-px
           h3.label masked text field
           +text-field({placeholder: "ДД.ММ.ГГГГ", jsClass: "masked"})
-        .section--block-320-rem.section--block-flex
+        .section--block-320-px.section--block-flex
           div
             h3.label date dropdown
             +date-dropdown({type: "left"})
           div
             h3.label date dropdown
             +date-dropdown({type: "right"})
-        .section--block-266-rem
+        .section--block-266-px
           h3.label filter date
           +date-dropdown({type: "filter"})
-        .section--block-266-rem
+        .section--block-266-px
           h3.label subscribteon text field
           +subscription-field({placeholder: "email"})
-        .section--block-266-rem
+        .section--block-266-px
           h3.label dropdown
             +dropdown({isGuests: false})
-        .section--block-266-rem
+        .section--block-266-px
           -
             let expandList = []
             expandList.push({title: "Завтрак"})
@@ -65,50 +65,50 @@ html
             expandList.push({title: "Телевизор"})
             expandList.push({title: "Шампунь"})
           +expandable-checkbox-list({title: "expandable checkbox list", list: expandList})
-        .section--block-266-rem
+        .section--block-266-px
           +condition({icon: "tag_faces", isRowed: true, title: "Комфорт", description: "Шумопоглощающие стены"})
           +condition({icon: "location_city", isRowed: true, title: "Удобство", description: "Окно в каждой из спален"})
 
       section.section
-        .section--block-222-rem
+        .section--block-222-px
           h3.label-20 checkbox buttons
           +checkbox({title: "Можно курить"})
           +checkbox({title: "Можно с питомцами", isChecked: true})
           +checkbox({title: "Можно пригласить гостей (до 10 человек)", isChecked: true})
-        .section--block-222-rem
+        .section--block-222-px
           h3.label-20 radio buttons
           .section--block-radio
             +radio({name: "sex", title: "Мужчина", isChecked: true})
             +radio({name: "sex", title: "Женщина"})
-        .section--block-222-rem
+        .section--block-222-px
           h3.label-20 toggle
           +toggle({title: "Получать спецпредложения", isChecked: true})
           +toggle({title: "Получать спецпредложения"})
-        .section--block-222-rem
+        .section--block-222-px
           h3.label-20 like button
           div(style = "display:flex;")
             +like({counter: "2"})
             +like({counter: "12", isChecked: true})
-        .section--block-320-rem
+        .section--block-320-px
           h3.label-20 rate button
           +rate({rate: "4"})
           +rate({rate: "5"})
-        .section--block-266-rem
+        .section--block-266-px
           h3.label-20 rich checkbox buttons
           +rich-checkbox({title: "Широкий коридор", description: "Ширина коридоров в номере не менее 91 см."})
           +rich-checkbox({title: "Помощник для инвалидов", description: "На 1 этаже вас встретит специалист и проводит до номера."})
 
       section.section
-        .section--block-266-rem
+        .section--block-266-px
           +range-slider({title: "range slider"})
-        .section--block-266-rem
+        .section--block-266-px
           h3.label buttons
-          div(style="margin: 11rem 0 30rem 0;")
+          div(style="margin: 11px 0 30px 0;")
             .section--button-container-medium
               +button({size: "medium", theme: "gradient", title: "click me"})
             .section--button-container-medium
               +button({size: "medium", theme: "gradient", isOpacity: true, title: "click me"})
-          div(style="margin-bottom: 30rem;")
+          div(style="margin-bottom: 30px;")
             .section--button-container-medium
               +button({size: "medium", theme: "border", title: "click me"})
             .section--button-container-medium
@@ -117,13 +117,13 @@ html
             +button({size: "small", isGray: true, title: "click me"})
           .section--button-container-small
             +button({size: "small", title: "click me"})
-        .section--block-320-rem
+        .section--block-320-px
           .section--button-container-big
             +button({size: "big", title: "Перейти к оплате"})
-        .section--block-320-rem
+        .section--block-320-px
           h3.label-20 pagination
           .js-pagination
-        .section--block-320-rem
+        .section--block-320-px
           h3.label-20 bullet list
           -
             let bullets = []

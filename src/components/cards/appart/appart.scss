@@ -9,11 +9,11 @@
 	overflow: hidden;
 
 	background: #FFFFFF;
-	box-shadow: 0 10 20 rgba(31, 32, 65, 0.05);
-	border-radius: 4;
+	box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+	border-radius: 4px;
 
 	&--text {
-		padding: 10 17 19 20;
+		padding: 10px 17px 19px 20px;
 	}
 
 	&--header {
@@ -24,11 +24,11 @@
 		& div {
 			& h1 {
 				display: inline-block;
-				font-size: 18;
-				line-height: 24;
+				font-size: 18px;
+				line-height: 24px;
 
 				& span {
-					font-size: 14;
+					font-size: 14px;
 				}
 			}
 
@@ -39,15 +39,15 @@
 		}
 
 		& span {
-			margin-bottom: 1;
+			margin-bottom: 1px;
 		}
 	}
 
 	&--hrow {
-		margin-top: 6;
+		margin-top: 6px;
 
-		width: 230;
-		height: 1;
+		width: 230px;
+		height: 1px;
 
 		background: rgba(31, 32, 65, 0.1);
 	}
@@ -56,8 +56,8 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		margin-top: 8;
-		padding-right: 3;
+		margin-top: 8px;
+		padding-right: 3px;
 	}
 }
 
@@ -119,7 +119,7 @@
 .slick-slide {
 	float: left;
 	height: 100%;
-	min-height: 1;
+	min-height: 1px;
 	[dir="rtl"] & {
 		float: right;
 	}
@@ -147,7 +147,7 @@
 	.slick-vertical & {
 		display: block;
 		height: auto;
-		border: 1 solid transparent;
+		border: 1px solid transparent;
 	}
 }
 .slick-arrow.slick-hidden {
@@ -163,7 +163,7 @@
 
 	display: block;
 
-	width: 42;
+	width: 42px;
 	height: 95%;
 	background: black;
 	padding: 0;
@@ -180,9 +180,9 @@
 {
 	position: absolute;
 	z-index: 2;
-	width: 44;
-	height: 44;
-	top: 53;
+	width: 44px;
+	height: 44px;
+	top: 53px;
 }
 
 .slick-prev
@@ -193,7 +193,7 @@
 }
 .slick-prev:before
 {
-	font: normal normal 24/24 materialIcons;
+	font: normal normal 24px/24px materialIcons;
 	color: #fff;
 	content: 'keyboard_arrow_left';
 	left: 0;
@@ -208,7 +208,7 @@
 }
 .slick-next:before
 {
-	font: normal normal 24/24 materialIcons;
+	font: normal normal 24px/24px materialIcons;
 	color: #fff;
 	content: 'keyboard_arrow_left';
 	right: 0;
@@ -217,8 +217,8 @@
 .slick-dots
 {
 	position: absolute;
-	bottom: 19;
-	right: 12;
+	bottom: 19px;
+	right: 12px;
 
 	display: block;
 
@@ -235,8 +235,8 @@
 
 	display: inline-block;
 
-	width: 11;
-	height: 11;
+	width: 11px;
+	height: 11px;
 
 	cursor: pointer;
 }
@@ -247,8 +247,8 @@
 
 	display: block;
 
-	width: 7;
-	height: 7;
+	width: 7px;
+	height: 7px;
 
 	cursor: pointer;
 
@@ -274,13 +274,13 @@
 	top: 0;
 	left: 0;
 
-	width: 7;
-	height: 7;
+	width: 7px;
+	height: 7px;
 
 	content: '';
 
 	background-color: transparent;
-	border: 1 solid white;
+	border: 1px solid white;
 	box-sizing: border-box;
 	border-radius: 50%;
 }
