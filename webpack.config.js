@@ -131,7 +131,7 @@ module.exports = {
 				},
 			},
 			{
-				test: /\.(png|jpeg|gif)$/,
+				test: /\.(png|jpg|jpeg|gif)$/,
 				loader: 'file-loader',
 				options: {
 						name: "img/background/[name].[ext]"
