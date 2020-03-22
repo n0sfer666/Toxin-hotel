@@ -47,8 +47,8 @@
   transform-style: flat;
 }
 .noUi-connect {
-  height: calc(100% + 2rem);
-  top: -1rem;
+  height: calc(100% + 2);
+  top: -1;
   width: 100%;
   z-index: 2;
 }
@@ -91,17 +91,17 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-origin {
 /* Slider size and handle placement;
 */
 .noUi-horizontal {
-  height: 6rem;
-  border-radius: 3rem;
+  height: 6;
+  border-radius: 3;
 }
 .noUi-horizontal .noUi-handle {
-  width: 16rem;
-  height: 16rem;
-  //  left: -6rem;
-  top: -6rem;
+  width: 16;
+  height: 16;
+  //  left: -6;
+  top: -6;
 }
 html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
-  right: -6rem;
+  right: -6;
   left: auto;
 }
 /* Styling;
@@ -109,11 +109,11 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 */
 .noUi-target {
   background: #fff;
-  border-radius: 3rem;
-  border: 1rem solid $dark-shade-25;
+  border-radius: 3;
+  border: 1 solid $dark-shade-25;
 }
 .noUi-connects {
-  border-radius: 3rem;
+  border-radius: 3;
 }
 .noUi-connect {
   background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);;
@@ -121,7 +121,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 /* Handles and cursors;
 */
 .noUi-handle {
-  border: 2rem solid #FFFFFF;
+  border: 2 solid #FFFFFF;
   border-radius: 50%;
   background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);;
   cursor: pointer;
@@ -135,11 +135,11 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 .range-slider--container {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 23rem;
+  margin-bottom: 23;
   width: 100%;
 }
 .range-slider--value {
-  font: normal normal 12rem/15rem Montserrat;
+  font: normal normal 12/15 Montserrat;
   text-transform: uppercase;
   color: $dark-shade-50;
 }

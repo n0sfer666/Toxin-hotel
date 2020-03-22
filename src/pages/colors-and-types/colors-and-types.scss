@@ -13,7 +13,7 @@
 		align-items: center;
 
 		margin: 0;
-		padding: 0 5rem;
+		padding: 0 5;
 
 		width: 100%;
 
@@ -23,21 +23,21 @@
 
 .colors {
 	display: inline-block;
-	width: 270rem;
+	width: 270;
 
 	&--block {
 		display: flex;
 		align-items: center;
 		flex-wrap: wrap;
-		margin-bottom: 20rem;	
+		margin-bottom: 20;	
 	}
 
 	&--cell {
 		flex: none;
-		width: 70rem;
-		height: 70rem;
-		border-radius: 6rem;
-		margin-right: 40rem;
+		width: 70;
+		height: 70;
+		border-radius: 6;
+		margin-right: 40;
 
 		&-dark-shade-100 {
 			background-color: $dark-shade-100;
@@ -63,8 +63,8 @@
 	}
 
 	&--text {
-		min-width: 159rem;
-		font: normal bold 19rem/29rem Quicksand;
+		min-width: 159;
+		font: normal bold 19/29 Quicksand;
 		text-transform: capitalize;
 
 		&-regular {
@@ -75,18 +75,18 @@
 }
 .type {
 	display: inline-block;
-	min-width: 300rem;
-	max-width: 403rem;
+	min-width: 300;
+	max-width: 403;
 
 	&--block {
 		display: flex;
-		margin-bottom: 50rem;
+		margin-bottom: 50;
 	}
 
 	&--title {
 		flex: none;
-		width: 37rem;
-		margin-right: 30rem;
+		width: 37;
+		margin-right: 30;
 
 		font: normal normal Montserrat;
 		text-align: right;
@@ -94,20 +94,20 @@
 		color: $dark-shade-25;
 
 		&-h1 {
-			font-size: 24rem;
-			line-height: 29rem;
+			font-size: 24;
+			line-height: 29;
 		}
 		&-h2 {
-			font-size: 19rem;
-			line-height: 23rem;
+			font-size: 19;
+			line-height: 23;
 		}
 		&-h3 {
-			font-size: 12rem;
-			line-height: 15rem;
+			font-size: 12;
+			line-height: 15;
 		}
 		&-body {
-			font-size: 14rem;
-			line-height: 24rem;
+			font-size: 14;
+			line-height: 24;
 		}
 	}
 }

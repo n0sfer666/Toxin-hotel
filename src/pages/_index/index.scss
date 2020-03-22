@@ -6,35 +6,35 @@
 	flex-direction: column;
 }
 .index--ui-kit {
-	margin-bottom: 20rem;
-	padding: 10rem;
+	margin-bottom: 20;
+	padding: 10;
 
-	border: 4rem dotted $purple;
+	border: 4 dotted $purple;
 	box-sizing: border-box;
 
 	& .index--item:hover {
-		border-radius: 5rem;
+		border-radius: 5;
 		background-color: $purple;
-		box-shadow: 0 0 10rem $purple;
+		box-shadow: 0 0 10 $purple;
 	}
 }
 .index--pages {
-	padding: 10rem;
+	padding: 10;
 
-	border: 4rem dotted $green;
+	border: 4 dotted $green;
 	box-sizing: border-box;
 
 	& .index--item:hover {
-		border-radius: 5rem;
+		border-radius: 5;
 		background-color: $green;
-		box-shadow: 0 0 10rem $green;
+		box-shadow: 0 0 10 $green;
 	}
 }
 .index--item {
 	text-align: center;
 
 	&:not(:last-child) {
-		margin-bottom: 10rem;
+		margin-bottom: 10;
 	}
 
 	& a h3 {

@@ -2,15 +2,15 @@
 	display: inline-block;
 	position: relative;
 	cursor: pointer;
-	font: normal normal 14rem/18rem Montserrat;
+	font: normal normal 14/18 Montserrat;
 	color: $dark-shade-50;
-	padding-left: 30rem;
-	margin-bottom: 11rem;
+	padding-left: 30;
+	margin-bottom: 11;
 
 	&:hover .checkbox--checkmark,
 	&:active .checkbox--checkmark,
 	&:focus .checkbox--checkmark {
-		box-shadow: 0 0 5rem $dark-shade-25;
+		box-shadow: 0 0 5 $dark-shade-25;
 	}
 }
 .checkbox {
@@ -24,15 +24,15 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	height: 20rem;
-	width: 20rem;
+	height: 20;
+	width: 20;
 	background-color: #fff;
-	border: 1rem solid $dark-shade-25;
+	border: 1 solid $dark-shade-25;
 	box-sizing: border-box;
-	border-radius: 4rem;
+	border-radius: 4;
 }
 .checkbox:checked ~ .checkbox--checkmark {
-	border: 1rem solid #BC9CFF;
+	border: 1 solid #BC9CFF;
 	content: "";
 }
 .checkbox--checkmark:after {
@@ -44,15 +44,15 @@
 	display: block;
 }
 .checkbox--label .checkbox--checkmark:after {
-	left: 5rem;
-	top: 3rem;
-	width: 5rem;
-	height: 7rem;
+	left: 5;
+	top: 3;
+	width: 5;
+	height: 7;
 	border-image:  linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
 	border-image-slice: 1;
-	border-right-width: 2rem;
+	border-right-width: 2;
 	border-right-style: solid;
-	border-bottom-width: 2rem;
+	border-bottom-width: 2;
 	border-bottom-style: solid;
 	transform: rotate(45deg);
 }

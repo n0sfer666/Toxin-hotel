@@ -12,17 +12,17 @@
 		flex-direction: column;
 		align-items: center;
 
-		padding: 100rem 0;
+		padding: 100 0;
 
 		& svg {
-			margin-bottom: 20rem;
+			margin-bottom: 20;
 		}
 
 		& p {
-			margin-bottom: 25rem;
+			margin-bottom: 25;
 
 			width: 70%;
-			max-width: 516rem;
+			max-width: 516;
 
 			text-align: center;
 		}
@@ -30,9 +30,9 @@
 
 	&-full {
 		justify-content: space-between;
-		padding: 100rem 9.7223%;
+		padding: 100 9.7223%;
 
-		box-shadow: 0rem 1rem 0rem rgba(31, 32, 65, 0.1);
+		box-shadow: 0 1 0 rgba(31, 32, 65, 0.1);
 
 		@media screen and (min-width: $old-phones) and (max-width: $desktop) {
 			flex-direction: column;
@@ -46,21 +46,21 @@
 		justify-content: left;
 		align-items: flex-start;
 
-		max-width: 260rem;
+		max-width: 260;
 
 		& a {
-			line-height: 17rem;
+			line-height: 17;
 			color: $dark-shade-50;
 		}
 		@media screen and (min-width: $old-phones) and (max-width: $desktop) {
 
 			& * {
-				margin-bottom: 10rem;
+				margin-bottom: 10;
 			}
 		}
 		@media screen and (min-width: $desktop) {
 			& *:not(:last-child) {
-				margin-bottom: 20rem;
+				margin-bottom: 20;
 			}
 		}
 		@media screen and (min-width: $old-phones) and (max-width: $new-phones) {
@@ -68,7 +68,7 @@
 			align-items: center;
 			text-align: center;
 
-			margin-bottom: 10rem;
+			margin-bottom: 10;
 		}
 	}
 
@@ -86,7 +86,7 @@
 		@media screen and (min-width: $old-phones) and (max-width: $new-phones) {
 			flex-direction: column;
 
-			margin:  40rem 0;
+			margin:  40 0;
 		}
 	}
 
@@ -95,18 +95,18 @@
 		justify-content: space-between;
 		align-items: center;
 
-		padding: 23rem 9.7223%;
+		padding: 23 9.7223%;
 
 		background-color: #fff;
-		box-shadow: 0rem 10rem 20rem rgba(31, 32, 65, 0.05);
+		box-shadow: 0 10 20 rgba(31, 32, 65, 0.05);
 
 		@media screen and (min-width: $old-phones) and (max-width: $new-phones) {
 			flex-direction: column-reverse;
 
-			padding: 23rem 0;
+			padding: 23 0;
 
 			& a {
-				margin-bottom: 20rem;
+				margin-bottom: 20;
 			}
 			& p {
 				text-align: center;
@@ -122,10 +122,10 @@
 		background-clip: text;
     -webkit-text-fill-color: transparent;
 
-		font: normal normal 24rem/24rem FontAwesomeBrands;
+		font: normal normal 24/24 FontAwesomeBrands;
 
 		&:not(:last-child) {
-			margin-right: 20rem;
+			margin-right: 20;
 		}
 		
 		&-tweeter {

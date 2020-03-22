@@ -8,7 +8,7 @@
 
 
 .landing {
-	padding: 70rem 9.3056% 18rem 9.7223%;
+	padding: 70 9.3056% 18 9.7223%;
 
 	background-image: url(../../img/background/landing.png);
 	background-repeat: no-repeat;
@@ -20,24 +20,24 @@
 		flex-direction: column;
 		align-items: center;
 
-		padding: 70rem 0 18rem;
+		padding: 70 0 18;
 	}
 
 	&--find-appart {
-		width: 380rem;
+		width: 380;
 
 		@media screen and (min-width: $old-phones) and (max-width: 500px) {
-			width: 310rem;
+			width: 310;
 		}
 	}
 
 	&--description {
 		display: flex;
 		justify-content: flex-end;
-		margin-top: 320rem;
+		margin-top: 320;
 
 		& p {
-			max-width: 280rem;
+			max-width: 280;
 			text-align: right;
 		}
 	}

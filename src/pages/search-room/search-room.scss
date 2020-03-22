@@ -19,7 +19,7 @@
 	flex-wrap: nowrap;
 
 	margin: 0 auto;
-	padding: 30rem 10rem 70rem;
+	padding: 30 10 70;
 
 	width: fit-content;
 
@@ -29,47 +29,47 @@
 		align-items: center;
 	}
 	@media screen and (min-width: $old-phones) and (max-width: 340px) {
-		padding: 30rem 0rem 70rem;
+		padding: 30 0 70;
 	}
 
 
 	&--menu {
 		flex-shrink: 0;
-		margin-right: 60rem;
-		width: 266rem;
+		margin-right: 60;
+		width: 266;
 
 		@media screen and (min-width: $new-phones) and (max-width: $pads) {
-			margin-right: 45rem;
+			margin-right: 45;
 		}
 
 		@media screen and (min-width: $old-phones) and (max-width: $new-phones) {
 			flex-shrink: unset;
 			margin-right: 0;
-			margin-bottom: 40rem;
+			margin-bottom: 40;
 		}
 
 		& .label:not(:first-child),
 		& .expandable-checkbox-list,
 		& .range-slider--container {
-			margin-top: 30rem;
+			margin-top: 30;
 		}
 
 		& .search-room--description {
-			margin-top: 10rem;
+			margin-top: 10;
 
-			font-size: 12rem;
-			line-height: 14rem;
+			font-size: 12;
+			line-height: 14;
 			color: $dark-shade-50;
 		} 
 	}
 
 	&--result {
-		min-width: 310rem;
+		min-width: 310;
 		width: fit-content;
-		max-width: 848rem;
+		max-width: 848;
 
 		& > h1 {
-			margin-bottom: 21rem;
+			margin-bottom: 21;
 		}
 	}
 
@@ -89,13 +89,13 @@
 		display: flex;
 		justify-content: center;
 
-		margin-top: 20rem;
+		margin-top: 20;
 	}
 
 	&--appart {
-		margin-right: 2rem;
-		margin-bottom: 21rem;
+		margin-right: 2;
+		margin-bottom: 21;
 
-		width: 270rem;
+		width: 270;
 	}
 }

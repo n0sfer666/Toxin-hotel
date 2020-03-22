@@ -9,11 +9,11 @@
 	overflow: hidden;
 
 	background: #FFFFFF;
-	box-shadow: 0rem 10rem 20rem rgba(31, 32, 65, 0.05);
-	border-radius: 4rem;
+	box-shadow: 0 10 20 rgba(31, 32, 65, 0.05);
+	border-radius: 4;
 
 	&--text {
-		padding: 10rem 17rem 19rem 20rem;
+		padding: 10 17 19 20;
 	}
 
 	&--header {
@@ -24,11 +24,11 @@
 		& div {
 			& h1 {
 				display: inline-block;
-				font-size: 18rem;
-				line-height: 24rem;
+				font-size: 18;
+				line-height: 24;
 
 				& span {
-					font-size: 14rem;
+					font-size: 14;
 				}
 			}
 
@@ -39,15 +39,15 @@
 		}
 
 		& span {
-			margin-bottom: 1rem;
+			margin-bottom: 1;
 		}
 	}
 
 	&--hrow {
-		margin-top: 6rem;
+		margin-top: 6;
 
-		width: 230rem;
-		height: 1rem;
+		width: 230;
+		height: 1;
 
 		background: rgba(31, 32, 65, 0.1);
 	}
@@ -56,8 +56,8 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		margin-top: 8rem;
-		padding-right: 3rem;
+		margin-top: 8;
+		padding-right: 3;
 	}
 }
 
@@ -119,7 +119,7 @@
 .slick-slide {
 	float: left;
 	height: 100%;
-	min-height: 1rem;
+	min-height: 1;
 	[dir="rtl"] & {
 		float: right;
 	}
@@ -147,7 +147,7 @@
 	.slick-vertical & {
 		display: block;
 		height: auto;
-		border: 1rem solid transparent;
+		border: 1 solid transparent;
 	}
 }
 .slick-arrow.slick-hidden {
@@ -163,7 +163,7 @@
 
 	display: block;
 
-	width: 42rem;
+	width: 42;
 	height: 95%;
 	background: black;
 	padding: 0;
@@ -180,9 +180,9 @@
 {
 	position: absolute;
 	z-index: 2;
-	width: 44rem;
-	height: 44rem;
-	top: 53rem;
+	width: 44;
+	height: 44;
+	top: 53;
 }
 
 .slick-prev
@@ -193,7 +193,7 @@
 }
 .slick-prev:before
 {
-	font: normal normal 24rem/24rem materialIcons;
+	font: normal normal 24/24 materialIcons;
 	color: #fff;
 	content: 'keyboard_arrow_left';
 	left: 0;
@@ -208,7 +208,7 @@
 }
 .slick-next:before
 {
-	font: normal normal 24rem/24rem materialIcons;
+	font: normal normal 24/24 materialIcons;
 	color: #fff;
 	content: 'keyboard_arrow_left';
 	right: 0;
@@ -217,8 +217,8 @@
 .slick-dots
 {
 	position: absolute;
-	bottom: 19rem;
-	right: 12rem;
+	bottom: 19;
+	right: 12;
 
 	display: block;
 
@@ -235,8 +235,8 @@
 
 	display: inline-block;
 
-	width: 11rem;
-	height: 11rem;
+	width: 11;
+	height: 11;
 
 	cursor: pointer;
 }
@@ -247,8 +247,8 @@
 
 	display: block;
 
-	width: 7rem;
-	height: 7rem;
+	width: 7;
+	height: 7;
 
 	cursor: pointer;
 
@@ -274,13 +274,13 @@
 	top: 0;
 	left: 0;
 
-	width: 7rem;
-	height: 7rem;
+	width: 7;
+	height: 7;
 
 	content: '';
 
 	background-color: transparent;
-	border: 1rem solid white;
+	border: 1 solid white;
 	box-sizing: border-box;
 	border-radius: 50%;
 }

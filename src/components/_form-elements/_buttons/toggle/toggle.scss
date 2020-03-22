@@ -4,24 +4,24 @@
 	height: 0;
 	&:checked {
 		+ .toggle--switch {
-		border: 1rem solid $purple;
+		border: 1 solid $purple;
 		}
 		+ .toggle--switch:before {
 			background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-			transform: translateX(19rem);
+			transform: translateX(19);
 		}
 	}
 	&--container {
 		cursor: pointer;
 		position: relative;
 		display: block;
-		width: 40rem;
-		height: 20rem;
+		width: 40;
+		height: 20;
 
 		&:focus .toggle--switch,
 		&:active .toggle--switch,
 		&:hover .toggle--switch {
-			box-shadow: 0 0 5rem $dark-shade-50;
+			box-shadow: 0 0 5 $dark-shade-50;
 		}
 	}
 	&--switch {
@@ -30,18 +30,18 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
-		border: 1rem solid $dark-shade-25;
+		border: 1 solid $dark-shade-25;
 		background-color: #fff;
 		-webkit-transition: .4s;
 		transition: .4s;
-		border-radius: 34rem;
+		border-radius: 34;
 		&::before {
 			position: absolute;
 			content: "";
-			height: 12rem;
-			width: 12rem;
-			left: 3rem;
-			bottom: 3rem;
+			height: 12;
+			width: 12;
+			left: 3;
+			bottom: 3;
 			background-color: $dark-shade-25;
 			-webkit-transition: .4s;
 			transition: .4s;
@@ -50,8 +50,8 @@
 	}
 	&--label {
 		white-space: nowrap;
-		padding-left: 44rem;
+		padding-left: 44;
 		color: $dark-shade-75;
-		font: normal normal 14rem/19rem Montserrat;
+		font: normal normal 14/19 Montserrat;
 	}
 }

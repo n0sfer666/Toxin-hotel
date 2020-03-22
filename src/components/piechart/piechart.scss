@@ -4,11 +4,11 @@
 	align-items: flex-end;
 	justify-content: space-between;
 
-	width: 310rem;
+	width: 310;
 
 	& svg {
-		width: 120rem;
-		height: 120rem;
+		width: 120;
+		height: 120;
 	}
 
 	&--label {
@@ -20,12 +20,12 @@
 	}
 	&--text {
 		@extend h3;
-		transform: translateY(15rem);
+		transform: translateY(15);
 	}
 	&--legend {
 		display: inline-block;
 
-		width: 161rem;
+		width: 161;
 
 		vertical-align: bottom;
 		text-align: left;
@@ -36,10 +36,10 @@
 
 		&-circle {
 			display: inline-block;
-			margin-right: 5rem;
+			margin-right: 5;
 
-			width: 10rem;
-			height: 10rem;
+			width: 10;
+			height: 10;
 
 			border-radius: 50%;
 

@@ -17,10 +17,10 @@ main {
 }
 
 .container {
-	margin: 30rem 0;
-	width: 380rem;
+	margin: 30 0;
+	width: 380;
 
 	@media screen and (min-width: $old-phones) and (max-width: 400px) {
-		width: 310rem;
+		width: 310;
 	}
 }
