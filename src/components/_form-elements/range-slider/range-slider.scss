@@ -126,6 +126,10 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);;
   cursor: pointer;
   outline: none;
+
+  &:hover, &:focus, &:active {
+    box-shadow: 0 0 5px $dark-shade-25;
+  }
 }
 // custom styles
 .range-slider--container {
