@@ -6,7 +6,7 @@
 .registration {
 	height: fit-content;
 
-	padding: 39px 7.936507937% 29px 7.936507937%;
+	padding: 40px 7.895% 29px;
 
 	box-sizing: border-box;
 	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
@@ -24,6 +24,9 @@
 		}
 
 		&:nth-child(2) {
+			margin-bottom: 26px;
+		}
+		&:nth-child(4) {
 			margin-bottom: 24px;
 		}
 

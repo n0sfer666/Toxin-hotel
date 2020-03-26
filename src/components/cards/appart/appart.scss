@@ -13,7 +13,7 @@
 	border-radius: 4px;
 
 	&--text {
-		padding: 10px 17px 19px 20px;
+		padding: 13px 17px 12px 20px;
 	}
 
 	&--header {
@@ -55,9 +55,9 @@
 	&--rate {
 		display: flex;
 		justify-content: space-between;
-		align-items: center;
-		margin-top: 8px;
-		padding-right: 3px;
+		align-items: flex-start;
+
+		margin: 10px 3px 0 0;
 	}
 }
 

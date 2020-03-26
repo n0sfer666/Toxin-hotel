@@ -56,9 +56,6 @@
 .datepicker--cell-year.-other-decade-:empty {
   background: none;
   border: none; }
-  // .-disabled- {
-
-  // }
 
 /* -------------------------------------------------
 Datepicker cells
@@ -162,8 +159,8 @@ Datepicker cells
   text-transform: uppercase;}
 
 .datepicker--cell-day {
-  width: 38.578px;
-  height: 38.578px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
 
   @media screen and (min-width: $old-phones) and (max-width: 380px) {
@@ -227,7 +224,7 @@ Datepicker
   box-sizing: border-box;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
   border-radius: 4px;
-  padding: 20px;
+  padding: 19px;
   font: normal normal 12px/15px Montserrat, sans-serif;
   color: $dark-shade-50;
   width: 320px;
@@ -269,7 +266,7 @@ Datepicker
 
 .datepicker--content {
   box-sizing: content-box;
-  padding: 4px; }
+  padding: 4px 0; }
 .-only-timepicker- .datepicker--content {
   display: none; }
 
@@ -304,7 +301,7 @@ Navigation
 .datepicker--nav {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 30px; }
+  padding-bottom: 25px; }
 .-only-timepicker- .datepicker--nav {
   display: none; }
 
