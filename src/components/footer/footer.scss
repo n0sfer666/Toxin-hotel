@@ -3,7 +3,6 @@
 .footer {
 	display: flex;
 
-	// width: 100%;
 	box-sizing: border-box;
 
 	background-color: #fff;
@@ -68,23 +67,12 @@
 			}
 		}
 
-		@media screen and (min-width: $old-phones) and (max-width: $desktop) {
-
-			// & *:not(svg) {
-			// 	margin-bottom: 10px;
-			// }
-		}
-		// @media screen and (min-width: $desktop) {
-		// 	& *:not(:last-child, svg) {
-		// 		margin-bottom: 20px;
-		// 	}
-		// }
 		@media screen and (min-width: $old-phones) and (max-width: $new-phones) {
 			justify-content: center;
 			align-items: center;
 			text-align: center;
 
-			margin-bottom: 10px;
+			margin-bottom: 25px;
 		}
 	}
 
