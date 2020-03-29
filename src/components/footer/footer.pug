@@ -21,7 +21,7 @@ mixin footer(options)
         +menu-block(options.navigation)
         +menu-block(options.aboutUs)
         +menu-block(options.support)
-      .footer--block
+      .footer--block.footer--block-subscription
         h3 #{options.subscription.title}
         p #{options.subscription.description}
         +subscription-field({placeholder: options.subscription.placeholder})

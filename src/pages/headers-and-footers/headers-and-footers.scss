@@ -7,11 +7,17 @@ body {
 }
 
 header {
-	margin-bottom: 30px;
+	margin-bottom: 39px;
+}
+
+.header--buttons {
+	& button:first-child {
+		width: 79px;
+	}
 }
 
 footer {
-	margin-bottom: 30px;
+	margin-bottom: 41px;
 
 	&:last-child {
 		margin-bottom: 130px;

@@ -10,8 +10,8 @@ mixin header(options)
     let loginButtonTitle = options.loginTitle === undefined ? "login" : options.loginTitle
     let signupButtonTitle = options.signupTitle === undefined ? "register" : options.signupTitle
   .header
-    .header--logo
-      +logo({isFull: true})
+    //- .header--logo
+    +logo({isFull: true})
     .header--nav-bar
       .header--menu
         each val in options.links
