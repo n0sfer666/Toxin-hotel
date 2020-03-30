@@ -53,10 +53,6 @@
 
 		width: fit-content;
 
-		& h2 {
-			margin-bottom: 20px;
-		}
-
 		@media screen and (min-width: $old-phones) and (max-width: 840px) {
 			flex-direction: column-reverse;
 		}
@@ -72,6 +68,10 @@
 		min-width: 310px;
 		width: fit-content;
 		max-width: 711px;
+
+		& h2 {
+			margin-bottom: 20px;
+		}
 
 		& > div {
 			margin-bottom: 30px;
