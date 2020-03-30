@@ -47,10 +47,11 @@ html
         +range-slider({title: "Диапазон цены"})
         p.search-room--description Стоимость за сутки пребывания в номере
 
-        h3.label checkbox buttons
-        +checkbox({title: "Можно курить"})
-        +checkbox({title: "Можно с питомцами", isChecked: true})
-        +checkbox({title: "Можно пригласить гостей (до 10 человек)", isChecked: true})
+        .search-room--checkboxs
+          h3.label checkbox buttons
+          +checkbox({title: "Можно курить"})
+          +checkbox({title: "Можно с питомцами", isChecked: true})
+          +checkbox({title: "Можно пригласить гостей (до 10 человек)", isChecked: true})
 
         h3.label Доступность
         -
@@ -63,7 +64,7 @@ html
           config.description = "На 1 этаже вас встретит специалист и проводит до номера."
         +rich-checkbox(config)
 
-        h3.label удобства номера
+        h3(class = "label", style = "margin-top: 36px;") удобства номера
         +dropdown({isGuests: false})
 
         -

@@ -38,6 +38,10 @@
 		margin-right: 60px;
 		width: 266px;
 
+		@media screen and (min-width: $new-phones) {
+			margin-left: 12px;
+		}
+
 		@media screen and (min-width: $new-phones) and (max-width: $pads) {
 			margin-right: 45px;
 		}
@@ -48,19 +52,37 @@
 			margin-bottom: 40px;
 		}
 
-		& .label:not(:first-child),
-		& .expandable-checkbox-list,
-		& .range-slider--container {
+		& .label:not(:first-child) {
+			margin-top: 20px;
+		}
+
+		.range-slider--container {
 			margin-top: 30px;
 		}
 
 		& .search-room--description {
-			margin-top: 10px;
+			margin-top: 14px;
+			margin-bottom: 29px;
 
 			font-size: 12px;
 			line-height: 14px;
 			color: $dark-shade-50;
-		} 
+		}
+
+		& .search-room--checkboxs {
+			& h3 {
+				margin-bottom: 15px;
+			}
+		}
+
+		& .rich-checkbox--container {
+			margin-top: 13px;
+			margin-bottom: -6px;
+		}
+
+		& .expandable-checkbox-list {
+			margin-top: 17px;
+		}
 	}
 
 	&--result {
