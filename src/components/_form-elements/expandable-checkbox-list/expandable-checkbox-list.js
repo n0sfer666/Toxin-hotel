@@ -1,41 +1,37 @@
-$(document).ready(function() {
-	let $expandList = $('.js-expandable-checkbox-list');
-	let $expandContainer = $('.js-expandable-checkbox-list--container')
-	$('.js-expandable-checkbox-list--arrow-up')
-		.hide();
-	$('.js-expandable-checkbox-list--container')
-		.hide();
+$(document).ready(() => {
+  const $expandList = $('.js-expandable-checkbox-list');
+  const $expandContainer = $('.js-expandable-checkbox-list--container');
+  $('.js-expandable-checkbox-list--arrow-up')
+    .hide();
+  $('.js-expandable-checkbox-list--container')
+    .hide();
 
-	let isExpanded = [];
+  const isExpanded = [];
 
-	for(let key in $expandList) {
-		let i = Number(key)
-		
-		if(!Number.isNaN(i)) {
-			isExpanded.push(false);
+  for (const key in $expandList) {
+    const i = Number(key);
 
-			$expandList[key].addEventListener('click', () => {
-				let arrowDown = $expandList[key]
-					.querySelector('.js-expandable-checkbox-list--arrow-down');
-				let arrowUp = $expandList[key]
-					.querySelector('.js-expandable-checkbox-list--arrow-up');
+    if (!Number.isNaN(i)) {
+      isExpanded.push(false);
 
-				if(!isExpanded[i]) {
+      $expandList[key].addEventListener('click', () => {
+        const arrowDown = $expandList[key]
+          .querySelector('.js-expandable-checkbox-list--arrow-down');
+        const arrowUp = $expandList[key]
+          .querySelector('.js-expandable-checkbox-list--arrow-up');
 
-					isExpanded[i] = true;
-					$expandContainer[key].style = 'display: block;';
-					arrowDown.style = 'display: none;';
-					arrowUp.style = 'display: block;';
-
-				} else {
-
-					isExpanded[i] = false;
-					$expandContainer[key].style = 'display: none;';
-					arrowDown.style = 'display: block;';
-					arrowUp.style = 'display: none;';
-
-				}
-			})
-		}
-	}
+        if (!isExpanded[i]) {
+          isExpanded[i] = true;
+          $expandContainer[key].style = 'display: block;';
+          arrowDown.style = 'display: none;';
+          arrowUp.style = 'display: block;';
+        } else {
+          isExpanded[i] = false;
+          $expandContainer[key].style = 'display: none;';
+          arrowDown.style = 'display: block;';
+          arrowUp.style = 'display: none;';
+        }
+      });
+    }
+  }
 });

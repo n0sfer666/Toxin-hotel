@@ -1,26 +1,27 @@
 import IMask from 'imask';
-let maskOptions = {
-	mask: 'd.m.y',
-	lazy: true,  // make placeholder always visible
 
-	blocks: {
-		y: {
-			mask: IMask.MaskedRange,
-			from: 1900,
-			to:2020
-		},
+const maskOptions = {
+  mask: 'd.m.y',
+  lazy: true, // make placeholder always visible
 
-		m: {
-			mask: IMask.MaskedRange,
-			from: 1,
-			to: 12
-		},
+  blocks: {
+    y: {
+      mask: IMask.MaskedRange,
+      from: 1900,
+      to: 2020,
+    },
 
-		d: {
-			mask: IMask.MaskedRange,
-			from: 1,
-			to: 31
-		},
-	}
-}
-export { maskOptions, IMask }
+    m: {
+      mask: IMask.MaskedRange,
+      from: 1,
+      to: 12,
+    },
+
+    d: {
+      mask: IMask.MaskedRange,
+      from: 1,
+      to: 31,
+    },
+  },
+};
+export { maskOptions, IMask };
