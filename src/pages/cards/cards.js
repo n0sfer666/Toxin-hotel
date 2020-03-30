@@ -7,7 +7,7 @@ import { setSlick } from '../../components/cards/appart/appart';
 
 
 $(document).ready(() => {
-  const inlineDatePicker = $('.js-inline-datepicker').datepicker({
+  const $inlineDatePicker = $('.js-inline-datepicker').datepicker({
     language: 'ru',
     minDate: new Date(),
     range: true,

@@ -9,7 +9,7 @@ const getFormattedDate = function (DateText) {
   return (`${day}.${month}.${year}`);
 };
 
-const getDatepickerConfig = function (leftClass, rightClass, getDaysIn) {
+function getDatepickerConfig(leftClass, rightClass, getDaysIn) {
   return {
     language: 'ru',
     minDate: new Date(),
@@ -64,6 +64,6 @@ const getDatepickerConfig = function (leftClass, rightClass, getDaysIn) {
       }
     },
   };
-};
+}
 
 export { getFormattedDate, getDatepickerConfig, datepicker };

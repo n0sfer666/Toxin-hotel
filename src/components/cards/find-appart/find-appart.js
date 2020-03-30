@@ -8,10 +8,10 @@ $(document).ready(() => {
     leftFindAppartDpClass,
     rightFindAppartDpClass,
   );
-  const leftFindAppartDatepicker = $(`.${leftFindAppartDpClass}`)
+  const $leftFindAppartDatepicker = $(`.${leftFindAppartDpClass}`)
     .datepicker(datepickerFindAppartConfig)
     .data('datepicker');
-  const rightFindAppartDatepicker = $(`.${rightFindAppartDpClass}`)
+  const $rightFindAppartDatepicker = $(`.${rightFindAppartDpClass}`)
     .datepicker(datepickerFindAppartConfig)
     .data('datepicker');
 });

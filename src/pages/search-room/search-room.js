@@ -11,23 +11,27 @@ import { getDatepickerConfig } from
 
 $(document).ready(() => {
   const datepickerConfig = getDatepickerConfig();
-  const datepicker = $('.js-daysIn-date-dropdown-filter')
+  const $datepicker = $('.js-daysIn-date-dropdown-filter')
     .datepicker(datepickerConfig)
     .data('datepicker');
 
 
-  const appartSource = $('div[class="search-room--appart"]');
+  const $appartSource = $('div[class="search-room--appart"]');
   const dataSource = [];
-  for (let i = 0; i < appartSource.length; i++) {
-    dataSource.push(appartSource[String(i)]);
+  for (let i = 0; i < $appartSource.length; i += 1) {
+    dataSource.push($appartSource[String(i)]);
   }
   $('.search-room--data-source').remove();
+
+  const dataOutputContainer = '.js-search-room--data-output';
+  const elementsOnPage = 12;
+
   const paginationConfig = getPaginationConfig(
     dataSource,
-    '.js-search-room--data-output',
-    12,
+    dataOutputContainer,
+    elementsOnPage,
     setSlick,
   );
-  const pagination = $('.js-search-room--pagination')
+  const $pagination = $('.js-search-room--pagination')
     .pagination(paginationConfig);
 });

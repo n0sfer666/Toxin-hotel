@@ -2,7 +2,7 @@ $(document).ready(() => {
   const $slidersContainer = $('.js-range-slider');
   const $slidersValues = $('.js-range-slider--value');
 
-  for (let i = 0; i < $slidersContainer.length; i++) {
+  for (let i = 0; i < $slidersContainer.length; i += 1) {
     noUiSlider.create($slidersContainer[String(i)], {
       start: [5000, 10000],
       connect: true,

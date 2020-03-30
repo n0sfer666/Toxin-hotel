@@ -1,4 +1,4 @@
-import { datepicker, getDatepickerConfig, getFormattedDate } from
+import { getDatepickerConfig } from
   '../../_form-elements/date-dropdown/date-dropdown';
 import '../../_form-elements/dropdown/dropdown';
 
@@ -7,28 +7,16 @@ $(document).ready(() => {
     return string.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
   };
 
-  const getDaysIn = function (param) {
-    daysIn = param;
-    cost = price * daysIn;
-    total = cost + additional + complementary - discount;
-
-    if (daysIn === 1) {
-      daysInComponent.innerText = '1 сутки';
-    } else {
-      daysInComponent.innerText = `${String(daysIn)} суток`;
-    }
-
-    costComponent.innerText = String(cost);
-
-    totalComponent.innerText = getNumberWithSeparate(String(total));
-  };
-
   const leftBookingtDpClass = 'js-booking-date-dropdown-left';
   const rightBookingtDpClass = 'js-booking-date-dropdown-right';
   let daysIn;
 
-  let price; let cost; let discount; let additional; let complementary; let
-    total;
+  let price;
+  let cost;
+  let discount;
+  let additional;
+  let complementary;
+  let total;
   price = cost = discount = additional = complementary = total = 0;
 
   const priceComponents = document
@@ -55,14 +43,14 @@ $(document).ready(() => {
       complementary = Number(element.innerText);
       element.innerText = getNumberWithSeparate(element.innerText);
     });
-  let daysInComponent = document
+  const daysInComponent = document
     .querySelector('.js-booking--daysIn');
-  let costComponent = document
+  const costComponent = document
     .querySelector('.js-booking--cost');
-  let totalComponent = document
+  const totalComponent = document
     .querySelector('.js-booking--total');
 
-  const datepickerBookingConfig = 		getDatepickerConfig(
+  const datepickerBookingConfig = getDatepickerConfig(
     leftBookingtDpClass,
     rightBookingtDpClass,
     getDaysIn,
@@ -74,4 +62,21 @@ $(document).ready(() => {
   const $rightBookingDatepicker = $(`.${rightBookingtDpClass}`)
     .datepicker(datepickerBookingConfig)
     .data('datepicker');
+
+
+  function getDaysIn(param) {
+    daysIn = param;
+    cost = price * daysIn;
+    total = cost + additional + complementary - discount;
+
+    if (daysIn === 1) {
+      daysInComponent.innerText = '1 сутки';
+    } else {
+      daysInComponent.innerText = `${String(daysIn)} суток`;
+    }
+
+    costComponent.innerText = String(cost);
+
+    totalComponent.innerText = getNumberWithSeparate(String(total));
+  }
 });

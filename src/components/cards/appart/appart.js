@@ -8,11 +8,11 @@ const setSlick = function () {
     adaptiveHeight: true,
   });
   // separate prices
-  const priceComponents = $('.js-appart--price');
-  for (let i = 0; i < priceComponents.length; i++) {
-    const strSeparated = priceComponents[i].innerText
+  const $priceComponents = $('.js-appart--price');
+  for (let i = 0; i < $priceComponents.length; i += 1) {
+    const strSeparated = $priceComponents[i].innerText
       .replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
-    priceComponents[i].innerText = strSeparated;
+    $priceComponents[i].innerText = strSeparated;
   }
 };
 

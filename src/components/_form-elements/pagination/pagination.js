@@ -1,6 +1,6 @@
 import 'paginationjs';
 
-const getPaginationConfig = function (dataSource, dataOutput, elementsOnPage, callback) {
+function getPaginationConfig(dataSource, dataOutput, elementsOnPage, callback) {
   return {
     dataSource,
     showPrevious: false,
@@ -21,6 +21,6 @@ const getPaginationConfig = function (dataSource, dataOutput, elementsOnPage, ca
       if (callback) { callback(); }
     },
   };
-};
+}
 
 export { getPaginationConfig };
