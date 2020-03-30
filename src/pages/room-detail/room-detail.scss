@@ -52,6 +52,7 @@
 		padding: 63px 5px 32px;
 
 		width: fit-content;
+		max-width: 1160px;
 
 		@media screen and (min-width: $old-phones) and (max-width: 840px) {
 			flex-direction: column-reverse;

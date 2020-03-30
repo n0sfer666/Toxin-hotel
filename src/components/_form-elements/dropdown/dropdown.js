@@ -86,7 +86,7 @@ const dropdownConfig = {
 };
 
 $(document).ready(() => {
-  const dropdowns = $('.iqdropdown').iqDropdown(dropdownConfig);
+  const $dropdowns = $('.js-iqdropdown').iqDropdown(dropdownConfig);
 
   $('[data-id=bedrooms]').find('.button-decrement')
     .css('border-color', 'rgba(31, 32, 65, 0.5)')

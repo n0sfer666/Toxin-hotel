@@ -3,10 +3,6 @@ import { getDatepickerConfig } from
 import '../../_form-elements/dropdown/dropdown';
 
 $(document).ready(() => {
-  const getNumberWithSeparate = function (string) {
-    return string.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
-  };
-
   const leftBookingtDpClass = 'js-booking-date-dropdown-left';
   const rightBookingtDpClass = 'js-booking-date-dropdown-right';
   let daysIn;
@@ -63,6 +59,10 @@ $(document).ready(() => {
     .datepicker(datepickerBookingConfig)
     .data('datepicker');
 
+
+  function getNumberWithSeparate(string) {
+    return string.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+  }
 
   function getDaysIn(param) {
     daysIn = param;

@@ -2,7 +2,7 @@ include ../_buttons/button/button
 mixin dropdown (options)
   -
     let isGuests = options.isGuests === undefined ? true : options.isGuests
-  .iqdropdown
+  .iqdropdown.js-iqdropdown
     p(class="iqdropdown-selection")
       if isGuests
         .iqdropdown-menu

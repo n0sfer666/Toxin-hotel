@@ -21,7 +21,7 @@ $(document).ready(() => {
   for (let i = 0; i < $appartSource.length; i += 1) {
     dataSource.push($appartSource[String(i)]);
   }
-  $('.search-room--data-source').remove();
+  $('.js-search-room--data-source').remove();
 
   const dataOutputContainer = '.js-search-room--data-output';
   const elementsOnPage = 12;
