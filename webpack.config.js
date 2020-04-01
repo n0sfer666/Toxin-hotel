@@ -12,7 +12,7 @@ plugins.push(
   ]),
   new Webpack.ProvidePlugin({
     $: 'jquery',
-    jQuery: 'jquery',
+    jQuery: 'jquery'
   }),
   new Webpack.ProvidePlugin({
     noUiSlider: 'nouislider'
@@ -24,12 +24,12 @@ plugins.push(
 
 
 module.exports = {
-  stats: 'errors-warnings',
+  // stats: 'errors-warnings',
   entry: './src/index.js',
 
   output: {
     filename: '[name].js',
-    path: __dirname + '/docs'
+    path: __dirname + '/dist'
   },
 
   plugins: plugins,
@@ -39,7 +39,7 @@ module.exports = {
   devServer: {
     clientLogLevel: 'error',
     stats: 'errors-only',
-    contentBase: __dirname + '/docs',
+    contentBase: __dirname + '/dist',
     compress: true,
     port: 9090 
   },
@@ -62,10 +62,10 @@ module.exports = {
             loader: 'sass-resources-loader',
             options: {
               resources: [
+                './src/styles/variables/colors.scss',
+                './src/styles/variables/breakpoints.scss',
                 './src/styles/font-face/fonts.scss',
                 './src/styles/reset/reset.scss',
-                './src/styles/variables/colors.scss',
-                './src/styles/variables/breakpoints.scss'
               ]
             }
           }
