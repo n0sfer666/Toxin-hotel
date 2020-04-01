@@ -1,7 +1,3 @@
-import { getDatepickerConfig } from
-  '../../_form-elements/date-dropdown/date-dropdown';
-import '../../_form-elements/dropdown/dropdown';
-
 $(document).ready(() => {
   const leftBookingtDpClass = 'js-booking-date-dropdown-left';
   const rightBookingtDpClass = 'js-booking-date-dropdown-right';

@@ -15,11 +15,7 @@
 		fill: $purple;
 		text-anchor: middle;
 	}
-	&--total {
-		@extend h1;
-	}
 	&--text {
-		@extend h3;
 		transform: translateY(15px);
 	}
 	&--legend {
