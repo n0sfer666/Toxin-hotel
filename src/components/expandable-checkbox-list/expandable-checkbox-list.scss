@@ -1,23 +1,23 @@
 .expandable-checkbox-list {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-	width: 100%;
-	height: 44px;
+  width: 100%;
+  height: 44px;
 
-	cursor: pointer;
+  cursor: pointer;
 
-	&--arrow {
-		display: inline-block;
-		width: 44px;
-		text-align: center;
+  &--arrow {
+    display: inline-block;
+    width: 44px;
+    text-align: center;
 
-		font: normal normal 24px/24px materialIcons;
-		color: $dark-shade-50;
-	}
+    font: normal normal 24px/24px materialIcons;
+    color: $dark-shade-50;
+  }
 
-	&--container {
-		position: relative;
-	}
+  &--container {
+    position: relative;
+  }
 }

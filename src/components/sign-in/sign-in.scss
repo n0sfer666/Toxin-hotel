@@ -1,38 +1,38 @@
 .sign-in {
-	padding: 39px 7.895% 32px;
+  padding: 39px 7.895% 32px;
 
-	background: #FFFFFF;
-	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  background: #FFFFFF;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
 
-	border: 1px solid rgba(0, 0, 0, 0.12);
-	border-radius: 4px;
-	box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  box-sizing: border-box;
 
-	& h1 {
-		margin-bottom: 20px;
-	}
+  & h1 {
+    margin-bottom: 20px;
+  }
 
-	&--details {
-		margin-bottom: 10px;
+  &--details {
+    margin-bottom: 10px;
 
-		& input {
-			margin-bottom: 10px;
-		}
-	}
+    & input {
+      margin-bottom: 10px;
+    }
+  }
 
-	& button {
-		height: 44px;
-	}
+  & button {
+    height: 44px;
+  }
 
-	&--signup {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
+  &--signup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-		margin-top: 30px;
+    margin-top: 30px;
 
-		& button {
-			width: 99px;
-		}
-	}
+    & button {
+      width: 99px;
+    }
+  }
 }

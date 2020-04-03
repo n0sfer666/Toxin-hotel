@@ -1,133 +1,133 @@
 .booking {
-	height: fit-content;
+  height: fit-content;
 
-	padding: 39px 7.895% 29px;
+  padding: 39px 7.895% 29px;
 
-	box-sizing: border-box;
-	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-	background-color: #FFFFFF;
-	border: 1px solid rgba(0, 0, 0, 0.12);
-	border-radius: 4px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
 
-	&--header {
-		display: flex;
-		justify-content: space-between;
-		align-items: flex-end;
+  &--header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
 
-		margin-bottom: 20px;
+    margin-bottom: 20px;
 
-		& div {
+    & div {
 
-			& h1 {
-				display: inline-block;
+      & h1 {
+        display: inline-block;
 
-				& span{
-					font-size: 14px;
-					line-height: 17px;
-					color: $dark-shade-75;
-				}
-			}
+        & span{
+          font-size: 14px;
+          line-height: 17px;
+          color: $dark-shade-75;
+        }
+      }
 
-			& h3 {
-				display: inline-block;
-				color: $purple;
-				white-space: pre;
-			}
-		}
+      & h3 {
+        display: inline-block;
+        color: $purple;
+        white-space: pre;
+      }
+    }
 
-		& span {
-			color: $dark-shade-50;
-		}
-	}
+    & span {
+      color: $dark-shade-50;
+    }
+  }
 
-	&--arival-departure {
-		display: flex;
-		justify-content: space-between;
+  &--arival-departure {
+    display: flex;
+    justify-content: space-between;
 
-		margin-bottom: 20px;
+    margin-bottom: 20px;
 
-		& div {
-			width: 47.217%;
-		}
-	}
+    & div {
+      width: 47.217%;
+    }
+  }
 
-	&--guests {
-		margin-bottom: 17px;
-	}
+  &--guests {
+    margin-bottom: 17px;
+  }
 
-	&--exclamation {
-		display: inline-block;
+  &--exclamation {
+    display: inline-block;
 
-		text-align: center;
-		vertical-align: middle;
+    text-align: center;
+    vertical-align: middle;
 
-		font-size: 12px;
-		line-height: 21px;
-		color: $dark-shade-25;
+    font-size: 12px;
+    line-height: 21px;
+    color: $dark-shade-25;
 
-		width: 20px;
-		height: 20px;
+    width: 20px;
+    height: 20px;
 
-		border: 1px solid $dark-shade-25; 
-		box-sizing: border-box;
-		border-radius: 50%;
-	}
+    border: 1px solid $dark-shade-25; 
+    box-sizing: border-box;
+    border-radius: 50%;
+  }
 
-	&--calculation {
-		margin-bottom: 28px;
+  &--calculation {
+    margin-bottom: 28px;
 
-		&-line {
-			display: flex;
-			justify-content: space-between;
-			
+    &-line {
+      display: flex;
+      justify-content: space-between;
+      
 
-			& div:first-child {
-				display: flex;
-				justify-content: space-between;
-				align-items: baseline;
+      & div:first-child {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
 
-				width: 75.1574%;
+        width: 75.1574%;
 
-				& p {
-					display: inline-block;
+        & p {
+          display: inline-block;
 
-					width: 89.5398%;
+          width: 89.5398%;
 
-					line-height: 19px;
-				}
-			}
+          line-height: 19px;
+        }
+      }
 
-			&:first-child {
-				margin-bottom: 11px;
-			}
+      &:first-child {
+        margin-bottom: 11px;
+      }
 
-			&:nth-child(2) {
-				margin-bottom: 10px;
-			}
-		}
-	}
+      &:nth-child(2) {
+        margin-bottom: 10px;
+      }
+    }
+  }
 
-	&--total {
-		display: flex;
-		justify-content: space-between;
+  &--total {
+    display: flex;
+    justify-content: space-between;
 
-		& h2 {
-			white-space: nowrap;
-		}
+    & h2 {
+      white-space: nowrap;
+    }
 
-		&-line-dashed {
-			margin: 0 5px;
+    &-line-dashed {
+      margin: 0 5px;
 
-			width: 100%;
-			height: 18px;
+      width: 100%;
+      height: 18px;
 
-			border-bottom: 1px dotted $dark-shade-25;
-		}
-	}
+      border-bottom: 1px dotted $dark-shade-25;
+    }
+  }
 
-	&--submit-button {
-		margin-top: 20px;
-		
-		height: 44px;
-	}
+  &--submit-button {
+    margin-top: 20px;
+    
+    height: 44px;
+  }
 }

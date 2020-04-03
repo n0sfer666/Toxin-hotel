@@ -1,35 +1,35 @@
 .landing {
-	padding: 70px 9.3056% 18px 9.7223%;
+  padding: 70px 9.3056% 18px 9.7223%;
 
-	background-image: url(../../img/background/landing.jpg);
-	background-repeat: no-repeat;
-	background-position: center 100%;
-	background-size: cover;
+  background-image: url(../../img/background/landing.jpg);
+  background-repeat: no-repeat;
+  background-position: center 100%;
+  background-size: cover;
 
-	@media screen and (min-width: $old-phones) and (max-width: 500px) {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
+  @media screen and (min-width: $old-phones) and (max-width: 500px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-		padding: 70px 0 18px;
-	}
+    padding: 70px 0 18px;
+  }
 
-	&--find-appart {
-		width: 380px;
+  &--find-appart {
+    width: 380px;
 
-		@media screen and (min-width: $old-phones) and (max-width: 500px) {
-			width: 310px;
-		}
-	}
+    @media screen and (min-width: $old-phones) and (max-width: 500px) {
+      width: 310px;
+    }
+  }
 
-	&--description {
-		display: flex;
-		justify-content: flex-end;
-		margin-top: 320px;
+  &--description {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 320px;
 
-		& p {
-			max-width: 280px;
-			text-align: right;
-		}
-	}
+    & p {
+      max-width: 280px;
+      text-align: right;
+    }
+  }
 }

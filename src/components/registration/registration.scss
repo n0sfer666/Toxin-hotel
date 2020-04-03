@@ -1,53 +1,53 @@
 .registration {
-	height: fit-content;
+  height: fit-content;
 
-	padding: 40px 7.895% 29px;
+  padding: 40px 7.895% 29px;
 
-	box-sizing: border-box;
-	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-	background-color: #FFFFFF;
-	border: 1px solid rgba(0, 0, 0, 0.12);
-	border-radius: 4px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
 
-	& h1 {
-		margin-bottom: 20px;
-	}
+  & h1 {
+    margin-bottom: 20px;
+  }
 
-	&--block {
-		&:not(:nth-child(6)) {
-			margin-bottom: 20px;
-		}
+  &--block {
+    &:not(:nth-child(6)) {
+      margin-bottom: 20px;
+    }
 
-		&:nth-child(2) {
-			margin-bottom: 26px;
-		}
-		&:nth-child(4) {
-			margin-bottom: 24px;
-		}
+    &:nth-child(2) {
+      margin-bottom: 26px;
+    }
+    &:nth-child(4) {
+      margin-bottom: 24px;
+    }
 
-		& input[type=text]:not(:last-child),
-		& input[type=Email],
-		& input[type=Password] {
-			margin-bottom: 10px;
-		}
+    & input[type=text]:not(:last-child),
+    & input[type=Email],
+    & input[type=Password] {
+      margin-bottom: 10px;
+    }
 
-		&:nth-child(5) {
-			margin-bottom: 30px;
-			height: 44px;
-		}
-		
-		&:nth-child(6) {
-			& button {
-				width: 99px;
-				height: 44px;	
-			}
-		}
+    &:nth-child(5) {
+      margin-bottom: 30px;
+      height: 44px;
+    }
+    
+    &:nth-child(6) {
+      & button {
+        width: 99px;
+        height: 44px;	
+      }
+    }
 
-		&-flexed {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-		}
+    &-flexed {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-	}
+  }
 }

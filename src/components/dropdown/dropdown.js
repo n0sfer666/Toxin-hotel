@@ -6,13 +6,13 @@ const dropdownConfig = {
 
     const isGuests = (
       itemCount.adults !== undefined
-			|| itemCount.babies !== undefined
-			|| itemCount.children !== undefined
+      || itemCount.babies !== undefined
+      || itemCount.children !== undefined
     );
     const isRooms = (
       itemCount.bedrooms !== undefined
-			|| itemCount.beds !== undefined
-			|| itemCount.bathrooms !== undefined
+      || itemCount.beds !== undefined
+      || itemCount.bathrooms !== undefined
     );
 
     if (totalItems === 0) {

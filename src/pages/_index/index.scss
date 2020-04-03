@@ -1,41 +1,41 @@
 .index--container {
-	display: flex;
-	align-items: center;
-	flex-direction: column;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 .index--ui-kit {
-	margin-bottom: 20px;
-	padding: 10px;
+  margin-bottom: 20px;
+  padding: 10px;
 
-	border: 4px dotted $purple;
-	box-sizing: border-box;
+  border: 4px dotted $purple;
+  box-sizing: border-box;
 
-	& .index--item:hover {
-		border-radius: 5px;
-		background-color: $purple;
-		box-shadow: 0 0 10px $purple;
-	}
+  & .index--item:hover {
+    border-radius: 5px;
+    background-color: $purple;
+    box-shadow: 0 0 10px $purple;
+  }
 }
 .index--pages {
-	padding: 10px;
+  padding: 10px;
 
-	border: 4px dotted $green;
-	box-sizing: border-box;
+  border: 4px dotted $green;
+  box-sizing: border-box;
 
-	& .index--item:hover {
-		border-radius: 5px;
-		background-color: $green;
-		box-shadow: 0 0 10px $green;
-	}
+  & .index--item:hover {
+    border-radius: 5px;
+    background-color: $green;
+    box-shadow: 0 0 10px $green;
+  }
 }
 .index--item {
-	text-align: center;
+  text-align: center;
 
-	&:not(:last-child) {
-		margin-bottom: 10px;
-	}
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
 
-	& a h3 {
-		color: $dark-shade-75;
-	}
+  & a h3 {
+    color: $dark-shade-75;
+  }
 }

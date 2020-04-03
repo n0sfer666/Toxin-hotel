@@ -28,7 +28,7 @@ function getDatepickerConfig(leftClass, rightClass, getDaysIn) {
     onSelect(fd, date, inst) {
       const isTwoInputs = (
         inst.$el.hasClass(leftClass)
-				|| inst.$el.hasClass(rightClass)
+        || inst.$el.hasClass(rightClass)
       );
 
       const isSecondDateSelected = (date.length === 2);

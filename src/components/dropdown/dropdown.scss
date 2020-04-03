@@ -17,34 +17,34 @@
 .iqdropdown.menu-open {
   border-color: $dark-shade-50;
   border-bottom: none;
-	border-bottom-left-radius:0;
-	border-bottom-right-radius: 0;
+  border-bottom-left-radius:0;
+  border-bottom-right-radius: 0;
 }
 .iqdropdown .iqdropdown-selection {
   box-sizing: border-box;
   display: flex;
   align-items: center;
-	width: 100%;
-	height: 100%;
-	padding-left: 4.375%;
-	font: normal normal 14px/24px Montserrat, sans-serif;
-	color: $dark-shade-75;
+  width: 100%;
+  height: 100%;
+  padding-left: 4.375%;
+  font: normal normal 14px/24px Montserrat, sans-serif;
+  color: $dark-shade-75;
   cursor: pointer;
 }
 
 .iqdropdown .iqdropdown-menu {
   display: none;
-	position: absolute;
-	z-index: 100;
+  position: absolute;
+  z-index: 100;
   width: calc(100% + 2px);
   left: -1px;
-	height: 159px;
-	background: #FFFFFF;
-	border: 1px solid rgba(31, 32, 65, 0.5);
-	border-bottom-left-radius:4px;
-	border-bottom-right-radius: 4px;
-	box-sizing: border-box;
-	box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  height: 159px;
+  background: #FFFFFF;
+  border: 1px solid rgba(31, 32, 65, 0.5);
+  border-bottom-left-radius:4px;
+  border-bottom-right-radius: 4px;
+  box-sizing: border-box;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
   padding: 0 7px 13px 15px;
   
   & .button-small {
@@ -65,11 +65,11 @@
 
 .iqdropdown .iqdropdown-menu-option {
   display: flex;
-	justify-content: space-between;
-	align-items: center;
-	width: 100%;
-	height: 30px;
-	margin-top: 7px;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 30px;
+  margin-top: 7px;
 }
 .iqdropdown-content {
   flex: 1;
@@ -81,15 +81,15 @@
 }
 .iqdropdown .iqdropdown-item-controls {
   width: 92px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .iqdropdown .iqdropdown-item-controls .counter {
   width: calc(100% - 60px);
-	height: inherit;
-	display: inline-block;
-	text-align: center;
+  height: inherit;
+  display: inline-block;
+  text-align: center;
   vertical-align: middle;
   font: normal bold 12px/15px Montserrat, sans-serif;
   text-transform: uppercase;
@@ -97,13 +97,13 @@
   
 }
 .iqdropdown .iqdropdown-item-controls button {
-	width: 30px;
-	height: 30px;
-	background: #fff;
-	border: 1px solid $dark-shade-25;
-	border-radius: 50%;
-	color: $dark-shade-25;
-	font: normal normal 18px/22px Montserrat, sans-serif;
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  border: 1px solid $dark-shade-25;
+  border-radius: 50%;
+  color: $dark-shade-25;
+  font: normal normal 18px/22px Montserrat, sans-serif;
   outline: none;
 }
 .iqdropdown .iqdropdown-item-controls button:hover {

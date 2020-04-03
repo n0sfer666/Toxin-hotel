@@ -1,11 +1,3 @@
-import './cards.scss';
-
-import '../../components/cards/find-appart/find-appart';
-import '../../components/cards/registration/registration';
-import '../../components/cards/booking/booking';
-import { setSlick } from '../../components/cards/appart/appart';
-
-
 $(document).ready(() => {
   const $inlineDatePicker = $('.js-inline-datepicker').datepicker({
     language: 'ru',

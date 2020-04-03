@@ -1,45 +1,45 @@
 body {
-	background-color: #e5e5e5;
+  background-color: #e5e5e5;
 }
 
 .container {
-	padding: 0 9.7223% 140px;
+  padding: 0 9.7223% 140px;
 
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 
-	@media screen and (min-width: $old-phones) and (max-width: 380px) {
-		flex-direction: column;
-		align-items: center;
-		padding: 0 1.5625%;
-	}
+  @media screen and (min-width: $old-phones) and (max-width: 380px) {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1.5625%;
+  }
 }
 
 .section {
-	width: 380px;
+  width: 380px;
 
-	@media screen and (min-width: $old-phones) and (max-width: 380px) {
-		width: 310px;
-	}
+  @media screen and (min-width: $old-phones) and (max-width: 380px) {
+    width: 310px;
+  }
 
-	&--block {
-		margin-bottom: 40px;
+  &--block {
+    margin-bottom: 40px;
 
-		&-appart {
-			width: 270px;
+    &-appart {
+      width: 270px;
 
-			@media screen and (min-width: $old-phones) and (max-width: 380px) {
-				margin: 0 auto 40px;
-			}
-		}
-	}
+      @media screen and (min-width: $old-phones) and (max-width: 380px) {
+        margin: 0 auto 40px;
+      }
+    }
+  }
 
-	&-320-px {
-		width: 320px;
+  &-320-px {
+    width: 320px;
 
-		@media screen and (min-width: $old-phones) and (max-width: 380px) {
-			width: 310px;
-		}
-	}
+    @media screen and (min-width: $old-phones) and (max-width: 380px) {
+      width: 310px;
+    }
+  }
 }

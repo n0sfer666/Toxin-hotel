@@ -1,21 +1,21 @@
 body {
-	background-color: #e5e5e5;
+  background-color: #e5e5e5;
 }
 
 header {
-	margin-bottom: 39px;
+  margin-bottom: 39px;
 }
 
 .header--buttons {
-	& button:first-child {
-		width: 79px;
-	}
+  & button:first-child {
+    width: 79px;
+  }
 }
 
 footer {
-	margin-bottom: 41px;
+  margin-bottom: 41px;
 
-	&:last-child {
-		margin-bottom: 130px;
-	}
+  &:last-child {
+    margin-bottom: 130px;
+  }
 }
