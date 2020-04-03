@@ -1,7 +1,7 @@
 mixin date-dropdown(options)
   -
     let type = options.type === undefined ? "filter" : options.type
-    let className = "text-field date-dropdown-" + type +" js-" + options.jsClass + "-date-dropdown-" + type
+    let className = `text-field date-dropdown-${type} js-${options.jsClass}-date-dropdown-${type}`
 
   case options.type
     when "left"

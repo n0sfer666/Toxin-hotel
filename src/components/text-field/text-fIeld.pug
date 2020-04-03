@@ -1,5 +1,5 @@
 mixin text-field(options)
   -
-    let className = options.jsClass === undefined ? "text-field" : "text-field js-" + options.jsClass + "-text-field"
+    let className = options.jsClass === undefined ? "text-field" : `text-field js-${options.jsClass}-text-field`
     let type = options.type === undefined ? "text" : options.type
   input(type = type, class = className, placeholder = options.placeholder)

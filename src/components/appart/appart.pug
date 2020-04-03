@@ -4,7 +4,7 @@ mixin appart(options)
   -
     let slides = ["", "", "", ""]
     for( let i = 0; i < slides.length; i++ )
-      slides[i] = "img/apparts/" + options.appart + "/img-" + options.appart + "-" + (i+1) + ".jpg"
+      slides[i] = `img/apparts/${options.appart}/img-${options.appart}-${(i+1)}.jpg`
   .appart
     .appart--slider.js-appart--slider
       each val in slides
@@ -45,50 +45,3 @@ mixin appart(options)
               span
               b #{options.reviews} 
               | Отзывов
-//-     .apart--textBlock    
-//-       .apart--header
-//-         div
-//-           h1="№ "
-//-           h1=options.apartNumber
-//-           if options.isLux
-//-               h3 люкс
-//-         span
-//-           b(id="apart--price-" + options.apartNumber)= options.price
-//-           b="₽ "
-//-           | в сутки
-//-       .apart--hr
-//-       .apart--rating
-//-         div
-//-           +rateButton(options.apartNumber, options.rating)
-//-         div
-//-           if(options.reviews == 0 || options.reviews == undefined)
-//-             b="0"
-//-             span= " Отзывов"
-//-           if(options.reviews == 1)
-//-             b= options.reviews
-//-             span= " Отзыв"
-//-           if(options.reviews > 1 && options.reviews < 5)
-//-             b= options.reviews
-//-             span= " Отзыва"
-//-           if(options.reviews >= 5)
-//-             b= options.reviews
-//-             span= " Отзывов"
-
-//- options:
-//-     apartNumber
-//-     isLux
-//-     price
-//-     rating
-//-     reviews
-//- include ../../_formElements/_buttons/_rate/_buttons_rate
-
-//- mixin apart(options)
-//-   -
-//-     var slides = ["","","",""]
-//-     for(var i=1; i<=slides.length; i++)
-//-       slides[i-1] = "img/" + options.apartNumber + "/img-" + options.apartNumber + "-" + i + ".jpg"
-//-   .apart--container
-//-     .apart--slider
-//-       each val in slides
-//-         div
-//-           img(src=val)
