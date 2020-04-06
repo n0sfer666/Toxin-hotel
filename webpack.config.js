@@ -2,9 +2,20 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-const entry = {};
 const plugins = [];
+const pages = [
+  'test'
+]
 
+pages.forEach(element => {
+  plugins.push(
+    new HtmlWebpackPlugin({
+      filename: `${element}.html`,
+      template: `./src/pages/${element}/${element}.pug`,
+      inject: false
+    })
+  )
+})
 
 plugins.push(
   new CopyWebpackPlugin([
@@ -32,7 +43,7 @@ module.exports = (env, options) => ({
     path: `${__dirname}/dist`,
   },
 
-  plugins,
+  plugins: plugins,
 
   devtool: options.mode === 'development' ? 'inline-source-map' : '',
 
