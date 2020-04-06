@@ -3,21 +3,25 @@
 //-         for {size: medium}: gradient, border
 //- isOpacity: true - add button-opacity class for medium size
 //- title: whatever
-mixin button(options)
+mixin button({size = "big", theme = "gradient", type = "button", title = "click me"} = {})
   -
-    let isLink = options.href === undefined ? false : true
-    let type = options.type === undefined ? "button" : options.type
-    let className = options.size == undefined ? "button button-big": `button button-${options.size}`
-    if(options.size === "medium")
-      className += ` button-${options.theme}`
-      if(options.isOpacity)
+    let isLink = href === undefined ? false : true
+    let haveHandler = jsClass === undefined ? false : true
+    let className
+    if(!haveHandler)
+      className = `button button-${size}`
+    else
+      className `button js-${jsClass}-button button-${size}`
+    if(size === "medium")
+      className += ` button-${theme}`
+      if(isOpacity)
         className += " button-opacity"
-    if(options.size === "small")
-      className += options.isGray ? " button-gray" : " button-purple"
+    if(size === "small")
+      className += isGray ? " button-gray" : " button-purple"
 
   if isLink
     button(type=type, class=className, href=href)
-      h3 #{options.title}
+      h3 #{title}
   else
     button(type=type, class=className)
-      h3 #{options.title}
+      h3 #{title}

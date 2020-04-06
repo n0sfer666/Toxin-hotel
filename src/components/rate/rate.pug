@@ -1,4 +1,4 @@
-mixin rate(options)
+mixin rate({rate = 0} = {})
   -
     let stars = [5, 4, 3, 2, 1]
   .rate
@@ -6,9 +6,9 @@ mixin rate(options)
       let name = Math.floor(Math.random() * 10000)
       name += Math.floor(Math.random() * 1000)
       name += Math.floor(Math.random() * 100)
-    each value, i in stars
+    each value in stars
       -
-        let isRated = (options.rate == value)
+        let isRated = (rate == value)
         let id = Math.floor(Math.random() * 10000)
         id += Math.floor(Math.random() * 1000)
         id += Math.floor(Math.random() * 100)

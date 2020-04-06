@@ -1,7 +1,7 @@
-mixin checkbox(options)
+mixin checkbox({isChecked = false, title = "Change me"} = {})
   div
-    label(class="checkbox--label") #{options.title}
-      if options.isChecked
+    label(class="checkbox--label") #{title}
+      if isChecked
         input(type="checkbox", class = "checkbox", checked)
       else
         input(type="checkbox", class = "checkbox")

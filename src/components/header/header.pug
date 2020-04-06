@@ -3,12 +3,16 @@ include ../_base/pug/logo
 include ./menu-link
 include ../_form-elements/_buttons/button/button
 
-mixin header(options)
-  -
-    let isAuth = options.isAuth === undefined ? false : options.isAuth 
-    let login = options.login === undefined ? "Константин Константинопольский" : options.login
-    let loginButtonTitle = options.loginTitle === undefined ? "login" : options.loginTitle
-    let signupButtonTitle = options.signupTitle === undefined ? "register" : options.signupTitle
+-
+  let links = []
+
+  links.push({title: "О нас"})
+  links.push({type: "popup", title: "Услуги"})
+  links.push({title: "Вакансии"})
+  links.push({title: "Новости"})
+  links.push({type: "popup", title: "Соглашения"})
+
+mixin header({isAuth = false, login = "Cosmin Negoita", loginButton = "Войти", signUpButton = "Зарегистрироваться", links = links } = {})
   .header
     //- .header--logo
     +logo({isFull: true})
@@ -20,5 +24,5 @@ mixin header(options)
         p.header--login #{login}
       else
         .header--buttons
-          +button({size: "medium", theme: "border", title: loginButtonTitle})
-          +button({size: "medium", theme: "gradient", title: signupButtonTitle})
+          +button({size: "medium", theme: "border", title: loginButton})
+          +button({size: "medium", theme: "gradient", title: signUpButton})

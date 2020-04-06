@@ -1,11 +1,9 @@
-mixin menu-link(options)
-  -
-    let type = options.type === undefined ? "link" : options.type
-    let href = options.href === undefined ? "change_me" : options.href
-    let title = options.title === undefined ? "change_me" : options.title
-    let popupItems = [{href: "change_me_1", title: "change_me_1"}]
-    popupItems.push({href: "change_me_2", title: "change_me_2"})
-    let popup = options.popup === undefined ? popupItems : options.popup
+-
+  let popupItems = [{href: "change_me_1", title: "change_me_1"}]
+  popupItems.push({href: "change_me_2", title: "change_me_2"})
+
+mixin menu-link({type = "link", href = "change me", title = "change me", popup = popupItems } = {})
+
   case type
     when "link"
       a(href = href, class = "header--link") #{title}
@@ -21,6 +19,6 @@ mixin menu-link(options)
     default
       a(href = href, class = "header--link") #{title}
 
-mixin popup-link(options)
-  a(href = options.href, class = "header--link") #{options.title}
+mixin popup-link({href = "change me", title = "change me"} = {})
+  a(href = href, class = "header--link") #{title}
   <br>

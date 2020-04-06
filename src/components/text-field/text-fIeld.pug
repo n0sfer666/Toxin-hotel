@@ -1,5 +1,4 @@
-mixin text-field(options)
+mixin text-field({type = "text", jsClass = "test", placeholder = "Email"} = {})
   -
-    let className = options.jsClass === undefined ? "text-field" : `text-field js-${options.jsClass}-text-field`
-    let type = options.type === undefined ? "text" : options.type
-  input(type = type, class = className, placeholder = options.placeholder)
+    let className = `text-field js-${options.jsClass}-text-field`
+  input(type = type, class = className, placeholder = placeholder)

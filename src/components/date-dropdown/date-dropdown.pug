@@ -1,9 +1,8 @@
-mixin date-dropdown(options)
+mixin date-dropdown({type ="filter", jsClass = "test"} = {})
   -
-    let type = options.type === undefined ? "filter" : options.type
-    let className = `text-field date-dropdown-${type} js-${options.jsClass}-date-dropdown-${type}`
+    let className = `text-field date-dropdown-${type} js-${jsClass}-date-dropdown-${type}`
 
-  case options.type
+  case type
     when "left"
       input(type="text", class = className, placeholder = "ДД.ММ.ГГГГ")
     when "right"

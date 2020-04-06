@@ -1,4 +1,4 @@
-mixin head(options)
+mixin head({title = "CHANGE ME", isProduction = false} = {})
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
@@ -10,5 +10,8 @@ mixin head(options)
     link(rel="mask-icon", href="./favicons/safari-pinned-tab.svg", color="#5bbad5")
     meta(name="msapplication-TileColor", content="#da532c")
     meta(name="theme-color", content="#ffffff")
-    title #{options.title}
-    script(src="main.min.js")
+    title #{title}
+    if isProduction
+      script(src="main.min.js")
+    else
+      script(src="main.js")

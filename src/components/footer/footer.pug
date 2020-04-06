@@ -2,12 +2,44 @@ include ../_base/pug/logo
 include ../_form-elements/text-field/subscription-field/subscription-field
 
 include ./menu-block
+-
+  let description = "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"
+  
+  let links = []
+  let navigation = {title: "навигация"}
+  links.push("О нас")
+  links.push("Новости")
+  links.push("Служба поддержки")
+  links.push("Услуги")
+  navigation.links = links
 
-mixin footer(options)
-  if options.isShort
+  let aboutUs = {title: "о нас"}
+  links = []
+  links.push("О сервисе")
+  links.push("Наша команда")
+  links.push("Вакансии")
+  links.push("Инвесторы")
+  aboutUs.links = links
+
+  support = {title: "служба поддержки"}
+  links = []
+  links.push("Соглашения")
+  links.push("Сообщества")
+  links.push("Связь с нами")
+  support.links = links
+
+  let subscription = {title: "Подписка"}
+  subscription.description = "Получайте специальные предложения и новости сервиса"
+  subscription.placeholder = "Email"
+
+  let copyright = "отель. Все права зачищены."
+
+
+mixin footer({isShort = false, description = description, navigation = navigation, aboutUs = aboutUs, support = support, subscription = subscription, copyright = copyright } = {})
+  if isShort
     .footer.footer-short
       +logo({isFull: true})
-      p.footer--description.footer--description-short #{options.description}
+      p.footer--description.footer--description-short #{description}
       .footer--icons
         a(href = "change me", class = " footer--icon footer--icon-tweeter")
         a(href = "change me", class = " footer--icon footer--icon-facebook")
@@ -16,17 +48,17 @@ mixin footer(options)
     .footer.footer-full
       .footer--block
         +logo({isFull: true})
-        p #{options.description}
+        p #{description}
       .footer--menu
-        +menu-block(options.navigation)
-        +menu-block(options.aboutUs)
-        +menu-block(options.support)
+        +menu-block(navigation)
+        +menu-block(aboutUs)
+        +menu-block(support)
       .footer--block.footer--block-subscription
-        h3 #{options.subscription.title}
-        p #{options.subscription.description}
-        +subscription-field({placeholder: options.subscription.placeholder})
+        h3 #{subscription.title}
+        p #{subscription.description}
+        +subscription-field({placeholder: subscription.placeholder})
     .footer--copyright
-      p Copyright © 2018 Toxin #{options.copyright}
+      p Copyright © 2018 Toxin #{copyright}
       .footer--icons
         a(href = "change me", class = " footer--icon footer--icon-tweeter")
         a(href = "change me", class = " footer--icon footer--icon-facebook")

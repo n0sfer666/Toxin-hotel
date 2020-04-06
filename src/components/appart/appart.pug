@@ -1,47 +1,47 @@
 include ../../_form-elements/_buttons/rate/rate
 
-mixin appart(options)
+mixin appart({apart = "888", isLux = true, price = "9990", reviews = 145} = {})
   -
     let slides = ["", "", "", ""]
     for( let i = 0; i < slides.length; i++ )
-      slides[i] = `img/apparts/${options.appart}/img-${options.appart}-${(i+1)}.jpg`
+      slides[i] = `img/img-${apart}-${(i+1)}.jpg`
   .appart
     .appart--slider.js-appart--slider
       each val in slides
         div
-          img(src=val, alt=options.appart)
+          img(src=val, alt=apart)
     .appart--text
       .appart--header
         div
           h1
             span № 
-            | #{options.appart}
-            if options.isLux
+            | #{apart}
+            if isLux
               h3  люкс
         span
-          b.js-appart--price #{options.price}₽ 
+          b.js-appart--price #{price}₽ 
           | в сутки
       .appart--hrow
       .appart--rate
         div
-          +rate({rate: options.rate})
+          +rate({rate: rate})
         div
           -
-            let isNullReviews = options.reviews === 0 || options.reviews === undefined
-            let isFrom2to4Reviews = options.reviews > 1 && options.reviews < 5
+            let isNullReviews = reviews === 0
+            let isFrom2to4Reviews = reviews > 1 && reviews < 5
           if(isNullReviews)
             span
               b 0 
               | Отзывов
-          if(options.reviews === 1)
+          if(reviews === 1)
             span
               b 1 
               | Отзыв
           if(isFrom2to4Reviews)
             span
-              b #{options.reviews} 
+              b #{reviews} 
               | Отзыва
-          if(options.reviews >= 5)
+          if(reviews >= 5)
               span
-              b #{options.reviews} 
+              b #{reviews} 
               | Отзывов

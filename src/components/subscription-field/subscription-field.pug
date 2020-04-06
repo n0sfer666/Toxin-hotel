@@ -1,4 +1,4 @@
-mixin subscription-field(options)
+mixin subscription-field({placeholder = "Email"} = {})
   .subscribe--container
-    input(type="Email", class = "text-field", placeholder = options.placeholder)
-    button(type="submit", class = "subscribe--button") arrow_forward
+    input(type="Email", class = "text-field", placeholder = placeholder)
+    button(type="submit", class = "subscribe--button js-subscribe--button") arrow_forward

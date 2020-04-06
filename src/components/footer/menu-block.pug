@@ -1,5 +1,5 @@
-mixin menu-block(options)
+mixin menu-block({title = "change me", links = ["change me"]} = {})
   .footer--block
-    h3 #{options.title}
-    each val in options.links
+    h3 #{title}
+    each val in links
       a(href="change me", class="footer--menu-link") #{val}

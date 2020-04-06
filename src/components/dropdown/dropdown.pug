@@ -1,7 +1,5 @@
-include ../_buttons/button/button
-mixin dropdown (options)
-  -
-    let isGuests = options.isGuests === undefined ? true : options.isGuests
+include ../button/button
+mixin dropdown ({isGuests = true} = {})
   .iqdropdown.js-iqdropdown
     p(class="iqdropdown-selection")
       if isGuests

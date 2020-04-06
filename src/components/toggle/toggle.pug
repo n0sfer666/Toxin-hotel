@@ -1,9 +1,9 @@
-mixin toggle(options)
+mixin toggle({isChacked = false, title = "Получать спецпредложения"} = {})
   label(class="toggle--container")
     div(style="display: flex;")
-      if options.isChecked
+      if isChecked
         input(type="checkbox", class="toggle", checked)
       else
         input(type="checkbox", class="toggle")
       div(class="toggle--switch")
-      span(class="toggle--label") #{options.title}
+      span(class="toggle--label") #{title}

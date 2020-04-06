@@ -2,23 +2,17 @@ include ../../_form-elements/date-dropdown/date-dropdown
 include ../../_form-elements/dropdown/dropdown
 include ../../_form-elements/_buttons/button/button
 
-mixin booking(options)
+mixin booking({apart = "888", isLux = true, price = "9990", discount = "2179", complementary = "0", additional = "0"} = {})
   -
-    let isDiscounted = options.discount === undefined ? false : true
-    let complementary = options.complementary === undefined ? "0" : options.complementary
-
-    let appart = options.appart === undefined ? "номер не введён" : options.appart
-    let price = options.price === undefined ? "цена не введена" : options.price
-    let isLuxed = options.isLux === undefined ? false : options.isLux
-    let additional = options.additional === undefined ? "0" : options.additional
+    let isDiscounted = options.discount == 0 ? false : true
 
   .booking
     .booking--header
       div
         h1 
           span № 
-          | #{appart}
-        if isLuxed
+          | #{apart}
+        if isLux
           h3  люкс
       span
         b.js-booking--price #{price}
