@@ -109,12 +109,12 @@
 .iqdropdown .iqdropdown-item-controls button:hover {
 box-shadow: 0 0 10px $dark-shade-25;
 }
-.iqdropdown .iqdropdown-item-controls button.button-decpxent {
+.iqdropdown .iqdropdown-item-controls button.button-decrement {
   &::after {
     content: '-';
   }
 }
-.iqdropdown .iqdropdown-item-controls button.button-incpxent {
+.iqdropdown .iqdropdown-item-controls button.button-increment {
   cursor: pointer;
   border-color: $dark-shade-50;
   color: $dark-shade-50;

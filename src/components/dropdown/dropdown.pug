@@ -1,6 +1,8 @@
 include ../button/button
-mixin dropdown ({isGuests = true} = {})
-  .iqdropdown.js-iqdropdown
+mixin dropdown ({isGuests = true, jsClass = "undefined"} = {})
+  -
+    let className = `iqdropdown js-${jsClass}-iqdropdown`
+  div(class = className)
     p(class="iqdropdown-selection")
       if isGuests
         .iqdropdown-menu
@@ -13,14 +15,14 @@ mixin dropdown ({isGuests = true} = {})
           div(class="iqdropdown-menu-option", data-id="babies")
             div
               p.iqdropdown-item младенцы
-          +button({size: "small",isGray: true, title: "очистить"})
+          +button({size: "small",isGray: true, jsClass: "clear-dropdown", title: "очистить"})
           +button({size: "small", title: "применить"})
       else
         div(class="iqdropdown-menu", style="height: 119px;")
-          div(class="iqdropdown-menu-option", data-id="bedrooms", data-defaultcount="2")
+          div(class="iqdropdown-menu-option", data-id="bedrooms", data-defaultcount="2", data-mincount="1")
             div
               p(class="iqdropdown-item") спальни
-          div(class="iqdropdown-menu-option", data-id="beds", data-defaultcount="2")
+          div(class="iqdropdown-menu-option", data-id="beds", data-defaultcount="2", data-mincount="1")
             div
               p(class="iqdropdown-item") кровати
           div(class="iqdropdown-menu-option", data-id="bathrooms")
