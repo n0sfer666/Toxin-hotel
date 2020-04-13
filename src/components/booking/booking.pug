@@ -1,65 +1,60 @@
-include ../../_form-elements/date-dropdown/date-dropdown
-include ../../_form-elements/dropdown/dropdown
-include ../../_form-elements/_buttons/button/button
+include ../date-dropdown/date-dropdown
+include ../dropdown/dropdown
+include ../button/button
 
-mixin booking({apart = "888", isLux = true, price = "9990", discount = "2179", complementary = "0", additional = "0"} = {})
+mixin booking({apart = "888", isLux = true, price = "9990", discount = "2179", complementary = 300, additional = "0"} = {})
   -
-    let isDiscounted = options.discount == 0 ? false : true
+    let isDiscounted = discount == 0 ? false : true
 
   .booking
-    .booking--header
+    .booking__header
       div
-        h1 
+        h1.h1 
           span № 
           | #{apart}
         if isLux
-          h3  люкс
+          h3.h3  люкс
       span
-        b.js-booking--price #{price}
+        b.js-booking__price #{price}
         b ₽ 
         | в сутки
-    .booking--arival-departure
-      div
-        h3.label прибытие
-        +date-dropdown({type: "left", jsClass: "booking"})
-      div
-        h3.label отъезд
-        +date-dropdown({type: "right", jsClass: "booking"})
-    .booking--guests
-      h3.label гости
-      +dropdown({})
-    .booking--calculation
-      .booking--calculation-line
+    .booking__arival-departure
+      +date-dropdown({isSingle: false, jsClass: "booking", label: ["прибытие", "отъезд"]})
+    .booking__guests
+      h3.h3.label гости
+      +dropdown({jsClass: "booking"})
+    .booking__calculation
+      .booking__calculation-line
         p
-          span.js-booking--price #{price}
-          soan ₽ X 
-          span.js-booking--daysIn 0 суток
-        span.js-booking--cost 0
+          span.js-booking__price #{price}
+          span ₽ X 
+          span.js-booking__daysIn 0 суток
+        span.js-booking__cost 0
           span ₽
-      .booking--calculation-line
+      .booking__calculation-line
         div
           p Сбор за услуги: 
             if isDiscounted
               span скидка 
-              span.js-booking--discount #{options.discount}
+              span.js-booking__discount #{discount}
               span ₽
-          span.booking--exclamation
+          span.booking__exclamation
             b i
         div
-          span.js-booking--additional #{additional}
+          span.js-booking__additional #{additional}
           span ₽
-      .booking--calculation-line
+      .booking__calculation-line
         div
           p Сбор за дополнительные услуги
-          span.booking--exclamation
+          span.booking__exclamation
             b i
         div
-          span.js-booking--complementary #{complementary}
+          span.js-booking__complementary #{complementary}
           span ₽
-    .booking--total
-      h2 Итого
-      .booking--total-line-dashed
-      h2.js-booking--total 0
-      h2 ₽
-    .booking--submit-button
+    .booking__total
+      h2.h2 Итого
+      .booking__total-line-dashed
+      h2.h2.js-booking__total 0
+      h2.h2 ₽
+    .booking__submit-button
       +button({size: "big", title: "забронировать"})

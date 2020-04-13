@@ -1,13 +1,13 @@
-include ../../_form-elements/text-field/text-field
-include ../../_form-elements/_buttons/button/button
+include ../text-field/text-field
+include ../button/button
 
 mixin sign-in
   .sign-in
-    h1 Войти
-    .sign-in--details
+    h1.h1 Войти
+    .sign-in__details
       +text-field({type: "Email", placeholder: "Email"})
       +text-field({type: "Password", placeholder: "Пароль"})
     +button({size: "big", title: "Войти"})
-    .sign-in--signup
+    .sign-in__signup
       p Нет аккаунта на Toxin?
       +button({size: "medium", theme: "border", title: "Создать"})

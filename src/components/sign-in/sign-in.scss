@@ -8,30 +8,30 @@
   border-radius: 4px;
   box-sizing: border-box;
 
-  & h1 {
+  & .h1 {
     margin-bottom: 20px;
   }
 
-  &--details {
+  &__details {
     margin-bottom: 10px;
 
-    & input {
+    & .text-field {
       margin-bottom: 10px;
     }
   }
 
-  & button {
+  & .button {
     height: 44px;
   }
 
-  &--signup {
+  &__signup {
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     margin-top: 30px;
 
-    & button {
+    & .button {
       width: 99px;
     }
   }

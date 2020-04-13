@@ -1,11 +1,10 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const plugins = [];
 const pages = [
-  'test'
+  'colors-and-types'
 ]
 
 pages.forEach(element => {
@@ -19,10 +18,6 @@ pages.forEach(element => {
 })
 
 plugins.push(
-  // new MiniCssExtractPlugin({
-  //   filename: 'main.css',
-  //   chunkFilename: '[id].css'
-  // }),
   new CopyWebpackPlugin([
     { from: 'src/favicons/', to: 'favicons' },
   ]),

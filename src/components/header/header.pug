@@ -1,28 +1,28 @@
 
-include ../_base/pug/logo
+
 include ./menu-link
-include ../_form-elements/_buttons/button/button
+include ../logo/logo
+include ../button/button
 
 -
-  let links = []
+  let headerLinks = []
 
-  links.push({title: "О нас"})
-  links.push({type: "popup", title: "Услуги"})
-  links.push({title: "Вакансии"})
-  links.push({title: "Новости"})
-  links.push({type: "popup", title: "Соглашения"})
+  headerLinks.push({title: "О нас"})
+  headerLinks.push({type: "popup", title: "Услуги"})
+  headerLinks.push({title: "Вакансии"})
+  headerLinks.push({title: "Новости"})
+  headerLinks.push({type: "popup", title: "Соглашения"})
 
-mixin header({isAuth = false, login = "Cosmin Negoita", loginButton = "Войти", signUpButton = "Зарегистрироваться", links = links } = {})
+mixin header({isAuth = false, login = "Cosmin Negoita", loginButton = "Войти", signUpButton = "Зарегистрироваться", links = headerLinks } = {})
   .header
-    //- .header--logo
     +logo({isFull: true})
-    .header--nav-bar
-      .header--menu
-        each val in options.links
+    .header__nav-bar
+      .header__menu
+        each val in links
           +menu-link(val)
       if isAuth
-        p.header--login #{login}
+        p.header__login #{login}
       else
-        .header--buttons
+        .header__buttons
           +button({size: "medium", theme: "border", title: loginButton})
           +button({size: "medium", theme: "gradient", title: signUpButton})

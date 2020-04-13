@@ -9,44 +9,43 @@
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 4px;
 
-  & h1 {
+  & .h1 {
     margin-bottom: 20px;
   }
 
-  &--block {
-    &:not(:nth-child(6)) {
-      margin-bottom: 20px;
-    }
+  &__block {
 
-    &:nth-child(2) {
-      margin-bottom: 26px;
-    }
-    &:nth-child(4) {
-      margin-bottom: 24px;
-    }
-
-    & input[type=text]:not(:last-child),
-    & input[type=Email],
-    & input[type=Password] {
+    & .text-field {
       margin-bottom: 10px;
     }
 
-    &:nth-child(5) {
-      margin-bottom: 30px;
-      height: 44px;
-    }
-    
-    &:nth-child(6) {
-      & button {
-        width: 99px;
-        height: 44px;	
-      }
+    &-name-sex {
+      margin-bottom: 26px;
     }
 
-    &-flexed {
+    &-birthday {
+      margin-bottom: 20px;
+    }
+
+    &-signin {
+      margin-bottom: 24px;
+    }
+
+    &-registering {
+      height: 44px;
+      margin-bottom: 30px;
+    }
+
+    &-signup {
+
       display: flex;
       justify-content: space-between;
       align-items: center;
+
+      & .button {
+        height: 44px;
+        width: 99px;
+      }
     }
 
   }

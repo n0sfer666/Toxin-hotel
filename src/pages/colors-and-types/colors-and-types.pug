@@ -1,9 +1,9 @@
 mixin cBlock (mod, text, hexColor)
   -
-    var cellClassName = `colors--cell colors--cell-${mod}`
-    var textClassName = "colors--text"
-    var textRegClassName = `${textClassName}-regular`
-  .colors--block
+    var cellClassName = `colors__cell colors__cell_${mod}`
+    var textClassName = "colors__text"
+    var textRegClassName = `${textClassName}_regular`
+  .colors__block
     div(class = cellClassName)
     p(class = textClassName) #{text}
       <br>
@@ -11,31 +11,31 @@ mixin cBlock (mod, text, hexColor)
 
 mixin tBlock (mod, text)
   -
-    var titleClassName = `type--title type--title-${mod}`
-  .type--block
+    var titleClassName = `type__title type__title_${mod}`
+  .type__block
     span(class = titleClassName) #{mod}
     case mod
       when "h1"
-        h1 #{text}
+        h1.h1 #{text}
       when "h2"
-        h2 #{text}
+        h2.h2 #{text}
       when "h3"
-        h3 #{text}
+        h3.h3 #{text}
       when "body"
         p #{text}
       default
         p somthing wrong
 
 //- mixin head(title, css, js)
-include ../../components/_base/pug/head
+include ../../components/head/head
 //- mixin logo
-include ../../components/_base/pug/logo
+include ../../components/logo/logo
 doctype html
 html
-  +head({title: "Colors & Types", page: "colors-and-types"})
+  +head({title: "Colors & Types", isProduction: true})
   body
     .logo
-      +logo({})
+      +logo()
 
     .container
       .colors

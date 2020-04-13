@@ -1,17 +1,17 @@
-include ../../_form-elements/_buttons/rate/rate
+include ../rate/rate
 
-mixin appart({apart = "888", isLux = true, price = "9990", reviews = 145} = {})
+mixin apart({apart = "888", isLux = true, price = "9990", rate = 5, reviews = 145 } = {})
   -
     let slides = ["", "", "", ""]
     for( let i = 0; i < slides.length; i++ )
       slides[i] = `img/img-${apart}-${(i+1)}.jpg`
-  .appart
-    .appart--slider.js-appart--slider
-      each val in slides
+  .apart
+    .apart__slider.js-apart__slider
+      each val, i in slides
         div
-          img(src=val, alt=apart)
-    .appart--text
-      .appart--header
+          img(src=val, alt=`apart-${i+1}`)
+    .apart__text
+      .apart__header
         div
           h1
             span № 
@@ -19,10 +19,10 @@ mixin appart({apart = "888", isLux = true, price = "9990", reviews = 145} = {})
             if isLux
               h3  люкс
         span
-          b.js-appart--price #{price}₽ 
+          b.js-apart__price #{price}₽ 
           | в сутки
-      .appart--hrow
-      .appart--rate
+      .apart__hrow
+      .apart__rate
         div
           +rate({rate: rate})
         div

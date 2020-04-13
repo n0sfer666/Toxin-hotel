@@ -1,0 +1,14 @@
+include ../date-dropdown/date-dropdown
+include ../dropdown/dropdown
+include ../button/button
+
+mixin find-apart()
+  form.find-apart
+    h1.h1 Найдём номера под ваши пожелания
+    .find-apart__arival-departure
+      +date-dropdown({isSingle: false, jsClass: "find-apart", label: ["прибытие", "отъезд"]})
+    .find-apart__guests
+      h3.h3.label гости
+      +dropdown({jsClass: 'find-apart'})
+    .find-apart__submit-button
+      +button({size: "big", title: "подобрать номер"})

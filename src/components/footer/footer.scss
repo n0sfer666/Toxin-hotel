@@ -5,17 +5,17 @@
 
   background-color: #fff;
 
-  &-short {
+  &_short {
     flex-direction: column;
     align-items: center;
 
     padding: 100px 0 110px;
 
-    & svg {
+    & .footer__logo {
       margin-bottom: 17px;
     }
 
-    & p {
+    & .footer__description {
       margin-bottom: 28px;
 
       width: 70%;
@@ -25,7 +25,7 @@
     }
   }
 
-  &-full {
+  &_full {
     justify-content: space-between;
     padding: 102px 9.7223%;
 
@@ -37,7 +37,7 @@
     }
   }
 
-  &--block {
+  &__block {
     display: flex;
     flex-direction: column;
     justify-content: left;
@@ -45,11 +45,11 @@
 
     max-width: 260px;
 
-    & svg {
+    & .footer__logo {
       margin-bottom: 17px;
     }
 
-    & a {
+    & .footer__menu-link {
       line-height: 17px;
       color: $dark-shade-50;
     }
@@ -57,10 +57,10 @@
     &-subscription {
       margin-top: 4px;
 
-      & h3 {
+      & .h3 {
         margin-bottom: 18px;
       }
-      & .subscribe--container {
+      & .subscribe__container {
         margin-top: 23px;
       }
     }
@@ -74,7 +74,7 @@
     }
   }
 
-  &--menu {
+  &__menu {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
@@ -84,7 +84,7 @@
 
     width: 44.2242%;
 
-    & h3 {
+    & .h3 {
       margin-bottom: 22px;
     }
     & a:not(:last-child) {
@@ -103,7 +103,7 @@
     }
   }
 
-  &--copyright {
+  &__copyright {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -118,7 +118,7 @@
 
       padding: 23px 0;
 
-      & a {
+      & .footer__icons {
         margin-bottom: 20px;
       }
       & p {
@@ -127,11 +127,11 @@
     }
   }
 
-  &--icons {
+  &__icons {
     height: 24px;
   }
 
-  &--icon {
+  &__icon {
     display: inline-block;
     cursor: pointer;
 

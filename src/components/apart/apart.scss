@@ -1,4 +1,4 @@
-.appart {
+.apart {
   width: inherit;
 
 
@@ -10,11 +10,11 @@
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
   border-radius: 4px;
 
-  &--text {
+  &__text {
     padding: 13px 17px 12px 20px;
   }
 
-  &--header {
+  &__header {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -41,7 +41,7 @@
     }
   }
 
-  &--hrow {
+  &__hrow {
     margin-top: 6px;
 
     width: 230px;
@@ -50,7 +50,7 @@
     background: rgba(31, 32, 65, 0.1);
   }
 
-  &--rate {
+  &__rate {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;

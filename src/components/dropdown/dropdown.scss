@@ -47,15 +47,15 @@
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
   padding: 0 7px 13px 15px;
   
-  & .button-small {
+  & .button_small {
     display: inline-block;
     width: fit-content;
     margin-top: 20px;
   }
-  & .button-gray {
+  & .button_gray {
     float: left;
   }
-  & .button-purple {
+  & .button_purple {
     float: right;
   }
 }

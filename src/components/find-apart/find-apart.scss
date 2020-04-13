@@ -1,4 +1,4 @@
-.find-appart {
+.find-apart {
   height: fit-content;
 
   padding: 39px 7.895% 29px ;
@@ -9,26 +9,22 @@
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 
-  & h1 {
+  & .h1 {
     margin-bottom: 20px;
   }
 
-  &--arival-departure {
+  &__arival-departure {
     display: flex;
     justify-content: space-between;
 
     margin-bottom: 20px;
-
-    & div {
-      width: 47.22%;
-    }
   }
 
-  &--guests {
+  &__guests {
     margin-bottom: 31px;
   }
 
-  &--submit-button {
+  &__submit-button {
     height: 44px;
   }
 }

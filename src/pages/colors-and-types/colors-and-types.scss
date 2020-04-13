@@ -23,49 +23,49 @@
   display: inline-block;
   width: 270px;
 
-  &--block {
+  &__block {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     margin-bottom: 20px;	
   }
 
-  &--cell {
+  &__cell {
     flex: none;
     width: 70px;
     height: 70px;
     border-radius: 6px;
     margin-right: 40px;
 
-    &-dark-shade-100 {
+    &_dark-shade-100 {
       background-color: $dark-shade-100;
     }
-    &-dark-shade-75 {
+    &_dark-shade-75 {
       background-color: $dark-shade-75;
     }
-    &-dark-shade-50 {
+    &_dark-shade-50 {
       background-color: $dark-shade-50;
     }
-    &-dark-shade-25 {
+    &_dark-shade-25 {
       background-color: $dark-shade-25;
     }
-    &-dark-shade-5 {
+    &_dark-shade-5 {
       background-color: $dark-shade-5;
     }
-    &-purple {
+    &_purple {
       background-color: $purple;
     }
-    &-green {
+    &_green {
       background-color: $green;
     }
   }
 
-  &--text {
+  &__text {
     min-width: 159px;
     font: normal bold 19px/29px Quicksand, sans-serif;
     text-transform: capitalize;
 
-    &-regular {
+    &_regular {
       font-weight: normal;
       text-transform: uppercase;
     }
@@ -76,12 +76,12 @@
   min-width: 300px;
   max-width: 403px;
 
-  &--block {
+  &__block {
     display: flex;
     margin-bottom: 50px;
   }
 
-  &--title {
+  &__title {
     flex: none;
     width: 37px;
     margin-right: 30px;
@@ -91,19 +91,19 @@
     text-transform: capitalize;
     color: $dark-shade-25;
 
-    &-h1 {
+    &_h1 {
       font-size: 24px;
       line-height: 29px;
     }
-    &-h2 {
+    &_h2 {
       font-size: 19px;
       line-height: 23px;
     }
-    &-h3 {
+    &_h3 {
       font-size: 12px;
       line-height: 15px;
     }
-    &-body {
+    &_body {
       font-size: 14px;
       line-height: 24px;
     }
