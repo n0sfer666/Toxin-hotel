@@ -13,7 +13,7 @@ mixin rate({rate = 0} = {})
         id += Math.floor(Math.random() * 1000)
         id += Math.floor(Math.random() * 100)
       if isRated
-        input(type="radio", name=name, id=id, value=value, checked)
+        input(type="radio", class="rate__input", name=name, id=id, value=value, checked)
       else
-        input(type="radio", name=name, id=id, value=value)
-      label(for=id, title=value) #{value} stars
+        input(type="radio", class="rate__input", name=name, id=id, value=value)
+      label(for=id, class="rate__label", title=value) #{value} stars

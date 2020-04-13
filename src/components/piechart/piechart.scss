@@ -11,14 +11,14 @@
     height: 120px;
   }
 
-  &--label {
+  &__label {
     fill: $purple;
     text-anchor: middle;
   }
-  &--text {
+  &__text {
     transform: translateY(15px);
   }
-  &--legend {
+  &__legend {
     display: inline-block;
 
     width: 161px;
@@ -39,16 +39,16 @@
 
       border-radius: 50%;
 
-      &-perfect {
+      &_perfect {
         background-image: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
       }
-      &-good {
+      &_good {
         background-image: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
       }
-      &-satisfact {
+      &_satisfact {
         background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
       }
-      &-disappoint {
+      &_disappoint {
         background-image: linear-gradient(180deg, #919191 0%, #3D4975 100%);
       }
     }

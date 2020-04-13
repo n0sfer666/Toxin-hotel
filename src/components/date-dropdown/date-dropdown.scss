@@ -1,26 +1,13 @@
-.date-dropdown--arrow {
-  position: absolute;
-  right: 0;
-
-  display: inline-block;
-  width: 44px;
-  height: 44px;
-
-  text-align: center;
-
-  & i {
-    font: normal normal 24px/44px materialIcons;
-    vertical-align: middle;
-    color: $dark-shade-50;
+.date-dropdown {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__datepicker {
+    width: 46.875%;
   }
 }
-.js-date-dropdown--apply-button {
-  float: right;
-}
-.js-date-dropdown--clear-button {
-  float: left;
-}
-.js-date-dropdown--clear-button, .js-date-dropdown--apply-button {
+.js-date-dropdown-clear-button, .js-date-dropdown-apply-button {
   display: inline-block;
   width: fit-content;
   margin-top: 20px;

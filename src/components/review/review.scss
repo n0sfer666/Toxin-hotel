@@ -1,8 +1,8 @@
-.review--container {
+.review__container {
   display: flex;
   width: 100%;
 }
-.review--pict {
+.review__pict {
   width: 48px;
   height: 48px;
   box-sizing: border-box;
@@ -17,26 +17,26 @@
       object-fit: cover;
   }
 }
-.review--leftColumn {
+.review__leftColumn {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 48px;
 }
-.review--rightColumn {
+.review__rightColumn {
   width: calc(100% - 48px);
   padding-left: 10px;
 }
-.review--name {
+.review__name {
   font: normal bold 14px/24px Montserrat, sans-serif;
   color: $dark-shade-75;
 }
-.review--daysAgo {
+.review__daysAgo {
   font: normal normal 14px/24px Montserrat, sans-serif;
   color: $dark-shade-75;
 }
-.review--text {
+.review__text {
   display: inline-block;
   margin-top: 10px;
-  @extend .review--daysAgo;
+  @extend .review__daysAgo;
 }

@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const plugins = [];
 const pages = [
@@ -18,19 +19,21 @@ pages.forEach(element => {
 })
 
 plugins.push(
+  // new MiniCssExtractPlugin({
+  //   filename: 'main.css',
+  //   chunkFilename: '[id].css'
+  // }),
   new CopyWebpackPlugin([
     { from: 'src/favicons/', to: 'favicons' },
   ]),
   new Webpack.ProvidePlugin({
     $: 'jquery',
     jQuery: 'jquery',
-  }),
-  new Webpack.ProvidePlugin({
+    'window.jQuery': 'jquery',
+
     noUiSlider: 'nouislider',
-  }),
-  new Webpack.ProvidePlugin({
     wNumb: 'wnumb',
-  }),
+  })
 );
 
 
@@ -65,6 +68,7 @@ module.exports = (env, options) => ({
       {
         test: /\.scss$/,
         use: [
+          // MiniCssExtractPlugin.loader,
           'style-loader',
           'css-loader',
           'postcss-loader',

@@ -132,13 +132,13 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   }
 }
 // custom styles
-.range-slider--container {
+.range-slider__container {
   display: flex;
   justify-content: space-between;
   margin-bottom: 23px;
   width: 100%;
 }
-.range-slider--value {
+.range-slider__values {
   font: normal normal 11px/15px Montserrat, sans-serif;
   text-transform: uppercase;
   color: $dark-shade-50;

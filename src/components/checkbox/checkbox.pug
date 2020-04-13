@@ -1,8 +1,8 @@
 mixin checkbox({isChecked = false, title = "Change me"} = {})
-  div
-    label(class="checkbox--label") #{title}
+  .checkbox__container
+    label(class="checkbox__label") #{title}
       if isChecked
         input(type="checkbox", class = "checkbox", checked)
       else
         input(type="checkbox", class = "checkbox")
-      span(class="checkbox--checkmark")
+      span(class="checkbox__checkmark")

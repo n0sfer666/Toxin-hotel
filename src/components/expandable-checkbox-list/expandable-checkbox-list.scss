@@ -8,7 +8,7 @@
 
   cursor: pointer;
 
-  &--arrow {
+  &__arrow {
     display: inline-block;
     width: 44px;
     text-align: center;
@@ -17,7 +17,12 @@
     color: $dark-shade-50;
   }
 
-  &--container {
+  &__container {
     position: relative;
+
+    & .checkbox__container:not(:last-child) {
+      margin-bottom: 8px;
+    }
   }
+
 }

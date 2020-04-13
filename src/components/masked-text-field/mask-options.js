@@ -1,27 +1,39 @@
 import IMask from 'imask';
 
-const maskOptions = {
-  mask: 'd.m.y',
-  lazy: true, // make placeholder always visible
+class MaskedField {
+  constructor(uniqueName) {
+    this.$maskedElement = $(`.js-${uniqueName}-text-field`).get(0);
+    this.maskedField = IMask(this.$maskedElement, this.getConfig());
+  }
 
-  blocks: {
-    y: {
-      mask: IMask.MaskedRange,
-      from: 1900,
-      to: 2020,
-    },
+  getConfig() {
+    let year = new Date().getFullYear();
+    
+    return {
+      mask: 'd.m.y',
+      lazy: true,
+    
+      blocks: {
+        y: {
+          mask: IMask.MaskedRange,
+          from: 1900,
+          to: year,
+        },
+    
+        m: {
+          mask: IMask.MaskedRange,
+          from: 1,
+          to: 12,
+        },
+    
+        d: {
+          mask: IMask.MaskedRange,
+          from: 1,
+          to: 31,
+        },
+      },
+    }
+  }
+}
 
-    m: {
-      mask: IMask.MaskedRange,
-      from: 1,
-      to: 12,
-    },
-
-    d: {
-      mask: IMask.MaskedRange,
-      from: 1,
-      to: 31,
-    },
-  },
-};
-export { maskOptions, IMask };
+export { MaskedField };

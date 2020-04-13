@@ -1,8 +1,8 @@
 mixin radio({isChecked = true, name = "sex", title = "change me"} = {})
-  label(class="radio--container")
+  label(class="radio__container")
     if isChecked
       input(type="radio",class="radio", name=name, checked)
     else
       input(type="radio",class="radio", name=name)
-    span(class="radio--checkmark")
-    span(class="radio--label") #{title}
+    span(class="radio__checkmark")
+    span(class="radio__label") #{title}

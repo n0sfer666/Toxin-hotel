@@ -3,7 +3,7 @@
 //- good: number (number of 4 stars voices)
 //- satisfact: number (number of 3 stars voices)
 //- disappoint: number (number of 2 stars voices)
-mixin piechart({perfect = 5, good = 4, satisfact = 3, disapoint = 2} = {})
+mixin piechart({perfect = 130, good = 65, satisfact = 65, disappoint = 0 } = {})
   -
     //- c for r = 55px
     let c55 = 345.6
@@ -27,7 +27,6 @@ mixin piechart({perfect = 5, good = 4, satisfact = 3, disapoint = 2} = {})
     let dashFor4 = [0,0,0]
     dashFor4[0] = (c58 * percent4).toFixed(1)
     if(dashFor4[0] != 0)
-        dashFor4[0] -= 2
         dashFor4[1] = (c58 - dashFor4[0]).toFixed(1)
         dashFor4[2] = (dashFor5[2] - dashFor5[0] - 1.5).toFixed(1)
     if(dashFor4[0] == 0)
@@ -47,9 +46,8 @@ mixin piechart({perfect = 5, good = 4, satisfact = 3, disapoint = 2} = {})
         dashFor2[1] = (c58 - dashFor2[0]).toFixed(1) 
         dashFor2[2] = (dashFor3[2] - dashFor3[0] - 1.5).toFixed(1)
     if(dashFor2[0] == 0)
-        //- dashFor2[1] = 0
         dashFor2[2] = dashFor3[2]
-    //- 
+        
     let text
     if(total == 0 || total > 4)
         text = "голосов"
@@ -58,13 +56,13 @@ mixin piechart({perfect = 5, good = 4, satisfact = 3, disapoint = 2} = {})
   .piechart
     svg(width="120", height="120", viewbox="0 0 120 120", fill="none")
       circle(cx="60", cy="60", r="59.5", fill="white")
-      circle(cx="60", cy="60", r="58", stroke="url(#grad-5)", stroke-width="4", Stroke-dasharray=dashFor5[0] + " " + dashFor5[1], stroke-dashoffset=dashFor5[2])
-      circle(cx="60", cy="60", r="58", stroke="url(#grad-4)", stroke-width="4", Stroke-dasharray=dashFor4[0] + " " + dashFor4[1], stroke-dashoffset=dashFor4[2])
-      circle(cx="60", cy="60", r="58", stroke="url(#grad-3)", stroke-width="4", Stroke-dasharray=dashFor3[0] + " " + dashFor3[1], stroke-dashoffset=dashFor3[2])
-      circle(cx="60", cy="60", r="58", stroke="url(#grad-2)", stroke-width="4", Stroke-dasharray=dashFor2[0] + " " + dashFor2[1], stroke-dashoffset=dashFor2[2])
-      g( class="piechart--label")
+      circle(cx="60", cy="60", r="58", stroke="url(#grad-5)", stroke-width="4", Stroke-dasharray=`${dashFor5[0]} ${dashFor5[1]}`, stroke-dashoffset=dashFor5[2])
+      circle(cx="60", cy="60", r="58", stroke="url(#grad-4)", stroke-width="4", Stroke-dasharray=`${dashFor4[0]} ${dashFor4[1]}`, stroke-dashoffset=dashFor4[2])
+      circle(cx="60", cy="60", r="58", stroke="url(#grad-3)", stroke-width="4", Stroke-dasharray=`${dashFor3[0]} ${dashFor3[1]}`, stroke-dashoffset=dashFor3[2])
+      circle(cx="60", cy="60", r="58", stroke="url(#grad-2)", stroke-width="4", Stroke-dasharray=`${dashFor2[0]} ${dashFor2[1]}`, stroke-dashoffset=dashFor2[2])
+      g( class="piechart__label")
         text(x="60", y="60", class="h1") #{total}
-        text(x="60", y="60", class="piechart--text h3") #{text}
+        text(x="60", y="60", class="piechart__text h3") #{text}
       defs
         linearGradient(id="grad-5", x1="60", y1="0", x2="60", y2="120", gradientUnits="userSpaceOnUse")
           stop(stop-color="#FFE39C")
@@ -78,16 +76,16 @@ mixin piechart({perfect = 5, good = 4, satisfact = 3, disapoint = 2} = {})
         linearGradient(id="grad-2", x1="0", y1="-120", x2="0", y2="120", gradientUnits="userSpaceOnUse")
           stop(stop-color="#919191")
           stop(offset="1", stop-color="#3D4975")
-    .piechart--legend
+    .piechart__legend
       div
-        .piechart--legend-circle.piechart--legend-circle-perfect
+        .piechart__legend-circle.piechart__legend-circle_perfect
         p Великолепно
       div
-        .piechart--legend-circle.piechart--legend-circle-good
+        .piechart__legend-circle.piechart__legend-circle_good
         p Хорошо
       div
-        .piechart--legend-circle.piechart--legend-circle-satisfact
+        .piechart__legend-circle.piechart__legend-circle_satisfact
         p Удовлетворительно
       div
-        .piechart--legend-circle.piechart--legend-circle-disappoint
+        .piechart__legend-circle.piechart__legend-circle_disappoint
         p Разочарован

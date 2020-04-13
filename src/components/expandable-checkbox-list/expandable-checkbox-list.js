@@ -1,37 +1,32 @@
-$(document).ready(() => {
-  const $expandList = $('.js-expandable-checkbox-list');
-  const $expandContainer = $('.js-expandable-checkbox-list--container');
-  $('.js-expandable-checkbox-list--arrow-up')
-    .hide();
-  $('.js-expandable-checkbox-list--container')
-    .hide();
+class ExpandableCheckboxList {
+  constructor(uniqueName) {
+    this.$expandList = $(`.js-${uniqueName}-expandable-checkbox-list`);
+    this.$expandContainer = $(`.js-${uniqueName}-expandable-checkbox-list__container`).hide();
+    this.$arrowDown = $(`.js-${uniqueName}-expandable-checkbox-list__arrow-down`);
+    this.$arrowUp = $(`.js-${uniqueName}-expandable-checkbox-list__arrow-up`).hide();
+    this.isExpanded = false;
 
-  const isExpanded = [];
+    this.bindListenner();
+  }
 
-  for (const key in $expandList) {
-    const i = Number(key);
+  bindListenner() {
+    this.$expandList.on('click', () => {
+      this.clickHandler();
+    })
+  }
+  clickHandler() {
+    if(!this.isExpanded) {
+      this.isExpanded = true;
+      this.$expandContainer.show();
+      this.$arrowDown.hide();
+      this.$arrowUp.show();
 
-    if (!Number.isNaN(i)) {
-      isExpanded.push(false);
-
-      $expandList[key].addEventListener('click', () => {
-        const arrowDown = $expandList[key]
-          .querySelector('.js-expandable-checkbox-list--arrow-down');
-        const arrowUp = $expandList[key]
-          .querySelector('.js-expandable-checkbox-list--arrow-up');
-
-        if (!isExpanded[i]) {
-          isExpanded[i] = true;
-          $expandContainer[key].style = 'display: block;';
-          arrowDown.style = 'display: none;';
-          arrowUp.style = 'display: block;';
-        } else {
-          isExpanded[i] = false;
-          $expandContainer[key].style = 'display: none;';
-          arrowDown.style = 'display: block;';
-          arrowUp.style = 'display: none;';
-        }
-      });
+    } else {
+      this.isExpanded = false;
+      this.$expandContainer.hide();
+      this.$arrowDown.show();
+      this.$arrowUp.hide();
     }
   }
-});
+}
+export { ExpandableCheckboxList };

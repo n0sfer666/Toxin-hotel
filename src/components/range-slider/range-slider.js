@@ -1,9 +1,17 @@
-$(document).ready(() => {
-  const $slidersContainer = $('.js-range-slider');
-  const $slidersValues = $('.js-range-slider--value');
+class RangeSlider {
+  constructor(uniqueName) {
+    this.$rangeSlider = $(`.js-${uniqueName}-range-slider`).get(0);
+    this.$rangeSliderValues = $(`.js-${uniqueName}-range-slider__values`).get(0);
 
-  for (let i = 0; i < $slidersContainer.length; i += 1) {
-    noUiSlider.create($slidersContainer[String(i)], {
+    this.getRangeSlider();
+    this.getValuesUpdate();
+  }
+
+  getRangeSlider() {
+    noUiSlider.create(this.$rangeSlider, this.getConfig());
+  }
+  getConfig() {
+    return {
       start: [5000, 10000],
       connect: true,
       range: {
@@ -15,10 +23,13 @@ $(document).ready(() => {
         thousand: ' ',
         suffix: ' ₽',
       }),
-    });
-
-    $slidersContainer[String(i)].noUiSlider.on('update', (values, handle) => {
-      $slidersValues[String(i)].innerText = `${values[0]} - ${values[1]}`;
-    });
+    }
   }
-});
+  getValuesUpdate() {
+    this.$rangeSlider.noUiSlider.on('update', (values) => {
+      this.$rangeSliderValues.innerText = `${values[0]} - ${values[1]}`;
+    })
+  }
+}
+
+export { RangeSlider };

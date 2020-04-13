@@ -4,19 +4,19 @@
   cursor: pointer;
   height: 0;
   width: 0;
-  &:checked ~ .rich-checkbox--checkmark {
+  &:checked ~ .rich-checkbox__checkmark {
     border: 1px solid #BC9CFF;
     content: "";
   }
-  &:checked ~ .rich-checkbox--checkmark:after {
+  &:checked ~ .rich-checkbox__checkmark:after {
     display: block;
   }
-  &--container {
+  &__container {
     display: flex;
     position: relative;
     cursor: pointer;
     
-    & .rich-checkbox--checkmark:after {
+    & .rich-checkbox__checkmark:after {
       left: 5px;
       top: 3px;
       width: 5px;
@@ -30,14 +30,14 @@
       transform: rotate(45deg);
     }
   
-    &:hover .rich-checkbox--checkmark,
-    &:active .rich-checkbox--checkmark,
-    &:focus .rich-checkbox--checkmark {
+    &:hover .rich-checkbox__checkmark,
+    &:active .rich-checkbox__checkmark,
+    &:focus .rich-checkbox__checkmark {
       box-shadow: 0 0 5px $dark-shade-25;
     }
   }
 }
-.rich-checkbox--checkmark {
+.rich-checkbox__checkmark {
   position: absolute;
   top: 2px;
   left: 0;
@@ -53,11 +53,11 @@
     display: none;
   }
 }
-.rich-checkbox--title {
+.rich-checkbox__title {
   font: normal bold 14px/18px Montserrat, sans-serif;
   color: $dark-shade-75;
 }
-.rich-checkbox--description {
+.rich-checkbox__description {
   padding-top: 3px;
   font: normal normal 12px/14px Montserrat, sans-serif;
   color: $dark-shade-50;

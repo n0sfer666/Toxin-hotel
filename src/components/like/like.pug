@@ -1,7 +1,7 @@
 mixin like({isChecked = false, counter = 0} = {})
   if isChecked
-    button(type="button", class="like like-active")
-      span.like--counter.like--counter-active #{counter}
+    button(type="button", class="like like_active")
+      span.like__counter.like__counter-active #{counter}
   else
     button(type="button", class="like")
-      span.like--counter #{counter}
+      span.like__counter #{counter}

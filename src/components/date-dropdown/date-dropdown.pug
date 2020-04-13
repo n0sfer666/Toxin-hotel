@@ -1,13 +1,11 @@
-mixin date-dropdown({type ="filter", jsClass = "test"} = {})
+mixin date-dropdown({isSingle = true, jsClass = "demo"} = {})
   -
-    let className = `text-field date-dropdown-${type} js-${jsClass}-date-dropdown-${type}`
-
-  case type
-    when "left"
-      input(type="text", class = className, placeholder = "ДД.ММ.ГГГГ")
-    when "right"
-      input(type="text", class = className, placeholder = "ДД.ММ.ГГГГ")
-    when "filter"
-      input(type="text", class = className, placeholder = "Выберите даты пребывания")
-    default
-      input(type="text", class = className, placeholder = "Выберите даты пребывания")
+    let className = `text-field js-${jsClass}-date-dropdown-single`
+  if isSingle
+    input(type="text", class = `text-field js-${jsClass}-date-dropdown-single`, placeholder = "Выберите даты пребывания")
+  else
+    .date-dropdown__container
+      .date-dropdown__datepicker
+        input(type="text", class = `text-field js-${jsClass}-date-dropdown-left`, placeholder = "ДД.ММ.ГГГГ")
+      .date-dropdown__datepicker
+        input(type="text", class = `text-field js-${jsClass}-date-dropdown-right`, placeholder = "ДД.ММ.ГГГГ")

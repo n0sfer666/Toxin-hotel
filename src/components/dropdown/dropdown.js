@@ -1,14 +1,5 @@
 import 'item-quantity-dropdown/lib/item-quantity-dropdown.min';
 
-$(document).ready(() => {
-  let dropdownOne = new Dropdown('one');
-  let dropdownSecond = new Dropdown('second');
-  let dropdownThird = new Dropdown('third');
-  let dropdownFours = new Dropdown('fours');
-  let dropdownFives = new Dropdown('fives');
-  let dropdownSixs = new Dropdown('sixs');
-});
-
 class Dropdown {
   constructor(uniqueName) {
     this.containerName = `.js-${uniqueName}-iqdropdown`;;
@@ -127,3 +118,5 @@ class Dropdown {
     return $(this.containerName).iqDropdown(this.config);
   }
 }
+
+export { Dropdown };

@@ -4,17 +4,16 @@ $container-size: $star-size * 5;
   display: inline-block;
   width: $container-size;
   height: $star-size;
-  & label {
+  & .rate__label {
     height: inherit;
   }
 }
-.rate:not(:checked) > input {
+.rate:not(:checked) > .rate__input {
   position:absolute;
-  top:-9999px;
-  clip:rect(0,0,0,0);
+  visibility: hidden;
 }
 
-.rate:not(:checked) > label {
+.rate:not(:checked) > .rate__label {
   float: right;
   width: $star-size;
   overflow: hidden;
@@ -24,30 +23,30 @@ $container-size: $star-size * 5;
 }
 
 
-.rate:not(:checked) > label:before {
+.rate:not(:checked) > .rate__label:before {
   font: normal normal 24px/24px materialIcons;
   content: 'star_border';
 }
 
-.rate > input:checked ~ label {
+.rate > .rate__input:checked ~ .rate__label {
   &:before {
     content: 'star';
   }
 }
 
-.rate:not(:checked) > label:hover,
-.rate:not(:checked) > label:hover ~ label {
+.rate:not(:checked) > .rate__label:hover,
+.rate:not(:checked) > .rate__label:hover ~ .rate__label {
   text-shadow: 0 0 5px $dark-shade-50;
 }
 
-.rate > input:checked + label:hover,
-.rate > input:checked + label:hover ~ label,
-.rate > input:checked ~ label:hover,
-.rate > input:checked ~ label:hover ~ label,
-.rate > label:hover ~ input:checked ~ label {
+.rate > .rate__input:checked + .rate__label:hover,
+.rate > .rate__input:checked + .rate__label:hover ~ .rate__label,
+.rate > .rate__input:checked ~ .rate__label:hover,
+.rate > .rate__input:checked ~ .rate__label:hover ~ .rate__label,
+.rate > .rate__label:hover ~ .rate__input:checked ~ .rate__label {
   text-shadow: 0 0 5px $dark-shade-50;
 }
 
-.rate > label:active {
+.rate > .rate__label:active {
   position:relative;
 }

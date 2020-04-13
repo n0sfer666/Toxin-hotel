@@ -42,18 +42,18 @@ $(document).ready(() => {
   const totalComponent = document
     .querySelector('.js-booking--total');
 
-  const datepickerBookingConfig = getDatepickerConfig(
-    leftBookingtDpClass,
-    rightBookingtDpClass,
-    getDaysIn,
-  );
+  // const datepickerBookingConfig = getDatepickerConfig(
+  //   leftBookingtDpClass,
+  //   rightBookingtDpClass,
+  //   getDaysIn,
+  // );
 
-  const $leftBookingDatepicker = $(`.${leftBookingtDpClass}`)
-    .datepicker(datepickerBookingConfig)
-    .data('datepicker');
-  const $rightBookingDatepicker = $(`.${rightBookingtDpClass}`)
-    .datepicker(datepickerBookingConfig)
-    .data('datepicker');
+  // const $leftBookingDatepicker = $(`.${leftBookingtDpClass}`)
+  //   .datepicker(datepickerBookingConfig)
+  //   .data('datepicker');
+  // const $rightBookingDatepicker = $(`.${rightBookingtDpClass}`)
+  //   .datepicker(datepickerBookingConfig)
+  //   .data('datepicker');
 
 
   function getNumberWithSeparate(string) {

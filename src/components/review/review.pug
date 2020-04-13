@@ -1,15 +1,15 @@
-include ../_buttons/like/like
+include ../like/like
 mixin review({login="user-1", likeCount=0, isLicked=false, name="change me", timeAgo="менее часа назад", review="change me"} = {})
   -
-    let pict = `./img/users-avatars/${login}.png`
-  .review--container
-    .review--leftColumn
-      .review--pict
+    let pict = `img/${login}.png`
+  .review__container
+    .review__leftColumn
+      .review__pict
         img(src=pict, alt=name)
       +like({counter: likeCount, isChecked: isLiked})
-    .review--rightColumn
-      span(class="review--name") #{name}
+    .review__rightColumn
+      span(class="review__name") #{name}
       br
-      span(class="review--daysAgo") #{timeAgo}
+      span(class="review__daysAgo") #{timeAgo}
       br
-      p(class="review--text") #{review}
+      p(class="review__text") #{review}

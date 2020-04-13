@@ -1,8 +1,11 @@
-mixin rich-checkbox({title="title", description="description"} = {})
-  label(class="rich-checkbox--container")
-    input(type="checkbox", class = "rich-checkbox")
-    span(class="rich-checkbox--checkmark")
+mixin rich-checkbox({title="title", description="description", isChecked = false} = {})
+  label(class="rich-checkbox__container")
+    if isChecked
+      input(type="checkbox", class = "rich-checkbox", checked)
+    else
+      input(type="checkbox", class = "rich-checkbox")
+    span(class="rich-checkbox__checkmark")
     div(style="padding-left: 30px;")
-      span(class="rich-checkbox--title") #{title}
+      span(class="rich-checkbox__title") #{title}
       br
-      p(class="rich-checkbox--description") #{description}
+      p(class="rich-checkbox__description") #{description}

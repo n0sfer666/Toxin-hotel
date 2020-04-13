@@ -3,7 +3,7 @@
   align-items: flex-start;
   width: 100%;
 
-  &--icon {
+  &__icon {
     display: inline-block;
     width: 48px;
     font: normal normal 48px/48px materialIcons;
@@ -13,12 +13,12 @@
     -webkit-text-fill-color: transparent;
   }
   
-  &--text {
+  &__text {
     display: inline-block;
     margin-left: 10px;
   }
 
-  &--hrow {
+  &__hrow {
     margin: 15px 0 25px;
     border: .5px solid $dark-shade-5;
   }

@@ -1,15 +1,14 @@
-.checkbox--label {
+.checkbox__label {
   display: inline-block;
   position: relative;
   cursor: pointer;
   font: normal normal 14px/18px Montserrat, sans-serif;
   color: $dark-shade-50;
   padding-left: 30px;
-  margin-bottom: 11px;
 
-  &:hover .checkbox--checkmark,
-  &:active .checkbox--checkmark,
-  &:focus .checkbox--checkmark {
+  &:hover .checkbox__checkmark,
+  &:active .checkbox__checkmark,
+  &:focus .checkbox__checkmark {
     box-shadow: 0 0 5px $dark-shade-25;
   }
 }
@@ -20,7 +19,7 @@
   height: 0;
   width: 0;
 }
-.checkbox--checkmark {
+.checkbox__checkmark {
   position: absolute;
   top: 0;
   left: 0;
@@ -31,19 +30,19 @@
   box-sizing: border-box;
   border-radius: 4px;
 }
-.checkbox:checked ~ .checkbox--checkmark {
+.checkbox:checked ~ .checkbox__checkmark {
   border: 1px solid #BC9CFF;
   content: "";
 }
-.checkbox--checkmark:after {
+.checkbox__checkmark:after {
   content: "";
   position: absolute;
   display: none;
 }
-.checkbox:checked ~ .checkbox--checkmark:after {
+.checkbox:checked ~ .checkbox__checkmark:after {
   display: block;
 }
-.checkbox--label .checkbox--checkmark:after {
+.checkbox__label .checkbox__checkmark:after {
   left: 5px;
   top: 3px;
   width: 5px;
