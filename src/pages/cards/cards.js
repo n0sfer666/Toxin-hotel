@@ -1,3 +1,4 @@
+import { setSlick } from '../../components/apart/apart';
 $(document).ready(() => {
   const $inlineDatePicker = $('.js-inline-datepicker').datepicker({
     language: 'ru',
@@ -15,5 +16,7 @@ $(document).ready(() => {
     },
   }).data('datepicker');
 
-  setSlick();
+  setTimeout(() => {
+    setSlick();
+  }, 500);
 });

@@ -1,12 +1,12 @@
 .room-detail {
 	
-	&--galary {
+	&__galary {
 		display: flex;
 		flex-wrap: wrap;
 
 		width: 100%;
 
-		& img {
+		& .room-detail__img {
 			width: 100%;
 			background-size: cover;
 		}
@@ -32,7 +32,7 @@
 		}
 	}
 
-	&--container {
+	&__container {
 		display: flex;
 
 		margin: 0 auto;
@@ -46,7 +46,7 @@
 		}
 	}
 
-	&--details {
+	&__details {
 		display: flex;
 		flex-wrap: wrap;
 		flex-direction: row;
@@ -57,11 +57,15 @@
 		width: fit-content;
 		max-width: 711px;
 
-		& h2 {
+		& .h2 {
 			margin-bottom: 20px;
 		}
 
-		& > div {
+		& > .room-detail__conditions,
+		& > .room-detail__piechart,
+		& > .room-detail__reviews,
+		& > .room-detail__rules,
+		& > .room-detail__cancel {
 			margin-bottom: 30px;
 		}
 
@@ -70,7 +74,7 @@
 		}
 	}
 
-	&--conditions {
+	&__conditions {
 		margin-right: 80px;
 
 		width: 280px;
@@ -80,7 +84,7 @@
 		}
 	}
 
-	&--reviews {
+	&__reviews {
 
 		& h2 {
 			display: inline-block;
@@ -92,12 +96,12 @@
 			float: right;
 		}
 
-		& .review--container:not(:last-child) {
+		& .review__container:not(:last-child) {
 			margin-bottom: 25px;
 		}
 	}
 
-	&--rules {
+	&__rules {
 		width: 262px;
 
 		& h2 {
@@ -111,7 +115,7 @@
 		}
 	}
 
-	&--cancel {
+	&__cancel {
 		min-width: 310px;
 		max-width: 325px;
 
@@ -124,7 +128,7 @@
 		}
 	}
 
-	&--booking {
+	&__booking {
 		flex-shrink: 0;
 		margin-bottom: 30px;
 		width: 380px;

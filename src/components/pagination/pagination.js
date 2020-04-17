@@ -2,6 +2,8 @@ import 'paginationjs';
 
 class Pagination {
   constructor(uniqueName, dataSource, elementsOnPage, dataOutput, callback) {
+    this.uniqueName = uniqueName;
+
     let demoSource = [];
     for(let i = 0; i < 200; i += 1)
       demoSource.push(i);
@@ -21,9 +23,9 @@ class Pagination {
       this.dataSource, 
       this.elementsOnPage, 
       this.dataOutput, 
-      this.callback)
+      this.callback);
 
-    this.pagination = $(`.js-${uniqueName}-pagination`).pagination(config);
+    this.pagination = $(`.js-${this.uniqueName}-pagination`).pagination(config);
   }
 
   getConfig(dataSource, elementsOnPage, dataOutput, callback) {
@@ -44,7 +46,7 @@ class Pagination {
       callback(data) {
         const html = data;
         if(dataOutput) $(dataOutput).html(html);
-        if (callback) callback();
+        if(callback) callback();
       }
     }
   }

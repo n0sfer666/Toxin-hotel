@@ -1,9 +1,9 @@
 mixin cBlock (mod, text, hexColor)
   -
-    var cellClassName = `colors__cell colors__cell_${mod}`
-    var textClassName = "colors__text"
+    var cellClassName = `colors-and-type__colors-cell colors-and-type__colors-cell_${mod}`
+    var textClassName = "colors-and-type__colors-text"
     var textRegClassName = `${textClassName}_regular`
-  .colors__block
+  .colors-and-type__colors-block
     div(class = cellClassName)
     p(class = textClassName) #{text}
       <br>
@@ -11,8 +11,8 @@ mixin cBlock (mod, text, hexColor)
 
 mixin tBlock (mod, text)
   -
-    var titleClassName = `type__title type__title_${mod}`
-  .type__block
+    var titleClassName = `colors-and-type__type-title colors-and-type__type-title_${mod}`
+  .colors-and-type__type-block
     span(class = titleClassName) #{mod}
     case mod
       when "h1"
@@ -33,12 +33,12 @@ include ../../components/logo/logo
 doctype html
 html
   +head({title: "Colors & Types", isProduction: true})
-  body
+  body.body
     .logo
       +logo()
 
-    .container
-      .colors
+    .colors-and-type__container
+      .colors-and-type__colors
         +cBlock("dark-shade-100", "dark shade 100%", "#1F2041")
         +cBlock("dark-shade-75", "dark shade 75%", "#1F2041")
         +cBlock("dark-shade-50", "dark shade 50%", "#1F2041")
@@ -46,7 +46,7 @@ html
         +cBlock("dark-shade-5", "dark shade 5%", "#1F2041")
         +cBlock("purple", "purple", "#BC9CFF")
         +cBlock("green", "green", "#6FCF97")
-      .type
+      .colors-and-type__type
         +tBlock("h1", "This one is the sub-section or widget title")
         +tBlock("h2", "Next one is the item title inside widgets")
         +tBlock("h3", "This is a label or CTA text")

@@ -15,7 +15,4 @@ const setSlick = function () {
     $priceComponents[i].innerText = strSeparated;
   }
 };
-$(document).ready(function() {
-  setSlick();
-})
 export { setSlick };

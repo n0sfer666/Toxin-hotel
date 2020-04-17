@@ -1,59 +1,45 @@
 //- mixin head(title, css, js)
-include ../../components/_base/pug/head
+include ../../components/head/head
 //- 
 //- mixin logo
-include ../../components/_base/pug/logo
+include ../../components/logo/logo
 
-include ../../components/cards/find-appart/find-appart
-include ../../components/cards/registration/registration
-include ../../components/cards/booking/booking
-include ../../components/cards/sign-in/sign-in
-include ../../components/cards/appart/appart
+include ../../components/find-apart/find-apart
+include ../../components/registration/registration
+include ../../components/booking/booking
+include ../../components/sign-in/sign-in
+include ../../components/apart/apart
 
 doctype html
 html
-  +head({title: "Cards", page: "cards"})
-  body
+  +head({title: "Cards", isProduction: true})
+  body.body.cards
     .logo
-      +logo({})
-    .container
-      section.section
-        .section--block
-          +find-appart
-        .section--block
-          +registration
+      +logo()
+    .cards__container
+      section.cards__section
+        .cards__block
+          +find-apart()
+        .cards__block
+          +registration()
 
-      section.section
-        .section--block
-          -
-            let bookingConfig = {}
-            bookingConfig.appart = "888"
-            bookingConfig.isLux = true
-            bookingConfig.price = "9990"
-            bookingConfig.discount =  "2179"
-            bookingConfig.additional = "0"
-            bookingConfig.complementary = "300"
-          +booking(bookingConfig)
-        .section--block
+      section.cards__section
+        .cards__block
+          +booking()
+        .cards__block
           +sign-in
 
-      section.section-320-px
-        .section--block
+      section.cards__section_320-px
+        .cards__block
           .js-inline-datepicker
-        .section--block.section--block-appart
+        .cards__block.cards__block_apart
+          +apart()
+        .cards__block.cards__block_apart
           -
-            let appartConfig = {}
-            appartConfig.appart = "888"
-            appartConfig.isLux = true
-            appartConfig.price = "9990"
-            appartConfig.rate = "5"
-            appartConfig.reviews = 145
-          +appart(appartConfig)
-        .section--block.section--block-appart
-          -
-            appartConfig.appart = "840"
-            appartConfig.isLux = false
-            appartConfig.price = "9900"
-            appartConfig.rate = "4"
-            appartConfig.reviews = 65
-          +appart(appartConfig)
+            let apartConfig = {}
+            apartConfig.apart = "840"
+            apartConfig.isLux = false
+            apartConfig.price = "9900"
+            apartConfig.rate = 4
+            apartConfig.reviews = 65
+          +apart(apartConfig)

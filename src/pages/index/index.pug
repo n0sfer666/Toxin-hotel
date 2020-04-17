@@ -1,41 +1,41 @@
 //- mixin head(title, css, js)
-include ../../components/_base/pug/head
+include ../../components/head/head
 //- 
 //- mixin logo
-include ../../components/_base/pug/logo
+include ../../components/logo/logo
 doctype html
 html
-  +head({title: "index", page: "index"})
-  body
+  +head({title: "index", isProduction: true})
+  body.body
     .logo
-      +logo({})  
-    .index--container
-      .index--ui-kit
-        .index--item
+      +logo()  
+    .index__container
+      .index__ui-kit
+        .index__item
           a(href="colors-and-types.html")
             h2="Colors & Types"
-        .index--item
+        .index__item
           a(href="form-elements.html")
             h2="Form Elements"
-        .index--item
+        .index__item
           a(href="cards.html")
             h2="Cards"
-        .index--item
+        .index__item
           a(href="headers-and-footers.html")
             h2="Headers & Footers"
-      .index--pages
-        .index--item
+      .index__pages
+        .index__item
           a(href="landing-page.html")
             h2="Landing Page"
-        .index--item
+        .index__item
           a(href="registration.html")
             h2="Registration"
-        .index--item
+        .index__item
           a(href="sign-in.html")
             h2="Sign-in"
-        .index--item
+        .index__item
           a(href="room-detail.html")
             h2="Room details"
-        .index--item
+        .index__item
           a(href="search-room.html")
             h2="Search-room"

@@ -53,5 +53,8 @@
     padding-left: 50px;
     color: $dark-shade-75;
     font: normal normal 14px/19px Montserrat, sans-serif;
+    @media screen  and (min-width: 100px) and (max-width: 250px) {
+      white-space: wrap;
+    }
   }
 }

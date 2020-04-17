@@ -7,21 +7,21 @@
 @include font-face(FontAwesomeBrands, '../fonts/FontAwesome5Brands', normal, normal, eot woff ttf svg);
 
 .body {
-	font: normal normal 14px/24px Montserrat, Arial, sans-serif;
-	color: $dark-shade-75;
+  font: normal normal 14px/24px Montserrat, Arial, sans-serif;
+  color: $dark-shade-75;
 }
 .h1 {
-	font: normal bold 24px/30px Quicksand, Montserrat, Arial, sans-serif;
-	color: $dark-shade-100;
+  font: normal bold 24px/30px Quicksand, Montserrat, Arial, sans-serif;
+  color: $dark-shade-100;
 }
 .h2 {
-	font: normal bold 19px/24px Quicksand, Montserrat, Arial, sans-serif;
-	color: $dark-shade-100;
+  font: normal bold 19px/24px Quicksand, Montserrat, Arial, sans-serif;
+  color: $dark-shade-100;
 }
 .h3 {
-	font: normal bold 12px/15px Montserrat, Arial, sans-serif;
-	text-transform: uppercase;
-	color: $dark-shade-100;
+  font: normal bold 12px/15px Montserrat, Arial, sans-serif;
+  text-transform: uppercase;
+  color: $dark-shade-100;
 }
 .material-icons {
   font-family: MaterialIcons;
@@ -30,5 +30,8 @@
   font-family: FontAwesomeBrands;
 }
 .label {
-	margin-bottom: 5px;
+  margin-bottom: 5px;
+}
+.label_big {
+  margin-bottom: 20px;
 }

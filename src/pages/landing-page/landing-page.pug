@@ -1,15 +1,15 @@
-include ../../components/_base/pug/head
+include ../../components/head/head
 
 include ../../components/header/header
 include ../../components/footer/footer
 
-include ../../components/cards/find-appart/find-appart
+include ../../components/find-apart/find-apart
 
 
 doctype html
 html
-  +head({title: "Landing Page", page: "landing-page"})
-  body
+  +head({title: "Landing Page", isProduction: true})
+  body.body
     header
       -
         let config = {}
@@ -28,10 +28,10 @@ html
       +header(config)
     
     main.landing
-      section.landing--find-appart
-        +find-appart()
-      .landing--description
-        p Лучшие номера для вашей работы, отдыха и просто вдохновения
+      section.landing__find-apart
+        +find-apart()
+      .landing__description
+        p.landing__description-text Лучшие номера для вашей работы, отдыха и просто вдохновения
 
     footer
       -

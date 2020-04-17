@@ -1,41 +1,47 @@
-.index--container {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-.index--ui-kit {
-  margin-bottom: 20px;
-  padding: 10px;
-
-  border: 4px dotted $purple;
-  box-sizing: border-box;
-
-  & .index--item:hover {
-    border-radius: 5px;
-    background-color: $purple;
-    box-shadow: 0 0 10px $purple;
+.index {
+  &__container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
   }
-}
-.index--pages {
-  padding: 10px;
+  &__ui-kit {
+    margin-bottom: 20px;
+    padding: 10px;
 
-  border: 4px dotted $green;
-  box-sizing: border-box;
+    width: 300px;
 
-  & .index--item:hover {
-    border-radius: 5px;
-    background-color: $green;
-    box-shadow: 0 0 10px $green;
+    border: 4px dotted $purple;
+    box-sizing: border-box;
+
+    & .index__item:hover {
+      border-radius: 5px;
+      background-color: $purple;
+      box-shadow: 0 0 10px $purple;
+    }
   }
-}
-.index--item {
-  text-align: center;
+  &__pages {
+    padding: 10px;
 
-  &:not(:last-child) {
-    margin-bottom: 10px;
+    width: 300px;
+
+    border: 4px dotted $green;
+    box-sizing: border-box;
+
+    & .index__item:hover {
+      border-radius: 5px;
+      background-color: $green;
+      box-shadow: 0 0 10px $green;
+    }
   }
+  &__item {
+    text-align: center;
 
-  & a h3 {
-    color: $dark-shade-75;
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+
+    & + .h3 {
+      color: $dark-shade-75;
+    }
   }
 }

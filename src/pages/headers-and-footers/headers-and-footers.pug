@@ -1,18 +1,18 @@
 //- mixin head(title, css, js)
-include ../../components/_base/pug/head
+include ../../components/head/head
 //- 
 //- mixin logo
-include ../../components/_base/pug/logo
+include ../../components/logo/logo
 include ../../components/header/header
 include ../../components/footer/footer
 
 doctype html
 html
-  +head({title: "Headers & Footers", page: "headers-and-footers"})
-  body
+  +head({title: "Headers & Footers", isProduction: true})
+  body.header-footer.body
     .logo
-      +logo({})
-    header
+      +logo()
+    header.header-footer__header
       -
         let headerConfig = {}
         let links = []
@@ -26,14 +26,14 @@ html
 
       +header(headerConfig)
 
-    header
+    header.header-footer__header
       -
         headerConfig.isAuth = true
         headerConfig.login = "Cosmin Negoita"
 
       +header(headerConfig)
 
-    footer
+    footer.header-footer__footer
       -
         let footerConfig = {}
         footerConfig.description = "Lopx ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis."
@@ -69,7 +69,7 @@ html
 
       +footer(footerConfig)
 
-    footer
+    footer.header-footer__footer
       -
         footerConfig = {}
         footerConfig.isShort = true

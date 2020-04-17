@@ -15,7 +15,8 @@ include ../button/button
 
 mixin header({isAuth = false, login = "Cosmin Negoita", loginButton = "Войти", signUpButton = "Зарегистрироваться", links = headerLinks } = {})
   .header
-    +logo({isFull: true})
+    .header__logo
+      +logo({isFull: true})
     .header__nav-bar
       .header__menu
         each val in links

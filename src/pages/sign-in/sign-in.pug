@@ -1,70 +1,21 @@
-include ../../components/_base/pug/head
+include ../../components/head/head
 
 include ../../components/header/header
 include ../../components/footer/footer
 
-include ../../components/cards/sign-in/sign-in
+include ../../components/sign-in/sign-in
 
 
 doctype html
 html
-  +head({title: "Sign-in", page: "sign-in"})
-  body
+  +head({title: "Sign-in", isProduction: true})
+  body.body
     header
-      -
-        let config = {}
-        let links = []
-
-        links.push({title: "О нас"})
-        links.push({type: "popup", title: "Услуги"})
-        links.push({title: "Вакансии"})
-        links.push({title: "Новости"})
-        links.push({type: "popup", title: "Соглашения"})
-
-        config.links = links
-        config.loginTitle = "Войти"
-        config.signupTitle = "Зарегистрироваться"
-
-      +header(config)
+      +header()
       
-    main
-      section.container
-        +sign-in
+    main.sign-in-page
+      section.sign-in-page__container
+        +sign-in()
 
     footer
-      -
-        config = {}
-        links = []
-
-        config.description = "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"
-        
-        config.navigation = {title: "навигация"}
-        links = []
-        links.push("О нас")
-        links.push("Новости")
-        links.push("Служба поддержки")
-        links.push("Услуги")
-        config.navigation.links = links
-
-        config.aboutUs = {title: "о нас"}
-        links = []
-        links.push("О сервисе")
-        links.push("Наша команда")
-        links.push("Вакансии")
-        links.push("Инвесторы")
-        config.aboutUs.links = links
-
-        config.support = {title: "служба поддержки"}
-        links = []
-        links.push("Соглашения")
-        links.push("Сообщества")
-        links.push("Связь с нами")
-        config.support.links = links
-
-        config.subscription = {title: "Подписка"}
-        config.subscription.description = "Получайте специальные предложения и новости сервиса"
-        config.subscription.placeholder = "Email"
-
-        config.copyright = "отель. Все права зачищены."
-      
-      +footer(config)
+      +footer()

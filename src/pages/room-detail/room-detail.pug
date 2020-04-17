@@ -1,49 +1,35 @@
-include ../../components/_base/pug/head
+include ../../components/head/head
 
 include ../../components/header/header
 include ../../components/footer/footer
 
-include ../../components/cards/booking/booking
+include ../../components/booking/booking
 
-include ../../components/_form-elements/condition/condition
-include ../../components/_form-elements/review/review
-include ../../components/_form-elements/bullet-list/bullet-list
+include ../../components/condition/condition
+include ../../components/review/review
+include ../../components/bullet-list/bullet-list
 include ../../components/piechart/piechart
 
 
 
 doctype html
 html
-  +head({title: "Room-detail", page: "room-detail"})
-  body
+  +head({title: "Room-detail", isProduction: true})
+  body.body
     header
-      -
-        let config = {}
-        let links = []
-
-        links.push({title: "О нас"})
-        links.push({type: "popup", title: "Услуги"})
-        links.push({title: "Вакансии"})
-        links.push({title: "Новости"})
-        links.push({type: "popup", title: "Соглашения"})
-
-        config.links = links
-        config.loginTitle = "Войти"
-        config.signupTitle = "Зарегистрироваться"
-
-      +header(config)
+      +header()
       
     main.room-detail
-      section.room-detail--galary
-        .room-detail--galary-main
-          img(src="./img/apparts/888/details/888-1.jpg")
-        .room-detail--galary-addition
-          img(src="./img/apparts/888/details/888-2.jpg")
-          img(src="./img/apparts/888/details/888-3.jpg")
-      section.room-detail--container
-        .room-detail--details
-          .room-detail--conditions
-            h2 Сведения о номере
+      section.room-detail__galary
+        .room-detail__galary-main
+          img(class="room-detail__img", src="./img/888-1.jpg")
+        .room-detail__galary-addition
+          img(class="room-detail__img", src="./img/888-2.jpg")
+          img(class="room-detail__img", src="./img/888-3.jpg")
+      section.room-detail__container
+        .room-detail__details
+          .room-detail__conditions
+            h2.h2 Сведения о номере
             -
               config = {}
               config.icon = "insert_emoticon"
@@ -63,18 +49,19 @@ html
               config.icon = "whatshot"
               config.title = "Уют"
               config.description = "Номер оснащён камином"
+              config.isRowed = false
             +condition(config)
 
-          .room-detail--piechart
-            h2 Впечатления от номера
+          .room-detail__piechart
+            h2.h2 Впечатления от номера
             -
               config = {}
               config.perfect = 130
               config.good = 65
               config.satisfact = 65
             +piechart(config)
-          .room-detail--reviews
-            h2 Отзывы посетителей номера
+          .room-detail__reviews
+            h2.h2 Отзывы посетителей номера
             p 2 отзыва
             -
               config = {}
@@ -93,19 +80,19 @@ html
               config.timeAgo = "Неделю назад"
               config.review = "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент"
             +review(config)
-          .room-detail--rules
-            h2 Правила
+          .room-detail__rules
+            h2.h2 Правила
             -
               let bullets = []
               bullets.push("Нельзя с питомцами")
               bullets.push("Без вечеринок и мероприятий")
               bullets.push("Время прибытия — после 13:00, а выезд до 12:00")
-            +bullet-list(bullets)
-          .room-detail--cancel
-            h2 Отмена
+            +bullet-list({titles: bullets})
+          .room-detail__cancel
+            h2.h2 Отмена
             p Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
 
-        .room-detail--booking
+        .room-detail__booking
           -
             config = {}
             config.appart = "888"
@@ -116,39 +103,4 @@ html
           +booking(config)
 
     footer
-      -
-        config = {}
-        links = []
-
-        config.description = "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"
-        
-        config.navigation = {title: "навигация"}
-        links = []
-        links.push("О нас")
-        links.push("Новости")
-        links.push("Служба поддержки")
-        links.push("Услуги")
-        config.navigation.links = links
-
-        config.aboutUs = {title: "о нас"}
-        links = []
-        links.push("О сервисе")
-        links.push("Наша команда")
-        links.push("Вакансии")
-        links.push("Инвесторы")
-        config.aboutUs.links = links
-
-        config.support = {title: "служба поддержки"}
-        links = []
-        links.push("Соглашения")
-        links.push("Сообщества")
-        links.push("Связь с нами")
-        config.support.links = links
-
-        config.subscription = {title: "Подписка"}
-        config.subscription.description = "Получайте специальные предложения и новости сервиса"
-        config.subscription.placeholder = "Email"
-
-        config.copyright = "отель. Все права зачищены."
-
-      +footer(config)
+      +footer()

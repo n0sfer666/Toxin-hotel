@@ -4,7 +4,16 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const plugins = [];
 const pages = [
-  'colors-and-types'
+  'index',
+  'colors-and-types',
+  'form-elements',
+  'cards',
+  'headers-and-footers',
+  'landing-page',
+  'registration',
+  'sign-in',
+  'search-room',
+  'room-detail'
 ]
 
 pages.forEach(element => {

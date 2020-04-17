@@ -25,6 +25,12 @@
     justify-content: unset;
     flex-direction: column;
   }
+
+  &__logo {
+    @media screen and (min-width: $old-phones) and (max-width: $pads) {
+      margin-bottom: 10px;
+    }
+  }
   
   &__nav-bar {
       display: flex;
