@@ -10,12 +10,12 @@ doctype html
 html
   +head({title: "Sign-in", isProduction: true})
   body.body
-    header
+    header.sign-in-page__header
       +header()
       
     main.sign-in-page
       section.sign-in-page__container
         +sign-in()
 
-    footer
+    footer.sign-in-page__footer
       +footer()

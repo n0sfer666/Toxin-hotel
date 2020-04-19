@@ -16,7 +16,7 @@ doctype html
 html
   +head({title: "Room-detail", isProduction: true})
   body.body
-    header
+    header.room-detail__header
       +header()
       
     main.room-detail
@@ -102,5 +102,5 @@ html
             config.complementary = "300"
           +booking(config)
 
-    footer
+    footer.room-detail__footer
       +footer()
