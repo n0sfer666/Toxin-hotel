@@ -7,24 +7,24 @@ mixin dropdown({isGuests = true, jsClass = "demo" } = {})
       if isGuests
         .iqdropdown-menu
           div(class="iqdropdown-menu-option", data-id="adults")
-            div
+            .dropdown__adults
               p.iqdropdown-item взрослые
           div(class="iqdropdown-menu-option", data-id="children")
-            div
+            .dropdown__children
               p.iqdropdown-item дети
           div(class="iqdropdown-menu-option", data-id="babies")
-            div
+            .dropdown__babies
               p.iqdropdown-item младенцы
           +button({size: "small",isGray: true, jsClass: "clear-dropdown", title: "очистить"})
           +button({size: "small", title: "применить"})
       else
         div(class="iqdropdown-menu", style="height: 119px;")
           div(class="iqdropdown-menu-option", data-id="bedrooms", data-defaultcount="2", data-mincount="1")
-            div
+            .dropdown__bedrooms
               p(class="iqdropdown-item") спальни
           div(class="iqdropdown-menu-option", data-id="beds", data-defaultcount="2", data-mincount="1")
-            div
+            .dropdown__beds
               p(class="iqdropdown-item") кровати
           div(class="iqdropdown-menu-option", data-id="bathrooms")
-            div
+            .dropdown__bathrooms
               p(class="iqdropdown-item") ванные комнаты

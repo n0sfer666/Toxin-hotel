@@ -1,7 +1,7 @@
-mixin text-field({type = "text", jsClass = "test", placeholder = "Email"} = {})
+mixin text-field({type = "text", jsClass = "undefined", placeholder = "Email"} = {})
   -
     let className
-    if(jsClass === "test")
+    if(jsClass === "undefined")
       className = 'text-field'
     else
       className = `text-field js-${jsClass}-text-field`

@@ -77,15 +77,15 @@ mixin piechart({perfect = 130, good = 65, satisfact = 65, disappoint = 0 } = {})
           stop(stop-color="#919191")
           stop(offset="1", stop-color="#3D4975")
     .piechart__legend
-      div
+      .piechart__legend-line
         .piechart__legend-circle.piechart__legend-circle_perfect
         p Великолепно
-      div
+      .piechart__legend-line
         .piechart__legend-circle.piechart__legend-circle_good
         p Хорошо
-      div
+      .piechart__legend-line
         .piechart__legend-circle.piechart__legend-circle_satisfact
         p Удовлетворительно
-      div
+      .piechart__legend-line
         .piechart__legend-circle.piechart__legend-circle_disappoint
         p Разочарован

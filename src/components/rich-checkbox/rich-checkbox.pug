@@ -5,7 +5,7 @@ mixin rich-checkbox({title="title", description="description", isChecked = false
     else
       input(type="checkbox", class = "rich-checkbox")
     span(class="rich-checkbox__checkmark")
-    div(style="padding-left: 30px;")
+    .rich-checkbox__wrapper
       span(class="rich-checkbox__title") #{title}
       br
       p(class="rich-checkbox__description") #{description}

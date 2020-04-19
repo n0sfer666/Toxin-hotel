@@ -59,7 +59,7 @@ mixin footer({isShort = false, description = footerDescription, navigation = foo
         p #{subscription.description}
         +subscription-field()
     .footer__copyright
-      p Copyright © 2018 Toxin #{copyright}
+      p.footer__copyright-text Copyright © 2018 Toxin #{copyright}
       .footer__icons
         a(href = "change me", class = " footer__icon footer__icon-tweeter")
         a(href = "change me", class = " footer__icon footer__icon-facebook")

@@ -19,24 +19,24 @@
     justify-content: space-between;
     align-items: flex-end;
 
-    & div {
-      & h1 {
+    & .apart__header-title {
+      & .h1 {
         display: inline-block;
         font-size: 18px;
         line-height: 24px;
 
-        & span {
+        & .apart__header-number {
           font-size: 14px;
         }
       }
 
-      & h3 {
+      & .h3 {
         display: inline;
         color: $purple;
       }
     }
 
-    & span {
+    & .apart-price {
       margin-bottom: 1px;
     }
   }

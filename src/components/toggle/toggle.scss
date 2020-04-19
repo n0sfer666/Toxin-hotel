@@ -24,6 +24,9 @@
       box-shadow: 0 0 5px $dark-shade-50;
     }
   }
+  &__flex-block {
+    display: flex;
+  }
   &__switch {
     position: absolute;
     top: 0;

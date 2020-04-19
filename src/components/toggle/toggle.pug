@@ -1,6 +1,6 @@
 mixin toggle({isChecked = false, title = "Получать спецпредложения"} = {})
   label.toggle__container
-    div(style="display: flex;")
+    .toggle__flex-block
       if isChecked
         input(type="checkbox", class="toggle", checked)
       else

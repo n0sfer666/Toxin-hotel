@@ -36,9 +36,9 @@
       box-shadow: 0 0 5px $dark-shade-25;
     }
   }
-}
-.rich-checkbox__checkmark {
-  position: absolute;
+
+  &__checkmark {
+    position: absolute;
   top: 2px;
   left: 0;
   height: 20px;
@@ -47,18 +47,26 @@
   border: 1px solid $dark-shade-25;
   box-sizing: border-box;
   border-radius: 4px;
+
   &:after {
     content: "";
     position: absolute;
     display: none;
+    }
   }
-}
-.rich-checkbox__title {
-  font: normal bold 14px/18px Montserrat, sans-serif;
-  color: $dark-shade-75;
-}
-.rich-checkbox__description {
-  padding-top: 3px;
-  font: normal normal 12px/14px Montserrat, sans-serif;
-  color: $dark-shade-50;
+
+  &__wrapper {
+    padding-left: 30px;
+  }
+
+  &__title {
+    font: normal bold 14px/18px Montserrat, sans-serif;
+    color: $dark-shade-75;
+  }
+
+  &__description {
+    padding-top: 3px;
+    font: normal normal 12px/14px Montserrat, sans-serif;
+    color: $dark-shade-50;
+  }
 }

@@ -5,7 +5,7 @@ mixin review({login="user-1", likeCount=0, isLicked=false, name="change me", tim
   .review__container
     .review__leftColumn
       .review__pict
-        img(src=pict, alt=name)
+        img(class = "review__img", src=pict, alt=name)
       +like({counter: likeCount, isChecked: isLiked})
     .review__rightColumn
       span(class="review__name") #{name}

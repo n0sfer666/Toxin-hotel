@@ -16,12 +16,12 @@
 
     margin-bottom: 20px;
 
-    & div {
+    & .booking__header-apart {
 
       & .h1 {
         display: inline-block;
 
-        & span{
+        & .booking__header-number{
           font-size: 14px;
           line-height: 17px;
           color: $dark-shade-75;
@@ -35,7 +35,7 @@
       }
     }
 
-    & span {
+    & .booking__header-price {
       color: $dark-shade-50;
     }
   }
@@ -77,7 +77,7 @@
       justify-content: space-between;
       
 
-      & div:first-child {
+      & .booking__calculation-text {
         display: flex;
         justify-content: space-between;
         align-items: baseline;

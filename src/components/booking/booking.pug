@@ -8,13 +8,13 @@ mixin booking({apart = "888", isLux = true, price = "9990", discount = "2179", c
 
   .booking
     .booking__header
-      div
+      .booking__header-apart
         h1.h1 
-          span № 
+          span.booking__header-number № 
           | #{apart}
         if isLux
           h3.h3  люкс
-      span
+      span.booking__header-price
         b.js-booking__price #{price}
         b ₽ 
         | в сутки
@@ -32,7 +32,7 @@ mixin booking({apart = "888", isLux = true, price = "9990", discount = "2179", c
         span.js-booking__cost 0
           span ₽
       .booking__calculation-line
-        div
+        .booking__calculation-text
           p Сбор за услуги: 
             if isDiscounted
               span скидка 
@@ -40,15 +40,15 @@ mixin booking({apart = "888", isLux = true, price = "9990", discount = "2179", c
               span ₽
           span.booking__exclamation
             b i
-        div
+        .booking__calculation-aditional
           span.js-booking__additional #{additional}
           span ₽
       .booking__calculation-line
-        div
+        .booking__calculation-text
           p Сбор за дополнительные услуги
           span.booking__exclamation
             b i
-        div
+        .booking__calculation-complementary
           span.js-booking__complementary #{complementary}
           span ₽
     .booking__total

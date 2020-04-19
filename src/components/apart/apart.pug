@@ -2,30 +2,30 @@ include ../rate/rate
 
 mixin apart({apart = "888", isLux = true, price = "9990", rate = 5, reviews = 145 } = {})
   -
-    let slides = ["", "", "", ""]
-    for( let i = 0; i < slides.length; i++ )
-      slides[i] = `img/img-${apart}-${(i+1)}.jpg`
+    let slides = ["", "", "", ""].map( (elem, i) => {
+      return `img/img-${apart}-${(i+1)}.jpg`
+    })
   .apart
     .apart__slider.js-apart__slider
       each val, i in slides
-        div
+        .apart__slider-image
           img(src=val, alt=`apart-${i+1}`)
     .apart__text
       .apart__header
-        div
-          h1
-            span № 
+        .apart__header-title
+          h1.h1
+            span.apart__header-number № 
             | #{apart}
             if isLux
-              h3  люкс
-        span
+              h3.h3  люкс
+        span.apart-price
           b.js-apart__price #{price}₽ 
           | в сутки
       .apart__hrow
       .apart__rate
-        div
+        .apart__rate-stars
           +rate({rate: rate})
-        div
+        .apart__rate-text
           -
             let isNullReviews = reviews === 0
             let isFrom2to4Reviews = reviews > 1 && reviews < 5
@@ -42,6 +42,6 @@ mixin apart({apart = "888", isLux = true, price = "9990", rate = 5, reviews = 14
               b #{reviews} 
               | Отзыва
           if(reviews >= 5)
-              span
-              b #{reviews} 
-              | Отзывов
+            span
+            b #{reviews} 
+            | Отзывов
