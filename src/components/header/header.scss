@@ -138,10 +138,6 @@
     display: flex;
     flex-wrap: nowrap;
 
-    & .button {
-      height: 34px;
-    }
-
     @media screen and (min-width: $new-phones) {
       & .button:first-child {
         margin-right: 20px;
@@ -154,6 +150,20 @@
       & .button:first-child {
         margin-bottom: 20px;
       }
+    }
+  }
+
+  &__button-signin {
+    & .button {
+      width: 87px;
+      height: 34px;
+    }
+  }
+
+  &__button-signup {
+    & .button {
+      width: 196px;
+      height: 34px;
     }
   }
 

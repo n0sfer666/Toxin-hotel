@@ -1,5 +1,3 @@
-
-
 include ./menu-link
 include ../logo/logo
 include ../button/button
@@ -25,5 +23,7 @@ mixin header({isAuth = false, login = "Cosmin Negoita", loginButton = "Войт�
         p.header__login #{login}
       else
         .header__buttons
-          +button({size: "medium", theme: "border", title: loginButton})
-          +button({size: "medium", theme: "gradient", title: signUpButton})
+          form(class="header__button-signin", action="sign-in.html")
+            +button({theme: "border", title: loginButton, type: "submit"})
+          form(class="header__button-signup", action="registration.html")
+            +button({theme: "gradient", title: signUpButton, type: "submit"})

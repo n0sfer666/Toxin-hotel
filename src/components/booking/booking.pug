@@ -6,7 +6,7 @@ mixin booking({apart = "888", isLux = true, price = "9990", discount = "2179", c
   -
     let isDiscounted = discount == 0 ? false : true
 
-  .booking
+  form(class="booking", action="room-detail.html")
     .booking__header
       .booking__header-apart
         h1.h1 
@@ -57,4 +57,4 @@ mixin booking({apart = "888", isLux = true, price = "9990", discount = "2179", c
       h2.h2.js-booking__total 0
       h2.h2 ₽
     .booking__submit-button
-      +button({size: "big", title: "забронировать"})
+      +button({theme: "action", title: "забронировать", type: "submit"})

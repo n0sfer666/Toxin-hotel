@@ -3,6 +3,7 @@ import { DateDropdown } from '../../components/date-dropdown/date-dropdown';
 import { MaskedField } from '../../components/masked-text-field/masked-text-field';
 import { Pagination } from '../../components/pagination/pagination';
 import { ExpandableCheckboxList } from '../../components/expandable-checkbox-list/expandable-checkbox-list';
+import { RangeSlider } from '../../components/range-slider/range-slider';
 
 $(document).ready(() => {
   let dropdownGuests = new Dropdown('form-elements-guests');
@@ -12,4 +13,5 @@ $(document).ready(() => {
   let maskedField = new MaskedField('masked');
   let expandList = new ExpandableCheckboxList('form-elements');
   let pagination = new Pagination('form-elements');
+  let rangeSlider = new RangeSlider('form-elements');
 });

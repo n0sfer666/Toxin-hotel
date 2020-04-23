@@ -1,19 +1,13 @@
 mixin cBlock (mod, text, hexColor)
-  -
-    var cellClassName = `colors-and-type__colors-cell colors-and-type__colors-cell_${mod}`
-    var textClassName = "colors-and-type__colors-text"
-    var textRegClassName = `${textClassName}_regular`
   .colors-and-type__colors-block
-    div(class = cellClassName)
-    p(class = textClassName) #{text}
+    div(class = `colors-and-type__colors-cell colors-and-type__colors-cell_${mod}`)
+    p(class = "colors-and-type__colors-text") #{text}
       <br>
-      span(class = textRegClassName) #{hexColor}
+      span(class = `colors-and-type__colors-text_regular`) #{hexColor}
 
 mixin tBlock (mod, text)
-  -
-    var titleClassName = `colors-and-type__type-title colors-and-type__type-title_${mod}`
   .colors-and-type__type-block
-    span(class = titleClassName) #{mod}
+    span(class = `colors-and-type__type-title colors-and-type__type-title_${mod}`) #{mod}
     case mod
       when "h1"
         h1.h1 #{text}

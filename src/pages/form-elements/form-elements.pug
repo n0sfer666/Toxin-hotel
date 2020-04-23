@@ -89,21 +89,21 @@ html
           h3.h3.label buttons
           div(style="margin: 11px 0 30px 0;")
             .form-elements__button-container_medium
-              +button({size: "medium", theme: "gradient", title: "click me"})
+              +button({theme: "gradient"})
             .form-elements__button-container_medium
-              +button({size: "medium", theme: "gradient", isOpacity: true, title: "click me"})
+              +button({theme: "gradient-transparent"})
           div(style="margin-bottom: 30px;")
             .form-elements__button-container_medium
-              +button({size: "medium", theme: "border", title: "click me"})
+              +button({theme: "border"})
             .form-elements__button-container_medium
-              +button({size: "medium", theme: "border", isOpacity: true, title: "click me"})
+              +button({theme: "border-transparent"})
           .form-elements__button-container_small
-            +button({size: "small", isGray: true, title: "click me"})
+            +button({theme: "text-gray"})
           .form-elements__button-container_small
-            +button({size: "small", title: "click me"})
+            +button({theme: "text-purple"})
         .form-elements__block_320-px
           .form-elements__button-container_big
-            +button({size: "big", title: "Перейти к оплате"})
+            +button({theme: "action", title: "Перейти к оплате"})
         .form-elements__block_320-px
           h3.h3.label_big pagination
           .js-form-elements-pagination

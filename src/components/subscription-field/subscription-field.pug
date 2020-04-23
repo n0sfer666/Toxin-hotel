@@ -1,7 +1,7 @@
 mixin subscription-field({placeholder = "Email", jsClass = "undefined"} = {})
-  -
-    let className = jsClass === "undefined" ? "subscribe__button" : `subscribe__button js-subscribe-${jsCLass}`
   .subscribe__container
-    form(action="", method="post")
-      input(type="Email", class = "text-field", placeholder = placeholder)
-      button(type="submit", class = className) arrow_forward
+    input(type="Email", class = "text-field", placeholder = placeholder)
+    if (jsClass === "undefined")
+      button(type="submit", class = `subscribe__button`) arrow_forward
+    else
+      button(type="submit", class = `subscribe__button js-subscribe-${jsCLass}`) arrow_forward

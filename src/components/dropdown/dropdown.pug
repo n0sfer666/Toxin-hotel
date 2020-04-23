@@ -1,8 +1,6 @@
 include ../button/button
 mixin dropdown({isGuests = true, jsClass = "demo" } = {})
-  -
-    let className = `iqdropdown js-${jsClass}-iqdropdown`
-  div(class = className)
+  div(class = `iqdropdown js-${jsClass}-iqdropdown`)
     p(class="iqdropdown-selection")
       if isGuests
         .iqdropdown-menu
@@ -15,8 +13,8 @@ mixin dropdown({isGuests = true, jsClass = "demo" } = {})
           div(class="iqdropdown-menu-option", data-id="babies")
             .dropdown__babies
               p.iqdropdown-item младенцы
-          +button({size: "small",isGray: true, jsClass: "clear-dropdown", title: "очистить"})
-          +button({size: "small", title: "применить"})
+          +button({theme: "text-gray", title: "очистить", jsClass: "clear-dropdown"})
+          +button({theme: "text-purple", title: "применить"})
       else
         div(class="iqdropdown-menu", style="height: 119px;")
           div(class="iqdropdown-menu-option", data-id="bedrooms", data-defaultcount="2", data-mincount="1")

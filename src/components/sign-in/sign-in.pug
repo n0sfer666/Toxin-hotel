@@ -1,13 +1,15 @@
 include ../text-field/text-field
 include ../button/button
 
-mixin sign-in
+mixin sign-in({action = "change me"}={})
   .sign-in
-    h1.h1 Войти
-    .sign-in__details
-      +text-field({type: "Email", placeholder: "Email"})
-      +text-field({type: "Password", placeholder: "Пароль"})
-    +button({size: "big", title: "Войти"})
-    .sign-in__signup
-      p Нет аккаунта на Toxin?
-      +button({size: "medium", theme: "border", title: "Создать"})
+    form(class="sign-in__main-form", action=action)
+      h1.h1 Войти
+      .sign-in__details
+        +text-field({type: "Email", placeholder: "Email"})
+        +text-field({type: "Password", placeholder: "Пароль"})
+      +button({theme: "action", title: "Войти", type: "submit"})
+    form(class="sign-in__signup-form", action="registration.html")
+      .sign-in__signup
+        p Нет аккаунта на Toxin?
+        +button({theme: "border", title: "Создать", type: "submit"})

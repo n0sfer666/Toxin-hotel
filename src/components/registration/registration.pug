@@ -3,25 +3,27 @@ include ../radio/radio
 include ../toggle/toggle
 include ../button/button
 
-mixin registration()
-  form.registration
-    h1.h1 Регистрация аккаунта
-    .registration__block.registration__block-name-sex
-      +text-field({placeholder: "Имя"})
-      +text-field({placeholder: "Фамилия"})
-      div(style = "display: flex;")
-        +radio({title: "Мужчина", isChecked: true})
-        +radio({title: "Женщина", isChecked: false})
-    .registration__block.registration__block-birthday
-      h3.h3.label День рождения
-      +text-field({placeholder: "ДД.ММ.ГГГГ", jsClass: "birthday"})
-    .registration__block.registration__block-signin
-      h3.h3.label данные для входа в сервис
-      +text-field({placeholder: "Email", type: "Email"})
-      +text-field({placeholder: "Пароль", type: "Password"})
-      +toggle()
-    .registration__block-registering
-      +button({size: "big", title: "зарегистрироваться"})
-    .registration__block-signup
-      p Уже есть аккаунт на Toxin
-      +button({size: "medium", theme: "border", title: "войти"})
+mixin registration({action = "change me"} = {})
+  .registration
+    form(class="registration_main-form", action=action)
+      h1.h1 Регистрация аккаунта
+      .registration__block.registration__block-name-sex
+        +text-field({placeholder: "Имя"})
+        +text-field({placeholder: "Фамилия"})
+        div(style = "display: flex;")
+          +radio({title: "Мужчина", isChecked: true})
+          +radio({title: "Женщина", isChecked: false})
+      .registration__block.registration__block-birthday
+        h3.h3.label День рождения
+        +text-field({placeholder: "ДД.ММ.ГГГГ", jsClass: "birthday"})
+      .registration__block.registration__block-signin
+        h3.h3.label данные для входа в сервис
+        +text-field({placeholder: "Email", type: "Email"})
+        +text-field({placeholder: "Пароль", type: "Password"})
+        +toggle()
+      .registration__block-registering
+        +button({theme: "action", title: "зарегистрироваться", type: "submit"})
+    form(class="registration_signin-form", action="sign-in.html")
+      .registration__block-signup
+        p Уже есть аккаунт на Toxin
+        +button({theme: "border", title: "войти", type: "submit"})

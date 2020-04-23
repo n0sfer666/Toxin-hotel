@@ -1,8 +1,5 @@
 mixin range-slider({title = "title", jsClass = "demo"} = {})
-  -
-    let valuesClassName = `range-slider__values js-${jsClass}-range-slider__values`
-    let sliderClassName = `js-${jsClass}-range-slider`
   .range-slider__container
     h3.h3 #{title}
-    span(class = valuesClassName)
-  div(class = sliderClassName)
+    span(class = `range-slider__values js-${jsClass}-range-slider__values`)
+  div(class = `js-${jsClass}-range-slider`)

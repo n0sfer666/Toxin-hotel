@@ -14,8 +14,14 @@
 }
 
 
-.header--buttons {
-  & button:first-child {
+
+.header__button-signin {
+  & .button {
     width: 79px;
+  }
+}
+.header__button-signup {
+  & .button {
+    width: 101px;
   }
 }

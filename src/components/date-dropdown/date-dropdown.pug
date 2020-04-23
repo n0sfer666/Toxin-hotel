@@ -1,6 +1,4 @@
 mixin date-dropdown({isSingle = true, jsClass = "demo", label = "Даты пербывания в отеле" } = {})
-  -
-    let className = `text-field js-${jsClass}-date-dropdown-single`
   if isSingle
     h3.h3.label #{label}
     input(type="text", class = `text-field js-${jsClass}-date-dropdown-single`, placeholder = "Выберите даты пребывания")
