@@ -55,8 +55,8 @@ module.exports = (env, options) => ({
   devtool: options.mode === 'development' ? 'inline-source-map' : '',
 
   devServer: {
-    // clientLogLevel: 'error',
-    // stats: 'errors-only',
+    clientLogLevel: 'error',
+    stats: 'errors-only',
     contentBase: `${__dirname}/dist`,
     compress: true,
     port: 9090,
@@ -72,7 +72,6 @@ module.exports = (env, options) => ({
       {
         test: /\.scss$/,
         use: [
-          // MiniCssExtractPlugin.loader,
           'style-loader',
           'css-loader',
           'postcss-loader',

@@ -24,8 +24,12 @@ class Pagination {
       this.elementsOnPage, 
       this.dataOutput, 
       this.callback);
+    
+    this.$paginationElement = $(`.js-${this.uniqueName}-pagination`);
+    let isNotUndefined = this.$paginationElement.length > 0;
 
-    this.pagination = $(`.js-${this.uniqueName}-pagination`).pagination(config);
+    if(isNotUndefined)
+      this.pagination = this.$paginationElement.pagination(config);
   }
 
   getConfig(dataSource, elementsOnPage, dataOutput, callback) {

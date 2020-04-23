@@ -4,7 +4,8 @@ class MaskedField {
   constructor(uniqueName) {
     this.$maskedElement = $(`.js-${uniqueName}-text-field`).get(0);
     this.config = this.getConfig();
-    this.maskedField = IMask(this.$maskedElement, this.config);
+    if(this.$maskedElement)
+      this.maskedField = IMask(this.$maskedElement, this.config);
   }
 
   getConfig() {

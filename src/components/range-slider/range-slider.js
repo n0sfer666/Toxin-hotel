@@ -3,8 +3,12 @@ class RangeSlider {
     this.$rangeSlider = $(`.js-${uniqueName}-range-slider`).get(0);
     this.$rangeSliderValues = $(`.js-${uniqueName}-range-slider__values`).get(0);
 
-    this.getRangeSlider();
-    this.getValuesUpdate();
+    let isNotUndefined = this.$rangeSlider && this.$rangeSliderValues;
+
+    if(isNotUndefined) {
+      this.getRangeSlider();
+      this.getValuesUpdate();
+    }
   }
 
   getRangeSlider() {
