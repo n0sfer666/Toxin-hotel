@@ -3,6 +3,22 @@
 
   &__header {
     margin-bottom: 39px;
+
+    & > .header > .header__nav-bar > .header__buttons {
+
+      & > .header__button-signin {
+        & .button {
+          width: 79px;
+        }
+      }
+
+      & > .header__button-signup {
+        & .button {
+          width: 101px;
+        }
+      }
+
+    }
   }
   &__footer {
     margin-bottom: 41px;
@@ -10,18 +26,5 @@
     &:last-child {
       margin-bottom: 130px;
     }
-  }
-}
-
-
-
-.header__button-signin {
-  & .button {
-    width: 79px;
-  }
-}
-.header__button-signup {
-  & .button {
-    width: 101px;
   }
 }
