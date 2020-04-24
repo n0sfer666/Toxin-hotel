@@ -2,11 +2,11 @@ include ../date-dropdown/date-dropdown
 include ../dropdown/dropdown
 include ../button/button
 
-mixin booking({apart = "888", isLux = true, price = "9990", discount = "2179", complementary = 300, additional = "0"} = {})
+mixin booking({apart = "888", isLux = true, price = "9990", discount = "2179", complementary = 300, additional = "0", action = "change me" } = {})
   -
     let isDiscounted = discount == 0 ? false : true
 
-  form(class="booking", action="room-detail.html")
+  form(class="booking", action=action)
     .booking__header
       .booking__header-apart
         h1.h1 

@@ -4,4 +4,10 @@
   @media screen and (min-width: $old-phones) and (max-width: $new-phones) {
     margin: 30px 0 30px 30px;
   }
+
+  &__pict {
+    &:hover, &:focus, &:active {
+      filter: drop-shadow(0px 0px 10px $dark-shade-75);
+    }
+  }
 }

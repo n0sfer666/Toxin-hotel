@@ -1,4 +1,9 @@
 .button {
+  width: inherit;
+  border: none;
+  outline: none;
+  background-color: white;
+
   &:active, &:focus, &:hover {
     box-shadow: 0 0 5px $dark-shade-50;
   }

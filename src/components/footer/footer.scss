@@ -120,6 +120,8 @@
 
       & .footer__icons {
         margin-bottom: 20px;
+
+
       }
       & .footer__copyright-text {
         text-align: center;
@@ -146,6 +148,10 @@
 
     &:not(:last-child) {
       margin-right: 20px;
+    }
+
+    &:hover, &:focus, &active {
+      filter: drop-shadow(0px 0px 5px $dark-shade-50);
     }
     
     &-tweeter {
