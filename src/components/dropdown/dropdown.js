@@ -2,13 +2,19 @@ import 'item-quantity-dropdown/lib/item-quantity-dropdown.min';
 
 class Dropdown {
   constructor(uniqueName) {
-    this.containerName = `.js-${uniqueName}-iqdropdown`;;
+    this.containerName = `.js-${uniqueName}-iqdropdown`;
     this.config = this.getConfig();
 
     this.$instance = this.getInstance();
 
     this.$clearButton = this.$instance.find('.js-clear-dropdown-button');
-    this.bindHandler();
+    this.bindClearButtonHandler();
+
+    this.iqMenu = this.$instance.find('.iqdropdown-menu');
+    this.iqMenu.on('click', (event) => {
+      event.stopPropagation();
+    })
+    
 
     $('[data-id=bedrooms]').find('.button-decrement')
       .css('border-color', 'rgba(31, 32, 65, 0.5)')
@@ -18,7 +24,7 @@ class Dropdown {
       .css('color', 'rgba(31, 32, 65, 0.5)');
   }
 
-  bindHandler() {
+  bindClearButtonHandler() {
     this.$clearButton.on('click', () => {
       this.clearButtonHandler();
       this.clearButtonHandler(); // Need for hidden container after click
@@ -105,6 +111,7 @@ class Dropdown {
       onChange: (id, count, totalItems) => {
         if (count >= 1) {
           $(`[data-id=${id}]`).find('.button-decrement')
+            .css('cursor', 'pointer')
             .css('border-color', 'rgba(31, 32, 65, 0.5)')
             .css('color', 'rgba(31, 32, 65, 0.5)');
         } else {
