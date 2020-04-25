@@ -5,8 +5,9 @@ class Pagination {
     this.uniqueName = uniqueName;
 
     let demoSource = [];
-    for(let i = 0; i < 200; i += 1)
+    for(let i = 0; i < 200; i += 1) {
       demoSource.push(i);
+    }
     this.dataSource = dataSource === undefined
       ? demoSource
       : dataSource;

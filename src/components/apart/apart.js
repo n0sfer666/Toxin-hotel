@@ -9,10 +9,10 @@ const setSlick = function () {
   });
   // separate prices
   const $priceComponents = $('.js-apart__price');
-  for (let i = 0; i < $priceComponents.length; i += 1) {
-    const strSeparated = $priceComponents[i].innerText
+  $.each($priceComponents, (key, value) => {
+    const strSeparated = value.innerText
       .replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
-    $priceComponents[i].innerText = strSeparated;
-  }
+    value.innerText = strSeparated;
+  })
 };
 export { setSlick };

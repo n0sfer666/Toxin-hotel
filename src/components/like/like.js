@@ -1,13 +1,14 @@
 $(document).ready(() => {
   const $likeElements = $('.like');
   const $likeCounterElements = $('.like__counter');
-  const likeButton = []
-  for (let i = 0; i < $likeElements.length; i += 1) {
-    const element = $likeElements[String(i)];
-    const counter = $likeCounterElements[String(i)];
+  const likeButton = [];
+  
+  $.each($likeElements, (key, value) => {
+    const likeElement = value;
+    const counterElement = $likeCounterElements[key];
 
-    likeButton.push(new LikeButton(element, counter));
-  }
+    likeButton.push(new LikeButton(likeElement, counterElement));
+  })
 });
 
 class LikeButton {

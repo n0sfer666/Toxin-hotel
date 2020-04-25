@@ -19,11 +19,11 @@ $(document).ready(function() {
   let rangeSliderSearch = new RangeSlider(uniqueName);
 
   const $apartSource = $('.js-search-room-apart');  
-  
   const dataSource = [];
-  for( let i = 0; i < $apartSource.length; i += 1 ) {
-    dataSource.push($apartSource[String(i)]);
-  }  
+  $.each($apartSource, (key, value) => {
+    dataSource.push(value);
+  })
+  
   $('.js-search-room-data-source').remove();
   const paginationSearch = new Pagination(uniqueName, dataSource, 12, '.js-search-room-data-output', setSlick);
   
