@@ -8,12 +8,16 @@ class Dropdown {
     this.$instance = this.getInstance();
 
     this.$clearButton = this.$instance.find('.js-clear-dropdown-button');
+    this.$applyButton = this.$instance.find('.js-apply-dropdown-button');
     this.bindClearButtonHandler();
 
     this.iqMenu = this.$instance.find('.iqdropdown-menu');
     this.iqMenu.on('click', (event) => {
-      event.stopPropagation();
-    })
+      const isApplyButton = event.target.parentNode === this.$applyButton.get(0);
+      if(!isApplyButton) {
+        event.stopPropagation();
+      }
+    });
     
 
     $('[data-id=bedrooms]').find('.button-decrement')
@@ -72,13 +76,19 @@ class Dropdown {
           text = `${guests} гостей`;
         }
         if (babies === 1) {
-          text += `, ${babies} младенец`;
+          text += guests > 0
+            ? `, ${babies} младенец`
+            : `${babies} младенец`;
         }
         if (babies > 1 && babies < 5) {
-          text += `, ${babies} младенца`;
+          text += guests > 0
+            ? `, ${babies} младенца`
+            : `${babies} младенца`;
         }
         if (babies >= 5) {
-          text += `, ${babies} младенцев`;
+          text += guests > 0
+            ? `, ${babies} младенцев`
+            : `${babies} младенцев`;
         }
     
         if (bedrooms === 1) {

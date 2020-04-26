@@ -14,7 +14,7 @@ mixin dropdown({isGuests = true, jsClass = "demo" } = {})
             .dropdown__babies
               p.iqdropdown-item младенцы
           +button({theme: "text-gray", title: "очистить", jsClass: "clear-dropdown"})
-          +button({theme: "text-purple", title: "применить"})
+          +button({theme: "text-purple", title: "применить", jsClass: "apply-dropdown"})
       else
         div(class="iqdropdown-menu", style="height: 119px;")
           div(class="iqdropdown-menu-option", data-id="bedrooms", data-defaultcount="2", data-mincount="1")
