@@ -1,12 +1,22 @@
 .sign-in-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
-  background-image: url(./img/bg-sign-in.jpg);
-  background-repeat: no-repeat;
-  background-position: center 83%;
-  background-size: cover;
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex: 1 0 auto;
+  
+    background-image: url(./img/bg-sign-in.jpg);
+    background-repeat: no-repeat;
+    background-position: center 83%;
+    background-size: cover;
+  }
 
   &__container {
     margin: 163px 0;
@@ -16,5 +26,9 @@
       margin: 81px 0;
       width: 310px;
     }
+  }
+
+  &__footer {
+    flex-shrink: 0;
   }
 }

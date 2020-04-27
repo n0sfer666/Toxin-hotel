@@ -4,6 +4,9 @@ html, body, h1, h2, h3, p, button, br, ul, li, pre, input {
   margin-block-start: 0;
   margin-block-end: 0;
 }
+html {
+  height: 100%;
+}
 form {
   width: inherit;
   height: inherit;

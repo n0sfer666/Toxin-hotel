@@ -1,140 +1,153 @@
 .room-detail {
-	
-	&__galary {
-		display: flex;
-		flex-wrap: wrap;
 
-		width: 100%;
+  display: flex;
+  flex-direction: column;
 
-		& .room-detail__img {
-			width: 100%;
-			background-size: cover;
-		}
+  height: 100%;
 
-		&-main {
-			width: 68.125%;
+  &__content {
+    flex: 1 0 auto;
+  }
+  
+  &__galary {
+    display: flex;
+    flex-wrap: wrap;
 
-			@media screen and (min-width: $old-phones) and (max-width: $new-phones) {
-				width: 100%;
-				margin-bottom: -7px;
-			}
-		}
+    width: 100%;
 
-		&-addition {
-			display: flex;
-			flex-direction: column;
+    & .room-detail__img {
+      width: 100%;
+      background-size: cover;
+    }
 
-			width: 31.875%;
+    &-main {
+      width: 68.125%;
 
-			@media screen and (min-width: $old-phones) and (max-width: $new-phones) {
-				width: 100%;
-			}
-		}
-	}
+      @media screen and (min-width: $old-phones) and (max-width: $new-phones) {
+        width: 100%;
+        margin-bottom: -7px;
+      }
+    }
 
-	&__container {
-		display: flex;
+    &-addition {
+      display: flex;
+      flex-direction: column;
 
-		margin: 0 auto;
-		padding: 63px 5px 32px;
+      width: 31.875%;
 
-		width: fit-content;
-		max-width: 1160px;
+      @media screen and (min-width: $old-phones) and (max-width: $new-phones) {
+        width: 100%;
+      }
+    }
+  }
 
-		@media screen and (min-width: $old-phones) and (max-width: 840px) {
-			flex-direction: column-reverse;
-		}
-	}
+  &__container {
+    display: flex;
 
-	&__details {
-		display: flex;
-		flex-wrap: wrap;
-		flex-direction: row;
+    margin: 0 auto;
+    padding: 63px 5px 32px;
 
-		margin-right: 70px;
+    width: fit-content;
+    max-width: 1160px;
 
-		min-width: 310px;
-		width: fit-content;
-		max-width: 711px;
+    @media screen and (min-width: $old-phones) and (max-width: 840px) {
+      flex-direction: column-reverse;
+    }
+  }
 
-		& .h2 {
-			margin-bottom: 20px;
-		}
+  &__details {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
 
-		& > .room-detail__conditions,
-		& > .room-detail__piechart,
-		& > .room-detail__reviews,
-		& > .room-detail__rules,
-		& > .room-detail__cancel {
-			margin-bottom: 30px;
-		}
+    margin-right: 70px;
 
-		@media screen and (min-width: $old-phones) and (max-width: 450px) {
-			margin-right: 0;
-		}
-	}
+    min-width: 310px;
+    width: fit-content;
+    max-width: 711px;
 
-	&__conditions {
-		margin-right: 80px;
+    & .h2 {
+      margin-bottom: 20px;
+    }
 
-		width: 280px;
+    & > .room-detail__conditions,
+    & > .room-detail__piechart,
+    & > .room-detail__reviews,
+    & > .room-detail__rules,
+    & > .room-detail__cancel {
+      margin-bottom: 30px;
+    }
 
-		@media screen and (min-width: $old-phones) and (max-width: 450px) {
-			margin-right: 0;
-		}
-	}
+    @media screen and (min-width: $old-phones) and (max-width: 450px) {
+      margin-right: 0;
+    }
+  }
 
-	&__reviews {
+  &__conditions {
+    margin-right: 80px;
 
-		& h2 {
-			display: inline-block;
-			margin-top: 2px;
-		}
+    width: 280px;
 
-		& > p {
-			line-height: 32px;
-			float: right;
-		}
+    @media screen and (min-width: $old-phones) and (max-width: 450px) {
+      margin-right: 0;
+    }
+  }
 
-		& .review__container:not(:last-child) {
-			margin-bottom: 25px;
-		}
-	}
+  &__reviews {
 
-	&__rules {
-		width: 262px;
+    & h2 {
+      display: inline-block;
+      margin-top: 2px;
+    }
 
-		& h2 {
-			margin-bottom: 16px;
-			margin-left: 20px;
-		}
+    & > p {
+      line-height: 32px;
+      float: right;
+    }
 
-		@media screen and (min-width: $desktop) {
-			margin-top: 3px;
-			margin-right: 99px;
-		}
-	}
+    & .review__container:not(:last-child) {
+      margin-bottom: 25px;
+    }
+  }
 
-	&__cancel {
-		min-width: 310px;
-		max-width: 325px;
+  &__rules {
+    width: 262px;
 
-		& h2 {
-			margin-bottom: 16px;
-		}
+    & h2 {
+      margin-bottom: 16px;
+      margin-left: 20px;
+    }
 
-		@media screen and (min-width: $desktop) {
-			margin-top: 3px;
-		}
-	}
+    @media screen and (min-width: $desktop) {
+      margin-top: 3px;
+      margin-right: 99px;
+    }
+  }
 
-	&__booking {
-		flex-shrink: 0;
-		margin-bottom: 30px;
-		width: 380px;
+  &__cancel {
+    min-width: 310px;
+    max-width: 325px;
 
-		@media screen and (min-width: $old-phones) and (max-width: 400px) {
-			width: 310px;
-		}
-	}
+    & .h2 {
+      margin-bottom: 16px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      margin-top: 3px;
+    }
+  }
+
+  &__booking {
+    flex-shrink: 0;
+    margin-bottom: 30px;
+    width: 380px;
+
+    @media screen and (min-width: $old-phones) and (max-width: 400px) {
+      width: 310px;
+    }
+  }
+
+  &__footer {
+    flex-shrink: 0;
+  }
 }

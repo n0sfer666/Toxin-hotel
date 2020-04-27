@@ -9,11 +9,11 @@ include ../../components/registration/registration
 doctype html
 html
   +head({title: "Registration", isProduction: true})
-  body.body
+  body.body.registration-page
     header.registration-page__header
       +header()
 
-    main.registration-page
+    main.registration-page__content
       section.registration-page__container
         +registration
 

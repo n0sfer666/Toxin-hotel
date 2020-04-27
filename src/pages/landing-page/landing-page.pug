@@ -9,11 +9,11 @@ include ../../components/find-apart/find-apart
 doctype html
 html
   +head({title: "Landing Page", isProduction: true})
-  body.body
+  body.body.landing
     header.landing__header
       +header(config)
     
-    main.landing
+    main.landing__content
       section.landing__find-apart
         +find-apart()
       .landing__description

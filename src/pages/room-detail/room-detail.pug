@@ -15,11 +15,11 @@ include ../../components/piechart/piechart
 doctype html
 html
   +head({title: "Room-detail", isProduction: true})
-  body.body
+  body.body.room-detail
     header.room-detail__header
       +header()
       
-    main.room-detail
+    main.room-detail__content
       section.room-detail__galary
         .room-detail__galary-main
           img(class="room-detail__img", src="./img/detail-888-1.jpg")

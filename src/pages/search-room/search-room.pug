@@ -18,11 +18,11 @@ include ../../components/rich-checkbox/rich-checkbox
 doctype html
 html
   +head({title: "Search-room", isProduction: true})
-  body.body
+  body.body.search-room
     header.search-room__header
       +header()
       
-    main.search-room
+    main.search-room__content
       aside.search-room__menu
         +date-dropdown({jsClass: "search-room"})
         
