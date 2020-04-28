@@ -1,5 +1,4 @@
 import {DateDropdown} from '../date-dropdown/date-dropdown';
-import {Dropdown} from '../dropdown/dropdown';
 
 $(document).ready(() => {
   let daysIn;
@@ -43,7 +42,7 @@ $(document).ready(() => {
   const totalComponent = document
     .querySelector('.js-booking__total');
 
-  let bookingDropdown = new Dropdown('booking');
+  
   let bookingDatepicker = new DateDropdown("booking", false, getDaysIn);
 
   function getNumberWithSeparate(string) {
