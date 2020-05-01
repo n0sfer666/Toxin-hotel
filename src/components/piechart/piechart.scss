@@ -1,4 +1,5 @@
 .piechart {
+  @include font-body;
   display: flex;
   flex-direction: row;
   align-items: flex-end;
@@ -15,7 +16,11 @@
     fill: $purple;
     text-anchor: middle;
   }
+  &__total {
+    @include font-h1;
+  }
   &__text {
+    @include font-h3;
     transform: translateY(15px);
   }
   &__legend {

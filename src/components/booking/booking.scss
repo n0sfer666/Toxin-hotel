@@ -1,4 +1,5 @@
 .booking {
+  @include font-body;
   height: fit-content;
 
   padding: 39px 7.895% 29px;
@@ -18,17 +19,19 @@
 
     & .booking__header-apart {
 
-      & .h1 {
+      & .booking__header-apart-text {
+        @include font-h1;
         display: inline-block;
 
         & .booking__header-number{
           font-size: 14px;
           line-height: 17px;
-          color: $dark-shade-75;
+          color: $dark-shade-100;
         }
       }
 
-      & .h3 {
+      & .booking__header-apart-lux {
+        @include font-h3; 
         display: inline-block;
         color: $purple;
         white-space: pre;
@@ -49,6 +52,10 @@
 
   &__guests {
     margin-bottom: 17px;
+
+    &-text {
+      @include font-h3;
+    }
   }
 
   &__exclamation {
@@ -107,7 +114,8 @@
     display: flex;
     justify-content: space-between;
 
-    & .h2 {
+    & .booking__total-text {
+      @include font-h2;
       white-space: nowrap;
     }
 

@@ -1,6 +1,6 @@
 mixin subscription-field({placeholder = "Email", jsClass = "undefined"} = {})
   .subscribe__container
-    input(type="Email", class = "text-field", placeholder = placeholder)
+    input(type="Email", class = "subscribe__input", placeholder = placeholder)
     if (jsClass === "undefined")
       button(type="submit", class = `subscribe__button`) arrow_forward
     else

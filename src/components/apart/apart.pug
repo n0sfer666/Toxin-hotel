@@ -14,11 +14,11 @@ mixin apart({apart = "888", isLux = true, price = "9990", rate = 5, reviews = 14
     .apart__text
       .apart__header
         .apart__header-title
-          h1.h1
+          h1.apart__header-title-text
             span.apart__header-number № 
             | #{apart}
             if isLux
-              h3.h3  люкс
+              h3.apart__header-title-lux  люкс
         span.apart-price
           b.js-apart__price #{price}₽ 
           | в сутки

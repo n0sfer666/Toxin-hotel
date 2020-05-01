@@ -4,11 +4,11 @@ include ../button/button
 
 mixin find-apart({action = "search-room.html"} = {})
   form(class="find-apart", action=action)
-    h1.h1 Найдём номера под ваши пожелания
+    h1.find-apart__title Найдём номера под ваши пожелания
     .find-apart__arival-departure
       +date-dropdown({isSingle: false, jsClass: "find-apart", label: ["прибытие", "отъезд"]})
     .find-apart__guests
-      h3.h3.label гости
+      h3.find-apart__guests-title гости
       +dropdown({jsClass: 'find-apart'})
     .find-apart__submit-button
       +button({theme: "action", title: "подобрать номер", type: "submit"})

@@ -4,7 +4,7 @@ mixin button({theme = "gradient", title = "click me", jsClass = "undefined", typ
 
   if haveHandler
     button(type=type, class=`button button_${theme} js-${jsClass}-button`)
-        h3.h3 #{title}
+        h3.button__title #{title}
   else
     button(type=type, class=`button button_${theme}`)
-        h3.h3 #{title}
+        h3.button__title #{title}

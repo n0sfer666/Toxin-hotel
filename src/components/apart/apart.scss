@@ -1,4 +1,5 @@
 .apart {
+  @include font-body;
   width: inherit;
 
   display: inline-block;
@@ -19,17 +20,24 @@
     align-items: flex-end;
 
     & .apart__header-title {
-      & .h1 {
-        display: inline-block;
-        font-size: 18px;
-        line-height: 24px;
+      &-text {
+        @include font-h1;
 
         & .apart__header-number {
           font-size: 14px;
         }
       }
 
-      & .h3 {
+      & .apart__header-title-text {
+        display: inline-block;
+        font-size: 18px;
+        line-height: 24px;
+      }
+
+      &-lux {
+        @include font-h3;
+      }
+      & .apart__header-title-lux {
         display: inline;
         color: $purple;
       }

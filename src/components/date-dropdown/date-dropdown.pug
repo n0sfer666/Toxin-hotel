@@ -1,12 +1,12 @@
 mixin date-dropdown({isSingle = true, jsClass = "demo", label = "Даты пербывания в отеле" } = {})
   if isSingle
-    h3.h3.label #{label}
-    input(type="text", class = `date-dropdown__filter text-field js-${jsClass}-date-dropdown-single`, placeholder = "Выберите даты пребывания")
+    h3.date-dropdown__label #{label}
+    input(type="text", class = `date-dropdown__input date-dropdown__filter js-${jsClass}-date-dropdown-single`, placeholder = "Выберите даты пребывания")
   else
     .date-dropdown__container
       .date-dropdown__datepicker
-        h3.h3.label #{label[0]}
-        input(type="text", class = `text-field js-${jsClass}-date-dropdown-left`, placeholder = "ДД.ММ.ГГГГ")
+        h3.date-dropdown__label #{label[0]}
+        input(type="text", class = `date-dropdown__input js-${jsClass}-date-dropdown-left`, placeholder = "ДД.ММ.ГГГГ")
       .date-dropdown__datepicker
-        h3.h3.label #{label[1]}
-        input(type="text", class = `text-field js-${jsClass}-date-dropdown-right`, placeholder = "ДД.ММ.ГГГГ")
+        h3.date-dropdown__label #{label[1]}
+        input(type="text", class = `date-dropdown__input js-${jsClass}-date-dropdown-right`, placeholder = "ДД.ММ.ГГГГ")

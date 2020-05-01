@@ -1,4 +1,6 @@
 .footer {
+  @include font-body;
+
   display: flex;
 
   box-sizing: border-box;
@@ -45,6 +47,10 @@
 
     max-width: 260px;
 
+    &-title {
+      @include font-h3;
+    }
+
     & .footer__logo {
       margin-bottom: 17px;
     }
@@ -57,7 +63,7 @@
     &-subscription {
       margin-top: 4px;
 
-      & .h3 {
+      & .footer__block-title {
         margin-bottom: 18px;
       }
       & .subscribe__container {
@@ -84,7 +90,7 @@
 
     width: 44.2242%;
 
-    & .h3 {
+    & .footer__block-title {
       margin-bottom: 22px;
     }
     & .footer__menu-link:not(:last-child) {
@@ -150,7 +156,7 @@
       margin-right: 20px;
     }
 
-    &:hover, &:focus, &active {
+    &:hover, &:focus, &:active {
       filter: drop-shadow(0px 0px 5px $dark-shade-50);
     }
     

@@ -18,6 +18,10 @@
   cursor: pointer;
   height: 0;
   width: 0;
+
+  &__container {
+    @include font-body;
+  }
 }
 .checkbox__checkmark {
   position: absolute;

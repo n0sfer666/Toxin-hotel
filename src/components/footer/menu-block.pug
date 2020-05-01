@@ -1,5 +1,5 @@
 mixin menu-block({title = "change me", links = ["change me"]} = {})
   .footer__block
-    h3.h3 #{title}
+    h3.footer__block-title #{title}
     each val in links
       a(href="change me", class="footer__menu-link") #{val}

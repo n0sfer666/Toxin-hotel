@@ -1,0 +1,17 @@
+@mixin font-body {
+  font: normal normal 14px/24px Montserrat, Arial, sans-serif;
+  color: $dark-shade-75;
+}
+@mixin font-h1 {
+  font: normal bold 24px/30px Quicksand, Montserrat, Arial, sans-serif;
+  color: $dark-shade-100;
+}
+@mixin font-h2 {
+  font: normal bold 19px/24px Quicksand, Montserrat, Arial, sans-serif;
+  color: $dark-shade-100;
+}
+@mixin font-h3 {
+  font: normal bold 12px/15px Montserrat, Arial, sans-serif;
+  text-transform: uppercase;
+  color: $dark-shade-100;
+}

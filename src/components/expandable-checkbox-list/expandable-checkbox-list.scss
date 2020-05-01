@@ -1,4 +1,5 @@
 .expandable-checkbox-list {
+  @include font-body;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -7,6 +8,10 @@
   height: 44px;
 
   cursor: pointer;
+
+  &__title {
+    @include font-h3;
+  }
 
   &__arrow {
     display: inline-block;

@@ -61,8 +61,8 @@ mixin piechart({perfect = 130, good = 65, satisfact = 65, disappoint = 0 } = {})
       circle(cx="60", cy="60", r="58", stroke="url(#grad-3)", stroke-width="4", Stroke-dasharray=`${dashFor3[0]} ${dashFor3[1]}`, stroke-dashoffset=dashFor3[2])
       circle(cx="60", cy="60", r="58", stroke="url(#grad-2)", stroke-width="4", Stroke-dasharray=`${dashFor2[0]} ${dashFor2[1]}`, stroke-dashoffset=dashFor2[2])
       g( class="piechart__label")
-        text(x="60", y="60", class="h1") #{total}
-        text(x="60", y="60", class="piechart__text h3") #{text}
+        text(x="60", y="60", class="piechart__total") #{total}
+        text(x="60", y="60", class="piechart__text") #{text}
       defs
         linearGradient(id="grad-5", x1="60", y1="0", x2="60", y2="120", gradientUnits="userSpaceOnUse")
           stop(stop-color="#FFE39C")

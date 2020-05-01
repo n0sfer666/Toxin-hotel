@@ -1,11 +1,9 @@
 include ../like/like
 mixin review({login="user-1", likeCount=0, isLicked=false, name="change me", timeAgo="менее часа назад", review="change me"} = {})
-  -
-    let pict = `img/${login}.png`
   .review__container
     .review__leftColumn
       .review__pict
-        img(class = "review__img", src=pict, alt=name)
+        img(class = "review__img", src=`img/${login}.png`, alt=name)
       +like({counter: likeCount, isChecked: isLiked})
     .review__rightColumn
       span(class="review__name") #{name}

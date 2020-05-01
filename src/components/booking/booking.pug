@@ -9,11 +9,11 @@ mixin booking({apart = "888", isLux = true, price = "9990", discount = "2179", c
   form(class="booking", action=action)
     .booking__header
       .booking__header-apart
-        h1.h1 
+        h1.booking__header-apart-text 
           span.booking__header-number № 
           | #{apart}
         if isLux
-          h3.h3  люкс
+          h3.booking__header-apart-lux  люкс
       span.booking__header-price
         b.js-booking__price #{price}
         b ₽ 
@@ -21,7 +21,7 @@ mixin booking({apart = "888", isLux = true, price = "9990", discount = "2179", c
     .booking__arival-departure
       +date-dropdown({isSingle: false, jsClass: "booking", label: ["прибытие", "отъезд"]})
     .booking__guests
-      h3.h3.label гости
+      h3.booking__guests-text гости
       +dropdown({jsClass: "booking"})
     .booking__calculation
       .booking__calculation-line
@@ -52,9 +52,9 @@ mixin booking({apart = "888", isLux = true, price = "9990", discount = "2179", c
           span.js-booking__complementary #{complementary}
           span ₽
     .booking__total
-      h2.h2 Итого
+      h2.booking__total-text Итого
       .booking__total-line-dashed
-      h2.h2.js-booking__total 0
-      h2.h2 ₽
+      h2.booking__total-text.js-booking__total 0
+      h2.booking__total-text ₽
     .booking__submit-button
       +button({theme: "action", title: "забронировать", type: "submit"})

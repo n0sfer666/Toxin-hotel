@@ -1,11 +1,16 @@
-.range-slider__container {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 23px;
-  width: 100%;
-}
-.range-slider__values {
-  font: normal normal 11px/15px Montserrat, sans-serif;
-  text-transform: uppercase;
-  color: $dark-shade-50;
+.range-slider {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 23px;
+    width: 100%;
+  }
+  &__title {
+    @include font-h3;
+  }
+  &__values {
+    font: normal normal 11px/15px Montserrat, sans-serif;
+    text-transform: uppercase;
+    color: $dark-shade-50;
+  }
 }

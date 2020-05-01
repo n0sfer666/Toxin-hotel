@@ -11,7 +11,7 @@ include ../checkbox/checkbox
   expandList.push({title: "Шампунь"})
 mixin expandable-checkbox-list({title = "Дополнительные удобства", list = expandList, jsClass = "demo"} = {})
   div(class = `expandable-checkbox-list js-${jsClass}-expandable-checkbox-list`)
-    h3.h3 #{title}
+    h3.expandable-checkbox-list__title #{title}
     p(class = `expandable-checkbox-list__arrow js-${jsClass}-expandable-checkbox-list__arrow-down`) keyboard_arrow_down
     p(class = `expandable-checkbox-list__arrow js-${jsClass}-expandable-checkbox-list__arrow-up`) keyboard_arrow_up
   div(class = `expandable-checkbox-list__container js-${jsClass}-expandable-checkbox-list__container`)

@@ -55,7 +55,7 @@ mixin footer({isShort = false, description = footerDescription, navigation = foo
         +menu-block(aboutUs)
         +menu-block(support)
       .footer__block.footer__block-subscription
-        h3.h3 #{subscription.title}
+        h3.footer__block-title #{subscription.title}
         p #{subscription.description}
         +subscription-field()
     .footer__copyright

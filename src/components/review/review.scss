@@ -1,4 +1,5 @@
 .review__container {
+  @include font-body;
   display: flex;
   width: 100%;
 }

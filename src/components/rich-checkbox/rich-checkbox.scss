@@ -12,6 +12,7 @@
     display: block;
   }
   &__container {
+    @include font-body;
     display: flex;
     position: relative;
     cursor: pointer;

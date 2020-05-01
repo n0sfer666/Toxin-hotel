@@ -92,7 +92,7 @@ module.exports = (env, options) => ({
         use: ['pug-loader'],
       },
       {
-        test: /\.(ttf|eot|svg|woff|woff2)$/,
+        test: /\.(ttf|eot|svg|woff|woff2)$/,  
         loader: 'file-loader',
         options: {
           name: 'fonts/[name].[ext]',
