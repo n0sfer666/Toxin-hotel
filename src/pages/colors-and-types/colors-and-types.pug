@@ -10,11 +10,11 @@ mixin tBlock (mod, text)
     span(class = `colors-and-type__type-title colors-and-type__type-title_${mod}`) #{mod}
     case mod
       when "h1"
-        h1.h1 #{text}
+        h1.colors-and-type__title-h1 #{text}
       when "h2"
-        h2.h2 #{text}
+        h2.colors-and-type__title-h2 #{text}
       when "h3"
-        h3.h3 #{text}
+        h3.colors-and-type__title-h3 #{text}
       when "body"
         p #{text}
       default
@@ -27,12 +27,12 @@ include ../../components/logo/logo
 doctype html
 html
   +head({title: "Colors & Types", isProduction: true})
-  body.body
+  body
     .logo
       +logo()
 
-    .colors-and-type__container
-      .colors-and-type__colors
+    main.colors-and-type__container
+      section.colors-and-type__colors
         +cBlock("dark-shade-100", "dark shade 100%", "#1F2041")
         +cBlock("dark-shade-75", "dark shade 75%", "#1F2041")
         +cBlock("dark-shade-50", "dark shade 50%", "#1F2041")
@@ -40,7 +40,7 @@ html
         +cBlock("dark-shade-5", "dark shade 5%", "#1F2041")
         +cBlock("purple", "purple", "#BC9CFF")
         +cBlock("green", "green", "#6FCF97")
-      .colors-and-type__type
+      section.colors-and-type__type
         +tBlock("h1", "This one is the sub-section or widget title")
         +tBlock("h2", "Next one is the item title inside widgets")
         +tBlock("h3", "This is a label or CTA text")

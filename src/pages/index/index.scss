@@ -40,8 +40,11 @@
       margin-bottom: 10px;
     }
 
-    & + .h3 {
+    & + .index__title {
       color: $dark-shade-75;
     }
+  }
+  &__title {
+    @include font-h2;
   }
 }

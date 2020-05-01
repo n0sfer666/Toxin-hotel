@@ -1,4 +1,5 @@
 .room-detail {
+  @include font-body;
 
   display: flex;
   flex-direction: column;
@@ -41,6 +42,10 @@
     }
   }
 
+  &__title {
+    @include font-h2;
+  }
+
   &__container {
     display: flex;
 
@@ -66,7 +71,7 @@
     width: fit-content;
     max-width: 711px;
 
-    & .h2 {
+    & .room-detail__title {
       margin-bottom: 20px;
     }
 

@@ -13,10 +13,10 @@ include ../../components/apart/apart
 doctype html
 html
   +head({title: "Cards", isProduction: true})
-  body.body.cards
+  body.cards
     .logo
       +logo()
-    .cards__container
+    main.cards__container
       section.cards__section
         .cards__block
           +find-apart()

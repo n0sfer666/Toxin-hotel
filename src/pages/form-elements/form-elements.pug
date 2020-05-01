@@ -23,29 +23,29 @@ include ../../components/review/review
 doctype html
 html
   +head({title: "Form Elements", isProduction: true})
-  body.body
+  body
     .logo
       +logo()
-    .form-elements__container
+    main.form-elements__container
       section.form-elements__section
         .form-elements__block_320-px
-          h3.h3.label text field
+          h3.form-elements__title text field
           +text-field({placeholder: "Email"})
         .form-elements__block_320-px
-          h3.h3.label dropdown
+          h3.form-elements__title dropdown
           +dropdown({jsClass: "form-elements-guests"})
         .form-elements__block_320-px
-          h3.h3.label masked text field
+          h3.form-elements__title masked text field
           +text-field({placeholder: "ДД.ММ.ГГГГ", jsClass: "form-elements-masked"})
         .form-elements__block_320-px
             +date-dropdown({isSingle: false, jsClass: "form-elements", label: ["date dropdown", "date dropdown"]})
         .form-elements__block_266-px
           +date-dropdown({jsClass: "form-elements", label: "filter date"})
         .form-elements__block_266-px
-          h3.h3.label subscribteon text field
+          h3.form-elements__title subscribteon text field
           +subscription-field({placeholder: "Email"})
         .form-elements__block_266-px
-          h3.h3.label dropdown
+          h3.form-elements__title dropdown
             +dropdown({isGuests: false, jsClass: "form-elements-rooms"})
         .form-elements__block_266-px
           +expandable-checkbox-list({jsClass: "form-elements"})
@@ -55,30 +55,30 @@ html
 
       section.form-elements__section
         .form-elements__block_222-px
-          h3.h3.label_big checkbox buttons
+          h3.form-elements__title_big checkbox buttons
           +checkbox({title: "Можно курить"})
           +checkbox({title: "Можно с питомцами", isChecked: true})
           +checkbox({title: "Можно пригласить гостей (до 10 человек)", isChecked: true})
         .form-elements__block_222-px
-          h3.h3.label_big radio buttons
+          h3.form-elements__title_big radio buttons
           .form-elements__block-radio
             +radio({name: "sex", title: "Мужчина", isChecked: true})
             +radio({name: "sex", title: "Женщина"})
         .form-elements__block_222-px
-          h3.h3.label_big toggle
+          h3.form-elements__title_big toggle
           +toggle({title: "Получать спецпредложения", isChecked: true})
           +toggle({title: "Получать спецпредложения"})
         .form-elements__block_222-px
-          h3.h3.label_big like button
+          h3.form-elements__title_big like button
           div(style = "display:flex;")
             +like({counter: "2"})
             +like({counter: "12", isChecked: true})
         .form-elements__block_320-px
-          h3.h3.label_big rate button
+          h3.form-elements__title_big rate button
           +rate({rate: "4"})
           +rate({rate: "5"})
         .form-elements__block_266-px
-          h3.h3.label_big rich checkbox buttons
+          h3.form-elements__title_big rich checkbox buttons
           +rich-checkbox({title: "Широкий коридор", description: "Ширина коридоров в номере не менее 91 см."})
           +rich-checkbox({title: "Помощник для инвалидов", description: "На 1 этаже вас встретит специалист и проводит до номера."})
 
@@ -86,7 +86,7 @@ html
         .form-elements__block_266-px
           +range-slider({title: "range slider", jsClass: "form-elements"})
         .form-elements__block_266-px
-          h3.h3.label buttons
+          h3.form-elements__title buttons
           div(style="margin: 11px 0 30px 0;")
             .form-elements__button-container_medium
               +button({theme: "gradient"})
@@ -105,10 +105,10 @@ html
           .form-elements__button-container_big
             +button({theme: "action", title: "Перейти к оплате"})
         .form-elements__block_320-px
-          h3.h3.label_big pagination
+          h3.form-elements__title_big pagination
           .js-form-elements-pagination
         .form-elements__block_320-px
-          h3.h3.label_big bullet list
+          h3.form-elements__title_big bullet list
           -
             let bullets = []
             bullets.push("Нельзя с питомцами")

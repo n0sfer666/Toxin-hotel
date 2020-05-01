@@ -1,4 +1,5 @@
 .registration-page {
+  @include font-body;
 
   display: flex;
   flex-direction: column;

@@ -6,36 +6,36 @@ include ../../components/logo/logo
 doctype html
 html
   +head({title: "index", isProduction: true})
-  body.body
+  body
     .logo
       +logo()  
-    .index__container
-      .index__ui-kit
+    main.index__container
+      section.index__ui-kit
         .index__item
           a(href="colors-and-types.html")
-            h2="Colors & Types"
+            h2.index__title="Colors & Types"
         .index__item
           a(href="form-elements.html")
-            h2="Form Elements"
+            h2.index__title="Form Elements"
         .index__item
           a(href="cards.html")
-            h2="Cards"
+            h2.index__title="Cards"
         .index__item
           a(href="headers-and-footers.html")
-            h2="Headers & Footers"
-      .index__pages
+            h2.index__title="Headers & Footers"
+      section.index__pages
         .index__item
           a(href="landing-page.html")
-            h2="Landing Page"
+            h2.index__title="Landing Page"
         .index__item
           a(href="registration.html")
-            h2="Registration"
+            h2.index__title="Registration"
         .index__item
           a(href="sign-in.html")
-            h2="Sign-in"
+            h2.index__title="Sign-in"
         .index__item
           a(href="room-detail.html")
-            h2="Room details"
+            h2.index__title="Room details"
         .index__item
           a(href="search-room.html")
-            h2="Search-room"
+            h2.index__title="Search-room"
