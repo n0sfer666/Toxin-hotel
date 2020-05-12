@@ -6,7 +6,7 @@ mixin find-apart({action = "search-room.html"} = {})
   form(class="find-apart", action=action)
     h1.find-apart__title Найдём номера под ваши пожелания
     .find-apart__arival-departure
-      +date-dropdown({isSingle: false, jsClass: "find-apart", label: ["прибытие", "отъезд"]})
+      +date-dropdown({isSingle: false, label: ["прибытие", "отъезд"]})
     .find-apart__guests
       h3.find-apart__guests-title гости
       +dropdown({jsClass: 'find-apart'})

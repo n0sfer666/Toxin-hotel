@@ -15,11 +15,11 @@ mixin booking({apart = "888", isLux = true, price = "9990", discount = "2179", c
         if isLux
           h3.booking__header-apart-lux  люкс
       span.booking__header-price
-        b.js-booking__price #{price}
-        b ₽ 
+        span.booking__header-price_bold.js-booking__price #{price}
+        span.booking__header-price_bold ₽ 
         | в сутки
     .booking__arival-departure
-      +date-dropdown({isSingle: false, jsClass: "booking", label: ["прибытие", "отъезд"]})
+      +date-dropdown({isSingle: false, label: ["прибытие", "отъезд"]})
     .booking__guests
       h3.booking__guests-text гости
       +dropdown({jsClass: "booking"})
@@ -39,7 +39,7 @@ mixin booking({apart = "888", isLux = true, price = "9990", discount = "2179", c
               span.js-booking__discount #{discount}
               span ₽
           span.booking__exclamation
-            b i
+            span.booking__exclamation_bold i
         .booking__calculation-aditional
           span.js-booking__additional #{additional}
           span ₽
@@ -47,7 +47,7 @@ mixin booking({apart = "888", isLux = true, price = "9990", discount = "2179", c
         .booking__calculation-text
           p Сбор за дополнительные услуги
           span.booking__exclamation
-            b i
+            span.booking__exclamation_bold i
         .booking__calculation-complementary
           span.js-booking__complementary #{complementary}
           span ₽
