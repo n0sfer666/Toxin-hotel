@@ -8,7 +8,7 @@ include ../../components/sign-in/sign-in
 
 doctype html
 html
-  +head({title: "Sign-in", isProduction: true})
+  +head({title: "Sign-in"})
   body.sign-in-page
     header.sign-in-page__header
       +header()
@@ -19,3 +19,5 @@ html
 
     footer.sign-in-page__footer
       +footer()
+
+    script(src="main.min.js")

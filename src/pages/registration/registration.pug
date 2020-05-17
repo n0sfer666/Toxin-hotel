@@ -8,7 +8,7 @@ include ../../components/registration/registration
 
 doctype html
 html
-  +head({title: "Registration", isProduction: true})
+  +head({title: "Registration"})
   body.body.registration-page
     header.registration-page__header
       +header()
@@ -19,3 +19,5 @@ html
 
     footer.registration-page__footer
       +footer()
+
+    script(src="main.min.js")

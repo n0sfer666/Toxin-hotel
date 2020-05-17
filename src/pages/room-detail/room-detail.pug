@@ -14,7 +14,7 @@ include ../../components/piechart/piechart
 
 doctype html
 html
-  +head({title: "Room-detail", isProduction: true})
+  +head({title: "Room-detail"})
   body.room-detail
     header.room-detail__header
       +header()
@@ -104,3 +104,5 @@ html
 
     footer.room-detail__footer
       +footer()
+
+    script(src="main.min.js")

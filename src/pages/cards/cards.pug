@@ -9,7 +9,7 @@ include ../../components/apart/apart
 
 doctype html
 html
-  +head({title: "Cards", isProduction: true})
+  +head({title: "Cards"})
   body.cards
     .logo
       +logo()
@@ -40,3 +40,5 @@ html
             apartConfig.rate = 4
             apartConfig.reviews = 65
           +apart(apartConfig)
+
+    script(src="main.min.js")

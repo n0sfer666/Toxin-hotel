@@ -8,7 +8,7 @@ include ../../components/find-apart/find-apart
 
 doctype html
 html
-  +head({title: "Landing Page", isProduction: true})
+  +head({title: "Landing Page"})
   body.landing
     header.landing__header
       +header(config)
@@ -21,3 +21,5 @@ html
 
     footer.landing__footer
       +footer(config)
+
+    script(src="main.min.js")

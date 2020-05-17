@@ -4,7 +4,7 @@ include ../../components/color-block/color-block
 include ../../components/type-block/type-block
 doctype html
 html
-  +head({title: "Colors & Types", isProduction: true})
+  +head({title: "Colors & Types"})
   body
     .logo
       +logo()
@@ -23,3 +23,5 @@ html
         +type-block({mod: "h2", text: "Next one is the item title inside widgets"})
         +type-block({mod: "h3", text: "This is a label or CTA text"})
         +type-block({mod: "body", text: "This is the body text which is used for most of the design, like paragraphs, lists, etc."})
+
+    script(src="main.min.js")

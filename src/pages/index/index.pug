@@ -2,7 +2,7 @@ include ../../components/head/head
 include ../../components/logo/logo
 doctype html
 html
-  +head({title: "index", isProduction: true})
+  +head({title: "index"})
   body
     .logo
       +logo()  
@@ -36,3 +36,5 @@ html
         .index__item
           a(href="search-room.html")
             h2.index__title="Search-room"
+
+    script(src="main.min.js")

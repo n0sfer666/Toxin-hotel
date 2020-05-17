@@ -6,7 +6,7 @@ include ../../components/footer/footer
 
 doctype html
 html
-  +head({title: "Headers & Footers", isProduction: true})
+  +head({title: "Headers & Footers"})
   body.header-footer
     .logo
       +logo()
@@ -76,3 +76,5 @@ html
         footerConfig.description = "Lopx ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis."
 
       +footer(footerConfig)
+
+    script(src="main.min.js")
