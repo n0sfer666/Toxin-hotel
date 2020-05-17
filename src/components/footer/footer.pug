@@ -1,7 +1,6 @@
 include ../logo/logo
 include ../subscription-field/subscription-field
-
-include ./menu-block
+include ../footer-menu-block/footer-menu-block
 -
   let footerDescription = "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"
   
@@ -51,9 +50,9 @@ mixin footer({isShort = false, description = footerDescription, navigation = foo
           +logo({isFull: true})
         p #{description}
       .footer__menu
-        +menu-block(navigation)
-        +menu-block(aboutUs)
-        +menu-block(support)
+        +footer-menu-block(navigation)
+        +footer-menu-block(aboutUs)
+        +footer-menu-block(support)
       .footer__block.footer__block-subscription
         h3.footer__block-title #{subscription.title}
         p #{subscription.description}

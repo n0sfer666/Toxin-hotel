@@ -1,0 +1,76 @@
+.header-menu-link {
+  &__link {
+    display: inline-block;
+
+    text-align: center;
+    line-height: 17px;
+    color: $dark-shade-50;
+
+    &:active, &:focus, &:hover {
+      text-shadow: 0 0 5px $dark-shade-25;
+    }
+
+    &_home {
+      font-weight: bold;
+      color: $dark-shade-75;
+    }
+
+    &-popup {
+      cursor: pointer;
+      position: relative;
+      display: inline-block;
+    }
+
+    @media screen and (min-width: $old-phones) and (max-width: $pads) {
+      margin-right: 0;
+      margin-bottom: 5px;
+    }
+    @media screen and (min-width: $pads) {
+      &:not(&-popup) {
+        margin-right: 30px;
+      }
+    }
+  }
+
+  &__link-popup:hover &__popup,
+  &__link-popup:focus &__popup,
+  &__arrow-down:hover &__popup,
+  &__arrow-down:focus &__popup {
+    visibility: visible;
+  }
+
+  &__popup {
+    visibility: hidden;
+
+    position: absolute;
+    z-index: 5;
+    left: 0;
+    top: 17px;
+
+    padding: 20px;
+
+    background-color: #fff;
+    box-shadow: 0 0 5px $dark-shade-50;
+    text-align: left;
+
+    & .header__link:hover,
+    & .header__link:focus,
+    & .header__link:hover {
+      color: $dark-shade-75;
+    }
+  }
+  &__arrow-down {
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 21px;
+
+    font: normal normal 24px/18px materialIcons;
+    color: $dark-shade-50;
+
+    vertical-align: middle;
+
+    @media screen and (min-width: $old-phones) and (max-width: $pads) {
+      margin-right: 0;
+    }
+  }
+}

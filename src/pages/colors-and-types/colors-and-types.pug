@@ -1,29 +1,7 @@
-mixin cBlock (mod, text, hexColor)
-  .colors-and-type__colors-block
-    div(class = `colors-and-type__colors-cell colors-and-type__colors-cell_${mod}`)
-    p(class = "colors-and-type__colors-text") #{text}
-      <br>
-      span(class = `colors-and-type__colors-text_regular`) #{hexColor}
-
-mixin tBlock (mod, text)
-  .colors-and-type__type-block
-    span(class = `colors-and-type__type-title colors-and-type__type-title_${mod}`) #{mod}
-    case mod
-      when "h1"
-        h1.colors-and-type__title-h1 #{text}
-      when "h2"
-        h2.colors-and-type__title-h2 #{text}
-      when "h3"
-        h3.colors-and-type__title-h3 #{text}
-      when "body"
-        p #{text}
-      default
-        p somthing wrong
-
-//- mixin head(title, css, js)
 include ../../components/head/head
-//- mixin logo
 include ../../components/logo/logo
+include ../../components/color-block/color-block
+include ../../components/type-block/type-block
 doctype html
 html
   +head({title: "Colors & Types", isProduction: true})
@@ -32,16 +10,16 @@ html
       +logo()
 
     main.colors-and-type__container
-      section.colors-and-type__colors
-        +cBlock("dark-shade-100", "dark shade 100%", "#1F2041")
-        +cBlock("dark-shade-75", "dark shade 75%", "#1F2041")
-        +cBlock("dark-shade-50", "dark shade 50%", "#1F2041")
-        +cBlock("dark-shade-25", "dark shade 25%", "#1F2041")
-        +cBlock("dark-shade-5", "dark shade 5%", "#1F2041")
-        +cBlock("purple", "purple", "#BC9CFF")
-        +cBlock("green", "green", "#6FCF97")
-      section.colors-and-type__type
-        +tBlock("h1", "This one is the sub-section or widget title")
-        +tBlock("h2", "Next one is the item title inside widgets")
-        +tBlock("h3", "This is a label or CTA text")
-        +tBlock("body", "This is the body text which is used for most of the design, like paragraphs, lists, etc.")
+      section.color-block__colors
+        +color-block({mod: "dark-shade-100", text: "dark shade 100%", hexColor: "#1F2041"})
+        +color-block({mod: "dark-shade-75", text: "dark shade 75%", hexColor: "#1F2041"})
+        +color-block({mod: "dark-shade-50", text: "dark shade 50%", hexColor: "#1F2041"})
+        +color-block({mod: "dark-shade-25", text: "dark shade 25%", hexColor: "#1F2041"})
+        +color-block({mod: "dark-shade-5", text: "dark shade 5%", hexColor: "#1F2041"})
+        +color-block({mod: "purple", text: "purple", hexColor: "#BC9CFF"})
+        +color-block({mod: "green", text: "green", hexColor: "#6FCF97"})
+      section.type-block__type
+        +type-block({mod: "h1", text: "This one is the sub-section or widget title"})
+        +type-block({mod: "h2", text: "Next one is the item title inside widgets"})
+        +type-block({mod: "h3", text: "This is a label or CTA text"})
+        +type-block({mod: "body", text: "This is the body text which is used for most of the design, like paragraphs, lists, etc."})

@@ -1,0 +1,5 @@
+mixin footer-menu-block({title = "change me", links = ["change me"]} = {})
+  .footer-menu-block
+    h3.footer-menu-block__title #{title}
+    each val in links
+      a(href="change me", class="footer-menu-block__link") #{val}
