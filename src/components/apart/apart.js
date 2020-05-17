@@ -1,19 +1,28 @@
 import 'slick-carousel';
 
-const setSlick = function () {
-  $('.js-apart__slider').slick({
-    accessibility: false,
-    dots: true,
-    slidesToShow: 1,
-    adaptiveHeight: true,
-  });
-  // separate prices
-  const REGEXP_SPACE_AFTER_THREE_DIGITS = /(\d)(?=(\d\d\d)+([^\d]|$))/g;
-  const $priceComponents = $('.js-apart__price');
-  $.each($priceComponents, (key, value) => {
-    const strSeparated = value.innerText
-      .replace(REGEXP_SPACE_AFTER_THREE_DIGITS, '$1 ');
-    value.innerText = strSeparated;
-  })
-};
-export { setSlick };
+class Apart {
+  constructor(item, index) {
+    this.$item = $(item);
+    this.index = index;
+
+    this.$item.slick({
+      accessibility: false,
+      dots: true,
+      slidesToShow: 1,
+      adaptiveHeight: true,
+    })
+    this.separateDigitsInPrice();
+  }
+
+  separateDigitsInPrice() {
+    const REGEXP_SPACE_SEPARATED_THOUSANDS = /(\d)(?=(\d\d\d)+([^\d]|$))/g;
+    const $price = this.$item.siblings().find('.js-apart__price');
+    
+    const separatedString = $price.text()
+      .replace(REGEXP_SPACE_SEPARATED_THOUSANDS, '$1 ');
+    
+    $price.text(separatedString);
+  }
+}
+
+export {Apart};
