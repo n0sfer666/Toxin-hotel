@@ -1,20 +1,9 @@
-$(document).ready(() => {
-  const $likeElements = $('.like');
-  const $likeCounterElements = $('.like__counter');
-  const likeButton = [];
-  
-  $.each($likeElements, (key, value) => {
-    const likeElement = value;
-    const counterElement = $likeCounterElements[key];
-
-    likeButton.push(new LikeButton(likeElement, counterElement));
-  })
-});
-
 class LikeButton {
-  constructor(element, counter) {
-    this.element = element;
-    this.counter = counter;
+  constructor(item, index) {
+    this.element = item;
+    this.index = index;
+
+    this.counter = $(this.element).find('.like__counter').get(0);
 
     this.bindEventListenner();
   }
@@ -41,3 +30,4 @@ class LikeButton {
     }
   }
 }
+export { LikeButton };
