@@ -29,7 +29,7 @@ html
         h3.search-room__menu-title Гости
         +dropdown()
 
-        +range-slider({title: "Диапазон цены", jsClass: "search-room"})
+        +range-slider({title: "Диапазон цены"})
         p.search-room__description Стоимость за сутки пребывания в номере
 
         .search-room__checkboxs
@@ -52,7 +52,7 @@ html
         h3(class = "search-room__menu-title", style = "margin-top: 36px;") удобства номера
         +dropdown({isGuests: false})
 
-        +expandable-checkbox-list({jsClass: "search-room"})
+        +expandable-checkbox-list()
 
       section.search-room__result
         h1.search-room__result-title Номера, которые мы для вас подобрали

@@ -1,7 +1,9 @@
 class RangeSlider {
-  constructor(uniqueName) {
-    this.$rangeSlider = $(`.js-${uniqueName}-range-slider`).get(0);
-    this.$rangeSliderValues = $(`.js-${uniqueName}-range-slider__values`).get(0);
+  constructor(item, index) {
+    this.$rangeSlider = item;
+    this.$index = index;
+
+    this.$rangeSliderValues = $(item).siblings().find('.js-range-slider__values').get(0);
 
     let isNotUndefined = this.$rangeSlider && this.$rangeSliderValues;
 

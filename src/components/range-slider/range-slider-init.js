@@ -1,5 +1,7 @@
 import {RangeSlider} from './range-slider';
 $(document).ready(function() {
-  let rangeSlider = new RangeSlider('form-elements');
-  let rangeSliderSearch = new RangeSlider('search-room');
+  const $arrayRangeSlider = $('.js-range-slider');
+  $.each($arrayRangeSlider, (key, item) => {
+    new RangeSlider(item, key);
+  })
 })
