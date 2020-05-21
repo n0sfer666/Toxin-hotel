@@ -1,11 +1,12 @@
 import IMask from 'imask';
 
 class MaskedField {
-  constructor(uniqueName) {
-    this.$maskedElement = $(`.js-${uniqueName}-text-field`).get(0);
+  constructor(item, index) {
+    this.maskedElement = item;
+    this.index = index;
     this.config = this.getConfig();
-    if(this.$maskedElement)
-      this.maskedField = IMask(this.$maskedElement, this.config);
+    if(this.maskedElement)
+      this.maskedField = IMask(this.maskedElement, this.config);
   }
 
   getConfig() {

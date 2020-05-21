@@ -15,7 +15,7 @@ mixin registration({action = "change me"} = {})
           +radio({title: "Женщина", isChecked: false})
       .registration__block.registration__block-birthday
         h3.registration__block-title День рождения
-        +text-field({placeholder: "ДД.ММ.ГГГГ", jsClass: "birthday"})
+        +text-field({placeholder: "ДД.ММ.ГГГГ", jsClass: "masked"})
       .registration__block.registration__block-signin
         h3.registration__block-title данные для входа в сервис
         +text-field({placeholder: "Email", type: "Email"})
