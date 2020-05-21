@@ -1,13 +1,15 @@
 import { datepicker } from 'air-datepicker';
 
 class DateDropdown {
-  constructor(uniqueName, isSingle, callback) {
+  constructor(item, index, isSingle, callback) {
+    if(Array.isArray(item)) {
+      this.$container = [$(item[0]), $(item[1])];
+    } else {
+      this.$container = $(item);
+    }
+    this.index = index;
+
     this.isSingle = isSingle;
-    
-    this.$container = isSingle
-      ? $(`.js-${uniqueName}-date-dropdown-single`)
-      : [$(`.js-${uniqueName}-date-dropdown-left`),
-        $(`.js-${uniqueName}-date-dropdown-right`)];
     this.callback = callback;
 
     this.config = this.getConfig();

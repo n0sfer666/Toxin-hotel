@@ -20,7 +20,7 @@ include ../../components/review/review
 
 doctype html
 html
-  +head({title: "Form Elements", isProduction: true})
+  +head({title: "Form Elements"})
   body
     .logo
       +logo()
@@ -36,9 +36,9 @@ html
           h3.form-elements__title masked text field
           +text-field({placeholder: "ДД.ММ.ГГГГ", jsClass: "form-elements-masked"})
         .form-elements__block_320-px
-            +date-dropdown({isSingle: false, label: ["date dropdown", "date dropdown"]})
+          +date-dropdown({isSingle: false, label: ["date dropdown", "date dropdown"]})
         .form-elements__block_266-px
-          +date-dropdown({jsClass: "form-elements", label: "filter date"})
+          +date-dropdown({label: "filter date"})
         .form-elements__block_266-px
           h3.form-elements__title subscribteon text field
           +subscription-field({placeholder: "Email"})
@@ -119,3 +119,4 @@ html
           let name = "Конcтантин Константинопольский"
           let review = "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей"
         +review({login: "user-1", likeCount: "10", isLiked: true, name: name, timeAgo: "5 дней назад", review: review})
+    script(src="main.min.js")

@@ -1,6 +1,7 @@
-import {setSlick} from './apart';
+import {Apart} from './apart';
 $(document).ready(function() {
-  setTimeout(() => {
-    setSlick();
-  }, 200);
+  const $arrayApartComponents = $('.js-apart__slider');
+  $.each($arrayApartComponents, (key, item) => {
+    new Apart(item, key);
+  })
 })
