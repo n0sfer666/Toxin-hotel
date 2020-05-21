@@ -22,7 +22,7 @@ mixin booking({apart = "888", isLux = true, price = "9990", discount = "2179", c
       +date-dropdown({isSingle: false, label: ["прибытие", "отъезд"]})
     .booking__guests
       h3.booking__guests-text гости
-      +dropdown({jsClass: "booking"})
+      +dropdown()
     .booking__calculation
       .booking__calculation-line
         p

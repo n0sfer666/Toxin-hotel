@@ -1,6 +1,6 @@
 include ../button/button
-mixin dropdown({isGuests = true, jsClass = "demo" } = {})
-  div(class = `iqdropdown js-${jsClass}-iqdropdown`)
+mixin dropdown({isGuests = true} = {})
+  div(class = `iqdropdown js-iqdropdown`)
     p(class="iqdropdown-selection")
       if isGuests
         .iqdropdown-menu

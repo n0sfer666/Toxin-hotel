@@ -9,6 +9,6 @@ mixin find-apart({action = "search-room.html"} = {})
       +date-dropdown({isSingle: false, label: ["прибытие", "отъезд"]})
     .find-apart__guests
       h3.find-apart__guests-title гости
-      +dropdown({jsClass: 'find-apart'})
+      +dropdown()
     .find-apart__submit-button
       +button({theme: "action", title: "подобрать номер", type: "submit"})

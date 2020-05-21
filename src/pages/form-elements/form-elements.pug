@@ -31,7 +31,7 @@ html
           +text-field({placeholder: "Email"})
         .form-elements__block_320-px
           h3.form-elements__title dropdown
-          +dropdown({jsClass: "form-elements-guests"})
+          +dropdown()
         .form-elements__block_320-px
           h3.form-elements__title masked text field
           +text-field({placeholder: "ДД.ММ.ГГГГ", jsClass: "form-elements-masked"})
@@ -44,7 +44,7 @@ html
           +subscription-field({placeholder: "Email"})
         .form-elements__block_266-px
           h3.form-elements__title dropdown
-            +dropdown({isGuests: false, jsClass: "form-elements-rooms"})
+            +dropdown({isGuests: false})
         .form-elements__block_266-px
           +expandable-checkbox-list({jsClass: "form-elements"})
         .form-elements__block_266-px

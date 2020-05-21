@@ -41,27 +41,24 @@ $(document).ready(() => {
     .querySelector('.js-booking__cost');
   const totalComponent = document
     .querySelector('.js-booking__total');
-
-  
-  let bookingDatepicker = new DateDropdown("booking", false, getDaysIn);
-
-  function getNumberWithSeparate(string) {
-    return string.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
-  }
-
-  function getDaysIn(param) {
-    daysIn = param;
-    cost = price * daysIn;
-    total = cost + additional + complementary - discount;
-
-    if (daysIn === 1) {
-      daysInComponent.innerText = '1 сутки';
-    } else {
-      daysInComponent.innerText = `${String(daysIn)} суток`;
-    }
-
-    costComponent.innerText = getNumberWithSeparate(`${cost}₽`);
-
-    totalComponent.innerText = getNumberWithSeparate(`${total}`);
-  }
 });
+
+function getNumberWithSeparate(string) {
+  return string.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+}
+
+function getDaysIn(param) {
+  daysIn = param;
+  cost = price * daysIn;
+  total = cost + additional + complementary - discount;
+
+  if (daysIn === 1) {
+    daysInComponent.innerText = '1 сутки';
+  } else {
+    daysInComponent.innerText = `${String(daysIn)} суток`;
+  }
+
+  costComponent.innerText = getNumberWithSeparate(`${cost}₽`);
+
+  totalComponent.innerText = getNumberWithSeparate(`${total}`);
+}

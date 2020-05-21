@@ -1,8 +1,9 @@
 import 'item-quantity-dropdown/lib/item-quantity-dropdown.min';
 
 class Dropdown {
-  constructor(uniqueName) {
-    this.containerName = `.js-${uniqueName}-iqdropdown`;
+  constructor(item, index) {
+    this.container = item;
+    this.index = index;
     this.config = this.getConfig();
 
     this.$instance = this.getInstance();
@@ -132,7 +133,7 @@ class Dropdown {
     }
   }
   getInstance() {
-    return $(this.containerName).iqDropdown(this.config);
+    return $(this.container).iqDropdown(this.config);
   }
 }
 
