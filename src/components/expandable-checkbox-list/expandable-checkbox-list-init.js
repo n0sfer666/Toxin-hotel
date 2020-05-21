@@ -1,5 +1,8 @@
-import {ExpandableCheckboxList} from './expandable-checkbox-list';
+import { ExpandableCheckboxList } from './expandable-checkbox-list';
 $(document).ready(function() {
-  let expandList = new ExpandableCheckboxList('form-elements');
-  let expandListSearch = new ExpandableCheckboxList('search-room');
+  const $arrayExpandableCheckboxList = $('.js-expandable-checkbox-list');
+
+  $.each(arrayExpandableCheckboxList, (key, item) => {
+    new ExpandableCheckboxList(item, key);
+  })
 })
