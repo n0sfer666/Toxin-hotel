@@ -1,13 +1,18 @@
 import {Pagination} from './pagination';
-// import {setSlick} from '../apart/apart';
 $(document).ready(function() {
-  let pagination = new Pagination('form-elements');
-
   const $apartSource = $('.js-search-room-apart');
+  console.log($apartSource);
+  
   const dataSource = [];
-  $.each($apartSource, (key, value) => {
-    dataSource.push(value.cloneNode(true));
+
+  $.each($apartSource, (key, item) => {
+    dataSource.push(item.cloneNode(true));
   })
-  $('.js-search-room-data-source').remove();
-  const paginationSearch = new Pagination('search-room', dataSource, 12, '.js-search-room-data-output');
+
+  $('.js-data-source').remove();
+  
+  const arrayPagination = $('.js-pagination');
+  $.each(arrayPagination, (key, item) => {
+    new Pagination(item, key, dataSource, '.js-data-output');
+  })
 })

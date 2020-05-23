@@ -56,7 +56,7 @@ html
 
       section.search-room__result
         h1.search-room__result-title Номера, которые мы для вас подобрали
-        .search-room__data-source.js-search-room-data-source
+        .search-room__data-source.js-data-source
           -
             let aparts = []
             config = {}
@@ -175,9 +175,9 @@ html
             .search-room__apart.js-search-room-apart
               +apart(value)
 
-        .search-room__data-output.js-search-room-data-output
+        .search-room__data-output.js-data-output
         .search-room__pagination
-          .js-search-room-pagination
+          .js-pagination
 
     footer.search-room__footer
       +footer()

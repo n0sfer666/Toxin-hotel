@@ -1,39 +1,33 @@
 import 'paginationjs';
+import {Apart} from '../apart/apart';
 
 class Pagination {
-  constructor(uniqueName, dataSource, elementsOnPage, dataOutput, callback) {
-    this.uniqueName = uniqueName;
+  constructor(item, index, dataSource, dataOutput) {
+    this.$instance = $(item);
+    this.index = index;
 
     let demoSource = [];
     for(let i = 0; i < 200; i += 1) {
       demoSource.push(i);
     }
-    this.dataSource = dataSource === undefined
-      ? demoSource
-      : dataSource;
 
-    this.elementsOnPage = elementsOnPage == undefined
-      ? 12
-      : elementsOnPage;
+    this.dataSource = dataSource.length > 1
+      ? dataSource
+      : demoSource;
+
+    this.elementsOnPage = 12;
 
     this.dataOutput = dataOutput;
-
-    this.callback = callback;
 
     let config = this.getConfig(
       this.dataSource, 
       this.elementsOnPage, 
-      this.dataOutput, 
-      this.callback);
-    
-    this.$paginationElement = $(`.js-${this.uniqueName}-pagination`);
-    let isNotUndefined = this.$paginationElement.length > 0;
+      this.dataOutput);
 
-    if(isNotUndefined)
-      this.pagination = this.$paginationElement.pagination(config);
+      this.pagination = this.$instance.pagination(config);
   }
 
-  getConfig(dataSource, elementsOnPage, dataOutput, callback) {
+  getConfig(dataSource, elementsOnPage, dataOutput) {
     return {
       dataSource,
       showPrevious: false,
@@ -51,7 +45,10 @@ class Pagination {
       callback(data) {
         const html = data;
         if(dataOutput) $(dataOutput).html(html);
-        if(callback) callback();
+        const $arrayApartComponents = $('.js-apart__slider');
+        $.each($arrayApartComponents, (key, item) => {
+          new Apart(item, key);
+        })
       }
     }
   }
