@@ -1,64 +1,64 @@
-import {DateDropdown} from '../date-dropdown/date-dropdown';
+class Booking {
 
-$(document).ready(() => {
-  let daysIn;
+  REGEXP_SPACE_SEPARATED_THOUSANDS = /(\d)(?=(\d\d\d)+([^\d]|$))/g;
 
-  let price;
-  let cost;
-  let discount;
-  let additional;
-  let complementary;
-  let total;
-  price = cost = discount = additional = complementary = total = 0;
+  constructor(item, index) {
+    this.item = item;
+    this.index = index;
 
-  const priceComponents = document
-    .querySelectorAll('.js-booking__price')
-    .forEach((element) => {
-      price = Number(element.innerText);
-      element.innerText = getNumberWithSeparate(element.innerText);
-    });
-  const discountComponents = document
-    .querySelectorAll('.js-booking__discount')
-    .forEach((element) => {
-      discount = Number(element.innerText);
-      element.innerText = getNumberWithSeparate(element.innerText);
-    });
-  const additionalComponents = document
-    .querySelectorAll('.js-booking__additional')
-    .forEach((element) => {
-      additional = Number(element.innerText);
-      element.innerText = getNumberWithSeparate(element.innerText);
-    });
-  const complementaryComponents = document
-    .querySelectorAll('.js-booking__complementary')
-    .forEach((element) => {
-      complementary = Number(element.innerText);
-      element.innerText = getNumberWithSeparate(element.innerText);
-    });
-  const daysInComponent = document
-    .querySelector('.js-booking__daysIn');
-  const costComponent = document
-    .querySelector('.js-booking__cost');
-  const totalComponent = document
-    .querySelector('.js-booking__total');
-});
+    this.priceElement = this.getElementByClass('.js-booking__price');
+    this.priceValue = Number(this.priceElement.get(0).innerText);
+    $.each(this.priceElement, (key, item) => {
+      item.innerText = this.getStringWithSeparate(item.innerText);
+    })
 
-function getNumberWithSeparate(string) {
-  return string.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
-}
+    this.daysInElement = this.getElementByClass('.js-booking__daysIn');
 
-function getDaysIn(param) {
-  daysIn = param;
-  cost = price * daysIn;
-  total = cost + additional + complementary - discount;
+    this.costElement = this.getElementByClass('.js-booking__cost');
 
-  if (daysIn === 1) {
-    daysInComponent.innerText = '1 сутки';
-  } else {
-    daysInComponent.innerText = `${String(daysIn)} суток`;
+    this.discountElement = this.getElementByClass('.js-booking__discount');
+    this.discountValue = Number(this.discountElement.get(0).innerText);
+    $.each(this.discountElement, (key, item) => {
+      item.innerText = this.getStringWithSeparate(item.innerText);
+    })
+
+    this.additionalElement = this.getElementByClass('.js-booking__additional');
+
+    this.complementaryElement = this.getElementByClass('.js-booking__complementary');
+    this.complementaryValue = Number(this.complementaryElement.get(0).innerText);
+
+    this.totalElement = this.getElementByClass('.js-booking__total');
   }
 
-  costComponent.innerText = getNumberWithSeparate(`${cost}₽`);
+  getElementByClass(selector) {
+    return $(this.item).find(selector);
+  }
 
-  totalComponent.innerText = getNumberWithSeparate(`${total}`);
+  getStringWithSeparate(string) {
+    if(typeof(string) !== 'string')
+      string = String(string);
+    
+    return string.replace(this.REGEXP_SPACE_SEPARATED_THOUSANDS, '$1 ');
+  }
+
+  getDaysInAndCalculate(daysIn) {
+    if(typeof(daysIn) !== 'number') {
+      daysIn = Number(daysIn);
+    }
+    if(daysIn === 1) {
+      this.daysInElement.text(`${String(daysIn)} сутки`);
+    } else {
+      this.daysInElement.text(`${String(daysIn)} суток`);
+    }
+    this.calculate(daysIn);
+  }
+  calculate(daysIn) {
+    let cost =  this.priceValue * daysIn;
+    this.costElement.text(`${this.getStringWithSeparate(cost)}₽`)
+    let total = cost - this.discountValue + this.complementaryValue;
+    this.totalElement.text(`${this.getStringWithSeparate(total)}₽`);
+    
+  }
 }
+
+export {Booking};

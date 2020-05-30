@@ -1,7 +1,7 @@
 import { datepicker } from 'air-datepicker';
 
 class DateDropdown {
-  constructor(item, index, isSingle, callback) {
+  constructor(item, index, isSingle, bookingInstance) {
     if(Array.isArray(item)) {
       this.$container = [$(item[0]), $(item[1])];
     } else {
@@ -10,7 +10,7 @@ class DateDropdown {
     this.index = index;
 
     this.isSingle = isSingle;
-    this.callback = callback;
+    this.bookingInstance = bookingInstance;
 
     this.config = this.getConfig();
     if(Array.isArray(this.$container)) {
@@ -49,9 +49,9 @@ class DateDropdown {
         that.$container[1].val('');
         if (isSecondDateSelected) {
           that.$container[1].val(that.getFormattedDate(date[1]));
-          if (that.callback) {
+          if (that.bookingInstance) {
             const daysIn = Number(date[1] - date[0]) / 1000 / 60 / 60 / 24;
-            that.callback(daysIn);
+            that.bookingInstance.getDaysInAndCalculate(daysIn);
           }
         }
       }

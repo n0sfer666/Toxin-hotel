@@ -1,7 +1,6 @@
 import {Pagination} from './pagination';
 $(document).ready(function() {
   const $apartSource = $('.js-search-room-apart');
-  console.log($apartSource);
   
   const dataSource = [];
 
