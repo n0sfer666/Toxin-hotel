@@ -6,4 +6,6 @@ mixin toggle({isChecked = false, title = "Получать спецпредло�
       else
         input(type="checkbox", class="toggle")
       div(class="toggle__switch")
-      span(class="toggle__label") #{title}
+      span(class="toggle__label")
+        .toggle__wrapper
+          p.toggle__title #{title}
