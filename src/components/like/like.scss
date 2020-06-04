@@ -37,6 +37,7 @@
     display: inline-block;
     margin-left: 18px;
     width: 12px;
+    @include fix-overflow;
     text-align: center;
     font: normal normal 10px/12px Montserrat, sans-serif;
     color: $dark-shade-25;
