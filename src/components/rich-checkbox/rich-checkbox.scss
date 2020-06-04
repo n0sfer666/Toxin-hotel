@@ -12,6 +12,7 @@
     display: block;
   }
   &__container {
+    width: 100%;
     @include font-body;
     display: flex;
     position: relative;
@@ -57,17 +58,39 @@
   }
 
   &__wrapper {
+    width: inherit;
+
     padding-left: 30px;
+    padding-right: 10px;
+    box-sizing: border-box;
+
+    @include font-body;
   }
 
   &__title {
-    font: normal bold 14px/18px Montserrat, sans-serif;
+    display: inline-block;
+
+    width: inherit;
+    height: 18px;
+
+    font-weight: bold;
+    line-height: 18px;
     color: $dark-shade-75;
+
+    @include fix-overflow;
   }
 
   &__description {
+    display: inline-block;
+
+    width: inherit;
+    max-height: 30px;
     padding-top: 3px;
-    font: normal normal 12px/14px Montserrat, sans-serif;
+
+    font-size: 12px;
+    line-height: 14px;
     color: $dark-shade-50;
+
+    @include fix-overflow;
   }
 }
