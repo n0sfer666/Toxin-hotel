@@ -2,22 +2,34 @@
   @include font-body;
   list-style-type: none;
   width: calc(100% - 10px);
-}
-.bullet-list__item {
-  padding-left: 20px;
-  position: relative;
-  color: $dark-shade-75;
-  &:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 7px;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: $dark-shade-25;
+
+  &__item {
+    padding-left: 20px;
+    position: relative;
+    color: $dark-shade-75;
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 7px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: $dark-shade-25;
+    }
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
   }
-}
-.bullet-list__item:not(:last-child) {
-  margin-bottom: 10px;
+
+  &__wrapper {
+    width: 100%;
+    padding-right: 10px;
+    box-sizing: border-box;
+  }
+  &__title {
+    width: 100%;
+    max-height: 48px;
+    @include fix-overflow;
+  }
 }

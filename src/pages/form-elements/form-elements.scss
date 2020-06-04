@@ -29,9 +29,6 @@
         width: 232px;
         margin-bottom: 40px;
         
-        & .toggle__container {
-          margin-bottom: 14px;
-        }
         & .like {
           margin-right: 10px;
         }
@@ -52,6 +49,10 @@
       &_320-px {
         width: 320px;
         margin-bottom: 20px;
+        
+        & .toggle__container {
+          margin-bottom: 14px;
+        }
         
         & .rate {
           margin-right: 20px;
