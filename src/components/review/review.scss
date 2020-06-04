@@ -27,17 +27,36 @@
 .review__rightColumn {
   width: calc(100% - 78px);
   padding-left: 10px;
+  padding-right: 10px;
+
+  box-sizing: border-box;
 }
 .review__name {
-  font: normal bold 14px/24px Montserrat, sans-serif;
+  display: inline-block;
+
+  width: 100%;
+  max-height: 48px;
+
+  @include fix-overflow;
+
+  font-weight: bold;
   color: $dark-shade-75;
 }
 .review__daysAgo {
-  font: normal normal 14px/24px Montserrat, sans-serif;
+  display: inline-block;
+
+  width: 100%;
+  max-height: 48px;
+
+  @include fix-overflow;
+
   color: $dark-shade-75;
 }
 .review__text {
   display: inline-block;
+
+  width: 100%;
   margin-top: 10px;
-  @extend .review__daysAgo;
+  
+  @include fix-overflow;
 }
