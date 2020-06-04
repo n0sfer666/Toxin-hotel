@@ -9,6 +9,6 @@ mixin type-block ({mod = "h3", text = "This is a label or CTA text" } = {})
       when "h3"
         h3.type-block__title-h3 #{text}
       when "body"
-        p #{text}
+        p.type-block__title-body #{text}
       default
         p somthing wrong

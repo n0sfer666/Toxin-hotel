@@ -7,11 +7,21 @@
     max-width: 260px;
 
     &__title {
+      width: 100%;
+
+      @include fix-overflow;
+      white-space: nowrap;
+
       @include font-h3;
       margin-bottom: 22px;
     }
 
     &__link {
+      width: 100%;
+
+      @include fix-overflow;
+      white-space: nowrap;
+      
       line-height: 17px;
       color: $dark-shade-50;
 

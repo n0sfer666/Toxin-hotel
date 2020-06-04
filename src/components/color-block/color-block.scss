@@ -41,7 +41,10 @@
     }
 
     &-text {
-      min-width: 159px;
+      width: 159px;
+
+      @include fix-overflow;
+      white-space: nowrap;
       font: normal bold 19px/29px Quicksand, Montserrat, sans-serif;
       text-transform: capitalize;
 

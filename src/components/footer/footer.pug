@@ -48,7 +48,7 @@ mixin footer({isShort = false, description = footerDescription, navigation = foo
       .footer__block
         .footer__logo
           +logo({isFull: true})
-        p #{description}
+        p.footer__description #{description}
       .footer__menu
         +footer-menu-block(navigation)
         +footer-menu-block(aboutUs)

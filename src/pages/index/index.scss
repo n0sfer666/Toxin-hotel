@@ -34,7 +34,13 @@
     }
   }
   &__item {
+    width: 98%;
+    height: 24px;
+
     text-align: center;
+
+    @include fix-overflow;
+    white-space: nowrap;
 
     &:not(:last-child) {
       margin-bottom: 10px;

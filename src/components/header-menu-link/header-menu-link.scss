@@ -2,6 +2,11 @@
   &__link {
     display: inline-block;
 
+    max-width: 117px;
+    max-height: 17px;
+
+    @include fix-overflow;
+
     text-align: center;
     line-height: 17px;
     color: $dark-shade-50;

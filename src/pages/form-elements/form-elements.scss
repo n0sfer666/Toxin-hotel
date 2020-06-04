@@ -28,7 +28,7 @@
       &_222-px {
         width: 232px;
         margin-bottom: 40px;
-        
+
         & .like {
           margin-right: 10px;
         }
@@ -75,7 +75,7 @@
     &__button-container {
       &_medium {
         display: inline-block;
-        
+
         height: 44px;
         width: 99px;
 
@@ -109,7 +109,7 @@
     &_big {
       width: 90%;
       height: 15px;
-      
+
       @include font-h3;
       @include fix-overflow;
       margin-bottom: 20px;
