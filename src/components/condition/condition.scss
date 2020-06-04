@@ -15,8 +15,33 @@
   }
   
   &__text {
+    width: inherit;
     display: inline-block;
     margin-left: 10px;
+  }
+
+  &__wrapper {
+    width: 100%;
+    padding-right: 10px;
+  }
+  &__title {
+    display: inline-block;
+
+    max-height: 24px;
+    width: 100%;
+
+    @include fix-overflow;
+    font-weight: bold;
+  }
+  &__description {
+    display: inline-block;
+
+    max-height: 40px;
+    width: 100%;
+
+    @include fix-overflow;
+
+    line-height: 18px;
   }
 
   &__hrow {
