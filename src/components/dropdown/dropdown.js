@@ -10,11 +10,12 @@ class Dropdown {
 
     this.$clearButton = this.$instance.find('.js-clear-dropdown-button');
     this.$applyButton = this.$instance.find('.js-apply-dropdown-button');
+    
     this.bindClearButtonHandler();
 
     this.iqMenu = this.$instance.find('.iqdropdown-menu');
     this.iqMenu.on('click', (event) => {
-      const isApplyButton = event.target.parentNode === this.$applyButton.get(0);
+      const isApplyButton = event.target.parentNode.parentNode === this.$applyButton.get(0);
       if(!isApplyButton) {
         event.stopPropagation();
       }
