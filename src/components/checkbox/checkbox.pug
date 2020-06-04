@@ -1,6 +1,8 @@
 mixin checkbox({isChecked = false, title = "Change me"} = {})
   .checkbox__container
-    label(class="checkbox__label") #{title}
+    label(class="checkbox__label")
+      .checkbox__wrapper
+        p.checkbox__title #{title}
       if isChecked
         input(type="checkbox", class = "checkbox", checked)
       else
