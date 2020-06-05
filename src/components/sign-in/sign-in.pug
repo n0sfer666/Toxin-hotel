@@ -11,5 +11,5 @@ mixin sign-in({action = "change me"}={})
       +button({theme: "action", title: "Войти", type: "submit"})
     form(class="sign-in__signup-form", action="registration.html")
       .sign-in__signup
-        p Нет аккаунта на Toxin?
+        p.sign-in__signup-text Нет аккаунта на Toxin?
         +button({theme: "border", title: "Создать", type: "submit"})
