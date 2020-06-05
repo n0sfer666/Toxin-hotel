@@ -11,12 +11,20 @@
   border-radius: 4px;
 
   &__title {
+    width: 98%;
+    
+    @include fix-overflow;
+    white-space: nowrap;
     @include font-h1;
     margin-bottom: 20px;
   }
 
   &__block {
     &-title {
+      width: 98%;
+
+      @include fix-overflow;
+      white-space: nowrap;
       @include font-h3;
       margin-bottom: 5px;
     }
@@ -53,6 +61,11 @@
         width: 99px;
       }
     }
+  }
+  &__text-signup {
+    width: 190px;
 
+    @include fix-overflow;
+    white-space: nowrap;
   }
 }

@@ -25,5 +25,5 @@ mixin registration({action = "change me"} = {})
         +button({theme: "action", title: "зарегистрироваться", type: "submit"})
     form(class="registration_signin-form", action="sign-in.html")
       .registration__block-signup
-        p Уже есть аккаунт на Toxin
+        p.registration__text-signup Уже есть аккаунт на Toxin
         +button({theme: "border", title: "войти", type: "submit"})
