@@ -34,14 +34,11 @@ mixin apart({apart = "888", isLux = true, price = "9990", rate = 5, reviews = 14
               span.apart__rate-text_bold 0 
               | Отзывов
           if(reviews === 1)
-            span
-              span.apart__rate-text_bold 1 
-              | Отзыв
+            span.apart__rate-text_bold 1 
+            | Отзыв
           if(isFromTwotoFourReviews)
-            span
-              span.apart__rate-text_bold #{reviews} 
-              | Отзыва
+            span.apart__rate-text_bold #{reviews} 
+            | Отзыва
           if(reviews >= 5)
-            span
             span.apart__rate-text_bold #{reviews} 
             | Отзывов
