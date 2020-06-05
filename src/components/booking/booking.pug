@@ -9,11 +9,10 @@ mixin booking({apart = "888", isLux = true, price = "9990", discount = "2179", c
   form(class="booking js-booking", action=action)
     .booking__header
       .booking__header-apart
-        h1.booking__header-apart-text 
-          span.booking__header-number № 
-          | #{apart}
+        span.booking__header-number № 
+        h1.booking__header-apart-text #{apart}
         if isLux
-          h3.booking__header-apart-lux  люкс
+          h3.booking__header-apart-lux люкс
       span.booking__header-price
         span.booking__header-price_bold.js-booking__price #{price}
         span.booking__header-price_bold ₽ 
