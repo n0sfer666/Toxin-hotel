@@ -99,7 +99,11 @@
 
   &__login {
     display: inline-block;
-    white-space: nowrap;
+
+    max-width: 200px;
+    height: 30px;
+
+    @include fix-overflow;
 
     line-height: 30px;
     color: $dark-shade-50;
