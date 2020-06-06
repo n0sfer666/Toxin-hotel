@@ -1,6 +1,7 @@
 .color-block {
   &__colors {
     display: inline-block;
+
     width: 270px;
 
     &-block {
@@ -45,7 +46,7 @@
 
       @include fix-overflow;
       white-space: nowrap;
-      font: normal bold 19px/29px Quicksand, Montserrat, sans-serif;
+      font: normal bold 19px/30px Quicksand, Montserrat, sans-serif;
       text-transform: capitalize;
 
       &_regular {
