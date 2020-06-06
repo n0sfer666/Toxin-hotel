@@ -39,9 +39,13 @@
     justify-content: flex-end;
     margin-top: 320px;
 
-    & p {
+    &-text {
+      display: inline-block;
+
       max-width: 280px;
       text-align: right;
+      
+      @include fix-overflow;
     }
   }
 

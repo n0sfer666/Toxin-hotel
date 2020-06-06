@@ -43,7 +43,23 @@
   }
 
   &__title {
+    width: 85%;
+    height: 24px;
+
+    @include fix-overflow;
+
     @include font-h2;
+
+    &-reviews {
+      display: inline-block;
+      
+      width: 15%;
+      height: 32px;
+
+      text-align: right;
+
+      @include fix-overflow;
+    }
   }
 
   &__container {
