@@ -74,7 +74,7 @@
     height: 18px;
 
     font-weight: bold;
-    line-height: 18px;
+    line-height: 24px;
     color: $dark-shade-75;
 
     @include fix-overflow;
@@ -85,7 +85,7 @@
 
     width: inherit;
     max-height: 30px;
-    padding-top: 3px;
+    padding-top: 2px;
 
     font-size: 12px;
     line-height: 14px;

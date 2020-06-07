@@ -29,8 +29,10 @@
   &__container {
     position: relative;
 
+    margin-top: 4px;
+
     & .checkbox__container:not(:last-child) {
-      margin-bottom: 8px;
+      margin-bottom: 5px;
     }
   }
 

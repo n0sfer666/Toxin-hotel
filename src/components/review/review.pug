@@ -6,8 +6,6 @@ mixin review({login="user-1", likeCount=0, isLicked=false, name="change me", tim
         img(class = "review__img", src=`img/${login}.png`, alt=name)
       +like({counter: likeCount, isChecked: isLiked})
     .review__rightColumn
-      span(class="review__name") #{name}
-      br
-      span(class="review__daysAgo") #{timeAgo}
-      br
-      p(class="review__text") #{review}
+      p.review__name #{name}
+      p.review__daysAgo #{timeAgo}
+      p.review__text #{review}

@@ -8,7 +8,7 @@ class Dropdown {
 
     this.$instance = this.getInstance();
 
-    this.$clearButton = this.$instance.find('.js-clear-dropdown-button');
+    this.$clearButton = this.$instance.find('.js-clear-dropdown-button').hide();
     this.$applyButton = this.$instance.find('.js-apply-dropdown-button');
     
     this.bindClearButtonHandler();
@@ -129,6 +129,11 @@ class Dropdown {
         } else {
           $(`[data-id=${id}]`).find('.button-decrement')
             .removeAttr('style');
+        }
+        if (totalItems === 0) {
+          this.$clearButton.hide();
+        } else {
+          this.$clearButton.show();
         }
       },
     }

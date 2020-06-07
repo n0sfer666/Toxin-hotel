@@ -41,11 +41,14 @@
 
     @include fix-overflow;
 
-    line-height: 18px;
+    margin-top: -7px;
   }
 
   &__hrow {
-    margin: 15px 0 25px;
+    margin: 13px 0 19px;
+
+    width: 95%;
+
     border: .5px solid $dark-shade-5;
   }
 }
