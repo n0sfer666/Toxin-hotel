@@ -64,9 +64,6 @@
   }
 
 
-
-
-
   &__buttons {
     display: flex;
     flex-wrap: nowrap;
@@ -85,6 +82,7 @@
     & .button {
       width: 87px;
       height: 34px;
+      margin-right: 20px;
       @media screen and (min-width: $new-phones) {
         & .button:first-child {
           margin-right: 20px;
