@@ -54,11 +54,17 @@
   }
   & .button_text-gray {
     float: left;
-    margin-left: -10px;
+
+    & .button__wrapper {
+      padding: 0;
+    }
   }
   & .button_text-purple {
     float: right;
-    margin-right: -10px;
+
+    & .button__wrapper {
+      padding: 0;
+    }
   }
 }
 .iqdropdown.menu-open .iqdropdown-menu {
