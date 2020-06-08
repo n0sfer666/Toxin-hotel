@@ -1,6 +1,9 @@
 .header-footer {
   background-color: #e5e5e5;
 
+  & .logo {
+    margin-bottom: 68px;
+  }
   &__header {
     margin-bottom: 39px;
 
@@ -9,6 +12,7 @@
       & > .header__button-signin {
         & .button {
           width: 79px;
+          margin-right: 20px;
         }
       }
 
