@@ -7,16 +7,16 @@ mixin registration({action = "change me"} = {})
   .registration
     form(class="registration_main-form", action=action)
       h1.registration__title Регистрация аккаунта
-      .registration__block.registration__block-name-sex
+      .registration__block-name
         +text-field({placeholder: "Имя"})
         +text-field({placeholder: "Фамилия"})
-        div(style = "display: flex;")
-          +radio({title: "Мужчина", isChecked: true})
-          +radio({title: "Женщина", isChecked: false})
-      .registration__block.registration__block-birthday
+      .registration__block-sex
+        +radio({title: "Мужчина", isChecked: true})
+        +radio({title: "Женщина", isChecked: false})
+      .registration__block-birthday
         h3.registration__block-title День рождения
         +text-field({placeholder: "ДД.ММ.ГГГГ", jsClass: "masked"})
-      .registration__block.registration__block-signin
+      .registration__block-signin
         h3.registration__block-title данные для входа в сервис
         +text-field({placeholder: "Email", type: "Email"})
         +text-field({placeholder: "Пароль", type: "Password"})

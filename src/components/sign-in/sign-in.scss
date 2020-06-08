@@ -1,4 +1,4 @@
-.sign-in {
+  .sign-in {
   @include font-body;
   padding: 39px 7.895% 32px;
 
@@ -41,6 +41,8 @@
       height: 24px;
 
       @include fix-overflow;
+
+      line-height: 22px;
     }
 
     & .button {

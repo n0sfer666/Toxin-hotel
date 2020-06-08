@@ -18,7 +18,7 @@ mixin booking({apart = "888", isLux = true, price = "9990", discount = "2179", c
         span.booking__header-price_bold ₽ 
         | в сутки
     .booking__arival-departure
-      +date-dropdown({isSingle: false, label: ["прибытие", "отъезд"]})
+      +date-dropdown({isSingle: false, label: ["прибытие", "выезд"]})
     .booking__guests
       h3.booking__guests-text гости
       +dropdown()

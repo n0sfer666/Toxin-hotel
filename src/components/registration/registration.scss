@@ -2,7 +2,7 @@
   @include font-body;
   height: fit-content;
 
-  padding: 40px 7.895% 29px;
+  padding: 40px 7.635% 29px;
 
   box-sizing: border-box;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
@@ -29,12 +29,19 @@
       margin-bottom: 5px;
     }
 
-    & .text-field {
-      margin-bottom: 10px;
+    &-name {
+      & .text-field {
+        margin-bottom: 10px;
+      }
     }
 
-    &-name-sex {
+    &-sex {
+      display: flex;
       margin-bottom: 26px;
+
+      & .radio__container {
+        width: 118px; 
+      }
     }
 
     &-birthday {
@@ -43,6 +50,9 @@
 
     &-signin {
       margin-bottom: 24px;
+      & .text-field {
+        margin-bottom: 10px;
+      }
     }
 
     &-registering {
@@ -64,8 +74,10 @@
   }
   &__text-signup {
     width: 190px;
+    height: 24px;
 
     @include fix-overflow;
-    white-space: nowrap;
+    
+    line-height: 22px;
   }
 }
