@@ -66,7 +66,7 @@
     display: flex;
 
     margin: 0 auto;
-    padding: 63px 5px 32px;
+    padding: 63px 5px 53px;
 
     width: fit-content;
     max-width: 1160px;
@@ -87,20 +87,65 @@
     width: fit-content;
     max-width: 711px;
 
-    & .room-detail__title {
-      margin-bottom: 20px;
-    }
-
-    & > .room-detail__conditions,
-    & > .room-detail__piechart,
-    & > .room-detail__reviews,
-    & > .room-detail__rules,
-    & > .room-detail__cancel {
-      margin-bottom: 30px;
-    }
+    
 
     @media screen and (min-width: $old-phones) and (max-width: 450px) {
       margin-right: 0;
+    }
+  }
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__conditions {
+    margin-bottom: 21px;
+  }
+  &__piechart {
+    margin-bottom: 21px;
+  }
+  &__reviews {
+    margin-bottom: 21px;
+    
+    & .room-detail__title {
+      display: inline-block;
+
+      margin-top: 2px;
+      margin-bottom: 16px;
+    }
+
+    & .review__container:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+  &__title-reviews {
+    line-height: 32px;
+    float: right;
+  }
+  &__rules {
+    width: 272px;
+    margin-bottom: 21px;
+
+    & .room-detail__title {
+      margin-bottom: 16px;
+      margin-left: 20px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      margin-top: 3px;
+      margin-right: 99px;
+    }
+  }
+  &__cancel {
+    min-width: 310px;
+    max-width: 325px;
+    margin-bottom: 21px;
+
+    & .room-detail__title {
+      margin-bottom: 16px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      margin-top: 3px;
     }
   }
 
@@ -111,50 +156,6 @@
 
     @media screen and (min-width: $old-phones) and (max-width: 450px) {
       margin-right: 0;
-    }
-  }
-
-  &__reviews {
-
-    & h2 {
-      display: inline-block;
-      margin-top: 2px;
-    }
-
-    & > p {
-      line-height: 32px;
-      float: right;
-    }
-
-    & .review__container:not(:last-child) {
-      margin-bottom: 25px;
-    }
-  }
-
-  &__rules {
-    width: 262px;
-
-    & h2 {
-      margin-bottom: 16px;
-      margin-left: 20px;
-    }
-
-    @media screen and (min-width: $desktop) {
-      margin-top: 3px;
-      margin-right: 99px;
-    }
-  }
-
-  &__cancel {
-    min-width: 310px;
-    max-width: 325px;
-
-    & .h2 {
-      margin-bottom: 16px;
-    }
-
-    @media screen and (min-width: $desktop) {
-      margin-top: 3px;
     }
   }
 
