@@ -13,7 +13,7 @@
     flex: 1 0 auto;
   
     margin: 0 auto;
-    padding: 30px 10px 70px;
+    padding: 29px 0px 71px;
   
     width: fit-content;
   
@@ -39,13 +39,11 @@
       @include fix-overflow;
 
       @include font-h3;
+      
       &:not(:first-child) {
         margin-top: 20px;
+        margin-bottom: 5px;
       }
-    }
-
-    @media screen and (min-width: $new-phones) {
-      margin-left: 12px;
     }
 
     @media screen and (min-width: $new-phones) and (max-width: $pads) {
@@ -81,27 +79,28 @@
     }
 
     & .rich-checkbox__container {
-      margin-top: 13px;
-      margin-bottom: -6px;
+      margin-top: 16px;
+      margin-bottom: -15px;
     }
 
     & .expandable-checkbox-list {
-      margin-top: 17px;
+      margin-top: 16px;
     }
   }
 
   &__result {
     min-width: 310px;
     width: fit-content;
-    max-width: 848px;
+    max-width: 832px;
 
     &-title {
       width: 98%;
       max-height: 60px;
 
+      margin-bottom: 20px;
+
       @include fix-overflow;
       @include font-h1;
-      margin-bottom: 21px;
     }
   }
 
@@ -122,11 +121,14 @@
     justify-content: center;
 
     margin-top: 20px;
+
+    @media screen and (min-width: $desktop ) {
+      margin-left: -15px;
+    }
   }
 
   &__apart {
-    margin-right: 2px;
-    margin-bottom: 21px;
+    margin-bottom: 14px;
 
     width: 270px;
   }
