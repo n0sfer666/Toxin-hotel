@@ -1,9 +1,7 @@
 .registration {
   @include font-body;
   height: fit-content;
-
   padding: 40px 7.635% 29px;
-
   box-sizing: border-box;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   background-color: #FFFFFF;
@@ -12,7 +10,6 @@
 
   &__title {
     width: 98%;
-    
     @include fix-overflow;
     white-space: nowrap;
     @include font-h1;
@@ -22,7 +19,6 @@
   &__block {
     &-title {
       width: 98%;
-
       @include fix-overflow;
       white-space: nowrap;
       @include font-h3;
@@ -50,6 +46,7 @@
 
     &-signin {
       margin-bottom: 24px;
+
       & .text-field {
         margin-bottom: 10px;
       }
@@ -61,7 +58,6 @@
     }
 
     &-signup {
-
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -75,9 +71,7 @@
   &__text-signup {
     width: 190px;
     height: 24px;
-
     @include fix-overflow;
-    
     line-height: 22px;
   }
 }

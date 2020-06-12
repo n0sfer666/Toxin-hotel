@@ -13,9 +13,7 @@
       flex: none;
       width: 37px;
       margin-right: 30px;
-
       @include fix-overflow;
-
       font: normal normal Montserrat, sans-serif;
       text-align: right;
       text-transform: capitalize;
@@ -39,9 +37,9 @@
       }
     }
   }
+
   &__title-h1 {
     max-height: 60px;
-
     @include font-h1;
     @include fix-overflow;
   }
@@ -59,9 +57,7 @@
   }
   &__title-body {
     max-height: 48px;
-
     margin-top: -3px;
-    
     @include fix-overflow;
   }
 }

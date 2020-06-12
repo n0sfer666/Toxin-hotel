@@ -26,29 +26,22 @@
   }
   &__title {
     display: inline-block;
-
+    font-weight: bold;
     max-height: 24px;
     width: 100%;
-
     @include fix-overflow;
-    font-weight: bold;
   }
   &__description {
     display: inline-block;
-
     max-height: 40px;
     width: 100%;
-
     @include fix-overflow;
-
     margin-top: -7px;
   }
 
   &__hrow {
     margin: 13px 0 19px;
-
     width: 95%;
-
     border: .5px solid $dark-shade-5;
   }
 }

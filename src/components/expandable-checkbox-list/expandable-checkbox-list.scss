@@ -3,16 +3,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   width: 100%;
   height: 44px;
-
   cursor: pointer;
 
   &__title {
     width: 100%;
     height: 15px;
-
     @include fix-overflow;
     @include font-h3;
   }
@@ -21,16 +18,13 @@
     display: inline-block;
     width: 44px;
     text-align: center;
-
     font: normal normal 24px/24px materialIcons;
     color: $dark-shade-50;
   }
 
   &__container {
     position: relative;
-
     margin-top: 4px;
-
     & .checkbox__container:not(:last-child) {
       margin-bottom: 5px;
     }

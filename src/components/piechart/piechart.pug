@@ -54,7 +54,7 @@ mixin piechart({perfect = 130, good = 65, satisfact = 65, disappoint = 0 } = {})
     if(total > 0 && total < 5)
         text = "голоса"
   .piechart
-    svg(width="120", height="120", viewbox="0 0 120 120", fill="none")
+    svg(width="120", height="120", viewbox="0 0 120 120", fill="none", class="piechart__chart")
       circle(cx="60", cy="60", r="59.5", fill="white")
       circle(cx="60", cy="60", r="58", stroke="url(#grad-5)", stroke-width="4", Stroke-dasharray=`${dashFor5[0]} ${dashFor5[1]}`, stroke-dashoffset=dashFor5[2])
       circle(cx="60", cy="60", r="58", stroke="url(#grad-4)", stroke-width="4", Stroke-dasharray=`${dashFor4[0]} ${dashFor4[1]}`, stroke-dashoffset=dashFor4[2])
@@ -79,13 +79,13 @@ mixin piechart({perfect = 130, good = 65, satisfact = 65, disappoint = 0 } = {})
     .piechart__legend
       .piechart__legend-line
         .piechart__legend-circle.piechart__legend-circle_perfect
-        p Великолепно
+        p.piechart__raiting Великолепно
       .piechart__legend-line
         .piechart__legend-circle.piechart__legend-circle_good
-        p Хорошо
+        p.piechart__raiting Хорошо
       .piechart__legend-line
         .piechart__legend-circle.piechart__legend-circle_satisfact
-        p Удовлетворительно
+        p.piechart__raiting Удовлетворительно
       .piechart__legend-line
         .piechart__legend-circle.piechart__legend-circle_disappoint
-        p Разочарован
+        p.piechart__raiting Разочарован

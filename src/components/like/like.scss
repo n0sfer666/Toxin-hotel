@@ -27,6 +27,7 @@
     background-clip: padding-box;
     border: 1px solid transparent;
     border-radius: 10px;
+
     &:before {
       content: '';
       position: absolute;
@@ -37,6 +38,7 @@
       background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     }
   }
+
   &__counter {
     display: inline-block;
     margin-left: 18px;
@@ -46,6 +48,7 @@
     font: normal normal 10px/12px Montserrat, sans-serif;
     color: $dark-shade-25;
   }
+  
   &__counter_active {
     color: $purple;
   }

@@ -1,18 +1,14 @@
 .registration-page {
   @include font-body;
-
   display: flex;
   flex-direction: column;
-
   height: 100%;
 
   &__content {
     display: flex;
     justify-content: center;
     align-items: center;
-
     flex: 1 0 auto;
-  
     background-image: url(./img/bg-registration.jpg);
     background-repeat: no-repeat;
     background-position: center 100%;

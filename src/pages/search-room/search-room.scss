@@ -1,20 +1,15 @@
 .search-room {
   @include font-body;
-
   display: flex;
   flex-direction: column;
-
   height: 100%;
 
   &__content {
     display: flex;
     flex-wrap: nowrap;
-
     flex: 1 0 auto;
-  
     margin: 0 auto;
     padding: 29px 0px 71px;
-  
     width: fit-content;
   
     @media screen and (min-width: $old-phones) and (max-width: $new-phones) {
@@ -35,9 +30,7 @@
     &-title {
       width: 98%;
       height: 15px;
-
       @include fix-overflow;
-
       @include font-h3;
       
       &:not(:first-child) {
@@ -96,9 +89,7 @@
     &-title {
       width: 98%;
       max-height: 60px;
-
       margin-bottom: 20px;
-
       @include fix-overflow;
       @include font-h1;
     }
@@ -119,7 +110,6 @@
   &__pagination {
     display: flex;
     justify-content: center;
-
     margin-top: 20px;
 
     @media screen and (min-width: $desktop ) {

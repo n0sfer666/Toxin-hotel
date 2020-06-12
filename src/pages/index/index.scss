@@ -7,12 +7,9 @@
   &__ui-kit {
     margin-bottom: 20px;
     padding: 10px;
-
     width: 300px;
-
     border: 4px dotted $purple;
     box-sizing: border-box;
-
     & .index__item:hover {
       border-radius: 5px;
       background-color: $purple;
@@ -21,12 +18,9 @@
   }
   &__pages {
     padding: 10px;
-
     width: 300px;
-
     border: 4px dotted $green;
     box-sizing: border-box;
-
     & .index__item:hover {
       border-radius: 5px;
       background-color: $green;
@@ -36,16 +30,12 @@
   &__item {
     width: 98%;
     height: 24px;
-
     text-align: center;
-
     @include fix-overflow;
     white-space: nowrap;
-
     &:not(:last-child) {
       margin-bottom: 10px;
     }
-
     & + .index__title {
       color: $dark-shade-75;
     }

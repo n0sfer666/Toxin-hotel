@@ -32,7 +32,7 @@ mixin booking({apart = "888", isLux = true, price = "9990", discount = "2179", c
           span ₽
       .booking__calculation-line
         .booking__calculation-text
-          p Сбор за услуги: 
+          p.booking__description Сбор за услуги: 
             if isDiscounted
               span скидка 
               span.js-booking__discount #{discount}
@@ -44,7 +44,7 @@ mixin booking({apart = "888", isLux = true, price = "9990", discount = "2179", c
           span ₽
       .booking__calculation-line
         .booking__calculation-text
-          p Сбор за дополнительные услуги
+          p.booking__description Сбор за дополнительные услуги
           span.booking__exclamation
             span.booking__exclamation_bold i
         .booking__calculation-complementary

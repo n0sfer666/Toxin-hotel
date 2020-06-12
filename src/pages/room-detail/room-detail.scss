@@ -1,9 +1,7 @@
 .room-detail {
   @include font-body;
-
   display: flex;
   flex-direction: column;
-
   height: 100%;
 
   &__content {
@@ -13,7 +11,6 @@
   &__galary {
     display: flex;
     flex-wrap: wrap;
-
     width: 100%;
 
     & .room-detail__img {
@@ -33,7 +30,6 @@
     &-addition {
       display: flex;
       flex-direction: column;
-
       width: 31.875%;
 
       @media screen and (min-width: $old-phones) and (max-width: $new-phones) {
@@ -45,29 +41,22 @@
   &__title {
     width: 85%;
     height: 24px;
-
     @include fix-overflow;
-
     @include font-h2;
 
     &-reviews {
       display: inline-block;
-      
       width: 15%;
       height: 32px;
-
       text-align: right;
-
       @include fix-overflow;
     }
   }
 
   &__container {
     display: flex;
-
     margin: 0 auto;
     padding: 63px 5px 53px;
-
     width: fit-content;
     max-width: 1160px;
 
@@ -80,14 +69,10 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-
     margin-right: 70px;
-
     min-width: 310px;
     width: fit-content;
     max-width: 711px;
-
-    
 
     @media screen and (min-width: $old-phones) and (max-width: 450px) {
       margin-right: 0;
@@ -108,7 +93,6 @@
     
     & .room-detail__title {
       display: inline-block;
-
       margin-top: 2px;
       margin-bottom: 16px;
     }
@@ -151,7 +135,6 @@
 
   &__conditions {
     margin-right: 80px;
-
     width: 280px;
 
     @media screen and (min-width: $old-phones) and (max-width: 450px) {

@@ -5,10 +5,12 @@ $container-size: $star-size * 5;
   display: inline-block;
   width: $container-size;
   height: $star-size;
+
   & .rate__label {
     height: inherit;
   }
 }
+
 .rate:not(:checked) > .rate__input {
   position:absolute;
   visibility: hidden;
@@ -22,7 +24,6 @@ $container-size: $star-size * 5;
   cursor: pointer;
   color: $purple;
 }
-
 
 .rate:not(:checked) > .rate__label:before {
   font: normal normal 24px/24px materialIcons;

@@ -3,7 +3,6 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-
     margin: -3px 140px 0 140px;
 
     @media screen and (min-width: $old-phones) and (max-width: $pads) {
@@ -13,10 +12,10 @@
       margin: 0;
     }
   }
+
   &__column-section {
     display: flex;
     flex-direction: column;
-
     min-width: 266px;
     max-width: 320px;
     margin-bottom: 40px;
@@ -31,7 +30,6 @@
       width: 320px;
       justify-content: center;
       align-items: center;
-      // margin: 0;
     }
   }
 
@@ -76,7 +74,6 @@
     &-dropdown-rooms {
       width: 266px;
       margin-bottom: 221px;
-
       & .form-elements__title {
         margin-bottom: 5px;
       }
@@ -85,12 +82,10 @@
       width: 263px;
       margin-bottom: 56px;
     }
-
     // second section
     &-checkbox {
       width: 231px;
       margin-bottom: 34px;
-
       & .form-elements__title {
         margin-bottom: 15px;
       }
@@ -101,10 +96,8 @@
     &-radio {
       width: 222px;
       margin-bottom: 42px;
-
       &-container {
         display: flex;
-        
         & .radio__container:not(:last-child) {
           margin-right: 10px;
         }
@@ -113,10 +106,10 @@
         margin-bottom: 16px;
       }
     }
+
     &-toggle {
       width: 260px;
       margin-bottom: 45px;
-
       & .form-elements__title {
         margin-bottom: 16px;
       }
@@ -124,10 +117,10 @@
         margin-bottom: 14px;
       }
     }
+
     &-like {
       width: 120px;
       margin-bottom: 40px;
-
       & .form-elements__title {
         margin-bottom: 15px;
       }
@@ -135,10 +128,10 @@
         margin-right: 10px;
       }
     }
+
     &-rate {
       width: 260px;
       margin-bottom: 192px;
-
       & .form-elements__title {
         margin-bottom: 16px;
       }
@@ -149,14 +142,12 @@
     &-dropdown-guests-2 {
       width: 320px;
       margin-bottom: 256px;
-
       & .form-elements__title {
         margin-bottom: 5px;
       }
     }
     &-rich-checkbox {
       width: 266px;
-
       & .form-elements__title {
         margin-bottom: 14px;
       }
@@ -186,22 +177,17 @@
 
       &-text-line {
         display: flex;
-
         width: 182px;
-
         margin: 0 -10px 32px;
-
         & .button {
           width: 81px;
           height: 14px;
         }
       }
-
       &-action-line {
         width: 320px;
         height: 44px;
       }
-
       & .form-elements__title {
         margin-bottom: 16px;
       }
@@ -209,7 +195,6 @@
     &-pagination {
       width: 320px;
       margin-bottom: 233px;
-
       & .form-elements__title {
         margin-bottom: 15px;
       }
@@ -217,19 +202,16 @@
     &-dropdown-guests-3 {
       width: 320px;
       margin-bottom: 256px;
-
       & .form-elements__title {
         margin-bottom: 5px;
       }
     }
     &-bullet-list {
       width: 281px;
-
       & .form-elements__title {
         margin-bottom: 13px;
       }
     }
-
     // fours section
     &-condition {
       width: 300px;
@@ -243,28 +225,24 @@
     }
   }
 
-    &__button-container {
-      &_medium {
-        display: inline-block;
-
-        height: 44px;
-        width: 99px;
-
-        margin-right: 20px;
-      }
-      &_small {
-        display: inline-block;
-
-        width: 81px;
-
-        margin-right: 20px;
-        margin-bottom: 30px;
-      }
-      &_big {
-        height: 44px;
-        margin-bottom: 40px;
-      }
+  &__button-container {
+    &_medium {
+      display: inline-block;
+      height: 44px;
+      width: 99px;
+      margin-right: 20px;
     }
+    &_small {
+      display: inline-block;
+      width: 81px;
+      margin-right: 20px;
+      margin-bottom: 30px;
+    }
+    &_big {
+      height: 44px;
+      margin-bottom: 40px;
+    }
+  }
 
   &__footer {
     margin-bottom: 40px;
@@ -272,15 +250,12 @@
   &__title {
     width: 90%;
     height: 15px;
-
     @include font-h3;
     @include fix-overflow;
     margin-bottom: 4px;
-
     &_big {
       width: 90%;
       height: 15px;
-
       @include font-h3;
       @include fix-overflow;
       margin-bottom: 20px;

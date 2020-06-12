@@ -5,22 +5,20 @@
     margin-bottom: 23px;
     width: 100%;
   }
+  
   &__title {
     width: 48%;
-
     @include font-h3;
     @include fix-overflow;
   }
+
   &__values {
     display: inline-block;
-
     width: 48%;
-
     font: normal normal 11px/15px Montserrat, sans-serif;
     text-transform: uppercase;
     text-align: right;
     color: $dark-shade-50;
-
     @include fix-overflow;
   }
 }

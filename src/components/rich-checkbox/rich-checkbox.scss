@@ -41,56 +41,48 @@
 
   &__checkmark {
     position: absolute;
-  top: 2px;
-  left: 0;
-  height: 20px;
-  width: 20px;
-  background-color: #fff;
-  border: 1px solid $dark-shade-25;
-  box-sizing: border-box;
-  border-radius: 4px;
+    top: 2px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    border: 1px solid $dark-shade-25;
+    box-sizing: border-box;
+    border-radius: 4px;
 
-  &:after {
-    content: "";
-    position: absolute;
-    display: none;
-    }
+    &:after {
+      content: "";
+      position: absolute;
+      display: none;
+      }
   }
 
   &__wrapper {
     width: inherit;
-
     padding-left: 30px;
     padding-right: 10px;
     box-sizing: border-box;
-
     @include font-body;
   }
 
   &__title {
     display: inline-block;
-
     width: inherit;
     height: 18px;
-
     font-weight: bold;
     line-height: 24px;
     color: $dark-shade-75;
-
     @include fix-overflow;
   }
 
   &__description {
     display: inline-block;
-
     width: inherit;
     max-height: 30px;
     padding-top: 2px;
-
     font-size: 12px;
     line-height: 14px;
     color: $dark-shade-50;
-
     @include fix-overflow;
   }
 }

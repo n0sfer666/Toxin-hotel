@@ -2,13 +2,10 @@
   display: inline-block;
   position: relative;
   cursor: pointer;
-
   width: 100%;
-
   min-height: 20px;
   height: 100%;
   max-height: 40px;
-
   line-height: 18px;
   color: $dark-shade-50;
 
@@ -20,10 +17,8 @@
 }
 .checkbox__wrapper {
   width: 100%;
-
   padding-left: 30px;
   padding-right: 10px;
-
   box-sizing: border-box;
 }
 .checkbox__title {
@@ -42,6 +37,7 @@
     @include font-body;
   }
 }
+
 .checkbox__checkmark {
   position: absolute;
   top: 0;

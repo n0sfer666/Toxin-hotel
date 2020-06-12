@@ -10,7 +10,6 @@
 
   &__wrapper {
     width: 100%;
-    
     padding: 0 10px;
     box-sizing: border-box;
   }
@@ -24,9 +23,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
     height: 100%;
-
     border-radius: 22px;
     border: none;
     outline: none;
@@ -63,7 +60,6 @@
 
     &-transparent {
       @extend .button_gradient;
-
       opacity: 0.5;
     
       &:active, &:focus, &:hover {
@@ -76,13 +72,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  
     height: 100%;
-    
     box-sizing: border-box;
     outline: none;
     cursor: pointer;
-  
     border: double 2px transparent;
     border-radius: 22px;
     background-image: linear-gradient(white, white), linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
@@ -94,7 +87,6 @@
 
     &-transparent {
       @extend .button_border;
-
       opacity: 0.5;
     
       &:active, &:focus, &:hover {
@@ -103,12 +95,15 @@
       }
     }
   }
+
   &_purple .button__title {
     color: $purple;
   }
+
   &_gray .button__title {
     color: $dark-shade-50;
   }
+
   &_text {
     background: inherit;
     border: none;
@@ -127,6 +122,7 @@
         text-shadow: 0 0 5px $dark-shade-50;
       }
     }
+    
     &-purple {
       @extend .button_text;
 

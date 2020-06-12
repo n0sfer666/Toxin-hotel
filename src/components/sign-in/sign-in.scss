@@ -1,10 +1,8 @@
   .sign-in {
   @include font-body;
   padding: 39px 7.895% 32px;
-
   background: #FFFFFF;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 4px;
   box-sizing: border-box;
@@ -12,7 +10,6 @@
   &__title {
     width: 98%;
     height: 30px;
-
     @include font-h1;
     margin-bottom: 20px;
   }
@@ -33,21 +30,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     margin-top: 30px;
 
     &-text {
       width: 180px;
       height: 24px;
-
       @include fix-overflow;
-
       line-height: 22px;
     }
 
     & .button {
       width: 99px;
     }
-
   }
 }
