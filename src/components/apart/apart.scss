@@ -18,38 +18,28 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-
     width: 100%;
     max-height: 25px;
-
     @include fix-overflow;
 
-    & .apart__header-title {
+    &-number {
+      font-size: 14px;
+    }
+
+    &-title {
+
       &-text {
-        @include font-h1;
-
-        & .apart__header-number {
-          font-size: 14px;
-        }
-      }
-
-      & .apart__header-title-text {
         display: inline-block;
+        @include font-h1;
         font-size: 18px;
         line-height: 24px;
       }
 
       &-lux {
-        @include font-h3;
-      }
-      & .apart__header-title-lux {
         display: inline;
+        @include font-h3;
         color: $purple;
       }
-    }
-
-    & .apart-price {
-      margin-bottom: 1px;
     }
   }
 
