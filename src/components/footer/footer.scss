@@ -1,16 +1,12 @@
 .footer {
   @include font-body;
-
   display: flex;
-
   box-sizing: border-box;
-
   background-color: #fff;
 
   &_short {
     flex-direction: column;
     align-items: center;
-
     padding: 100px 0 110px;
 
     & .footer__logo {
@@ -20,10 +16,8 @@
     & .footer__description {
       margin-top: -6px;
       margin-bottom: 27px;
-
       width: 70%;
       max-width: 516px;
-
       text-align: center;
     }
   }
@@ -80,7 +74,6 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-
       margin-bottom: 25px;
     }
   }
@@ -108,7 +101,6 @@
 
     @media screen and (min-width: $old-phones) and (max-width: $new-phones) {
       flex-direction: column;
-
       margin: 40px 0;
     }
   }
