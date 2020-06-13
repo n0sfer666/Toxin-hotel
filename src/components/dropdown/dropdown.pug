@@ -1,7 +1,7 @@
 include ../button/button
 mixin dropdown({isGuests = true} = {})
-  div(class = `iqdropdown js-iqdropdown`)
-    p(class="iqdropdown-selection")
+  .iqdropdown.js-iqdropdown
+    p.iqdropdown-selection
       if isGuests
         .iqdropdown-menu
           div(class="iqdropdown-menu-option", data-id="adults")
