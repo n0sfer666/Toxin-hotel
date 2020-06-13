@@ -19,7 +19,7 @@
     @include font-h3;
   }
 
-  &_action {
+  &_with-action {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,7 +41,7 @@
       line-height: 14px;
     }
   }
-  &_gradient {
+  &_with-gradient {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -59,7 +59,7 @@
     }
 
     &-transparent {
-      @extend .button_gradient;
+      @extend .button_with-gradient;
       opacity: 0.5;
     
       &:active, &:focus, &:hover {
@@ -68,7 +68,7 @@
       }
     }
   }
-  &_border {
+  &_with-border {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -86,7 +86,7 @@
     }
 
     &-transparent {
-      @extend .button_border;
+      @extend .button_with-border;
       opacity: 0.5;
     
       &:active, &:focus, &:hover {
@@ -96,22 +96,14 @@
     }
   }
 
-  &_purple .button__title {
-    color: $purple;
-  }
-
-  &_gray .button__title {
-    color: $dark-shade-50;
-  }
-
-  &_text {
+  &_with-text {
     background: inherit;
     border: none;
     outline: none;
     cursor: pointer;
 
     &-gray {
-      @extend .button_text;
+      @extend .button_with-text;
 
       & .button__title {
         color: $dark-shade-50;
@@ -124,7 +116,7 @@
     }
     
     &-purple {
-      @extend .button_text;
+      @extend .button_with-text;
 
       & .button__title {
         color: $purple;

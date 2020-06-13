@@ -3,10 +3,10 @@ mixin button({theme = "gradient", title = "click me", jsClass = "undefined", typ
     let haveHandler = jsClass === "undefined" ? false : true
 
   if haveHandler
-    button(type=type, class=`button button_${theme} js-${jsClass}-button`)
+    button(type=type, class=`button button_with-${theme} js-${jsClass}-button`)
       .button__wrapper
         h3.button__title #{title}
   else
-    button(type=type, class=`button button_${theme}`)
+    button(type=type, class=`button button_with-${theme}`)
       .button__wrapper
         h3.button__title #{title}
