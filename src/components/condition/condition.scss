@@ -2,6 +2,7 @@
   @include font-body;
   display: flex;
   align-items: flex-start;
+  flex-direction: column  ;
   width: 100%;
 
   &__icon {
@@ -39,9 +40,11 @@
     margin-top: -7px;
   }
 
-  &__hrow {
-    margin: 13px 0 19px;
-    width: 95%;
-    border: .5px solid $dark-shade-5;
+  &__row {
+    &_horizontal {
+      margin: 13px 0 19px;
+      width: 95%;
+      border: .5px solid $dark-shade-5;
+    }
   }
 }

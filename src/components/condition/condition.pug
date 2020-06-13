@@ -1,10 +1,11 @@
 //- icon
 mixin condition({icon = "tag_faces", title = "Title", description = "Description", isRowed = true} = {})
   .condition
-    p.condition__icon #{icon}
-    .condition__text
-      .condition__wrapper
-        p.condition__title #{title}
-        p.condition__description #{description}
-  if(isRowed)
-    .condition__hrow
+    .condition__container
+      p.condition__icon #{icon}
+      .condition__text
+        .condition__wrapper
+          p.condition__title #{title}
+          p.condition__description #{description}
+    if(isRowed)
+      .condition__row_horizontal

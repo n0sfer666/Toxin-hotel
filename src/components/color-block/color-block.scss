@@ -1,14 +1,12 @@
 .color-block {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+
   &__colors {
     display: inline-block;
     width: 270px;
-
-    &-block {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      margin-bottom: 20px;	
-    }
 
     &-cell {
       flex: none;
