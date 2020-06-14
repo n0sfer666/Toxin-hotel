@@ -5,7 +5,7 @@ include ../button/button
 
 mixin registration({action = "change me"} = {})
   .registration
-    form(class="registration_main-form", action=action)
+    form(class="registration__main-form", action=action)
       h1.registration__title Регистрация аккаунта
       .registration__block-name
         +text-field({placeholder: "Имя"})
@@ -23,7 +23,7 @@ mixin registration({action = "change me"} = {})
         +toggle()
       .registration__block-registering
         +button({theme: "action", title: "зарегистрироваться", type: "submit"})
-    form(class="registration_signin-form", action="sign-in.html")
+    form(class="registration__signin-form", action="sign-in.html")
       .registration__block-signup
         p.registration__text-signup Уже есть аккаунт на Toxin
         +button({theme: "border", title: "войти", type: "submit"})

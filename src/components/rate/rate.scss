@@ -6,49 +6,57 @@ $container-size: $star-size * 5;
   width: $container-size;
   height: $star-size;
 
-  & .rate__label {
+  & &__label {
     height: inherit;
   }
-}
 
-.rate:not(:checked) > .rate__input {
-  position:absolute;
-  visibility: hidden;
-}
-
-.rate:not(:checked) > .rate__label {
-  float: right;
-  width: $star-size;
-  overflow: hidden;
-  white-space: nowrap;
-  cursor: pointer;
-  color: $purple;
-}
-
-.rate:not(:checked) > .rate__label:before {
-  font: normal normal 24px/24px materialIcons;
-  content: 'star_border';
-}
-
-.rate > .rate__input:checked ~ .rate__label {
-  &:before {
-    content: 'star';
+  &:not(:checked) > &__input {
+    position:absolute;
+    visibility: hidden;
   }
-}
 
-.rate:not(:checked) > .rate__label:hover,
-.rate:not(:checked) > .rate__label:hover ~ .rate__label {
-  text-shadow: 0 0 5px $dark-shade-50;
-}
+  &:not(:checked) > &__label {
+    float: right;
+    width: $star-size;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    color: $purple;
+  }
 
-.rate > .rate__input:checked + .rate__label:hover,
-.rate > .rate__input:checked + .rate__label:hover ~ .rate__label,
-.rate > .rate__input:checked ~ .rate__label:hover,
-.rate > .rate__input:checked ~ .rate__label:hover ~ .rate__label,
-.rate > .rate__label:hover ~ .rate__input:checked ~ .rate__label {
-  text-shadow: 0 0 5px $dark-shade-50;
-}
+  &:not(:checked) > &__label:before {
+    font: normal normal 24px/24px materialIcons;
+    content: 'star_border';
+  }
 
-.rate > .rate__label:active {
-  position:relative;
+  & > &__input:checked ~ &__label {
+    &:before {
+      content: 'star';
+    }
+  }
+
+  &:not(:checked) > &__label:hover,
+  &:not(:checked) > &__label:hover ~ &__label {
+    text-shadow: 0 0 5px $purple;
+  }
+
+  & > &__input:checked + &__label:hover,
+  & > &__input:checked + &__label:hover ~ &__label,
+  & > &__input:checked ~ &__label:hover,
+  & > &__input:checked ~ &__label:hover ~ &__label,
+  & > &__label:hover ~ &__input:checked ~ &__label {
+    text-shadow: 0 0 5px $purple;
+  }
+
+  // & > &__input:checked + &__label:hover,
+  // & > &__input:checked + &__label:hover ~ &__label,
+  // & > &__input:checked ~ &__label:hover,
+  // & > &__input:checked ~ &__label:hover ~ &__label,
+  // & > &__label:hover ~ &__input:checked ~ &__label {
+  //   text-shadow: 0 0 5px $dark-shade-50;
+  // }
+
+  & > &__label:active {
+    position:relative;
+  }
 }

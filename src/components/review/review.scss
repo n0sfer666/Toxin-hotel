@@ -1,66 +1,62 @@
-.review__container {
+.review {
   @include font-body;
   display: flex;
   width: 100%;
-}
-.review__pict {
-  width: 48px;
-  height: 48px;
-  box-sizing: border-box;
-  background-color: #fff;
-  margin-bottom: 12px;
-  border-radius: 32px;
-  overflow: hidden;
-  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.1);
 
-  & .review__img {
+  &__pictures {
+    width: 48px;
+    height: 48px;
+    box-sizing: border-box;
+    background-color: #fff;
+    margin-bottom: 12px;
+    border-radius: 32px;
+    overflow: hidden;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.1);
+  }
+
+  &__img {
     height: 100%;
     width: 100%;
     object-fit: cover;
   }
-}
 
-.review__leftColumn {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 48px;
-}
+  &__container {
+    &_left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 48px;
+    }
+    
+    &_right {
+      width: 100%;
+      padding-left: 10px;
+      box-sizing: border-box;
+    }
+  }
+  
+  &__name {
+    display: inline-block;
+    width: 100%;
+    max-height: 48px;
+    @include fix-overflow;
+    font-weight: bold;
+    color: $dark-shade-75;
+  }
 
-.review__rightColumn {
-  width: 100%;
-  padding-left: 10px;
-  box-sizing: border-box;
-}
+  &__daysAgo {
+    display: inline-block;
+    margin-top: -7px;
+    width: 100%;
+    max-height: 48px;
+    @include fix-overflow;
+    color: $dark-shade-75;
+  }
 
-.review__name {
-  display: inline-block;
-
-  width: 100%;
-  max-height: 48px;
-
-  @include fix-overflow;
-
-  font-weight: bold;
-  color: $dark-shade-75;
-}
-
-.review__daysAgo {
-  display: inline-block;
-
-  margin-top: -7px;
-
-  width: 100%;
-  max-height: 48px;
-
-  @include fix-overflow;
-
-  color: $dark-shade-75;
-}
-
-.review__text {
-  display: inline-block;
-  width: 100%;
-  margin-top: 3px;
-  @include fix-overflow;
+  &__text {
+    display: inline-block;
+    width: 100%;
+    margin-top: 3px;
+    @include fix-overflow;
+  }
 }
