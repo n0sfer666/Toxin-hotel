@@ -1,8 +1,8 @@
 mixin like({isChecked = false, counter = 0} = {})
-  .like__container
+  .like
     if isChecked
-      button(type="button", class="like like_active")
+      button(type="button", class="like__button like__button_active")
         span.like__counter.like__counter-active #{counter}
     else
-      button(type="button", class="like")
+      button(type="button", class="like__button")
         span.like__counter #{counter}
