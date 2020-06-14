@@ -36,6 +36,8 @@
   &__row-section {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
 
     @media screen and (min-width: $old-phones) and (max-width: $pads) {
       flex-direction: column;
@@ -89,7 +91,7 @@
       & .form-elements__title {
         margin-bottom: 15px;
       }
-      & .checkbox__container:not(:last-child) {
+      & .checkbox:not(:last-child) {
         margin-bottom: 6px;
       }
     }
@@ -98,7 +100,7 @@
       margin-bottom: 42px;
       &-container {
         display: flex;
-        & .radio__container:not(:last-child) {
+        & .radio:not(:last-child) {
           margin-right: 10px;
         }
       }
@@ -113,7 +115,7 @@
       & .form-elements__title {
         margin-bottom: 16px;
       }
-      & .toggle__container:not(:last-child) {
+      & .toggle:not(:last-child) {
         margin-bottom: 14px;
       }
     }
@@ -124,7 +126,7 @@
       & .form-elements__title {
         margin-bottom: 15px;
       }
-      & .like__container:not(:last-child) {
+      & .like:not(:last-child) {
         margin-right: 10px;
       }
     }
@@ -150,6 +152,9 @@
       width: 266px;
       & .form-elements__title {
         margin-bottom: 14px;
+      }
+      & .rich-checkbox:not(:last-child) {
+        margin-bottom: -1px;
       }
     }
 
@@ -214,14 +219,16 @@
     }
     // fours section
     &-condition {
-      width: 300px;
-      @media screen and (min-width: $desktop) {
-        width: 67.29%;
-        margin-right: 155px;
-      }
+      width: 291px;
+      margin-top: -1px;
     }
     &-reviews {
-      margin-top: 10px;
+      width: 714px;
+      margin-top: 9px;
+
+      @media screen and (min-width: $old-phones) and (max-width: $pads) {
+        width: 90%;
+      }
     }
   }
 

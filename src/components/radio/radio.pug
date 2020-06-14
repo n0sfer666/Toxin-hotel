@@ -1,4 +1,4 @@
-mixin radio({isChecked = true, name = "sex", title = "change me"} = {})
+mixin radio({isChecked = false, name = "sex", title = "change me"} = {})
   label.radio
     if isChecked
       input(type="radio",class="radio__input", name=name, checked)

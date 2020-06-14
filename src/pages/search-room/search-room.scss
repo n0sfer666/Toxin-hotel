@@ -49,7 +49,7 @@
       margin-bottom: 40px;
     }
 
-    & .range-slider__container {
+    & .range-slider {
       margin-top: 30px;
     }
 
@@ -66,12 +66,12 @@
       & .search-room__menu-title {
         margin-bottom: 15px;
       }
-      & .checkbox__container:not(:last-child) {
+      & .checkbox:not(:last-child) {
         margin-bottom: 8px;
       }
     }
 
-    & .rich-checkbox__container {
+    & .rich-checkbox {
       margin-top: 16px;
       margin-bottom: -15px;
     }
