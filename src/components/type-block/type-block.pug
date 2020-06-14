@@ -1,14 +1,14 @@
 mixin type-block ({mod = "h3", text = "This is a label or CTA text" } = {})
-  .type-block__type-block
-    span(class = `type-block__type-title type-block__type-title_${mod}`) #{mod}
+  .type-block
+    span(class = `type-block__label-title type-block__label-title_${mod}`) #{mod}
     case mod
       when "h1"
-        h1.type-block__title-h1 #{text}
+        h1.type-block__title_h1 #{text}
       when "h2"
-        h2.type-block__title-h2 #{text}
+        h2.type-block__title_h2 #{text}
       when "h3"
-        h3.type-block__title-h3 #{text}
+        h3.type-block__title_h3 #{text}
       when "body"
-        p.type-block__title-body #{text}
+        p.type-block__title_body #{text}
       default
         p somthing wrong

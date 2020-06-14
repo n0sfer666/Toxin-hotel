@@ -1,14 +1,10 @@
 .type-block {
-  &__type {
-    display: inline-block;
+    display: flex;
+    margin-bottom: 50px;
     min-width: 300px;
     max-width: 403px;
 
-    &-block {
-      display: flex;
-      margin-bottom: 50px;
-    }
-
+  &__label {
     &-title {
       flex: none;
       width: 37px;
@@ -37,27 +33,28 @@
       }
     }
   }
+  &__title {
+    &_h1 {
+      max-height: 60px;
+      @include font-h1;
+      @include fix-overflow;
+    }
+    &_h2 {
+      max-height: 48px;
 
-  &__title-h1 {
-    max-height: 60px;
-    @include font-h1;
-    @include fix-overflow;
-  }
-  &__title-h2 {
-    max-height: 48px;
+      @include font-h2;
+      @include fix-overflow;
+    }
+    &_h3 {
+      max-height: 15px;
 
-    @include font-h2;
-    @include fix-overflow;
-  }
-  &__title-h3 {
-    max-height: 15px;
-
-    @include font-h3;
-    @include fix-overflow;
-  }
-  &__title-body {
-    max-height: 48px;
-    margin-top: -3px;
-    @include fix-overflow;
+      @include font-h3;
+      @include fix-overflow;
+    }
+    &_body {
+      max-height: 48px;
+      margin-top: -3px;
+      @include fix-overflow;
+    }
   }
 }
