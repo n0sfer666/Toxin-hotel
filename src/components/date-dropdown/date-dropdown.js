@@ -22,10 +22,10 @@ class DateDropdown {
   }
 
   getConfig() {
-    let that = this;
-    let config;
+    const that = this;
+    let config = {};
 
-    let main = {
+    const main = {
       language: 'ru',
       minDate: new Date(),
       range: true,
@@ -41,7 +41,7 @@ class DateDropdown {
       }
     }
 
-    let onSelect = {
+    const onSelect = {
       onSelect(fd, date, inst) {  
         const isSecondDateSelected = (date.length === 2);
 
@@ -57,12 +57,12 @@ class DateDropdown {
       }
     }
 
-    let onShow = {
+    const onShow = {
       onShow(dp) {
         const isButtonsCreated = dp.$datepicker.find('button').html() === undefined;
         if (isButtonsCreated) {
-          const clearButton = '<button type="button" class="button_text-gray js-date-dropdown-clear-button"><h3 class="button__title">очистить</h3></button>';
-          const applyButton = '<button type="button" class="button_text-purple js-date-dropdown-apply-button" style="float: right;"><h3 class="button__title">применить</h3></button>';
+          const clearButton = '<button type="button" class="button_with-text-gray js-date-dropdown-clear-button"><h3 class="button__title">очистить</h3></button>';
+          const applyButton = '<button type="button" class="button_with-text-purple js-date-dropdown-apply-button" style="float: right;"><h3 class="button__title">применить</h3></button>';
           dp.$datepicker.append(clearButton);
           dp.$datepicker.append(applyButton);
           dp.$datepicker.find('.js-date-dropdown-clear-button').click((event) => {
