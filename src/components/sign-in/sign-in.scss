@@ -35,8 +35,8 @@
     &-text {
       width: 180px;
       height: 24px;
-      @include fix-overflow;
       line-height: 22px;
+      @include fix-overflow;
     }
 
     & .button {

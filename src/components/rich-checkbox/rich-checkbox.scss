@@ -1,43 +1,9 @@
 .rich-checkbox {
-  position: absolute;
-  opacity: 0;
+  width: 100%;
+  display: flex;
+  position: relative;
   cursor: pointer;
-  height: 0;
-  width: 0;
-  &:checked ~ .rich-checkbox__checkmark {
-    border: 1px solid #BC9CFF;
-    content: "";
-  }
-  &:checked ~ .rich-checkbox__checkmark:after {
-    display: block;
-  }
-  &__container {
-    width: 100%;
-    @include font-body;
-    display: flex;
-    position: relative;
-    cursor: pointer;
-    
-    & .rich-checkbox__checkmark:after {
-      left: 5px;
-      top: 3px;
-      width: 5px;
-      height: 7px;
-      border-image:  linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-      border-image-slice: 1;
-      border-right-style: solid;
-      border-right-width: 2px;
-      border-bottom-style: solid;
-      border-bottom-width: 2px;
-      transform: rotate(45deg);
-    }
-  
-    &:hover .rich-checkbox__checkmark,
-    &:active .rich-checkbox__checkmark,
-    &:focus .rich-checkbox__checkmark {
-      box-shadow: 0 0 5px $dark-shade-25;
-    }
-  }
+  @include font-body;
 
   &__checkmark {
     position: absolute;
@@ -54,6 +20,17 @@
       content: "";
       position: absolute;
       display: none;
+      left: 5px;
+      top: 3px;
+      width: 5px;
+      height: 7px;
+      border-image:  linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+      border-image-slice: 1;
+      border-right-style: solid;
+      border-right-width: 2px;
+      border-bottom-style: solid;
+      border-bottom-width: 2px;
+      transform: rotate(45deg);
       }
   }
 
@@ -62,13 +39,12 @@
     padding-left: 30px;
     padding-right: 10px;
     box-sizing: border-box;
-    @include font-body;
   }
 
   &__title {
     display: inline-block;
     width: inherit;
-    height: 18px;
+    height: 20px;
     font-weight: bold;
     line-height: 24px;
     color: $dark-shade-75;
@@ -84,5 +60,40 @@
     line-height: 14px;
     color: $dark-shade-50;
     @include fix-overflow;
+  }
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+
+    &:checked ~ .rich-checkbox__checkmark {
+      border: 1px solid #BC9CFF;
+      content: "";
+    }
+
+    &:checked ~ .rich-checkbox__checkmark:after {
+      display: block;
+    }
+  }
+
+  &:hover &__checkmark,
+  &:active &__checkmark,
+  &:focus &__checkmark {
+    box-shadow: 0 0 5px $dark-shade-25;
+  }
+
+  &:hover &__title,
+  &:active &__title,
+  &:focus &__title {
+    text-shadow: 0 0 10px $dark-shade-25;
+  }
+
+  &:hover &__description,
+  &:active &__description,
+  &:focus &__description {
+    text-shadow: 0 0 5px $dark-shade-25;
   }
 }
