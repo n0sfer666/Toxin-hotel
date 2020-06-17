@@ -1,7 +1,8 @@
-import {RangeSlider} from './range-slider';
-$(document).ready(function() {
+import { RangeSlider } from './range-slider';
+
+$(document).ready(() => {
   const $arrayRangeSlider = $('.js-range-slider');
   $.each($arrayRangeSlider, (key, item) => {
     new RangeSlider(item, key);
-  })
-})
+  });
+});

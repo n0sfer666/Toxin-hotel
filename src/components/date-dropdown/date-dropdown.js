@@ -2,7 +2,7 @@ import { datepicker } from 'air-datepicker';
 
 class DateDropdown {
   constructor(item, index, isSingle, bookingInstance) {
-    if(Array.isArray(item)) {
+    if (Array.isArray(item)) {
       this.$container = [$(item[0]), $(item[1])];
     } else {
       this.$container = $(item);
@@ -13,12 +13,12 @@ class DateDropdown {
     this.bookingInstance = bookingInstance;
 
     this.config = this.getConfig();
-    if(Array.isArray(this.$container)) {
+    if (Array.isArray(this.$container)) {
       this.$container[0].datepicker(this.config).data('datepicker');
       this.$container[1].datepicker(this.config).data('datepicker');
-      } else {
-        this.$container.datepicker(this.config).data('datepicker');
-      }
+    } else {
+      this.$container.datepicker(this.config).data('datepicker');
+    }
   }
 
   getConfig() {
@@ -38,11 +38,11 @@ class DateDropdown {
       dateFormat: 'dd M',
       navTitles: {
         days: 'MM yyyy',
-      }
-    }
+      },
+    };
 
     const onSelect = {
-      onSelect(fd, date, inst) {  
+      onSelect(fd, date, inst) {
         const isSecondDateSelected = (date.length === 2);
 
         that.$container[0].val(that.getFormattedDate(date[0]));
@@ -54,8 +54,8 @@ class DateDropdown {
             that.bookingInstance.getDaysInAndCalculate(daysIn);
           }
         }
-      }
-    }
+      },
+    };
 
     const onShow = {
       onShow(dp) {
@@ -66,7 +66,7 @@ class DateDropdown {
           dp.$datepicker.append(clearButton);
           dp.$datepicker.append(applyButton);
           dp.$datepicker.find('.js-date-dropdown-clear-button').click((event) => {
-            if(that.isSingle) {
+            if (that.isSingle) {
               that.$container.val('');
             } else {
               that.$container[0].val('');
@@ -78,17 +78,18 @@ class DateDropdown {
             dp.hide();
           });
         }
-      }
-    }
+      },
+    };
 
-    if(that.isSingle) {
-      config = Object.assign(main, onShow)
+    if (that.isSingle) {
+      config = Object.assign(main, onShow);
     } else {
       config = Object.assign(main, onSelect, onShow);
     }
-    
+
     return config;
   }
+
   getFormattedDate(DateText) {
     let day = DateText.getDate();
     let month = DateText.getMonth();

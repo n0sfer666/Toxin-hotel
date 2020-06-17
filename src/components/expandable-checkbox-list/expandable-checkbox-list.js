@@ -4,9 +4,9 @@ class ExpandableCheckboxList {
     this.index = index;
 
     this.$instanceContainer = this.$instance.siblings('.js-expandable-checkbox-list__container').hide();
-    
-    this.$instanceArrowDown = this.$instance.find(`.js-expandable-checkbox-list__arrow-down`);
-    this.$instanceArrowUp = this.$instance.find(`.js-expandable-checkbox-list__arrow-up`).hide();
+
+    this.$instanceArrowDown = this.$instance.find('.js-expandable-checkbox-list__arrow-down');
+    this.$instanceArrowUp = this.$instance.find('.js-expandable-checkbox-list__arrow-up').hide();
 
     this.isExpanded = false;
 
@@ -16,10 +16,11 @@ class ExpandableCheckboxList {
   bindListenner() {
     this.$instance.on('click', () => {
       this.clickHandler();
-    })
+    });
   }
+
   clickHandler() {
-    if(!this.isExpanded) {
+    if (!this.isExpanded) {
       this.isExpanded = true;
       this.$instanceContainer.show();
       this.$instanceArrowDown.hide();

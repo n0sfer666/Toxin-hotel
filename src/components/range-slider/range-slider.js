@@ -5,9 +5,9 @@ class RangeSlider {
 
     this.$rangeSliderValues = $(item).siblings().find('.js-range-slider__values').get(0);
 
-    let isNotUndefined = this.$rangeSlider && this.$rangeSliderValues;
+    const isNotUndefined = this.$rangeSlider && this.$rangeSliderValues;
 
-    if(isNotUndefined) {
+    if (isNotUndefined) {
       this.getRangeSlider();
       this.getValuesUpdate();
     }
@@ -16,6 +16,7 @@ class RangeSlider {
   getRangeSlider() {
     noUiSlider.create(this.$rangeSlider, this.getConfig());
   }
+
   getConfig() {
     return {
       start: [5000, 10000],
@@ -29,12 +30,13 @@ class RangeSlider {
         thousand: ' ',
         suffix: ' ₽',
       }),
-    }
+    };
   }
+
   getValuesUpdate() {
     this.$rangeSlider.noUiSlider.on('update', (values) => {
       this.$rangeSliderValues.innerText = `${values[0]} - ${values[1]}`;
-    })
+    });
   }
 }
 

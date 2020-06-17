@@ -1,13 +1,13 @@
 import 'paginationjs';
-import {Apart} from '../apart/apart';
+import { Apart } from '../apart/apart';
 
 class Pagination {
   constructor(item, index, dataSource, dataOutput) {
     this.$instance = $(item);
     this.index = index;
 
-    let demoSource = [];
-    for(let i = 0; i < 200; i += 1) {
+    const demoSource = [];
+    for (let i = 0; i < 200; i += 1) {
       demoSource.push(i);
     }
 
@@ -19,12 +19,13 @@ class Pagination {
 
     this.dataOutput = dataOutput;
 
-    let config = this.getConfig(
-      this.dataSource, 
-      this.elementsOnPage, 
-      this.dataOutput);
+    const config = this.getConfig(
+      this.dataSource,
+      this.elementsOnPage,
+      this.dataOutput,
+    );
 
-      this.pagination = this.$instance.pagination(config);
+    this.pagination = this.$instance.pagination(config);
   }
 
   getConfig(dataSource, elementsOnPage, dataOutput) {
@@ -44,13 +45,13 @@ class Pagination {
       },
       callback(data) {
         const html = data;
-        if(dataOutput) $(dataOutput).html(html);
+        if (dataOutput) $(dataOutput).html(html);
         const $arrayApartComponents = $('.js-apart__slider');
         $.each($arrayApartComponents, (key, item) => {
           new Apart(item, key);
-        })
-      }
-    }
+        });
+      },
+    };
   }
 }
 

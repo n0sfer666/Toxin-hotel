@@ -11,7 +11,7 @@ class LikeButton {
   bindEventListenner() {
     this.element.addEventListener('click', () => {
       this.clickHandler();
-    })
+    });
   }
 
   clickHandler() {
