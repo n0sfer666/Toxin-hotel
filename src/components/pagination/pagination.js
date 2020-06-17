@@ -55,4 +55,4 @@ class Pagination {
   }
 }
 
-export { Pagination };
+export default Pagination;

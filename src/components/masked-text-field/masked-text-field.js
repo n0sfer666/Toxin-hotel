@@ -38,4 +38,4 @@ class MaskedField {
   }
 }
 
-export { MaskedField };
+export default MaskedField;

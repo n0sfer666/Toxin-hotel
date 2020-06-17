@@ -40,4 +40,4 @@ class RangeSlider {
   }
 }
 
-export { RangeSlider };
+export default RangeSlider;
