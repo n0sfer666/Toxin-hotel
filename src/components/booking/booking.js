@@ -1,6 +1,6 @@
 class Booking {
 
-  REGEXP_SPACE_SEPARATED_THOUSANDS = /(\d)(?=(\d\d\d)+([^\d]|$))/g;
+  static REGEXP_SPACE_SEPARATED_THOUSANDS = /(\d)(?=(\d\d\d)+([^\d]|$))/g;
 
   constructor(item, index) {
     this.item = item;
