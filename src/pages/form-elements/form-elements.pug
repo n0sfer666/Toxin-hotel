@@ -2,6 +2,7 @@ include ../../components/head/head
 include ../../components/logo/logo
 
 include ../../components/text-field/text-field
+include ../../components/masked-text-field/masked-text-field
 include ../../components/subscription-field/subscription-field
 include ../../components/dropdown/dropdown
 include ../../components/date-dropdown/date-dropdown
@@ -34,7 +35,7 @@ html
           +dropdown()
         .form-elements__block-masked-text-field
           h3.form-elements__title masked text field
-          +text-field({placeholder: "ДД.ММ.ГГГГ", jsClass: "masked"})
+          +masked-text-field({placeholder: "ДД.ММ.ГГГГ"})
         .form-elements__block-date-dropdown
           +date-dropdown({isSingle: false, label: ["date dropdown", "date dropdown"]})
         .form-elements__block-filter-date-dropdown

@@ -1,4 +1,5 @@
 include ../text-field/text-field
+include ../masked-text-field/masked-text-field
 include ../radio/radio
 include ../toggle/toggle
 include ../button/button
@@ -15,7 +16,7 @@ mixin registration({action = "change me"} = {})
         +radio({title: "Женщина", isChecked: false})
       .registration__block-birthday
         h3.registration__block-title День рождения
-        +text-field({placeholder: "ДД.ММ.ГГГГ", jsClass: "masked"})
+        +masked-text-field({placeholder: "ДД.ММ.ГГГГ"})
       .registration__block-signin
         h3.registration__block-title данные для входа в сервис
         +text-field({placeholder: "Email", type: "Email"})

@@ -1,5 +1,2 @@
-mixin text-field({type = "text", jsClass = "undefined", placeholder = "Email"} = {})
-  if (jsClass === "undefined")
-    input(class = `text-field`, type = type, placeholder = placeholder)
-  else
-    input(class = `text-field js-${jsClass}-text-field`, type = type, placeholder = placeholder)
+mixin text-field({type = "text", placeholder = "Email"} = {})
+  input(class = `text-field`, type = type, placeholder = placeholder)

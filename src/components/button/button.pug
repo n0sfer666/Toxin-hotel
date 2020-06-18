@@ -1,12 +1,4 @@
-mixin button({theme = "gradient", title = "click me", jsClass = "undefined", type = "button" } = {})
-  -
-    let haveHandler = jsClass === "undefined" ? false : true
-
-  if haveHandler
-    button(type=type, class=`button button_with-${theme} js-${jsClass}-button`)
-      .button__wrapper
-        h3.button__title #{title}
-  else
-    button(type=type, class=`button button_with-${theme}`)
-      .button__wrapper
-        h3.button__title #{title}
+mixin button({theme = "gradient", title = "click me", type = "button" } = {})
+  button(type=type, class=`button button_with-${theme}`)
+    .button__wrapper
+      h3.button__title #{title}
