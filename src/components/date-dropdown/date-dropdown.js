@@ -48,11 +48,9 @@ class DateDropdown {
   }
 
   getFormattedDate(DateText) {
-    let day = DateText.getDate();
-    let month = DateText.getMonth();
+    const day = (DateText.getDate() < 10) ? `0${DateText.getDate()}` : DateText.getDate();
+    const month = (DateText.getMonth() < 9) ? `0${DateText.getMonth() + 1}` : (DateText.getMonth() + 1);
     const year = DateText.getFullYear();
-    day = (day < 10) ? (`0${day}`) : day;
-    month = (month < 9) ? (`0${month + 1}`) : (month + 1);
 
     return (`${day}.${month}.${year}`);
   }
