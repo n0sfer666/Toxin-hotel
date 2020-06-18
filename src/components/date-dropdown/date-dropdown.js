@@ -14,12 +14,11 @@ class DateDropdown {
 
     this.config = this.getConfig();
     if (Array.isArray(this.$container)) {
-      this.$container[0].datepicker(Object.assign(this.getConfig())).data('datepicker');
-      this.$container[1].datepicker(Object.assign(this.getConfig())).data('datepicker');
+      this.$container[0].datepicker(this.getConfig()).data('datepicker');
+      this.$container[1].datepicker(this.getConfig()).data('datepicker');
     } else {
-      this.$container.datepicker(Object.assign(this.getConfig())).data('datepicker');
+      this.$container.datepicker(this.getConfig()).data('datepicker');
     }
-    console.log(typeof (this.onShow));
   }
 
   getConfig() {
