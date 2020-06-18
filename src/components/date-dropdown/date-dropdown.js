@@ -14,18 +14,16 @@ class DateDropdown {
 
     this.config = this.getConfig();
     if (Array.isArray(this.$container)) {
-      this.$container[0].datepicker(this.config).data('datepicker');
-      this.$container[1].datepicker(this.config).data('datepicker');
+      this.$container[0].datepicker(Object.assign(this.getConfig())).data('datepicker');
+      this.$container[1].datepicker(Object.assign(this.getConfig())).data('datepicker');
     } else {
-      this.$container.datepicker(this.config).data('datepicker');
+      this.$container.datepicker(Object.assign(this.getConfig())).data('datepicker');
     }
+    console.log(typeof (this.onShow));
   }
 
   getConfig() {
-    const that = this;
-    let config = {};
-
-    const main = {
+    const config = {
       language: 'ru',
       minDate: new Date(),
       range: true,
@@ -40,51 +38,11 @@ class DateDropdown {
         days: 'MM yyyy',
       },
     };
-
-    const onSelect = {
-      onSelect(fd, date, inst) {
-        const isSecondDateSelected = (date.length === 2);
-
-        that.$container[0].val(that.getFormattedDate(date[0]));
-        that.$container[1].val('');
-        if (isSecondDateSelected) {
-          that.$container[1].val(that.getFormattedDate(date[1]));
-          if (that.bookingInstance) {
-            const daysIn = Number(date[1] - date[0]) / 1000 / 60 / 60 / 24;
-            that.bookingInstance.getDaysInAndCalculate(daysIn);
-          }
-        }
-      },
-    };
-
-    const onShow = {
-      onShow(dp) {
-        const isButtonsCreated = dp.$datepicker.find('button').html() === undefined;
-        if (isButtonsCreated) {
-          const clearButton = '<button type="button" class="button_with-text-gray js-date-dropdown-clear-button"><h3 class="button__title">очистить</h3></button>';
-          const applyButton = '<button type="button" class="button_with-text-purple js-date-dropdown-apply-button" style="float: right;"><h3 class="button__title">применить</h3></button>';
-          dp.$datepicker.append(clearButton);
-          dp.$datepicker.append(applyButton);
-          dp.$datepicker.find('.js-date-dropdown-clear-button').click((event) => {
-            if (that.isSingle) {
-              that.$container.val('');
-            } else {
-              that.$container[0].val('');
-              that.$container[1].val('');
-            }
-            dp.clear();
-          });
-          dp.$datepicker.find('.js-date-dropdown-apply-button').click((event) => {
-            dp.hide();
-          });
-        }
-      },
-    };
-
-    if (that.isSingle) {
-      config = Object.assign(main, onShow);
-    } else {
-      config = Object.assign(main, onSelect, onShow);
+    const onShow = this.onShow.bind(this);
+    config.onShow = onShow;
+    if (!this.isSingle) {
+      const onSelect = this.onSelect.bind(this);
+      config.onSelect = onSelect;
     }
 
     return config;
@@ -99,6 +57,42 @@ class DateDropdown {
 
     return (`${day}.${month}.${year}`);
   }
+
+  onShow(dp) {
+    const isButtonsCreated = dp.$datepicker.find('button').html() === undefined;
+    if (isButtonsCreated) {
+      const clearButton = '<button type="button" class="button_with-text-gray js-date-dropdown-clear-button"><h3 class="button__title">очистить</h3></button>';
+      const applyButton = '<button type="button" class="button_with-text-purple js-date-dropdown-apply-button" style="float: right;"><h3 class="button__title">применить</h3></button>';
+      dp.$datepicker.append(clearButton);
+      dp.$datepicker.append(applyButton);
+      dp.$datepicker.find('.js-date-dropdown-clear-button').click((event) => {
+        if (this.isSingle) {
+          this.$container.val('');
+        } else {
+          this.$container[0].val('');
+          this.$container[1].val('');
+        }
+        dp.clear();
+      });
+      dp.$datepicker.find('.js-date-dropdown-apply-button').click((event) => {
+        dp.hide();
+      });
+    }
+  }
+
+  onSelect(fd, date, inst) {
+    const isSecondDateSelected = (date.length === 2);
+
+    this.$container[0].val(this.getFormattedDate(date[0]));
+    this.$container[1].val('');
+    if (isSecondDateSelected) {
+      this.$container[1].val(this.getFormattedDate(date[1]));
+      if (this.bookingInstance) {
+        const daysIn = Number(date[1] - date[0]) / 1000 / 60 / 60 / 24;
+        this.bookingInstance.getDaysInAndCalculate(daysIn);
+      }
+    }
+  }
 }
 
-export { DateDropdown };
+export default DateDropdown;

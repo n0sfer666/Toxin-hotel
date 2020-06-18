@@ -1,4 +1,4 @@
-import { DateDropdown } from './date-dropdown';
+import DateDropdown from './date-dropdown';
 import { arrayBookingInstance } from '../booking/booking-inits';
 
 let arrayDateDropdownInBooking;
