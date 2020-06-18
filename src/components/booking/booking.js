@@ -32,9 +32,9 @@ class Booking {
     this.calculate(daysIn);
   }
   calculate(daysIn) {
-    let cost =  this.priceValue * daysIn;
+    const cost =  this.priceValue * daysIn;
     this.costElement.text(`${this.getStringWithSeparate(cost)}`)
-    let total = cost - this.discountValue + this.complementaryValue;
+    const total = cost - this.discountValue + this.complementaryValue;
     this.totalElement.text(`${this.getStringWithSeparate(total)}`);
     
   }

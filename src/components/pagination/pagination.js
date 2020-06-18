@@ -38,9 +38,9 @@ class Pagination {
       showNavigator: true,
       formatNavigator(currentPage, totalPage, totalNumber) {
         const first = elementsOnPage * currentPage - (elementsOnPage - 1);
-        let last = elementsOnPage * currentPage;
+        const last = (elementsOnPage * currentPage) > totalNumber ? totalNumber : elementsOnPage * currentPage;
         const total = totalNumber > 100 ? '100+' : totalNumber;
-        if (last > totalNumber) { last = totalNumber; }
+        
         return String(`${first} - ${last} из ${total} вариантов аренды`);
       },
       callback(data) {
