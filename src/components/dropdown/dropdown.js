@@ -20,14 +20,6 @@ class Dropdown {
         event.stopPropagation();
       }
     });
-
-
-    $('[data-id=bedrooms]').find('.button-decrement')
-      .css('border-color', 'rgba(31, 32, 65, 0.5)')
-      .css('color', 'rgba(31, 32, 65, 0.5)');
-    $('[data-id=beds]').find('.button-decrement')
-      .css('border-color', 'rgba(31, 32, 65, 0.5)')
-      .css('color', 'rgba(31, 32, 65, 0.5)');
   }
 
   bindClearButtonHandler() {
@@ -123,14 +115,14 @@ class Dropdown {
         return text;
       },
       onChange: (id, count, totalItems) => {
-        if (count >= 1) {
+        if (count > 0) {
           $(`[data-id=${id}]`).find('.button-decrement')
-            .css('cursor', 'pointer')
-            .css('border-color', 'rgba(31, 32, 65, 0.5)')
-            .css('color', 'rgba(31, 32, 65, 0.5)');
+            .removeClass('button-decrement')
+            .addClass('button-decrement_actived');
         } else {
-          $(`[data-id=${id}]`).find('.button-decrement')
-            .removeAttr('style');
+          $(`[data-id=${id}]`).find('.button-decrement_actived')
+            .removeClass('button-decrement_actived')
+            .addClass('button-decrement');
         }
         if (totalItems === 0) {
           this.$clearButton.hide();

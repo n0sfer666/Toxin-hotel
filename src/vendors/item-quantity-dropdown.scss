@@ -118,30 +118,43 @@
     width: 30px;
     height: 30px;
     background: #fff;
-    border: 1px solid $dark-shade-25;
+    border: 1px solid;
     border-radius: 50%;
-    color: $dark-shade-25;
     font: normal normal 18px/22px Montserrat, sans-serif;
     outline: none;
   }
 
-  & &-item-controls .button-decrement {
-    &::after {
-      content: '-';
-    }
-    &:hover, &:focus, &:active {
-      box-shadow: 0 0 10px $dark-shade-25;
-    }
-  }
   & &-item-controls .button-increment {
     cursor: pointer;
-    border-color: $dark-shade-50;
     color: $dark-shade-50;
+
     &::after {
       content: '+';
     }
     &:hover, &:focus, &:active {
       box-shadow: 0 0 10px $dark-shade-25;
     }
+  }
+}
+
+.button-decrement {
+  border-color: $dark-shade-25;
+  color: $dark-shade-25;
+
+  &::after {
+    content: '-';
+  }
+}
+
+.button-decrement_actived {
+  cursor: pointer;
+  color: $dark-shade-50;
+
+  &::after {
+    content: '-';
+  }
+
+  &:hover, &:focus, &:active {
+    box-shadow: 0 0 10px $dark-shade-25;
   }
 }
