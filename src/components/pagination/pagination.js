@@ -19,39 +19,47 @@ class Pagination {
 
     this.dataOutput = dataOutput;
 
-    const config = this.getConfig(
-      this.dataSource,
-      this.elementsOnPage,
-      this.dataOutput,
-    );
+    const config = this.getConfig();
 
     this.pagination = this.$instance.pagination(config);
   }
 
-  getConfig(dataSource, elementsOnPage, dataOutput) {
-    return {
+  getConfig() {
+    const dataSource = this.dataSource;
+    const elementsOnPage = this.elementsOnPage;
+    const config = {
       dataSource,
       showPrevious: false,
       nextText: '',
       pageRange: 1,
       pageSize: elementsOnPage,
-      showNavigator: true,
-      formatNavigator(currentPage, totalPage, totalNumber) {
-        const first = elementsOnPage * currentPage - (elementsOnPage - 1);
-        const last = (elementsOnPage * currentPage) > totalNumber ? totalNumber : elementsOnPage * currentPage;
-        const total = totalNumber > 100 ? '100+' : totalNumber;
-        
-        return String(`${first} - ${last} из ${total} вариантов аренды`);
-      },
-      callback(data) {
-        const html = data;
-        if (dataOutput) $(dataOutput).html(html);
-        const $arrayApartComponents = $('.js-apart__slider');
-        $.each($arrayApartComponents, (key, item) => {
-          new Apart(item, key);
-        });
-      },
-    };
+      showNavigator: true
+    }
+
+    const formatNavigator = this.formatNavigator.bind(this);
+    config.formatNavigator = formatNavigator;
+
+    const callback = this.callback.bind(this);
+    config.callback = callback;
+
+    return config;
+  }
+
+  callback(data) {
+    const html = data;
+    if (this.dataOutput) $(this.dataOutput).html(html);
+    const $arrayApartComponents = $('.js-apart__slider');
+    $.each($arrayApartComponents, (key, item) => {
+      new Apart(item, key);
+    })
+  }
+
+  formatNavigator(currentPage, totalPage, totalNumber) {
+    const first = this.elementsOnPage * currentPage - (this.elementsOnPage - 1);
+    const last = (this.elementsOnPage * currentPage) > totalNumber ? totalNumber : this.elementsOnPage * currentPage;
+    const total = totalNumber > 100 ? '100+' : totalNumber;
+    
+    return String(`${first} - ${last} из ${total} вариантов аренды`);
   }
 }
 
