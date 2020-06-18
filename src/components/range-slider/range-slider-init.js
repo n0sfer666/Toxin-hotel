@@ -1,4 +1,4 @@
-import { RangeSlider } from './range-slider';
+import RangeSlider from './range-slider';
 
 $(document).ready(() => {
   const $arrayRangeSlider = $('.js-range-slider');

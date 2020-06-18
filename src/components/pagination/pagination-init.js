@@ -1,4 +1,4 @@
-import { Pagination } from './pagination';
+import Pagination from './pagination';
 
 $(document).ready(() => {
   const $apartSource = $('.js-search-room-apart');
