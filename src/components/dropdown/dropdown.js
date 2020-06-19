@@ -9,8 +9,8 @@ class Dropdown {
     
     this.$instance = this.getInstance();
 
-    this.$clearButton = this.$instance.find('.js-clear-dropdown-button').hide();
-    this.$applyButton = this.$instance.find('.js-apply-dropdown-button');
+    this.$clearButton = this.$instance.find('.button_with-text_gray').hide();
+    this.$applyButton = this.$instance.find('.button_with-text_purple');
 
     this.bindClearButtonHandler();
 
@@ -99,6 +99,9 @@ class Dropdown {
     }
     if (guests >= 5) {
       text = `${guests} гостей`;
+    }
+    if (guests === 0 && totalItems !== 0) {
+      text = '';
     }
 
     if (babies === 1) {

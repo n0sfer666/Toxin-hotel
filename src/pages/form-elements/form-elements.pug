@@ -13,7 +13,10 @@ include ../../components/radio/radio
 include ../../components/toggle/toggle
 include ../../components/like/like
 include ../../components/rate/rate
-include ../../components/button/button
+include ../../components/button-border/button-border
+include ../../components/button-gradient/button-gradient
+include ../../components/button-action/button-action
+include ../../components/button-text/button-text
 include ../../components/rich-checkbox/rich-checkbox
 include ../../components/range-slider/range-slider
 include ../../components/bullet-list/bullet-list
@@ -86,16 +89,16 @@ html
         .form-elements__block-buttons
           h3.form-elements__title buttons
           .form-elements__block-buttons-line
-            +button({theme: "gradient"})
-            +button({theme: "gradient-transparent"})
+            +button-gradient()
+            +button-gradient({deactivated: true})
           .form-elements__block-buttons-line
-            +button({theme: "border"})
-            +button({theme: "border-transparent"})
+            +button-border()
+            +button-border({deactivated: true})
           .form-elements__block-buttons-text-line
-            +button({theme: "text-purple"})
-            +button({theme: "text-gray"})
+            +button-text()
+            +button-text({isApply: false})
           .form-elements__block-buttons-action-line
-            +button({theme: "action", title: "Перейти к оплате"})
+            +button-action()
         .form-elements__block-pagination
           h3.form-elements__title pagination
           .js-pagination

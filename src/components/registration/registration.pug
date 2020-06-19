@@ -2,7 +2,8 @@ include ../text-field/text-field
 include ../masked-text-field/masked-text-field
 include ../radio/radio
 include ../toggle/toggle
-include ../button/button
+include ../button-action/button-action
+include ../button-border/button-border
 
 mixin registration({action = "change me"} = {})
   .registration
@@ -23,8 +24,8 @@ mixin registration({action = "change me"} = {})
         +text-field({placeholder: "Пароль", type: "Password"})
         +toggle()
       .registration__block-registering
-        +button({theme: "action", title: "зарегистрироваться", type: "submit"})
+        +button-action({title: "зарегистрироваться"})
     form(class="registration__signin-form", action="sign-in.html")
       .registration__block-signup
         p.registration__text-signup Уже есть аккаунт на Toxin
-        +button({theme: "border", title: "войти", type: "submit"})
+        +button-border({title: "войти"})

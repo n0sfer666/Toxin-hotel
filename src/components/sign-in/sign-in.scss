@@ -22,7 +22,8 @@
     }
   }
 
-  & .button {
+  & .button_with-action,
+  & .button_with-border {
     height: 44px;
   }
 
@@ -39,7 +40,7 @@
       @include fix-overflow;
     }
 
-    & .button {
+    & .button_with-border {
       width: 99px;
     }
   }

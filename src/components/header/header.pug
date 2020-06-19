@@ -1,5 +1,6 @@
 include ../logo/logo
-include ../button/button
+include ../button-border/button-border
+include ../button-gradient/button-gradient
 include ../header-menu-link/header-menu-link
 -
   let headerLinks = []
@@ -23,6 +24,6 @@ mixin header({isAuth = false, login = "Cosmin Negoita", loginButton = "Войт�
       else
         .header__buttons
           form(class="header__button-signin", action="sign-in.html")
-            +button({theme: "border", title: loginButton, type: "submit"})
+            +button-border({title: loginButton})
           form(class="header__button-signup", action="registration.html")
-            +button({theme: "gradient", title: signUpButton, type: "submit"})
+            +button-gradient({title: signUpButton})

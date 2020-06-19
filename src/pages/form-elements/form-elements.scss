@@ -171,10 +171,22 @@
         display: flex;
         margin-bottom: 30px;
 
-        & .button:not(:last-child) {
+        & .button_with-border {
           margin-right: 18px;
+          width: 99px;
+          height: 44px;
         }
-        & .button {
+        & .button_with-border_deactivated {
+          width: 99px;
+          height: 44px;
+        }
+
+        & .button_with-gradient {
+          margin-right: 18px;
+          width: 99px;
+          height: 44px;
+        }
+        & .button_with-gradient_deactivated {
           width: 99px;
           height: 44px;
         }
