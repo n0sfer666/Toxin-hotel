@@ -58,11 +58,11 @@ class DateDropdown {
   onShow(dp) {
     const isButtonsCreated = dp.$datepicker.find('button').html() === undefined;
     if (isButtonsCreated) {
-      const clearButton = '<button type="button" class="button_with-text-gray js-date-dropdown-clear-button"><h3 class="button__title">очистить</h3></button>';
-      const applyButton = '<button type="button" class="button_with-text-purple js-date-dropdown-apply-button" style="float: right;"><h3 class="button__title">применить</h3></button>';
+      const clearButton = '<button type="button" class="button_with-text-gray"><h3 class="button__title">очистить</h3></button>';
+      const applyButton = '<button type="button" class="button_with-text-purple" style="float: right;"><h3 class="button__title">применить</h3></button>';
       dp.$datepicker.append(clearButton);
       dp.$datepicker.append(applyButton);
-      dp.$datepicker.find('.js-date-dropdown-clear-button').click((event) => {
+      dp.$datepicker.find('.button_with-text-gray').click((event) => {
         if (this.isSingle) {
           this.$container.val('');
         } else {
@@ -71,7 +71,7 @@ class DateDropdown {
         }
         dp.clear();
       });
-      dp.$datepicker.find('.js-date-dropdown-apply-button').click((event) => {
+      dp.$datepicker.find('.button_with-text-purple').click((event) => {
         dp.hide();
       });
     }
