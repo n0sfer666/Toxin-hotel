@@ -1,6 +1,22 @@
 mixin color-block ({ mod = "dark-shade-100", text = "dark shade 100%", hexColor = "#1F2041" } = {})
   .color-block
-    div(class = `color-block__colors-cell color-block__colors-cell_${mod}`)
+    case mod
+      when "dark-shade-100"
+        div(class = `color-block__colors-cell color-block__colors-cell_${mod}`)
+      when "dark-shade-75"
+        div(class = `color-block__colors-cell color-block__colors-cell_${mod}`)
+      when "dark-shade-50"
+        div(class = `color-block__colors-cell color-block__colors-cell_${mod}`)
+      when "dark-shade-25"
+        div(class = `color-block__colors-cell color-block__colors-cell_${mod}`)
+      when "dark-shade-5"
+        div(class = `color-block__colors-cell color-block__colors-cell_${mod}`)
+      when "green"
+        div(class = `color-block__colors-cell color-block__colors-cell_${mod}`)
+      when "purple"
+        div(class = `color-block__colors-cell color-block__colors-cell_${mod}`)
+      default
+        div(class = `color-block__colors-cell color-block__colors-cell_dark-shade-100`)
     p(class = "color-block__colors-text") #{text}
       <br>
       span(class = `color-block__colors-text_regular`) #{hexColor}
