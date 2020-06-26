@@ -1,7 +1,5 @@
 class Booking {
 
-  static REGEXP_SPACE_SEPARATED_THOUSANDS = /(\d)(?=(\d\d\d)+([^\d]|$))/g;
-
   constructor(item, index) {
     this.item = item;
     this.index = index;
@@ -14,22 +12,22 @@ class Booking {
   }
 
   getStringWithSeparate(string) {
-    if(typeof(string) !== 'string')
+    const REGEXP_SPACE_SEPARATED_THOUSANDS = /(\d)(?=(\d\d\d)+([^\d]|$))/g
+    if(typeof(string) !== 'string' && string !== undefined && !Number.isNaN(string))
       string = String(string);
-    
-    return string.replace(this.REGEXP_SPACE_SEPARATED_THOUSANDS, '$1 ');
+
+    return string.replace(REGEXP_SPACE_SEPARATED_THOUSANDS, '$1 ');
   }
 
   getDaysInAndCalculate(daysIn) {
-    if(typeof(daysIn) !== 'number') {
-      daysIn = Number(daysIn);
+    if(!Number.isNaN(Number(daysIn))) {
+      if(daysIn == 1) {
+        this.daysInElement.text(`${daysIn} сутки`);
+      } else {
+        this.daysInElement.text(`${daysIn} суток`);
+      }
+      this.calculate(daysIn);
     }
-    if(daysIn === 1) {
-      this.daysInElement.text(`${String(daysIn)} сутки`);
-    } else {
-      this.daysInElement.text(`${String(daysIn)} суток`);
-    }
-    this.calculate(daysIn);
   }
   calculate(daysIn) {
     const cost =  this.priceValue * daysIn;
