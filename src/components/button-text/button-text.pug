@@ -1,9 +1,0 @@
-mixin button-text({ isApply = true, title = "click me" } = {})
-  if isApply
-    button(type=submit, class=`button_with-text_purple`)
-      .button__wrapper
-        h3.button__title #{title}
-  else
-    button(type=submit, class=`button_with-text_gray`)
-      .button__wrapper
-        h3.button__title #{title}

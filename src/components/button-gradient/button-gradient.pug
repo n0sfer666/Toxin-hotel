@@ -1,9 +1,0 @@
-mixin button-gradient({ deactivated = false, title = "click me" } = {})
-  if deactivated
-    button(type=submit, class=`button_with-gradient_deactivated`)
-      .button__wrapper
-        h3.button__title #{title}
-  else
-    button(type=submit, class=`button_with-gradient`)
-      .button__wrapper
-        h3.button__title #{title}

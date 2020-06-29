@@ -1,0 +1,47 @@
+mixin button({ style = "text", isActived = "true", title = "click me" } = {})
+  case style
+
+    when "text"
+      if isActived
+        button(type="button", class=`button_with-text_purple`)
+          .button__wrapper
+            h3.button__title #{title}
+      else
+        button(type="button", class=`button_with-text_gray`)
+          .button__wrapper
+            h3.button__title #{title}
+
+    when "action"
+      button(type="submit", class=`button_with-action`)
+        .button__wrapper
+          h3.button__title #{title}
+
+    when "gradient"
+      if isActived
+        button(type="submit", class=`button_with-gradient`)
+          .button__wrapper
+            h3.button__title #{title}
+      else
+        button(type="submit", class=`button_with-gradient_deactivated`)
+          .button__wrapper
+            h3.button__title #{title}
+
+    when "border"
+      if isActived
+        button(type="submit", class=`button_with-border`)
+          .button__wrapper
+            h3.button__title #{title}
+      else
+        button(type="submit", class=`button_with-border_deactivated`)
+          .button__wrapper
+            h3.button__title #{title}
+
+    default
+      if isActived
+        button(type="button", class=`button_with-text_purple`)
+          .button__wrapper
+            h3.button__title #{title}
+      else
+        button(type="button", class=`button_with-text_gray`)
+          .button__wrapper
+            h3.button__title #{title}

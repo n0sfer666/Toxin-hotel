@@ -1,9 +1,0 @@
-mixin button-border({ deactivated = false, title = "click me" } = {})
-  if deactivated
-    button(type=submit, class=`button_with-border_deactivated`)
-      .button__wrapper
-        h3.button__title #{title}
-  else
-    button(type=sibmit, class=`button_with-border`)
-      .button__wrapper
-        h3.button__title #{title}
