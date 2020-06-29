@@ -1,6 +1,6 @@
 include ../date-dropdown/date-dropdown
 include ../dropdown/dropdown
-include ../button-action/button-action
+include ../button/button
 
 mixin find-apart({action = "search-room.html"} = {})
   form(class="find-apart", action=action)
@@ -11,4 +11,4 @@ mixin find-apart({action = "search-room.html"} = {})
       h3.find-apart__guests-title гости
       +dropdown()
     .find-apart__submit-button
-      +button-action({title: "подобрать номер"})
+      +button({style: "action", title: "подобрать номер"})

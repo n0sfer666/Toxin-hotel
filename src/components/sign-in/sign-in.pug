@@ -1,6 +1,5 @@
 include ../text-field/text-field
-include ../button-action/button-action
-include ../button-border/button-border
+include ../button/button
 
 mixin sign-in({action = "change me"}={})
   .sign-in
@@ -9,8 +8,8 @@ mixin sign-in({action = "change me"}={})
       .sign-in__details
         +text-field({type: "Email", placeholder: "Email"})
         +text-field({type: "Password", placeholder: "Пароль"})
-      +button-action({title: "Войти"})
+      +button({style: "action", title: "Войти"})
     form(class="sign-in__signup-form", action="registration.html")
       .sign-in__signup
         p.sign-in__signup-text Нет аккаунта на Toxin?
-        +button-border({title: "Создать"})
+        +button({style: "border", title: "Создать"})

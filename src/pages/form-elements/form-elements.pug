@@ -13,10 +13,7 @@ include ../../components/radio/radio
 include ../../components/toggle/toggle
 include ../../components/like/like
 include ../../components/rate/rate
-include ../../components/button-border/button-border
-include ../../components/button-gradient/button-gradient
-include ../../components/button-action/button-action
-include ../../components/button-text/button-text
+include ../../components/button/button
 include ../../components/rich-checkbox/rich-checkbox
 include ../../components/range-slider/range-slider
 include ../../components/bullet-list/bullet-list
@@ -89,16 +86,16 @@ html
         .form-elements__block-buttons
           h3.form-elements__title buttons
           .form-elements__block-buttons-line
-            +button-gradient()
-            +button-gradient({deactivated: true})
+            +button({style: "gradient"})
+            +button({style: "gradient", isActived: false})
           .form-elements__block-buttons-line
-            +button-border()
-            +button-border({deactivated: true})
+            +button({style: "border"})
+            +button({style: "border", isActived: false})
           .form-elements__block-buttons-text-line
-            +button-text()
-            +button-text({isApply: false})
+            +button({style: "text"})
+            +button({style: "text", isActived: false})
           .form-elements__block-buttons-action-line
-            +button-action()
+            +button({style: "action", isActived: false})
         .form-elements__block-pagination
           h3.form-elements__title pagination
           .js-pagination
