@@ -1,7 +1,7 @@
 import Pagination from './pagination';
 
 $(document).ready(() => {
-  const $apartSource = $('.js-search-room-apart');
+  const $apartSource = $('.js-search-room__apart');
 
   const dataSource = [];
 
@@ -9,10 +9,10 @@ $(document).ready(() => {
     dataSource.push(item.cloneNode(true));
   });
 
-  $('.js-data-source').remove();
+  $('.js-search-room__data-source').remove();
 
   const arrayPagination = $('.js-pagination');
   $.each(arrayPagination, (key, item) => {
-    new Pagination(item, key, dataSource, '.js-data-output');
+    new Pagination(item, key, dataSource, '.js-search-room__data-output');
   });
 });

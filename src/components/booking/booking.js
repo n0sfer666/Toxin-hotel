@@ -59,7 +59,7 @@ class Booking {
     this.complementaryElement = this.getElementByClass('.js-booking__complementary');
     this.complementaryValue = Number(this.complementaryElement.get(0).innerText);
 
-    this.totalElement = this.getElementByClass('.js-booking__total');
+    this.totalElement = this.getElementByClass('.js-booking__total-text');
   }
 }
 
