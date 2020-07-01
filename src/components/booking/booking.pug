@@ -14,7 +14,7 @@ mixin booking({apart = "888", isLux = true, price = "9990", discount = "2179", c
         if isLux
           h3.booking__header-apart-lux люкс
       span.booking__header-price
-        span.booking__header-price_bold.js-booking__price #{price}
+        span.booking__header-price_bold.js-booking__header-price_bold #{price}
         span.booking__header-price_bold ₽ 
         | в сутки
     .booking__arival-departure
@@ -25,22 +25,22 @@ mixin booking({apart = "888", isLux = true, price = "9990", discount = "2179", c
     .booking__calculation
       .booking__calculation-line
         p
-          span.js-booking__price #{price}
+          span.booking__price.js-booking__price #{price}
           span ₽ X 
-          span.js-booking__daysIn 0 суток
-        span.js-booking__cost 0
+          span.booking__daysIn.js-booking__daysIn 0 суток
+        span.booking__cost.js-booking__cost 0
           span ₽
       .booking__calculation-line
         .booking__calculation-text
           p.booking__description Сбор за услуги: 
             if isDiscounted
               span скидка 
-              span.js-booking__discount #{discount}
+              span.booking__discount.js-booking__discount #{discount}
               span ₽
           span.booking__exclamation
             span.booking__exclamation_bold i
         .booking__calculation-aditional
-          span.js-booking__additional #{additional}
+          span.booking__additional.js-booking__additional #{additional}
           span ₽
       .booking__calculation-line
         .booking__calculation-text
@@ -48,12 +48,12 @@ mixin booking({apart = "888", isLux = true, price = "9990", discount = "2179", c
           span.booking__exclamation
             span.booking__exclamation_bold i
         .booking__calculation-complementary
-          span.js-booking__complementary #{complementary}
+          span.booking__complementary.js-booking__complementary #{complementary}
           span ₽
     .booking__total
       h2.booking__total-text Итого
       .booking__total-line_dashed
-      h2.booking__total-text.js-booking__total 0
+      h2.booking__total-text.js-booking__total-text 0
       h2.booking__total-text ₽
     .booking__submit-button
       +button({style: "action", title: "забронировать"})
