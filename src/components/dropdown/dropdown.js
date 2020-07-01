@@ -6,40 +6,43 @@ class Dropdown {
     this.index = index;
 
     this.config = this.getConfig();
-    
+
     this.$instance = this.getInstance();
 
     this.$clearButton = this.$instance.find('.button_with-text_gray').hide();
     this.$applyButton = this.$instance.find('.button_with-text_purple');
-
-    this.bindClearButtonHandler();
-
     this.iqMenu = this.$instance.find('.iqdropdown-menu');
-    this.iqMenu.on('click', (event) => {
-      const isApplyButton = event.target.parentNode.parentNode === this.$applyButton.get(0);
-      if (!isApplyButton) {
-        event.stopPropagation();
-      }
-    });
+
+    this.bindHandler(this.$clearButton, this.clearButtonHandler);
+    this.bindHandler(this.iqMenu, this.applyHandler);
   }
 
-  bindClearButtonHandler() {
-    this.$clearButton.on('click', () => {
-      this.clearButtonHandler();
-      this.clearButtonHandler(); // Need for hidden container after click
-    });
+  bindHandler(element, handler) {
+    const listener = handler.bind(this);
+    element.on('click', listener);
   }
 
   clearButtonHandler() {
     this.$instance.find('.iqdropdown-item-controls').remove();
     this.$instance = this.getInstance();
+    // need to repeat for correct work iqDropdown
+    this.$instance.find('.iqdropdown-item-controls').remove();
+    this.$instance = this.getInstance();
+    this.$clearButton.hide();
+  }
+
+  applyHandler(event) {
+    const isApplyButton = event.target.parentNode.parentNode === this.$applyButton.get(0);
+    if (!isApplyButton) {
+      event.stopPropagation();
+    }
   }
 
   getConfig() {
     const config = {};
     const onChange = this.onChange.bind(this);
 
-    config.setSelectionText = this.setSelectionText;
+    config.setSelectionText = this.constructor.setSelectionText;
     config.onChange = onChange;
 
     return config;
@@ -66,18 +69,13 @@ class Dropdown {
     }
   }
 
-  setSelectionText(itemCount, totalItems) {
+  static setSelectionText(itemCount, totalItems) {
     let text;
 
     const isGuests = (
       itemCount.adults !== undefined
       || itemCount.babies !== undefined
       || itemCount.children !== undefined
-    );
-    const isRooms = (
-      itemCount.bedrooms !== undefined
-      || itemCount.beds !== undefined
-      || itemCount.bathrooms !== undefined
     );
 
     if (totalItems === 0) {
@@ -129,7 +127,7 @@ class Dropdown {
     if (bedrooms >= 5) {
       text = `${bedrooms} спален`;
     }
-    
+
     if (beds === 1) {
       text += bedrooms !== 0
         ? `, ${beds} кровать...`
@@ -150,4 +148,4 @@ class Dropdown {
   }
 }
 
-export { Dropdown };
+export default Dropdown;

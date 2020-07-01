@@ -1,8 +1,8 @@
-import { Dropdown } from './dropdown';
+import Dropdown from './dropdown';
 
 $(document).ready(() => {
   const $arrayDropdown = $('.js-iqdropdown');
   $.each($arrayDropdown, (key, item) => {
-    new Dropdown(item, key);
+    const instance = new Dropdown(item, key);
   });
 });
