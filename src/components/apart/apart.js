@@ -25,4 +25,4 @@ class Apart {
   }
 }
 
-export { Apart };
+export default Apart;

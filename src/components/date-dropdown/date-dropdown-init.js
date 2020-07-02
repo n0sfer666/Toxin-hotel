@@ -12,9 +12,14 @@ $(document).ready(() => {
 
   $.each($arrayDateDropdownLeft, (key, item) => {
     if ($(item).closest('.js-booking').length > 0) {
-      const instance = new DateDropdown([item, $arrayDateDropdownRight[key]], key, false, arrayBookingInstance[0]);
+      const instance = new DateDropdown([item, $arrayDateDropdownRight[key]],
+        key,
+        false,
+        arrayBookingInstance[0]);
     } else {
-      const instance = new DateDropdown([item, $arrayDateDropdownRight[key]], key, false);
+      const instance = new DateDropdown([item, $arrayDateDropdownRight[key]],
+        key,
+        false);
     }
   });
 });
