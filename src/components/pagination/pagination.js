@@ -1,5 +1,5 @@
 import 'paginationjs';
-import { Apart } from '../apart/apart';
+import Apart from '../apart/apart';
 
 class Pagination {
   constructor(item, index, dataSource, dataOutput) {
