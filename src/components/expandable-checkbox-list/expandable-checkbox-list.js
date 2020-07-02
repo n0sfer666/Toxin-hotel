@@ -14,9 +14,8 @@ class ExpandableCheckboxList {
   }
 
   bindListenner() {
-    this.$instance.on('click', () => {
-      this.clickHandler();
-    });
+    const onClick = this.clickHandler.bind(this);
+    this.$instance.on('click', onClick);
   }
 
   clickHandler() {
@@ -33,4 +32,4 @@ class ExpandableCheckboxList {
     }
   }
 }
-export { ExpandableCheckboxList };
+export default ExpandableCheckboxList;
