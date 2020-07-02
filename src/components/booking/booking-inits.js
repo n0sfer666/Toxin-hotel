@@ -1,4 +1,4 @@
-import { Booking } from './booking';
+import Booking from './booking';
 
 const arrayBookingInstance = [];
 
@@ -10,4 +10,4 @@ $(document).ready(() => {
   });
 });
 
-export { arrayBookingInstance };
+export default arrayBookingInstance;

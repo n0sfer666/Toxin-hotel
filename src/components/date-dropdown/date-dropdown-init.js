@@ -1,5 +1,5 @@
 import DateDropdown from './date-dropdown';
-import { arrayBookingInstance } from '../booking/booking-inits';
+import arrayBookingInstance from '../booking/booking-inits';
 
 $(document).ready(() => {
   const $arrayDateDropdownSingle = $('.js-date-dropdown-single');

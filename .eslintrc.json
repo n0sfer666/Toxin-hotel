@@ -19,6 +19,8 @@
   "rules": {
     "no-undef": ["warn"],
     "no-unused-vars": ["warn"],
-    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+    "no-else-return": ["off"],
+    "no-console": ["off"]
   }
 }
