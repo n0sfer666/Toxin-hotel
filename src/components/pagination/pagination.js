@@ -25,16 +25,16 @@ class Pagination {
   }
 
   getConfig() {
-    const dataSource = this.dataSource;
-    const elementsOnPage = this.elementsOnPage;
+    const { dataSource } = this;
+    const { elementsOnPage } = this;
     const config = {
       dataSource,
       showPrevious: false,
       nextText: '',
       pageRange: 1,
       pageSize: elementsOnPage,
-      showNavigator: true
-    }
+      showNavigator: true,
+    };
 
     const formatNavigator = this.formatNavigator.bind(this);
     config.formatNavigator = formatNavigator;
@@ -51,14 +51,14 @@ class Pagination {
     const $arrayApartComponents = $('.js-apart__slider');
     $.each($arrayApartComponents, (key, item) => {
       new Apart(item, key);
-    })
+    });
   }
 
   formatNavigator(currentPage, totalPage, totalNumber) {
     const first = this.elementsOnPage * currentPage - (this.elementsOnPage - 1);
     const last = (this.elementsOnPage * currentPage) > totalNumber ? totalNumber : this.elementsOnPage * currentPage;
     const total = totalNumber > 100 ? '100+' : totalNumber;
-    
+
     return String(`${first} - ${last} из ${total} вариантов аренды`);
   }
 }

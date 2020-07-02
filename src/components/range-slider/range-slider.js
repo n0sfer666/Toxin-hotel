@@ -13,11 +13,7 @@ class RangeSlider {
     }
   }
 
-  getRangeSlider() {
-    noUiSlider.create(this.$rangeSlider, this.getConfig());
-  }
-
-  getConfig() {
+  static getConfig() {
     return {
       start: [5000, 10000],
       connect: true,
@@ -31,6 +27,10 @@ class RangeSlider {
         suffix: ' ₽',
       }),
     };
+  }
+
+  getRangeSlider() {
+    noUiSlider.create(this.$rangeSlider, this.constructor.getConfig());
   }
 
   getValuesUpdate() {
