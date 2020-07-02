@@ -4,28 +4,35 @@ class LikeButton {
     this.index = index;
 
     this.counter = $(this.element).find('.like__counter').get(0);
+    this.button = $(this.element).find('.like__button').get(0);
+    this.heartIcon = $(this.element).find('.like__heart').get(0);
 
     this.bindEventListenner();
   }
 
   bindEventListenner() {
-    this.element.addEventListener('click', () => {
-      this.clickHandler();
-    });
+    const onClick = this.clickHandler.bind(this);
+    this.element.addEventListener('click', onClick);
   }
 
   clickHandler() {
-    if (this.element.classList.contains('like_active')) {
+    const isActived = this.element.classList.contains('like_actived');
+    console.log(isActived);
+    if (isActived) {
       this.element.className = 'like';
       this.counter.className = 'like__counter';
+      this.button.className = 'like__button';
+      this.heartIcon.className = 'like__heart';
       const count = Number(this.counter.innerText) - 1;
       this.counter.innerText = String(count);
     } else {
-      this.element.className = 'like like_active';
-      this.counter.className = 'like__counter like__counter_active';
+      this.element.className = 'like_actived';
+      this.counter.className = 'like__counter like__counter_actived';
+      this.button.className = 'like__button like__button_actived';
+      this.heartIcon.className = 'like__heart like__heart_actived';
       const count = Number(this.counter.innerText) + 1;
       this.counter.innerText = String(count);
     }
   }
 }
-export { LikeButton };
+export default LikeButton;

@@ -1,8 +1,8 @@
-import { LikeButton } from './like';
+import LikeButton from './like';
 
 $(document).ready(() => {
   const $arrLike = $('.like');
   $.each($arrLike, (key, item) => {
-    new LikeButton(item, key);
+    const instance = new LikeButton(item, key);
   });
 });

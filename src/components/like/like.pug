@@ -1,8 +1,11 @@
-mixin like({isChecked = false, counter = 0} = {})
-  .like
-    if isChecked
-      button(type="button", class="like__button like__button_active")
-        span.like__counter.like__counter-active #{counter}
-    else
-      button(type="button", class="like__button")
+mixin like({ isChecked = false, counter = 0 } = {})
+  if isChecked
+    .like.like_actived
+      button.like__button.like__button_actived
+        span.like__heart.like__heart_actived
+        span.like__counter.like__counter_actived #{counter}
+  else
+    .like
+      button.like__button
+        span.like__heart
         span.like__counter #{counter}
