@@ -3,11 +3,15 @@ class LikeButton {
     this.element = item;
     this.index = index;
 
-    this.counter = $(this.element).find('.like__counter').get(0);
-    this.button = $(this.element).find('.like__button').get(0);
-    this.heartIcon = $(this.element).find('.like__heart').get(0);
+    this.counter = this.getInnerElement('.like__counter');
+    this.button = this.getInnerElement('.like__button');
+    this.heartIcon = this.getInnerElement('.like__heart');
 
     this.bindEventListenner();
+  }
+
+  getInnerElement(innerSelector) {
+    return $(this.element).find(innerSelector).get(0);
   }
 
   bindEventListenner() {

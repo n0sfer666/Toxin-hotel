@@ -19,6 +19,17 @@ class DateDropdown {
     } else {
       this.$container.datepicker(this.getConfig()).data('datepicker');
     }
+
+    this.clearButton = `
+        <button type="button" class="button_with-text_gray">
+          <h3 class="button__title">очистить</h3></button>`;
+    this.applyButton = `
+      <button type="button" class="button_with-text_purple">
+        <h3 class="button__title">применить</h3></button>`;
+  }
+
+  static getInnerElement(mainElement, innerSelector) {
+    return mainElement.find(innerSelector);
   }
 
   getConfig() {
@@ -58,15 +69,11 @@ class DateDropdown {
   onShow(dp) {
     const isButtonsCreated = dp.$datepicker.find('button').html() === undefined;
     if (isButtonsCreated) {
-      const clearButton = `
-        <button type="button" class="button_with-text_gray">
-          <h3 class="button__title">очистить</h3></button>`;
-      const applyButton = `
-        <button type="button" class="button_with-text_purple">
-          <h3 class="button__title">применить</h3></button>`;
-      dp.$datepicker.append(clearButton);
-      dp.$datepicker.append(applyButton);
-      dp.$datepicker.find('.button_with-text-gray').click((event) => {
+      dp.$datepicker.append(this.clearButton);
+      dp.$datepicker.append(this.applyButton);
+      const clearButtonElement = this.constructor.getInnerElement(dp.$datepicker, '.button_with-text_gray');
+      const applyButtonElement = this.constructor.getInnerElement(dp.$datepicker, '.button_with-text_purple');
+      clearButtonElement.click(() => {
         if (this.isSingle) {
           this.$container.val('');
         } else {
@@ -75,7 +82,7 @@ class DateDropdown {
         }
         dp.clear();
       });
-      dp.$datepicker.find('.button_with-text-purple').click((event) => {
+      applyButtonElement.click(() => {
         dp.hide();
       });
     }

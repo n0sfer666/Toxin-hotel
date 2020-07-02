@@ -9,12 +9,16 @@ class Dropdown {
 
     this.$instance = this.getInstance();
 
-    this.$clearButton = this.$instance.find('.button_with-text_gray').hide();
-    this.$applyButton = this.$instance.find('.button_with-text_purple');
-    this.iqMenu = this.$instance.find('.iqdropdown-menu');
+    this.$clearButton = this.getInnerElement('.button_with-text_gray').hide();
+    this.$applyButton = this.getInnerElement('.button_with-text_purple');
+    this.iqMenu = this.getInnerElement('.iqdropdown-menu');
 
     this.bindHandler(this.$clearButton, this.clearButtonHandler);
     this.bindHandler(this.iqMenu, this.applyHandler);
+  }
+
+  getInnerElement(innerSelector) {
+    return this.$instance.find(innerSelector);
   }
 
   bindHandler(element, handler) {
@@ -23,10 +27,10 @@ class Dropdown {
   }
 
   clearButtonHandler() {
-    this.$instance.find('.iqdropdown-item-controls').remove();
+    this.getInnerElement('.iqdropdown-item-controls').remove();
     this.$instance = this.getInstance();
     // need to repeat for correct work iqDropdown
-    this.$instance.find('.iqdropdown-item-controls').remove();
+    this.getInnerElement('.iqdropdown-item-controls').remove();
     this.$instance = this.getInstance();
     this.$clearButton.hide();
   }
