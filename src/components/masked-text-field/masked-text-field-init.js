@@ -3,6 +3,6 @@ import MaskedField from './masked-text-field';
 $(document).ready(() => {
   const arrayMaskedTextField = $('.js-masked-text-field');
   $.each(arrayMaskedTextField, (key, item) => {
-    new MaskedField(item, key);
+    const instance = new MaskedField(item, key);
   });
 });

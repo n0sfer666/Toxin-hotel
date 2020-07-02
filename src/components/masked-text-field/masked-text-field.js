@@ -4,11 +4,11 @@ class MaskedField {
   constructor(item, index) {
     this.maskedElement = item;
     this.index = index;
-    this.config = this.getConfig();
+    this.config = this.constructor.getConfig();
     if (this.maskedElement) { this.maskedField = IMask(this.maskedElement, this.config); }
   }
 
-  getConfig() {
+  static getConfig() {
     const year = new Date().getFullYear();
 
     return {
