@@ -50,13 +50,15 @@ class Pagination {
     if (this.dataOutput) $(this.dataOutput).html(html);
     const $arrayApartComponents = $('.js-apart__slider');
     $.each($arrayApartComponents, (key, item) => {
-      new Apart(item, key);
+      const instance = new Apart(item, key);
     });
   }
 
   formatNavigator(currentPage, totalPage, totalNumber) {
     const first = this.elementsOnPage * currentPage - (this.elementsOnPage - 1);
-    const last = (this.elementsOnPage * currentPage) > totalNumber ? totalNumber : this.elementsOnPage * currentPage;
+    const last = (this.elementsOnPage * currentPage) > totalNumber
+      ? totalNumber
+      : this.elementsOnPage * currentPage;
     const total = totalNumber > 100 ? '100+' : totalNumber;
 
     return String(`${first} - ${last} из ${total} вариантов аренды`);
