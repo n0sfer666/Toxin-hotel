@@ -47,7 +47,7 @@ class DateDropdown {
     return config;
   }
 
-  getFormattedDate(DateText) {
+  static getFormattedDate(DateText) {
     const day = (DateText.getDate() < 10) ? `0${DateText.getDate()}` : DateText.getDate();
     const month = (DateText.getMonth() < 9) ? `0${DateText.getMonth() + 1}` : (DateText.getMonth() + 1);
     const year = DateText.getFullYear();
@@ -80,10 +80,10 @@ class DateDropdown {
   onSelect(fd, date, inst) {
     const isSecondDateSelected = (date.length === 2);
 
-    this.$container[0].val(this.getFormattedDate(date[0]));
+    this.$container[0].val(this.constructor.getFormattedDate(date[0]));
     this.$container[1].val('');
     if (isSecondDateSelected) {
-      this.$container[1].val(this.getFormattedDate(date[1]));
+      this.$container[1].val(this.constructor.getFormattedDate(date[1]));
       if (this.bookingInstance) {
         const daysIn = Number(date[1] - date[0]) / 1000 / 60 / 60 / 24;
         this.bookingInstance.getDaysInAndCalculate(daysIn);

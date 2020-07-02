@@ -4,7 +4,7 @@ import arrayBookingInstance from '../booking/booking-inits';
 $(document).ready(() => {
   const $arrayDateDropdownSingle = $('.js-date-dropdown-single');
   $.each($arrayDateDropdownSingle, (key, item) => {
-    new DateDropdown(item, key, true);
+    const instance = new DateDropdown(item, key, true);
   });
 
   const $arrayDateDropdownRight = $('.js-date-dropdown-right');
@@ -12,9 +12,9 @@ $(document).ready(() => {
 
   $.each($arrayDateDropdownLeft, (key, item) => {
     if ($(item).closest('.js-booking').length > 0) {
-      new DateDropdown([item, $arrayDateDropdownRight[key]], key, false, arrayBookingInstance[0]);
+      const instance = new DateDropdown([item, $arrayDateDropdownRight[key]], key, false, arrayBookingInstance[0]);
     } else {
-      new DateDropdown([item, $arrayDateDropdownRight[key]], key, false);
+      const instance = new DateDropdown([item, $arrayDateDropdownRight[key]], key, false);
     }
   });
 });
