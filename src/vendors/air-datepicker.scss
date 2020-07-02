@@ -330,3 +330,12 @@ Navigation
 .datepicker--cell-day.-other-month-:empty, .datepicker--cell-year.-other-decade-:empty {
   background: none;
   border: none; }
+
+.datepicker .button_with-text_purple {
+  margin-top: 20px;
+  float: right;
+}
+.datepicker .button_with-text_gray {
+  margin-top: 20px;
+  float: left;
+}

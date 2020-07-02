@@ -58,8 +58,12 @@ class DateDropdown {
   onShow(dp) {
     const isButtonsCreated = dp.$datepicker.find('button').html() === undefined;
     if (isButtonsCreated) {
-      const clearButton = '<button type="button" class="button_with-text-gray"><h3 class="button__title">очистить</h3></button>';
-      const applyButton = '<button type="button" class="button_with-text-purple" style="float: right;"><h3 class="button__title">применить</h3></button>';
+      const clearButton = `
+        <button type="button" class="button_with-text_gray">
+          <h3 class="button__title">очистить</h3></button>`;
+      const applyButton = `
+        <button type="button" class="button_with-text_purple">
+          <h3 class="button__title">применить</h3></button>`;
       dp.$datepicker.append(clearButton);
       dp.$datepicker.append(applyButton);
       dp.$datepicker.find('.button_with-text-gray').click((event) => {
