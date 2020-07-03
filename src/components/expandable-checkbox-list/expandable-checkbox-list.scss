@@ -15,11 +15,21 @@
   }
 
   &__arrow {
-    display: inline-block;
-    width: 44px;
-    text-align: center;
-    font: normal normal 24px/24px materialIcons;
-    color: $dark-shade-50;
+    &-down {
+      display: inline-block;
+      width: 44px;
+      text-align: center;
+      font: normal normal 24px/24px materialIcons;
+      color: $dark-shade-50;
+    }
+
+    &-up {
+      display: inline-block;
+      width: 44px;
+      text-align: center;
+      font: normal normal 24px/24px materialIcons;
+      color: $dark-shade-50;
+    }
   }
 
   &__container {
