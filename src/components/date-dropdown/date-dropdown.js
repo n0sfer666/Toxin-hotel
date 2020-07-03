@@ -21,10 +21,10 @@ class DateDropdown {
     }
 
     this.clearButton = `
-        <button type="button" class="button_with-text_gray">
+        <button type="button" class="button_with-text button_with-text_gray">
           <h3 class="button__title">очистить</h3></button>`;
     this.applyButton = `
-      <button type="button" class="button_with-text_purple">
+      <button type="button" class="button_with-text button_with-text_purple">
         <h3 class="button__title">применить</h3></button>`;
   }
 

@@ -2,13 +2,13 @@ mixin date-dropdown({isSingle = true, label = "Даты пербывания в 
   if isSingle
     .date-dropdown
       h3.date-dropdown__label #{label}
-      input(type="text", class = 'date-dropdown__filter js-date-dropdown-single', placeholder = "Выберите даты пребывания")
+      input(type="text", class = 'date-dropdown__filter js-date-dropdown__filter', placeholder = "Выберите даты пребывания")
   else
     .date-dropdown
       .date-dropdown__container
         .date-dropdown__datepicker
           h3.date-dropdown__label #{label[0]}
-          input(type="text", class = 'date-dropdown__input js-date-dropdown-left', placeholder = "ДД.ММ.ГГГГ")
+          input(type="text", class = 'date-dropdown__input-left js-date-dropdown__input-left', placeholder = "ДД.ММ.ГГГГ")
         .date-dropdown__datepicker
           h3.date-dropdown__label #{label[1]}
-          input(type="text", class = 'date-dropdown__input js-date-dropdown-right', placeholder = "ДД.ММ.ГГГГ")
+          input(type="text", class = 'date-dropdown__input-right js-date-dropdown__input-right', placeholder = "ДД.ММ.ГГГГ")

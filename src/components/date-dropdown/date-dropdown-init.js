@@ -2,13 +2,13 @@ import DateDropdown from './date-dropdown';
 import arrayBookingInstance from '../booking/booking-inits';
 
 $(document).ready(() => {
-  const $arrayDateDropdownSingle = $('.js-date-dropdown-single');
+  const $arrayDateDropdownSingle = $('.js-date-dropdown__filter');
   $.each($arrayDateDropdownSingle, (key, item) => {
     const instance = new DateDropdown(item, key, true);
   });
 
-  const $arrayDateDropdownRight = $('.js-date-dropdown-right');
-  const $arrayDateDropdownLeft = $('.js-date-dropdown-left');
+  const $arrayDateDropdownRight = $('.js-date-dropdown__input-right');
+  const $arrayDateDropdownLeft = $('.js-date-dropdown__input-left');
 
   $.each($arrayDateDropdownLeft, (key, item) => {
     if ($(item).closest('.js-booking').length > 0) {
