@@ -11,14 +11,14 @@
   }
 
   &_with-text {
+    display: inline-block;
+    width: fit-content;
+    border: none;
+    outline: none;
+    background-color: inherit;
+    cursor: pointer;
+
     &_gray {
-      display: inline-block;
-      width: fit-content;
-      border: none;
-      outline: none;
-      background-color: inherit;
-      cursor: pointer;
-  
       & .button__title {
         color: $dark-shade-50;
       }
@@ -30,13 +30,6 @@
     }
     
     &_purple {
-      display: inline-block;
-      width: fit-content;
-      border: none;
-      outline: none;
-      background-color: inherit;
-      cursor: pointer;
-  
       & .button__title {
         color: $purple;
       }
@@ -68,35 +61,17 @@
       color: $purple;
     }
 
-    &_deactivated {
-      width: 100%;
-      height: 100%;
-      border: none;
-      outline: none;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-sizing: border-box;
-      cursor: pointer;
-      border: double 2px transparent;
-      border-radius: 22px;
-      background-image: linear-gradient(white, white), linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-      background-origin: border-box;
-      background-clip: content-box, border-box;
-      opacity: 0.5;
+    &:active, &:focus, &:hover {
+      box-shadow: 0 0 15px $purple;
+    }
 
-      & .button__title {
-        color: $purple;
-      }
+    &_deactivated {
+      opacity: 0.5;
     
       &:active, &:focus, &:hover {
         box-shadow: unset;
         cursor: unset;
       }
-    }
-
-    &:active, &:focus, &:hover {
-      box-shadow: 0 0 15px $purple;
     }
   }
 
@@ -121,20 +96,8 @@
     }
 
     &_deactivated {
-      width: 100%;
-      height: 100%;
-      border: none;
-      outline: none;
-      border-radius: 22px;
-      box-sizing: border-box;
-      cursor: pointer;
-      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
       opacity: 0.5;
 
-      & .button__title {
-        color: white;
-      }
-    
       &:active, &:focus, &:hover {
         box-shadow: unset;
         cursor: unset;

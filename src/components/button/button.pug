@@ -3,11 +3,11 @@ mixin button({ style = "text", isActived = "true", title = "click me" } = {})
 
     when "text"
       if isActived
-        button(type="button", class=`button_with-text_purple`)
+        button(type="button", class=`button_with-text button_with-text_purple`)
           .button__wrapper
             h3.button__title #{title}
       else
-        button(type="button", class=`button_with-text_gray`)
+        button(type="button", class=`button_with-text button_with-text_gray`)
           .button__wrapper
             h3.button__title #{title}
 
@@ -22,7 +22,7 @@ mixin button({ style = "text", isActived = "true", title = "click me" } = {})
           .button__wrapper
             h3.button__title #{title}
       else
-        button(type="submit", class=`button_with-gradient_deactivated`)
+        button(type="submit", class=`button_with-gradient button_with-gradient_deactivated`)
           .button__wrapper
             h3.button__title #{title}
 
@@ -32,16 +32,16 @@ mixin button({ style = "text", isActived = "true", title = "click me" } = {})
           .button__wrapper
             h3.button__title #{title}
       else
-        button(type="submit", class=`button_with-border_deactivated`)
+        button(type="submit", class=`button_with-border button_with-border_deactivated`)
           .button__wrapper
             h3.button__title #{title}
 
     default
       if isActived
-        button(type="button", class=`button_with-text_purple`)
+        button(type="button", class=`button_with-text button_with-text_purple`)
           .button__wrapper
             h3.button__title #{title}
       else
-        button(type="button", class=`button_with-text_gray`)
+        button(type="button", class=`button_with-text button_with-text_gray`)
           .button__wrapper
             h3.button__title #{title}

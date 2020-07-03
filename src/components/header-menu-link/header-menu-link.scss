@@ -12,26 +12,30 @@
       text-shadow: 0 0 5px $dark-shade-25;
     }
 
-    &_is-home {
-      font-weight: bold;
-      color: $dark-shade-75;
+    &-text {
+      &_is-home {
+        font-weight: bold;
+        color: $dark-shade-75;
+      }
+
+      &_is-popup {
+        cursor: pointer;
+        position: relative;
+        display: inline-block;
+  
+        &-text {
+          display: inline-block;
+          vertical-align: top;
+          max-height: 20px;
+          max-width: 117px;
+          text-align: center;
+          line-height: 20px;
+          color: $dark-shade-50;
+        }
+      } 
     }
 
-    &_is-popup {
-      cursor: pointer;
-      position: relative;
-      display: inline-block;
-
-      &-text {
-        display: inline-block;
-        vertical-align: top;
-        max-height: 20px;
-        max-width: 117px;
-        text-align: center;
-        line-height: 20px;
-        color: $dark-shade-50;
-      }
-    } 
+    
 
     @media screen and (min-width: $old-phones) and (max-width: $pads) {
       margin-right: 0;
@@ -45,8 +49,8 @@
     }
   }
 
-  &__link_is-popup:hover &__popup,
-  &__link_is-popup:focus &__popup {
+  &__link-text_is-popup:hover &__popup,
+  &__link-text_is-popup:focus &__popup {
     visibility: visible;
   }
 

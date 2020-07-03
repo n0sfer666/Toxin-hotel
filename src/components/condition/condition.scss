@@ -46,9 +46,10 @@
   }
 
   &__row {
+    margin: 13px 0 19px;
+    width: 95%;
+
     &_horizontal {
-      margin: 13px 0 19px;
-      width: 95%;
       border: .5px solid $dark-shade-5;
     }
   }
