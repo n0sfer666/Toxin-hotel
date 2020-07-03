@@ -82,9 +82,7 @@ class DateDropdown {
         }
         dp.clear();
       });
-      applyButtonElement.click(() => {
-        dp.hide();
-      });
+      applyButtonElement.click(dp.hide);
     }
   }
 
