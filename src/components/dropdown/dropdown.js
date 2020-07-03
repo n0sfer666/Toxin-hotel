@@ -11,22 +11,23 @@ class Dropdown {
 
     this.$clearButton = this.getInnerElement('.button_with-text_gray').hide();
     this.$applyButton = this.getInnerElement('.button_with-text_purple');
-    this.iqMenu = this.getInnerElement('.iqdropdown-menu');
+    this.$iqMenu = this.getInnerElement('.iqdropdown-menu');
 
-    this.bindHandler(this.$clearButton, this.clearButtonHandler);
-    this.bindHandler(this.iqMenu, this.applyHandler);
+    this.bindHandlers();
   }
 
   getInnerElement(innerSelector) {
     return this.$instance.find(innerSelector);
   }
 
-  bindHandler(element, handler) {
-    const listener = handler.bind(this);
-    element.on('click', listener);
+  bindHandlers() {
+    const handleClearButtonClick = this.handleClearButtonClick.bind(this);
+    this.$clearButton.on('click', handleClearButtonClick);
+    const handleApplyButtonClick = this.handleApplyButtonClick.bind(this);
+    this.$iqMenu.on('click', handleApplyButtonClick);
   }
 
-  clearButtonHandler() {
+  handleClearButtonClick() {
     this.getInnerElement('.iqdropdown-item-controls').remove();
     this.$instance = this.getInstance();
     // need to repeat for correct work iqDropdown
@@ -35,7 +36,7 @@ class Dropdown {
     this.$clearButton.hide();
   }
 
-  applyHandler(event) {
+  handleApplyButtonClick(event) {
     const isApplyButton = event.target.parentNode.parentNode === this.$applyButton.get(0);
     if (!isApplyButton) {
       event.stopPropagation();

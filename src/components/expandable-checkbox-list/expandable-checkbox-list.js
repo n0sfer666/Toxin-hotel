@@ -10,19 +10,19 @@ class ExpandableCheckboxList {
 
     this.isExpanded = false;
 
-    this.bindListenner();
+    this.bindHandlers();
   }
 
   getInnerElement(innerSelector) {
     return this.$instance.find(innerSelector);
   }
 
-  bindListenner() {
-    const onClick = this.clickHandler.bind(this);
-    this.$instance.on('click', onClick);
+  bindHandlers() {
+    const handleInctanceClick = this.handleInctanceClick.bind(this);
+    this.$instance.on('click', handleInctanceClick);
   }
 
-  clickHandler() {
+  handleInctanceClick() {
     if (!this.isExpanded) {
       this.isExpanded = true;
       this.$instanceContainer.show();

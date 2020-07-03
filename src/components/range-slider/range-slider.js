@@ -9,7 +9,7 @@ class RangeSlider {
 
     if (isNotUndefined) {
       this.getRangeSlider();
-      this.bindHandler();
+      this.bindHandlers();
     }
   }
 
@@ -33,9 +33,9 @@ class RangeSlider {
     noUiSlider.create(this.$rangeSlider, this.constructor.getConfig());
   }
 
-  bindHandler() {
-    const onUpdate = this.handleValuesUpdate.bind(this);
-    this.$rangeSlider.noUiSlider.on('update', onUpdate);
+  bindHandlers() {
+    const handleValuesUpdate = this.handleValuesUpdate.bind(this);
+    this.$rangeSlider.noUiSlider.on('update', handleValuesUpdate);
   }
 
   handleValuesUpdate(values) {

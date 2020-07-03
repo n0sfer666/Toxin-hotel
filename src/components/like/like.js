@@ -7,19 +7,19 @@ class LikeButton {
     this.button = this.getInnerElement('.like__button');
     this.heartIcon = this.getInnerElement('.like__heart');
 
-    this.bindEventListenner();
+    this.bindHandlers();
   }
 
   getInnerElement(innerSelector) {
     return $(this.element).find(innerSelector).get(0);
   }
 
-  bindEventListenner() {
-    const onClick = this.clickHandler.bind(this);
-    this.element.addEventListener('click', onClick);
+  bindHandlers() {
+    const handleElementClick = this.handleElementClick.bind(this);
+    this.element.addEventListener('click', handleElementClick);
   }
 
-  clickHandler() {
+  handleElementClick() {
     const isActived = this.element.classList.contains('like_actived');
     console.log(isActived);
     if (isActived) {
