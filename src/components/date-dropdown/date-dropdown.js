@@ -28,7 +28,7 @@ class DateDropdown {
         <h3 class="button__title">применить</h3></button>`;
   }
 
-  static getInnerElement(mainElement, innerSelector) {
+  getInnerElement(mainElement, innerSelector) {
     return mainElement.find(innerSelector);
   }
 
@@ -58,7 +58,7 @@ class DateDropdown {
     return config;
   }
 
-  static getFormattedDate(DateText) {
+  getFormattedDate(DateText) {
     const day = (DateText.getDate() < 10) ? `0${DateText.getDate()}` : DateText.getDate();
     const month = (DateText.getMonth() < 9) ? `0${DateText.getMonth() + 1}` : (DateText.getMonth() + 1);
     const year = DateText.getFullYear();
@@ -71,8 +71,8 @@ class DateDropdown {
     if (isButtonsCreated) {
       dp.$datepicker.append(this.clearButton);
       dp.$datepicker.append(this.applyButton);
-      const clearButtonElement = this.constructor.getInnerElement(dp.$datepicker, '.button_with-text_gray');
-      const applyButtonElement = this.constructor.getInnerElement(dp.$datepicker, '.button_with-text_purple');
+      const clearButtonElement = this.getInnerElement(dp.$datepicker, '.button_with-text_gray');
+      const applyButtonElement = this.getInnerElement(dp.$datepicker, '.button_with-text_purple');
       clearButtonElement.click(() => {
         if (this.isSingle) {
           this.$container.val('');
@@ -82,17 +82,17 @@ class DateDropdown {
         }
         dp.clear();
       });
-      applyButtonElement.click(dp.hide);
+      applyButtonElement.on('click', dp.hide);
     }
   }
 
   onSelect(fd, date, inst) {
     const isSecondDateSelected = (date.length === 2);
 
-    this.$container[0].val(this.constructor.getFormattedDate(date[0]));
+    this.$container[0].val(this.getFormattedDate(date[0]));
     this.$container[1].val('');
     if (isSecondDateSelected) {
-      this.$container[1].val(this.constructor.getFormattedDate(date[1]));
+      this.$container[1].val(this.getFormattedDate(date[1]));
       if (this.bookingInstance) {
         const daysIn = Number(date[1] - date[0]) / 1000 / 60 / 60 / 24;
         this.bookingInstance.getDaysInAndCalculate(daysIn);

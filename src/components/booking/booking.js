@@ -10,11 +10,11 @@ class Booking {
     return $(this.item).find(selector);
   }
 
-  static getValueOfElement(element) {
+  getValueOfElement(element) {
     return Number(element.get(0).innerText);
   }
 
-  static getStringWithSeparate(string) {
+  getStringWithSeparate(string) {
     const REGEXP_SPACE_SEPARATED_THOUSANDS = /(\d)(?=(\d\d\d)+([^\d]|$))/g;
     return String(string).replace(REGEXP_SPACE_SEPARATED_THOUSANDS, '$1 ');
   }
@@ -32,9 +32,9 @@ class Booking {
 
   calculate(daysIn) {
     const cost = this.values.price * daysIn;
-    this.elements.cost.text(this.constructor.getStringWithSeparate(cost));
+    this.elements.cost.text(this.getStringWithSeparate(cost));
     const total = cost - this.values.discount + this.values.complementary;
-    this.elements.total.text(this.constructor.getStringWithSeparate(total));
+    this.elements.total.text(this.getStringWithSeparate(total));
   }
 
   initiate() {
@@ -49,12 +49,12 @@ class Booking {
       total: this.getElementByClass('.js-booking__total-text'),
     };
     this.values = {
-      price: this.constructor.getValueOfElement(this.elements.price),
-      discount: this.constructor.getValueOfElement(this.elements.discount),
-      complementary: this.constructor.getValueOfElement(this.elements.complementary),
+      price: this.getValueOfElement(this.elements.price),
+      discount: this.getValueOfElement(this.elements.discount),
+      complementary: this.getValueOfElement(this.elements.complementary),
     };
     $.each(this.elements, (key, item) => {
-      item.text(this.constructor.getStringWithSeparate(item.text()));
+      item.text(this.getStringWithSeparate(item.text()));
     });
   }
 }

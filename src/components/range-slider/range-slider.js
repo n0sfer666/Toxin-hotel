@@ -13,7 +13,7 @@ class RangeSlider {
     }
   }
 
-  static getConfig() {
+  getConfig() {
     return {
       start: [5000, 10000],
       connect: true,
@@ -30,7 +30,7 @@ class RangeSlider {
   }
 
   getRangeSlider() {
-    noUiSlider.create(this.$rangeSlider, this.constructor.getConfig());
+    noUiSlider.create(this.$rangeSlider, this.getConfig());
   }
 
   bindHandlers() {

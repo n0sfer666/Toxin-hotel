@@ -47,7 +47,7 @@ class Dropdown {
     const config = {};
     const onChange = this.onChange.bind(this);
 
-    config.setSelectionText = this.constructor.setSelectionText;
+    config.setSelectionText = this.setSelectionText;
     config.onChange = onChange;
 
     return config;
@@ -74,7 +74,7 @@ class Dropdown {
     }
   }
 
-  static setSelectionText(itemCount, totalItems) {
+  setSelectionText(itemCount, totalItems) {
     let text;
 
     const isGuests = (
