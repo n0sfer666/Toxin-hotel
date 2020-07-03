@@ -11,7 +11,7 @@ class Booking {
   }
 
   getValueOfElement(element) {
-    return Number(element.get(0).innerText);
+    return Number(element.text());
   }
 
   getStringWithSeparate(string) {
@@ -20,21 +20,25 @@ class Booking {
   }
 
   getDaysInAndCalculate(daysIn) {
+    const { daysIn: daysInElement } = this.elements;
     if (!Number.isNaN(Number(daysIn))) {
       if (daysIn === 1) {
-        this.elements.daysIn.text(`${daysIn} сутки`);
+        daysInElement.text(`${daysIn} сутки`);
       } else {
-        this.elements.daysIn.text(`${daysIn} суток`);
+        daysInElement.text(`${daysIn} суток`);
       }
       this.calculate(daysIn);
     }
   }
 
   calculate(daysIn) {
-    const cost = this.values.price * daysIn;
-    this.elements.cost.text(this.getStringWithSeparate(cost));
-    const total = cost - this.values.discount + this.values.complementary;
-    this.elements.total.text(this.getStringWithSeparate(total));
+    const { price: priceValue, discount: discountValue } = this.values;
+    const { complementary: complementaryValue } = this.values;
+    const { cost: costElement, total: totalElement } = this.elements;
+    const cost = priceValue * daysIn;
+    costElement.text(this.getStringWithSeparate(cost));
+    const total = cost - discountValue + complementaryValue;
+    totalElement.text(this.getStringWithSeparate(total));
   }
 
   initiate() {
