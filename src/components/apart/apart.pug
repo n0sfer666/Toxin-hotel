@@ -25,20 +25,20 @@ mixin apart({apart = "888", isLux = true, price = "9990", rate = 5, reviews = 14
       .apart__rate
         .apart__rate-stars
           +rate({rate: rate})
-        .apart__rate-text
+        .apart__rate-text-block
           -
             let isNullReviews = reviews === 0
             let isFromTwotoFourReviews = reviews > 1 && reviews < 5
           if(isNullReviews)
             span
-              span.apart__rate-text_bold 0 
+              span.apart__rate-text.apart__rate-text_bold 0 
               | Отзывов
           if(reviews === 1)
-            span.apart__rate-text_bold 1 
+            span.apart__rate-text.apart__rate-text_bold 1 
             | Отзыв
           if(isFromTwotoFourReviews)
-            span.apart__rate-text_bold #{reviews} 
+            span.apart__rate-text.apart__rate-text_bold #{reviews} 
             | Отзыва
           if(reviews >= 5)
-            span.apart__rate-text_bold #{reviews} 
+            span.apart__rate-text.apart__rate-text_bold #{reviews} 
             | Отзывов

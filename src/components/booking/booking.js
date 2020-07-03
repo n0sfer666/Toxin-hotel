@@ -39,6 +39,7 @@ class Booking {
 
   initiate() {
     this.elements = {
+      headerPrice: this.getElementByClass('.js-booking__header-price-text'),
       price: this.getElementByClass('.js-booking__price'),
       daysIn: this.getElementByClass('.js-booking__daysIn'),
       cost: this.getElementByClass('.js-booking__cost'),

@@ -62,12 +62,16 @@
     align-items: flex-start;
     margin: 10px 3px 0 0;
 
-    &-text {
+    &-text-block {
       width: 100px;
       height: 24px;
       text-align: right;
       color: $dark-shade-50;
       @include fix-overflow;
+    }
+
+    &-text {
+      @include font-body;
 
       &_bold {
         font-weight: bold;
