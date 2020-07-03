@@ -82,7 +82,8 @@ class DateDropdown {
         }
         dp.clear();
       });
-      applyButtonElement.on('click', dp.hide);
+      const onHide = dp.hide.bind(dp);
+      applyButtonElement.click(onHide);
     }
   }
 
