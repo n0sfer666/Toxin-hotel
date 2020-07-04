@@ -12,8 +12,5 @@ mixin rate({rate = 0} = {})
         let id = Math.floor(Math.random() * 10000)
         id += Math.floor(Math.random() * 1000)
         id += Math.floor(Math.random() * 100)
-      if isRated
-        input(type="radio", class="rate__input", name=name, id=id, value=value, checked)
-      else
-        input(type="radio", class="rate__input", name=name, id=id, value=value)
+      input(type="radio", class="rate__input", name=name, id=id, value=value, checked=isRated)
       label(for=id, class="rate__label", title=value) #{value} stars
