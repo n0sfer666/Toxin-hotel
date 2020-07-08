@@ -18,7 +18,7 @@
     background-color: inherit;
     cursor: pointer;
 
-    &_gray {
+    &_deactived {
       & .button__title {
         color: $dark-shade-50;
       }
@@ -29,7 +29,7 @@
       }
     }
     
-    &_purple {
+    &_actived {
       & .button__title {
         color: $purple;
       }
@@ -65,7 +65,7 @@
       box-shadow: 0 0 15px $purple;
     }
 
-    &_deactivated {
+    &_deactived {
       opacity: 0.5;
     
       &:active, &:focus, &:hover {
@@ -95,7 +95,7 @@
       box-shadow: 0 0 15px $purple;
     }
 
-    &_deactivated {
+    &_deactived {
       opacity: 0.5;
 
       &:active, &:focus, &:hover {

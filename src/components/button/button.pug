@@ -1,47 +1,44 @@
 mixin button({ style = "text", isActived = "true", title = "click me" } = {})
-  case style
-
-    when "text"
+  - const styles = ["text", "gradient", "border", "action"]
+  for value in styles
+    - const isEqualed = style === value
+    if isEqualed
       if isActived
-        button(type="button", class=`button_with-text button_with-text_purple`)
+        button(class=`button_with-${style} button_with-${style}_actived`)
           .button__wrapper
             h3.button__title #{title}
       else
-        button(type="button", class=`button_with-text button_with-text_gray`)
+        button(class=`button_with-${style} button_with-${style}_deactived`)
           .button__wrapper
             h3.button__title #{title}
 
-    when "action"
-      button(type="submit", class=`button_with-action`)
-        .button__wrapper
-          h3.button__title #{title}
 
-    when "gradient"
-      if isActived
-        button(type="submit", class=`button_with-gradient`)
-          .button__wrapper
-            h3.button__title #{title}
-      else
-        button(type="submit", class=`button_with-gradient button_with-gradient_deactivated`)
-          .button__wrapper
-            h3.button__title #{title}
 
-    when "border"
-      if isActived
-        button(type="submit", class=`button_with-border`)
-          .button__wrapper
-            h3.button__title #{title}
-      else
-        button(type="submit", class=`button_with-border button_with-border_deactivated`)
-          .button__wrapper
-            h3.button__title #{title}
+  //- case style
 
-    default
-      if isActived
-        button(type="button", class=`button_with-text button_with-text_purple`)
-          .button__wrapper
-            h3.button__title #{title}
-      else
-        button(type="button", class=`button_with-text button_with-text_gray`)
-          .button__wrapper
-            h3.button__title #{title}
+  //-   when "text"
+  //-     if isActived
+  //-       button(type="button", class=`button_with-text button_with-text_purple`)
+  //-     else
+  //-       button(type="button", class=`button_with-text button_with-text_gray`)
+
+  //-   when "action"
+  //-     button(type="submit", class=`button_with-action`)
+
+  //-   when "gradient"
+  //-     if isActived
+  //-       button(type="submit", class=`button_with-gradient`)
+  //-     else
+  //-       button(type="submit", class=`button_with-gradient button_with-gradient_deactivated`)
+
+  //-   when "border"
+  //-     if isActived
+  //-       button(type="submit", class=`button_with-border`)
+  //-     else
+  //-       button(type="submit", class=`button_with-border button_with-border_deactivated`)
+
+  //-   default
+  //-     if isActived
+  //-       button(type="button", class=`button_with-text button_with-text_purple`)
+  //-     else
+  //-       button(type="button", class=`button_with-text button_with-text_gray`)
