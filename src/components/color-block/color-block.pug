@@ -1,50 +1,46 @@
 mixin color-block ({ mod = "dark-shade-100" } = {})
   .color-block
-    case mod
-      when "dark-shade-100"
-        div(class = `color-block__colors-cell color-block__colors-cell_${mod}`)
-        p(class = "color-block__colors-text") Dark Shade 100%
-          <br>
-          span(class = `color-block__colors-text color-block__colors-text_regular`) #1F2041
-
-      when "dark-shade-75"
-        div(class = `color-block__colors-cell color-block__colors-cell_${mod}`)
-        p(class = "color-block__colors-text") Dark Shade 75%
-          <br>
-          span(class = `color-block__colors-text color-block__colors-text_regular`) #1F2041
-
-      when "dark-shade-50"
-        div(class = `color-block__colors-cell color-block__colors-cell_${mod}`)
-        p(class = "color-block__colors-text") Dark Shade 50%
-          <br>
-          span(class = `color-block__colors-text color-block__colors-text_regular`) #1F2041
-
-      when "dark-shade-25"
-        div(class = `color-block__colors-cell color-block__colors-cell_${mod}`)
-        p(class = "color-block__colors-text") Dark Shade 25%
-          <br>
-          span(class = `color-block__colors-text color-block__colors-text_regular`) #1F2041
-
-      when "dark-shade-5"
-        div(class = `color-block__colors-cell color-block__colors-cell_${mod}`)
-        p(class = "color-block__colors-text") Dark Shade 5%
-          <br>
-          span(class = `color-block__colors-text color-block__colors-text_regular`) #1F2041
-
-      when "green"
-        div(class = `color-block__colors-cell color-block__colors-cell_${mod}`)
-        p(class = "color-block__colors-text") Green
-          <br>
-          span(class = `color-block__colors-text color-block__colors-text_regular`) #BC9CFF
-
-      when "purple"
-        div(class = `color-block__colors-cell color-block__colors-cell_${mod}`)
-        p(class = "color-block__colors-text") Purple
-          <br>
-          span(class = `color-block__colors-text color-block__colors-text_regular`) #6FCF97
-
-      default
-        div(class = `color-block__colors-cell color-block__colors-cell_dark-shade-100`)
-        p(class = "color-block__colors-text") Dark Shade 100%
-          <br>
-          span(class = `color-block__colors-text color-block__colors-text_regular`) #1F2041
+    -
+      const modList = [
+        "dark-shade-100",
+        "dark-shade-75",
+        "dark-shade-50",
+        "dark-shade-25",
+        "dark-shade-5",
+        "green",
+        "purple"
+      ];
+      const textList = [
+        "Dark Shade 100%",
+        "Dark Shade 75%",
+        "Dark Shade 50%",
+        "Dark Shade 25%",
+        "Dark Shade 5%",
+        "Green",
+        "Purple"
+      ];
+      const hexColorList = [
+        "#1F2041",
+        "#1F2041",
+        "#1F2041",
+        "#1F2041",
+        "#1F2041",
+        "#BC9CFF",
+        "#6FCF97"
+      ];
+      let isModCorrected = false;
+      let text, hexColor;
+      modList.forEach((value, index) => {
+        if(mod === value) {
+          isModCorrected = true;
+          text = textList[index];
+          hexColor = hexColorList[index];
+        }
+      })
+    if isModCorrected
+      div(class = `color-block__colors-cell color-block__colors-cell_${mod}`)
+      p.color-block__colors-text #{text}
+        <br>
+        span.color-block__colors-text.color-block__colors-text_regular #{hexColor}
+    else
+      p wrong mod
