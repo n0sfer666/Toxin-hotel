@@ -174,22 +174,22 @@
         display: flex;
         margin-bottom: 30px;
 
-        & .button_with-border {
+        & .button_border_active {
           margin-right: 18px;
           width: 99px;
           height: 44px;
         }
-        & .button_with-border_deactivated {
+        & .button_border_deactive {
           width: 99px;
           height: 44px;
         }
 
-        & .button_with-gradient {
+        & .button_gradient_active {
           margin-right: 18px;
           width: 99px;
           height: 44px;
         }
-        & .button_with-gradient_deactivated {
+        & .button_gradient_deactive {
           width: 99px;
           height: 44px;
         }

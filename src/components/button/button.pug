@@ -1,7 +1,7 @@
 mixin button({ style = "text", isActived = "true", title = "click me" } = {})
   -
     let correctStyleEntered = false;
-    let modKey = isActived ? "actived" : "deactived";
+    let modKey = isActived ? "active" : "deactive";
     ["text", "gradient", "border", "action"].forEach((value) => {
       if(value === style) correctStyleEntered = true;
     })
