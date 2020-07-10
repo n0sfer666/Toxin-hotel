@@ -1,12 +1,12 @@
 mixin button({ style = "text", isActived = "true", title = "click me" } = {})
   -
     let correctStyleEntered = false;
-    let modificator = isActived ? "actived" : "deactived";
+    let modKey = isActived ? "actived" : "deactived";
     ["text", "gradient", "border", "action"].forEach((value) => {
       if(value === style) correctStyleEntered = true;
     })
   if correctStyleEntered
-      button(class=`button_with-${style} button_with-${style}_${modificator}`)
+      button(class=`button button_${style} button_${style}_${modKey}`)
         .button__wrapper
           h3.button__title #{title}
   else

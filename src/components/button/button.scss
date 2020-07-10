@@ -10,7 +10,7 @@
     @include font-h3;
   }
 
-  &_with-text {
+  &_text {
     display: inline-block;
     width: fit-content;
     border: none;
@@ -18,7 +18,7 @@
     background-color: inherit;
     cursor: pointer;
 
-    &_deactived {
+    &_deactive {
       & .button__title {
         color: $dark-shade-50;
       }
@@ -29,7 +29,7 @@
       }
     }
     
-    &_actived {
+    &_active {
       & .button__title {
         color: $purple;
       }
@@ -41,7 +41,7 @@
     }
   }
 
-  &_with-border {
+  &_border {
     width: 100%;
     height: 100%;
     border: none;
@@ -65,7 +65,7 @@
       box-shadow: 0 0 15px $purple;
     }
 
-    &_deactived {
+    &_deactive {
       opacity: 0.5;
     
       &:active, &:focus, &:hover {
@@ -75,7 +75,7 @@
     }
   }
 
-  &_with-gradient {
+  &_gradient {
     width: 100%;
     height: 100%;
     border: none;
@@ -95,7 +95,7 @@
       box-shadow: 0 0 15px $purple;
     }
 
-    &_deactived {
+    &_deactive {
       opacity: 0.5;
 
       &:active, &:focus, &:hover {
@@ -105,7 +105,7 @@
     }
   }
 
-  &_with-action {
+  &_action {
     width: 100%;
     height: 100%;
     border: none;
