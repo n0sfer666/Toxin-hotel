@@ -44,11 +44,12 @@ class Dropdown {
   }
 
   getConfig() {
-    const config = {};
-    const onChange = this.onChange.bind(this);
-
-    config.setSelectionText = this.setSelectionText;
-    config.onChange = onChange;
+    const onChange = this.handleButtonIncDecChange.bind(this);
+    const setSelectionText = this.handleButtonIncDecClick;
+    const config = {
+      onChange: onChange,
+      setSelectionText: setSelectionText,
+    };
 
     return config;
   }
@@ -57,7 +58,7 @@ class Dropdown {
     return $(this.container).iqDropdown(this.config);
   }
 
-  onChange(id, count, totalItems) {
+  handleButtonIncDecChange(id, count, totalItems) {
     if (count > 0) {
       $(`[data-id=${id}]`).find('.button-decrement')
         .removeClass('button-decrement')
@@ -74,7 +75,7 @@ class Dropdown {
     }
   }
 
-  setSelectionText(itemCount, totalItems) {
+  handleButtonIncDecClick(itemCount, totalItems) {
     let text;
 
     const isGuests = (

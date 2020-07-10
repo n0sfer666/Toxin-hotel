@@ -33,6 +33,11 @@ class DateDropdown {
   }
 
   getConfig() {
+    const onShow = this.handleDatepickerShow.bind(this);
+    const onSelect = !this.isSingle
+      ? this.handleDatecellSelect.bind(this)
+      : {};
+
     const config = {
       language: 'ru',
       minDate: new Date(),
@@ -47,13 +52,9 @@ class DateDropdown {
       navTitles: {
         days: 'MM yyyy',
       },
+      onShow: onShow,
+      onSelect: onSelect,
     };
-    const onShow = this.onShow.bind(this);
-    config.onShow = onShow;
-    if (!this.isSingle) {
-      const onSelect = this.onSelect.bind(this);
-      config.onSelect = onSelect;
-    }
 
     return config;
   }
@@ -66,7 +67,7 @@ class DateDropdown {
     return (`${day}.${month}.${year}`);
   }
 
-  onShow(dp) {
+  handleDatepickerShow(dp) {
     const isButtonsCreated = dp.$datepicker.find('button').html() === undefined;
     if (isButtonsCreated) {
       dp.$datepicker.append(this.clearButton);
@@ -87,7 +88,7 @@ class DateDropdown {
     }
   }
 
-  onSelect(fd, date, inst) {
+  handleDatecellSelect(fd, date, inst) {
     const isSecondDateSelected = (date.length === 2);
 
     this.$container[0].val(this.getFormattedDate(date[0]));

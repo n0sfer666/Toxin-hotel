@@ -22,6 +22,7 @@
     "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
     "no-else-return": ["off"],
     "no-console": ["off"],
-    "class-methods-use-this": ["off"]
+    "class-methods-use-this": ["off"],
+    "object-shorthand": ["off", "always"]
   }
 }

@@ -5,28 +5,26 @@ class Pagination {
   constructor(item, index, dataSource, dataOutput) {
     this.$instance = $(item);
     this.index = index;
-
     const demoSource = [];
     for (let i = 0; i < 200; i += 1) {
       demoSource.push(i);
     }
-
     this.dataSource = dataSource.length > 1
       ? dataSource
       : demoSource;
-
     this.elementsOnPage = 12;
-
     this.dataOutput = dataOutput;
 
     const config = this.getConfig();
-
     this.pagination = this.$instance.pagination(config);
   }
 
   getConfig() {
     const { dataSource } = this;
     const { elementsOnPage } = this;
+    const formatNavigator = this.handlePaginationPageClick.bind(this);
+    const callback = this.callback.bind(this);
+
     const config = {
       dataSource,
       showPrevious: false,
@@ -34,13 +32,10 @@ class Pagination {
       pageRange: 1,
       pageSize: elementsOnPage,
       showNavigator: true,
+
+      formatNavigator: formatNavigator,
+      callback: callback,
     };
-
-    const formatNavigator = this.formatNavigator.bind(this);
-    config.formatNavigator = formatNavigator;
-
-    const callback = this.callback.bind(this);
-    config.callback = callback;
 
     return config;
   }
@@ -54,7 +49,7 @@ class Pagination {
     });
   }
 
-  formatNavigator(currentPage, totalPage, totalNumber) {
+  handlePaginationPageClick(currentPage, totalPage, totalNumber) {
     const first = this.elementsOnPage * currentPage - (this.elementsOnPage - 1);
     const last = (this.elementsOnPage * currentPage) > totalNumber
       ? totalNumber
