@@ -42,14 +42,14 @@ class Booking {
   }
 
   initiate() {
-    this.initElements();
-    this.initValue();
+    this.getHTMLElements();
+    this.getValueElements();
     $.each(this.elements, (key, item) => {
       item.text(this.getStringWithSeparate(item.text()));
     });
   }
 
-  initElements() {
+  getHTMLElements() {
     this.elements = {
       headerPrice: this.getElementByClass('.js-booking__header-price-text'),
       price: this.getElementByClass('.js-booking__price'),
@@ -62,7 +62,7 @@ class Booking {
     };
   }
 
-  initValue() {
+  getValueElements() {
     this.values = {
       price: this.getValueOfElement(this.elements.price),
       discount: this.getValueOfElement(this.elements.discount),
