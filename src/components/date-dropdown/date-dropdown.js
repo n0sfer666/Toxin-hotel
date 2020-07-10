@@ -21,11 +21,17 @@ class DateDropdown {
     }
 
     this.clearButton = `
-        <button type="button" class="button_with-text button_with-text_deactived">
-          <h3 class="button__title">очистить</h3></button>`;
+        <button type="button" class="button button_text button_text_deactive">
+          <div class="button__wrapper">
+            <h3 class="button__title">очистить</h3>
+          </div>
+        </button>`;
     this.applyButton = `
-      <button type="button" class="button_with-text button_with-text_actived">
-        <h3 class="button__title">применить</h3></button>`;
+      <button type="button" class="button button_text button_text_active">
+        <div class="button__wrapper">
+          <h3 class="button__title">применить</h3>
+        </div>
+      </button>`;
   }
 
   getInnerElement(mainElement, innerSelector) {
@@ -72,20 +78,23 @@ class DateDropdown {
     if (isButtonsCreated) {
       dp.$datepicker.append(this.clearButton);
       dp.$datepicker.append(this.applyButton);
-      const clearButtonElement = this.getInnerElement(dp.$datepicker, '.button_with-text_deactived');
-      const applyButtonElement = this.getInnerElement(dp.$datepicker, '.button_with-text_actived');
-      clearButtonElement.click(() => {
-        if (this.isSingle) {
-          this.$container.val('');
-        } else {
-          this.$container[0].val('');
-          this.$container[1].val('');
-        }
-        dp.clear();
-      });
+      const clearButtonElement = this.getInnerElement(dp.$datepicker, '.button_text_deactive');
+      const applyButtonElement = this.getInnerElement(dp.$datepicker, '.button_text_active');
       const onHide = dp.hide.bind(dp);
-      applyButtonElement.click(onHide);
+      const onClearButtonClick = this.handleClearButtonClick.bind(this, dp);
+      applyButtonElement.on('click', onHide);
+      clearButtonElement.on('click', onClearButtonClick);
     }
+  }
+
+  handleClearButtonClick(dp) {
+    if (this.isSingle) {
+      this.$container.val('');
+    } else {
+      this.$container[0].val('');
+      this.$container[1].val('');
+    }
+    dp.clear();
   }
 
   handleDatecellSelect(fd, date, inst) {
