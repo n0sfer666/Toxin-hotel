@@ -42,6 +42,14 @@ class Booking {
   }
 
   initiate() {
+    this.initElements();
+    this.initValue();
+    $.each(this.elements, (key, item) => {
+      item.text(this.getStringWithSeparate(item.text()));
+    });
+  }
+
+  initElements() {
     this.elements = {
       headerPrice: this.getElementByClass('.js-booking__header-price-text'),
       price: this.getElementByClass('.js-booking__price'),
@@ -52,14 +60,14 @@ class Booking {
       complementary: this.getElementByClass('.js-booking__complementary'),
       total: this.getElementByClass('.js-booking__total-text'),
     };
+  }
+
+  initValue() {
     this.values = {
       price: this.getValueOfElement(this.elements.price),
       discount: this.getValueOfElement(this.elements.discount),
       complementary: this.getValueOfElement(this.elements.complementary),
     };
-    $.each(this.elements, (key, item) => {
-      item.text(this.getStringWithSeparate(item.text()));
-    });
   }
 }
 
