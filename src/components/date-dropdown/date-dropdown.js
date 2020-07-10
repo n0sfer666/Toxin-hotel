@@ -12,26 +12,33 @@ class DateDropdown {
     this.isSingle = isSingle;
     this.bookingInstance = bookingInstance;
 
+    this.initButtons();
     this.config = this.getConfig();
-    if (Array.isArray(this.$container)) {
-      this.$container[0].datepicker(this.getConfig()).data('datepicker');
-      this.$container[1].datepicker(this.getConfig()).data('datepicker');
-    } else {
-      this.$container.datepicker(this.getConfig()).data('datepicker');
-    }
+    this.initDatepicker();
+  }
 
+  initButtons() {
     this.clearButton = `
-        <button type="button" class="button button_text button_text_deactive">
-          <div class="button__wrapper">
-            <h3 class="button__title">очистить</h3>
-          </div>
-        </button>`;
+    <button type="button" class="button button_text button_text_deactive">
+      <div class="button__wrapper">
+        <h3 class="button__title">очистить</h3>
+      </div>
+    </button>`;
     this.applyButton = `
       <button type="button" class="button button_text button_text_active">
         <div class="button__wrapper">
           <h3 class="button__title">применить</h3>
         </div>
       </button>`;
+  }
+
+  initDatepicker() {
+    if (Array.isArray(this.$container)) {
+      this.$container[0].datepicker(this.getConfig()).data('datepicker');
+      this.$container[1].datepicker(this.getConfig()).data('datepicker');
+    } else {
+      this.$container.datepicker(this.getConfig()).data('datepicker');
+    }
   }
 
   getInnerElement(mainElement, innerSelector) {
