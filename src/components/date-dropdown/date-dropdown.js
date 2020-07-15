@@ -13,6 +13,7 @@ class DateDropdown {
     this.bookingInstance = bookingInstance;
 
     this.initButtons();
+    this.bindContext();
     this.config = this.getConfig();
     this.initDatepicker();
   }
@@ -46,9 +47,9 @@ class DateDropdown {
   }
 
   getConfig() {
-    const onShow = this.handleDatepickerShow.bind(this);
+    const onShow = this.handleDatepickerShow;
     const onSelect = !this.isSingle
-      ? this.handleDatecellSelect.bind(this)
+      ? this.handleDatecellSelect
       : {};
 
     const config = {
@@ -65,7 +66,7 @@ class DateDropdown {
       navTitles: {
         days: 'MM yyyy',
       },
-      onShow: onShow,
+      onShow: this.handleDatepickerShow,
       onSelect: onSelect,
     };
 
@@ -116,6 +117,11 @@ class DateDropdown {
         this.bookingInstance.getDaysInAndCalculate(daysIn);
       }
     }
+  }
+
+  bindContext() {
+    this.handleDatepickerShow = this.handleDatepickerShow.bind(this);
+    this.handleDatecellSelect = this.handleDatecellSelect.bind(this);
   }
 }
 

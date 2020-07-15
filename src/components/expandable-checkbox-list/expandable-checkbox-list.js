@@ -10,6 +10,7 @@ class ExpandableCheckboxList {
 
     this.isExpanded = false;
 
+    this.bindContext();
     this.bindHandlers();
   }
 
@@ -18,8 +19,11 @@ class ExpandableCheckboxList {
   }
 
   bindHandlers() {
-    const handleInctanceClick = this.handleInctanceClick.bind(this);
-    this.$instance.on('click', handleInctanceClick);
+    this.$instance.on('click', this.handleInctanceClick);
+  }
+
+  bindContext() {
+    this.handleInctanceClick = this.handleInctanceClick.bind(this);
   }
 
   handleInctanceClick() {

@@ -5,12 +5,13 @@ class Dropdown {
     this.container = item;
     this.index = index;
 
+    this.bindContext();
     this.config = this.getConfig();
-
     this.$instance = this.getInstance();
 
-    this.$clearButton = this.getInnerElement('.button_with-text_gray').hide();
-    this.$applyButton = this.getInnerElement('.button_with-text_purple');
+    
+    this.$clearButton = this.getInnerElement('.button_text_deactive').hide();
+    this.$applyButton = this.getInnerElement('.button_text_active');
     this.$iqMenu = this.getInnerElement('.iqdropdown-menu');
 
     this.bindHandlers();
@@ -21,10 +22,8 @@ class Dropdown {
   }
 
   bindHandlers() {
-    const handleClearButtonClick = this.handleClearButtonClick.bind(this);
-    this.$clearButton.on('click', handleClearButtonClick);
-    const handleApplyButtonClick = this.handleApplyButtonClick.bind(this);
-    this.$iqMenu.on('click', handleApplyButtonClick);
+    this.$clearButton.on('click', this.handleClearButtonClick);
+    this.$iqMenu.on('click', this.handleApplyButtonClick);
   }
 
   handleClearButtonClick() {
@@ -44,11 +43,9 @@ class Dropdown {
   }
 
   getConfig() {
-    const onChange = this.handleButtonIncDecChange.bind(this);
-    const setSelectionText = this.handleButtonIncDecClick;
     const config = {
-      onChange: onChange,
-      setSelectionText: setSelectionText,
+      onChange: this.handleButtonIncDecChange,
+      setSelectionText: this.handleButtonIncDecClick,
     };
 
     return config;
@@ -151,6 +148,13 @@ class Dropdown {
     }
 
     return text;
+  }
+
+  bindContext() {
+    this.handleButtonIncDecChange = this.handleButtonIncDecChange.bind(this);
+    this.handleApplyButtonClick = this.handleApplyButtonClick.bind(this);
+    this.handleClearButtonClick = this.handleClearButtonClick.bind(this);
+    this.handleButtonIncDecChange = this.handleButtonIncDecChange.bind(this);
   }
 }
 

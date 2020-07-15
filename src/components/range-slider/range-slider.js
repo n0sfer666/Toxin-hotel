@@ -9,6 +9,7 @@ class RangeSlider {
 
     if (isNotUndefined) {
       this.getRangeSlider();
+      this.bindContext();
       this.bindHandlers();
     }
   }
@@ -34,8 +35,11 @@ class RangeSlider {
   }
 
   bindHandlers() {
-    const handleValuesUpdate = this.handleValuesUpdate.bind(this);
-    this.$rangeSlider.noUiSlider.on('update', handleValuesUpdate);
+    this.$rangeSlider.noUiSlider.on('update', this.handleValuesUpdate);
+  }
+  
+  bindContext() {
+    this.handleValuesUpdate = this.handleValuesUpdate.bind(this);
   }
 
   handleValuesUpdate(values) {

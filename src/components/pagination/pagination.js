@@ -15,29 +15,32 @@ class Pagination {
     this.elementsOnPage = 12;
     this.dataOutput = dataOutput;
 
+    this.bindContext();
     const config = this.getConfig();
     this.pagination = this.$instance.pagination(config);
   }
 
   getConfig() {
     const { dataSource } = this;
-    const { elementsOnPage } = this;
-    const formatNavigator = this.handlePaginationPageClick.bind(this);
-    const callback = this.callback.bind(this);
 
     const config = {
       dataSource,
       showPrevious: false,
       nextText: '',
       pageRange: 1,
-      pageSize: elementsOnPage,
+      pageSize: this.elementsOnPage,
       showNavigator: true,
 
-      formatNavigator: formatNavigator,
-      callback: callback,
+      formatNavigator: this.handlePaginationPageClick,
+      callback: this.callback,
     };
 
     return config;
+  }
+
+  bindContext() {
+    this.handlePaginationPageClick = this.handlePaginationPageClick.bind(this);
+    this.callback = this.callback.bind(this);
   }
 
   callback(data) {

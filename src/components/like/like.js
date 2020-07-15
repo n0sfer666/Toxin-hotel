@@ -7,6 +7,7 @@ class LikeButton {
     this.button = this.getInnerElement('.like__button');
     this.heartIcon = this.getInnerElement('.like__heart');
 
+    this.bindContext();
     this.bindHandlers();
   }
 
@@ -15,8 +16,11 @@ class LikeButton {
   }
 
   bindHandlers() {
-    const handleElementClick = this.handleElementClick.bind(this);
-    this.element.addEventListener('click', handleElementClick);
+    this.element.addEventListener('click', this.handleElementClick);
+  }
+
+  bindContext() {
+    this.handleElementClick = this.handleElementClick.bind(this);
   }
 
   handleElementClick() {
