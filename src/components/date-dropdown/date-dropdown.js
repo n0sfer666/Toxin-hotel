@@ -88,10 +88,9 @@ class DateDropdown {
       dp.$datepicker.append(this.applyButton);
       const clearButtonElement = this.getInnerElement(dp.$datepicker, '.button_text_deactive');
       const applyButtonElement = this.getInnerElement(dp.$datepicker, '.button_text_active');
-      const onHide = dp.hide.bind(dp);
-      const onClearButtonClick = this.handleClearButtonClick.bind(this, dp);
-      applyButtonElement.on('click', onHide);
-      clearButtonElement.on('click', onClearButtonClick);
+      this.bindDpContext(dp);
+      applyButtonElement.on('click', dp.hide);
+      clearButtonElement.on('click', this.handleClearButtonClick);
     }
   }
 
@@ -122,6 +121,11 @@ class DateDropdown {
   bindContext() {
     this.handleDatepickerShow = this.handleDatepickerShow.bind(this);
     this.handleDatecellSelect = this.handleDatecellSelect.bind(this);
+  }
+
+  bindDpContext(dp) {
+    dp.hide = dp.hide.bind(dp);
+    this.handleClearButtonClick = this.handleClearButtonClick.bind(this, dp);
   }
 }
 
