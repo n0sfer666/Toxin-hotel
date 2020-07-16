@@ -10,7 +10,7 @@ mixin button({ style = "text", isActived = "true", title = "click me" } = {})
       }
     })
   if correctStyleEntered
-      button(class=`button button_${style} button_${style}_${modKey}`)
+      button(class=`button js-button button_${style} button_${modKey}`)
         .button__wrapper
           h3.button__title #{title}
   else
