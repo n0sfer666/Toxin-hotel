@@ -23,7 +23,7 @@ mixin registration({action = "change me"} = {})
         +text-field({placeholder: "Пароль", type: "Password"})
         +toggle()
       .registration__block-registering
-        +button({style: "action", title: "зарегистрироваться"})
+        +button({style: "submit", title: "зарегистрироваться"})
     form(class="registration__signin-form", action="sign-in.html")
       .registration__block-signup
         p.registration__text-signup Уже есть аккаунт на Toxin

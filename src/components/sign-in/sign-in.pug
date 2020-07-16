@@ -8,7 +8,7 @@ mixin sign-in({action = "change me"}={})
       .sign-in__details
         +text-field({type: "Email", placeholder: "Email"})
         +text-field({type: "Password", placeholder: "Пароль"})
-      +button({style: "action", title: "Войти"})
+      +button({style: "submit", title: "Войти"})
     form(class="sign-in__signup-form", action="registration.html")
       .sign-in__signup
         p.sign-in__signup-text Нет аккаунта на Toxin?

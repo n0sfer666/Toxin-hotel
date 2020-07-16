@@ -10,7 +10,7 @@
     @include font-h3;
   }
 
-  &_text {
+  &_textual {
     display: inline-block;
     width: fit-content;
     border: none;
@@ -105,7 +105,7 @@
     }
   }
 
-  &_action {
+  &_submitting {
     width: 100%;
     height: 100%;
     border: none;
