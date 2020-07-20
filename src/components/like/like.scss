@@ -27,23 +27,6 @@
     border-radius: inherit;
     border: 1px solid $dark-shade-25;
     background-color: #fff;
-
-    &_actived {
-      position: relative;
-      background-color: #fff;
-      background-clip: padding-box;
-      border: 1px solid transparent;
-
-      &:before {
-        content: '';
-        position: absolute;
-        top: 0; right: 0; bottom: 0; left: 0;
-        z-index: -1;
-        margin: -1px;
-        border-radius: inherit;
-        background: linear-gradient(180deg, $purple 0%, #8BA4F9 100%);
-      }
-    }
   }
 
   &__heart {
@@ -56,13 +39,6 @@
       content: 'favorite_border';
       color: $dark-shade-25;
     }
-
-    &_actived {
-      &::after {
-        content: 'favorite';
-        color: $purple;
-      }
-    }
   }
 
   &__counter {
@@ -73,9 +49,35 @@
     text-align: center;
     font: normal normal 10px/12px Montserrat, sans-serif;
     color: $dark-shade-25;
+  }
+}
 
-    &_actived {
+.like.like_actived {
+  & .like__button {
+    position: relative;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid transparent;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      z-index: -1;
+      margin: -1px;
+      border-radius: inherit;
+      background: linear-gradient(180deg, $purple 0%, #8BA4F9 100%);
+    }
+  }
+
+  & .like__heart {
+    &:after {
+      content: 'favorite';
       color: $purple;
     }
+  }
+
+  & .like__counter {
+    color: $purple;
   }
 }
