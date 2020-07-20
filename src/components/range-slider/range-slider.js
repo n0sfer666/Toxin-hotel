@@ -14,11 +14,11 @@ class RangeSlider {
   }
 
   initInstanceElements() {
-    this.rangeSliderValues = $(this.$rangeSlider).siblings().find('.js-range-slider__values').get(0);
+    this.rangeSliderValues = $(this.rangeSlider).siblings().find('.js-range-slider__values').get(0);
   }
 
   initInstanceVars() {
-    this.isNotUndefined = this.$rangeSlider && this.$rangeSliderValues;
+    this.isNotUndefined = this.rangeSlider && this.rangeSliderValues;
   }
 
   getConfig() {
