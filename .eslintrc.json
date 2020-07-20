@@ -23,6 +23,7 @@
     "no-else-return": ["off"],
     "no-console": ["off"],
     "class-methods-use-this": ["off"],
-    "object-shorthand": ["off", "always"]
+    "object-shorthand": ["off", "always"],
+    "no-param-reassign": ["warn"]
   }
 }

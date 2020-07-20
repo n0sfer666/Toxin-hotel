@@ -5,25 +5,18 @@ class Pagination {
   constructor(item, index, dataSource, dataOutput) {
     this.$instance = $(item);
     this.index = index;
-    const demoSource = [];
-    for (let i = 0; i < 200; i += 1) {
-      demoSource.push(i);
-    }
-    this.dataSource = dataSource.length > 1
-      ? dataSource
-      : demoSource;
-    this.elementsOnPage = 12;
     this.dataOutput = dataOutput;
+    this.elementsOnPage = 12;
 
+    this.initDataSource(dataSource);
     this.bindContext();
-    const config = this.getConfig();
-    this.pagination = this.$instance.pagination(config);
+    this.initInstance();
   }
 
   getConfig() {
     const { dataSource } = this;
 
-    const config = {
+    return {
       dataSource,
       showPrevious: false,
       nextText: '',
@@ -34,8 +27,20 @@ class Pagination {
       formatNavigator: this.handlePaginationPageClick,
       callback: this.callback,
     };
+  }
 
-    return config;
+  initDataSource(dataSource) {
+    const demoSource = [];
+    for (let i = 0; i < 200; i += 1) {
+      demoSource.push(i);
+    }
+    this.dataSource = dataSource.length > 1
+      ? dataSource
+      : demoSource;
+  }
+
+  initInstance() {
+    this.pagination = this.$instance.pagination(this.getConfig());
   }
 
   bindContext() {

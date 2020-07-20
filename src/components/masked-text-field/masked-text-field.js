@@ -4,8 +4,8 @@ class MaskedField {
   constructor(item, index) {
     this.maskedElement = item;
     this.index = index;
-    this.config = this.getConfig();
-    if (this.maskedElement) { this.maskedField = IMask(this.maskedElement, this.config); }
+
+    this.initInstance();
   }
 
   getConfig() {
@@ -35,6 +35,10 @@ class MaskedField {
         },
       },
     };
+  }
+
+  initInstance() {
+    this.maskedField = IMask(this.maskedElement, this.getConfig());
   }
 }
 

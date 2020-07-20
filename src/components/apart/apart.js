@@ -5,14 +5,17 @@ class Apart {
     this.$item = $(item);
     this.index = index;
 
+    this.initInstance();
+    this.separateDigitsInPrice();
+  }
+
+  initInstance() {
     this.$item.slick({
       accessibility: false,
       dots: true,
       slidesToShow: 1,
       adaptiveHeight: true,
     });
-
-    this.separateDigitsInPrice();
   }
 
   separateDigitsInPrice() {

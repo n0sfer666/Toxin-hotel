@@ -6,19 +6,37 @@ class Dropdown {
     this.index = index;
 
     this.bindContext();
-    this.config = this.getConfig();
-    this.$instance = this.getInstance();
-
-    
-    this.$clearButton = this.getInnerElement('.button_text_deactive').hide();
-    this.$applyButton = this.getInnerElement('.button_text_active');
-    this.$iqMenu = this.getInnerElement('.iqdropdown-menu');
-
+    this.initInstance();
+    this.initInstanceElements();
     this.bindHandlers();
+  }
+
+  initInstance() {
+    this.$instance = $(this.container).iqDropdown(this.getConfig());
   }
 
   getInnerElement(innerSelector) {
     return this.$instance.find(innerSelector);
+  }
+
+  getConfig() {
+    return {
+      onChange: this.handleButtonIncDecChange,
+      setSelectionText: this.handleButtonIncDecClick,
+    };
+  }
+
+  initInstanceElements() {
+    this.$clearButton = this.getInnerElement('.button_deactive').hide();
+    this.$applyButton = this.getInnerElement('.button_active');
+    this.$iqMenu = this.getInnerElement('.iqdropdown-menu');
+  }
+
+  bindContext() {
+    this.handleButtonIncDecChange = this.handleButtonIncDecChange.bind(this);
+    this.handleApplyButtonClick = this.handleApplyButtonClick.bind(this);
+    this.handleClearButtonClick = this.handleClearButtonClick.bind(this);
+    this.handleButtonIncDecChange = this.handleButtonIncDecChange.bind(this);
   }
 
   bindHandlers() {
@@ -28,10 +46,10 @@ class Dropdown {
 
   handleClearButtonClick() {
     this.getInnerElement('.iqdropdown-item-controls').remove();
-    this.$instance = this.getInstance();
+    this.initInstance();
     // need to repeat for correct work iqDropdown
     this.getInnerElement('.iqdropdown-item-controls').remove();
-    this.$instance = this.getInstance();
+    this.initInstance();
     this.$clearButton.hide();
   }
 
@@ -40,19 +58,6 @@ class Dropdown {
     if (!isApplyButton) {
       event.stopPropagation();
     }
-  }
-
-  getConfig() {
-    const config = {
-      onChange: this.handleButtonIncDecChange,
-      setSelectionText: this.handleButtonIncDecClick,
-    };
-
-    return config;
-  }
-
-  getInstance() {
-    return $(this.container).iqDropdown(this.config);
   }
 
   handleButtonIncDecChange(id, count, totalItems) {
@@ -148,13 +153,6 @@ class Dropdown {
     }
 
     return text;
-  }
-
-  bindContext() {
-    this.handleButtonIncDecChange = this.handleButtonIncDecChange.bind(this);
-    this.handleApplyButtonClick = this.handleApplyButtonClick.bind(this);
-    this.handleClearButtonClick = this.handleClearButtonClick.bind(this);
-    this.handleButtonIncDecChange = this.handleButtonIncDecChange.bind(this);
   }
 }
 
