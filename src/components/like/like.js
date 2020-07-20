@@ -3,16 +3,19 @@ class LikeButton {
     this.element = item;
     this.index = index;
 
-    this.counter = this.getInnerElement('.like__counter');
-    this.button = this.getInnerElement('.like__button');
-    this.heartIcon = this.getInnerElement('.like__heart');
-
+    this.initInstanceElements();
     this.bindContext();
     this.bindHandlers();
   }
 
   getInnerElement(innerSelector) {
-    return $(this.element).find(innerSelector).get(0);
+    return this.element.querySelector(innerSelector);
+  }
+
+  initInstanceElements() {
+    this.counter = this.getInnerElement('.like__counter');
+    this.button = this.getInnerElement('.like__button');
+    this.heartIcon = this.getInnerElement('.like__heart');
   }
 
   bindHandlers() {
