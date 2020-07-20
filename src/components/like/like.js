@@ -25,19 +25,18 @@ class LikeButton {
 
   handleElementClick() {
     const isActived = this.element.classList.contains('like_actived');
-    console.log(isActived);
     if (isActived) {
-      this.element.className = 'like';
-      this.counter.className = 'like__counter';
-      this.button.className = 'like__button';
-      this.heartIcon.className = 'like__heart';
+      this.element.classList.remove('like_actived');
+      this.counter.classList.remove('like__counter_actived');
+      this.button.classList.remove('like__button_actived');
+      this.heartIcon.classList.remove('like__heart_actived');
       const count = Number(this.counter.innerText) - 1;
       this.counter.innerText = String(count);
     } else {
-      this.element.className = 'like_actived';
-      this.counter.className = 'like__counter like__counter_actived';
-      this.button.className = 'like__button like__button_actived';
-      this.heartIcon.className = 'like__heart like__heart_actived';
+      this.element.classList.add('like_actived');
+      this.counter.classList.add('like__counter_actived');
+      this.button.classList.add('like__button_actived');
+      this.heartIcon.classList.add('like__heart_actived');
       const count = Number(this.counter.innerText) + 1;
       this.counter.innerText = String(count);
     }
