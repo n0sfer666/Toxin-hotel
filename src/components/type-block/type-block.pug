@@ -1,13 +1,17 @@
+include ../h1/h1
+include ../h2/h2
+include ../h3/h3
+
 mixin type-block ({mod = "h3", text = "This is a label or CTA text" } = {})
   .type-block
     span(class = `type-block__label-title type-block__label-title_${mod}`) #{mod}
     case mod
       when "h1"
-        h1.type-block__title_h1 #{text}
+        +h1({title: text})
       when "h2"
-        h2.type-block__title_h2 #{text}
+        +h2({title: text})
       when "h3"
-        h3.type-block__title_h3 #{text}
+        +h3({title: text})
       when "body"
         p.type-block__title_body #{text}
       default
