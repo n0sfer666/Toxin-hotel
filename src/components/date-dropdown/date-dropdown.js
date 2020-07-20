@@ -2,11 +2,7 @@ import 'air-datepicker';
 
 class DateDropdown {
   constructor(item, index, isSingle, bookingInstance) {
-    if (Array.isArray(item)) {
-      this.$container = [$(item[0]), $(item[1])];
-    } else {
-      this.$container = $(item);
-    }
+    this.initContainer(item);
     this.index = index;
 
     this.isSingle = isSingle;
@@ -15,6 +11,14 @@ class DateDropdown {
     this.initButtons();
     this.bindContext();
     this.initDatepicker();
+  }
+
+  initContainer(item) {
+    if (Array.isArray(item)) {
+      this.$container = [$(item[0]), $(item[1])];
+    } else {
+      this.$container = $(item);
+    }
   }
 
   initButtons() {
