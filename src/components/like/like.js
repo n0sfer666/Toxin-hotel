@@ -28,21 +28,15 @@ class LikeButton {
 
   handleElementClick() {
     const isActived = this.element.classList.contains('like_actived');
+    let count;
     if (isActived) {
       this.element.classList.remove('like_actived');
-      this.counter.classList.remove('like__counter_actived');
-      this.button.classList.remove('like__button_actived');
-      this.heartIcon.classList.remove('like__heart_actived');
-      const count = Number(this.counter.innerText) - 1;
-      this.counter.innerText = String(count);
+      count = Number(this.counter.innerText) - 1;
     } else {
       this.element.classList.add('like_actived');
-      this.counter.classList.add('like__counter_actived');
-      this.button.classList.add('like__button_actived');
-      this.heartIcon.classList.add('like__heart_actived');
-      const count = Number(this.counter.innerText) + 1;
-      this.counter.innerText = String(count);
+      count = Number(this.counter.innerText) + 1;
     }
+    this.counter.innerText = String(count);
   }
 }
 export default LikeButton;
