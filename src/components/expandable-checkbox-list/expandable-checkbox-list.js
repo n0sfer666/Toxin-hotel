@@ -2,20 +2,21 @@ class ExpandableCheckboxList {
   constructor(item, index) {
     this.$instance = $(item);
     this.index = index;
-
-    this.$instanceContainer = this.$instance.siblings('.js-expandable-checkbox-list__container').hide();
-
-    this.$instanceArrowDown = this.getInnerElement('.js-expandable-checkbox-list__arrow-down');
-    this.$instanceArrowUp = this.getInnerElement('.js-expandable-checkbox-list__arrow-up').hide();
-
     this.isExpanded = false;
 
+    this.initInstanceElements();
     this.bindContext();
     this.bindHandlers();
   }
 
   getInnerElement(innerSelector) {
     return this.$instance.find(innerSelector);
+  }
+
+  initInstanceElements() {
+    this.$instanceContainer = this.$instance.siblings('.js-expandable-checkbox-list__container').hide();
+    this.$instanceArrowDown = this.getInnerElement('.js-expandable-checkbox-list__arrow-down');
+    this.$instanceArrowUp = this.getInnerElement('.js-expandable-checkbox-list__arrow-up').hide();
   }
 
   bindHandlers() {
