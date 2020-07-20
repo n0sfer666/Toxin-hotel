@@ -1,4 +1,4 @@
-import { datepicker } from 'air-datepicker';
+import 'air-datepicker';
 
 class DateDropdown {
   constructor(item, index, isSingle, bookingInstance) {
@@ -14,7 +14,6 @@ class DateDropdown {
 
     this.initButtons();
     this.bindContext();
-    this.config = this.getConfig();
     this.initDatepicker();
   }
 
@@ -47,12 +46,7 @@ class DateDropdown {
   }
 
   getConfig() {
-    const onShow = this.handleDatepickerShow;
-    const onSelect = !this.isSingle
-      ? this.handleDatecellSelect
-      : {};
-
-    const config = {
+    return {
       language: 'ru',
       minDate: new Date(),
       range: true,
@@ -67,10 +61,8 @@ class DateDropdown {
         days: 'MM yyyy',
       },
       onShow: this.handleDatepickerShow,
-      onSelect: onSelect,
+      onSelect: !this.isSingle ? this.handleDatecellSelect : {},
     };
-
-    return config;
   }
 
   getFormattedDate(DateText) {
@@ -95,13 +87,13 @@ class DateDropdown {
   }
 
   handleClearButtonClick(dp) {
+    dp.clear();
     if (this.isSingle) {
       this.$container.val('');
     } else {
       this.$container[0].val('');
       this.$container[1].val('');
     }
-    dp.clear();
   }
 
   handleDatecellSelect(fd, date, inst) {
