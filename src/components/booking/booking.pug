@@ -1,3 +1,5 @@
+include ../h1/h1
+include ../h3/h3
 include ../date-dropdown/date-dropdown
 include ../dropdown/dropdown
 include ../button/button
@@ -10,9 +12,9 @@ mixin booking({apart = "888", isLux = true, price = "9990", discount = "2179", c
     .booking__header
       .booking__header-apart
         span.booking__header-number № 
-        h1.booking__header-apart-text #{apart}
+        +h1({title: apart})
         if isLux
-          h3.booking__header-apart-lux люкс
+          +h3({title: " люкс"})
       span.booking__header-price
         span.booking__header-price-text.booking__header-price-text_bold.js-booking__header-price-text #{price}
         span.booking__header-price-text.booking__header-price-text_bold ₽ 
@@ -20,7 +22,7 @@ mixin booking({apart = "888", isLux = true, price = "9990", discount = "2179", c
     .booking__arival-departure
       +date-dropdown({isSingle: false, label: ["прибытие", "выезд"]})
     .booking__guests
-      h3.booking__guests-text гости
+      +h3({title: "гости"})
       +dropdown()
     .booking__calculation
       .booking__calculation-line

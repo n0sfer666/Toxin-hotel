@@ -1,3 +1,4 @@
+include ../h3/h3
 include ../text-field/text-field
 include ../masked-text-field/masked-text-field
 include ../radio/radio
@@ -7,7 +8,7 @@ include ../button/button
 mixin registration({action = "change me"} = {})
   .registration
     form(class="registration__main-form", action=action)
-      h1.registration__title Регистрация аккаунта
+      +h1({title: "аккаунта"})
       .registration__block-name
         +text-field({placeholder: "Имя"})
         +text-field({placeholder: "Фамилия"})
@@ -15,7 +16,7 @@ mixin registration({action = "change me"} = {})
         +radio({title: "Мужчина", isChecked: true})
         +radio({title: "Женщина", isChecked: false})
       .registration__block-birthday
-        h3.registration__block-title День рождения
+        +h3({title: "День рождения"})
         +masked-text-field({placeholder: "ДД.ММ.ГГГГ"})
       .registration__block-signin
         h3.registration__block-title данные для входа в сервис

@@ -1,5 +1,6 @@
+include ../h3/h3
 mixin range-slider({title = "title"} = {})
   .range-slider
-    h3.range-slider__title #{title}
+    +h3({title: title})
     span.range-slider__values.js-range-slider__values
   .range-slider__container.js-range-slider__container
