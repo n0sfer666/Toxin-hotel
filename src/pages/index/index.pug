@@ -1,3 +1,4 @@
+include ../../components/h2/h2
 include ../../components/head/head
 include ../../components/logo/logo
 doctype html
@@ -10,31 +11,31 @@ html
       section.index__ui-kit
         .index__item
           a(href="colors-and-types.html")
-            h2.index__title="Colors & Types"
+            +h2({title: "Colors & Types"})
         .index__item
           a(href="form-elements.html")
-            h2.index__title="Form Elements"
+            +h2({title: "Form Elements"})
         .index__item
           a(href="cards.html")
-            h2.index__title="Cards"
+            +h2({title: "Cards"})
         .index__item
           a(href="headers-and-footers.html")
-            h2.index__title="Headers & Footers"
+            +h2({title: "Headers & Footers"})
       section.index__pages
         .index__item
           a(href="landing-page.html")
-            h2.index__title="Landing Page"
+            +h2({title: "Landing Page"})
         .index__item
           a(href="registration.html")
-            h2.index__title="Registration"
+            +h2({title: "Registration"})
         .index__item
           a(href="sign-in.html")
-            h2.index__title="Sign-in"
+            +h2({title: "Sign-in"})
         .index__item
           a(href="room-detail.html")
-            h2.index__title="Room details"
+            +h2({title: "Room details"})
         .index__item
           a(href="search-room.html")
-            h2.index__title="Search-room"
+            +h2({title: "Search-room"})
 
     script(src="main.min.js")

@@ -258,17 +258,12 @@
   &__footer {
     margin-bottom: 40px;
   }
+
   &__title {
     width: 90%;
     height: 15px;
-    @include font-h3;
-    @include fix-overflow;
     margin-bottom: 4px;
     &_big {
-      width: 90%;
-      height: 15px;
-      @include font-h3;
-      @include fix-overflow;
       margin-bottom: 20px;
     }
   }

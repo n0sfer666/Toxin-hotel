@@ -20,6 +20,14 @@
     @media screen and (min-width: $old-phones) and (max-width: 380px) {
       width: 310px;
     }
+
+    &.cards__section_320-px {
+      width: 320px;
+
+      @media screen and (min-width: $old-phones) and (max-width: 380px) {
+        width: 310px;
+      }
+    }
   }
 
   &__block {
@@ -35,14 +43,6 @@
       @media screen and (min-width: $old-phones) and (max-width: 380px) {
         margin: 0 auto 40px;
       }
-    }
-  }
-
-  &_320-px {
-    width: 320px;
-
-    @media screen and (min-width: $old-phones) and (max-width: 380px) {
-      width: 310px;
     }
   }
 }

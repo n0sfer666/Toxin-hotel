@@ -10,7 +10,6 @@
   &__title {
     width: 98%;
     height: 30px;
-    @include font-h1;
     margin-bottom: 20px;
   }
 
@@ -22,8 +21,8 @@
     }
   }
 
-  & .button_with-action,
-  & .button_with-border {
+  & .button_submitting,
+  & .button_border {
     height: 44px;
   }
 
@@ -40,7 +39,7 @@
       @include fix-overflow;
     }
 
-    & .button_with-border {
+    & .button_border {
       width: 99px;
     }
   }

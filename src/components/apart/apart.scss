@@ -32,9 +32,8 @@
         line-height: 24px;
       }
 
-      &-lux {
+      & .h3 {
         display: inline;
-        @include font-h3;
         color: $purple;
       }
     }

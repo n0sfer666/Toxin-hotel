@@ -5,6 +5,7 @@ include ../../components/footer/footer
 
 include ../../components/booking/booking
 
+include ../../components/h2/h2
 include ../../components/condition/condition
 include ../../components/review/review
 include ../../components/bullet-list/bullet-list
@@ -29,7 +30,8 @@ html
       section.room-detail__container
         .room-detail__details
           .room-detail__conditions
-            h2.room-detail__title Сведения о номере
+            .room-detail__title
+              +h2({title: "Сведения о номере"})
             -
               config = {}
               config.icon = "insert_emoticon"
@@ -53,7 +55,8 @@ html
             +condition(config)
 
           .room-detail__piechart
-            h2.room-detail__title Впечатления от номера
+            .room-detail__title
+              +h2({title: "Впечатления от номера"})
             -
               config = {}
               config.perfect = 130
@@ -61,7 +64,8 @@ html
               config.satisfact = 65
             +piechart(config)
           .room-detail__reviews
-            h2.room-detail__title Отзывы посетителей номера
+            .room-detail__title
+              +h2({title: "Впечатления от номера"})
             p.room-detail__title-reviews 2 отзыва
             -
               config = {}
@@ -81,7 +85,8 @@ html
               config.review = "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент"
             +review(config)
           .room-detail__rules
-            h2.room-detail__title Правила
+            .room-detail__title
+              +h2({title: "Впечатления от номера"})
             -
               let bullets = []
               bullets.push("Нельзя с питомцами")
@@ -89,7 +94,8 @@ html
               bullets.push("Время прибытия — после 13:00, а выезд до 12:00")
             +bullet-list({titles: bullets})
           .room-detail__cancel
-            h2.room-detail__title Отмена
+            .room-detail__title
+              +h2({title: "Впечатления от номера"})
             p Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
 
         .room-detail__booking

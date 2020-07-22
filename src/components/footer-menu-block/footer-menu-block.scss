@@ -7,9 +7,7 @@
 
     &__title {
       width: 100%;
-      @include fix-overflow;
-      white-space: nowrap;
-      @include font-h3;
+      max-height: 15px;
       margin-bottom: 22px;
     }
 

@@ -30,12 +30,14 @@
     &-title {
       width: 98%;
       height: 15px;
-      @include fix-overflow;
-      @include font-h3;
       
       &:not(:first-child) {
         margin-top: 20px;
         margin-bottom: 5px;
+      }
+
+      &.search-room__menu-title_big {
+        margin-top: 36px;
       }
     }
 

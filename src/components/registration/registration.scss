@@ -10,10 +10,8 @@
 
   &__title {
     width: 98%;
-    @include fix-overflow;
-    white-space: nowrap;
-    @include font-h1;
     margin-bottom: 20px;
+    max-height: 30px;
   }
 
   &__block {
@@ -62,7 +60,7 @@
       justify-content: space-between;
       align-items: center;
 
-      & .button_with-border {
+      & .button_border {
         height: 44px;
         width: 99px;
       }
