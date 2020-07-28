@@ -24,6 +24,7 @@
     "no-console": ["off"],
     "class-methods-use-this": ["off"],
     "object-shorthand": ["off", "always"],
-    "no-param-reassign": ["warn"]
+    "no-param-reassign": ["warn"],
+    "array-callback-return": ["warn"]
   }
 }

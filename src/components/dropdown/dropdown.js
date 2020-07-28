@@ -1,9 +1,12 @@
 import 'item-quantity-dropdown/lib/item-quantity-dropdown.min';
 
 class Dropdown {
-  constructor(item, index) {
+  constructor(item, index, clearButton, applyButton) {
     this.container = item;
     this.index = index;
+
+    this.initIsGuests();
+    this.initButtons(clearButton, applyButton);
 
     this.bindContext();
     this.initInstance();
@@ -26,9 +29,21 @@ class Dropdown {
     };
   }
 
+  initButtons(clearButton, applyButton) {
+    if (this.isGuests) {
+      this.clearButton = clearButton;
+      this.applyButton = applyButton;
+      this.clearButton.setHide();
+    }
+  }
+
+  initIsGuests() {
+    this.isGuests = $(this.container).find('.js-iqdropdown-menu').length > 0;
+  }
+
   initInstanceElements() {
-    this.$clearButton = this.getInnerElement('.button_deactive').hide();
-    this.$applyButton = this.getInnerElement('.button_active');
+    // this.$clearButton = this.getInnerElement('.button_deactive').hide();
+    // this.$applyButton = this.getInnerElement('.button_active');
     this.$iqMenu = this.getInnerElement('.iqdropdown-menu');
   }
 
@@ -40,7 +55,9 @@ class Dropdown {
   }
 
   bindHandlers() {
-    this.$clearButton.on('click', this.handleClearButtonClick);
+    if (this.isGuests) {
+      $(this.clearButton.instance).on('click', this.handleClearButtonClick);
+    }
     this.$iqMenu.on('click', this.handleApplyButtonClick);
   }
 
@@ -50,30 +67,33 @@ class Dropdown {
     // need to repeat for correct work iqDropdown
     this.getInnerElement('.iqdropdown-item-controls').remove();
     this.initInstance();
-    this.$clearButton.hide();
+    this.clearButton.setHide();
   }
 
   handleApplyButtonClick(event) {
-    const isApplyButton = event.target.parentNode.parentNode === this.$applyButton.get(0);
-    if (!isApplyButton) {
-      event.stopPropagation();
+    if (this.isGuests) {
+      const parentOfParent = event.target.parentElement.parentElement;
+      const isApplyButton = parentOfParent === this.applyButton.instance;
+      if (!isApplyButton) {
+        event.stopPropagation();
+      }
     }
   }
 
   handleButtonIncDecChange(id, count, totalItems) {
     if (count > 0) {
       $(`[data-id=${id}]`).find('.button-decrement')
-        .removeClass('button-decrement')
         .addClass('button-decrement_actived');
     } else {
       $(`[data-id=${id}]`).find('.button-decrement_actived')
-        .removeClass('button-decrement_actived')
-        .addClass('button-decrement');
+        .removeClass('button-decrement_actived');
     }
-    if (totalItems === 0) {
-      this.$clearButton.hide();
-    } else {
-      this.$clearButton.show();
+    if (this.isGuests) {
+      if (totalItems === 0) {
+        this.clearButton.setHide();
+      } else {
+        this.clearButton.setShow();
+      }
     }
   }
 

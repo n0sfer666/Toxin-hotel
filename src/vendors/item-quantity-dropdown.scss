@@ -140,20 +140,17 @@
   border-color: $dark-shade-25;
   color: $dark-shade-25;
 
-  &::after {
-    content: '-';
-  }
-}
-
-.button-decrement_actived {
-  cursor: pointer;
-  color: $dark-shade-50;
-
-  &::after {
+  &:after {
     content: '-';
   }
 
-  &:hover, &:focus, &:active {
-    box-shadow: 0 0 10px $dark-shade-25;
+  
+  &.button-decrement_actived {
+    cursor: pointer;
+    color: $dark-shade-50;
+
+    &:hover, &:focus, &:active {
+      box-shadow: 0 0 10px $dark-shade-25;
+    }
   }
 }
