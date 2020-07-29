@@ -9,8 +9,8 @@
     @include fix-overflow;
   }
 
-  &2 {
-    @include font-h2;
+  &3 {
+    @include font-h3;
     @include fix-overflow;
   }
 }
