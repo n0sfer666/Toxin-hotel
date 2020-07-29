@@ -80,20 +80,22 @@
   }
 
   &__button-signin {
-    & .button_with-border {
+    & .button {
       width: 87px;
       height: 34px;
-      margin-right: 20px;
+
       @media screen and (min-width: $new-phones) {
-        & .button:first-child {
-          margin-right: 20px;
-        }
+        margin-right: 20px;
+      }
+
+      @media screen and (max-width: $new-phones) {
+        margin-bottom: 10px;
       }
     }
   }
 
   &__button-signup {
-    & .button_with-gradient {
+    & .button {
       width: 196px;
       height: 34px;
     }
