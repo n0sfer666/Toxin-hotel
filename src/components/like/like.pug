@@ -1,6 +1,6 @@
 mixin like({ isChecked = false, counter = 0 } = {})
   -
-    let blockClass = isChecked ? "like like_actived" : "like"
+    const blockClass = isChecked ? "like like_actived" : "like"
   div(class = blockClass)
     button.like__button
       span.like__heart

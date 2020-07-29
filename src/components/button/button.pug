@@ -1,18 +1,13 @@
 include ../headline/headline
 mixin button({ style = "text", isActived = "true", title = "click me" } = {})
   -
-    let correctStyleEntered = false;
     const modKey = isActived ? "active" : "deactive";
     const styles = ["textual", "gradient", "border", "submitting"];
     ["text", "gradient", "border", "submit"].forEach((value, index) => {
       if(value === style) {
-        correctStyleEntered = true;
         style = styles[index];
       }
     })
-  if correctStyleEntered
-      button(class=`button js-button button_${style} button_${modKey}`)
-        .button__wrapper
-          +headline({title: title})
-  else
-    p wrong param
+  button(class=`button js-button button_${style} button_${modKey}`)
+    .button__wrapper
+      +headline({title: title})

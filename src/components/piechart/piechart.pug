@@ -6,15 +6,15 @@
 mixin piechart({perfect = 130, good = 65, satisfact = 65, disappoint = 0 } = {})
   -
     //- c for r = 55px
-    let c55 = 345.6
+    const c55 = 345.6
     //- c for r = 58px
-    let c58 = 364.4
-    let total = perfect + good + satisfact + disappoint
+    const c58 = 364.4
+    const total = perfect + good + satisfact + disappoint
     //- percentage
-    let percent5 = perfect / total
-    let percent4 = good / total
-    let percent3 = satisfact / total
-    let percent2 = disappoint / total
+    const percent5 = perfect / total
+    const percent4 = good / total
+    const percent3 = satisfact / total
+    const percent2 = disappoint / total
     //- dashForN:
     //-     0: number for Stroke-dasharray (first - stroke)
     //-     1: number for Stroke-dasharray (second - space)

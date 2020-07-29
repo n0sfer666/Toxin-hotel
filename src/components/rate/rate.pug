@@ -1,16 +1,12 @@
 mixin rate({rate = 0} = {})
   -
-    let stars = [5, 4, 3, 2, 1]
+    const stars = [5, 4, 3, 2, 1]
   .rate
     -
-      let name = Math.floor(Math.random() * 10000)
-      name += Math.floor(Math.random() * 1000)
-      name += Math.floor(Math.random() * 100)
+      const name = Math.floor(Math.random() * 10000) + Math.floor(Math.random() * 1000)
     each value in stars
       -
-        let isRated = (rate == value)
-        let id = Math.floor(Math.random() * 10000)
-        id += Math.floor(Math.random() * 1000)
-        id += Math.floor(Math.random() * 100)
+        const isRated = (rate == value)
+        const id = Math.floor(Math.random() * 10000) + Math.floor(Math.random() * 1000)
       input(type="radio", class="rate__input", name=name, id=id, value=value, checked=isRated)
       label(for=id, class="rate__label", title=value) #{value} stars

@@ -5,7 +5,7 @@ include ../button/button
 
 mixin booking({apart = "888", isLux = true, price = "9990", discount = "2179", complementary = 300, additional = "0", action = "change me" } = {})
   -
-    let isDiscounted = discount == 0 ? false : true
+    const isDiscounted = discount == 0 ? false : true
 
   form(class="booking js-booking", action=action)
     .booking__header
