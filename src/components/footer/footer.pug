@@ -1,4 +1,4 @@
-include ../h3/h3
+include ../headline/headline
 include ../logo/logo
 include ../subscription-field/subscription-field
 include ../footer-menu-block/footer-menu-block
@@ -56,7 +56,7 @@ mixin footer({isShort = false, description = footerDescription, navigation = foo
         +footer-menu-block(support)
       .footer__block.footer__block-subscription
         .footer__block-title
-          +h3({title: subscription.title})
+          +headline({title: subscription.title})
         p #{subscription.description}
         +subscription-field()
     .footer__copyright

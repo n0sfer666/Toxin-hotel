@@ -5,7 +5,7 @@ include ../../components/footer/footer
 
 include ../../components/booking/booking
 
-include ../../components/h2/h2
+include ../../components/headline/headline
 include ../../components/condition/condition
 include ../../components/review/review
 include ../../components/bullet-list/bullet-list
@@ -31,7 +31,7 @@ html
         .room-detail__details
           .room-detail__conditions
             .room-detail__title
-              +h2({title: "Сведения о номере"})
+              +headline({level: "2", title: "Сведения о номере"})
             -
               config = {}
               config.icon = "insert_emoticon"
@@ -56,7 +56,7 @@ html
 
           .room-detail__piechart
             .room-detail__title
-              +h2({title: "Впечатления от номера"})
+              +headline({level: "2", title: "Впечатления от номера"})
             -
               config = {}
               config.perfect = 130
@@ -65,7 +65,7 @@ html
             +piechart(config)
           .room-detail__reviews
             .room-detail__title
-              +h2({title: "Впечатления от номера"})
+              +headline({level: "2", title: "Впечатления от номера"})
             p.room-detail__title-reviews 2 отзыва
             -
               config = {}
@@ -86,7 +86,7 @@ html
             +review(config)
           .room-detail__rules
             .room-detail__title
-              +h2({title: "Впечатления от номера"})
+              +headline({level: "2", title: "Впечатления от номера"})
             -
               let bullets = []
               bullets.push("Нельзя с питомцами")
@@ -95,7 +95,7 @@ html
             +bullet-list({titles: bullets})
           .room-detail__cancel
             .room-detail__title
-              +h2({title: "Впечатления от номера"})
+              +headline({level: "2", title: "Впечатления от номера"})
             p Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
 
         .room-detail__booking

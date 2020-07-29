@@ -1,4 +1,4 @@
-include ../h1/h1
+include ../headline/headline
 include ../text-field/text-field
 include ../button/button
 
@@ -6,7 +6,7 @@ mixin sign-in({action = "change me"}={})
   .sign-in
     form(class="sign-in__main-form", action=action)
       .sign-in__title
-        +h1({title: "Войти"})
+        +headline({level: "1", title: "Войти"})
       .sign-in__details
         +text-field({type: "Email", placeholder: "Email"})
         +text-field({type: "Password", placeholder: "Пароль"})

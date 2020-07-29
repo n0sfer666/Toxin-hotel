@@ -1,4 +1,4 @@
-include ../h3/h3
+include ../headline/headline
 mixin button({ style = "text", isActived = "true", title = "click me" } = {})
   -
     let correctStyleEntered = false;
@@ -13,6 +13,6 @@ mixin button({ style = "text", isActived = "true", title = "click me" } = {})
   if correctStyleEntered
       button(class=`button js-button button_${style} button_${modKey}`)
         .button__wrapper
-          +h3({title: title})
+          +headline({title: title})
   else
     p wrong param

@@ -5,8 +5,7 @@ include ../../components/footer/footer
 
 include ../../components/apart/apart
 
-include ../../components/h1/h1
-include ../../components/h3/h3
+include ../../components/headline/headline
 include ../../components/date-dropdown/date-dropdown
 include ../../components/dropdown/dropdown
 include ../../components/expandable-checkbox-list/expandable-checkbox-list
@@ -27,7 +26,7 @@ html
         +date-dropdown()
         
         .search-room__menu-title
-          +h3({title: "гости"})
+          +headline({title: "гости"})
         +dropdown()
 
         +range-slider({title: "Диапазон цены"})
@@ -35,13 +34,13 @@ html
 
         .search-room__checkboxs
           .search-room__menu-title
-            +h3({title: "checkbox buttons"})
+            +headline({title: "checkbox buttons"})
           +checkbox({title: "Можно курить"})
           +checkbox({title: "Можно с питомцами", isChecked: true})
           +checkbox({title: "Можно пригласить гостей (до 10 человек)", isChecked: true})
 
         .search-room__menu-title
-          +h3({title: "Доступность"})
+          +headline({title: "Доступность"})
         -
           config = {}
           config.title = "Широкий коридор"
@@ -53,14 +52,14 @@ html
         +rich-checkbox(config)
 
         .search-room__menu-title.search-room__menu-title_big
-          +h3({title: "удобства номера"})
+          +headline({title: "удобства номера"})
         +dropdown({isGuests: false})
 
         +expandable-checkbox-list()
 
       section.search-room__result
         .search-room__result-title
-          +h1({title: "Номера, которые мы для вас подобрали"})
+          +headline({level: "1", title: "Номера, которые мы для вас подобрали"})
         .search-room__data-source.js-search-room__data-source
           -
             let aparts = []

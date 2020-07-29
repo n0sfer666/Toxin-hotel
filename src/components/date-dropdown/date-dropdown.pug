@@ -1,18 +1,18 @@
-include ../h3/h3
+include ../headline/headline
 mixin date-dropdown({isSingle = true, label = "Даты пербывания в отеле" } = {})
   if isSingle
     .date-dropdown
       .date-dropdown__label
-        +h3({title: label})
+        +headline({title: label})
       input(type="text", class = 'date-dropdown__filter js-date-dropdown__filter', placeholder = "Выберите даты пребывания")
   else
     .date-dropdown
       .date-dropdown__container
         .date-dropdown__datepicker
           .date-dropdown__label
-            +h3({title: label[0]})
+            +headline({title: label[0]})
           input(type="text", class = 'date-dropdown__input-left js-date-dropdown__input-left', placeholder = "ДД.ММ.ГГГГ")
         .date-dropdown__datepicker
           .date-dropdown__label
-            +h3({title: label[1]})
+            +headline({title: label[1]})
           input(type="text", class = 'date-dropdown__input-right js-date-dropdown__input-right', placeholder = "ДД.ММ.ГГГГ")

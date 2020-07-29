@@ -1,4 +1,4 @@
-include ../h3/h3
+include ../headline/headline
 include ../rate/rate
 
 mixin apart({apart = "888", isLux = true, price = "9990", rate = 5, reviews = 145 } = {})
@@ -18,7 +18,7 @@ mixin apart({apart = "888", isLux = true, price = "9990", rate = 5, reviews = 14
             span.apart__header-number № 
             | #{apart}
             if isLux
-              +h3({title: " люкс"})
+              +headline({title: " люкс"})
         span.apart__price-line
           span.apart__price.js-apart__price #{price}₽ 
           | в сутки

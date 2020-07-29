@@ -1,7 +1,6 @@
 include ../../components/head/head
 include ../../components/logo/logo
 
-include ../../components/h3/h3
 include ../../components/text-field/text-field
 include ../../components/masked-text-field/masked-text-field
 include ../../components/subscription-field/subscription-field
@@ -30,15 +29,15 @@ html
       section.form-elements__column-section
         .form-elements__block-text-field
           .form-elements__title
-            +h3({title: "text field"})
+            +headline({title: "text field"})
           +text-field({placeholder: "Email"})
         .form-elements__block-dropdown-guests
           .form-elements__title
-            +h3({title: "dropdown"})
+            +headline({title: "dropdown"})
           +dropdown()
         .form-elements__block-masked-text-field
           .form-elements__title
-            +h3({title: "masked text field"})
+            +headline({title: "masked text field"})
           +masked-text-field({placeholder: "ДД.ММ.ГГГГ"})
         .form-elements__block-date-dropdown
           +date-dropdown({isSingle: false, label: ["date dropdown", "date dropdown"]})
@@ -46,11 +45,11 @@ html
           +date-dropdown({label: "filter date dropdown"})
         .form-elements__block-subscription-field
           .form-elements__title
-            +h3({title: "subscription text field"})
+            +headline({title: "subscription text field"})
           +subscription-field({placeholder: "Email"})
         .form-elements__block-dropdown-rooms
           .form-elements__title
-            +h3({title: "dropdown"})
+            +headline({title: "dropdown"})
           +dropdown({isGuests: false})
         .form-elements__block-expandable-checkbox-list
           +expandable-checkbox-list({title: "expandable checkbox list"})
@@ -58,38 +57,38 @@ html
       section.form-elements__column-section
         .form-elements__block-checkbox
           .form-elements__title.form-elements__title_big
-            +h3({title: "checkbox buttons"})
+            +headline({title: "checkbox buttons"})
           +checkbox({title: "Можно курить"})
           +checkbox({title: "Можно с питомцами", isChecked: true})
           +checkbox({title: "Можно пригласить гостей (до 10 человек)", isChecked: true})
         .form-elements__block-radio
           .form-elements__title
-            +h3({title: "radio buttons"})
+            +headline({title: "radio buttons"})
           .form-elements__block-radio-container
             +radio({name: "sex", title: "Мужчина", isChecked: true})
             +radio({name: "sex", title: "Женщина"})
         .form-elements__block-toggle
           .form-elements__title
-            +h3({title: "toggle"})
+            +headline({title: "toggle"})
           +toggle({title: "Получать спецпредложения", isChecked: true})
           +toggle({title: "Получать спецпредложения"})
         .form-elements__block-like
           .form-elements__title
-            +h3({title: "like button"})
+            +headline({title: "like button"})
           +like({counter: "2"})
           +like({counter: "12", isChecked: true})
         .form-elements__block-rate
           .form-elements__title
-            +h3({title: "rate button"})
+            +headline({title: "rate button"})
           +rate({rate: "4"})
           +rate({rate: "5"})
         .form-elements__block-dropdown-guests-2
           .form-elements__title
-            +h3({title: "dropdown"})
+            +headline({title: "dropdown"})
           +dropdown()
         .form-elements__block-rich-checkbox
           .form-elements__title
-            +h3({title: "rich checkbox buttons"})
+            +headline({title: "rich checkbox buttons"})
           +rich-checkbox({title: "Широкий коридор", description: "Ширина коридоров в номере не менее 91 см."})
           +rich-checkbox({title: "Помощник для инвалидов", description: "На 1 этаже вас встретит специалист и проводит до номера."})
 
@@ -98,7 +97,7 @@ html
           +range-slider({title: "range slider"})
         .form-elements__block-buttons
           .form-elements__title
-            +h3({title: "buttons"})
+            +headline({title: "buttons"})
           .form-elements__block-buttons-line
             +button({style: "gradient"})
             +button({style: "gradient", isActived: false})
@@ -112,15 +111,15 @@ html
             +button({style: "submit", isActived: false})
         .form-elements__block-pagination
           .form-elements__title
-            +h3({title: "pagination"})
+            +headline({title: "pagination"})
           .pagination.js-pagination
         .form-elements__block-dropdown-guests-3
           .form-elements__title
-            +h3({title: "dropdown"})
+            +headline({title: "dropdown"})
           +dropdown()
         .form-elements__block-bullet-list
           .form-elements__title
-            +h3({title: "bullet list"})
+            +headline({title: "bullet list"})
           -
             let bullets = []
             bullets.push("Нельзя с питомцами")
