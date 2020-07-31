@@ -28,19 +28,18 @@ mixin color-block ({ mod = "dark-shade-100" } = {})
         "#BC9CFF",
         "#6FCF97"
       ];
-      let isModCorrected = false;
-      let text, hexColor;
+      const colorBlock = {}
       modList.forEach((value, index) => {
         if(mod === value) {
-          isModCorrected = true;
-          text = textList[index];
-          hexColor = hexColorList[index];
+          colorBlock.isModCorrected = true;
+          colorBlock.text = textList[index];
+          colorBlock.hexColor = hexColorList[index];
         }
       })
-    if isModCorrected
+    if colorBlock.isModCorrected
       div(class = `color-block__colors-cell color-block__colors-cell_${mod}`)
-      p.color-block__colors-text #{text}
+      p.color-block__colors-text #{colorBlock.text}
         <br>
-        span.color-block__colors-text.color-block__colors-text_regular #{hexColor}
+        span.color-block__colors-text.color-block__colors-text_regular #{colorBlock.hexColor}
     else
       p wrong mod

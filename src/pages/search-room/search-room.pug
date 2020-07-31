@@ -42,13 +42,14 @@ html
         .search-room__menu-title
           +headline({title: "Доступность"})
         -
-          config = {}
-          config.title = "Широкий коридор"
-          config.description = "Ширина коридоров в номере не менее 91см"
+          const configRichCheckbox1 = {}
+          configRichCheckbox1.title = "Широкий коридор"
+          configRichCheckbox1.description = "Ширина коридоров в номере не менее 91см"
         +rich-checkbox(config)
         -
-          config.title = "Помощник для инвалидов"
-          config.description = "На 1 этаже вас встретит специалист и проводит до номера."
+          const configRichCheckbox2 = {}
+          configRichCheckbox2.title = "Помощник для инвалидов"
+          configRichCheckbox2.description = "На 1 этаже вас встретит специалист и проводит до номера."
         +rich-checkbox(config)
 
         .search-room__menu-title.search-room__menu-title_big
@@ -62,104 +63,103 @@ html
           +headline({level: "1", title: "Номера, которые мы для вас подобрали"})
         .search-room__data-source.js-search-room__data-source
           -
-            let aparts = []
-            config = {}
+            const aparts = []
 
-            config.apart = "888"
-            config.isLux = true
-            config.price = "9990"
-            config.rate = "5"
-            config.reviews = 145
-            aparts.push(config)
-            config = {}
+            const configApartments888 = {}
+            configApartments888.apart = "888"
+            configApartments888.isLux = true
+            configApartments888.price = "9990"
+            configApartments888.rate = "5"
+            configApartments888.reviews = 145
+            aparts.push(configApartments888)
 
-            config.apart = "840"
-            config.isLux = false
-            config.price = "9900"
-            config.rate = "4"
-            config.reviews = 65
-            aparts.push(config)
-            config = {}
+            const configApartments840 = {}
+            configApartments840.apart = "840"
+            configApartments840.isLux = false
+            configApartments840.price = "9900"
+            configApartments840.rate = "4"
+            configApartments840.reviews = 65
+            aparts.push(configApartments840)
 
-            config.apart = "980"
-            config.isLux = true
-            config.price = "8500"
-            config.rate = "3"
-            config.reviews = 33
-            aparts.push(config)
-            config = {}
+            const configApartments980 = {}
+            configApartments980.apart = "980"
+            configApartments980.isLux = true
+            configApartments980.price = "8500"
+            configApartments980.rate = "3"
+            configApartments980.reviews = 33
+            aparts.push(configApartments980)
 
-            config.apart = "856"
-            config.isLux = false
-            config.price = "7300"
-            config.rate = "5"
-            config.reviews = 19
-            aparts.push(config)
-            config = {}
+            const configApartments856 = {}
+            configApartments856.apart = "856"
+            configApartments856.isLux = false
+            configApartments856.price = "7300"
+            configApartments856.rate = "5"
+            configApartments856.reviews = 19
+            aparts.push(configApartments856)
 
-            config.apart = "740"
-            config.isLux = false
-            config.price = "6000"
-            config.rate = "4"
-            config.reviews = 44
-            aparts.push(config)
-            config = {}
+            const configApartments740 = {}
+            configApartments740.apart = "740"
+            configApartments740.isLux = false
+            configApartments740.price = "6000"
+            configApartments740.rate = "4"
+            configApartments740.reviews = 44
+            aparts.push(configApartments740)
 
-            config.apart = "982"
-            config.isLux = false
-            config.price = "5800"
-            config.rate = "3"
-            config.reviews = 56
-            aparts.push(config)
-            config = {}
+            const configApartments982 = {}
+            configApartments982.apart = "982"
+            configApartments982.isLux = false
+            configApartments982.price = "5800"
+            configApartments982.rate = "3"
+            configApartments982.reviews = 56
+            aparts.push(configApartments982)
 
-            config.apart = "678"
-            config.isLux = false
-            config.price = "5500"
-            config.rate = "5"
-            config.reviews = 45
-            aparts.push(config)
-            config = {}
+            const configApartments678 = {}
+            configApartments678.apart = "678"
+            configApartments678.isLux = false
+            configApartments678.price = "5500"
+            configApartments678.rate = "5"
+            configApartments678.reviews = 45
+            aparts.push(configApartments678)
 
-            config.apart = "450"
-            config.isLux = false
-            config.price = "5300"
-            config.rate = "4"
-            config.reviews = 39
-            aparts.push(config)
-            config = {}
+            const configApartments450 = {}
+            configApartments450.apart = "450"
+            configApartments450.isLux = false
+            configApartments450.price = "5300"
+            configApartments450.rate = "4"
+            configApartments450.reviews = 39
+            aparts.push(configApartments450)
 
-            config.apart = "350"
-            config.isLux = false
-            config.price = "5000"
-            config.rate = "3"
-            config.reviews = 77
-            aparts.push(config)
-            config = {}
+            const configApartments350 = {}
+            configApartments350.apart = "350"
+            configApartments350.isLux = false
+            configApartments350.price = "5000"
+            configApartments350.rate = "3"
+            configApartments350.reviews = 77
+            aparts.push(configApartments350)
 
-            config.apart = "666"
-            config.isLux = false
-            config.price = "5000"
-            config.rate = "5"
-            config.reviews = 25
-            aparts.push(config)
-            config = {}
+            const configApartments666 = {}
+            configApartments666.apart = "666"
+            configApartments666.isLux = false
+            configApartments666.price = "5000"
+            configApartments666.rate = "5"
+            configApartments666.reviews = 25
+            aparts.push(configApartments666)
 
-            config.apart = "444"
-            config.isLux = false
-            config.price = "5000"
-            config.rate = "3"
-            config.reviews = 15
-            aparts.push(config)
-            config = {}
+            const configApartments444 = {}
+            configApartments444.apart = "444"
+            configApartments444.isLux = false
+            configApartments444.price = "5000"
+            configApartments444.rate = "3"
+            configApartments444.reviews = 15
+            aparts.push(configApartments444)
 
-            config.apart = "352"
-            config.isLux = false
-            config.price = "5000"
-            config.rate = "3"
-            config.reviews = 55
-            aparts.push(config)
-            config = {}
+            const configApartments352 = {}
+            configApartments352.apart = "352"
+            configApartments352.isLux = false
+            configApartments352.price = "5000"
+            configApartments352.rate = "3"
+            configApartments352.reviews = 55
+            aparts.push(configApartments352)
 
             const apartsLength = aparts.length
             const previousIndex = aparts.length - 1

@@ -11,15 +11,15 @@ html
     +logo()
     header.header-footer__header
       -
-        let headerConfig = {}
-        let links = []
-        links.push({type: "home", title: "Home"})
-        links.push({title: "Abous Us"})
-        links.push({type: "popup", title: "Services"})
-        links.push({title: "Careers"})
-        links.push({title: "News"})
-        links.push({title: "Documentation"})
-        headerConfig.links = links
+        const headerConfig = {}
+        const headerLinks1 = []
+        headerLinks1.push({type: "home", title: "Home"})
+        headerLinks1.push({title: "Abous Us"})
+        headerLinks1.push({type: "popup", title: "Services"})
+        headerLinks1.push({title: "Careers"})
+        headerLinks1.push({title: "News"})
+        headerLinks1.push({title: "Documentation"})
+        headerConfig.links = headerLinks1
         headerConfig.loginButton = "login"
         headerConfig.signUpButton = "register"
 
@@ -34,31 +34,31 @@ html
 
     footer.header-footer__footer
       -
-        let footerConfig = {}
+        const footerConfig = {}
         footerConfig.description = "Lopx ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis."
         
         footerConfig.navigation = {title: "navigation"}
-        links = []
-        links.push("About Us")
-        links.push("News")
-        links.push("Support")
-        links.push("Products")
-        footerConfig.navigation.links = links
+        const navigationLinks = []
+        navigationLinks.push("About Us")
+        navigationLinks.push("News")
+        navigationLinks.push("Support")
+        navigationLinks.push("Products")
+        footerConfig.navigation.links = navigationLinks
 
         footerConfig.aboutUs = {title: "about us"}
-        links = []
-        links.push("Who we are")
-        links.push("Our teem")
-        links.push("Careers")
-        links.push("Investors")
-        footerConfig.aboutUs.links = links
+        const aboutUsLinks = []
+        aboutUsLinks.push("Who we are")
+        aboutUsLinks.push("Our teem")
+        aboutUsLinks.push("Careers")
+        aboutUsLinks.push("Investors")
+        footerConfig.aboutUs.links = aboutUsLinks
 
         footerConfig.support = {title: "support"}
-        links = []
-        links.push("Documentation")
-        links.push("Community")
-        links.push("Get in Touch")
-        footerConfig.support.links = links
+        const supportLinks = []
+        supportLinks.push("Documentation")
+        supportLinks.push("Community")
+        supportLinks.push("Get in Touch")
+        footerConfig.support.links = supportLinks
 
         footerConfig.subscription = {title: "subscribe to our newsletter"}
         footerConfig.subscription.description = "Receive our latest news and promotions in your inbox!"
@@ -70,10 +70,10 @@ html
 
     footer.header-footer__footer
       -
-        footerConfig = {}
-        footerConfig.isShort = true
-        footerConfig.description = "Lopx ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis."
+        const footerConfig2 = {}
+        footerConfig2.isShort = true
+        footerConfig2.description = "Lopx ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis."
 
-      +footer(footerConfig)
+      +footer(footerConfig2)
 
     script(src="main.min.js")

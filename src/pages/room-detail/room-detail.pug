@@ -33,57 +33,58 @@ html
             .room-detail__title
               +headline({level: "2", title: "Сведения о номере"})
             -
-              config = {}
-              config.icon = "insert_emoticon"
-              config.title = "Комфорт"
-              config.description = "Шумопоглащающие стены"
-              config.isRowed = true
-            +condition(config)
+              const conditionConfig1 = {}
+              conditionConfig1.icon = "insert_emoticon"
+              conditionConfig1.title = "Комфорт"
+              conditionConfig1.description = "Шумопоглащающие стены"
+              conditionConfig1.isRowed = true
+            +condition(conditionConfig1)
             -
-              config = {}
-              config.icon = "location_city"
-              config.title = "Удобство"
-              config.description = "Окно в каждой из спален"
-              config.isRowed = true
-            +condition(config)
+              const confidionConfig2 = {}
+              confidionConfig2.icon = "location_city"
+              confidionConfig2.title = "Удобство"
+              confidionConfig2.description = "Окно в каждой из спален"
+              confidionConfig2.isRowed = true
+            +condition(confidionConfig2)
             -
-              config = {}
-              config.icon = "whatshot"
-              config.title = "Уют"
-              config.description = "Номер оснащён камином"
-              config.isRowed = false
-            +condition(config)
+              const conditionConfig3 = {}
+              conditionConfig3.icon = "whatshot"
+              conditionConfig3.title = "Уют"
+              conditionConfig3.description = "Номер оснащён камином"
+              conditionConfig3.isRowed = false
+            +condition(conditionConfig3)
 
           .room-detail__piechart
             .room-detail__title
               +headline({level: "2", title: "Впечатления от номера"})
             -
-              config = {}
-              config.perfect = 130
-              config.good = 65
-              config.satisfact = 65
-            +piechart(config)
+              const piechartConfig = {}
+              piechartConfig.perfect = 0
+              piechartConfig.good = 10
+              piechartConfig.satisfact = 0
+              piechartConfig.disappoint = 10
+            +piechart(piechartConfig)
           .room-detail__reviews
             .room-detail__title
               +headline({level: "2", title: "Впечатления от номера"})
             p.room-detail__title-reviews 2 отзыва
             -
-              config = {}
-              config.login = "user-1"
-              config.likeCount = "10"
-              config.isLiked = true
-              config.name = "Мурад Сарафанов"
-              config.timeAgo = "5 дней назад"
-              config.review = "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей"
-            +review(config)
+              const reviewConfig1 = {}
+              reviewConfig1.login = "user-1"
+              reviewConfig1.likeCount = "10"
+              reviewConfig1.isLiked = true
+              reviewConfig1.name = "Мурад Сарафанов"
+              reviewConfig1.timeAgo = "5 дней назад"
+              reviewConfig1.review = "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей"
+            +review(reviewConfig1)
             -
-              config = {}
-              config.login = "user-2"
-              config.likeCount = "2"
-              config.name = "Патрисия Стёклышкова"
-              config.timeAgo = "Неделю назад"
-              config.review = "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент"
-            +review(config)
+              const reviewConfig2 = {}
+              reviewConfig2.login = "user-2"
+              reviewConfig2.likeCount = "2"
+              reviewConfig2.name = "Патрисия Стёклышкова"
+              reviewConfig2.timeAgo = "Неделю назад"
+              reviewConfig2.review = "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент"
+            +review(reviewConfig2)
           .room-detail__rules
             .room-detail__title
               +headline({level: "2", title: "Впечатления от номера"})
@@ -100,13 +101,13 @@ html
 
         .room-detail__booking
           -
-            config = {}
-            config.appart = "888"
-            config.isLux = true
-            config.price = "9990"
-            config.discount = "2179"
-            config.complementary = "300"
-          +booking(config)
+            const bookingConfig = {}
+            bookingConfig.appart = "888"
+            bookingConfig.isLux = true
+            bookingConfig.price = "9990"
+            bookingConfig.discount = "2179"
+            bookingConfig.complementary = "300"
+          +booking(bookingConfig)
 
     footer.room-detail__footer
       +footer()
