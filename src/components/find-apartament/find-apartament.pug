@@ -1,0 +1,14 @@
+include ../date-dropdown/date-dropdown
+include ../dropdown/dropdown
+include ../button/button
+
+mixin find-apartament({action = "search-room.html"} = {})
+  form(class="find-apartament", action=action)
+    h1.find-apartament__title Найдём номера под ваши пожелания
+    .find-apartament__arival-departure
+      +date-dropdown({isSingle: false, label: ["прибытие", "отъезд"]})
+    .find-apartament__guests
+      h3.find-apartament__guests-title гости
+      +dropdown()
+    .find-apartament__submit-button
+      +button({style: "submit", title: "подобрать номер"})

@@ -1,5 +1,5 @@
 import 'paginationjs';
-import Apart from '../apart/apart';
+import Apartament from '../apartament/apartament';
 
 class Pagination {
   constructor(item, index, dataSource, dataOutput) {
@@ -51,9 +51,9 @@ class Pagination {
   callback(data) {
     const html = data;
     if (this.dataOutput) $(this.dataOutput).html(html);
-    const $arrayApartComponents = $('.js-apart__slider');
-    $.each($arrayApartComponents, (key, item) => {
-      const instance = new Apart(item, key);
+    const $apartaments = $('.js-apartament__slider');
+    $.each($apartaments, (key, item) => {
+      const instance = new Apartament(item, key);
     });
   }
 

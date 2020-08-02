@@ -3,17 +3,17 @@ include ../date-dropdown/date-dropdown
 include ../dropdown/dropdown
 include ../button/button
 
-mixin booking({apart = "888", isLux = true, price = "9990", discount = "2179", complementary = 300, additional = "0", action = "change me" } = {})
+mixin booking({apartament = "888", isLux = true, price = "9990", discount = "2179", complementary = 300, additional = "0", action = "change me" } = {})
   -
     const isDiscounted = discount == 0 ? false : true
 
   form(class="booking js-booking", action=action)
     .booking__header
-      .booking__header-apart
+      .booking__header-apartament
         span.booking__header-number № 
-        +headline({level: "1", title: apart})
+        +headline({level: "1", title: apartament})
         if isLux
-          .booking__header-apart-lux
+          .booking__header-apartament-lux
             +headline({title: " люкс"})
       span.booking__header-price
         span.booking__header-price-text.booking__header-price-text_bold.js-booking__header-price-text #{price}
