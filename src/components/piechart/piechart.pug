@@ -10,20 +10,20 @@ mixin piechart({perfect = 130, good = 65, satisfact = 65, disappoint = 0 } = {})
     const total = perfect + good + satisfact + disappoint
     //- percentage
     const percent = []
-    percent.push(perfect / total);
-    percent.push(good / total);
-    percent.push(satisfact / total);
     percent.push(disappoint / total);
+    percent.push(satisfact / total);
+    percent.push(good / total);
+    percent.push(perfect / total);
 
     const style = []
-    style.push("url(#grad-5)");
-    style.push("url(#grad-4)");
-    style.push("url(#grad-3)");
     style.push("url(#grad-2)");
+    style.push("url(#grad-3)");
+    style.push("url(#grad-4)");
+    style.push("url(#grad-5)");
 
     const dashStroke = [];
     const dashSpace = [];
-    const dashOffset = [272.8];
+    const dashOffset = [91.1];
 
     const stroke = [];
     const isEnableStroke = [];
@@ -52,12 +52,8 @@ mixin piechart({perfect = 130, good = 65, satisfact = 65, disappoint = 0 } = {})
       }
     })
 
-        
-    let text
-    if(total == 0 || total > 4)
-        text = "голосов"
-    if(total > 0 && total < 5)
-        text = "голоса"
+    const text = ["голосов", "голос", "голоса"]
+
   .piechart
     svg(width="120", height="120", viewbox="0 0 120 120", fill="none", class="piechart__chart")
       circle(cx="60", cy="60", r="59.5", fill="white")
@@ -66,17 +62,22 @@ mixin piechart({perfect = 130, good = 65, satisfact = 65, disappoint = 0 } = {})
           circle(cx="60", cy="60", r="58", stroke=style[index], stroke-width="4", Stroke-dasharray=`${dashStroke[index]} ${dashSpace[index]}`, stroke-dashoffset=dashOffset[index])
       g( class="piechart__label")
         text(x="60", y="60", class="piechart__total") #{total}
-        text(x="60", y="60", class="piechart__text") #{text}
+        if (total === 0 || total > 4)
+          text(x="60", y="60", class="piechart__text") #{text[0]}
+        if (total === 1)
+          text(x="60", y="60", class="piechart__text") #{text[1]}
+        if (total > 1 && total < 5)
+          text(x="60", y="60", class="piechart__text") #{text[2]}
       defs
         linearGradient(id="grad-5", x1="60", y1="0", x2="60", y2="120", gradientUnits="userSpaceOnUse")
           stop(stop-color="#FFE39C")
           stop(offset="1", stop-color="#FFBA9C")
         linearGradient(id="grad-4", x1="0", y1="0", x2="0", y2="120", gradientUnits="userSpaceOnUse")
-          stop(stop-color="#BC9CFF")
-          stop(offset="1", stop-color="#8BA4F9")
-        linearGradient(id="grad-3", x1="0", y1="-120", x2="0", y2="120", gradientUnits="userSpaceOnUse")
           stop(stop-color="#66D2EA")
           stop(offset="1", stop-color="#6FCF97")
+        linearGradient(id="grad-3", x1="0", y1="-120", x2="0", y2="120", gradientUnits="userSpaceOnUse")
+          stop(stop-color="#BC9CFF")
+          stop(offset="1", stop-color="#8BA4F9")
         linearGradient(id="grad-2", x1="0", y1="-120", x2="0", y2="120", gradientUnits="userSpaceOnUse")
           stop(stop-color="#919191")
           stop(offset="1", stop-color="#3D4975")
