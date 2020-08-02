@@ -5,7 +5,7 @@ $(document).ready(() => {
   const $arrayDropdown = $('.js-iqdropdown');
   const clearButton = [];
   const applyButton = [];
-  arrayButtonsInstances.map((value, index) => {
+  arrayButtonsInstances.map((value) => {
     const isDropdownButton = value.type === 'textual'
       && value.parentElement.classList.contains('js-iqdropdown-menu');
     const isDropdownClearButton = value.mod === 'deactive';

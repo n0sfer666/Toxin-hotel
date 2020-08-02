@@ -10,23 +10,23 @@ class Button {
 
   getType() {
     const types = ['textual', 'border', 'gradient', 'submitting'];
-    let result = types[0];
+    const result = [types[0]];
     types.map((value) => {
       const equalType = this.instance.classList.contains(`button_${value}`);
       if (equalType) {
-        result = value;
+        result.push(value);
       }
     });
-    return result;
+    return result[result.length - 1];
   }
 
   getMod() {
     const isActive = this.instance.classList.contains('button_active');
-    let result = 'deactive';
+    const result = ['deactive'];
     if (isActive) {
-      result = 'active';
+      result.push('active');
     }
-    return result;
+    return result[result.length - 1];
   }
 
   getParentElement() {
