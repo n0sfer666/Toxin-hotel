@@ -26,7 +26,7 @@ mixin booking({room = "888", isLux = true, price = "9990", discount = "2179", co
         +headline({title: "гости"})
       +dropdown()
     .booking__calculation
-      .booking__calculation-line
+      .booking__calculation-row
         p
           span.booking__price.js-booking__price #{price}
           span ₽ X 
@@ -34,7 +34,7 @@ mixin booking({room = "888", isLux = true, price = "9990", discount = "2179", co
         p
           span.booking__cost.js-booking__cost 0
           span ₽
-      .booking__calculation-line
+      .booking__calculation-row
         .booking__calculation-text
           p.booking__description Сбор за услуги: 
             if isDiscounted
@@ -46,7 +46,7 @@ mixin booking({room = "888", isLux = true, price = "9990", discount = "2179", co
         .booking__calculation-aditional
           span.booking__additional.js-booking__additional #{additional}
           span ₽
-      .booking__calculation-line
+      .booking__calculation-row
         .booking__calculation-text
           p.booking__description Сбор за дополнительные услуги
           span.booking__exclamation
