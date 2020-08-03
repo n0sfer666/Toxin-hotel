@@ -37,8 +37,9 @@
       height: 369px;
     }
 
-    &_apart {
+    &-apartament {
       width: 270px;
+      margin-bottom: 36px;
 
       @media screen and (min-width: $old-phones) and (max-width: 380px) {
         margin: 0 auto 40px;

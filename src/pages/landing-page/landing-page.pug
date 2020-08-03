@@ -3,7 +3,7 @@ include ../../components/head/head
 include ../../components/header/header
 include ../../components/footer/footer
 
-include ../../components/find-apart/find-apart
+include ../../components/find-apartament/find-apartament
 
 
 doctype html
@@ -12,10 +12,10 @@ html
   body.landing
     header.landing__header
       +header(config)
-    
+
     main.landing__content
-      section.landing__find-apart
-        +find-apart()
+      section.landing__find-apartment
+        +find-apartament()
       .landing__description
         p.landing__description-text Лучшие номера для вашей работы, отдыха и просто вдохновения
 

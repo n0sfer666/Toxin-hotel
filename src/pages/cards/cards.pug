@@ -1,11 +1,11 @@
 include ../../components/head/head
 include ../../components/logo/logo
 
-include ../../components/find-apart/find-apart
+include ../../components/find-apartament/find-apartament
 include ../../components/registration/registration
 include ../../components/booking/booking
 include ../../components/sign-in/sign-in
-include ../../components/apart/apart
+include ../../components/apartament/apartament
 
 doctype html
 html
@@ -15,7 +15,7 @@ html
     main.cards__container
       section.cards__section
         .cards__block
-          +find-apart()
+          +find-apartament()
         .cards__block
           +registration()
 
@@ -28,16 +28,16 @@ html
       section.cards__section.cards__section_320-px
         .cards__block
           .inline-datepicker.js-inline-datepicker
-        .cards__block.cards__block_apart
-          +apart()
-        .cards__block.cards__block_apart
+        .cards__block-apartament
+          +apartament()
+        .cards__block-apartament
           -
-            const apartConfig = {}
-            apartConfig.apart = "840"
-            apartConfig.isLux = false
-            apartConfig.price = "9900"
-            apartConfig.rate = 4
-            apartConfig.reviews = 65
-          +apart(apartConfig)
+            const apartamentsConfig = {}
+            apartamentsConfig.apartament = "840"
+            apartamentsConfig.isLux = false
+            apartamentsConfig.price = "9900"
+            apartamentsConfig.rate = 4
+            apartamentsConfig.reviews = 65
+          +apartament(apartamentsConfig)
 
     script(src="main.min.js")
