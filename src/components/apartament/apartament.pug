@@ -27,19 +27,12 @@ mixin apartament({apartament = "888", isLux = true, price = "9990", rate = 5, re
         .apartament__rate-stars
           +rate({rate: rate})
         .apartament__rate-text-block
-          -
-            const isNullReviews = reviews === 0
-            const isFromTwotoFourReviews = reviews > 1 && reviews < 5
-          if(isNullReviews)
-            span
-              span.apartament__rate-text.apartament__rate-text_bold 0 
-              | Отзывов
-          if(reviews === 1)
-            span.apartament__rate-text.apartament__rate-text_bold 1 
-            | Отзыв
-          if(isFromTwotoFourReviews)
-            span.apartament__rate-text.apartament__rate-text_bold #{reviews} 
-            | Отзыва
-          if(reviews >= 5)
+          if(reviews === 0 || reviews >= 5)
             span.apartament__rate-text.apartament__rate-text_bold #{reviews} 
             | Отзывов
+          if(reviews === 1)
+            span.apartament__rate-text.apartament__rate-text_bold #{reviews} 
+            | Отзыв
+          if(reviews > 1 && reviews < 5)
+            span.apartament__rate-text.apartament__rate-text_bold #{reviews} 
+            | Отзыва
