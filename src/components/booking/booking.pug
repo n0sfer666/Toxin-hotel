@@ -3,7 +3,7 @@ include ../date-dropdown/date-dropdown
 include ../dropdown/dropdown
 include ../button/button
 
-mixin booking({room = "888", isLux = true, price = "9990", discount = "2179", complementary = 300, additional = "0", action = "change me" } = {})
+mixin booking({room = "888", isLux = true, price = "9990", discount = "2179", complementaryFee = 300, additionalFee = "0", action = "change me" } = {})
   -
     const isDiscounted = discount == 0 ? false : true
 
@@ -43,16 +43,16 @@ mixin booking({room = "888", isLux = true, price = "9990", discount = "2179", co
               span ₽
           span.booking__exclamation
             span.booking__exclamation-symbol.booking__exclamation-symbol_bold i
-        .booking__calculation-aditional
-          span.booking__additional.js-booking__additional #{additional}
+        .booking__calculation-additional-fee
+          span.booking__additional-fee.js-booking__additional-fee #{additionalFee}
           span ₽
       .booking__calculation-row
         .booking__calculation-text
           p.booking__description Сбор за дополнительные услуги
           span.booking__exclamation
             span.booking__exclamation-symbol.booking__exclamation-symbol_bold i
-        .booking__calculation-complementary
-          span.booking__complementary.js-booking__complementary #{complementary}
+        .booking__calculation-complementary-fee
+          span.booking__complementary-fee.js-booking__complementary-fee #{complementaryFee}
           span ₽
     .booking__total
       h2.booking__total-text Итого

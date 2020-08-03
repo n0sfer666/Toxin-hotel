@@ -33,7 +33,7 @@ class Booking {
 
   calculate(daysIn) {
     const { price: priceValue, discount: discountValue } = this.values;
-    const { complementary: complementaryValue } = this.values;
+    const { complementaryFee: complementaryValue } = this.values;
     const { cost: costElement, total: totalElement } = this.elements;
     const cost = priceValue * daysIn;
     costElement.text(this.getStringWithSeparate(cost));
@@ -56,8 +56,8 @@ class Booking {
       daysIn: this.getElementByClass('.js-booking__daysIn'),
       cost: this.getElementByClass('.js-booking__cost'),
       discount: this.getElementByClass('.js-booking__discount'),
-      additional: this.getElementByClass('.js-booking__additional'),
-      complementary: this.getElementByClass('.js-booking__complementary'),
+      additionalFee: this.getElementByClass('.js-booking__additional-fee'),
+      complementaryFee: this.getElementByClass('.js-booking__complementary-fee'),
       total: this.getElementByClass('.js-booking__total-text'),
     };
   }
@@ -66,7 +66,7 @@ class Booking {
     this.values = {
       price: this.getValueOfElement(this.elements.price),
       discount: this.getValueOfElement(this.elements.discount),
-      complementary: this.getValueOfElement(this.elements.complementary),
+      complementaryFee: this.getValueOfElement(this.elements.complementaryFee),
     };
   }
 }

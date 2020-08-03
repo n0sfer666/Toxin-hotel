@@ -1,5 +1,5 @@
 import 'paginationjs';
-import room from '../room/room';
+import Room from '../room/room';
 
 class Pagination {
   constructor(item, index, dataSource, dataOutput) {
@@ -53,7 +53,7 @@ class Pagination {
     if (this.dataOutput) $(this.dataOutput).html(html);
     const $rooms = $('.js-room__slider');
     $.each($rooms, (key, item) => {
-      const instance = new room(item, key);
+      new Room(item, key);
     });
   }
 
