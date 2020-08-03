@@ -25,6 +25,7 @@
     "class-methods-use-this": ["off"],
     "object-shorthand": ["off", "always"],
     "no-param-reassign": ["warn"],
-    "array-callback-return": ["warn"]
+    "array-callback-return": ["warn"],
+    "no-new": ["warn"]
   }
 }

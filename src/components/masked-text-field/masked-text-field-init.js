@@ -1,8 +1,8 @@
 import MaskedField from './masked-text-field';
 
 $(document).ready(() => {
-  const arrayMaskedTextField = $('.js-masked-text-field');
-  $.each(arrayMaskedTextField, (key, item) => {
-    const instance = new MaskedField(item, key);
+  const $maskedTextFields = $('.js-masked-text-field');
+  $.each($maskedTextFields, (key, item) => {
+    new MaskedField(item, key);
   });
 });

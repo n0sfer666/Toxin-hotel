@@ -1,13 +1,13 @@
 import Booking from './booking';
 
-const arrayBookingInstance = [];
+const bookingInstances = [];
 
 $(document).ready(() => {
   const arrayBookingElement = $('.js-booking');
 
   $.each(arrayBookingElement, (key, item) => {
-    arrayBookingInstance.push(new Booking(item, key));
+    bookingInstances.push(new Booking(item, key));
   });
 });
 
-export default arrayBookingInstance;
+export default bookingInstances;

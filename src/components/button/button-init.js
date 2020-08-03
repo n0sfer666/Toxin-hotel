@@ -1,12 +1,12 @@
 import Button from './button';
 
-const arrayButtonsInstances = [];
+const buttonsInstances = [];
 
 $(document).ready(() => {
-  const arrayButtons = $('.js-button');
-  $.each(arrayButtons, (key, item) => {
-    arrayButtonsInstances.push(new Button(item, key));
+  const $buttons = $('.js-button');
+  $.each($buttons, (key, item) => {
+    buttonsInstances.push(new Button(item, key));
   });
 });
 
-export default arrayButtonsInstances;
+export default buttonsInstances;

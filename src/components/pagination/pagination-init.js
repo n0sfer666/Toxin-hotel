@@ -1,18 +1,18 @@
 import Pagination from './pagination';
 
 $(document).ready(() => {
-  const $apartSource = $('.js-search-room__apartament');
+  const $apartaments = $('.js-search-room__apartament');
 
   const dataSource = [];
 
-  $.each($apartSource, (key, item) => {
+  $.each($apartaments, (key, item) => {
     dataSource.push(item.cloneNode(true));
   });
 
   $('.js-search-room__data-source').remove();
 
-  const arrayPagination = $('.js-pagination');
-  $.each(arrayPagination, (key, item) => {
-    const instance = new Pagination(item, key, dataSource, '.js-search-room__data-output');
+  const paginations = $('.js-pagination');
+  $.each(paginations, (key, item) => {
+    new Pagination(item, key, dataSource, '.js-search-room__data-output');
   });
 });
