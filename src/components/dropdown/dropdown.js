@@ -1,12 +1,13 @@
 import 'item-quantity-dropdown/lib/item-quantity-dropdown.min';
+import Button from '../button/button';
 
 class Dropdown {
-  constructor(item, index, clearButton, applyButton) {
+  constructor(item, index) {
     this.container = item;
     this.index = index;
 
     this.initIsGuests();
-    this.initButtons(clearButton, applyButton);
+    this.initButtons();
 
     this.bindContext();
     this.initInstance();
@@ -29,10 +30,16 @@ class Dropdown {
     };
   }
 
-  initButtons(clearButton, applyButton) {
+  initButtons() {
     if (this.isGuests) {
-      this.clearButton = clearButton;
-      this.applyButton = applyButton;
+      const buttons = this.container.querySelectorAll('.js-button');
+      $.each(buttons, (index, value) => {
+        if (value.classList.contains('button_deactive')) {
+          this.clearButton = new Button(value, index);
+        } else {
+          this.applyButton = new Button(value, index);
+        }
+      });
       this.clearButton.setHide();
     }
   }
@@ -42,8 +49,6 @@ class Dropdown {
   }
 
   initInstanceElements() {
-    // this.$clearButton = this.getInnerElement('.button_deactive').hide();
-    // this.$applyButton = this.getInnerElement('.button_active');
     this.$iqMenu = this.getInnerElement('.iqdropdown-menu');
   }
 
