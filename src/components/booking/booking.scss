@@ -16,7 +16,7 @@
     height: 31px;
     margin-bottom: 19px;
 
-    &-apartament {
+    &-room {
       display: inline-block;
       width: 49%;
       height: inherit;
@@ -75,7 +75,7 @@
     }
   }
 
-  &__arival-departure {
+  &__arrival-departure {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;

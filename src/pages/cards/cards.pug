@@ -1,11 +1,11 @@
 include ../../components/head/head
 include ../../components/logo/logo
 
-include ../../components/find-apartament/find-apartament
+include ../../components/find-room/find-room
 include ../../components/registration/registration
 include ../../components/booking/booking
 include ../../components/sign-in/sign-in
-include ../../components/apartament/apartament
+include ../../components/room/room
 
 doctype html
 html
@@ -15,7 +15,7 @@ html
     main.cards__container
       section.cards__section
         .cards__block
-          +find-apartament()
+          +find-room()
         .cards__block
           +registration()
 
@@ -28,16 +28,16 @@ html
       section.cards__section.cards__section_320-px
         .cards__block
           .inline-datepicker.js-inline-datepicker
-        .cards__block-apartament
-          +apartament()
-        .cards__block-apartament
+        .cards__block-room
+          +room()
+        .cards__block-room
           -
-            const apartamentsConfig = {}
-            apartamentsConfig.apartament = "840"
-            apartamentsConfig.isLux = false
-            apartamentsConfig.price = "9900"
-            apartamentsConfig.rate = 4
-            apartamentsConfig.reviews = 65
-          +apartament(apartamentsConfig)
+            const roomsConfig = {}
+            roomsConfig.room = "840"
+            roomsConfig.isLux = false
+            roomsConfig.price = "9900"
+            roomsConfig.rate = 4
+            roomsConfig.reviews = 65
+          +room(roomsConfig)
 
     script(src="main.min.js")

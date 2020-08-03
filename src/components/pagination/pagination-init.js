@@ -1,11 +1,11 @@
 import Pagination from './pagination';
 
 $(document).ready(() => {
-  const $apartaments = $('.js-search-room__apartament');
+  const $rooms = $('.js-search-room__room');
 
   const dataSource = [];
 
-  $.each($apartaments, (key, item) => {
+  $.each($rooms, (key, item) => {
     dataSource.push(item.cloneNode(true));
   });
 

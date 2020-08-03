@@ -1,6 +1,6 @@
 import 'slick-carousel';
 
-class Apartament {
+class Room {
   constructor(item, index) {
     this.$item = $(item);
     this.index = index;
@@ -20,7 +20,7 @@ class Apartament {
 
   separateDigitsInPrice() {
     const REGEXP_SPACE_SEPARATED_THOUSANDS = /(\d)(?=(\d\d\d)+([^\d]|$))/g;
-    const $price = this.$item.siblings().find('.js-apartament__price');
+    const $price = this.$item.siblings().find('.js-room__price');
     const separatedString = $price.text()
       .replace(REGEXP_SPACE_SEPARATED_THOUSANDS, '$1 ');
 
@@ -28,4 +28,4 @@ class Apartament {
   }
 }
 
-export default Apartament;
+export default room;

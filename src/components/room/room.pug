@@ -1,0 +1,38 @@
+include ../headline/headline
+include ../rate/rate
+
+mixin room({room = "888", isLux = true, price = "9990", rate = 5, reviews = 145 } = {})
+  -
+    const slides = ["", "", "", ""].map( (slide, index) => {
+      return `img/img-${room}-${(index + 1)}.jpg`
+    })
+  .room
+    .room__slider.js-room__slider
+      each val, i in slides
+        .room__slider-image
+          img(src=val, alt=`room-${i+1}`)
+    .room__text
+      .room__header
+        .room__header-title
+          h1.room__header-title-text
+            span.room__header-number № 
+            | #{room}
+            if isLux
+              +headline({title: " люкс"})
+        span.room__price-line
+          span.room__price.js-room__price #{price}₽ 
+          | в сутки
+      .room__horizontal-line
+      .room__rate
+        .room__rate-stars
+          +rate({rate: rate})
+        .room__rate-text-block
+          if(reviews === 0 || reviews >= 5)
+            span.room__rate-text.room__rate-text_bold #{reviews} 
+            | Отзывов
+          if(reviews === 1)
+            span.room__rate-text.room__rate-text_bold #{reviews} 
+            | Отзыв
+          if(reviews > 1 && reviews < 5)
+            span.room__rate-text.room__rate-text_bold #{reviews} 
+            | Отзыва
