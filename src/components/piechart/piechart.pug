@@ -1,14 +1,8 @@
-//- total: number (total number of voices)
-//- perfect: number (number of 5 stars voices)
-//- good: number (number of 4 stars voices)
-//- satisfact: number (number of 3 stars voices)
-//- disappoint: number (number of 2 stars voices)
 mixin piechart({perfect = 130, good = 65, satisfact = 65, disappoint = 0 } = {})
   -
-    //- c for r = 58px
-    const c58 = 364.4;
+    const circumference = 364.4;
     const total = perfect + good + satisfact + disappoint
-    //- percentage
+
     const percent = []
     percent.push(disappoint / total);
     percent.push(satisfact / total);
@@ -37,15 +31,15 @@ mixin piechart({perfect = 130, good = 65, satisfact = 65, disappoint = 0 } = {})
         }
       } else if (value === 1) {
         isEnableStroke.push(true);
-        dashStroke.push(c58);
+        dashStroke.push(circumference);
         dashSpace.push(0);
         if (index !== 0) {
           dashOffset.push(dashOffset[index - 1]);
         }
       } else {
         isEnableStroke.push(true);
-        dashStroke.push((c58 * value - 2).toFixed(1));
-        dashSpace.push((c58 - dashStroke[index]).toFixed(1));
+        dashStroke.push((circumference * value - 2).toFixed(1));
+        dashSpace.push((circumference - dashStroke[index]).toFixed(1));
         if (index !== 0) {
           dashOffset.push((dashOffset[index - 1] - dashStroke[index - 1] - 2).toFixed(1));
         }

@@ -1,5 +1,5 @@
 import DateDropdown from './date-dropdown';
-import arrayBookingInstance from '../booking/booking-inits';
+import bookingInstances from '../booking/booking-inits';
 
 $(document).ready(() => {
   const $datepickerSingle = $('.js-date-dropdown__filter');
@@ -15,7 +15,7 @@ $(document).ready(() => {
       new DateDropdown([item, $datepickerRight[key]],
         key,
         false,
-        arrayBookingInstance[0]);
+        bookingInstances[0]);
     } else {
       new DateDropdown([item, $datepickerRight[key]],
         key,

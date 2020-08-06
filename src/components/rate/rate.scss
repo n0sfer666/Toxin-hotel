@@ -48,14 +48,6 @@ $container-size: $star-size * 5;
     text-shadow: 0 0 5px $purple;
   }
 
-  // & > &__input:checked + &__label:hover,
-  // & > &__input:checked + &__label:hover ~ &__label,
-  // & > &__input:checked ~ &__label:hover,
-  // & > &__input:checked ~ &__label:hover ~ &__label,
-  // & > &__label:hover ~ &__input:checked ~ &__label {
-  //   text-shadow: 0 0 5px $dark-shade-50;
-  // }
-
   & > &__label:active {
     position:relative;
   }

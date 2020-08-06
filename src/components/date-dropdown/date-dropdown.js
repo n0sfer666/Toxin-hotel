@@ -17,7 +17,7 @@ class DateDropdown {
     if (Array.isArray(item)) {
       this.$container = [$(item[0]), $(item[1])];
     } else {
-      this.$container = $(item);
+      this.$container = [$(item)];
     }
   }
 
@@ -37,12 +37,9 @@ class DateDropdown {
   }
 
   initDatepicker() {
-    if (Array.isArray(this.$container)) {
-      this.$container[0].datepicker(this.getConfig()).data('datepicker');
-      this.$container[1].datepicker(this.getConfig()).data('datepicker');
-    } else {
-      this.$container.datepicker(this.getConfig()).data('datepicker');
-    }
+    this.$container.map((element) => {
+      element.datepicker(this.getConfig()).data('datepicker');
+    });
   }
 
   getInnerElement(mainElement, innerSelector) {
@@ -93,7 +90,7 @@ class DateDropdown {
   handleClearButtonClick(dp) {
     dp.clear();
     if (this.isSingle) {
-      this.$container.val('');
+      this.$container[0].val('');
     } else {
       this.$container[0].val('');
       this.$container[1].val('');

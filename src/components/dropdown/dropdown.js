@@ -69,7 +69,6 @@ class Dropdown {
   handleClearButtonClick() {
     this.getInnerElement('.iqdropdown-item-controls').remove();
     this.initInstance();
-    // need to repeat for correct work iqDropdown
     this.getInnerElement('.iqdropdown-item-controls').remove();
     this.initInstance();
     this.clearButton.setHide();
