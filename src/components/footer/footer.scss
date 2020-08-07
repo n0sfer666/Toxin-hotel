@@ -55,6 +55,11 @@
     }
 
     &-subscription {
+      display: flex;
+      flex-direction: column;
+      justify-content: left;
+      align-items: flex-start;
+      max-width: 260px;
       margin-top: 4px;
 
       & .footer__block-title {
