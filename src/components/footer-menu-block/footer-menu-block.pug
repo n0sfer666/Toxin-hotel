@@ -1,7 +1,0 @@
-include ../headline/headline
-mixin footer-menu-block({title = "change me", links = ["change me"]} = {})
-  .footer-menu-block
-    .footer-menu-block__title
-      +headline({title: title})
-    each val in links
-      a(href="change me", class="footer-menu-block__link") #{val}
