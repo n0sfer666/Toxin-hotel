@@ -34,7 +34,7 @@ class Dropdown {
     if (this.isGuests) {
       const buttons = this.container.querySelectorAll('.js-button');
       $.each(buttons, (index, value) => {
-        if (value.classList.contains('button_deactive')) {
+        if (value.classList.contains('button_inactive')) {
           this.clearButton = new Button(value, index);
         } else {
           this.applyButton = new Button(value, index);
@@ -87,10 +87,10 @@ class Dropdown {
   handleButtonIncDecChange(id, count, totalItems) {
     if (count > 0) {
       $(`[data-id=${id}]`).find('.button-decrement')
-        .addClass('button-decrement_actived');
+        .addClass('button-decrement_active');
     } else {
-      $(`[data-id=${id}]`).find('.button-decrement_actived')
-        .removeClass('button-decrement_actived');
+      $(`[data-id=${id}]`).find('.button-decrement_active')
+        .removeClass('button-decrement_active');
     }
     if (this.isGuests) {
       if (totalItems === 0) {
