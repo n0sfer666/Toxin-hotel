@@ -23,7 +23,7 @@ class DateDropdown {
 
   initButtons() {
     this.clearButton = `
-    <button type="button" class="button button_text button_text_deactive">
+    <button type="button" class="button button_text button_text_inactive">
       <div class="button__wrapper">
         <h3 class="button__title">очистить</h3>
       </div>
@@ -62,7 +62,7 @@ class DateDropdown {
         days: 'MM yyyy',
       },
       onShow: this.handleDatepickerShow,
-      onSelect: !this.isSingle ? this.handleDatecellSelect : {},
+      onSelect: !this.isSingle ? this.handleDateCellSelect : {},
     };
   }
 
@@ -79,7 +79,7 @@ class DateDropdown {
     if (isButtonsCreated) {
       dp.$datepicker.append(this.clearButton);
       dp.$datepicker.append(this.applyButton);
-      const clearButtonElement = this.getInnerElement(dp.$datepicker, '.button_text_deactive');
+      const clearButtonElement = this.getInnerElement(dp.$datepicker, '.button_text_inactive');
       const applyButtonElement = this.getInnerElement(dp.$datepicker, '.button_text_active');
       this.bindDpContext(dp);
       applyButtonElement.on('click', dp.hide);
@@ -97,7 +97,7 @@ class DateDropdown {
     }
   }
 
-  handleDatecellSelect(fd, date, inst) {
+  handleDateCellSelect(fd, date, inst) {
     const isSecondDateSelected = (date.length === 2);
 
     this.$container[0].val(this.getFormattedDate(date[0]));
@@ -113,7 +113,7 @@ class DateDropdown {
 
   bindContext() {
     this.handleDatepickerShow = this.handleDatepickerShow.bind(this);
-    this.handleDatecellSelect = this.handleDatecellSelect.bind(this);
+    this.handleDateCellSelect = this.handleDateCellSelect.bind(this);
   }
 
   bindDpContext(dp) {
