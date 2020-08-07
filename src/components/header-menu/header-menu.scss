@@ -1,4 +1,4 @@
-.header-menu-link {
+.header-menu {
   &__link {
     display: inline-block;
     max-width: 117px;
@@ -65,13 +65,13 @@
     box-shadow: 0 0 5px $dark-shade-50;
     text-align: left;
 
-    & .header-menu-link__link {
+    & .header-menu__link {
       @include fix-overflow;
     }
 
-    & .header-menu-link__link:hover,
-    & .header-menu-link__link:focus,
-    & .header-menu-link__link:hover {
+    & .header-menu__link:hover,
+    & .header-menu__link:focus,
+    & .header-menu__link:hover {
       color: $dark-shade-75;
     }
   }

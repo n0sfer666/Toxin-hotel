@@ -1,0 +1,20 @@
+-
+  const popupItems = [{href: "change_me_1", title: "change_me_1"}]
+  popupItems.push({href: "change_me_2", title: "change_me_2"})
+
+mixin header-menu({type = "link", href = "change me", title = "change me", popup = popupItems } = {})
+  case type
+    when "link"
+      a(href = href, class = "header-menu__link") #{title}
+    when "home"
+      a(href = href, class = "header-menu__link") 
+        span.header-menu__link-text.header-menu__link-text_is-home #{title}
+    when "popup"
+      .header-menu__link-text.header-menu__link-text_is-popup
+        p.header-menu__link-text.header-menu__link-text_is-popup-text #{title}
+        .header-menu__popup
+          each val in popup
+            a(href = val.href, class = "header-menu__link") #{val.title}
+        span.header-menu__arrow-down keyboard_arrow_down
+    default
+      a(href = href, class = "header-menu__link") #{title}
