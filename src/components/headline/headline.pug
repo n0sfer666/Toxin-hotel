@@ -1,10 +1,16 @@
-mixin headline({ level = "3", title = "change me" } = {})
-  case level
-    when "1"
-      h1.h1 #{title}
-    when "2"
-      h2.h2 #{title}
-    when "3"
-      h3.h3 #{title}
-    default
-      h3.h3 #{title}
+mixin headline({ type = "h3", title = "change me" } = {})
+  -
+    const types = ["h1", "h2", "h3"];
+    const classes = ["headline-subsection", "headline-widget", "headline-label"];
+    const isTypeCorrect = [];
+    const correctIndex = []; 
+    types.map((value, index) => {
+      if (value === type) {
+        isTypeCorrect.push(true);
+        correctIndex.push(index);
+      }
+    })
+  if isTypeCorrect[0]
+    #{types[ correctIndex[0] ]}(class = classes[ correctIndex[0] ]) #{title}
+  else
+    p something wrong

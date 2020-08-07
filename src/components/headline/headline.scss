@@ -1,15 +1,15 @@
-.h {
-  &1 {
+.headline {
+  &-subsection {
     @include font-h1;
     @include fix-overflow;
   }
 
-  &2 {
+  &-widget {
     @include font-h2;
     @include fix-overflow;
   }
 
-  &3 {
+  &-label {
     @include font-h3;
     @include fix-overflow;
   }
