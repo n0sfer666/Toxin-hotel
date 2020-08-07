@@ -20,14 +20,14 @@ class ExpandableCheckboxList {
   }
 
   bindHandlers() {
-    this.$instance.on('click', this.handleInctanceClick);
+    this.$instance.on('click', this.handleInstanceClick);
   }
 
   bindContext() {
-    this.handleInctanceClick = this.handleInctanceClick.bind(this);
+    this.handleInstanceClick = this.handleInstanceClick.bind(this);
   }
 
-  handleInctanceClick() {
+  handleInstanceClick() {
     if (!this.isExpanded) {
       this.isExpanded = true;
       this.$instanceContainer.show();
