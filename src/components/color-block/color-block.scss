@@ -39,6 +39,7 @@
     }
 
     &-text {
+      display: block;
       width: 159px;
       @include fix-overflow;
       white-space: nowrap;

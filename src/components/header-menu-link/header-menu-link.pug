@@ -15,7 +15,6 @@ mixin header-menu-link({type = "link", href = "change me", title = "change me", 
         .header-menu-link__popup
           each val in popup
             a(href = val.href, class = "header-menu-link__link") #{val.title}
-            <br>
         span.header-menu-link__arrow-down keyboard_arrow_down
     default
       a(href = href, class = "header-menu-link__link") #{title}
