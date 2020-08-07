@@ -7,7 +7,7 @@ include ../../components/subscription-field/subscription-field
 include ../../components/dropdown/dropdown
 include ../../components/date-dropdown/date-dropdown
 include ../../components/expandable-checkbox-list/expandable-checkbox-list
-include ../../components/condition/condition
+include ../../components/amenity/amenity
 include ../../components/checkbox/checkbox
 include ../../components/radio/radio
 include ../../components/toggle/toggle
@@ -127,9 +127,9 @@ html
             bullets.push("Время прибытия — после 13:00, а выезд до 12:00")
           +bullet-list({titles: bullets})
       section.form-elements__row-section
-        .form-elements__block-condition
-          +condition({icon: "tag_faces", isRowed: true, title: "Комфорт", description: "Шумопоглощающие стены"})
-          +condition({icon: "location_city", isRowed: true, title: "Удобство", description: "Окно в каждой из спален"}) 
+        .form-elements__block-amenity
+          +amenity({icon: "tag_faces", isRowed: true, title: "Комфорт", description: "Шумопоглощающие стены"})
+          +amenity({icon: "location_city", isRowed: true, title: "Удобство", description: "Окно в каждой из спален"}) 
         .form-elements__block-reviews
           -
             const name = "Конcтантин Константинопольский"

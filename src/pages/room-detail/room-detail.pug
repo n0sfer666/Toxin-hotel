@@ -6,7 +6,7 @@ include ../../components/footer/footer
 include ../../components/booking/booking
 
 include ../../components/headline/headline
-include ../../components/condition/condition
+include ../../components/amenity/amenity
 include ../../components/review/review
 include ../../components/bullet-list/bullet-list
 include ../../components/piechart/piechart
@@ -29,30 +29,30 @@ html
           img(class="room-detail__img", src="./img/detail-888-3.jpg")
       section.room-detail__container
         .room-detail__details
-          .room-detail__conditions
+          .room-detail__amenities
             .room-detail__title
               +headline({type: "h2", title: "Сведения о номере"})
             -
-              const conditionConfig1 = {}
-              conditionConfig1.icon = "insert_emoticon"
-              conditionConfig1.title = "Комфорт"
-              conditionConfig1.description = "Шумопоглащающие стены"
-              conditionConfig1.isRowed = true
-            +condition(conditionConfig1)
+              const amenityConfig1 = {}
+              amenityConfig1.icon = "insert_emoticon"
+              amenityConfig1.title = "Комфорт"
+              amenityConfig1.description = "Шумопоглащающие стены"
+              amenityConfig1.isRowed = true
+            +amenity(amenityConfig1)
             -
               const confidionConfig2 = {}
               confidionConfig2.icon = "location_city"
               confidionConfig2.title = "Удобство"
               confidionConfig2.description = "Окно в каждой из спален"
               confidionConfig2.isRowed = true
-            +condition(confidionConfig2)
+            +amenity(confidionConfig2)
             -
-              const conditionConfig3 = {}
-              conditionConfig3.icon = "whatshot"
-              conditionConfig3.title = "Уют"
-              conditionConfig3.description = "Номер оснащён камином"
-              conditionConfig3.isRowed = false
-            +condition(conditionConfig3)
+              const amenityConfig3 = {}
+              amenityConfig3.icon = "whatshot"
+              amenityConfig3.title = "Уют"
+              amenityConfig3.description = "Номер оснащён камином"
+              amenityConfig3.isRowed = false
+            +amenity(amenityConfig3)
 
           .room-detail__piechart
             .room-detail__title
