@@ -19,7 +19,7 @@
     cursor: pointer;
 
     &.button_deactive {
-      & .h3 {
+      & .headline-label {
         color: $dark-shade-50;
       }
   
@@ -30,7 +30,7 @@
     }
     
     &.button_active {
-      & .h3 {
+      & .headline-label {
         color: $purple;
       }
   
@@ -57,7 +57,7 @@
     background-origin: border-box;
     background-clip: content-box, border-box;
 
-    & .h3 {
+    & .headline-label {
       color: $purple;
     }
 
@@ -87,7 +87,7 @@
     border: none;
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
 
-    & .h3 {
+    & .headline-label {
       color: white;
     }
 
@@ -121,7 +121,7 @@
       padding: 0 35px;
     }
 
-    & .h3 {
+    & .headline-label {
       margin-right: 4px;
       color: white;
       font-size: 11px;

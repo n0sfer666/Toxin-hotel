@@ -31,7 +31,7 @@ html
         .room-detail__details
           .room-detail__conditions
             .room-detail__title
-              +headline({level: "2", title: "Сведения о номере"})
+              +headline({type: "h2", title: "Сведения о номере"})
             -
               const conditionConfig1 = {}
               conditionConfig1.icon = "insert_emoticon"
@@ -56,7 +56,7 @@ html
 
           .room-detail__piechart
             .room-detail__title
-              +headline({level: "2", title: "Впечатления от номера"})
+              +headline({type: "h2", title: "Впечатления от номера"})
             -
               const piechartConfig = {}
               piechartConfig.perfect = 130
@@ -66,7 +66,7 @@ html
             +piechart(piechartConfig)
           .room-detail__reviews
             .room-detail__title
-              +headline({level: "2", title: "Впечатления от номера"})
+              +headline({type: "h2", title: "Впечатления от номера"})
             p.room-detail__title-reviews 2 отзыва
             -
               const reviewConfig1 = {}
@@ -87,7 +87,7 @@ html
             +review(reviewConfig2)
           .room-detail__rules
             .room-detail__title
-              +headline({level: "2", title: "Впечатления от номера"})
+              +headline({type: "h2", title: "Впечатления от номера"})
             -
               const bullets = []
               bullets.push("Нельзя с питомцами")
@@ -96,7 +96,7 @@ html
             +bullet-list({titles: bullets})
           .room-detail__cancel
             .room-detail__title
-              +headline({level: "2", title: "Впечатления от номера"})
+              +headline({type: "h2", title: "Впечатления от номера"})
             p Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
 
         .room-detail__booking

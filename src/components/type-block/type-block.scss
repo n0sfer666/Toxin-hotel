@@ -34,13 +34,13 @@
     }
   }
   &__title {
-    & .h1 {
+    & .headline-subsection {
       max-height: 60px;
     }
-    & .h2 {
+    & .headline-widget {
       max-height: 48px;
     }
-    & .h3 {
+    & .headline-label {
       max-height: 15px;
     }
     &_body {

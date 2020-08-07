@@ -3,14 +3,7 @@ include ../headline/headline
 mixin type-block ({mod = "h3", text = "This is a label or CTA text" } = {})
   .type-block
     span(class = `type-block__label-title type-block__label-title_${mod}`) #{mod}
-    case mod
-      when "h1"
-        +headline({level: "2", level: "1", title: text})
-      when "h2"
-        +headline({level: "2", level: "2", title: text})
-      when "h3"
-        +headline({level: "3", title: text})
-      when "body"
-        p.type-block__title_body #{text}
-      default
-        p somthing wrong
+    if (mod !== "body")
+      +headline({type: mod, title: text})
+    else
+      p.type-block__title_body #{text}

@@ -9,7 +9,7 @@ mixin registration({action = "change me"} = {})
   .registration
     form(class="registration__main-form", action=action)
       .registration__title
-        +headline({level: "1", title: "Регистрация аккаунта"})
+        +headline({type: "h1", title: "Регистрация аккаунта"})
       .registration__block-name
         +text-field({placeholder: "Имя"})
         +text-field({placeholder: "Фамилия"})
