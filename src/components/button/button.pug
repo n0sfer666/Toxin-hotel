@@ -1,7 +1,7 @@
 include ../headline/headline
-mixin button({ style = "text", isActived = "true", title = "click me" } = {})
+mixin button({ style = "text", isActive = "true", title = "click me" } = {})
   -
-    const modKey = isActived ? "active" : "deactive";
+    const modKey = isActive ? "active" : "inactive";
     const styles = ["textual", "gradient", "border", "submitting"];
     ["text", "gradient", "border", "submit"].forEach((value, index) => {
       if(value === style) {

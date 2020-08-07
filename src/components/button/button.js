@@ -22,7 +22,7 @@ class Button {
 
   getMod() {
     const isActive = this.instance.classList.contains('button_active');
-    const result = ['deactive'];
+    const result = ['inactive'];
     if (isActive) {
       result.push('active');
     }
