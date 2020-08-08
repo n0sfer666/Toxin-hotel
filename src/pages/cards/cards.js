@@ -1,5 +1,5 @@
 $(document).ready(() => {
-  const $inlineDatePicker = $('.js-inline-datepicker').datepicker({
+  const $inlineDatepicker = $('.js-inline-datepicker').datepicker({
     language: 'ru',
     minDate: new Date(),
     range: true,
