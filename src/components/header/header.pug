@@ -22,7 +22,7 @@ mixin header({isAuth = false, login = "Cosmin Negoita", loginButton = "Войт�
         p.header__login #{login}
       else
         .header__buttons
-          form(class="header__button-signin", action="sign-in.html")
+          form(class="header__button-sign-in", action="sign-in.html")
             +button({style: "border", title: loginButton})
-          form(class="header__button-signup", action="registration.html")
+          form(class="header__button-sign-up", action="registration.html")
             +button({style: "gradient", title: signUpButton})
