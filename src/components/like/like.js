@@ -28,15 +28,13 @@ class LikeButton {
 
   handleElementClick() {
     const isActive = this.element.classList.contains('like_active');
-    let count;
     if (isActive) {
       this.element.classList.remove('like_active');
-      count = Number(this.counter.innerText) - 1;
+      this.counter.innerText = Number(this.counter.innerText) - 1;
     } else {
       this.element.classList.add('like_active');
-      count = Number(this.counter.innerText) + 1;
+      this.counter.innerText = Number(this.counter.innerText) + 1;
     }
-    this.counter.innerText = String(count);
   }
 }
 export default LikeButton;
