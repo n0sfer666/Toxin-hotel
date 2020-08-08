@@ -20,7 +20,7 @@ mixin registration({action = "change me"} = {})
         .registration__block-title
           +headline({title: "День рождения"})
         +masked-text-field({placeholder: "ДД.ММ.ГГГГ"})
-      .registration__block-signin
+      .registration__block-sign-in
         .registration__block-title
           +headline({title: "данные для входа в сервис"})
         +text-field({placeholder: "Email", type: "Email"})
@@ -28,7 +28,7 @@ mixin registration({action = "change me"} = {})
         +toggle()
       .registration__block-registering
         +button({style: "submit", title: "зарегистрироваться"})
-    form(class="registration__signin-form", action="sign-in.html")
-      .registration__block-signup
-        p.registration__text-signup Уже есть аккаунт на Toxin
+    form(class="registration__sign-in-form", action="sign-in.html")
+      .registration__block-sign-up
+        p.registration__text-sign-up Уже есть аккаунт на Toxin
         +button({style: "border", title: "войти"})
