@@ -1,11 +1,11 @@
-mixin piechart({perfect = 130, good = 65, satisfact = 65, disappoint = 0 } = {})
+mixin piechart({perfect = 130, good = 65, satisfactorily = 65, disappoint = 0 } = {})
   -
     const circumference = 364.4;
-    const total = perfect + good + satisfact + disappoint
+    const total = perfect + good + satisfactorily + disappoint
 
     const percent = []
     percent.push(disappoint / total);
-    percent.push(satisfact / total);
+    percent.push(satisfactorily / total);
     percent.push(good / total);
     percent.push(perfect / total);
 
@@ -78,13 +78,13 @@ mixin piechart({perfect = 130, good = 65, satisfact = 65, disappoint = 0 } = {})
     .piechart__legend
       .piechart__legend-line
         .piechart__legend-circle.piechart__legend-circle_perfect
-        p.piechart__raiting Великолепно
+        p.piechart__rating Великолепно
       .piechart__legend-line
         .piechart__legend-circle.piechart__legend-circle_good
-        p.piechart__raiting Хорошо
+        p.piechart__rating Хорошо
       .piechart__legend-line
-        .piechart__legend-circle.piechart__legend-circle_satisfact
-        p.piechart__raiting Удовлетворительно
+        .piechart__legend-circle.piechart__legend-circle_satisfactorily
+        p.piechart__rating Удовлетворительно
       .piechart__legend-line
         .piechart__legend-circle.piechart__legend-circle_disappoint
-        p.piechart__raiting Разочарован
+        p.piechart__rating Разочарован
