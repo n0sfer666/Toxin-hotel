@@ -6,7 +6,7 @@
     box-shadow: 0 0 5px $dark-shade-50;
   }
 
-  &_actived {
+  &_active {
     display: inline-block;
     border-radius: 10px;
 
@@ -52,7 +52,7 @@
   }
 }
 
-.like.like_actived {
+.like.like_active {
   & .like__button {
     position: relative;
     background-color: #fff;

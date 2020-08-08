@@ -27,13 +27,13 @@ class LikeButton {
   }
 
   handleElementClick() {
-    const isActived = this.element.classList.contains('like_actived');
+    const isActive = this.element.classList.contains('like_active');
     let count;
-    if (isActived) {
-      this.element.classList.remove('like_actived');
+    if (isActive) {
+      this.element.classList.remove('like_active');
       count = Number(this.counter.innerText) - 1;
     } else {
-      this.element.classList.add('like_actived');
+      this.element.classList.add('like_active');
       count = Number(this.counter.innerText) + 1;
     }
     this.counter.innerText = String(count);
