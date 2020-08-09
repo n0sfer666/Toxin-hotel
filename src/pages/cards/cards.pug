@@ -32,12 +32,7 @@ html
           +room()
         .cards__block-room
           -
-            const roomsConfig = {}
-            roomsConfig.room = "840"
-            roomsConfig.isLux = false
-            roomsConfig.price = "9900"
-            roomsConfig.rate = 4
-            roomsConfig.reviews = 65
+            const roomsConfig = { room: "840", isLux: false, price: "9900", rate: 4, reviews: 65 }
           +room(roomsConfig)
 
     script(src="main.min.js")

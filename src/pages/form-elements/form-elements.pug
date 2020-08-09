@@ -121,10 +121,7 @@ html
           .form-elements__title
             +headline({title: "bullet list"})
           -
-            const bullets = []
-            bullets.push("Нельзя с питомцами")
-            bullets.push("Без вечеринок и мероприятий")
-            bullets.push("Время прибытия — после 13:00, а выезд до 12:00")
+            const bullets = ["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"]
           +bullet-list({titles: bullets})
       section.form-elements__row-section
         .form-elements__block-amenity

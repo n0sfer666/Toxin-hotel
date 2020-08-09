@@ -63,116 +63,26 @@ html
           +headline({type: "h1", title: "Номера, которые мы для вас подобрали"})
         .search-room__data-source.js-search-room__data-source
           -
-            const rooms = []
+            const rooms = [
+              { room: "888", isLux: true, price: "9990", rate: "5", reviews: 145 },
+              { room: "840", isLux: false, price: "9900", rate: "4", reviews: 65 },
+              { room: "980", isLux: true, price: "8500", rate: "3",  reviews: 33 },
+              { room: "856", isLux: false, price: "7300", rate: "5", reviews: 19 },
+              { room: "740", isLux: false, price: "6000", rate: "4", reviews: 44 },
+              { room: "982", isLux: false, price: "5800", rate: "3", reviews: 56 },
+              { room: "678", isLux: false, price: "5500", rate: "5", reviews: 45 },
+              { room: "450", isLux: false, price: "5300", rate: "4", reviews: 39 },
+              { room: "350", isLux: false, price: "5000", rate: "3", reviews: 77 },
+              { room: "666", isLux: false, price: "5000", rate: "5", reviews: 25 },
+              { room: "444", isLux: false, price: "5000", rate: "3", reviews: 15 },
+              { room: "352", isLux: false, price: "5000", rate: "3", reviews: 55 },
+            ]
 
-            const configApartments888 = {}
-            configApartments888.room = "888"
-            configApartments888.isLux = true
-            configApartments888.price = "9990"
-            configApartments888.rate = "5"
-            configApartments888.reviews = 145
-            rooms.push(configApartments888)
+            const roomsLength = rooms.length
 
-            const configApartments840 = {}
-            configApartments840.room = "840"
-            configApartments840.isLux = false
-            configApartments840.price = "9900"
-            configApartments840.rate = "4"
-            configApartments840.reviews = 65
-            rooms.push(configApartments840)
-
-            const configApartments980 = {}
-            configApartments980.room = "980"
-            configApartments980.isLux = true
-            configApartments980.price = "8500"
-            configApartments980.rate = "3"
-            configApartments980.reviews = 33
-            rooms.push(configApartments980)
-
-            const configApartments856 = {}
-            configApartments856.room = "856"
-            configApartments856.isLux = false
-            configApartments856.price = "7300"
-            configApartments856.rate = "5"
-            configApartments856.reviews = 19
-            rooms.push(configApartments856)
-
-            const configApartments740 = {}
-            configApartments740.room = "740"
-            configApartments740.isLux = false
-            configApartments740.price = "6000"
-            configApartments740.rate = "4"
-            configApartments740.reviews = 44
-            rooms.push(configApartments740)
-
-            const configApartments982 = {}
-            configApartments982.room = "982"
-            configApartments982.isLux = false
-            configApartments982.price = "5800"
-            configApartments982.rate = "3"
-            configApartments982.reviews = 56
-            rooms.push(configApartments982)
-
-            const configApartments678 = {}
-            configApartments678.room = "678"
-            configApartments678.isLux = false
-            configApartments678.price = "5500"
-            configApartments678.rate = "5"
-            configApartments678.reviews = 45
-            rooms.push(configApartments678)
-
-            const configApartments450 = {}
-            configApartments450.room = "450"
-            configApartments450.isLux = false
-            configApartments450.price = "5300"
-            configApartments450.rate = "4"
-            configApartments450.reviews = 39
-            rooms.push(configApartments450)
-
-            const configApartments350 = {}
-            configApartments350.room = "350"
-            configApartments350.isLux = false
-            configApartments350.price = "5000"
-            configApartments350.rate = "3"
-            configApartments350.reviews = 77
-            rooms.push(configApartments350)
-
-            const configApartments666 = {}
-            configApartments666.room = "666"
-            configApartments666.isLux = false
-            configApartments666.price = "5000"
-            configApartments666.rate = "5"
-            configApartments666.reviews = 25
-            rooms.push(configApartments666)
-
-            const configApartments444 = {}
-            configApartments444.room = "444"
-            configApartments444.isLux = false
-            configApartments444.price = "5000"
-            configApartments444.rate = "3"
-            configApartments444.reviews = 15
-            rooms.push(configApartments444)
-
-            const configApartments352 = {}
-            configApartments352.room = "352"
-            configApartments352.isLux = false
-            configApartments352.price = "5000"
-            configApartments352.rate = "3"
-            configApartments352.reviews = 55
-            rooms.push(configApartments352)
-
-            const apartsLength = rooms.length
-            const previousIndex = rooms.length - 1
-
-            for(let i = 0; i < (15 * apartsLength); i += 1) {
-              let randomIndex = Math.floor(Math.random() * apartsLength)
-
-              while(randomIndex === previousIndex) {
-                randomIndex = Math.floor(Math.random() * apartsLength)
-              }
-              previouseIndex = randomIndex
-
-              rooms.push(rooms[randomIndex])
+            for(let i = 0; i < (15 * roomsLength); i += 1) {
+              const index = (-0.5 + Math.random() * 13).toFixed(0);
+              rooms.push(rooms[index])
             }
 
           each value in rooms

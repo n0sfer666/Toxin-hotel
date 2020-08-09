@@ -4,33 +4,22 @@ include ../subscription-field/subscription-field
 include ../footer-menu/footer-menu
 -
   const footerDescription = "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"
-  
-  const footerNavigationLinks = []
-  const footerNavigation = {title: "навигация"}
-  footerNavigationLinks.push("О нас")
-  footerNavigationLinks.push("Новости")
-  footerNavigationLinks.push("Служба поддержки")
-  footerNavigationLinks.push("Услуги")
-  footerNavigation.links = footerNavigationLinks
-
-  const footerAboutUs = {title: "о нас"}
-  const footerAboutUsLinks = []
-  footerAboutUsLinks.push("О сервисе")
-  footerAboutUsLinks.push("Наша команда")
-  footerAboutUsLinks.push("Вакансии")
-  footerAboutUsLinks.push("Инвесторы")
-  footerAboutUs.links = footerAboutUsLinks
-
-  const footerSupport = {title: "служба поддержки"}
-  const footerSupportLinks = []
-  footerSupportLinks.push("Соглашения")
-  footerSupportLinks.push("Сообщества")
-  footerSupportLinks.push("Связь с нами")
-  footerSupport.links = footerSupportLinks
-
-  const footerSubscription = {title: "Подписка"}
-  footerSubscription.description = "Получайте специальные предложения и новости сервиса"
-
+  const footerNavigation = {
+    title: "навигация",
+    links: ["О нас", "Новости", "Служба поддержки", "Услуги"]
+  }
+  const footerAboutUs = {
+    title: "о нас",
+    links: ["О сервисе", "Наша команда", "Вакансии", "Инвесторы"]
+  }
+  const footerSupport = {
+    title: "служба поддержки",
+    links: ["Соглашения",  "Сообщества", "Связь с нами"]
+  }
+  const footerSubscription = {
+    title: "Подписка",
+    description: "Получайте специальные предложения и новости сервиса"
+  }
   const footerCopyright = "отель. Все права зачищены."
 
 

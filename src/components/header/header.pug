@@ -2,13 +2,13 @@ include ../logo/logo
 include ../button/button
 include ../header-menu/header-menu
 -
-  const headerLinks = []
-
-  headerLinks.push({title: "О нас"})
-  headerLinks.push({type: "popup", title: "Услуги"})
-  headerLinks.push({title: "Вакансии"})
-  headerLinks.push({title: "Новости"})
-  headerLinks.push({type: "popup", title: "Соглашения"})
+  const headerLinks = [
+    {title: "О нас"},
+    {type: "popup", title: "Услуги"},
+    {title: "Вакансии"},
+    {title: "Новости"},
+    {type: "popup", title: "Соглашения"}
+  ]
 
 mixin header({isAuth = false, login = "Cosmin Negoita", loginButton = "Войти", signUpButton = "Зарегистрироваться", links = headerLinks } = {})
   .header
