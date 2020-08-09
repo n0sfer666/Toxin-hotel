@@ -57,14 +57,14 @@ class Dropdown {
     this.handleButtonIncDecChange = this.handleButtonIncDecChange.bind(this);
     this.handleApplyButtonClick = this.handleApplyButtonClick.bind(this);
     this.handleClearButtonClick = this.handleClearButtonClick.bind(this);
-    this.handleButtonIncDecChange = this.handleButtonIncDecChange.bind(this);
+    this.handleButtonIncDecClick = this.handleButtonIncDecClick.bind(this);
   }
 
   bindHandlers() {
     if (this.isGuests) {
       this.clearButton.onClick(this.handleClearButtonClick);
+      this.$iqMenu.on('click', this.handleApplyButtonClick);
     }
-    this.$iqMenu.on('click', this.handleApplyButtonClick);
   }
 
   handleClearButtonClick() {
@@ -103,81 +103,64 @@ class Dropdown {
   }
 
   handleButtonIncDecClick(itemCount, totalItems) {
-    let text;
-
     const isGuests = (
       itemCount.adults !== undefined
       || itemCount.babies !== undefined
       || itemCount.children !== undefined
     );
 
-    if (totalItems === 0) {
-      if (isGuests) {
-        text = 'Сколько гостей';
-      }
-    }
-
     const guests = itemCount.adults + itemCount.children;
     const { babies } = itemCount;
     const { bedrooms } = itemCount;
     const { beds } = itemCount;
 
-    if (guests === 1) {
-      text = `${guests} гость`;
-    }
-    if (guests > 1 && guests < 5) {
-      text = `${guests} гостя`;
-    }
-    if (guests >= 5) {
-      text = `${guests} гостей`;
-    }
-    if (guests === 0 && totalItems !== 0) {
-      text = '';
-    }
+    const countArr = isGuests
+      ? [guests, babies]
+      : [bedrooms, beds];
+    const indexArr = isGuests
+      ? [this.getIndex(guests), this.getIndex(babies)]
+      : [this.getIndex(bedrooms), this.getIndex(beds)];
+    const textArr = isGuests
+      ? [['гость', 'гостя', 'гостей'],
+        ['младенец', 'младенца', 'младенцев']]
+      : [['спальня', 'спальни', 'спален'],
+        ['кровать', 'кровати', 'кроватей']];
 
-    if (babies === 1) {
-      text += guests > 0
-        ? `, ${babies} младенец`
-        : `${babies} младенец`;
+    if (totalItems === 0) {
+      return 'Сколько гостей';
+    } else {
+      return this.getText(countArr, textArr, indexArr);
     }
-    if (babies > 1 && babies < 5) {
-      text += guests > 0
-        ? `, ${babies} младенца`
-        : `${babies} младенца`;
-    }
-    if (babies >= 5) {
-      text += guests > 0
-        ? `, ${babies} младенцев`
-        : `${babies} младенцев`;
-    }
+  }
 
-    if (bedrooms === 1) {
-      text = `${bedrooms} спальня`;
+  getIndex(count) {
+    if (count === 1) {
+      return 0;
     }
-    if (bedrooms > 1 && bedrooms < 5) {
-      text = `${bedrooms} спальни`;
+    if (count > 1 && count < 5) {
+      return 1;
     }
-    if (bedrooms >= 5) {
-      text = `${bedrooms} спален`;
+    if (count >= 5) {
+      return 2;
     }
+  }
 
-    if (beds === 1) {
-      text += bedrooms !== 0
-        ? `, ${beds} кровать...`
-        : `${beds} кровать...`;
-    }
-    if (beds > 1 && beds < 5) {
-      text += bedrooms !== 0
-        ? `, ${beds} кровати...`
-        : `${beds} кровати...`;
-    }
-    if (beds >= 5) {
-      text += bedrooms !== 0
-        ? `, ${beds} кроватей...`
-        : `${+beds} кроватей...`;
-    }
+  getString(count, text, index) {
+    return `${count} ${text[index]}`;
+  }
 
-    return text;
+  getText(countArr, textArr, indexArr) {
+    const strFirst = this.getString(countArr[0], textArr[0], indexArr[0]);
+    const strSecond = this.getString(countArr[1], textArr[1], indexArr[1]);
+    if (countArr[0] !== 0) {
+      if (countArr[1] !== 0) {
+        return `${strFirst}, ${strSecond}`;
+      } else {
+        return `${strFirst}`;
+      }
+    } else if (countArr[1] !== 0) {
+      return `${strSecond}`;
+    }
   }
 }
 

@@ -26,6 +26,7 @@
     "object-shorthand": ["off", "always"],
     "no-param-reassign": ["warn"],
     "array-callback-return": ["warn"],
-    "no-new": ["warn"]
+    "no-new": ["warn"],
+    "consistent-return": ["warn"]
   }
 }
