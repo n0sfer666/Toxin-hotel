@@ -34,10 +34,11 @@ class Dropdown {
     if (this.isGuests) {
       const buttons = this.container.querySelectorAll('.js-button');
       $.each(buttons, (index, value) => {
-        if (value.classList.contains('button_inactive')) {
-          this.clearButton = new Button(value, index);
+        const button = new Button(value, index);
+        if (button.mod === 'inactive') {
+          this.clearButton = button;
         } else {
-          this.applyButton = new Button(value, index);
+          this.applyButton = button;
         }
       });
       this.clearButton.setHide();
@@ -61,7 +62,7 @@ class Dropdown {
 
   bindHandlers() {
     if (this.isGuests) {
-      $(this.clearButton.instance).on('click', this.handleClearButtonClick);
+      this.clearButton.onClick(this.handleClearButtonClick);
     }
     this.$iqMenu.on('click', this.handleApplyButtonClick);
   }

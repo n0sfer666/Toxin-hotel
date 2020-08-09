@@ -40,6 +40,10 @@ class Button {
   setShow() {
     $(this.instance).show();
   }
+
+  onClick(callback) {
+    this.instance.addEventListener('click', callback);
+  }
 }
 
 export default Button;
