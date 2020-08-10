@@ -1,4 +1,5 @@
 import 'air-datepicker';
+import Button from '../button/button';
 
 class DateDropdown {
   constructor(item, index, isSingle, bookingInstance) {
@@ -22,18 +23,27 @@ class DateDropdown {
   }
 
   initButtons() {
-    this.clearButton = `
-    <button type="button" class="button button_text button_text_inactive">
-      <div class="button__wrapper">
-        <h3 class="button__title">очистить</h3>
-      </div>
-    </button>`;
-    this.applyButton = `
-      <button type="button" class="button button_text button_text_active">
-        <div class="button__wrapper">
-          <h3 class="button__title">применить</h3>
-        </div>
-      </button>`;
+    const buttons = [];
+    $.each(this.$container[0].siblings(), (key, element) => {
+      if (element.classList.contains('js-button')) {
+        buttons.push(new Button(element, key));
+        element.remove();
+      }
+    });
+    if (!this.isSingle) {
+      $.each(this.$container[1].siblings(), (key, element) => {
+        if (element.classList.contains('js-button')) {
+          element.remove();
+        }
+      });
+    }
+    buttons.map((button) => {
+      if (button.mod === 'active') {
+        this.applyButton = button;
+      } else {
+        this.clearButton = button;
+      }
+    });
   }
 
   initDatepicker() {
@@ -77,13 +87,11 @@ class DateDropdown {
   handleDatepickerShow(dp) {
     const isButtonsCreated = dp.$datepicker.find('button').html() === undefined;
     if (isButtonsCreated) {
-      dp.$datepicker.append(this.clearButton);
-      dp.$datepicker.append(this.applyButton);
-      const clearButtonElement = this.getInnerElement(dp.$datepicker, '.button_text_inactive');
-      const applyButtonElement = this.getInnerElement(dp.$datepicker, '.button_text_active');
+      dp.$datepicker.append(this.clearButton.instance);
+      dp.$datepicker.append(this.applyButton.instance);
       this.bindDpContext(dp);
-      applyButtonElement.on('click', dp.hide);
-      clearButtonElement.on('click', this.handleClearButtonClick);
+      this.applyButton.onClick(dp.hide);
+      this.clearButton.onClick(this.handleClearButtonClick);
     }
   }
 
@@ -97,7 +105,7 @@ class DateDropdown {
     }
   }
 
-  handleDateCellSelect(fd, date, inst) {
+  handleDateCellSelect(fd, date) {
     const isSecondDateSelected = (date.length === 2);
 
     this.$container[0].val(this.getFormattedDate(date[0]));
