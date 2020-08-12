@@ -16,7 +16,7 @@ const pages = [
   'room-detail',
 ];
 
-pages.forEach(page => {
+pages.forEach((page) => {
   plugins.push(
     new HtmlWebpackPlugin({
       filename: `${page}.html`,
