@@ -13,18 +13,18 @@ const pages = [
   'registration',
   'sign-in',
   'search-room',
-  'room-detail'
-]
+  'room-detail',
+];
 
-pages.forEach(element => {
+pages.forEach(page => {
   plugins.push(
     new HtmlWebpackPlugin({
-      filename: `${element}.html`,
-      template: `./src/pages/${element}/${element}.pug`,
-      inject: false
-    })
-  )
-})
+      filename: `${page}.html`,
+      template: `./src/pages/${page}/${page}.pug`,
+      inject: false,
+    }),
+  );
+});
 
 plugins.push(
   new CopyWebpackPlugin([
@@ -37,7 +37,7 @@ plugins.push(
 
     noUiSlider: 'nouislider',
     wNumb: 'wnumb',
-  })
+  }),
 );
 
 
@@ -92,7 +92,7 @@ module.exports = (env, options) => ({
         use: ['pug-loader'],
       },
       {
-        test: /\.(ttf|eot|svg|woff|woff2)$/,  
+        test: /\.(ttf|eot|svg|woff|woff2)$/,
         loader: 'file-loader',
         options: {
           name: 'fonts/[name].[ext]',
