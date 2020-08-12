@@ -30,10 +30,7 @@ class Pagination {
   }
 
   initDataSource(dataSource) {
-    const demoSource = [];
-    for (let i = 0; i < 200; i += 1) {
-      demoSource.push(i);
-    }
+    const demoSource = Array(200).fill((Math.random()).toFixed(0));
     this.dataSource = dataSource.length > 1
       ? dataSource
       : demoSource;
