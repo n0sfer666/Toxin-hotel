@@ -44,6 +44,32 @@ class Button {
   onClick(callback) {
     this.instance.addEventListener('click', callback);
   }
+
+  checkOnClearButton() {
+    const isText = this.type === 'textual';
+    const isInactive = this.mod === 'inactive';
+    const text = this.instance.querySelector('.headline-label').innerText;
+
+    const isClearButton = isText && isInactive && text === 'очистить';
+    if (isClearButton) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  checkOnApplyButton() {
+    const isText = this.type === 'textual';
+    const isInactive = this.mod === 'active';
+    const text = this.instance.querySelector('.headline-label').innerText;
+
+    const isApplyButton = isText && isInactive && text === 'применить';
+    if (isApplyButton) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
 
 export default Button;
