@@ -80,7 +80,7 @@ html
 
             const roomsLength = rooms.length
 
-            for(let i = 0; i < (15 * roomsLength); i += 1) {
+            while(rooms.length < 180) {
               const index = (-0.5 + Math.random() * 13).toFixed(0);
               rooms.push(rooms[index])
             }
