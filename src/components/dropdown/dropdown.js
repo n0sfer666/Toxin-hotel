@@ -110,9 +110,7 @@ class Dropdown {
     );
 
     const guests = itemCount.adults + itemCount.children;
-    const { babies } = itemCount;
-    const { bedrooms } = itemCount;
-    const { beds } = itemCount;
+    const { babies, bedrooms, beds } = itemCount;
 
     const countArr = isGuests
       ? [guests, babies]
