@@ -1,0 +1,12 @@
+include ../headline/headline
+mixin button-clear-apply({isApply = true} = {})
+  -
+    const titleButton = isApply
+      ? "применить"
+      : "очистить";
+    const classButton = isApply
+      ? "button-clear-apply button-apply js-button-apply"
+      : "button-clear-apply button-clear js-button-clear";
+  button(class = classButton)
+    .button-clear-apply__wrapper
+      +headline({title: titleButton})
