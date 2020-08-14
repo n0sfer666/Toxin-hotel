@@ -19,7 +19,7 @@ class DateDropdown {
       this.$container = [$(item[0]), $(item[1])];
       this.parentElement = item[0].parentElement;
     } else {
-      this.$container = [$(item)];
+      this.$container = $(item);
       this.parentElement = item.parentElement;
     }
   }
@@ -34,9 +34,13 @@ class DateDropdown {
   }
 
   initDatepicker() {
-    this.$container.map((element) => {
-      element.datepicker(this.getConfig()).data('datepicker');
-    });
+    if (Array.isArray(this.$container)) {
+      this.instance = this.$container[0].datepicker(this.getConfig()).data('datepicker');
+      this.handleDatepickerRightClick = this.handleDatepickerRightClick.bind(this);
+      this.$container[1].on('click', this.handleDatepickerRightClick);
+    } else {
+      this.instance = this.$container.datepicker(this.getConfig()).data('datepicker');
+    }
   }
 
   getInnerElement(mainElement, innerSelector) {
@@ -83,13 +87,14 @@ class DateDropdown {
   }
 
   handleClearButtonClick(dp) {
-    dp.clear();
-    if (this.isSingle) {
-      this.$container[0].val('');
+    if (Array.isArray(this.$container)) {
+      this.$container.map((container) => {
+        container.val('');
+      });
     } else {
-      this.$container[0].val('');
-      this.$container[1].val('');
+      this.$container.val('');
     }
+    dp.clear();
   }
 
   handleDateCellSelect(fd, date) {
@@ -104,6 +109,10 @@ class DateDropdown {
         this.bookingInstance.getDaysInAndCalculate(daysIn);
       }
     }
+  }
+
+  handleDatepickerRightClick() {
+    this.instance.show();
   }
 
   bindContext() {
