@@ -1,5 +1,5 @@
 include ../headline/headline
-include ../button/button
+include ../button-clear-apply/button-clear-apply
 
 mixin date-dropdown({isSingle = true, label = "Даты пербывания в отеле" } = {})
   if isSingle
@@ -7,8 +7,8 @@ mixin date-dropdown({isSingle = true, label = "Даты пербывания в 
       .date-dropdown__label
         +headline({title: label})
       input(type="text", class = 'date-dropdown__filter js-date-dropdown__filter', placeholder = "Выберите даты пребывания")
-      +button({isActive: false, title: "очистить"})
-      +button({title: "применить"})
+      +button-clear-apply({isApply: false})
+      +button-clear-apply()
   else
     .date-dropdown
       .date-dropdown__container
@@ -16,11 +16,9 @@ mixin date-dropdown({isSingle = true, label = "Даты пербывания в 
           .date-dropdown__label
             +headline({title: label[0]})
           input(type="text", class = 'date-dropdown__input-left js-date-dropdown__input-left', placeholder = "ДД.ММ.ГГГГ")
-          +button({isActive: false, title: "очистить"})
-          +button({title: "применить"})
+          +button-clear-apply({isApply: false})
+          +button-clear-apply()
         .date-dropdown__datepicker
           .date-dropdown__label
             +headline({title: label[1]})
           input(type="text", class = 'date-dropdown__input-right js-date-dropdown__input-right', placeholder = "ДД.ММ.ГГГГ")
-          +button({isActive: false, title: "очистить"})
-          +button({title: "применить"})

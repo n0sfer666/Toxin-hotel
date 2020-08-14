@@ -1,5 +1,5 @@
 import 'air-datepicker';
-import Button from '../button/button';
+import ButtonClearApply from '../button-clear-apply/button-clear-apply';
 
 class DateDropdown {
   constructor(item, index, isSingle, bookingInstance) {
@@ -17,33 +17,20 @@ class DateDropdown {
   initContainer(item) {
     if (Array.isArray(item)) {
       this.$container = [$(item[0]), $(item[1])];
+      this.parentElement = item[0].parentElement;
     } else {
       this.$container = [$(item)];
+      this.parentElement = item.parentElement;
     }
   }
 
   initButtons() {
-    const buttons = [];
-    $.each(this.$container[0].siblings(), (key, element) => {
-      if (element.classList.contains('js-button')) {
-        buttons.push(new Button(element, key));
-        element.remove();
-      }
-    });
-    if (!this.isSingle) {
-      $.each(this.$container[1].siblings(), (key, element) => {
-        if (element.classList.contains('js-button')) {
-          element.remove();
-        }
-      });
-    }
-    buttons.map((button) => {
-      if (button.mod === 'active') {
-        this.applyButton = button;
-      } else {
-        this.clearButton = button;
-      }
-    });
+    const buttonClear = this.parentElement.querySelector('.js-button-clear');
+    const buttonApply = this.parentElement.querySelector('.js-button-apply');
+    this.clearButton = new ButtonClearApply(buttonClear, 0);
+    this.applyButton = new ButtonClearApply(buttonApply, 0);
+    buttonClear.remove();
+    buttonApply.remove();
   }
 
   initDatepicker() {
