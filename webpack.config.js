@@ -21,7 +21,6 @@ pages.forEach((page) => {
     new HtmlWebpackPlugin({
       filename: `${page}.html`,
       template: `./src/pages/${page}/${page}.pug`,
-      inject: false,
     }),
   );
 });
