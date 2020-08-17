@@ -1,21 +1,12 @@
-include ../../components/head/head
+extends ../../components/template/template
 
-include ../../components/header/header
-include ../../components/footer/footer
+block append head
+  title Registration
 
-include ../../components/registration/registration
-
-
-doctype html
-html
-  +head({title: "Registration"})
+block append body
   body.registration-page
-    header.registration-page__header
-      +header()
 
-    main.registration-page__content
-      section.registration-page__container
-        +registration
-
-    footer.registration-page__footer
-      +footer()
+block content
+  main.registration-page__content
+    section.registration-page__container
+      +registration

@@ -1,23 +1,14 @@
-include ../../components/head/head
+extends ../../components/template/template
 
-include ../../components/header/header
-include ../../components/footer/footer
+block append head
+  title Landing Page
 
-include ../../components/find-room/find-room
-
-
-doctype html
-html
-  +head({title: "Landing Page"})
+block append body
   body.landing
-    header.landing__header
-      +header(config)
 
-    main.landing__content
-      section.landing__find-apartment
-        +find-room()
-      .landing__description
-        p.landing__description-text Лучшие номера для вашей работы, отдыха и просто вдохновения
-
-    footer.landing__footer
-      +footer(config)
+block content
+  main.landing__content
+    section.landing__find-apartment
+      +find-room()
+    .landing__description
+      p.landing__description-text Лучшие номера для вашей работы, отдыха и просто вдохновения

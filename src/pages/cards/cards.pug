@@ -1,36 +1,34 @@
-include ../../components/head/head
-include ../../components/logo/logo
+extends ../../components/template/template
 
-include ../../components/find-room/find-room
-include ../../components/registration/registration
-include ../../components/booking/booking
-include ../../components/sign-in/sign-in
-include ../../components/room/room
-
-doctype html
-html
-  +head({title: "Cards"})
+block append head
+  title Cards
+block append body
   body.cards
-    +logo()
-    main.cards__container
-      section.cards__section
-        .cards__block
-          +find-room()
-        .cards__block
-          +registration()
+block header
 
-      section.cards__section
-        .cards__block
-          +booking()
-        .cards__block
-          +sign-in()
+block content
+  +logo()
+  main.cards__container
+    section.cards__section
+      .cards__block
+        +find-room()
+      .cards__block
+        +registration()
 
-      section.cards__section.cards__section_320-px
-        .cards__block
-          .inline-datepicker.js-inline-datepicker
-        .cards__block-room
-          +room()
-        .cards__block-room
-          -
-            const roomsConfig = { room: "840", isLux: false, price: "9900", rate: 4, reviews: 65 }
-          +room(roomsConfig)
+    section.cards__section
+      .cards__block
+        +booking()
+      .cards__block
+        +sign-in()
+
+    section.cards__section.cards__section_320-px
+      .cards__block
+        .inline-datepicker.js-inline-datepicker
+      .cards__block-room
+        +room()
+      .cards__block-room
+        -
+          const roomsConfig = { room: "840", isLux: false, price: "9900", rate: 4, reviews: 65 }
+        +room(roomsConfig)
+
+block footer

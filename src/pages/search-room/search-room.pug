@@ -1,95 +1,78 @@
-include ../../components/head/head
+extends ../../components/template/template
 
-include ../../components/header/header
-include ../../components/footer/footer
+block append head
+  title Search-room
 
-include ../../components/room/room
-
-include ../../components/headline/headline
-include ../../components/date-dropdown/date-dropdown
-include ../../components/dropdown/dropdown
-include ../../components/expandable-checkbox-list/expandable-checkbox-list
-include ../../components/range-slider/range-slider
-include ../../components/checkbox/checkbox
-include ../../components/rich-checkbox/rich-checkbox
-
-
-doctype html
-html
-  +head({title: "Search-room"})
+block append body
   body.search-room
-    header.search-room__header
-      +header()
+
+block content
+  main.search-room__content
+    aside.search-room__menu
+      +date-dropdown()
       
-    main.search-room__content
-      aside.search-room__menu
-        +date-dropdown()
-        
+      .search-room__menu-title
+        +headline({title: "гости"})
+      +dropdown()
+
+      +range-slider({title: "Диапазон цены"})
+      p.search-room__description Стоимость за сутки пребывания в номере
+
+      .search-room__checkboxs
         .search-room__menu-title
-          +headline({title: "гости"})
-        +dropdown()
+          +headline({title: "checkbox buttons"})
+        +checkbox({title: "Можно курить"})
+        +checkbox({title: "Можно с питомцами", isChecked: true})
+        +checkbox({title: "Можно пригласить гостей (до 10 человек)", isChecked: true})
 
-        +range-slider({title: "Диапазон цены"})
-        p.search-room__description Стоимость за сутки пребывания в номере
+      .search-room__menu-title
+        +headline({title: "Доступность"})
+      -
+        const configRichCheckbox1 = {}
+        configRichCheckbox1.title = "Широкий коридор"
+        configRichCheckbox1.description = "Ширина коридоров в номере не менее 91см"
+      +rich-checkbox(configRichCheckbox1)
+      -
+        const configRichCheckbox2 = {}
+        configRichCheckbox2.title = "Помощник для инвалидов"
+        configRichCheckbox2.description = "На 1 этаже вас встретит специалист и проводит до номера."
+      +rich-checkbox(configRichCheckbox2)
 
-        .search-room__checkboxs
-          .search-room__menu-title
-            +headline({title: "checkbox buttons"})
-          +checkbox({title: "Можно курить"})
-          +checkbox({title: "Можно с питомцами", isChecked: true})
-          +checkbox({title: "Можно пригласить гостей (до 10 человек)", isChecked: true})
+      .search-room__menu-title.search-room__menu-title_big
+        +headline({title: "удобства номера"})
+      +dropdown({isGuests: false})
 
-        .search-room__menu-title
-          +headline({title: "Доступность"})
+      +expandable-checkbox-list()
+
+    section.search-room__result
+      .search-room__result-title
+        +headline({type: "h1", title: "Номера, которые мы для вас подобрали"})
+      .search-room__data-source.js-search-room__data-source
         -
-          const configRichCheckbox1 = {}
-          configRichCheckbox1.title = "Широкий коридор"
-          configRichCheckbox1.description = "Ширина коридоров в номере не менее 91см"
-        +rich-checkbox(configRichCheckbox1)
-        -
-          const configRichCheckbox2 = {}
-          configRichCheckbox2.title = "Помощник для инвалидов"
-          configRichCheckbox2.description = "На 1 этаже вас встретит специалист и проводит до номера."
-        +rich-checkbox(configRichCheckbox2)
+          const rooms = [
+            { room: "888", isLux: true, price: "9990", rate: "5", reviews: 145 },
+            { room: "840", isLux: false, price: "9900", rate: "4", reviews: 65 },
+            { room: "980", isLux: true, price: "8500", rate: "3",  reviews: 33 },
+            { room: "856", isLux: false, price: "7300", rate: "5", reviews: 19 },
+            { room: "740", isLux: false, price: "6000", rate: "4", reviews: 44 },
+            { room: "982", isLux: false, price: "5800", rate: "3", reviews: 56 },
+            { room: "678", isLux: false, price: "5500", rate: "5", reviews: 45 },
+            { room: "450", isLux: false, price: "5300", rate: "4", reviews: 39 },
+            { room: "350", isLux: false, price: "5000", rate: "3", reviews: 77 },
+            { room: "666", isLux: false, price: "5000", rate: "5", reviews: 25 },
+            { room: "444", isLux: false, price: "5000", rate: "3", reviews: 15 },
+            { room: "352", isLux: false, price: "5000", rate: "3", reviews: 55 },
+          ]
 
-        .search-room__menu-title.search-room__menu-title_big
-          +headline({title: "удобства номера"})
-        +dropdown({isGuests: false})
+          while(rooms.length < 180) {
+            const index = (-0.5 + Math.random() * 13).toFixed(0);
+            rooms.push(rooms[index])
+          }
 
-        +expandable-checkbox-list()
+        each value in rooms
+          .search-room__room.js-search-room__room
+            +room(value)
 
-      section.search-room__result
-        .search-room__result-title
-          +headline({type: "h1", title: "Номера, которые мы для вас подобрали"})
-        .search-room__data-source.js-search-room__data-source
-          -
-            const rooms = [
-              { room: "888", isLux: true, price: "9990", rate: "5", reviews: 145 },
-              { room: "840", isLux: false, price: "9900", rate: "4", reviews: 65 },
-              { room: "980", isLux: true, price: "8500", rate: "3",  reviews: 33 },
-              { room: "856", isLux: false, price: "7300", rate: "5", reviews: 19 },
-              { room: "740", isLux: false, price: "6000", rate: "4", reviews: 44 },
-              { room: "982", isLux: false, price: "5800", rate: "3", reviews: 56 },
-              { room: "678", isLux: false, price: "5500", rate: "5", reviews: 45 },
-              { room: "450", isLux: false, price: "5300", rate: "4", reviews: 39 },
-              { room: "350", isLux: false, price: "5000", rate: "3", reviews: 77 },
-              { room: "666", isLux: false, price: "5000", rate: "5", reviews: 25 },
-              { room: "444", isLux: false, price: "5000", rate: "3", reviews: 15 },
-              { room: "352", isLux: false, price: "5000", rate: "3", reviews: 55 },
-            ]
-
-            while(rooms.length < 180) {
-              const index = (-0.5 + Math.random() * 13).toFixed(0);
-              rooms.push(rooms[index])
-            }
-
-          each value in rooms
-            .search-room__room.js-search-room__room
-              +room(value)
-
-        .search-room__data-output.js-search-room__data-output
-        .search-room__pagination
-          .pagination.js-pagination
-
-    footer.search-room__footer
-      +footer()
+      .search-room__data-output.js-search-room__data-output
+      .search-room__pagination
+        .pagination.js-pagination

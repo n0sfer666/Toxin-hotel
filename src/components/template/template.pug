@@ -1,6 +1,35 @@
 include ../header/header
 include ../footer/footer
 
+include ../amenity/amenity
+include ../booking/booking
+include ../find-room/find-room
+include ../room/room
+include ../registration/registration
+include ../sign-in/sign-in
+
+include ../logo/logo
+include ../headline/headline
+include ../color-block/color-block
+include ../type-block/type-block
+include ../text-field/text-field
+include ../masked-text-field/masked-text-field
+include ../subscription-field/subscription-field
+include ../dropdown/dropdown
+include ../date-dropdown/date-dropdown
+include ../expandable-checkbox-list/expandable-checkbox-list
+include ../checkbox/checkbox
+include ../radio/radio
+include ../toggle/toggle
+include ../like/like
+include ../rate/rate
+include ../button/button
+include ../rich-checkbox/rich-checkbox
+include ../range-slider/range-slider
+include ../bullet-list/bullet-list
+include ../review/review
+include ../piechart/piechart
+
 doctype html
 html
   head
@@ -16,13 +45,14 @@ html
       meta(name="msapplication-TileColor", content="#da532c")
       meta(name="theme-color", content="#ffffff")
       script(src="main.min.js")
-  body
-    header
-      block header
-        +header()
+  block body
+    body
+      header
+        block header
+          +header()
 
-    block content
+      block content
 
-    footer
-      block footer
-        +footer()
+      footer
+        block footer
+          +footer()

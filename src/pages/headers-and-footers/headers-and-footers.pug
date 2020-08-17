@@ -1,12 +1,9 @@
-include ../../components/head/head
+extends ../../components/template/template
 
-include ../../components/logo/logo
-include ../../components/header/header
-include ../../components/footer/footer
+block append head
+  title Headers & Footers
 
-doctype html
-html
-  +head({title: "Headers & Footers"})
+block body
   body.header-footer
     +logo()
     header.header-footer__header
@@ -22,50 +19,45 @@ html
             {title: "Documentation"}
           ]
         }
-
-      +header(headerConfig)
+      block header
+        +header(headerConfig)
 
     header.header-footer__header
       -
         headerConfig.isAuth = true
         headerConfig.login = "Cosmin Negoita"
-
-      +header(headerConfig)
-
-    footer.header-footer__footer
-      -
-        const footerConfig = {}
-        footerConfig.description = "Lopx ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis."
-        
-        footerConfig.navigation = {
-          title: "navigation",
-          links: ["About Us", "News", "Support", "Products"]
-        }
-
-        footerConfig.aboutUs = {
-          title: "about us",
-          links: ["Who we are", "Our teem", "Careers", "Investors"]
-        }
-
-        footerConfig.support = {
-          title: "support",
-          links: ["Documentation", "Community", "Get in Touch"]
-        }
-
-        footerConfig.subscription = {
-          title: "subscribe to our newsletter",
-          description: "Receive our latest news and promotions in your inbox!",
-          placeholder: "Your email address"
-        }
-
-        footerConfig.copyright = "UI Kit. All rights reserved."
-
-      +footer(footerConfig)
+      block header
+        +header(headerConfig)
+    
+    block content
 
     footer.header-footer__footer
       -
-        const footerConfig2 = {}
-        footerConfig2.isShort = true
-        footerConfig2.description = "Lopx ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis."
-
-      +footer(footerConfig2)
+        const footerConfig = {
+          description: "Lopx ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.",
+          navigation: {
+            title: "navigation",
+            links: ["About Us", "News", "Support", "Products"]
+          },
+          aboutUs: {
+            title: "about us",
+            links: ["Who we are", "Our teem", "Careers", "Investors"]
+          },
+          support: {
+            title: "support",
+            links: ["Documentation", "Community", "Get in Touch"]
+          },
+          subscription: {
+            title: "subscribe to our newsletter",
+            description: "Receive our latest news and promotions in your inbox!",
+            placeholder: "Your email address"
+          },
+          copyright: "UI Kit. All rights reserved."
+        }
+      block footer
+        +footer(footerConfig)
+    footer.header-footer__footer
+      -
+        footerConfig.isShort = true
+      block footer
+        +footer(footerConfig)

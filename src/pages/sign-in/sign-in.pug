@@ -1,21 +1,12 @@
-include ../../components/head/head
+extends ../../components/template/template
 
-include ../../components/header/header
-include ../../components/footer/footer
+block append head
+  title Sign-in
 
-include ../../components/sign-in/sign-in
-
-
-doctype html
-html
-  +head({title: "Sign-in"})
+block append body
   body.sign-in-page
-    header.sign-in-page__header
-      +header()
-      
-    main.sign-in-page__content
-      section.sign-in-page__container
-        +sign-in()
 
-    footer.sign-in-page__footer
-      +footer()
+block content
+  main.sign-in-page__content
+    section.sign-in-page__container
+      +sign-in()
