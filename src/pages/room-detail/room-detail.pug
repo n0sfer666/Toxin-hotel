@@ -20,42 +20,14 @@ block append content
         .room-detail__amenities
           .room-detail__title
             +headline({type: "h2", title: "Сведения о номере"})
-          -
-            const amenityConfig1 = {
-              icon: "insert_emoticon",
-              title: "Комфорт",
-              description: "Шумопоглащающие стены",
-              isRowed: true
-            }
-          +amenity(amenityConfig1)
-          -
-            const amenityConfig2 = {
-              icon: "location_city",
-              title: "Удобство",
-              description: "Окно в каждой из спален",
-              isRowed: true
-            }
-          +amenity(amenityConfig2)
-          -
-            const amenityConfig3 = {
-              icon: "whatshot",
-              title: "Уют",
-              description: "Номер оснащён камином",
-              isRowed: false
-            }
-          +amenity(amenityConfig3)
+          +amenity({ icon: "insert_emoticon", title: "Комфорт", description: "Шумопоглащающие стены", isRowed: true})
+          +amenity({icon: "location_city", title: "Удобство", description: "Окно в каждой из спален", isRowed: true})
+          +amenity({icon: "whatshot", title: "Уют", description: "Номер оснащён камином", isRowed: false})
 
         .room-detail__piechart
           .room-detail__title
             +headline({type: "h2", title: "Впечатления от номера"})
-          -
-            const piechartConfig = {
-              perfect: 130,
-              good: 65,
-              satisfactorily: 65,
-              disappoint: 0
-            }
-          +piechart(piechartConfig)
+          +piechart({perfect: 130, good: 65, satisfactorily: 65, disappoint: 0})
         .room-detail__reviews
           .room-detail__title
             +headline({type: "h2", title: "Впечатления от номера"})
