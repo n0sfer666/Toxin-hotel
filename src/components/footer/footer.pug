@@ -25,7 +25,7 @@ include ../footer-menu/footer-menu
 
 mixin footer({isShort = false, description = footerDescription, navigation = footerNavigation, aboutUs = footerAboutUs, support = footerSupport, subscription = footerSubscription, copyright = footerCopyright } = {})
   if isShort
-    .footer.footer_short
+    footer.footer.footer_short
       .footer__logo
         +logo({isFull: true})
       p.footer__description.footer__description_short #{description}
@@ -34,7 +34,7 @@ mixin footer({isShort = false, description = footerDescription, navigation = foo
         a(href = "https://www.facebook.com/", class = "footer__icon footer__icon-facebook")
         a(href = "https://www.instagram.com/", class = "footer__icon footer__icon-instagram")
   else
-    .footer.footer_full
+    footer.footer.footer_full
       .footer__block
         .footer__logo
           +logo({isFull: true})

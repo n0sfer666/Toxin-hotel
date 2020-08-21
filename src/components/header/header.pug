@@ -11,7 +11,7 @@ include ../header-menu/header-menu
   ]
 
 mixin header({isAuth = false, login = "Cosmin Negoita", loginButton = "Войти", signUpButton = "Зарегистрироваться", links = headerLinks } = {})
-  .header
+  header.header
     .header__logo
       +logo({isFull: true})
     .header__nav-bar

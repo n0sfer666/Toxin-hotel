@@ -1,12 +1,12 @@
-extends ../template/template
+extends ../template-page/template-page
 
 block append head
   title Search-room
 
-block append body
-  body.search-room
-
-block content
+block prepend container
+  -
+    const pageClass = "search-room"
+block append content
   main.search-room__content
     aside.search-room__menu
       +date-dropdown()

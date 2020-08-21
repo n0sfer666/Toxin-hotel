@@ -1,13 +1,14 @@
-extends ../template/template
+extends ../template-page/template-page
 
 block append head
   title Room-detail
 
-block append body
-  body.room-detail
+block prepend container
+  -
+    const pageClass = "room-detail"
 
-block content
-  main.room-detail__content
+block append content
+  .room-detail__content
     section.room-detail__gallery
       .room-detail__gallery-main
         img(class="room-detail__img", src="./img/detail-888-1.jpg")
@@ -91,112 +92,3 @@ block content
 
       .room-detail__booking
         +booking()
-//- include ../../components/head/head
-
-//- include ../../components/header/header
-//- include ../../components/footer/footer
-
-//- include ../../components/booking/booking
-
-//- include ../../components/headline/headline
-//- include ../../components/amenity/amenity
-//- include ../../components/review/review
-//- include ../../components/bullet-list/bullet-list
-//- include ../../components/piechart/piechart
-
-
-
-//- doctype html
-//- html
-//-   +head({title: "Room-detail"})
-//-   body.room-detail
-//-     header.room-detail__header
-//-       +header()
-      
-  main.room-detail__content
-    section.room-detail__gallery
-      .room-detail__gallery-main
-        img(class="room-detail__img", src="./img/detail-888-1.jpg")
-      .room-detail__gallery-addition
-        img(class="room-detail__img", src="./img/detail-888-2.jpg")
-        img(class="room-detail__img", src="./img/detail-888-3.jpg")
-    section.room-detail__container
-      .room-detail__details
-        .room-detail__amenities
-          .room-detail__title
-            +headline({type: "h2", title: "Сведения о номере"})
-          -
-            const amenityConfig1 = {
-              icon: "insert_emoticon",
-              title: "Комфорт",
-              description: "Шумопоглащающие стены",
-              isRowed: true
-            }
-          +amenity(amenityConfig1)
-          -
-            const amenityConfig2 = {
-              icon: "location_city",
-              title: "Удобство",
-              description: "Окно в каждой из спален",
-              isRowed: true
-            }
-          +amenity(amenityConfig2)
-          -
-            const amenityConfig3 = {
-              icon: "whatshot",
-              title: "Уют",
-              description: "Номер оснащён камином",
-              isRowed: false
-            }
-          +amenity(amenityConfig3)
-
-        .room-detail__piechart
-          .room-detail__title
-            +headline({type: "h2", title: "Впечатления от номера"})
-          -
-            const piechartConfig = {
-              perfect: 130,
-              good: 65,
-              satisfactorily: 65,
-              disappoint: 0
-            }
-          +piechart(piechartConfig)
-        .room-detail__reviews
-          .room-detail__title
-            +headline({type: "h2", title: "Впечатления от номера"})
-          p.room-detail__title-reviews 2 отзыва
-          -
-            const reviewConfig1 = {
-              login: "user-1",
-              likeCount: "10",
-              isLiked: true,
-              name: "Мурад Сарафанов",
-              timeAgo: "5 дней назад",
-              review: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей"
-            }
-          +review(reviewConfig1)
-          -
-            const reviewConfig2 = {
-              login: "user-2",
-              likeCount: "2",
-              name: "Патрисия Стёклышкова",
-              timeAgo: "Неделю назад",
-              review: "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент"
-            }
-          +review(reviewConfig2)
-        .room-detail__rules
-          .room-detail__title
-            +headline({type: "h2", title: "Впечатления от номера"})
-          -
-            const bullets = ["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"]
-          +bullet-list({titles: bullets})
-        .room-detail__cancel
-          .room-detail__title
-            +headline({type: "h2", title: "Впечатления от номера"})
-          p Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
-
-      .room-detail__booking
-        +booking()
-
-    footer.room-detail__footer
-      +footer()

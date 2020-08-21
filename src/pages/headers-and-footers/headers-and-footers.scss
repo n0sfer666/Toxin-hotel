@@ -1,25 +1,23 @@
 .header-footer {
   background-color: #e5e5e5;
-  & .logo {
-    margin-bottom: 68px;
-  }
-  &__header {
+  box-sizing: border-box;
+  & .header {
     margin-bottom: 39px;
     & > .header > .header__nav-bar > .header__buttons {
-      & > .header__button-signin {
+      & > .header__button-sign-in {
         & .button {
           width: 79px;
           margin-right: 20px;
         }
       }
-      & > .header__button-signup {
+      & > .header__button-sign-up {
         & .button {
           width: 101px;
         }
       }
     }
   }
-  &__footer {
+  & .footer {
     margin-bottom: 41px;
     &:last-child {
       margin-bottom: 130px;

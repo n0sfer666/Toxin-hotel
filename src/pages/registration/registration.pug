@@ -1,12 +1,13 @@
-extends ../template/template
+extends ../template-page/template-page
 
 block append head
   title Registration
 
-block append body
-  body.registration-page
+block prepend container
+  -
+    const pageClass = "registration-page"
 
-block content
-  main.registration-page__content
+block append content
+  .registration-page__content
     section.registration-page__container
-      +registration
+      +registration()

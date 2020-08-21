@@ -1,12 +1,13 @@
-extends ../template/template
+extends ../template-page/template-page
 
 block append head
   title Sign-in
 
-block append body
-  body.sign-in-page
+block prepend container
+  -
+    const pageClass = "sign-in-page"
 
-block content
-  main.sign-in-page__content
+block append content
+  .sign-in-page__content
     section.sign-in-page__container
       +sign-in()

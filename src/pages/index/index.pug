@@ -1,43 +1,36 @@
-extends ../template/template
+extends ../template-ui-kit/template-ui-kit
 
 block append head
   title index
-
-block append body
-  body.index
-
-block header
-
 block content
-  +logo()
-  main.index__container
-    section.index__ui-kit
-      .index__item
-        a(href="colors-and-types.html")
-          +headline({type: "h2", title: "Colors & Types"})
-      .index__item
-        a(href="form-elements.html")
-          +headline({type: "h2", title: "Form Elements"})
-      .index__item
-        a(href="cards.html")
-          +headline({type: "h2", title: "Cards"})
-      .index__item
-        a(href="headers-and-footers.html")
-          +headline({type: "h2", title: "Headers & Footers"})
-    section.index__pages
-      .index__item
-        a(href="landing-page.html")
-          +headline({type: "h2", title: "Landing Page"})
-      .index__item
-        a(href="registration.html")
-          +headline({type: "h2", title: "Registration"})
-      .index__item
-        a(href="sign-in.html")
-          +headline({type: "h2", title: "Sign-in"})
-      .index__item
-        a(href="room-detail.html")
-          +headline({type: "h2", title: "Room details"})
-      .index__item
-        a(href="search-room.html")
-          +headline({type: "h2", title: "Search-room"})
-block footer
+  main.index
+    .index__container
+      section.index__ui-kit
+        .index__item
+          a(href="colors-and-types.html")
+            +headline({type: "h2", title: "Colors & Types"})
+        .index__item
+          a(href="form-elements.html")
+            +headline({type: "h2", title: "Form Elements"})
+        .index__item
+          a(href="cards.html")
+            +headline({type: "h2", title: "Cards"})
+        .index__item
+          a(href="headers-and-footers.html")
+            +headline({type: "h2", title: "Headers & Footers"})
+      section.index__pages
+        .index__item
+          a(href="landing-page.html")
+            +headline({type: "h2", title: "Landing Page"})
+        .index__item
+          a(href="registration.html")
+            +headline({type: "h2", title: "Registration"})
+        .index__item
+          a(href="sign-in.html")
+            +headline({type: "h2", title: "Sign-in"})
+        .index__item
+          a(href="room-detail.html")
+            +headline({type: "h2", title: "Room details"})
+        .index__item
+          a(href="search-room.html")
+            +headline({type: "h2", title: "Search-room"})
