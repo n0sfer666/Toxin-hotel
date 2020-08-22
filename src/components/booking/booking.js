@@ -53,7 +53,7 @@ class Booking {
     this.elements = {
       headerPrice: this.getElementByClass('.js-booking__header-price-text'),
       price: this.getElementByClass('.js-booking__price'),
-      daysIn: this.getElementByClass('.js-booking__daysIn'),
+      daysIn: this.getElementByClass('.js-booking__days-in'),
       cost: this.getElementByClass('.js-booking__cost'),
       discount: this.getElementByClass('.js-booking__discount'),
       additionalFee: this.getElementByClass('.js-booking__additional-fee'),
