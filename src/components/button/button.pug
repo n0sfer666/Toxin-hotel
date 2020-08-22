@@ -1,13 +1,9 @@
 include ../headline/headline
-mixin button({ style = "text", isActive = "true", title = "click me" } = {})
+mixin button({ style = "textual", isActive = "true", title = "click me" } = {})
   -
-    const modKey = isActive ? "active" : "inactive";
-    const styles = ["textual", "gradient", "border", "submitting"];
-    ["text", "gradient", "border", "submit"].forEach((value, index) => {
-      if(value === style) {
-        style = styles[index];
-      }
-    })
-  button(class=`button js-button button_${style} button_${modKey}`)
+    const modifierActivity = isActive ? "active" : "inactive";
+    const arrayStyles = ["textual", "gradient", "border", "submitting"];
+    const modifierStyle = arrayStyles[arrayStyles.indexOf(style)]
+  button(class=`button js-button button_${modifierStyle} button_${modifierActivity}`)
     .button__wrapper
       +headline({title: title})

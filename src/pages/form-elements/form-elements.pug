@@ -88,10 +88,10 @@ block append content
           +button({style: "border"})
           +button({style: "border", isActive: false})
         .form-elements__block-buttons-text-line
-          +button({style: "text"})
-          +button({style: "text", isActive: false})
+          +button()
+          +button({isActive: false})
         .form-elements__block-buttons-action-line
-          +button({style: "submit", isActive: false})
+          +button({style: "submitting", isActive: false})
       .form-elements__block-pagination
         .form-elements__title
           +headline({title: "pagination"})
