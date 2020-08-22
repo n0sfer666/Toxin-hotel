@@ -99,9 +99,7 @@ block content
         .form-elements__block-bullet-list
           .form-elements__title
             +headline({title: "bullet list"})
-          -
-            const bullets = ["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"]
-          +bullet-list({titles: bullets})
+          +bullet-list({titles: ["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"]})
       section.form-elements__row-section
         .form-elements__block-amenity
           +amenity({icon: "tag_faces", isRowed: true, title: "Комфорт", description: "Шумопоглощающие стены"})
