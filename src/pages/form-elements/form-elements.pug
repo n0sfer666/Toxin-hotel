@@ -2,110 +2,114 @@ extends ../template-ui-kit/template-ui-kit
 
 block append head
   title Form Elements
-block content
-  main.form-elements
-    .form-elements__container
-      section.form-elements__column-section
-        .form-elements__block-text-field
-          .form-elements__title
-            +headline({title: "text field"})
-          +text-field({placeholder: "Email"})
-        .form-elements__block-dropdown-guests
-          .form-elements__title
-            +headline({title: "dropdown"})
-          +dropdown()
-        .form-elements__block-masked-text-field
-          .form-elements__title
-            +headline({title: "masked text field"})
-          +masked-text-field({placeholder: "ДД.ММ.ГГГГ"})
-        .form-elements__block-date-dropdown
-          +date-dropdown({isSingle: false, label: ["date dropdown", "date dropdown"]})
-        .form-elements__block-filter-date-dropdown
-          +date-dropdown({label: "filter date dropdown"})
-        .form-elements__block-subscription-field
-          .form-elements__title
-            +headline({title: "subscription text field"})
-          +subscription-field({placeholder: "Email"})
-        .form-elements__block-dropdown-rooms
-          .form-elements__title
-            +headline({title: "dropdown"})
-          +dropdown({isGuests: false})
-        .form-elements__block-expandable-checkbox-list
-          +expandable-checkbox-list({title: "expandable checkbox list"})
 
-      section.form-elements__column-section
-        .form-elements__block-checkbox
-          .form-elements__title.form-elements__title_big
-            +headline({title: "checkbox buttons"})
-          +checkbox({title: "Можно курить"})
-          +checkbox({title: "Можно с питомцами", isChecked: true})
-          +checkbox({title: "Можно пригласить гостей (до 10 человек)", isChecked: true})
-        .form-elements__block-radio
-          .form-elements__title
-            +headline({title: "radio buttons"})
-          .form-elements__block-radio-container
-            +radio({name: "sex", title: "Мужчина", isChecked: true})
-            +radio({name: "sex", title: "Женщина"})
-        .form-elements__block-toggle
-          .form-elements__title
-            +headline({title: "toggle"})
-          +toggle({title: "Получать спецпредложения", isChecked: true})
-          +toggle({title: "Получать спецпредложения"})
-        .form-elements__block-like
-          .form-elements__title
-            +headline({title: "like button"})
-          +like({counter: "2"})
-          +like({counter: "12", isChecked: true})
-        .form-elements__block-rate
-          .form-elements__title
-            +headline({title: "rate button"})
-          +rate({rate: "4"})
-          +rate({rate: "5"})
-        .form-elements__block-dropdown-guests-2
-          .form-elements__title
-            +headline({title: "dropdown"})
-          +dropdown()
-        .form-elements__block-rich-checkbox
-          .form-elements__title
-            +headline({title: "rich checkbox buttons"})
-          +rich-checkbox({title: "Широкий коридор", description: "Ширина коридоров в номере не менее 91 см."})
-          +rich-checkbox({title: "Помощник для инвалидов", description: "На 1 этаже вас встретит специалист и проводит до номера."})
+block prepend container
+  -
+    const pageClass = "form-elements"
 
-      section.form-elements__column-section
-        .form-elements__block-range-slider
-          +range-slider({title: "range slider"})
-        .form-elements__block-buttons
-          .form-elements__title
-            +headline({title: "buttons"})
-          .form-elements__block-buttons-line
-            +button({style: "gradient"})
-            +button({style: "gradient", isActive: false})
-          .form-elements__block-buttons-line
-            +button({style: "border"})
-            +button({style: "border", isActive: false})
-          .form-elements__block-buttons-text-line
-            +button({style: "text"})
-            +button({style: "text", isActive: false})
-          .form-elements__block-buttons-action-line
-            +button({style: "submit", isActive: false})
-        .form-elements__block-pagination
-          .form-elements__title
-            +headline({title: "pagination"})
-          .pagination.js-pagination
-        .form-elements__block-dropdown-guests-3
-          .form-elements__title
-            +headline({title: "dropdown"})
-          +dropdown()
-        .form-elements__block-bullet-list
-          .form-elements__title
-            +headline({title: "bullet list"})
-          +bullet-list({titles: ["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"]})
-      section.form-elements__row-section
-        .form-elements__block-amenity
-          +amenity({icon: "tag_faces", isRowed: true, title: "Комфорт", description: "Шумопоглощающие стены"})
-          +amenity({icon: "location_city", isRowed: true, title: "Удобство", description: "Окно в каждой из спален"}) 
-        .form-elements__block-reviews
-          -
-            const name = "Конcтантин Константинопольский"
-            const review = "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей"
-          +review({login: "user-1", likeCount: "10", isLiked: true, name: name, timeAgo: "5 дней назад", review: review})
+block append content
+  .form-elements__container
+    section.form-elements__column-section
+      .form-elements__block-text-field
+        .form-elements__title
+          +headline({title: "text field"})
+        +text-field({placeholder: "Email"})
+      .form-elements__block-dropdown-guests
+        .form-elements__title
+          +headline({title: "dropdown"})
+        +dropdown()
+      .form-elements__block-masked-text-field
+        .form-elements__title
+          +headline({title: "masked text field"})
+        +masked-text-field({placeholder: "ДД.ММ.ГГГГ"})
+      .form-elements__block-date-dropdown
+        +date-dropdown({isSingle: false, label: ["date dropdown", "date dropdown"]})
+      .form-elements__block-filter-date-dropdown
+        +date-dropdown({label: "filter date dropdown"})
+      .form-elements__block-subscription-field
+        .form-elements__title
+          +headline({title: "subscription text field"})
+        +subscription-field({placeholder: "Email"})
+      .form-elements__block-dropdown-rooms
+        .form-elements__title
+          +headline({title: "dropdown"})
+        +dropdown({isGuests: false})
+      .form-elements__block-expandable-checkbox-list
+        +expandable-checkbox-list({title: "expandable checkbox list"})
+
+    section.form-elements__column-section
+      .form-elements__block-checkbox
+        .form-elements__title.form-elements__title_big
+          +headline({title: "checkbox buttons"})
+        +checkbox({title: "Можно курить"})
+        +checkbox({title: "Можно с питомцами", isChecked: true})
+        +checkbox({title: "Можно пригласить гостей (до 10 человек)", isChecked: true})
+      .form-elements__block-radio
+        .form-elements__title
+          +headline({title: "radio buttons"})
+        .form-elements__block-radio-container
+          +radio({name: "sex", title: "Мужчина", isChecked: true})
+          +radio({name: "sex", title: "Женщина"})
+      .form-elements__block-toggle
+        .form-elements__title
+          +headline({title: "toggle"})
+        +toggle({title: "Получать спецпредложения", isChecked: true})
+        +toggle({title: "Получать спецпредложения"})
+      .form-elements__block-like
+        .form-elements__title
+          +headline({title: "like button"})
+        +like({counter: "2"})
+        +like({counter: "12", isChecked: true})
+      .form-elements__block-rate
+        .form-elements__title
+          +headline({title: "rate button"})
+        +rate({rate: "4"})
+        +rate({rate: "5"})
+      .form-elements__block-dropdown-guests-2
+        .form-elements__title
+          +headline({title: "dropdown"})
+        +dropdown()
+      .form-elements__block-rich-checkbox
+        .form-elements__title
+          +headline({title: "rich checkbox buttons"})
+        +rich-checkbox({title: "Широкий коридор", description: "Ширина коридоров в номере не менее 91 см."})
+        +rich-checkbox({title: "Помощник для инвалидов", description: "На 1 этаже вас встретит специалист и проводит до номера."})
+
+    section.form-elements__column-section
+      .form-elements__block-range-slider
+        +range-slider({title: "range slider"})
+      .form-elements__block-buttons
+        .form-elements__title
+          +headline({title: "buttons"})
+        .form-elements__block-buttons-line
+          +button({style: "gradient"})
+          +button({style: "gradient", isActive: false})
+        .form-elements__block-buttons-line
+          +button({style: "border"})
+          +button({style: "border", isActive: false})
+        .form-elements__block-buttons-text-line
+          +button({style: "text"})
+          +button({style: "text", isActive: false})
+        .form-elements__block-buttons-action-line
+          +button({style: "submit", isActive: false})
+      .form-elements__block-pagination
+        .form-elements__title
+          +headline({title: "pagination"})
+        .pagination.js-pagination
+      .form-elements__block-dropdown-guests-3
+        .form-elements__title
+          +headline({title: "dropdown"})
+        +dropdown()
+      .form-elements__block-bullet-list
+        .form-elements__title
+          +headline({title: "bullet list"})
+        +bullet-list({titles: ["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"]})
+    section.form-elements__row-section
+      .form-elements__block-amenity
+        +amenity({icon: "tag_faces", isRowed: true, title: "Комфорт", description: "Шумопоглощающие стены"})
+        +amenity({icon: "location_city", isRowed: true, title: "Удобство", description: "Окно в каждой из спален"}) 
+      .form-elements__block-reviews
+        -
+          const name = "Конcтантин Константинопольский"
+          const review = "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей"
+        +review({login: "user-1", likeCount: "10", isLiked: true, name: name, timeAgo: "5 дней назад", review: review})
