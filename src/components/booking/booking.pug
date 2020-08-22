@@ -6,6 +6,11 @@ include ../button/button
 mixin booking({room = "888", isLux = true, price = "9990", discount = "2179", complementaryFee = 300, additionalFee = "0", action = "change me" } = {})
   -
     const isDiscounted = discount == 0 ? false : true
+    const currency = "₽"
+    const priceText = "в сутки"
+    const daysIn = "0 суток"
+    const cost = "0"
+    const total = "0"
 
   form(class="booking js-booking", action=action)
     .booking__header
@@ -17,8 +22,8 @@ mixin booking({room = "888", isLux = true, price = "9990", discount = "2179", co
             +headline({title: " люкс"})
       span.booking__header-price
         span.booking__header-price-text.booking__header-price-text_bold.js-booking__header-price-text #{price}
-        span.booking__header-price-text.booking__header-price-text_bold ₽ 
-        | в сутки
+        span.booking__header-price-text.booking__header-price-text_bold #{currency} 
+        | #{priceText}
     .booking__arrival-departure
       +date-dropdown({isSingle: false, label: ["прибытие", "выезд"]})
     .booking__guests
@@ -29,23 +34,23 @@ mixin booking({room = "888", isLux = true, price = "9990", discount = "2179", co
       .booking__calculation-row
         p
           span.booking__price.js-booking__price #{price}
-          span ₽ X 
-          span.booking__days-in.js-booking__days-in 0 суток
+          span #{currency} X 
+          span.booking__days-in.js-booking__days-in #{daysIn}
         p
-          span.booking__cost.js-booking__cost 0
-          span ₽
+          span.booking__cost.js-booking__cost #{cost}
+          span #{currency}
       .booking__calculation-row
         .booking__calculation-text
           p.booking__description Сбор за услуги: 
             if isDiscounted
               span скидка 
               span.booking__discount.js-booking__discount #{discount}
-              span ₽
+              span #{currency}
           span.booking__exclamation
             span.booking__exclamation-symbol.booking__exclamation-symbol_bold i
         .booking__calculation-additional-fee
           span.booking__additional-fee.js-booking__additional-fee #{additionalFee}
-          span ₽
+          span #{currency}
       .booking__calculation-row
         .booking__calculation-text
           p.booking__description Сбор за дополнительные услуги
@@ -53,11 +58,11 @@ mixin booking({room = "888", isLux = true, price = "9990", discount = "2179", co
             span.booking__exclamation-symbol.booking__exclamation-symbol_bold i
         .booking__calculation-complementary-fee
           span.booking__complementary-fee.js-booking__complementary-fee #{complementaryFee}
-          span ₽
+          span #{currency}
     .booking__total
       h2.booking__total-text Итого
       .booking__total-line.booking__total-line_dashed
-      h2.booking__total-text.js-booking__total-text 0
-      h2.booking__total-text ₽
+      h2.booking__total-text.js-booking__total-text #{total}
+      h2.booking__total-text #{currency}
     .booking__submit-button
       +button({style: "submitting", title: "забронировать"})
