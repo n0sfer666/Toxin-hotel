@@ -1,44 +1,37 @@
 mixin color-block ({ mod = "dark-shade-100" } = {})
   .color-block
     -
-      const modList = [
-        "dark-shade-100",
-        "dark-shade-75",
-        "dark-shade-50",
-        "dark-shade-25",
-        "dark-shade-5",
-        "green",
-        "purple"
-      ];
-      const textList = [
-        "Dark Shade 100%",
-        "Dark Shade 75%",
-        "Dark Shade 50%",
-        "Dark Shade 25%",
-        "Dark Shade 5%",
-        "Green",
-        "Purple"
-      ];
-      const hexColorList = [
-        "#1F2041",
-        "#1F2041",
-        "#1F2041",
-        "#1F2041",
-        "#1F2041",
-        "#BC9CFF",
-        "#6FCF97"
-      ];
-      const colorBlock = {}
-      modList.forEach((value, index) => {
-        if(mod === value) {
-          colorBlock.isModCorrected = true;
-          colorBlock.text = textList[index];
-          colorBlock.hexColor = hexColorList[index];
+      const colors = {
+        "dark-shade-100": {
+          hex: "#1F2041",
+          text: "Dark Shade 100%"
+        },
+        "dark-shade-75": {
+          hex: "#1F2041",
+          text: "Dark Shade 75%"
+        },
+        "dark-shade-50": {
+          hex: "#1F2041",
+          text: "Dark Shade 50%"
+        },
+        "dark-shade-25": {
+          hex: "#1F2041",
+          text: "Dark Shade 25%"
+        },
+        "dark-shade-5": {
+          hex: "#1F2041",
+          text: "Dark Shade 5%"
+        },
+        "green": {
+          hex: "#BC9CFF",
+          text: "Green"
+        },
+        "purple": {
+          hex: "#6FCF97",
+          text: "Purple"
         }
-      })
-    if colorBlock.isModCorrected
-      div(class = `color-block__colors-cell color-block__colors-cell_${mod}`)
-      p.color-block__colors-text #{colorBlock.text}
-        span.color-block__colors-text.color-block__colors-text_regular #{colorBlock.hexColor}
-    else
-      p wrong mod
+      }
+      const {hex, text} = colors[mod]
+    div(class = `color-block__colors-cell color-block__colors-cell_${mod}`)
+    p.color-block__colors-text #{text}
+      span.color-block__colors-text.color-block__colors-text_regular #{hex}
