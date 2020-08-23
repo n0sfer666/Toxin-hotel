@@ -13,15 +13,15 @@ block prepend container
 block append content
   .colors-and-type__container
     section.color-block__colors
-      +color-block({mod: "dark-shade-100"})
-      +color-block({mod: "dark-shade-75"})
-      +color-block({mod: "dark-shade-50"})
-      +color-block({mod: "dark-shade-25"})
-      +color-block({mod: "dark-shade-5"})
-      +color-block({mod: "purple"})
-      +color-block({mod: "green"})
+      +color-block({blockModifier: "dark-shade-100"})
+      +color-block({blockModifier: "dark-shade-75"})
+      +color-block({blockModifier: "dark-shade-50"})
+      +color-block({blockModifier: "dark-shade-25"})
+      +color-block({blockModifier: "dark-shade-5"})
+      +color-block({blockModifier: "purple"})
+      +color-block({blockModifier: "green"})
     section.type-block__type
-      +type-block({mod: "h1", text: "This one is the sub-section or widget title"})
-      +type-block({mod: "h2", text: "Next one is the item title inside widgets"})
-      +type-block({mod: "h3", text: "This is a label or CTA text"})
-      +type-block({mod: "body", text: "This is the body text which is used for most of the design, like paragraphs, lists, etc."})
+      +type-block({blockModifier: "h1", text: "This one is the sub-section or widget title"})
+      +type-block({blockModifier: "h2", text: "Next one is the item title inside widgets"})
+      +type-block({blockModifier: "h3", text: "This is a label or CTA text"})
+      +type-block({blockModifier: "body", text: "This is the body text which is used for most of the design, like paragraphs, lists, etc."})

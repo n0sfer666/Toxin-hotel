@@ -1,9 +1,9 @@
 include ../headline/headline
 
-mixin type-block ({mod = "h3", text = "This is a label or CTA text" } = {})
+mixin type-block ({blockModifier = "h3", text = "This is a label or CTA text" } = {})
   .type-block
-    span(class = `type-block__label-title type-block__label-title_${mod}`) #{mod}
-    if (mod !== "body")
-      +headline({type: mod, title: text})
+    span(class = `type-block__label-title type-block__label-title_${blockModifier}`) #{blockModifier}
+    if (blockModifier !== "body")
+      +headline({type: blockModifier, title: text})
     else
       p.type-block__title_body #{text}
