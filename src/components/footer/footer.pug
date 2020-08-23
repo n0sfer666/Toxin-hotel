@@ -2,33 +2,35 @@ include ../headline/headline
 include ../logo/logo
 include ../subscription-field/subscription-field
 include ../footer-menu/footer-menu
--
-  const footerDescription = "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"
-  const footerNavigation = {
-    title: "навигация",
-    links: ["О нас", "Новости", "Служба поддержки", "Услуги"]
-  }
-  const footerAboutUs = {
-    title: "о нас",
-    links: ["О сервисе", "Наша команда", "Вакансии", "Инвесторы"]
-  }
-  const footerSupport = {
-    title: "служба поддержки",
-    links: ["Соглашения",  "Сообщества", "Связь с нами"]
-  }
-  const footerSubscription = {
-    title: "Подписка",
-    description: "Получайте специальные предложения и новости сервиса"
-  }
-  const footerCopyright = "отель. Все права зачищены."
 
-
-mixin footer({isShort = false, description = footerDescription, navigation = footerNavigation, aboutUs = footerAboutUs, support = footerSupport, subscription = footerSubscription, copyright = footerCopyright } = {})
+mixin footer({isShort = false, description = "", titles = {}, subscription = {}, copyright = "" } = {})
+  -
+    const footerDescription = description === ""
+      ? "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"
+      : description;
+    const footerTitles = Object.keys(titles).length === 0
+      ? [ { title: "навигация",
+            links: ["О нас", "Новости", "Служба поддержки", "Услуги"] },
+          { title: "о нас",
+            links: ["О сервисе", "Наша команда", "Вакансии", "Инвесторы"] },
+          { title: "служба поддержки",
+            links: ["Соглашения",  "Сообщества", "Связь с нами"] }
+        ]
+      : titles;
+    const footerSubscription = Object.keys(subscription).length === 0 
+      ? {
+        title: "Подписка",
+        description: "Получайте специальные предложения и новости сервиса"
+        }
+      : subscription;
+    const footerCopyright = copyright.length === 0
+      ? "отель. Все права зачищены."
+      : copyright;
   if isShort
     footer.footer.footer_short
       .footer__logo
         +logo({isFull: true})
-      p.footer__description.footer__description_short #{description}
+      p.footer__description.footer__description_short #{footerDescription}
       .footer__icons
         a(href = "https://twitter.com/", class = "footer__icon footer__icon-tweeter")
         a(href = "https://www.facebook.com/", class = "footer__icon footer__icon-facebook")
@@ -38,18 +40,17 @@ mixin footer({isShort = false, description = footerDescription, navigation = foo
       .footer__block
         .footer__logo
           +logo({isFull: true})
-        p.footer__description #{description}
+        p.footer__description #{footerDescription}
       .footer__menu
-        +footer-menu(navigation)
-        +footer-menu(aboutUs)
-        +footer-menu(support)
+        each val in footerTitles
+          +footer-menu(val)
       .footer__block-subscription
         .footer__block-title
-          +headline({title: subscription.title})
-        p #{subscription.description}
-        +subscription-field()
+          +headline({title: footerSubscription.title})
+        p #{footerSubscription.description}
+        +subscription-field({placeholder: footerSubscription.placeholder})
     .footer__copyright
-      p.footer__copyright-text Copyright © 2018 Toxin #{copyright}
+      p.footer__copyright-text Copyright © 2018 Toxin #{footerCopyright}
       .footer__icons
         a(href = "https://twitter.com/", class = "footer__icon footer__icon-tweeter")
         a(href = "https://www.facebook.com/", class = "footer__icon footer__icon-facebook")

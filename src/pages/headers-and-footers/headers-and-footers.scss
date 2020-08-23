@@ -2,8 +2,8 @@
   background-color: #e5e5e5;
   box-sizing: border-box;
   & .header {
-    margin-bottom: 39px;
-    & > .header > .header__nav-bar > .header__buttons {
+    margin-bottom: 35px;
+    & > .header__nav-bar > .header__buttons {
       & > .header__button-sign-in {
         & .button {
           width: 79px;
@@ -17,10 +17,7 @@
       }
     }
   }
-  & .footer {
+  & .footer__copyright {
     margin-bottom: 41px;
-    &:last-child {
-      margin-bottom: 130px;
-    }
   }
 }
