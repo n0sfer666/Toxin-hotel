@@ -1,8 +1,10 @@
--
-  const popupItems = [{href: "change_me_1", title: "change_me_1"}]
-  popupItems.push({href: "change_me_2", title: "change_me_2"})
+mixin header-menu({type = "link", href = "change me", title = "change me", popup = [] } = {})
+  -
+    const popupItems = popup.length === 0
+      ? [ {href: "change_me_1", title: "change_me_1"},
+          {href: "change_me_2", title: "change_me_2"} ]
+      : popup
 
-mixin header-menu({type = "link", href = "change me", title = "change me", popup = popupItems } = {})
   case type
     when "link"
       a(href = href, class = "header-menu__link") #{title}
@@ -13,7 +15,7 @@ mixin header-menu({type = "link", href = "change me", title = "change me", popup
       .header-menu__link-text.header-menu__link-text_is-popup
         p.header-menu__link-text.header-menu__link-text_is-popup-text #{title}
         .header-menu__popup
-          each val in popup
+          each val in popupItems
             a(href = val.href, class = "header-menu__link") #{val.title}
         span.header-menu__arrow-down keyboard_arrow_down
     default

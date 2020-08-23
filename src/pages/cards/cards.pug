@@ -1,5 +1,11 @@
 extends ../template-ui-kit/template-ui-kit
 
+include ../../components/find-room/find-room
+include ../../components/registration/registration
+include ../../components/booking/booking
+include ../../components/sign-in/sign-in
+include ../../components/room/room
+
 block append head
   title Cards
 
@@ -27,6 +33,4 @@ block append content
       .cards__block-room
         +room()
       .cards__block-room
-        -
-          const roomsConfig = { room: "840", isLux: false, price: "9900", rate: 4, reviews: 65 }
-        +room(roomsConfig)
+        +room({ room: "840", isLux: false, price: "9900", rate: 4, reviews: 65 })

@@ -1,5 +1,8 @@
 extends ../template-ui-kit/template-ui-kit
 
+include ../../components/header/header
+//- include ../../components/footer/footer
+
 block append head
   title Headers & Footers
 
@@ -8,7 +11,7 @@ block prepend container
     const pageClass = "header-footer"
 
 block append content
-    +header({ loginButton: "login", signUpButton: "register", links: [{ type: "home", title: "Home"}, {title: "About Us"}, {type: "popup", title: "Services"}, {title: "Careers"}, {title: "News"}, {title: "Documentation"}] })
-    +header({ isAuth: true, login: "Cosmin Negoita", links: [{ type: "home", title: "Home"}, {title: "About Us"}, {type: "popup", title: "Services"}, {title: "Careers"}, {title: "News"}, {title: "Documentation"}] })
-    +footer({description: "Lopx ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.", navigation: {title: "navigation", links: ["About Us", "News", "Support", "Products"]}, aboutUs: {title: "about us", links: ["Who we are", "Our teem", "Careers", "Investors"]}, support: {title: "support", links: ["Documentation", "Community", "Get in Touch"]}, support: { title: "support", links: ["Documentation", "Community", "Get in Touch"]}, subscription: { title: "subscribe to our newsletter", description: "Receive our latest news and promotions in your inbox!", placeholder: "Your email address"}, copyright: "UI Kit. All rights reserved."})
-    +footer({description: "Lopx ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.", isShort: true})
+  +header({ loginButton: "login", signUpButton: "register", links: [{ type: "home", title: "Home"}, {title: "About Us"}, {type: "popup", title: "Services"}, {title: "Careers"}, {title: "News"}, {title: "Documentation"}] })
+  +header({ isAuth: true, login: "Cosmin Negoita", links: [{ type: "home", title: "Home"}, {title: "About Us"}, {type: "popup", title: "Services"}, {title: "Careers"}, {title: "News"}, {title: "Documentation"}] })
+  //- +footer({description: "Lopx ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.", navigation: {title: "navigation", links: ["About Us", "News", "Support", "Products"]}, aboutUs: {title: "about us", links: ["Who we are", "Our teem", "Careers", "Investors"]}, support: {title: "support", links: ["Documentation", "Community", "Get in Touch"]}, support: { title: "support", links: ["Documentation", "Community", "Get in Touch"]}, subscription: { title: "subscribe to our newsletter", description: "Receive our latest news and promotions in your inbox!", placeholder: "Your email address"}, copyright: "UI Kit. All rights reserved."})
+  //- +footer({description: "Lopx ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.", isShort: true})
