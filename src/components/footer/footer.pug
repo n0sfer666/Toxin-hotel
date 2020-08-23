@@ -47,7 +47,7 @@ mixin footer({isShort = false, description = "", titles = {}, subscription = {},
       .footer__block-subscription
         .footer__block-title
           +headline({title: footerSubscription.title})
-        p #{footerSubscription.description}
+        p.footer__description #{footerSubscription.description}
         +subscription-field({placeholder: footerSubscription.placeholder})
     .footer__copyright
       p.footer__copyright-text Copyright © 2018 Toxin #{footerCopyright}
