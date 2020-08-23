@@ -1,4 +1,4 @@
-mixin color-block ({ blockModifier = "dark-shade-100" } = {})
+mixin color-block ({ colorBlock = "dark-shade-100" } = {})
   .color-block
     -
       const colors = {
@@ -31,7 +31,7 @@ mixin color-block ({ blockModifier = "dark-shade-100" } = {})
           text: "Purple"
         }
       }
-      const {hex, text} = colors[blockModifier]
-    div(class = `color-block__colors-cell color-block__colors-cell_${blockModifier}`)
+      const {hex, text} = colors[colorBlock]
+    div(class = `color-block__colors-cell color-block__colors-cell_${colorBlock}`)
     p.color-block__colors-text #{text}
       span.color-block__colors-text.color-block__colors-text_regular #{hex}
