@@ -1,0 +1,47 @@
+include ../headline/headline
+include ../logo/logo
+include ../subscription-field/subscription-field
+include ../footer-menu/footer-menu
+
+mixin footer-full({description = "", titles = {}, subscription = {}, copyright = "" } = {})
+  -
+    const footerDescription = description === ""
+      ? "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"
+      : description;
+    const footerTitles = Object.keys(titles).length === 0
+      ? [ { title: "навигация",
+            links: ["О нас", "Новости", "Служба поддержки", "Услуги"] },
+          { title: "о нас",
+            links: ["О сервисе", "Наша команда", "Вакансии", "Инвесторы"] },
+          { title: "служба поддержки",
+            links: ["Соглашения",  "Сообщества", "Связь с нами"] }
+        ]
+      : titles;
+    const footerSubscription = Object.keys(subscription).length === 0 
+      ? {
+          title: "Подписка",
+          description: "Получайте специальные предложения и новости сервиса"
+        }
+      : subscription;
+    const footerCopyright = copyright.length === 0
+      ? "отель. Все права зачищены."
+      : copyright;
+  footer.footer-full
+    .footer-full__block
+      .footer-full__logo
+        +logo({isFull: true})
+      p.footer-full__description #{footerDescription}
+    .footer-full__menu
+      each val in footerTitles
+        +footer-menu(val)
+    .footer-full__block-subscription
+      .footer-full__block-title
+        +headline({title: footerSubscription.title})
+      p.footer-full__description #{footerSubscription.description}
+      +subscription-field({placeholder: footerSubscription.placeholder})
+  .footer-full__copyright
+    p.footer-full__copyright-text Copyright © 2018 Toxin #{footerCopyright}
+    .footer-full__icons
+      a(href = "https://twitter.com/", class = "footer__icon footer__icon-tweeter")
+      a(href = "https://www.facebook.com/", class = "footer__icon footer__icon-facebook")
+      a(href = "https://www.instagram.com/", class = "footer__icon footer__icon-instagram")

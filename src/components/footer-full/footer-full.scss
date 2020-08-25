@@ -1,0 +1,117 @@
+.footer-full {
+  @include font-body;
+  display: flex;
+  box-sizing: border-box;
+  background-color: #fff;
+  justify-content: space-between;
+  padding: 104px 9.7223% 102px;
+  box-shadow: 0px 1px 0px rgba(31, 32, 65, 0.1);
+
+  @media screen and (min-width: $old-phones) and (max-width: $desktop) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: flex-start;
+    max-width: 260px;
+
+    & .footer-full__description {
+      margin-top: -7px;
+    }
+
+    & .footer-full__logo {
+      margin-bottom: 17px;
+    }
+
+    & .footer-full__menu-link {
+      line-height: 17px;
+      color: $dark-shade-50;
+    }
+
+    &-subscription {
+      display: flex;
+      flex-direction: column;
+      justify-content: left;
+      align-items: flex-start;
+      max-width: 260px;
+      margin-top: 4px;
+
+      & .footer-full__block-title {
+        margin-bottom: 18px;
+      }
+
+      & .subscribe-field {
+        margin-top: 23px;
+      }
+    }
+
+    @media screen and (min-width: $old-phones) and (max-width: $new-phones) {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin-right: 48px;
+    margin-top: 4px;
+    width: 44.2242%;
+
+    & .footer-full__block-title {
+      margin-bottom: 22px;
+    }
+
+    & .footer-full__menu-link:not(:last-child) {
+      margin-bottom: 21px;
+    }
+
+    @media screen and (min-width: $new-phones) and (max-width: $desktop) {
+      width: 100%;
+      margin: 40px 0;
+    }
+
+    @media screen and (min-width: $old-phones) and (max-width: $new-phones) {
+      flex-direction: column;
+      margin: 40px 0;
+    }
+  }
+
+  &__copyright {
+    @include font-body;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 9.7223% 22px;
+    background-color: #fff;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+
+    &-text {
+      line-height: 17px;
+    }
+
+    @media screen and (min-width: $old-phones) and (max-width: $new-phones) {
+      flex-direction: column-reverse;
+      padding: 23px 0;
+
+      & .footer-full__icons {
+        margin-bottom: 20px;
+      }
+
+      & .footer-full__copyright-text {
+        text-align: center;
+      }
+    }
+  }
+
+  &__icons {
+    height: 24px;
+  }
+}
