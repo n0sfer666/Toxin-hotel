@@ -1,0 +1,19 @@
+include ../headline/headline
+mixin button-module({isApply = true} = {})
+  -
+    const titles = {
+      apply: "применить",
+      clear: "очистить"
+    }
+    const titleButton = isApply
+      ? titles.apply
+      : titles.clear;
+    const classButton = isApply
+      ? "button-module button-module_apply js-button-module_apply"
+      : "button-module button-module_clear js-button-module_clear";
+    const dataType = isApply
+      ? "apply"
+      : "clear";
+  button(class = classButton)
+    .button-module__wrapper
+      +headline({title: titleButton})

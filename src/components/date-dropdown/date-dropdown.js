@@ -1,5 +1,5 @@
 import 'air-datepicker';
-import ButtonClearApply from '../button-clear-apply/button-clear-apply';
+import ButtonModule from '../button-module/button-module';
 
 class DateDropdown {
   constructor(item, index, isSingle, bookingInstance) {
@@ -25,10 +25,10 @@ class DateDropdown {
   }
 
   initButtons() {
-    const buttonClear = this.parentElement.querySelector('.js-button-clear');
-    const buttonApply = this.parentElement.querySelector('.js-button-apply');
-    this.clearButton = new ButtonClearApply(buttonClear, 0);
-    this.applyButton = new ButtonClearApply(buttonApply, 0);
+    const buttonClear = this.parentElement.querySelector('.js-button-module_clear');
+    const buttonApply = this.parentElement.querySelector('.js-button-module_apply');
+    this.clearButton = new ButtonModule(buttonClear, 0);
+    this.applyButton = new ButtonModule(buttonApply, 0);
     buttonClear.remove();
     buttonApply.remove();
   }

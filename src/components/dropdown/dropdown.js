@@ -1,5 +1,5 @@
 import 'item-quantity-dropdown/lib/item-quantity-dropdown.min';
-import ButtonClearApply from '../button-clear-apply/button-clear-apply';
+import ButtonModule from '../button-module/button-module';
 
 class Dropdown {
   constructor(item, index) {
@@ -38,10 +38,10 @@ class Dropdown {
 
   initButtons() {
     if (this.isGuests) {
-      const buttonClear = this.container.querySelector('.js-button-clear');
-      const buttonApply = this.container.querySelector('.js-button-apply');
-      this.clearButton = new ButtonClearApply(buttonClear, 0);
-      this.applyButton = new ButtonClearApply(buttonApply, 0);
+      const buttonClear = this.container.querySelector('.js-button-module_clear');
+      const buttonApply = this.container.querySelector('.js-button-module_apply');
+      this.clearButton = new ButtonModule(buttonClear, 0);
+      this.applyButton = new ButtonModule(buttonApply, 0);
       this.clearButton.setHide();
     }
   }

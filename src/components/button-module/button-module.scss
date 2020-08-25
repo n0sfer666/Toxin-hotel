@@ -1,0 +1,36 @@
+.button-module {
+  display: inline-block;
+  width: fit-content;
+  border: none;
+  outline: none;
+  background-color: inherit;
+  cursor: pointer;
+
+  &__wrapper {
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+
+  &_clear {
+    & .headline-label {
+      color: $dark-shade-50;
+    }
+
+    &:active, &:focus, &:hover {
+      box-shadow: unset;
+      text-shadow: 0 0 6px $dark-shade-50;
+    }
+  }
+
+  &_apply {
+    & .headline-label {
+      color: $purple;
+    }
+
+    &:active, &:focus, &:hover {
+      box-shadow: unset;
+      text-shadow: 0 0 6px $purple;
+    }
+  }
+}

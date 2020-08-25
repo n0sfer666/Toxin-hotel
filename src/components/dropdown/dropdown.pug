@@ -1,4 +1,4 @@
-include ../button-clear-apply/button-clear-apply
+include ../button-module/button-module
 mixin dropdown({isGuests = true} = {})
   -
     const titles = {
@@ -22,8 +22,8 @@ mixin dropdown({isGuests = true} = {})
           div(class="iqdropdown-menu-option", data-id="babies")
             .dropdown__babies
               p.iqdropdown-item #{titles.babies}
-          +button-clear-apply({isApply: false})
-          +button-clear-apply()
+          +button-module({isApply: false})
+          +button-module()
       else
         div(class="iqdropdown-menu", style="height: 119px;")
           div(class="iqdropdown-menu-option", data-id="bedrooms", data-defaultcount="2", data-mincount="1")
