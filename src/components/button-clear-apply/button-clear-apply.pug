@@ -1,9 +1,13 @@
 include ../headline/headline
 mixin button-clear-apply({isApply = true} = {})
   -
+    const titles = {
+      apply: "применить",
+      clear: "очистить"
+    }
     const titleButton = isApply
-      ? "применить"
-      : "очистить";
+      ? titles.apply
+      : titles.clear;
     const classButton = isApply
       ? "button-apply js-button-apply"
       : "button-clear js-button-clear";

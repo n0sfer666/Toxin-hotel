@@ -1,28 +1,37 @@
 include ../button-clear-apply/button-clear-apply
 mixin dropdown({isGuests = true} = {})
+  -
+    const titles = {
+      adults: "взрослые",
+      children: "дети",
+      babies: "младенцы",
+      bedrooms: "спальни",
+      beds: "кровати",
+      bathrooms: "ванные комнаты"
+    }
   .iqdropdown.js-iqdropdown
     p.iqdropdown-selection
       if isGuests
         .iqdropdown-menu.js-iqdropdown-menu
           div(class="iqdropdown-menu-option", data-id="adults")
             .dropdown__adults
-              p.iqdropdown-item взрослые
+              p.iqdropdown-item #{titles.adults}
           div(class="iqdropdown-menu-option", data-id="children")
             .dropdown__children
-              p.iqdropdown-item дети
+              p.iqdropdown-item #{titles.children}
           div(class="iqdropdown-menu-option", data-id="babies")
             .dropdown__babies
-              p.iqdropdown-item младенцы
+              p.iqdropdown-item #{titles.babies}
           +button-clear-apply({isApply: false})
           +button-clear-apply()
       else
         div(class="iqdropdown-menu", style="height: 119px;")
           div(class="iqdropdown-menu-option", data-id="bedrooms", data-defaultcount="2", data-mincount="1")
             .dropdown__bedrooms
-              p(class="iqdropdown-item") спальни
+              p(class="iqdropdown-item") #{titles.bedrooms}
           div(class="iqdropdown-menu-option", data-id="beds", data-defaultcount="2", data-mincount="1")
             .dropdown__beds
-              p(class="iqdropdown-item") кровати
+              p(class="iqdropdown-item") #{titles.beds}
           div(class="iqdropdown-menu-option", data-id="bathrooms")
             .dropdown__bathrooms
-              p(class="iqdropdown-item") ванные комнаты
+              p(class="iqdropdown-item") #{titles.bathrooms}

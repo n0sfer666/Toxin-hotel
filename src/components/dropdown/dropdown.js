@@ -6,6 +6,12 @@ class Dropdown {
     this.container = item;
     this.index = index;
 
+    this.textGuestsDefaults = 'Сколько гостей';
+    this.textGuests = ['гость', 'гостя', 'гостей'];
+    this.textBabies = ['младенец', 'младенца', 'младенцев'];
+    this.textBedrooms = ['спальня', 'спальни', 'спален'];
+    this.textBeds = ['кровать', 'кровати', 'кроватей'];
+
     this.initIsGuests();
     this.initButtons();
 
@@ -114,13 +120,11 @@ class Dropdown {
       ? [this.getIndex(guests), this.getIndex(babies)]
       : [this.getIndex(bedrooms), this.getIndex(beds)];
     const textArr = isGuests
-      ? [['гость', 'гостя', 'гостей'],
-        ['младенец', 'младенца', 'младенцев']]
-      : [['спальня', 'спальни', 'спален'],
-        ['кровать', 'кровати', 'кроватей']];
+      ? [this.textGuests, this.textBabies]
+      : [this.textBedrooms, this.textBeds];
 
     if (totalItems === 0) {
-      return 'Сколько гостей';
+      return this.textGuestsDefaults;
     } else {
       return this.getText(countArr, textArr, indexArr);
     }

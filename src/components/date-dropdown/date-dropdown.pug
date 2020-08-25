@@ -2,11 +2,16 @@ include ../headline/headline
 include ../button-clear-apply/button-clear-apply
 
 mixin date-dropdown({isSingle = true, label = "Даты пербывания в отеле" } = {})
+  -
+    const placeholder = {
+      single: "Выберите даты пребывания", 
+      multi: "ДД.ММ.ГГГГ"
+    }
   if isSingle
     .date-dropdown
       .date-dropdown__label
         +headline({title: label})
-      input(type="text", class = 'date-dropdown__filter js-date-dropdown__filter', placeholder = "Выберите даты пребывания")
+      input(type="text", class = 'date-dropdown__filter js-date-dropdown__filter', placeholder = placeholder.single)
       +button-clear-apply({isApply: false})
       +button-clear-apply()
   else
@@ -15,10 +20,10 @@ mixin date-dropdown({isSingle = true, label = "Даты пербывания в 
         .date-dropdown__datepicker
           .date-dropdown__label
             +headline({title: label[0]})
-          input(type="text", class = 'date-dropdown__input-left js-date-dropdown__input-left', placeholder = "ДД.ММ.ГГГГ")
+          input(type="text", class = 'date-dropdown__input-left js-date-dropdown__input-left', placeholder = placeholder.multi)
           +button-clear-apply({isApply: false})
           +button-clear-apply()
         .date-dropdown__datepicker
           .date-dropdown__label
             +headline({title: label[1]})
-          input(type="text", class = 'date-dropdown__input-right js-date-dropdown__input-right', placeholder = "ДД.ММ.ГГГГ")
+          input(type="text", class = 'date-dropdown__input-right js-date-dropdown__input-right', placeholder = placeholder.multi)
