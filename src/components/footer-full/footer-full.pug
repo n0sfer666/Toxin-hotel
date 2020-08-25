@@ -1,5 +1,6 @@
 include ../headline/headline
 include ../logo/logo
+include ../icon-social/icon-social
 include ../subscription-field/subscription-field
 include ../footer-menu/footer-menu
 
@@ -26,6 +27,7 @@ mixin footer-full({description = "", titles = {}, subscription = {}, copyright =
     const footerCopyright = copyright.length === 0
       ? "отель. Все права зачищены."
       : copyright;
+    const socNets = ["tweeter", "facebook", "instagram"]
   footer.footer-full
     .footer-full__block
       .footer-full__logo
@@ -42,6 +44,5 @@ mixin footer-full({description = "", titles = {}, subscription = {}, copyright =
   .footer-full__copyright
     p.footer-full__copyright-text Copyright © 2018 Toxin #{footerCopyright}
     .footer-full__icons
-      a(href = "https://twitter.com/", class = "footer__icon footer__icon-tweeter")
-      a(href = "https://www.facebook.com/", class = "footer__icon footer__icon-facebook")
-      a(href = "https://www.instagram.com/", class = "footer__icon footer__icon-instagram")
+      each val in socNets
+        +icon-social({socialNetwork: val})
