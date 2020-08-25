@@ -1,0 +1,21 @@
+.footer-short {
+  @include font-body;
+  display: flex;
+  box-sizing: border-box;
+  background-color: #fff;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 0 110px;
+
+  & .footer-short__logo {
+    margin-bottom: 17px;
+  }
+
+  & .footer-short__description {
+    margin-top: -6px;
+    margin-bottom: 27px;
+    width: 70%;
+    max-width: 516px;
+    text-align: center;
+  }
+}
