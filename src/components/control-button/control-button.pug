@@ -1,5 +1,5 @@
 include ../headline/headline
-mixin button-module({isApply = true} = {})
+mixin control-button({isApply = true} = {})
   -
     const titles = {
       apply: "применить",
@@ -9,11 +9,11 @@ mixin button-module({isApply = true} = {})
       ? titles.apply
       : titles.clear;
     const classButton = isApply
-      ? "button-module button-module_apply js-button-module_apply"
-      : "button-module button-module_clear js-button-module_clear";
+      ? "control-button control-button_apply js-control-button"
+      : "control-button control-button_clear js-control-button";
     const dataType = isApply
       ? "apply"
       : "clear";
-  button(class = classButton)
-    .button-module__wrapper
+  button(class = classButton, data-type = dataType)
+    .control-button__wrapper
       +headline({title: titleButton})

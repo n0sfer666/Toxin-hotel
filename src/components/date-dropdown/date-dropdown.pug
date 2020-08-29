@@ -1,5 +1,5 @@
 include ../headline/headline
-include ../button-module/button-module
+include ../control-button/control-button
 
 mixin date-dropdown({isSingle = true, label = "Даты пербывания в отеле" } = {})
   -
@@ -12,8 +12,8 @@ mixin date-dropdown({isSingle = true, label = "Даты пербывания в 
       .date-dropdown__label
         +headline({title: label})
       input(type="text", class = 'date-dropdown__filter js-date-dropdown__filter', placeholder = placeholder.single)
-      +button-module({isApply: false})
-      +button-module()
+      +control-button({isApply: false})
+      +control-button()
   else
     .date-dropdown
       .date-dropdown__container
@@ -21,8 +21,8 @@ mixin date-dropdown({isSingle = true, label = "Даты пербывания в 
           .date-dropdown__label
             +headline({title: label[0]})
           input(type="text", class = 'date-dropdown__input-left js-date-dropdown__input-left', placeholder = placeholder.multi)
-          +button-module({isApply: false})
-          +button-module()
+          +control-button({isApply: false})
+          +control-button()
         .date-dropdown__datepicker
           .date-dropdown__label
             +headline({title: label[1]})

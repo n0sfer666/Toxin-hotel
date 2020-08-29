@@ -1,7 +1,8 @@
-class ButtonModule {
+class ControlButton {
   constructor(item, index) {
     this.instance = item;
     this.index = index;
+    this.type = this.instance.dataset.type;
   }
 
   setHide() {
@@ -17,4 +18,4 @@ class ButtonModule {
   }
 }
 
-export default ButtonModule;
+export default ControlButton;

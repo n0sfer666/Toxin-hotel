@@ -1,4 +1,4 @@
-include ../button-module/button-module
+include ../control-button/control-button
 mixin dropdown({isGuests = true} = {})
   -
     const titles = {
@@ -22,8 +22,8 @@ mixin dropdown({isGuests = true} = {})
           div(class="iqdropdown-menu-option", data-id="babies")
             .dropdown__babies
               p.iqdropdown-item #{titles.babies}
-          +button-module({isApply: false})
-          +button-module()
+          +control-button({isApply: false})
+          +control-button()
       else
         div(class="iqdropdown-menu", style="height: 119px;")
           div(class="iqdropdown-menu-option", data-id="bedrooms", data-defaultcount="2", data-mincount="1")
