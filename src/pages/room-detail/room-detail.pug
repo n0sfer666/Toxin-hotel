@@ -27,9 +27,9 @@ block append content
         .room-detail__amenities
           .room-detail__title
             +headline({type: "h2", title: "Сведения о номере"})
-          +amenity({ icon: "insert_emoticon", title: "Комфорт", description: "Шумопоглащающие стены", isRowed: true})
-          +amenity({icon: "location_city", title: "Удобство", description: "Окно в каждой из спален", isRowed: true})
-          +amenity({icon: "whatshot", title: "Уют", description: "Номер оснащён камином", isRowed: false})
+          +amenity({ icon: "insert_emoticon", title: "Комфорт", description: "Шумопоглащающие стены", withLine: true})
+          +amenity({icon: "location_city", title: "Удобство", description: "Окно в каждой из спален", withLine: true})
+          +amenity({icon: "whatshot", title: "Уют", description: "Номер оснащён камином", withLine: false})
 
         .room-detail__piechart
           .room-detail__title
