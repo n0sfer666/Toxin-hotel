@@ -4,30 +4,30 @@ include ../icon-social/icon-social
 include ../subscription-field/subscription-field
 include ../footer-menu/footer-menu
 
-mixin footer-full({description = "", titles = {}, subscription = {}, copyright = "" } = {})
+mixin footer-full({description = '', titles = {}, subscription = {}, copyright = '' } = {})
   -
-    const footerDescription = description === ""
-      ? "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"
+    const footerDescription = description === ''
+      ? 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»'
       : description;
     const footerTitles = Object.keys(titles).length === 0
-      ? [ { title: "навигация",
-            links: ["О нас", "Новости", "Служба поддержки", "Услуги"] },
-          { title: "о нас",
-            links: ["О сервисе", "Наша команда", "Вакансии", "Инвесторы"] },
-          { title: "служба поддержки",
-            links: ["Соглашения",  "Сообщества", "Связь с нами"] }
+      ? [ { title: 'навигация',
+            links: ['О нас', 'Новости', 'Служба поддержки', 'Услуги'] },
+          { title: 'о нас',
+            links: ['О сервисе', 'Наша команда', 'Вакансии', 'Инвесторы'] },
+          { title: 'служба поддержки',
+            links: ['Соглашения',  'Сообщества', 'Связь с нами'] }
         ]
       : titles;
     const footerSubscription = Object.keys(subscription).length === 0 
       ? {
-          title: "Подписка",
-          description: "Получайте специальные предложения и новости сервиса"
+          title: 'Подписка',
+          description: 'Получайте специальные предложения и новости сервиса'
         }
       : subscription;
     const footerCopyright = copyright.length === 0
-      ? "отель. Все права зачищены."
+      ? 'отель. Все права зачищены.'
       : copyright;
-    const socNets = ["tweeter", "facebook", "instagram"]
+    const socNets = ['tweeter', 'facebook', 'instagram']
   footer.footer-full
     .footer-full__block
       .footer-full__logo

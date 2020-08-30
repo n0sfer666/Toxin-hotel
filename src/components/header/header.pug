@@ -2,7 +2,7 @@ include ../logo/logo
 include ../button/button
 include ../header-menu/header-menu
 
-mixin header({isAuth = false, login = "Cosmin Negoita", loginButton = "Войти", signUpButton = "Зарегистрироваться", links = [] } = {})
+mixin header({isAuth = false, login = 'Cosmin Negoita', loginButton = 'Войти', signUpButton = 'Зарегистрироваться', links = [] } = {})
   header.header
     .header__logo
       +logo({isFull: true})
@@ -10,11 +10,11 @@ mixin header({isAuth = false, login = "Cosmin Negoita", loginButton = "Войт�
       .header__menu
         -
           const headerLinks = links.length === 0
-            ? [ {title: "О нас"},
-                {type: "popup", title: "Услуги"},
-                {title: "Вакансии"},
-                {title: "Новости"},
-                {type: "popup", title: "Соглашения"} ]
+            ? [ {title: 'О нас'},
+                {type: 'popup', title: 'Услуги'},
+                {title: 'Вакансии'},
+                {title: 'Новости'},
+                {type: 'popup', title: 'Соглашения'} ]
             : links
         each val in headerLinks
           +header-menu(val)
@@ -22,7 +22,7 @@ mixin header({isAuth = false, login = "Cosmin Negoita", loginButton = "Войт�
         p.header__login #{login}
       else
         .header__buttons
-          form(class="header__button-sign-in", action="sign-in.html")
-            +button({style: "border", title: loginButton})
-          form(class="header__button-sign-up", action="registration.html")
-            +button({style: "gradient", title: signUpButton})
+          form(class='header__button-sign-in', action='sign-in.html')
+            +button({style: 'border', title: loginButton})
+          form(class='header__button-sign-up', action='registration.html')
+            +button({style: 'gradient', title: signUpButton})

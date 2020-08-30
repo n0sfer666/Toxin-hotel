@@ -8,20 +8,20 @@ block append head
 
 block prepend container
   -
-    const pageClass = "colors-and-type"
+    const pageClass = 'colors-and-type'
 
 block append content
   .colors-and-type__container
     section.color-block__colors
-      +color-block({colorBlock: "dark-shade-100"})
-      +color-block({colorBlock: "dark-shade-75"})
-      +color-block({colorBlock: "dark-shade-50"})
-      +color-block({colorBlock: "dark-shade-25"})
-      +color-block({colorBlock: "dark-shade-5"})
-      +color-block({colorBlock: "purple"})
-      +color-block({colorBlock: "green"})
+      +color-block({colorBlock: 'dark-shade-100'})
+      +color-block({colorBlock: 'dark-shade-75'})
+      +color-block({colorBlock: 'dark-shade-50'})
+      +color-block({colorBlock: 'dark-shade-25'})
+      +color-block({colorBlock: 'dark-shade-5'})
+      +color-block({colorBlock: 'purple'})
+      +color-block({colorBlock: 'green'})
     section.type-block__type
-      +type-block({typeBlock: "h1", text: "This one is the sub-section or widget title"})
-      +type-block({typeBlock: "h2", text: "Next one is the item title inside widgets"})
-      +type-block({typeBlock: "h3", text: "This is a label or CTA text"})
-      +type-block({typeBlock: "body", text: "This is the body text which is used for most of the design, like paragraphs, lists, etc."})
+      +type-block({typeBlock: 'h1', text: 'This one is the sub-section or widget title'})
+      +type-block({typeBlock: 'h2', text: 'Next one is the item title inside widgets'})
+      +type-block({typeBlock: 'h3', text: 'This is a label or CTA text'})
+      +type-block({typeBlock: 'body', text: 'This is the body text which is used for most of the design, like paragraphs, lists, etc.'})

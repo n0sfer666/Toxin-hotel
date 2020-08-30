@@ -5,30 +5,30 @@ include ../radio/radio
 include ../toggle/toggle
 include ../button/button
 
-mixin registration({action = "change me"} = {})
+mixin registration({action = 'change me'} = {})
   .registration
-    form(class="registration__main-form", action=action)
+    form(class='registration__main-form', action=action)
       .registration__title
-        +headline({type: "h1", title: "Регистрация аккаунта"})
+        +headline({type: 'h1', title: 'Регистрация аккаунта'})
       .registration__block-name
-        +text-field({placeholder: "Имя"})
-        +text-field({placeholder: "Фамилия"})
+        +text-field({placeholder: 'Имя'})
+        +text-field({placeholder: 'Фамилия'})
       .registration__block-sex
-        +radio({title: "Мужчина", isChecked: true})
-        +radio({title: "Женщина", isChecked: false})
+        +radio({title: 'Мужчина', isChecked: true})
+        +radio({title: 'Женщина', isChecked: false})
       .registration__block-birthday
         .registration__block-title
-          +headline({title: "День рождения"})
-        +masked-text-field({placeholder: "ДД.ММ.ГГГГ"})
+          +headline({title: 'День рождения'})
+        +masked-text-field({placeholder: 'ДД.ММ.ГГГГ'})
       .registration__block-sign-in
         .registration__block-title
-          +headline({title: "данные для входа в сервис"})
-        +text-field({placeholder: "Email", type: "Email"})
-        +text-field({placeholder: "Пароль", type: "Password"})
+          +headline({title: 'данные для входа в сервис'})
+        +text-field({placeholder: 'Email', type: 'Email'})
+        +text-field({placeholder: 'Пароль', type: 'Password'})
         +toggle()
       .registration__block-registering
-        +button({style: "submitting", title: "зарегистрироваться"})
-    form(class="registration__sign-in-form", action="sign-in.html")
+        +button({style: 'submitting', title: 'зарегистрироваться'})
+    form(class='registration__sign-in-form', action='sign-in.html')
       .registration__block-sign-up
         p.registration__text-sign-up Уже есть аккаунт на Toxin
-        +button({style: "border", title: "войти"})
+        +button({style: 'border', title: 'войти'})

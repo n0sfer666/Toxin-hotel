@@ -1,8 +1,8 @@
 include ../headline/headline
-mixin button({ style = "textual", isActive = "true", title = "click me" } = {})
+mixin button({ style = 'textual', isActive = 'true', title = 'click me' } = {})
   -
-    const modifierActivity = isActive ? "active" : "inactive";
-    const arrayStyles = ["textual", "gradient", "border", "submitting"];
+    const modifierActivity = isActive ? 'active' : 'inactive';
+    const arrayStyles = ['textual', 'gradient', 'border', 'submitting'];
     const modifierStyle = arrayStyles[arrayStyles.indexOf(style)]
   button(class=`button js-button button_${modifierStyle} button_${modifierActivity}`)
     .button__wrapper

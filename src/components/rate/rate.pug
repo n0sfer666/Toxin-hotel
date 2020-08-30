@@ -8,5 +8,5 @@ mixin rate({rate = 0} = {})
       -
         const isRated = (rate == value)
         const id = Math.floor(Math.random() * 10000) + Math.floor(Math.random() * 1000)
-      input(type="radio", class="rate__input", name=name, id=id, value=value, checked=isRated)
-      label(for=id, class="rate__label", title=value) #{value} stars
+      input(type='radio', class='rate__input', name=name, id=id, value=value, checked=isRated)
+      label(for=id, class='rate__label', title=value) #{value} stars

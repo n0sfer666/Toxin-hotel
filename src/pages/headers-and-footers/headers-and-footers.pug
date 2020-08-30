@@ -9,41 +9,41 @@ block append head
 
 block prepend container
   -
-    const pageClass = "headers-and-footers"
+    const pageClass = 'headers-and-footers'
 
 block append content
   -
     const configHeader = {
-      loginButton: "login",
-      signUpButton: "register",
+      loginButton: 'login',
+      signUpButton: 'register',
       links: [
-        { type: "home", title: "Home"},
-        {title: "About Us"},
-        {type: "popup", title: "Services"},
-        {title: "Careers"},
-        {title: "News"},
-        {title: "Documentation"}
+        { type: 'home', title: 'Home'},
+        {title: 'About Us'},
+        {type: 'popup', title: 'Services'},
+        {title: 'Careers'},
+        {title: 'News'},
+        {title: 'Documentation'}
         ]
     }
   +header(configHeader)
   -
     configHeader.isAuth = true
-    configHeader.login = "Cosmin Negoita"
+    configHeader.login = 'Cosmin Negoita'
   +header(configHeader)
   -
     const configFooterFull = {
-      description: "Lopx ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.",
+      description: 'Lopx ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.',
       titles: [
-        {title: "navigation", links: ["About Us", "News", "Support", "Products"]},
-        {title: "about us", links: ["Who we are", "Our teem", "Careers", "Investors"]},
-        {title: "support", links: ["Documentation", "Community", "Get in Touch"]}
+        {title: 'navigation', links: ['About Us', 'News', 'Support', 'Products']},
+        {title: 'about us', links: ['Who we are', 'Our teem', 'Careers', 'Investors']},
+        {title: 'support', links: ['Documentation', 'Community', 'Get in Touch']}
         ],
       subscription: {
-        title: "subscribe to our newsletter",
-        description: "Receive our latest news and promotions in your inbox!",
-        placeholder: "Your email address"
+        title: 'subscribe to our newsletter',
+        description: 'Receive our latest news and promotions in your inbox!',
+        placeholder: 'Your email address'
         },
-      copyright: "UI Kit. All rights reserved."
+      copyright: 'UI Kit. All rights reserved.'
       }
   +footer-full(configFooterFull)
-  +footer-short({description: "Lopx ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis."})
+  +footer-short({description: 'Lopx ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.'})

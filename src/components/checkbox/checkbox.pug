@@ -1,7 +1,7 @@
-mixin checkbox({isChecked = false, title = "Change me"} = {})
+mixin checkbox({isChecked = false, title = 'Change me'} = {})
   .checkbox
     label.checkbox__container
       .checkbox__wrapper
         p.checkbox__title #{title}
-      input(type="checkbox", class = "checkbox__input", checked=isChecked)
-      span(class="checkbox__checkmark")
+      input(type='checkbox', class = 'checkbox__input', checked=isChecked)
+      span(class='checkbox__checkmark')

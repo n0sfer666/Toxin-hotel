@@ -1,9 +1,9 @@
 include ../like/like
-mixin review({login="user-1", likeCount=0, isLicked=false, name="change me", timeAgo="менее часа назад", review="change me"} = {})
+mixin review({login='user-1', likeCount=0, isLicked=false, name='change me', timeAgo='менее часа назад', review='change me'} = {})
   .review
     .review__container.review__container_left
       .review__pictures
-        img(class = "review__img", src=`img/${login}.png`, alt=name)
+        img(class = 'review__img', src=`img/${login}.png`, alt=name)
       +like({counter: likeCount, isChecked: isLiked})
     .review__container.review__container_right
       p.review__name #{name}
