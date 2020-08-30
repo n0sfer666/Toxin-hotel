@@ -12,7 +12,38 @@ block prepend container
     const pageClass = "headers-and-footers"
 
 block append content
-  +header({ loginButton: "login", signUpButton: "register", links: [{ type: "home", title: "Home"}, {title: "About Us"}, {type: "popup", title: "Services"}, {title: "Careers"}, {title: "News"}, {title: "Documentation"}] })
-  +header({ isAuth: true, login: "Cosmin Negoita", links: [{ type: "home", title: "Home"}, {title: "About Us"}, {type: "popup", title: "Services"}, {title: "Careers"}, {title: "News"}, {title: "Documentation"}] })
-  +footer-full({description: "Lopx ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.", titles: [{title: "navigation", links: ["About Us", "News", "Support", "Products"]}, {title: "about us", links: ["Who we are", "Our teem", "Careers", "Investors"]}, {title: "support", links: ["Documentation", "Community", "Get in Touch"]}], subscription: { title: "subscribe to our newsletter", description: "Receive our latest news and promotions in your inbox!", placeholder: "Your email address"}, copyright: "UI Kit. All rights reserved."})
+  -
+    const configHeader = {
+      loginButton: "login",
+      signUpButton: "register",
+      links: [
+        { type: "home", title: "Home"},
+        {title: "About Us"},
+        {type: "popup", title: "Services"},
+        {title: "Careers"},
+        {title: "News"},
+        {title: "Documentation"}
+        ]
+    }
+  +header(configHeader)
+  -
+    configHeader.isAuth = true
+    configHeader.login = "Cosmin Negoita"
+  +header(configHeader)
+  -
+    const configFooterFull = {
+      description: "Lopx ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.",
+      titles: [
+        {title: "navigation", links: ["About Us", "News", "Support", "Products"]},
+        {title: "about us", links: ["Who we are", "Our teem", "Careers", "Investors"]},
+        {title: "support", links: ["Documentation", "Community", "Get in Touch"]}
+        ],
+      subscription: {
+        title: "subscribe to our newsletter",
+        description: "Receive our latest news and promotions in your inbox!",
+        placeholder: "Your email address"
+        },
+      copyright: "UI Kit. All rights reserved."
+      }
+  +footer-full(configFooterFull)
   +footer-short({description: "Lopx ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis."})
