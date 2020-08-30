@@ -9,7 +9,7 @@ block append head
 
 block prepend container
   -
-    const pageClass = "header-footer"
+    const pageClass = "headers-and-footers"
 
 block append content
   +header({ loginButton: "login", signUpButton: "register", links: [{ type: "home", title: "Home"}, {title: "About Us"}, {type: "popup", title: "Services"}, {title: "Careers"}, {title: "News"}, {title: "Documentation"}] })
