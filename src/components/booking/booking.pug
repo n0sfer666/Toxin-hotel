@@ -3,14 +3,9 @@ include ../date-dropdown/date-dropdown
 include ../dropdown/dropdown
 include ../button/button
 
-mixin booking({room = "888", isLux = true, price = "9990", discount = "2179", complementaryFee = 300, additionalFee = "0", action = "change me" } = {})
+mixin booking({room = "888", isLux = true, price = "9990", discount = "2179", complementaryFee = 300, additionalFee = "0", action = "change me", currency = "₽", priceText = "в сутки", daysIn = "0 суток", cost = "0", total = "0" } = {})
   -
     const isDiscounted = discount == 0 ? false : true
-    const currency = "₽"
-    const priceText = "в сутки"
-    const daysIn = "0 суток"
-    const cost = "0"
-    const total = "0"
 
   form(class="booking js-booking", action=action)
     .booking__header
