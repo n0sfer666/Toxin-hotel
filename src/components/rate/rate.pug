@@ -1,9 +1,8 @@
 mixin rate({rate = 0} = {})
   -
     const stars = [5, 4, 3, 2, 1]
+    const name = Math.floor(Math.random() * 10000) + Math.floor(Math.random() * 1000)
   .rate
-    -
-      const name = Math.floor(Math.random() * 10000) + Math.floor(Math.random() * 1000)
     each value in stars
       -
         const isRated = (rate == value)
