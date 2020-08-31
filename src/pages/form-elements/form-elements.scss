@@ -172,26 +172,22 @@
         margin-bottom: 30px;
 
         & .button_active {
-          margin-right: 18px;
+          margin-right: 19px;
         }
         & .button_border,
         & .button_gradient {
-          width: 99px;
           height: 44px;
         }
       }
 
       &-text-line {
         display: flex;
-        width: 182px;
         margin: 0 -10px 32px;
         & .button {
-          width: 81px;
           height: 14px;
         }
       }
       &-action-line {
-        width: 320px;
         height: 44px;
       }
       & .form-elements__title {

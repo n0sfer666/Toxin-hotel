@@ -81,7 +81,6 @@
 
   &__button-sign-in {
     & .button {
-      width: 87px;
       height: 34px;
 
       @media screen and (min-width: $new-phones) {
@@ -96,7 +95,6 @@
 
   &__button-sign-up {
     & .button {
-      width: 196px;
       height: 34px;
     }
   }
