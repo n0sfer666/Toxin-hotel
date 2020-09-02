@@ -1,4 +1,3 @@
-include ../headline/headline
 mixin button({ style = 'textual', isActive = 'true', title = 'click me' } = {})
   -
     const modifierActivity = isActive ? 'active' : 'inactive';
@@ -6,4 +5,4 @@ mixin button({ style = 'textual', isActive = 'true', title = 'click me' } = {})
     const modifierStyle = arrayStyles[arrayStyles.indexOf(style)]
   button(class=`button js-button button_${modifierStyle} button_${modifierActivity}`)
     .button__wrapper
-      +headline({title: title})
+      h3.button__label #{title}
