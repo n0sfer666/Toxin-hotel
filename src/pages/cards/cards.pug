@@ -5,6 +5,7 @@ include ../../components/registration/registration
 include ../../components/booking/booking
 include ../../components/sign-in/sign-in
 include ../../components/room/room
+include ../../components/date-dropdown/date-dropdown
 
 block append head
   title Cards
@@ -29,7 +30,7 @@ block append content
 
     section.cards__section
       .cards__block-datepicker
-        .date-dropdown_inline.js-date-dropdown_inline
+        +date-dropdown({isInline: true})
       .cards__block-room
         +room()
       .cards__block-room
