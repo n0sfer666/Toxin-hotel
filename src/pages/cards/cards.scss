@@ -17,24 +17,25 @@
   &__section {
     width: 380px;
 
-    @media screen and (min-width: $old-phones) and (max-width: 380px) {
-      width: 310px;
+    &:last-child {
+      width: 320px;
     }
 
-    &.cards__section_320-px {
-      width: 320px;
-
-      @media screen and (min-width: $old-phones) and (max-width: 380px) {
-        width: 310px;
-      }
+    @media screen and (min-width: $old-phones) and (max-width: 380px) {
+      width: 310px;
     }
   }
 
   &__block {
     margin-bottom: 39px;
 
-    & .datepicker-inline .datepicker {
-      height: 369px;
+    &-datepicker {
+      margin-bottom: 39px;
+      width: 320px;
+
+      @media screen and (min-width: $old-phones) and (max-width: 380px) {
+        width: 310px;
+      }
     }
 
     &-room {
