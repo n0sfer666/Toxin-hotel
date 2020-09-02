@@ -1,4 +1,3 @@
-include ../headline/headline
 mixin control-button({isApply = true} = {})
   -
     const titles = {
@@ -9,11 +8,11 @@ mixin control-button({isApply = true} = {})
       ? titles.apply
       : titles.clear;
     const classButton = isApply
-      ? 'control-button control-button_apply js-control-button'
-      : 'control-button control-button_clear js-control-button';
+      ? 'control-button control-button_purple js-control-button'
+      : 'control-button control-button_gray js-control-button';
     const dataType = isApply
       ? 'apply'
       : 'clear';
   button(class = classButton, data-type = dataType)
     .control-button__wrapper
-      +headline({title: titleButton})
+      h3.control-button__label #{titleButton}

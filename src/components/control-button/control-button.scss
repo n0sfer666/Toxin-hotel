@@ -12,8 +12,13 @@
     box-sizing: border-box;
   }
 
-  &_clear {
-    & .headline-label {
+  &__label {
+    @include font-h3;
+    @include fix-overflow;
+  }
+
+  &_gray {
+    & .control-button__label {
       color: $dark-shade-50;
     }
 
@@ -23,8 +28,8 @@
     }
   }
 
-  &_apply {
-    & .headline-label {
+  &_purple {
+    & .control-button__label {
       color: $purple;
     }
 
