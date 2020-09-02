@@ -18,7 +18,7 @@ $(document).ready(() => {
     }
   });
 
-  const $inlineDatepicker = $('.js-date-dropdown_inline').datepicker({
+  const $inlineDatepicker = $('.js-date-dropdown__datepicker_inline').datepicker({
     language: 'ru',
     minDate: new Date(),
     range: true,
