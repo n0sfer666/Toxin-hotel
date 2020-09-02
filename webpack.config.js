@@ -10,8 +10,8 @@ const pages = [
   'cards',
   'headers-and-footers',
   'landing-page',
-  'registration',
-  'sign-in',
+  'registration-page',
+  'sign-in-page',
   'search-room',
   'room-detail',
 ];
