@@ -15,26 +15,28 @@
       border-radius: 6px;
       margin-right: 40px;
 
-      &_dark-shade-100 {
-        background-color: $dark-shade-100;
-      }
-      &_dark-shade-75 {
-        background-color: $dark-shade-75;
-      }
-      &_dark-shade-50 {
-        background-color: $dark-shade-50;
-      }
-      &_dark-shade-25 {
-        background-color: $dark-shade-25;
-      }
-      &_dark-shade-5 {
-        background-color: $dark-shade-5;
-      }
-      &_purple {
-        background-color: $purple;
-      }
-      &_green {
-        background-color: $green;
+      &_background {
+        &_dark-shade-100 {
+          background-color: $dark-shade-100;
+        }
+        &_dark-shade-75 {
+          background-color: $dark-shade-75;
+        }
+        &_dark-shade-50 {
+          background-color: $dark-shade-50;
+        }
+        &_dark-shade-25 {
+          background-color: $dark-shade-25;
+        }
+        &_dark-shade-5 {
+          background-color: $dark-shade-5;
+        }
+        &_purple {
+          background-color: $purple;
+        }
+        &_green {
+          background-color: $green;
+        }
       }
     }
 
