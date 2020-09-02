@@ -283,6 +283,8 @@ Navigation
   color: $dark-shade-100; }
 
 .datepicker--nav-action {
+  font: normal normal 24px/24px materialIcons;
+  color: $purple;
   width: 24px;
   user-select: none; }
 .datepicker--nav-action.-disabled- {
