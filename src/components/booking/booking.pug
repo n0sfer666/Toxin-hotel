@@ -10,11 +10,12 @@ mixin booking({room = '888', isLux = true, price = '9990', discount = '2179', co
   form(class='booking js-booking', action=action)
     .booking__header
       .booking__header-room
-        span.booking__header-number № 
-        +headline({type: 'h1', title: room})
+        span.booking__header-room-number № 
+        span.booking__header-room-text
+          +headline({type: 'h1', title: room})
         if isLux
           .booking__header-room-lux
-            +headline({title: ' люкс'})
+            +headline({title: ' люкс', isPurple: true})
       span.booking__header-price
         span.booking__header-price-text.booking__header-price-text_bold.js-booking__header-price-text #{price}
         span.booking__header-price-text.booking__header-price-text_bold #{currency} 

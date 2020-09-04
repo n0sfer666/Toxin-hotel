@@ -2,15 +2,36 @@
   &-subsection {
     @include font-h1;
     @include fix-overflow;
+    display: inline-block;
+    vertical-align: inherit;
+    text-align: inherit;
+
+    &_purple {
+      color: $purple;
+    }
   }
 
   &-widget {
     @include font-h2;
     @include fix-overflow;
+    display: inline-block;
+    vertical-align: inherit;
+    text-align: inherit;
+
+    &_purple {
+      color: $purple;
+    }
   }
 
   &-label {
     @include font-h3;
     @include fix-overflow;
+    display: inline-block;
+    vertical-align: inherit;
+    text-align: inherit;
+
+    &_purple {
+      color: $purple;
+    }
   }
 }

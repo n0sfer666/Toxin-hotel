@@ -1,4 +1,4 @@
-mixin headline({ type = 'h3', title = 'change me' } = {})
+mixin headline({ type = 'h3', title = 'change me', isPurple = false } = {})
   -
     const types = ['h1', 'h2', 'h3'];
     const classes = ['headline-subsection', 'headline-widget', 'headline-label'];
@@ -10,7 +10,10 @@ mixin headline({ type = 'h3', title = 'change me' } = {})
         correctIndex.push(index);
       }
     })
+    const correctClass = isPurple
+      ? `${classes[ correctIndex[0] ]} ${classes[ correctIndex[0] ]}_purple`
+      : `${classes[ correctIndex[0] ]}`;
   if isTypeCorrect[0]
-    #{types[ correctIndex[0] ]}(class = classes[ correctIndex[0] ]) #{title}
+    #{types[ correctIndex[0] ]}(class = correctClass) #{title}
   else
     p something wrong
