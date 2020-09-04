@@ -3,19 +3,6 @@
   box-sizing: border-box;
   & .header {
     margin-bottom: 35px;
-    & > .header__nav-bar > .header__buttons {
-      & > .header__button-sign-in {
-        & .button {
-          width: 79px;
-          margin-right: 20px;
-        }
-      }
-      & > .header__button-sign-up {
-        & .button {
-          width: 101px;
-        }
-      }
-    }
   }
   & .footer-full__copyright {
     margin-bottom: 41px;

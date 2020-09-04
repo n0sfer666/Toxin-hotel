@@ -34,15 +34,8 @@
     }
   }
   &__title {
-    & .headline-subsection {
-      max-height: 60px;
-    }
-    & .headline-widget {
-      max-height: 48px;
-    }
-    & .headline-label {
-      max-height: 15px;
-    }
+    max-height: 60px;
+    
     &_body {
       max-height: 48px;
       margin-top: -3px;

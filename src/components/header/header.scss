@@ -80,23 +80,19 @@
   }
 
   &__button-sign-in {
-    & .button {
-      height: 34px;
+    height: 34px;
 
-      @media screen and (min-width: $new-phones) {
-        margin-right: 20px;
-      }
+    @media screen and (min-width: $new-phones) {
+      margin-right: 20px;
+    }
 
-      @media screen and (max-width: $new-phones) {
-        margin-bottom: 10px;
-      }
+    @media screen and (max-width: $new-phones) {
+      margin-bottom: 10px;
     }
   }
 
   &__button-sign-up {
-    & .button {
-      height: 34px;
-    }
+    height: 34px;
   }
 
   &__login {

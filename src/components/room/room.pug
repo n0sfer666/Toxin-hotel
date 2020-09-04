@@ -18,7 +18,7 @@ mixin room({room = '888', isLux = true, price = '9990', rate = 5, reviews = 145 
             span.room__header-number № 
             | #{room}
             if isLux
-              +headline({title: ' люкс'})
+              +headline({title: ' люкс', isPurple: true})
         span.room__price-line
           span.room__price.js-room__price #{price}₽ 
           | в сутки
