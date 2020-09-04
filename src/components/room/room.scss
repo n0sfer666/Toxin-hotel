@@ -49,7 +49,7 @@
   }
 
   &__horizontal-line {
-    width: 230px;
+    max-width: 230px;
     height: 1px;
     margin-top: 6px;
     background: rgba(31, 32, 65, 0.1);
@@ -62,8 +62,8 @@
     margin: 10px 3px 0 0;
 
     &-text-block {
-      width: 100px;
-      height: 24px;
+      max-width: 100px;
+      max-height: 24px;
       text-align: right;
       color: $dark-shade-50;
       @include fix-overflow;
