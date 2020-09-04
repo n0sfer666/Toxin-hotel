@@ -27,7 +27,7 @@ class DateDropdown {
   initButtons() {
     const buttons = this.parentElement.querySelectorAll('.js-control-button');
     $.each(buttons, (key, element) => {
-      const tmpInstance = new ControlButton(element, 0);
+      const tmpInstance = new ControlButton(element);
       if (tmpInstance.type === 'clear') {
         this.clearButton = tmpInstance;
       } else {
