@@ -25,6 +25,12 @@
       &:hover, &:focus, &:active {
         text-shadow: 0 0 5px $dark-shade-25;
       }
+
+      @media screen and (min-width: $old-phones) and (max-width: $new-phones) {
+        &:last-child {
+          margin-bottom: 40px;
+        }
+      }
     }
 
 }

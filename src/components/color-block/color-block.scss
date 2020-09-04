@@ -6,7 +6,9 @@
 
   &__colors {
     display: inline-block;
-    width: 270px;
+    min-width: 250px;
+    width: max-content;
+    max-width: 270px;
 
     &-cell {
       flex: none;
@@ -42,7 +44,9 @@
 
     &-text {
       display: block;
-      width: 159px;
+      min-width: 120px;
+      width: max-content;
+      max-width: 160px;
       @include fix-overflow;
       white-space: nowrap;
       font: normal bold 19px/30px Quicksand, Montserrat, sans-serif;
