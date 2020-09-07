@@ -2,21 +2,13 @@ include ../logo/logo
 include ../button/button
 include ../header-menu/header-menu
 
-mixin header({isAuth = false, login = 'Cosmin Negoita', loginButton = 'Войти', signUpButton = 'Зарегистрироваться', links = [] } = {})
-  -
-    const headerLinks = links.length === 0
-      ? [ {title: 'О нас'},
-          {type: 'popup', title: 'Услуги'},
-          {title: 'Вакансии'},
-          {title: 'Новости'},
-          {type: 'popup', title: 'Соглашения'} ]
-      : links
+mixin header({isAuth = false, login = 'Cosmin Negoita', loginButton = 'Войти', signUpButton = 'Зарегистрироваться', links = [ {title: 'О нас'}, {type: 'popup', title: 'Услуги'}, {title: 'Вакансии'}, {title: 'Новости'}, {type: 'popup', title: 'Соглашения'} ] } = {})
   header.header
     .header__logo
       +logo({isFull: true})
     .header__nav-bar
       .header__menu
-        each val in headerLinks
+        each val in links
           +header-menu(val)
       if isAuth
         p.header__login #{login}

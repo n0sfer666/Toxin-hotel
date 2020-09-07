@@ -1,12 +1,7 @@
 include ../logo/logo
 include ../icon-social/icon-social
 
-mixin footer-short({description = ''} = {})
-  -
-    const footerDescription = description === ''
-      ? 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»'
-      : description;
-    const socNets = ['tweeter', 'facebook', 'instagram']
+mixin footer-short({description = 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»', socNets = ['tweeter', 'facebook', 'instagram']} = {})
   footer.footer-short
       .footer-short__logo
         +logo({isFull: true})
