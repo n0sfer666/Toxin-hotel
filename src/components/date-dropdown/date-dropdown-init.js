@@ -4,7 +4,7 @@ import bookingInstances from '../booking/booking-inits';
 $(document).ready(() => {
   const $datepickerSingle = $('.js-date-dropdown__filter');
   $.each($datepickerSingle, (key, item) => {
-    new DateDropdown(item, key, true);
+    new DateDropdown(item, true);
   });
 
   const $datepickerRight = $('.js-date-dropdown__input-right');
@@ -12,9 +12,9 @@ $(document).ready(() => {
 
   $.each($datepickerLeft, (key, item) => {
     if ($(item).closest('.js-booking').length > 0) {
-      new DateDropdown([item, $datepickerRight[key]], key, false, bookingInstances[0]);
+      new DateDropdown([item, $datepickerRight[key]], false, bookingInstances[0]);
     } else {
-      new DateDropdown([item, $datepickerRight[key]], key, false);
+      new DateDropdown([item, $datepickerRight[key]], false);
     }
   });
 

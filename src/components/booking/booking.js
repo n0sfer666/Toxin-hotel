@@ -1,7 +1,6 @@
 class Booking {
-  constructor(item, index) {
+  constructor(item) {
     this.item = item;
-    this.index = index;
 
     this.initiate();
   }

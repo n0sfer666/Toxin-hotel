@@ -2,9 +2,8 @@ import 'air-datepicker';
 import ControlButton from '../control-button/control-button';
 
 class DateDropdown {
-  constructor(item, index, isSingle, bookingInstance) {
+  constructor(item, isSingle, bookingInstance) {
     this.initContainer(item);
-    this.index = index;
 
     this.isSingle = isSingle;
     this.bookingInstance = bookingInstance;

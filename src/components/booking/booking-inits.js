@@ -6,7 +6,7 @@ $(document).ready(() => {
   const arrayBookingElement = $('.js-booking');
 
   $.each(arrayBookingElement, (key, item) => {
-    bookingInstances.push(new Booking(item, key));
+    bookingInstances.push(new Booking(item));
   });
 });
 

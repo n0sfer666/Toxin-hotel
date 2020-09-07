@@ -2,9 +2,8 @@ import 'paginationjs';
 import Room from '../room/room';
 
 class Pagination {
-  constructor(item, index, dataSource, dataOutput) {
+  constructor(item, dataSource, dataOutput) {
     this.$instance = $(item);
-    this.index = index;
     this.dataOutput = dataOutput;
     this.elementsOnPage = 12;
 

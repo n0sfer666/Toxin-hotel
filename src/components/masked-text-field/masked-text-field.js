@@ -1,9 +1,8 @@
 import IMask from 'imask';
 
 class MaskedField {
-  constructor(item, index) {
+  constructor(item) {
     this.maskedElement = item;
-    this.index = index;
 
     this.initInstance();
   }

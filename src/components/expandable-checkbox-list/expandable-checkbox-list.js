@@ -1,7 +1,6 @@
 class ExpandableCheckboxList {
-  constructor(item, index) {
+  constructor(item) {
     this.$instance = $(item);
-    this.index = index;
     this.isExpanded = false;
 
     this.initInstanceElements();

@@ -1,7 +1,6 @@
 class Button {
-  constructor(item, index) {
+  constructor(item) {
     this.instance = item;
-    this.index = index;
 
     this.type = this.getType();
     this.mod = this.getMod();

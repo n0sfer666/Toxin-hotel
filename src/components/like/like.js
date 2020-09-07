@@ -1,7 +1,6 @@
 class LikeButton {
-  constructor(item, index) {
+  constructor(item) {
     this.element = item;
-    this.index = index;
 
     this.initInstanceElements();
     this.bindContext();

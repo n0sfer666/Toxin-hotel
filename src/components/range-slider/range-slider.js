@@ -1,7 +1,6 @@
 class RangeSlider {
-  constructor(item, index) {
+  constructor(item) {
     this.rangeSlider = item;
-    this.index = index;
 
     this.initInstanceElements();
     this.initInstanceVars();

@@ -2,9 +2,8 @@ import 'item-quantity-dropdown/lib/item-quantity-dropdown.min';
 import ControlButton from '../control-button/control-button';
 
 class Dropdown {
-  constructor(item, index) {
+  constructor(item) {
     this.container = item;
-    this.index = index;
 
     this.textGuestsDefaults = 'Сколько гостей';
     this.textGuests = ['гость', 'гостя', 'гостей'];
