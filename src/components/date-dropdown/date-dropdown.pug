@@ -14,7 +14,7 @@ mixin date-dropdown({isSingle = true, isInline = false, label = ['Даты пе�
   .date-dropdown
     .date-dropdown__container
       if(isInline)
-        .date-dropdown__datepicker_inline.js-date-dropdown__datepicker_inline
+        .date-dropdown__datepicker.date-dropdown__datepicker_inline.js-date-dropdown__datepicker_inline
       else
         each value, index in classDateDropdown
           div(class = classDatepicker)
