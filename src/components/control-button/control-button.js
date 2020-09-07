@@ -1,6 +1,7 @@
 class ControlButton {
   constructor(item) {
     this.instance = item;
+    this.parentElement = item.parentElement;
     this.type = this.instance.dataset.type;
   }
 
