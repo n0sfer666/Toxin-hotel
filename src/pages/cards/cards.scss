@@ -15,14 +15,16 @@
   }
 
   &__section {
-    width: 380px;
+    min-width: 310px;
+    max-width: 380px;
 
     &:last-child {
-      width: 320px;
+      min-width: 310px;
+      max-width: 320px;
     }
 
     @media screen and (min-width: $old-phones) and (max-width: 380px) {
-      width: 310px;
+      max-width: 310px;
     }
   }
 
@@ -31,15 +33,17 @@
 
     &-datepicker {
       margin-bottom: 39px;
-      width: 320px;
+      min-width: 310px;
+      max-width: 320px;
 
       @media screen and (min-width: $old-phones) and (max-width: 380px) {
-        width: 310px;
+        max-width: 310px;
       }
     }
 
     &-room {
-      width: 270px;
+      min-width: 250px;
+      max-width: 270px;
       margin-bottom: 36px;
 
       @media screen and (min-width: $old-phones) and (max-width: 380px) {

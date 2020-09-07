@@ -106,7 +106,7 @@
     float: right;
   }
   &__rules {
-    width: 272px;
+    max-width: 272px;
     margin-bottom: 21px;
 
     & .room-detail__title {
@@ -135,7 +135,8 @@
 
   &__amenities {
     margin-right: 80px;
-    width: 280px;
+    min-width: 250px;
+    max-width: 280px;
 
     @media screen and (min-width: $old-phones) and (max-width: 450px) {
       margin-right: 0;
@@ -145,10 +146,11 @@
   &__booking {
     flex-shrink: 0;
     margin-bottom: 30px;
-    width: 380px;
+    min-width: 310px;
+    max-width: 380px;
 
     @media screen and (min-width: $old-phones) and (max-width: 400px) {
-      width: 310px;
+      max-width: 310px;
     }
   }
 

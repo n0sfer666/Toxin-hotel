@@ -17,7 +17,8 @@
 
   &__container {
     margin: 163px 0;
-    width: 380px;
+    min-width: 310px;
+    max-width: 380px;
 
     @media screen and (min-width: $old-phones) and (max-width: 400px) {
       margin: 81px 0;

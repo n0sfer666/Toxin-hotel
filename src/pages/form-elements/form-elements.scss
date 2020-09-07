@@ -27,7 +27,7 @@
     }
 
     @media screen and (min-width: $old-phones) and (max-width: $pads) {
-      width: 320px;
+      max-width: 320px;
       justify-content: center;
       align-items: center;
     }
@@ -49,42 +49,42 @@
 
   &__block {
     &-text-field {
-      width: 320px;
+      max-width: 320px;
       margin-bottom: 105px;
     }
     &-dropdown-guests {
-      width: 320px;
+      max-width: 320px;
       margin-bottom: 24px;
     }
     &-masked-text-field {
-      width: 320px;
+      max-width: 320px;
       margin-bottom: 40px;
     }
     &-date-dropdown {
-      width: 320px;
+      max-width: 320px;
       margin-bottom: 41px;
     }
     &-filter-date-dropdown {
-      width: 266px;
+      max-width: 266px;
       margin-bottom: 41px;
     }
     &-subscription-field {
-      width: 266px;
+      max-width: 266px;
       margin-bottom: 184px;
     }
     &-dropdown-rooms {
-      width: 266px;
+      max-width: 266px;
       margin-bottom: 221px;
       & .form-elements__title {
         margin-bottom: 5px;
       }
     }
     &-expandable-checkbox-list {
-      width: 263px;
+      max-width: 263px;
       margin-bottom: 56px;
     }
     &-checkbox {
-      width: 231px;
+      max-width: 231px;
       margin-bottom: 34px;
       & .form-elements__title {
         margin-bottom: 15px;
@@ -94,7 +94,7 @@
       }
     }
     &-radio {
-      width: 222px;
+      max-width: 222px;
       margin-bottom: 42px;
       &-container {
         display: flex;
@@ -108,7 +108,7 @@
     }
 
     &-toggle {
-      width: 260px;
+      max-width: 260px;
       margin-bottom: 45px;
       & .form-elements__title {
         margin-bottom: 16px;
@@ -143,14 +143,14 @@
       }
     }
     &-dropdown-guests-2 {
-      width: 320px;
+      max-width: 320px;
       margin-bottom: 256px;
       & .form-elements__title {
         margin-bottom: 5px;
       }
     }
     &-rich-checkbox {
-      width: 266px;
+      max-width: 266px;
       & .form-elements__title {
         margin-bottom: 14px;
       }
@@ -160,7 +160,7 @@
     }
     
     &-range-slider {
-      width: 266px;
+      max-width: 266px;
       margin-bottom: 43px;
     }
     &-buttons {
@@ -195,28 +195,28 @@
       }
     }
     &-pagination {
-      width: 320px;
+      max-width: 320px;
       margin-bottom: 233px;
       & .form-elements__title {
         margin-bottom: 15px;
       }
     }
     &-dropdown-guests-3 {
-      width: 320px;
+      max-width: 320px;
       margin-bottom: 256px;
       & .form-elements__title {
         margin-bottom: 5px;
       }
     }
     &-bullet-list {
-      width: 281px;
+      max-width: 281px;
       & .form-elements__title {
         margin-bottom: 13px;
       }
     }
     
     &-amenity {
-      width: 291px;
+      max-width: 291px;
       margin-top: -1px;
     }
     &-reviews {
@@ -233,7 +233,6 @@
     &_medium {
       display: inline-block;
       height: 44px;
-      width: 99px;
       margin-right: 20px;
     }
     &_small {

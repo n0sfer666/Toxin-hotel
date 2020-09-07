@@ -4,7 +4,7 @@
   flex-direction: row;
   align-items: flex-end;
   justify-content: space-between;
-  width: 310px;
+  max-width: 310px;
 
   &__chart {
     width: 120px;

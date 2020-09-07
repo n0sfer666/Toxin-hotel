@@ -25,7 +25,7 @@
   &__menu {
     flex-shrink: 0;
     margin-right: 60px;
-    width: 266px;
+    max-width: 266px;
 
     &-title {
       width: 98%;
@@ -110,7 +110,7 @@
   &__room {
     margin-bottom: 14px;
 
-    width: 270px;
+    max-width: 270px;
   }
 
   &__footer {
