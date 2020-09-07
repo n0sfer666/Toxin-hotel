@@ -2,8 +2,9 @@ import 'item-quantity-dropdown/lib/item-quantity-dropdown.min';
 import ControlButton from '../control-button/control-button';
 
 class Dropdown {
-  constructor(item) {
+  constructor(item, controlButtons) {
     this.container = item;
+    this.controlButtons = controlButtons;
 
     this.textGuestsDefaults = 'Сколько гостей';
     this.textGuests = ['гость', 'гостя', 'гостей'];
@@ -37,15 +38,21 @@ class Dropdown {
 
   initButtons() {
     if (this.isGuests) {
-      const buttons = this.container.querySelectorAll('.js-control-button');
-      $.each(buttons, (key, element) => {
-        const tmpInstance = new ControlButton(element, 0);
-        if (tmpInstance.type === 'clear') {
-          this.clearButton = tmpInstance;
-        } else {
-          this.applyButton = tmpInstance;
+      const buttonsContainer = this.container.querySelector('.dropdown__buttons');
+      $.each(this.controlButtons, (key, element) => {
+        const isDropdownButton = element.parentElement === buttonsContainer;
+        if (isDropdownButton) {
+          const isClearButton = element.type === 'clear';
+          if (isClearButton) {
+            this.clearButton = element;
+          } else {
+            this.applyButton = element;
+          }
+          element.instance.remove();
         }
       });
+      buttonsContainer.append(this.clearButton.instance);
+      buttonsContainer.append(this.applyButton.instance);
       this.clearButton.setHide();
     }
   }

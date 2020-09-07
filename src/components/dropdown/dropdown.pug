@@ -22,9 +22,8 @@ mixin dropdown({isGuests = true} = {})
           div(class='iqdropdown-menu-option', data-id='babies')
             .dropdown__babies
               p.iqdropdown-item #{titles.babies}
-          .dropdown__button-clear
+          .dropdown__buttons
             +control-button({isApply: false})
-          .dropdown__button-apply
             +control-button()
       else
         div(class='iqdropdown-menu', style='height: 119px;')
