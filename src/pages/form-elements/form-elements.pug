@@ -15,6 +15,7 @@ include ../../components/rate/rate
 include ../../components/rich-checkbox/rich-checkbox
 include ../../components/range-slider/range-slider
 include ../../components/button/button
+include ../../components/pagination/pagination
 include ../../components/bullet-list/bullet-list
 include ../../components/amenity/amenity
 include ../../components/review/review
@@ -114,7 +115,7 @@ block append content
       .form-elements__block-pagination
         .form-elements__title
           +headline({title: 'pagination'})
-        .js-pagination
+        +pagination()
       .form-elements__block-dropdown-guests-3
         .form-elements__title
           +headline({title: 'dropdown'})

@@ -8,6 +8,7 @@ include ../../components/checkbox/checkbox
 include ../../components/rich-checkbox/rich-checkbox
 include ../../components/expandable-checkbox-list/expandable-checkbox-list
 include ../../components/room/room
+include ../../components/pagination/pagination
 
 block append head
   title Search-room
@@ -76,4 +77,4 @@ block append content
 
       .search-room__data-output.js-search-room__data-output
       .search-room__pagination
-        .js-pagination
+        +pagination()
