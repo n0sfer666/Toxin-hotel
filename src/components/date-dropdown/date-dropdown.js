@@ -1,12 +1,12 @@
 import 'air-datepicker';
-import ControlButton from '../control-button/control-button';
 
 class DateDropdown {
-  constructor(item, isSingle, bookingInstance) {
+  constructor(item, isSingle, controlButtons, bookingInstance) {
     this.initContainer(item);
 
     this.isSingle = isSingle;
     this.bookingInstance = bookingInstance;
+    this.controlButtons = controlButtons;
 
     this.initButtons();
     this.bindContext();
@@ -24,15 +24,17 @@ class DateDropdown {
   }
 
   initButtons() {
-    const buttons = this.parentElement.querySelectorAll('.js-control-button');
-    $.each(buttons, (key, element) => {
-      const tmpInstance = new ControlButton(element);
-      if (tmpInstance.type === 'clear') {
-        this.clearButton = tmpInstance;
-      } else {
-        this.applyButton = tmpInstance;
+    $.each(this.controlButtons, (key, element) => {
+      const isSameParent = element.parentElement === this.parentElement;
+      if (isSameParent) {
+        const isClearButton = element.type === 'clear';
+        if (isClearButton) {
+          this.clearButton = element;
+        } else {
+          this.applyButton = element;
+        }
+        element.instance.remove();
       }
-      element.remove();
     });
   }
 
