@@ -13,6 +13,6 @@ $(document).ready(() => {
 
   const paginations = $('.js-pagination');
   $.each(paginations, (key, item) => {
-    new Pagination(item, dataSource, '.js-search-room__data-output');
+    new Pagination(item, dataSource, '.js-pagination__data-output');
   });
 });

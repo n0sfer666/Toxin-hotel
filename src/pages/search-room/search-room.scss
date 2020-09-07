@@ -97,18 +97,6 @@
     }
   }
 
-  &__data-output {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
-
-    @media screen and (min-width: $old-phones) and (max-width: 340px) {
-      justify-content: center;
-    }
-  
-  }
-
   &__pagination {
     display: flex;
     justify-content: center;
