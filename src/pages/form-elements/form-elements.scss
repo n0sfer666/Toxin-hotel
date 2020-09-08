@@ -1,9 +1,11 @@
+$base: 1440;
+$side-padding: round((140 * 100% / $base) * 1000) / 1000;
 .form-elements {
   &__container {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin: -3px 140px 0 140px;
+    margin: -3px $side-padding 0;
 
     @media screen and (min-width: $old-phones) and (max-width: $pads) {
       flex-direction: column;

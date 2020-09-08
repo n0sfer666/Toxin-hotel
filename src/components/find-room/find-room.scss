@@ -1,6 +1,8 @@
+$base: 380;
+$side-padding: round((30 * 100% / $base) * 1000) / 1000;
 .find-room {
   height: fit-content;
-  padding: 39px 7.895% 29px ;
+  padding: 39px $side-padding 29px ;
   background-color: #FFFFFF;
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-sizing: border-box;

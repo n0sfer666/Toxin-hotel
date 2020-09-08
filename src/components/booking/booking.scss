@@ -1,7 +1,9 @@
+$base: 380;
+$side-padding: round((30 * 100% / $base) * 1000) / 1000;
 .booking {
   @include font-body;
   height: fit-content;
-  padding: 39px 7.895% 29px;
+  padding: 39px $side-padding 29px;
   box-sizing: border-box;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   background-color: #FFFFFF;
@@ -139,13 +141,13 @@
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      width: 75.1574%;
+      width: 75%;
     }
   }
 
   &__description {
     display: inline-block;
-    width: 89.5398%;
+    width: 90%;
     line-height: 19px;
   }
 

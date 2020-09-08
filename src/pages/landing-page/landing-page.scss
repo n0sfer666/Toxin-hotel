@@ -1,3 +1,6 @@
+$base: 1440;
+$left-padding: round((140 * 100% / $base) * 1000) / 1000;
+$right-padding: round((134 * 100% / $base) * 1000) / 1000;
 .landing-page {
   @include font-body;
   display: flex;
@@ -6,7 +9,7 @@
 
   &__content {
     flex: 1 0 auto;
-    padding: 70px 9.3056% 18px 9.7223%;
+    padding: 70px $right-padding 18px $left-padding;
     box-sizing: border-box;
     background-image: url(./img/bg-landing.jpg);
     background-repeat: no-repeat;

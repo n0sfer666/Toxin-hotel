@@ -1,8 +1,10 @@
+$base: 1440;
+$side-padding: round((140 * 100% / $base) * 1000) / 1000;
 .cards {
   background-color: #e5e5e5;
   
   &__container {
-    padding: 3px 9.7223% 140px;
+    padding: 3px $side-padding 140px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;

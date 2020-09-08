@@ -63,7 +63,8 @@
     color: $dark-shade-75;
     @include font-body;
     line-height: 19px;
-    max-width: 220px;
+    min-width: 220px;
+    max-width: 250px;
   }
 
   &__wrapper {

@@ -1,3 +1,7 @@
+$base: 1440;
+$main-img: 981;
+$width-main: round(($main-img * 100% / $base) * 1000) / 1000;
+$width-additional: 100% - $width-main;
 .room-detail {
   @include font-body;
   display: flex;
@@ -19,7 +23,7 @@
     }
 
     &-main {
-      width: 68.125%;
+      width: $width-main;
 
       @media screen and (min-width: $old-phones) and (max-width: $new-phones) {
         width: 100%;
@@ -30,7 +34,7 @@
     &-addition {
       display: flex;
       flex-direction: column;
-      width: 31.875%;
+      width: $width-additional;
 
       @media screen and (min-width: $old-phones) and (max-width: $new-phones) {
         width: 100%;

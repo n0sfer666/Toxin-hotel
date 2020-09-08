@@ -5,7 +5,7 @@ mixin footer-short({description = 'Бронирование номеров в л
   footer.footer-short
       .footer-short__logo
         +logo({isFull: true})
-      p.footer-short__description.footer-short__description_short #{footerDescription}
+      p.footer-short__description.footer-short__description_short #{description}
       .footer-short__icons
         each val in socNets
           +icon-social({socialNetwork: val})

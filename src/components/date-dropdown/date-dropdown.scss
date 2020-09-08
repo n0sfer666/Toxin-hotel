@@ -1,3 +1,5 @@
+$base: 320;
+$width-multi: 150 * 100% / 320;
 .date-dropdown {
   &__container {
     display: flex;
@@ -5,7 +7,7 @@
   }
 
   &__datepicker {
-    width: 46.875%;
+    width: $width-multi;
 
     &.date-dropdown__datepicker_single {
       width: 100%;

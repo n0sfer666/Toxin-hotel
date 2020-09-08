@@ -1,6 +1,8 @@
+$base: 380;
+$side-padding: round((30 * 100% / $base) * 1000) / 1000;
   .sign-in {
   @include font-body;
-  padding: 39px 7.895% 32px;
+  padding: 39px $side-padding 32px;
   background: #FFFFFF;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(0, 0, 0, 0.12);
