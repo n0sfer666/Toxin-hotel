@@ -41,7 +41,7 @@ class RangeSlider {
   }
 
   bindHandlers() {
-    this.rangeSlider.noUiSlider.on('update', this.handleValuesUpdate);
+    this.element.noUiSlider.on('update', this.handleValuesUpdate);
   }
 
   bindContext() {
