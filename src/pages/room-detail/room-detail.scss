@@ -101,7 +101,7 @@ $width-additional: 100% - $width-main;
       margin-bottom: 16px;
     }
 
-    & .review:not(:last-child) {
+    &-element:not(:last-child) {
       margin-bottom: 16px;
     }
   }
