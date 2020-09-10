@@ -91,7 +91,7 @@ $side-padding: round((140 * 100% / $base) * 1000) / 1000;
       & .form-elements__title {
         margin-bottom: 15px;
       }
-      & .checkbox:not(:last-child) {
+      &-element:not(:last-child) {
         margin-bottom: 6px;
       }
     }
@@ -100,9 +100,9 @@ $side-padding: round((140 * 100% / $base) * 1000) / 1000;
       margin-bottom: 42px;
       &-container {
         display: flex;
-        & .radio:not(:last-child) {
-          margin-right: 10px;
-        }
+      }
+      &-element:not(:last-child) {
+        margin-right: 10px;
       }
       & .form-elements__title {
         margin-bottom: 16px;
@@ -115,7 +115,7 @@ $side-padding: round((140 * 100% / $base) * 1000) / 1000;
       & .form-elements__title {
         margin-bottom: 16px;
       }
-      & .toggle:not(:last-child) {
+      &-element:not(:last-child) {
         margin-bottom: 14px;
       }
     }
@@ -126,11 +126,11 @@ $side-padding: round((140 * 100% / $base) * 1000) / 1000;
       & .form-elements__title {
         margin-bottom: 16px;
       }
-      & .like:not(:last-child) {
-        margin-right: 10px;
-      }
-      & .like_active:not(:last-child) {
-        margin-right: 10px;
+      &-element {
+        display: inline-block;
+        &:not(:last-child) {
+          margin-right: 10px;
+        }
       }
     }
 
@@ -140,8 +140,11 @@ $side-padding: round((140 * 100% / $base) * 1000) / 1000;
       & .form-elements__title {
         margin-bottom: 16px;
       }
-      & .rate:not(:last-child) {
-        margin-right: 20px;
+      &-element {
+        display: inline-block;
+        &:not(:last-child) {
+          margin-right: 20px;
+        }
       }
     }
     &-dropdown-guests-2 {
@@ -156,7 +159,7 @@ $side-padding: round((140 * 100% / $base) * 1000) / 1000;
       & .form-elements__title {
         margin-bottom: 14px;
       }
-      & .rich-checkbox:not(:last-child) {
+      &-element:not(:last-child) {
         margin-bottom: -1px;
       }
     }
@@ -172,22 +175,18 @@ $side-padding: round((140 * 100% / $base) * 1000) / 1000;
       &-line {
         display: flex;
         margin-bottom: 30px;
+      }
 
-        & .button_active {
+      &-element {
+        height: 44px;
+        &_active {
           margin-right: 19px;
-        }
-        & .button_border,
-        & .button_gradient {
-          height: 44px;
         }
       }
 
       &-text-line {
         display: flex;
         margin: 0 -10px 32px;
-        & .button {
-          height: 14px;
-        }
       }
       &-action-line {
         height: 44px;

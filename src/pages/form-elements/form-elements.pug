@@ -61,30 +61,41 @@ block append content
       .form-elements__block-checkbox
         .form-elements__title.form-elements__title_big
           +headline({title: 'checkbox buttons'})
-        +checkbox({title: 'Можно курить'})
-        +checkbox({title: 'Можно с питомцами', isChecked: true})
-        +checkbox({title: 'Можно пригласить гостей (до 10 человек)', isChecked: true})
+        .form-elements__block-checkbox-element
+          +checkbox({title: 'Можно курить'})
+        .form-elements__block-checkbox-element
+          +checkbox({title: 'Можно с питомцами', isChecked: true})
+        .form-elements__block-checkbox-element
+          +checkbox({title: 'Можно пригласить гостей (до 10 человек)', isChecked: true})
       .form-elements__block-radio
         .form-elements__title
           +headline({title: 'radio buttons'})
         .form-elements__block-radio-container
-          +radio({name: 'sex', title: 'Мужчина', isChecked: true})
-          +radio({name: 'sex', title: 'Женщина'})
+          .form-elements__block-radio-element
+            +radio({name: 'sex', title: 'Мужчина', isChecked: true})
+          .form-elements__block-radio-element
+            +radio({name: 'sex', title: 'Женщина'})
       .form-elements__block-toggle
         .form-elements__title
           +headline({title: 'toggle'})
-        +toggle({title: 'Получать спецпредложения', isChecked: true})
-        +toggle({title: 'Получать спецпредложения'})
+        .form-elements__block-toggle-element
+          +toggle({title: 'Получать спецпредложения', isChecked: true})
+        .form-elements__block-toggle-element
+          +toggle({title: 'Получать спецпредложения'})
       .form-elements__block-like
         .form-elements__title
           +headline({title: 'like button'})
-        +like({counter: '2'})
-        +like({counter: '12', isChecked: true})
+        .form-elements__block-like-element
+          +like({counter: '2'})
+        .form-elements__block-like-element
+          +like({counter: '12', isChecked: true})
       .form-elements__block-rate
         .form-elements__title
           +headline({title: 'rate button'})
-        +rate({rate: '4'})
-        +rate({rate: '5'})
+        .form-elements__block-rate-element
+          +rate({rate: '4'})
+        .form-elements__block-rate-element
+          +rate({rate: '5'})
       .form-elements__block-dropdown-guests-2
         .form-elements__title
           +headline({title: 'dropdown'})
@@ -92,8 +103,10 @@ block append content
       .form-elements__block-rich-checkbox
         .form-elements__title
           +headline({title: 'rich checkbox buttons'})
-        +rich-checkbox({title: 'Широкий коридор', description: 'Ширина коридоров в номере не менее 91 см.'})
-        +rich-checkbox({title: 'Помощник для инвалидов', description: 'На 1 этаже вас встретит специалист и проводит до номера.'})
+        .form-elements__block-rich-checkbox-element
+          +rich-checkbox({title: 'Широкий коридор', description: 'Ширина коридоров в номере не менее 91 см.'})
+        .form-elements__block-rich-checkbox-element
+          +rich-checkbox({title: 'Помощник для инвалидов', description: 'На 1 этаже вас встретит специалист и проводит до номера.'})
 
     section.form-elements__column-section
       .form-elements__block-range-slider
@@ -102,16 +115,20 @@ block append content
         .form-elements__title
           +headline({title: 'buttons'})
         .form-elements__block-buttons-line
-          +button({style: 'gradient'})
-          +button({style: 'gradient', isActive: false})
+          .form-elements__block-buttons-element.form-elements__block-buttons-element_active
+            +button({style: 'gradient'})
+          .form-elements__block-buttons-element-inactive
+            +button({style: 'gradient', isActive: false})
         .form-elements__block-buttons-line
-          +button({style: 'border'})
-          +button({style: 'border', isActive: false})
+          .form-elements__block-buttons-element.form-elements__block-buttons-element_active
+            +button({style: 'border'})
+          .form-elements__block-buttons-element
+            +button({style: 'border', isActive: false})
         .form-elements__block-buttons-text-line
           +button()
           +button({isActive: false})
         .form-elements__block-buttons-action-line
-          +button({style: 'submitting', isActive: false})
+          +button({style: 'submitting'})
       .form-elements__block-pagination
         .form-elements__title
           +headline({title: 'pagination'})
