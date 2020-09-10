@@ -24,16 +24,16 @@ class DateDropdown {
   }
 
   initButtons() {
-    $.each(this.controlButtons, (key, element) => {
-      const isSameParent = element.parentElement === this.parentElement;
+    $.each(this.controlButtons, (_, controlButtonInstance) => {
+      const isSameParent = controlButtonInstance.parentElement === this.parentElement;
       if (isSameParent) {
-        const isClearButton = element.type === 'clear';
+        const isClearButton = controlButtonInstance.type === 'clear';
         if (isClearButton) {
-          this.clearButton = element;
+          this.clearButton = controlButtonInstance;
         } else {
-          this.applyButton = element;
+          this.applyButton = controlButtonInstance;
         }
-        element.instance.remove();
+        controlButtonInstance.instance.remove();
       }
     });
   }

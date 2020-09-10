@@ -2,9 +2,9 @@ import ControlButton from './control-button';
 
 const controlButtonArr = [];
 $(document).ready(() => {
-  const $controlButton = $('.js-control-button');
-  $.each($controlButton, (key, item) => {
-    controlButtonArr.push(new ControlButton(item));
+  const $controlButtons = $('.js-control-button');
+  $.each($controlButtons, (_, element) => {
+    controlButtonArr.push(new ControlButton(element));
   });
 });
 

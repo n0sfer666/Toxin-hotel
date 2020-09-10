@@ -48,8 +48,8 @@ class Pagination {
     const html = data;
     if (this.dataOutput) $(this.dataOutput).html(html);
     const $rooms = $('.js-room__slider');
-    $.each($rooms, (key, item) => {
-      new Room(item, key);
+    $.each($rooms, (_, roomElement) => {
+      new Room(roomElement);
     });
   }
 

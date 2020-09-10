@@ -43,8 +43,8 @@ class Booking {
   initiate() {
     this.getHTMLElements();
     this.getValueElements();
-    $.each(this.elements, (key, item) => {
-      item.text(this.getStringWithSeparate(item.text()));
+    $.each(this.elements, (_, element) => {
+      element.text(this.getStringWithSeparate(element.text()));
     });
   }
 

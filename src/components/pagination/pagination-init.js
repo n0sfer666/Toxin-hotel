@@ -5,14 +5,14 @@ $(document).ready(() => {
 
   const dataSource = [];
 
-  $.each($rooms, (key, item) => {
-    dataSource.push(item.cloneNode(true));
+  $.each($rooms, (_, element) => {
+    dataSource.push(element.cloneNode(true));
   });
 
   $('.js-search-room__data-source').remove();
 
   const paginations = $('.js-pagination');
-  $.each(paginations, (key, item) => {
-    new Pagination(item, dataSource, '.js-pagination__data-output');
+  $.each(paginations, (_, element) => {
+    new Pagination(element, dataSource, '.js-pagination__data-output');
   });
 });

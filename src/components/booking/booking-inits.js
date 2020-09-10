@@ -5,8 +5,8 @@ const bookingInstances = [];
 $(document).ready(() => {
   const arrayBookingElement = $('.js-booking');
 
-  $.each(arrayBookingElement, (key, item) => {
-    bookingInstances.push(new Booking(item));
+  $.each(arrayBookingElement, (_, bookingElement) => {
+    bookingInstances.push(new Booking(bookingElement));
   });
 });
 

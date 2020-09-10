@@ -4,18 +4,18 @@ import controlButtonArr from '../control-button/control-button-init';
 
 $(document).ready(() => {
   const $datepickerSingle = $('.js-date-dropdown__filter');
-  $.each($datepickerSingle, (key, item) => {
-    new DateDropdown(item, true, controlButtonArr);
+  $.each($datepickerSingle, (_, element) => {
+    new DateDropdown(element, true, controlButtonArr);
   });
 
   const $datepickerRight = $('.js-date-dropdown__input-right');
   const $datepickerLeft = $('.js-date-dropdown__input-left');
 
-  $.each($datepickerLeft, (key, item) => {
-    if ($(item).closest('.js-booking').length > 0) {
-      new DateDropdown([item, $datepickerRight[key]], false, controlButtonArr, bookingInstances[0]);
+  $.each($datepickerLeft, (key, element) => {
+    if ($(element).closest('.js-booking').length > 0) {
+      new DateDropdown([element, $datepickerRight[key]], false, controlButtonArr, bookingInstances[0]);
     } else {
-      new DateDropdown([item, $datepickerRight[key]], false, controlButtonArr);
+      new DateDropdown([element, $datepickerRight[key]], false, controlButtonArr);
     }
   });
 

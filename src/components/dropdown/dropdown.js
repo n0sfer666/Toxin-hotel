@@ -39,16 +39,16 @@ class Dropdown {
   initButtons() {
     if (this.isGuests) {
       const buttonsContainer = this.container.querySelector('.dropdown__buttons');
-      $.each(this.controlButtons, (key, element) => {
-        const isDropdownButton = element.parentElement === buttonsContainer;
+      $.each(this.controlButtons, (_, controlButtonInstance) => {
+        const isDropdownButton = controlButtonInstance.parentElement === buttonsContainer;
         if (isDropdownButton) {
-          const isClearButton = element.type === 'clear';
+          const isClearButton = controlButtonInstance.type === 'clear';
           if (isClearButton) {
-            this.clearButton = element;
+            this.clearButton = controlButtonInstance;
           } else {
-            this.applyButton = element;
+            this.applyButton = controlButtonInstance;
           }
-          element.instance.remove();
+          controlButtonInstance.instance.remove();
         }
       });
       buttonsContainer.append(this.clearButton.instance);

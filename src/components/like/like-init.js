@@ -2,7 +2,7 @@ import LikeButton from './like';
 
 $(document).ready(() => {
   const $likes = $('.like');
-  $.each($likes, (key, item) => {
-    new LikeButton(item);
+  $.each($likes, (_, element) => {
+    new LikeButton(element);
   });
 });
