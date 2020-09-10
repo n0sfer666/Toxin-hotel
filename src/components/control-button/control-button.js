@@ -1,20 +1,20 @@
 class ControlButton {
   constructor(item) {
-    this.instance = item;
+    this.element = item;
     this.parentElement = item.parentElement;
-    this.type = this.instance.dataset.type;
+    this.type = this.element.dataset.type;
   }
 
   setHide() {
-    $(this.instance).hide();
+    $(this.element).hide();
   }
 
   setShow() {
-    $(this.instance).show();
+    $(this.element).show();
   }
 
   onClick(callback) {
-    this.instance.addEventListener('click', callback);
+    this.element.addEventListener('click', callback);
   }
 }
 

@@ -48,11 +48,11 @@ class Dropdown {
           } else {
             this.applyButton = controlButtonInstance;
           }
-          controlButtonInstance.instance.remove();
+          controlButtonInstance.element.remove();
         }
       });
-      buttonsContainer.append(this.clearButton.instance);
-      buttonsContainer.append(this.applyButton.instance);
+      buttonsContainer.append(this.clearButton.element);
+      buttonsContainer.append(this.applyButton.element);
       this.clearButton.setHide();
     }
   }
@@ -90,7 +90,7 @@ class Dropdown {
   handleApplyButtonClick(event) {
     if (this.isGuests) {
       const parentOfParent = event.target.parentElement.parentElement;
-      const isApplyButton = parentOfParent === this.applyButton.instance;
+      const isApplyButton = parentOfParent === this.applyButton.element;
       if (!isApplyButton) {
         event.stopPropagation();
       }

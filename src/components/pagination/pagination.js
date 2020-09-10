@@ -3,7 +3,7 @@ import Room from '../room/room';
 
 class Pagination {
   constructor(item, dataSource, dataOutput) {
-    this.$instance = $(item);
+    this.$element = $(item);
     this.dataOutput = dataOutput;
     this.elementsOnPage = 12;
 
@@ -36,7 +36,7 @@ class Pagination {
   }
 
   initInstance() {
-    this.pagination = this.$instance.pagination(this.getConfig());
+    this.pagination = this.$element.pagination(this.getConfig());
   }
 
   bindContext() {

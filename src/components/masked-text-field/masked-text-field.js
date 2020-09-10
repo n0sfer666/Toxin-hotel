@@ -2,7 +2,7 @@ import IMask from 'imask';
 
 class MaskedField {
   constructor(item) {
-    this.maskedElement = item;
+    this.element = item;
 
     this.initInstance();
   }
@@ -37,7 +37,7 @@ class MaskedField {
   }
 
   initInstance() {
-    this.maskedField = IMask(this.maskedElement, this.getConfig());
+    this.maskedField = IMask(this.element, this.getConfig());
   }
 }
 

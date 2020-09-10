@@ -33,7 +33,7 @@ class DateDropdown {
         } else {
           this.applyButton = controlButtonInstance;
         }
-        controlButtonInstance.instance.remove();
+        controlButtonInstance.element.remove();
       }
     });
   }

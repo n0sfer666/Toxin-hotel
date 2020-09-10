@@ -1,6 +1,6 @@
 class RangeSlider {
   constructor(item) {
-    this.rangeSlider = item;
+    this.element = item;
 
     this.initInstanceElements();
     this.initInstanceVars();
@@ -13,11 +13,11 @@ class RangeSlider {
   }
 
   initInstanceElements() {
-    this.rangeSliderValues = $(this.rangeSlider).siblings().find('.js-range-slider__values').get(0);
+    this.rangeSliderValues = $(this.element).siblings().find('.js-range-slider__values').get(0);
   }
 
   initInstanceVars() {
-    this.isNotUndefined = this.rangeSlider && this.rangeSliderValues;
+    this.isNotUndefined = this.element && this.rangeSliderValues;
   }
 
   getConfig() {
@@ -37,7 +37,7 @@ class RangeSlider {
   }
 
   getRangeSlider() {
-    noUiSlider.create(this.rangeSlider, this.getConfig());
+    noUiSlider.create(this.element, this.getConfig());
   }
 
   bindHandlers() {

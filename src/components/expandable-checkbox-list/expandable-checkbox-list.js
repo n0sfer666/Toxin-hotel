@@ -1,6 +1,6 @@
 class ExpandableCheckboxList {
   constructor(item) {
-    this.$instance = $(item);
+    this.$element = $(item);
     this.isExpanded = false;
 
     this.initInstanceElements();
@@ -9,17 +9,17 @@ class ExpandableCheckboxList {
   }
 
   getInnerElement(innerSelector) {
-    return this.$instance.find(innerSelector);
+    return this.$element.find(innerSelector);
   }
 
   initInstanceElements() {
-    this.$instanceContainer = this.$instance.siblings('.js-expandable-checkbox-list__container').hide();
-    this.$instanceArrowDown = this.getInnerElement('.js-expandable-checkbox-list__arrow-down');
-    this.$instanceArrowUp = this.getInnerElement('.js-expandable-checkbox-list__arrow-up').hide();
+    this.$elementContainer = this.$element.siblings('.js-expandable-checkbox-list__container').hide();
+    this.$elementArrowDown = this.getInnerElement('.js-expandable-checkbox-list__arrow-down');
+    this.$elementArrowUp = this.getInnerElement('.js-expandable-checkbox-list__arrow-up').hide();
   }
 
   bindHandlers() {
-    this.$instance.on('click', this.handleInstanceClick);
+    this.$element.on('click', this.handleInstanceClick);
   }
 
   bindContext() {
@@ -29,14 +29,14 @@ class ExpandableCheckboxList {
   handleInstanceClick() {
     if (!this.isExpanded) {
       this.isExpanded = true;
-      this.$instanceContainer.show();
-      this.$instanceArrowDown.hide();
-      this.$instanceArrowUp.show();
+      this.$elementContainer.show();
+      this.$elementArrowDown.hide();
+      this.$elementArrowUp.show();
     } else {
       this.isExpanded = false;
-      this.$instanceContainer.hide();
-      this.$instanceArrowDown.show();
-      this.$instanceArrowUp.hide();
+      this.$elementContainer.hide();
+      this.$elementArrowDown.show();
+      this.$elementArrowUp.hide();
     }
   }
 }
