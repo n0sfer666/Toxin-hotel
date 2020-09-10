@@ -1,10 +1,10 @@
 .headers-and-footers {
   background-color: #e5e5e5;
   box-sizing: border-box;
-  & .header {
+  &__header {
     margin-bottom: 35px;
   }
-  & .footer-full__copyright {
+  &__footer {
     margin-bottom: 41px;
   }
 }

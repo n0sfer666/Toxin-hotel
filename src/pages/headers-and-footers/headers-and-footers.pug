@@ -25,11 +25,13 @@ block append content
         {title: 'Documentation'}
         ]
     }
-  +header(configHeader)
+  .headers-and-footers__header
+    +header(configHeader)
   -
     configHeader.isAuth = true
     configHeader.login = 'Cosmin Negoita'
-  +header(configHeader)
+  .headers-and-footers__header
+    +header(configHeader)
   -
     const configFooterFull = {
       description: 'Lopx ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.',
@@ -45,5 +47,7 @@ block append content
         },
       copyright: 'UI Kit. All rights reserved.'
       }
-  +footer-full(configFooterFull)
-  +footer-short({description: 'Lopx ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.'})
+  .headers-and-footers__footer
+    +footer-full(configFooterFull)
+  .headers-and-footers__footer 
+    +footer-short({description: 'Lopx ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.'})
