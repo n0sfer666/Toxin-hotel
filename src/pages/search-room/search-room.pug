@@ -24,27 +24,32 @@ block append content
       .search-room__menu-title
         +headline({title: 'гости'})
       +dropdown()
-
-      +range-slider({title: 'Диапазон цены'})
+      .search-room__range-slider
+        +range-slider({title: 'Диапазон цены'})
       p.search-room__description Стоимость за сутки пребывания в номере
 
-      .search-room__checkboxs
+      .search-room__checkbox
         .search-room__menu-title
           +headline({title: 'checkbox buttons'})
-        +checkbox({title: 'Можно курить'})
-        +checkbox({title: 'Можно с питомцами', isChecked: true})
-        +checkbox({title: 'Можно пригласить гостей (до 10 человек)', isChecked: true})
+        .search-room__checkbox-element
+          +checkbox({title: 'Можно курить'})
+        .search-room__checkbox-element
+          +checkbox({title: 'Можно с питомцами', isChecked: true})
+        .search-room__checkbox-element
+          +checkbox({title: 'Можно пригласить гостей (до 10 человек)', isChecked: true})
 
       .search-room__menu-title
         +headline({title: 'Доступность'})
-      +rich-checkbox({title: 'Широкий коридор', description: 'Ширина коридоров в номере не менее 91см'})
-      +rich-checkbox({title: 'Помощник для инвалидов', description: 'На 1 этаже вас встретит специалист и проводит до номера.'})
+      .search-room__rich-checkbox
+        +rich-checkbox({title: 'Широкий коридор', description: 'Ширина коридоров в номере не менее 91см'})
+      .search-room__rich-checkbox
+        +rich-checkbox({title: 'Помощник для инвалидов', description: 'На 1 этаже вас встретит специалист и проводит до номера.'})
 
       .search-room__menu-title.search-room__menu-title_big
         +headline({title: 'удобства номера'})
       +dropdown({isGuests: false})
-
-      +expandable-checkbox-list()
+      .search-room__expandable-checkbox-list
+        +expandable-checkbox-list()
 
     section.search-room__result
       .search-room__result-title

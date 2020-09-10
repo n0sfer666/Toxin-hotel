@@ -50,12 +50,13 @@
       margin-right: 0;
       margin-bottom: 40px;
     }
+  }
 
-    & .range-slider {
+    &__range-slider {
       margin-top: 30px;
     }
 
-    & .search-room__description {
+    &__description {
       margin-top: 14px;
       margin-bottom: 29px;
 
@@ -64,24 +65,23 @@
       color: $dark-shade-50;
     }
 
-    & .search-room__checkboxs {
+    &__checkbox {
       & .search-room__menu-title {
         margin-bottom: 15px;
       }
-      & .checkbox:not(:last-child) {
+      &-element:not(:last-child) {
         margin-bottom: 8px;
       }
     }
 
-    & .rich-checkbox {
+    &__rich-checkbox {
       margin-top: 16px;
       margin-bottom: -15px;
     }
 
-    & .expandable-checkbox-list {
+    &__expandable-checkbox-list {
       margin-top: 16px;
     }
-  }
 
   &__result {
     min-width: 310px;
