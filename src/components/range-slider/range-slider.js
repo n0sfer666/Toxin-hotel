@@ -13,7 +13,7 @@ class RangeSlider {
   }
 
   initInstanceElements() {
-    this.rangeSliderValues = $(this.element).siblings().find('.js-range-slider__values').get(0);
+    this.rangeSliderValues = this.element.parentElement.querySelector('.js-range-slider__values');
   }
 
   initInstanceVars() {
