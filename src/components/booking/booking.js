@@ -6,11 +6,11 @@ class Booking {
   }
 
   getElementByClass(selector) {
-    return $(this.item).find(selector);
+    return this.item.querySelector(selector);
   }
 
   getValueOfElement(element) {
-    return Number(element.text());
+    return Number(element.innerHTML);
   }
 
   getStringWithSeparate(string) {
@@ -22,9 +22,9 @@ class Booking {
     const { daysIn: daysInElement } = this.elements;
     if (!Number.isNaN(Number(daysIn))) {
       if (daysIn === 1) {
-        daysInElement.text(`${daysIn} сутки`);
+        daysInElement.innerHTML = `${daysIn} сутки`;
       } else {
-        daysInElement.text(`${daysIn} суток`);
+        daysInElement.innerHTML = `${daysIn} суток`;
       }
       this.calculate(daysIn);
     }
@@ -35,16 +35,16 @@ class Booking {
     const { complementaryFee: complementaryValue } = this.values;
     const { cost: costElement, total: totalElement } = this.elements;
     const cost = priceValue * daysIn;
-    costElement.text(this.getStringWithSeparate(cost));
+    costElement.innerHTML = this.getStringWithSeparate(cost);
     const total = cost - discountValue + complementaryValue;
-    totalElement.text(this.getStringWithSeparate(total));
+    totalElement.innerHTML = this.getStringWithSeparate(total);
   }
 
   initiate() {
     this.getHTMLElements();
     this.getValueElements();
     $.each(this.elements, (_, element) => {
-      element.text(this.getStringWithSeparate(element.text()));
+      element.innerHTML = this.getStringWithSeparate(element.innerHTML);
     });
   }
 
