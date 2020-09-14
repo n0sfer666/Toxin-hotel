@@ -86,9 +86,13 @@ class DateDropdown {
       dp.$datepicker.append(this.clearButton.element);
       dp.$datepicker.append(this.applyButton.element);
       this.bindDpContext(dp);
-      this.applyButton.onClick(dp.hide);
+      this.applyButton.onClick(this.handleApplyButtonClick);
       this.clearButton.onClick(this.handleClearButtonClick);
     }
+  }
+
+  handleApplyButtonClick(dp) {
+    dp.hide();
   }
 
   handleClearButtonClick(dp) {
@@ -126,7 +130,7 @@ class DateDropdown {
   }
 
   bindDpContext(dp) {
-    dp.hide = dp.hide.bind(dp);
+    this.handleApplyButtonClick = this.handleApplyButtonClick.bind(this, dp);
     this.handleClearButtonClick = this.handleClearButtonClick.bind(this, dp);
   }
 }
