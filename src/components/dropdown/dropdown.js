@@ -1,21 +1,25 @@
 import 'item-quantity-dropdown/lib/item-quantity-dropdown.min';
-import ControlButton from '../control-button/control-button';
 
 class Dropdown {
   constructor(item, controlButtons) {
     this.container = item;
     this.controlButtons = controlButtons;
+    this.withControlButtons = this.container.dataset.withcontrolbuttons === 'true';
 
     this.textGuestsDefaults = 'Сколько гостей';
-    this.textGuests = ['гость', 'гостя', 'гостей'];
-    this.textBabies = ['младенец', 'младенца', 'младенцев'];
-    this.textBedrooms = ['спальня', 'спальни', 'спален'];
-    this.textBeds = ['кровать', 'кровати', 'кроватей'];
+    this.textGuests = [
+      ['гость', 'гостя', 'гостей'],
+      ['младенец', 'младенца', 'младенцев'],
+    ];
 
-    this.initIsGuests();
-    this.initButtons();
+    this.textAmenityDefaults = '';
+    this.textAmenity = [
+      ['спальня', 'спальни', 'спален'],
+      ['кровать', 'кровати', 'кроватей'],
+    ];
 
     this.bindContext();
+    this.initButtons();
     this.initInstance();
     this.initInstanceElements();
     this.bindHandlers();
@@ -23,6 +27,10 @@ class Dropdown {
 
   initInstance() {
     this.$instance = $(this.container).iqDropdown(this.getConfig());
+  }
+
+  initInstanceElements() {
+    this.$iqMenu = this.getInnerElement('.iqdropdown-menu');
   }
 
   getInnerElement(innerSelector) {
@@ -37,32 +45,26 @@ class Dropdown {
   }
 
   initButtons() {
-    if (this.isGuests) {
-      const buttonsContainer = this.container.querySelector('.dropdown__buttons');
-      $.each(this.controlButtons, (_, controlButtonInstance) => {
-        const isDropdownButton = controlButtonInstance.parentElement === buttonsContainer;
-        if (isDropdownButton) {
-          const isClearButton = controlButtonInstance.type === 'clear';
-          if (isClearButton) {
-            this.clearButton = controlButtonInstance;
-          } else {
-            this.applyButton = controlButtonInstance;
-          }
-          controlButtonInstance.element.remove();
-        }
-      });
-      buttonsContainer.append(this.clearButton.element);
-      buttonsContainer.append(this.applyButton.element);
+    if (this.withControlButtons) {
+      this.buttonsContainer = this.container.querySelector('.dropdown__buttons');
+      $.each(this.controlButtons, this.getButtons);
+      this.buttonsContainer.append(this.clearButton.element);
+      this.buttonsContainer.append(this.applyButton.element);
       this.clearButton.setHide();
     }
   }
 
-  initIsGuests() {
-    this.isGuests = $(this.container).find('.js-iqdropdown-menu').length > 0;
-  }
-
-  initInstanceElements() {
-    this.$iqMenu = this.getInnerElement('.iqdropdown-menu');
+  getButtons(index, button) {
+    const isDropdownButton = button.parentElement === this.buttonsContainer;
+    if (isDropdownButton) {
+      const isClearButton = button.type === 'clear';
+      if (isClearButton) {
+        this.clearButton = button;
+      } else {
+        this.applyButton = button;
+      }
+      button.element.remove();
+    }
   }
 
   bindContext() {
@@ -70,6 +72,7 @@ class Dropdown {
     this.handleApplyButtonClick = this.handleApplyButtonClick.bind(this);
     this.handleClearButtonClick = this.handleClearButtonClick.bind(this);
     this.handleButtonIncDecClick = this.handleButtonIncDecClick.bind(this);
+    this.getButtons = this.getButtons.bind(this);
   }
 
   bindHandlers() {
@@ -105,7 +108,7 @@ class Dropdown {
       $(`[data-id=${id}]`).find('.button-decrement_active')
         .removeClass('button-decrement_active');
     }
-    if (this.isGuests) {
+    if (this.withControlButtons) {
       if (totalItems === 0) {
         this.clearButton.setHide();
       } else {
@@ -115,27 +118,44 @@ class Dropdown {
   }
 
   handleButtonIncDecClick(itemCount, totalItems) {
-    const isGuests = (
-      itemCount.adults !== undefined
-      || itemCount.babies !== undefined
-      || itemCount.children !== undefined
-    );
+    const fields = [];
+    const counts = [];
+    $.each(itemCount, (field, count) => {
+      fields.push(field);
+      counts.push(count);
+    });
+    if (fields[0] === 'adults') {
+      return this.getGuestsString(counts, totalItems);
+    } else if (fields[0] === 'bedrooms') {
+      return this.getAmenityString(counts, totalItems);
+    }
+  }
 
-    const guests = itemCount.adults + itemCount.children;
-    const { babies, bedrooms, beds } = itemCount;
+  getGuestsString(counts, totalItems) {
+    const guests = counts[0] + counts[1];
+    const babies = counts[2];
 
-    const countArr = isGuests
-      ? [guests, babies]
-      : [bedrooms, beds];
-    const indexArr = isGuests
-      ? [this.getIndex(guests), this.getIndex(babies)]
-      : [this.getIndex(bedrooms), this.getIndex(beds)];
-    const textArr = isGuests
-      ? [this.textGuests, this.textBabies]
-      : [this.textBedrooms, this.textBeds];
+    const countArr = [guests, babies];
+    const textArr = this.textGuests;
+    const indexArr = [this.getIndex(guests), this.getIndex(babies)];
 
     if (totalItems === 0) {
       return this.textGuestsDefaults;
+    } else {
+      return this.getText(countArr, textArr, indexArr);
+    }
+  }
+
+  getAmenityString(counts, totalItems) {
+    const bedrooms = counts[0];
+    const beds = counts[1];
+
+    const countArr = [bedrooms, beds];
+    const textArr = this.textAmenity;
+    const indexArr = [this.getIndex(bedrooms), this.getIndex(beds)];
+
+    if (totalItems === 0) {
+      return this.textAmenityDefaults;
     } else {
       return this.getText(countArr, textArr, indexArr);
     }

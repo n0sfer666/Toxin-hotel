@@ -1,7 +1,7 @@
 class ControlButton {
   constructor(item) {
     this.element = item;
-    this.parentElement = item.parentElement;
+    this.parentElement = this.element.parentElement;
     this.type = this.element.dataset.type;
   }
 

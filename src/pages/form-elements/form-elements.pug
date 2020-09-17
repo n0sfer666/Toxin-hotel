@@ -53,7 +53,7 @@ block append content
       .form-elements__block-dropdown-rooms
         .form-elements__title
           +headline({title: 'dropdown'})
-        +dropdown({isGuests: false})
+        +dropdown({withControlButtons: false, first: {id: "bedrooms", count: 2, title: "спальни"}, second: {id: "beds", count: 2, title: "кровати"}, third: {id: "bathrooms", count: 0, title: "ванные комнаты"}})
       .form-elements__block-expandable-checkbox-list
         +expandable-checkbox-list({title: 'expandable checkbox list'})
 
