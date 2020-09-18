@@ -1,6 +1,6 @@
 class LikeButton {
   constructor(item) {
-    this.element = item;
+    this.$element = $(item);
 
     this.initInstanceElements();
     this.bindContext();
@@ -8,17 +8,17 @@ class LikeButton {
   }
 
   getInnerElement(innerSelector) {
-    return this.element.querySelector(innerSelector);
+    return this.$element.find(innerSelector);
   }
 
   initInstanceElements() {
-    this.counter = this.getInnerElement('.like__counter');
-    this.button = this.getInnerElement('.like__button');
-    this.heartIcon = this.getInnerElement('.like__heart');
+    this.$counter = this.getInnerElement('.like__counter');
+    this.$button = this.getInnerElement('.like__button');
+    this.$heartIcon = this.getInnerElement('.like__heart');
   }
 
   bindHandlers() {
-    this.element.addEventListener('click', this.handleElementClick);
+    this.$element.on('click', this.handleElementClick);
   }
 
   bindContext() {
@@ -26,13 +26,13 @@ class LikeButton {
   }
 
   handleElementClick() {
-    const isActive = this.element.classList.contains('like_active');
+    const isActive = this.$element.hasClass('like_active');
     if (isActive) {
-      this.element.classList.remove('like_active');
-      this.counter.innerText = Number(this.counter.innerText) - 1;
+      this.$element.removeClass('like_active');
+      this.$counter.text(Number(this.$counter.text()) - 1);
     } else {
-      this.element.classList.add('like_active');
-      this.counter.innerText = Number(this.counter.innerText) + 1;
+      this.$element.addClass('like_active');
+      this.$counter.text(Number(this.$counter.text()) + 1);
     }
   }
 }

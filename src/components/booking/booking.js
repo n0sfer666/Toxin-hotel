@@ -1,16 +1,16 @@
 class Booking {
   constructor(item) {
-    this.item = item;
+    this.$element = $(item);
 
     this.initiate();
   }
 
-  getElementByClass(selector) {
-    return this.item.querySelector(selector);
+  getInnerElement(selector) {
+    return this.$element.find(selector);
   }
 
-  getValueOfElement(element) {
-    return Number(element.innerHTML);
+  getValueOfElement($element) {
+    return Number($element.text());
   }
 
   getStringWithSeparate(string) {
@@ -19,12 +19,12 @@ class Booking {
   }
 
   getDaysInAndCalculate(daysIn) {
-    const { daysIn: daysInElement } = this.elements;
+    const { $daysIn: $daysInElement } = this.elements;
     if (!Number.isNaN(Number(daysIn))) {
       if (daysIn === 1) {
-        daysInElement.innerHTML = `${daysIn} сутки`;
+        $daysInElement.text(`${daysIn} сутки`);
       } else {
-        daysInElement.innerHTML = `${daysIn} суток`;
+        $daysInElement.text(`${daysIn} суток`);
       }
       this.calculate(daysIn);
     }
@@ -33,39 +33,39 @@ class Booking {
   calculate(daysIn) {
     const { price: priceValue, discount: discountValue } = this.values;
     const { complementaryFee: complementaryValue } = this.values;
-    const { cost: costElement, total: totalElement } = this.elements;
+    const { $cost: $costElement, $total: $totalElement } = this.elements;
     const cost = priceValue * daysIn;
-    costElement.innerHTML = this.getStringWithSeparate(cost);
+    $costElement.text(this.getStringWithSeparate(cost));
     const total = cost - discountValue + complementaryValue;
-    totalElement.innerHTML = this.getStringWithSeparate(total);
+    $totalElement.text(this.getStringWithSeparate(total));
   }
 
   initiate() {
     this.getHTMLElements();
     this.getValueElements();
-    $.each(this.elements, (_, element) => {
-      element.innerHTML = this.getStringWithSeparate(element.innerHTML);
+    $.each(this.elements, (_, $element) => {
+      $element.text(this.getStringWithSeparate($element.text()));
     });
   }
 
   getHTMLElements() {
     this.elements = {
-      headerPrice: this.getElementByClass('.js-booking__header-price-text'),
-      price: this.getElementByClass('.js-booking__price'),
-      daysIn: this.getElementByClass('.js-booking__days-in'),
-      cost: this.getElementByClass('.js-booking__cost'),
-      discount: this.getElementByClass('.js-booking__discount'),
-      additionalFee: this.getElementByClass('.js-booking__additional-fee'),
-      complementaryFee: this.getElementByClass('.js-booking__complementary-fee'),
-      total: this.getElementByClass('.js-booking__total-text'),
+      $headerPrice: this.getInnerElement('.js-booking__header-price-text'),
+      $price: this.getInnerElement('.js-booking__price'),
+      $daysIn: this.getInnerElement('.js-booking__days-in'),
+      $cost: this.getInnerElement('.js-booking__cost'),
+      $discount: this.getInnerElement('.js-booking__discount'),
+      $additionalFee: this.getInnerElement('.js-booking__additional-fee'),
+      $complementaryFee: this.getInnerElement('.js-booking__complementary-fee'),
+      $total: this.getInnerElement('.js-booking__total-text'),
     };
   }
 
   getValueElements() {
     this.values = {
-      price: this.getValueOfElement(this.elements.price),
-      discount: this.getValueOfElement(this.elements.discount),
-      complementaryFee: this.getValueOfElement(this.elements.complementaryFee),
+      price: this.getValueOfElement(this.elements.$price),
+      discount: this.getValueOfElement(this.elements.$discount),
+      complementaryFee: this.getValueOfElement(this.elements.$complementaryFee),
     };
   }
 }

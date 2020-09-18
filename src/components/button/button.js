@@ -1,17 +1,17 @@
 class Button {
   constructor(item) {
-    this.element = item;
+    this.$element = $(item);
 
     this.type = this.getType();
     this.mod = this.getMod();
-    this.parentElement = this.getParentElement();
+    this.$parentElement = this.getParentElement();
   }
 
   getType() {
     const types = ['textual', 'border', 'gradient', 'submitting'];
     const result = [types[0]];
     types.map((value) => {
-      const equalType = this.element.classList.contains(`button_${value}`);
+      const equalType = this.$element.hasClass(`button_${value}`);
       if (equalType) {
         result.push(value);
       }
@@ -20,7 +20,7 @@ class Button {
   }
 
   getMod() {
-    const isActive = this.element.classList.contains('button_active');
+    const isActive = this.$element.hasClass('button_active');
     const result = ['inactive'];
     if (isActive) {
       result.push('active');
@@ -29,19 +29,19 @@ class Button {
   }
 
   getParentElement() {
-    return this.element.parentElement;
+    return this.$element.parent();
   }
 
   setHide() {
-    $(this.element).hide();
+    this.$element.hide();
   }
 
   setShow() {
-    $(this.element).show();
+    this.$element.show();
   }
 
   onClick(callback) {
-    this.element.addEventListener('click', callback);
+    this.$element.on('click', callback);
   }
 }
 
