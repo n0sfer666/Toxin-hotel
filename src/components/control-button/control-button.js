@@ -1,20 +1,20 @@
 class ControlButton {
   constructor(item) {
-    this.element = item;
-    this.parentElement = this.element.parentElement;
-    this.type = this.element.dataset.type;
+    this.$element = $(item);
+    this.$parentElement = this.$element.parent();
+    this.type = this.$element.data('type');
   }
 
   setHide() {
-    $(this.element).hide();
+    this.$element.hide();
   }
 
   setShow() {
-    $(this.element).show();
+    this.$element.show();
   }
 
   onClick(callback) {
-    this.element.addEventListener('click', callback);
+    this.$element.on('click', callback);
   }
 }
 

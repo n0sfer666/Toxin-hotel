@@ -2,9 +2,9 @@ import 'item-quantity-dropdown/lib/item-quantity-dropdown.min';
 
 class Dropdown {
   constructor(item, controlButtons) {
-    this.container = item;
+    this.$container = $(item);
     this.controlButtons = controlButtons;
-    this.withControlButtons = this.container.dataset.withcontrolbuttons === 'true';
+    this.withControlButtons = this.$container.data('withcontrolbuttons');
 
     this.textGuestsDefaults = 'Сколько гостей';
     this.textGuests = [
@@ -26,7 +26,7 @@ class Dropdown {
   }
 
   initInstance() {
-    this.$instance = $(this.container).iqDropdown(this.getConfig());
+    this.instance = this.$container.iqDropdown(this.getConfig());
   }
 
   initInstanceElements() {
@@ -34,7 +34,7 @@ class Dropdown {
   }
 
   getInnerElement(innerSelector) {
-    return this.$instance.find(innerSelector);
+    return this.$container.find(innerSelector);
   }
 
   getConfig() {
@@ -46,16 +46,16 @@ class Dropdown {
 
   initButtons() {
     if (this.withControlButtons) {
-      this.buttonsContainer = this.container.querySelector('.dropdown__buttons');
+      this.$buttonsContainer = this.getInnerElement('.dropdown__buttons');
       $.each(this.controlButtons, this.getButtons);
-      this.buttonsContainer.append(this.clearButton.element);
-      this.buttonsContainer.append(this.applyButton.element);
+      this.$buttonsContainer.append(this.clearButton.$element);
+      this.$buttonsContainer.append(this.applyButton.$element);
       this.clearButton.setHide();
     }
   }
 
   getButtons(index, button) {
-    const isDropdownButton = button.parentElement === this.buttonsContainer;
+    const isDropdownButton = button.$parentElement.is(this.$buttonsContainer);
     if (isDropdownButton) {
       const isClearButton = button.type === 'clear';
       if (isClearButton) {
@@ -63,7 +63,7 @@ class Dropdown {
       } else {
         this.applyButton = button;
       }
-      button.element.remove();
+      button.$element.remove();
     }
   }
 
@@ -76,7 +76,7 @@ class Dropdown {
   }
 
   bindHandlers() {
-    if (this.isGuests) {
+    if (this.withControlButtons) {
       this.clearButton.onClick(this.handleClearButtonClick);
       this.$iqMenu.on('click', this.handleApplyButtonClick);
     }
@@ -85,15 +85,13 @@ class Dropdown {
   handleClearButtonClick() {
     this.getInnerElement('.iqdropdown-item-controls').remove();
     this.initInstance();
-    this.getInnerElement('.iqdropdown-item-controls').remove();
-    this.initInstance();
     this.clearButton.setHide();
   }
 
   handleApplyButtonClick(event) {
     if (this.isGuests) {
       const parentOfParent = event.target.parentElement.parentElement;
-      const isApplyButton = parentOfParent === this.applyButton.element;
+      const isApplyButton = parentOfParent === this.applyButton.$element;
       if (!isApplyButton) {
         event.stopPropagation();
       }

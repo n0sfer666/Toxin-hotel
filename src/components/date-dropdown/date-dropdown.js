@@ -16,16 +16,16 @@ class DateDropdown {
   initContainer(item) {
     if (Array.isArray(item)) {
       this.$container = [$(item[0]), $(item[1])];
-      this.parentElement = item[0].parentElement;
+      this.$parentElement = this.$container[0].parent();
     } else {
       this.$container = $(item);
-      this.parentElement = item.parentElement;
+      this.$parentElement = this.$container.parent();
     }
   }
 
   initButtons() {
     $.each(this.controlButtons, (_, controlButtonInstance) => {
-      const isSameParent = controlButtonInstance.parentElement === this.parentElement;
+      const isSameParent = controlButtonInstance.$parentElement.is(this.$parentElement);
       if (isSameParent) {
         const isClearButton = controlButtonInstance.type === 'clear';
         if (isClearButton) {
@@ -33,7 +33,7 @@ class DateDropdown {
         } else {
           this.applyButton = controlButtonInstance;
         }
-        controlButtonInstance.element.remove();
+        controlButtonInstance.$element.remove();
       }
     });
   }
@@ -83,8 +83,8 @@ class DateDropdown {
   handleDatepickerShow(dp) {
     const isButtonsCreated = dp.$datepicker.find('button').html() === undefined;
     if (isButtonsCreated) {
-      dp.$datepicker.append(this.clearButton.element);
-      dp.$datepicker.append(this.applyButton.element);
+      dp.$datepicker.append(this.clearButton.$element);
+      dp.$datepicker.append(this.applyButton.$element);
       this.bindDpContext(dp);
       this.applyButton.onClick(this.handleApplyButtonClick);
       this.clearButton.onClick(this.handleClearButtonClick);
