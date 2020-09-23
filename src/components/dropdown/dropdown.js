@@ -6,6 +6,7 @@ class Dropdown {
     this.$container = $(item);
     this.controlButtons = controlButtons;
     this.withControlButtons = this.$container.data('withcontrolbuttons');
+    this.maxTextBlocks = this.$container.data('maxtextblocks');
 
     this.bindContext();
     this.initOutText();
@@ -183,7 +184,7 @@ class Dropdown {
       if (value !== 0) {
         if (outerStrings.length === 0) {
           outerStrings.push(this.getOuterString(countArr[index], textArr[index], indexArr[index]));
-        } else if (outerStrings.length < 2) {
+        } else if (outerStrings.length < this.maxTextBlocks) {
           outerStrings.push(`, ${this.getOuterString(countArr[index], textArr[index], indexArr[index])}`);
         } else {
           outerStrings.push('...');

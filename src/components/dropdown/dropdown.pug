@@ -1,8 +1,8 @@
 include ../control-button/control-button
-mixin dropdown({withControlButtons = true, defaultOutText = 'Сколько гостей', menu = [ {id: 'adults', outTextSingle: 'гость', outTextFew: 'гостя', outTextMany: 'гостей', count: 0, countGroup: 'guests', title: 'взрослые'}, {id: 'children', outTextSingle: 'гость', outTextFew: 'гостя', outTextMany: 'гостей', count: 0, countGroup: 'guests', title: 'дети'}, {id: 'babies', outTextSingle: 'младенец', outTextFew: 'младенца', outTextMany: 'младенцев', count: 0, countGroup: 'babies', title: 'младенцы'} ]} = {})
+mixin dropdown({withControlButtons = true, defaultOutText = 'Сколько гостей', maxTextBlocks = 2, menu = [ {id: 'adults', outTextSingle: 'гость', outTextFew: 'гостя', outTextMany: 'гостей', count: 0, countGroup: 'guests', title: 'взрослые'}, {id: 'children', outTextSingle: 'гость', outTextFew: 'гостя', outTextMany: 'гостей', count: 0, countGroup: 'guests', title: 'дети'}, {id: 'babies', outTextSingle: 'младенец', outTextFew: 'младенца', outTextMany: 'младенцев', count: 0, countGroup: 'babies', title: 'младенцы'} ]} = {})
   -
     const withControl = withControlButtons ? 'true' : 'false'
-  div(class='iqdropdown js-iqdropdown', data-withControlButtons=withControl)
+  div(class='iqdropdown js-iqdropdown', data-withControlButtons=withControl, data-maxTextBlocks=maxTextBlocks)
     p(class = 'iqdropdown-selection', data-defaultOutText=defaultOutText)
       .iqdropdown-menu.js-iqdropdown-menu
         each line in menu
