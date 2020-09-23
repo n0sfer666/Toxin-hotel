@@ -1,19 +1,14 @@
 include ../control-button/control-button
-mixin dropdown({withControlButtons = true, first = {id: "adults", count: 0, title: "взрослые"}, second = {id: "children", count: 0, title: "дети"}, third = {id: "babies", count: 0, title: "младенцы"}} = {})
+mixin dropdown({withControlButtons = true, defaultOutText = 'Сколько гостей', menu = [ {id: 'adults', outTextSingle: 'гость', outTextFew: 'гостя', outTextMany: 'гостей', count: 0, countGroup: 'guests', title: 'взрослые'}, {id: 'children', outTextSingle: 'гость', outTextFew: 'гостя', outTextMany: 'гостей', count: 0, countGroup: 'guests', title: 'дети'}, {id: 'babies', outTextSingle: 'младенец', outTextFew: 'младенца', outTextMany: 'младенцев', count: 0, countGroup: 'babies', title: 'младенцы'} ]} = {})
   -
-    const withControl = withControlButtons ? "true" : "false"
-  div(class="iqdropdown js-iqdropdown", data-withControlButtons=withControl)
-    p.iqdropdown-selection
+    const withControl = withControlButtons ? 'true' : 'false'
+  div(class='iqdropdown js-iqdropdown', data-withControlButtons=withControl)
+    p(class = 'iqdropdown-selection', data-defaultOutText=defaultOutText)
       .iqdropdown-menu.js-iqdropdown-menu
-        div(class='iqdropdown-menu-option', data-id=first.id, data-defaultcount=first.count)
-          .dropdown__adults
-            p.iqdropdown-item #{first.title}
-        div(class='iqdropdown-menu-option', data-id=second.id, data-defaultcount=second.count)
-          .dropdown__children
-            p.iqdropdown-item #{second.title}
-        div(class='iqdropdown-menu-option', data-id=third.id, data-defaultcount=third.count)
-          .dropdown__babies
-            p.iqdropdown-item #{third.title}
+        each line in menu
+          div(class='iqdropdown-menu-option', data-id=line.id, data-defaultcount=line.count, data-countGroup=line.countGroup, data-outTextSingle=line.outTextSingle, data-outTextFew=line.outTextFew, data-outTextMany=line.outTextMany)
+            .dropdown__item
+              p.iqdropdown-item #{line.title}
         if(withControlButtons)
           .dropdown__buttons
             +control-button({isApply: false})

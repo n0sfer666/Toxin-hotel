@@ -2,23 +2,13 @@ import 'item-quantity-dropdown/lib/item-quantity-dropdown.min';
 
 class Dropdown {
   constructor(item, controlButtons) {
+    this.isInitComplete = false;
     this.$container = $(item);
     this.controlButtons = controlButtons;
     this.withControlButtons = this.$container.data('withcontrolbuttons');
 
-    this.textGuestsDefaults = 'Сколько гостей';
-    this.textGuests = [
-      ['гость', 'гостя', 'гостей'],
-      ['младенец', 'младенца', 'младенцев'],
-    ];
-
-    this.textAmenityDefaults = '';
-    this.textAmenity = [
-      ['спальня', 'спальни', 'спален'],
-      ['кровать', 'кровати', 'кроватей'],
-    ];
-
     this.bindContext();
+    this.initOutText();
     this.initButtons();
     this.initInstance();
     this.initInstanceElements();
@@ -33,15 +23,34 @@ class Dropdown {
     this.$iqMenu = this.getInnerElement('.iqdropdown-menu');
   }
 
-  getInnerElement(innerSelector) {
-    return this.$container.find(innerSelector);
-  }
-
-  getConfig() {
-    return {
-      onChange: this.handleButtonIncDecChange,
-      setSelectionText: this.handleButtonIncDecClick,
-    };
+  initOutText() {
+    this.defaultOutText = this.$container.find('.iqdropdown-selection').data('defaultouttext');
+    this.outText = [];
+    this.countGroupsIndex = [];
+    const menuOptions = this.$container.find('.iqdropdown-menu-option');
+    const outTextGroups = [];
+    const outText = [];
+    $.each(menuOptions, (key, option) => {
+      const textLine = [$(option).data('outtextsingle'), $(option).data('outtextfew'), $(option).data('outtextmany')];
+      outTextGroups.push($(option).data('countgroup'));
+      outText.push(textLine);
+    });
+    outTextGroups.map((group, index) => {
+      if (index === 0) {
+        this.countGroupsIndex.push(this.getCountGroupIndex(group, outTextGroups));
+        this.outText.push(outText[index]);
+      } else {
+        const groupIndex = this.getCountGroupIndex(group, outTextGroups);
+        this.countGroupsIndex.map((value) => {
+          const isNotEqual = JSON.stringify(value) !== JSON.stringify(groupIndex);
+          const isInBoundaryArray = this.countGroupsIndex.length < outTextGroups.length;
+          if (isNotEqual && isInBoundaryArray) {
+            this.countGroupsIndex.push(groupIndex);
+            this.outText.push(outText[index]);
+          }
+        });
+      }
+    });
   }
 
   initButtons() {
@@ -51,19 +60,6 @@ class Dropdown {
       this.$buttonsContainer.append(this.clearButton.$element);
       this.$buttonsContainer.append(this.applyButton.$element);
       this.clearButton.setHide();
-    }
-  }
-
-  getButtons(index, button) {
-    const isDropdownButton = button.$parentElement.is(this.$buttonsContainer);
-    if (isDropdownButton) {
-      const isClearButton = button.type === 'clear';
-      if (isClearButton) {
-        this.clearButton = button;
-      } else {
-        this.applyButton = button;
-      }
-      button.$element.remove();
     }
   }
 
@@ -89,9 +85,9 @@ class Dropdown {
   }
 
   handleApplyButtonClick(event) {
-    if (this.isGuests) {
-      const parentOfParent = event.target.parentElement.parentElement;
-      const isApplyButton = parentOfParent === this.applyButton.$element;
+    if (this.withControlButtons) {
+      const parentOfParent = $(event.target).parent().parent();
+      const isApplyButton = parentOfParent.is(this.applyButton.$element);
       if (!isApplyButton) {
         event.stopPropagation();
       }
@@ -99,12 +95,11 @@ class Dropdown {
   }
 
   handleButtonIncDecChange(id, count, totalItems) {
+    this.isInitComplete = true;
     if (count > 0) {
-      $(`[data-id=${id}]`).find('.button-decrement')
-        .addClass('button-decrement_active');
+      $(`[data-id=${id}]`).find('.button-decrement').addClass('button-decrement_active');
     } else {
-      $(`[data-id=${id}]`).find('.button-decrement_active')
-        .removeClass('button-decrement_active');
+      $(`[data-id=${id}]`).find('.button-decrement_active').removeClass('button-decrement_active');
     }
     if (this.withControlButtons) {
       if (totalItems === 0) {
@@ -116,50 +111,33 @@ class Dropdown {
   }
 
   handleButtonIncDecClick(itemCount, totalItems) {
-    const fields = [];
-    const counts = [];
-    $.each(itemCount, (field, count) => {
-      fields.push(field);
-      counts.push(count);
-    });
-    if (fields[0] === 'adults') {
-      return this.getGuestsString(counts, totalItems);
-    } else if (fields[0] === 'bedrooms') {
-      return this.getAmenityString(counts, totalItems);
-    }
-  }
-
-  getGuestsString(counts, totalItems) {
-    const guests = counts[0] + counts[1];
-    const babies = counts[2];
-
-    const countArr = [guests, babies];
-    const textArr = this.textGuests;
-    const indexArr = [this.getIndex(guests), this.getIndex(babies)];
-
     if (totalItems === 0) {
-      return this.textGuestsDefaults;
+      return this.defaultOutText;
     } else {
-      return this.getText(countArr, textArr, indexArr);
-    }
-  }
-
-  getAmenityString(counts, totalItems) {
-    const bedrooms = counts[0];
-    const beds = counts[1];
-
-    const countArr = [bedrooms, beds];
-    const textArr = this.textAmenity;
-    const indexArr = [this.getIndex(bedrooms), this.getIndex(beds)];
-
-    if (totalItems === 0) {
-      return this.textAmenityDefaults;
-    } else {
-      return this.getText(countArr, textArr, indexArr);
+      const counts = [];
+      $.each(itemCount, (field, count) => {
+        if (count > 0 && !this.isInitComplete) {
+          $(`[data-id=${field}]`).find('.button-decrement').addClass('button-decrement_active');
+        }
+        counts.push(count);
+      });
+      const countArr = [];
+      this.countGroupsIndex.map((value) => {
+        countArr.push(this.getCount(counts, value));
+      });
+      const textArr = this.outText;
+      const indexArr = [];
+      countArr.map((value) => {
+        indexArr.push(this.getIndex(value));
+      });
+      return this.getOuterText(countArr, textArr, indexArr);
     }
   }
 
   getIndex(count) {
+    if (count === 0) {
+      return 'empty';
+    }
     if (count === 1) {
       return 0;
     }
@@ -171,22 +149,66 @@ class Dropdown {
     }
   }
 
-  getString(count, text, index) {
+  getInnerElement(innerSelector) {
+    return this.$container.find(innerSelector);
+  }
+
+  getConfig() {
+    return {
+      onChange: this.handleButtonIncDecChange,
+      setSelectionText: this.handleButtonIncDecClick,
+    };
+  }
+
+  getButtons(index, button) {
+    const isDropdownButton = button.$parentElement.is(this.$buttonsContainer);
+    if (isDropdownButton) {
+      const isClearButton = button.type === 'clear';
+      if (isClearButton) {
+        this.clearButton = button;
+      } else {
+        this.applyButton = button;
+      }
+      button.$element.remove();
+    }
+  }
+
+  getOuterString(count, text, index) {
     return `${count} ${text[index]}`;
   }
 
-  getText(countArr, textArr, indexArr) {
-    const strFirst = this.getString(countArr[0], textArr[0], indexArr[0]);
-    const strSecond = this.getString(countArr[1], textArr[1], indexArr[1]);
-    if (countArr[0] !== 0) {
-      if (countArr[1] !== 0) {
-        return `${strFirst}, ${strSecond}`;
-      } else {
-        return `${strFirst}`;
+  getOuterText(countArr, textArr, indexArr) {
+    const outerStrings = [];
+    countArr.map((value, index) => {
+      if (value !== 0) {
+        if (outerStrings.length === 0) {
+          outerStrings.push(this.getOuterString(countArr[index], textArr[index], indexArr[index]));
+        } else if (outerStrings.length < 2) {
+          outerStrings.push(`, ${this.getOuterString(countArr[index], textArr[index], indexArr[index])}`);
+        } else {
+          outerStrings.push('...');
+        }
       }
-    } else if (countArr[1] !== 0) {
-      return `${strSecond}`;
-    }
+    });
+    return outerStrings.reduce((previousValue, currentValue) => previousValue + currentValue);
+  }
+
+  getCountGroupIndex(group, groupArr) {
+    const result = [];
+    groupArr.map((value, index) => {
+      if (value === group) {
+        result.push(index);
+      }
+    });
+    return result;
+  }
+
+  getCount(counts, groupIndex) {
+    const results = [];
+    groupIndex.map((index) => {
+      results.push(counts[index]);
+    });
+    return results.reduce((previousValue, currentValue) => previousValue + currentValue);
   }
 }
 
