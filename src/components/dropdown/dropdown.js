@@ -5,8 +5,8 @@ class Dropdown {
     this.isInitComplete = false;
     this.$container = $(item);
     this.controlButtons = controlButtons;
-    this.withControlButtons = this.$container.data('withcontrolbuttons');
-    this.maxTextBlocks = this.$container.data('maxtextblocks');
+    this.withControlButtons = this.$container.data('with-control-buttons');
+    this.maxTextBlocks = this.$container.data('max-text-blocks');
 
     this.bindContext();
     this.initOutText();
@@ -25,15 +25,15 @@ class Dropdown {
   }
 
   initOutText() {
-    this.defaultOutText = this.$container.find('.iqdropdown-selection').data('defaultouttext');
+    this.defaultOutText = this.$container.find('.iqdropdown-selection').data('default-out-text');
     this.outText = [];
     this.countGroupsIndex = [];
     const menuOptions = this.$container.find('.iqdropdown-menu-option');
     const outTextGroups = [];
     const outText = [];
     $.each(menuOptions, (key, option) => {
-      const textLine = [$(option).data('outtextsingle'), $(option).data('outtextfew'), $(option).data('outtextmany')];
-      outTextGroups.push($(option).data('countgroup'));
+      const textLine = [$(option).data('out-text-single'), $(option).data('out-text-few'), $(option).data('out-text-many')];
+      outTextGroups.push($(option).data('count-group'));
       outText.push(textLine);
     });
     outTextGroups.map((group, index) => {
