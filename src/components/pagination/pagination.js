@@ -29,7 +29,7 @@ class Pagination {
   }
 
   initDataSource(dataSource) {
-    const demoSource = Array(200).fill('demo');
+    const demoSource = Array(200).fill('');
     this.dataSource = dataSource.length > 0
       ? dataSource
       : demoSource;

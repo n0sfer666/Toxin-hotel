@@ -1,68 +1,69 @@
-.paginationjs {
-  @include font-body;
-  box-sizing: border-box;
-  display: inline-block;
-}
-.paginationjs-pages {
-  font: normal bold 12px/15px Montserrat, sans-serif;
-  text-transform: uppercase;
-  color: $dark-shade-100;
-}
-.paginationjs-nav {
-  margin-top: 49px;
-  text-align: center;
-}
-.paginationjs:after {
-  display: table;
-  content: " ";
-  clear: both;
-}
-.paginationjs .paginationjs-pages li {
-  float: left;
-  list-style: none;
-}
-.paginationjs .paginationjs-pages li > a {
-  width: 40px;
-  height: 40px;
-  border-radius: 22px;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  background: #fff;
-  font-weight: normal;
-  color: $dark-shade-50;
-}
-.paginationjs .paginationjs-pages li.paginationjs-next > a {
-  width: 40px;
-  height: 40px;
-  border-radius: 22px;
-  align-items: center;
-  background: url(./img/arrow_forward.svg) no-repeat 50% 50%, linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+.pagination {
+  & .paginationjs {
+    @include font-body;
+    box-sizing: border-box;
+    display: inline-block;
   }
-.paginationjs .paginationjs-pages li:not(.disabled) > a:hover {
-  background: $dark-shade-5;
-}
-.paginationjs .paginationjs-pages li.paginationjs-next > a:hover {
-  background: url(./img/arrow_forward.svg) no-repeat 50% 50%, linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-  box-shadow: 0 0 15px $green;
+  & .paginationjs-pages {
+    font: normal bold 12px/15px Montserrat, sans-serif;
+    text-transform: uppercase;
+    color: $dark-shade-100;
+  }
+  & .paginationjs-nav {
+    margin-top: 49px;
+    text-align: center;
+  }
+  & .paginationjs:after {
+    display: table;
+    content: " ";
+    clear: both;
+  }
+  & .paginationjs .paginationjs-pages li {
+    float: left;
+    list-style: none;
+  }
+  & .paginationjs .paginationjs-pages li > a {
+    width: 40px;
+    height: 40px;
+    border-radius: 22px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background: #fff;
+    font-weight: normal;
+    color: $dark-shade-50;
+  }
+  & .paginationjs .paginationjs-pages li.paginationjs-next > a {
+    width: 40px;
+    height: 40px;
+    border-radius: 22px;
+    align-items: center;
+    background: url(./img/arrow_forward.svg) no-repeat 50% 50%, linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    }
+  & .paginationjs .paginationjs-pages li:not(.disabled) > a:hover {
+    background: $dark-shade-5;
+  }
+  & .paginationjs .paginationjs-pages li.paginationjs-next > a:hover {
+    background: url(./img/arrow_forward.svg) no-repeat 50% 50%, linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    box-shadow: 0 0 15px $green;
+  }
+  & .paginationjs .paginationjs-pages li.active {
+    border: none;
+  }
+  & .paginationjs .paginationjs-pages li.active > a {
+    cursor: default;
+    width: 40px;
+    height: 40px;
+    border-radius: 22px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    font-weight: bold;
+    color: #fff;
 
-}
-.paginationjs .paginationjs-pages li.active {
-  border: none;
-}
-.paginationjs .paginationjs-pages li.active > a {
-  cursor: default;
-  width: 40px;
-  height: 40px;
-  border-radius: 22px;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-  font-weight: bold;
-  color: #fff;
-
-  &:hover {
-    background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    &:hover {
+      background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    }
   }
 }
