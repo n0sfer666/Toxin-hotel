@@ -1,203 +1,176 @@
-.slick-slider {
+.room__slider {
   position: relative;
   display: block;
   box-sizing: border-box;
   user-select: none;
   touch-action: pan-y;
   -webkit-tap-highlight-color: transparent;
-
-}
-.slick-list {
-  position: relative;
-  overflow: hidden;
-  display: block;
-  margin: 0;
-  padding: 0;
-
-  &:focus {
-    outline: none;
-  }
-
-  &.dragging {
-    cursor: pointer;
-    cursor: hand;
-  }
-}
-.slick-slider .slick-track,
-.slick-slider .slick-list {
-  transform: translate3d(0, 0, 0);
-}
-
-.slick-track {
-  position: relative;
-  left: 0;
-  top: 0;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-
-  &:before,
-  &:after {
-      content: "";
-      display: table;
-  }
-
-  &:after {
-    clear: both;
-  }
-
-  .slick-loading & {
+  &.slick-loading {
+    & .slick-track {
       visibility: hidden;
+    }
+    & .slick-slide {
+      visibility: hidden;
+    }
+    & img {
+      display: none;
+    }
   }
-}
-.slick-slide {
-  float: left;
-  height: 100%;
-  min-height: 1px;
-  [dir="rtl"] & {
-    float: right;
+  &.slick-initialized {
+    & .slick-slide {
+      display: block;
+    }
   }
-  img {
-    display: block;
+  &.slick-vertical {
+    & .slick-slide {
+      display: block;
+      height: auto;
+      border: 1px solid transparent;
+    }
   }
-  &.slick-loading img {
-    display: none;
+  & .slick {
+    &-arrow {
+      position: absolute;
+      top: 0;
+      display: block;
+      width: 42px;
+      height: 95%;
+      background: black;
+      padding: 0;
+      cursor: pointer;
+      color: transparent;
+      border: none;
+      outline: none;
+      &.slick-hidden {
+        display: none;
+      }
+    }
+    &-prev {
+      left: 0;
+      z-index: 1;
+      background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+      &:before {
+        font: normal normal 24px/24px materialIcons;
+        color: #fff;
+        content: 'keyboard_arrow_left';
+        left: 0;
+      }
+      &:after {
+        position: absolute;
+        z-index: 2;
+        width: 44px;
+        height: 44px;
+        top: 53px;
+      }
+    }
+    &-next {
+      right: 0;
+      z-index: 1;
+      background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+      transform: matrix(-1, 0, 0, 1, 0, 0);
+      &:before {
+        font: normal normal 24px/24px materialIcons;
+        color: #fff;
+        content: 'keyboard_arrow_left';
+        right: 0;
+      }
+      &:after {
+        position: absolute;
+        z-index: 2;
+        width: 44px;
+        height: 44px;
+        top: 53px;
+      }
+    }
+    &-list {
+      position: relative;
+      overflow: hidden;
+      display: block;
+      margin: 0;
+      padding: 0;
+      transform: translate3d(0, 0, 0);
+      &:focus {
+        outline: none;
+      }
+      &.dragging {
+        cursor: pointer;
+        cursor: hand;
+      }
+      & .slick-track {
+        position: relative;
+        left: 0;
+        top: 0;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        transform: translate3d(0, 0, 0);
+        &:before, &:after, &:active {
+          content: "";
+          display: table;
+        }
+        &:after {
+          clear: both;
+        }
+        & .slick-slide {
+          float: left;
+          height: 100%;
+          min-height: 1px;
+        }
+      }
+    }
+    &-dots {
+      position: absolute;
+      bottom: 19px;
+      right: 12px;
+      display: block;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      text-align: right;
+      & li {
+        position: relative;
+        display: inline-block;
+        width: 11px;
+        height: 11px;
+        cursor: pointer;
+        & button {
+          font-size: 0;
+          line-height: 0;
+          display: block;
+          width: 7px;
+          height: 7px;
+          cursor: pointer;
+          color: transparent;
+          border: 0;
+          outline: none;
+          background: transparent;
+          &:hover, &:focus, &:active {
+            outline: none;
+          }
+          &:hover:before, &:focus:before, &:active:before {
+            opacity: 1;
+          }
+          &:before {
+            position: absolute;
+            z-index: 3;
+            top: 0;
+            left: 0;
+            width: 7px;
+            height: 7px;
+            content: '';
+            background-color: transparent;
+            border: 1px solid white;
+            box-sizing: border-box;
+            border-radius: 50%;
+          }
+        }
+        &.slick-active button:before {
+          background-color: white;
+          border: none;
+          border-radius: 50%;
+        }
+      }
+    }
+
   }
-
-  display: none;
-
-  &.dragging img {
-    pointer-events: none;
-  }
-
-  .slick-initialized & {
-    display: block;
-  }
-
-  .slick-loading & {
-    visibility: hidden;
-  }
-
-  .slick-vertical & {
-    display: block;
-    height: auto;
-    border: 1px solid transparent;
-  }
-}
-.slick-arrow.slick-hidden {
-  display: none;
-}
-
-/* Arrows */
-.slick-prev,
-.slick-next {
-  position: absolute;
-  top: 0;
-  display: block;
-  width: 42px;
-  height: 95%;
-  background: black;
-  padding: 0;
-  cursor: pointer;
-  color: transparent;
-  border: none;
-  outline: none;
-}
-
-.slick-prev:after,
-.slick-next:after {
-  position: absolute;
-  z-index: 2;
-  width: 44px;
-  height: 44px;
-  top: 53px;
-}
-
-.slick-prev {
-  left: 0;
-  z-index: 1;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
-}
-
-.slick-prev:before {
-  font: normal normal 24px/24px materialIcons;
-  color: #fff;
-  content: 'keyboard_arrow_left';
-  left: 0;
-}
-
-.slick-next {
-  right: 0;
-  z-index: 1;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
-  transform: matrix(-1, 0, 0, 1, 0, 0);
-}
-
-.slick-next:before {
-  font: normal normal 24px/24px materialIcons;
-  color: #fff;
-  content: 'keyboard_arrow_left';
-  right: 0;
-}
-
-.slick-dots {
-  position: absolute;
-  bottom: 19px;
-  right: 12px;
-  display: block;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  text-align: right;
-}
-
-.slick-dots li {
-  position: relative;
-  display: inline-block;
-  width: 11px;
-  height: 11px;
-  cursor: pointer;
-}
-
-.slick-dots li button {
-  font-size: 0;
-  line-height: 0;
-  display: block;
-  width: 7px;
-  height: 7px;
-  cursor: pointer;
-  color: transparent;
-  border: 0;
-  outline: none;
-  background: transparent;
-}
-
-.slick-dots li button:hover,
-.slick-dots li button:focus {
-  outline: none;
-}
-
-.slick-dots li button:hover:before,
-.slick-dots li button:focus:before {
-  opacity: 1;
-}
-
-.slick-dots li button:before {
-  position: absolute;
-  z-index: 3;
-  top: 0;
-  left: 0;
-  width: 7px;
-  height: 7px;
-  content: '';
-  background-color: transparent;
-  border: 1px solid white;
-  box-sizing: border-box;
-  border-radius: 50%;
-}
-
-.slick-dots li.slick-active button:before {
-  background-color: white;
-  border: none;
-  border-radius: 50%;
 }
