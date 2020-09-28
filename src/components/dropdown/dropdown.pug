@@ -7,10 +7,13 @@ mixin dropdown({withControlButtons = true, defaultOutText = 'Сколько го
       p(class = 'iqdropdown-selection', data-default-out-text=defaultOutText)
         .iqdropdown-menu.js-iqdropdown-menu
           each line in menu
-            div(class='iqdropdown-menu-option', data-id=line.id, data-defaultcount=line.count, 
-            data-count-group=line.countGroup, 
-            data-out-text-single=line.outTextSingle, 
-            data-out-text-few=line.outTextFew, data-out-text-many=line.outTextMany)
+            div(class='iqdropdown-menu-option',
+              data-id=line.id,
+              data-defaultcount=line.count,
+              data-count-group=line.countGroup,
+              data-out-text-single=line.outTextSingle,
+              data-out-text-few=line.outTextFew,
+              data-out-text-many=line.outTextMany)
               .dropdown__item
                 p.iqdropdown-item #{line.title}
           if(withControlButtons)
