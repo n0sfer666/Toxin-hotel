@@ -8,7 +8,7 @@ mixin dropdown( {type = 'guests', withControlButtons = true, defaultOutText = 'Ð
     p.dropdown__selection.iqdropdown-selection
       .dropdown__menu.iqdropdown-menu
         each line in menu
-          div(class='dropdown__menu-option iqdropdown-menu-option',
+          div(class='dropdown__menu-option js-dropdown__menu-option iqdropdown-menu-option',
               data-id=line.id,
               data-defaultcount=line.count,
               data-count-group=line.countGroup)

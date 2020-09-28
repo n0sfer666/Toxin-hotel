@@ -1,4 +1,5 @@
 import 'item-quantity-dropdown/lib/item-quantity-dropdown.min';
+import { each } from 'jquery';
 
 class Dropdown {
   constructor(item, controlButtonsInstances, outTextObj) {
@@ -26,41 +27,27 @@ class Dropdown {
   }
 
   initOutText() {
+    this.outText = [];
+    this.countGroupsIndex = [];
+    const menuOptionsObj = this.$container.find('.iqdropdown-menu-option');
+    const outTextGroups = [];
+    const groupsArr = [];
+    $.each(menuOptionsObj, (_, optionElement) => {
+      groupsArr.push($(optionElement).data('count-group'));
+    });
     $.each(this.outTextObj, (type, value) => {
       if (type === this.type) {
         this.defaultOutText = value.defaultText;
-        this.countGroupsObj = value.countGroups;
+        const countGroupsObj = value.countGroups;
+        $.each(countGroupsObj, (group, textArr) => {
+          this.outText.push(textArr);
+          outTextGroups.push(group);
+        });
       }
     });
-    console.log(this.defaultOutText);
-    console.log(this.countGroupsObj);
-    // this.defaultOutText = this.$container.find('.iqdropdown-selection').data('default-out-text');
-    // this.outText = [];
-    // this.countGroupsIndex = [];
-    // const menuOptions = this.$container.find('.iqdropdown-menu-option');
-    // const outTextGroups = [];
-    // const outText = [];
-    // $.each(menuOptions, (key, option) => {
-    //   const textLine = [$(option).data('out-text-single'), $(option).data('out-text-few'), $(option).data('out-text-many')];
-    //   outTextGroups.push($(option).data('count-group'));
-    //   outText.push(textLine);
-    // });
-    // outTextGroups.map((group, index) => {
-    //   if (index === 0) {
-    //     this.countGroupsIndex.push(this.getCountGroupIndex(group, outTextGroups));
-    //     this.outText.push(outText[index]);
-    //   } else {
-    //     const groupIndex = this.getCountGroupIndex(group, outTextGroups);
-    //     this.countGroupsIndex.map((value) => {
-    //       const isNotEqual = JSON.stringify(value) !== JSON.stringify(groupIndex);
-    //       const isInBoundaryArray = this.countGroupsIndex.length < outTextGroups.length;
-    //       if (isNotEqual && isInBoundaryArray) {
-    //         this.countGroupsIndex.push(groupIndex);
-    //         this.outText.push(outText[index]);
-    //       }
-    //     });
-    //   }
-    // });
+    outTextGroups.map((group) => {
+      this.countGroupsIndex.push(this.getCountGroupIndex(group, groupsArr));
+    });
   }
 
   initButtons() {
@@ -125,26 +112,25 @@ class Dropdown {
   handleButtonIncDecClick(itemCount, totalItems) {
     if (totalItems === 0) {
       return this.defaultOutText;
+    } else {
+      const counts = [];
+      $.each(itemCount, (field, count) => {
+        if (count > 0 && !this.isInitComplete) {
+          $(`[data-id=${field}]`).find('.button-decrement').addClass('button-decrement_active');
+        }
+        counts.push(count);
+      });
+      const countArr = [];
+      this.countGroupsIndex.map((value) => {
+        countArr.push(this.getCount(counts, value));
+      });
+      const textArr = this.outText;
+      const indexArr = [];
+      countArr.map((value) => {
+        indexArr.push(this.getIndex(value));
+      });
+      return this.getOuterText(countArr, textArr, indexArr);
     }
-    // else {
-    //   const counts = [];
-    //   $.each(itemCount, (field, count) => {
-    //     if (count > 0 && !this.isInitComplete) {
-    //       $(`[data-id=${field}]`).find('.button-decrement').addClass('button-decrement_active');
-    //     }
-    //     counts.push(count);
-    //   });
-    //   const countArr = [];
-    //   this.countGroupsIndex.map((value) => {
-    //     countArr.push(this.getCount(counts, value));
-    //   });
-    //   const textArr = this.outText;
-    //   const indexArr = [];
-    //   countArr.map((value) => {
-    //     indexArr.push(this.getIndex(value));
-    //   });
-    //   return this.getOuterText(countArr, textArr, indexArr);
-    // }
   }
 
   getIndex(count) {
@@ -196,19 +182,17 @@ class Dropdown {
       if (value !== 0) {
         if (outerStrings.length === 0) {
           outerStrings.push(this.getOuterString(countArr[index], textArr[index], indexArr[index]));
-        } else if (outerStrings.length < this.maxTextBlocks) {
-          outerStrings.push(`, ${this.getOuterString(countArr[index], textArr[index], indexArr[index])}`);
         } else {
-          outerStrings.push('...');
+          outerStrings.push(`, ${this.getOuterString(countArr[index], textArr[index], indexArr[index])}`);
         }
       }
     });
     return outerStrings.reduce((previousValue, currentValue) => previousValue + currentValue);
   }
 
-  getCountGroupIndex(group, groupArr) {
+  getCountGroupIndex(group, groupsArr) {
     const result = [];
-    groupArr.map((value, index) => {
+    groupsArr.map((value, index) => {
       if (value === group) {
         result.push(index);
       }
