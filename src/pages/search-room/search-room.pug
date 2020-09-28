@@ -23,7 +23,7 @@ block append content
       
       .search-room__menu-title
         +headline({title: 'гости'})
-      +dropdown({withControlButtons: false, defaultOutText: 'Сколько спален', menu: [ {id: 'bedrooms', outTextSingle: 'спальня', outTextFew: 'спальни', outTextMany: 'спален', count: 2, countGroup: 'bedrooms', title: 'спальни'}, {id: 'beds', outTextSingle: 'кровать', outTextFew: 'кровати', outTextMany: 'кроватей', count: 2, countGroup: 'beds', title: 'кровати'}, {id: 'bathrooms', outTextSingle: 'ванная', outTextFew: 'ванные', outTextMany: 'ванных', count: 0, countGroup: 'bathrooms', title: 'ванные комнаты'} ]})
+      +dropdown({type: 'rooms',withControlButtons: false, menu: [ {id: 'bedrooms', count: 2, countGroup: 'bedrooms', title: 'спальни'}, {id: 'beds', count: 2, countGroup: 'beds', title: 'кровати'}, {id: 'bathrooms', count: 0, countGroup: 'bathrooms', title: 'ванные комнаты'} ]})
       .search-room__range-slider
         +range-slider({title: 'Диапазон цены'})
       p.search-room__description Стоимость за сутки пребывания в номере

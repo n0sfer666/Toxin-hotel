@@ -1,12 +1,13 @@
 import 'item-quantity-dropdown/lib/item-quantity-dropdown.min';
 
 class Dropdown {
-  constructor(item, controlButtons) {
+  constructor(item, controlButtonsInstances, outTextObj) {
     this.isInitComplete = false;
     this.$container = $(item);
-    this.controlButtons = controlButtons;
+    this.type = this.$container.data('type');
     this.withControlButtons = this.$container.data('with-control-buttons');
-    this.maxTextBlocks = this.$container.data('max-text-blocks');
+    this.controlButtons = controlButtonsInstances;
+    this.outTextObj = outTextObj;
 
     this.bindContext();
     this.initOutText();
@@ -25,33 +26,41 @@ class Dropdown {
   }
 
   initOutText() {
-    this.defaultOutText = this.$container.find('.iqdropdown-selection').data('default-out-text');
-    this.outText = [];
-    this.countGroupsIndex = [];
-    const menuOptions = this.$container.find('.iqdropdown-menu-option');
-    const outTextGroups = [];
-    const outText = [];
-    $.each(menuOptions, (key, option) => {
-      const textLine = [$(option).data('out-text-single'), $(option).data('out-text-few'), $(option).data('out-text-many')];
-      outTextGroups.push($(option).data('count-group'));
-      outText.push(textLine);
-    });
-    outTextGroups.map((group, index) => {
-      if (index === 0) {
-        this.countGroupsIndex.push(this.getCountGroupIndex(group, outTextGroups));
-        this.outText.push(outText[index]);
-      } else {
-        const groupIndex = this.getCountGroupIndex(group, outTextGroups);
-        this.countGroupsIndex.map((value) => {
-          const isNotEqual = JSON.stringify(value) !== JSON.stringify(groupIndex);
-          const isInBoundaryArray = this.countGroupsIndex.length < outTextGroups.length;
-          if (isNotEqual && isInBoundaryArray) {
-            this.countGroupsIndex.push(groupIndex);
-            this.outText.push(outText[index]);
-          }
-        });
+    $.each(this.outTextObj, (type, value) => {
+      if (type === this.type) {
+        this.defaultOutText = value.defaultText;
+        this.countGroupsObj = value.countGroups;
       }
     });
+    console.log(this.defaultOutText);
+    console.log(this.countGroupsObj);
+    // this.defaultOutText = this.$container.find('.iqdropdown-selection').data('default-out-text');
+    // this.outText = [];
+    // this.countGroupsIndex = [];
+    // const menuOptions = this.$container.find('.iqdropdown-menu-option');
+    // const outTextGroups = [];
+    // const outText = [];
+    // $.each(menuOptions, (key, option) => {
+    //   const textLine = [$(option).data('out-text-single'), $(option).data('out-text-few'), $(option).data('out-text-many')];
+    //   outTextGroups.push($(option).data('count-group'));
+    //   outText.push(textLine);
+    // });
+    // outTextGroups.map((group, index) => {
+    //   if (index === 0) {
+    //     this.countGroupsIndex.push(this.getCountGroupIndex(group, outTextGroups));
+    //     this.outText.push(outText[index]);
+    //   } else {
+    //     const groupIndex = this.getCountGroupIndex(group, outTextGroups);
+    //     this.countGroupsIndex.map((value) => {
+    //       const isNotEqual = JSON.stringify(value) !== JSON.stringify(groupIndex);
+    //       const isInBoundaryArray = this.countGroupsIndex.length < outTextGroups.length;
+    //       if (isNotEqual && isInBoundaryArray) {
+    //         this.countGroupsIndex.push(groupIndex);
+    //         this.outText.push(outText[index]);
+    //       }
+    //     });
+    //   }
+    // });
   }
 
   initButtons() {
@@ -116,25 +125,26 @@ class Dropdown {
   handleButtonIncDecClick(itemCount, totalItems) {
     if (totalItems === 0) {
       return this.defaultOutText;
-    } else {
-      const counts = [];
-      $.each(itemCount, (field, count) => {
-        if (count > 0 && !this.isInitComplete) {
-          $(`[data-id=${field}]`).find('.button-decrement').addClass('button-decrement_active');
-        }
-        counts.push(count);
-      });
-      const countArr = [];
-      this.countGroupsIndex.map((value) => {
-        countArr.push(this.getCount(counts, value));
-      });
-      const textArr = this.outText;
-      const indexArr = [];
-      countArr.map((value) => {
-        indexArr.push(this.getIndex(value));
-      });
-      return this.getOuterText(countArr, textArr, indexArr);
     }
+    // else {
+    //   const counts = [];
+    //   $.each(itemCount, (field, count) => {
+    //     if (count > 0 && !this.isInitComplete) {
+    //       $(`[data-id=${field}]`).find('.button-decrement').addClass('button-decrement_active');
+    //     }
+    //     counts.push(count);
+    //   });
+    //   const countArr = [];
+    //   this.countGroupsIndex.map((value) => {
+    //     countArr.push(this.getCount(counts, value));
+    //   });
+    //   const textArr = this.outText;
+    //   const indexArr = [];
+    //   countArr.map((value) => {
+    //     indexArr.push(this.getIndex(value));
+    //   });
+    //   return this.getOuterText(countArr, textArr, indexArr);
+    // }
   }
 
   getIndex(count) {
