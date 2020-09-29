@@ -26,10 +26,13 @@
   }
 
   &__selection {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     box-sizing: border-box;
     display: flex;
     align-items: center;
-    width: 100%;
+    width: 80%;
     height: 100%;
     padding-left: 4.5%;
     font: normal normal 14px/24px Montserrat, sans-serif;
