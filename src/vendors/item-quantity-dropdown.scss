@@ -30,9 +30,11 @@
           &-increment {
             cursor: pointer;
             color: $dark-shade-50;
+            border-color: $dark-shade-50;
       
             &::after {
               content: '+';
+              color: inherit;
             }
             &:hover, &:focus, &:active {
               box-shadow: 0 0 10px $dark-shade-25;
@@ -44,10 +46,12 @@
         
             &:after {
               content: '-';
+              color: inherit;
             }
             &_active {
               cursor: pointer;
               color: $dark-shade-50;
+              border-color: $dark-shade-50;
         
               &:hover, &:focus, &:active {
                 box-shadow: 0 0 10px $dark-shade-25;

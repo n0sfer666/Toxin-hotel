@@ -29,7 +29,7 @@ class Dropdown {
   initOutText() {
     this.outText = [];
     this.countGroupsIndex = [];
-    const menuOptionsObj = this.$container.find('.iqdropdown-menu-option');
+    const menuOptionsObj = this.$container.find('.js-dropdown__menu-option');
     const outTextGroups = [];
     const groupsArr = [];
     $.each(menuOptionsObj, (_, optionElement) => {
@@ -94,11 +94,10 @@ class Dropdown {
   }
 
   handleButtonIncDecChange(id, count, totalItems) {
-    this.isInitComplete = true;
     if (count > 0) {
-      $(`[data-id=${id}]`).find('.button-decrement').addClass('button-decrement_active');
+      this.buttonsDecrement[id].addClass('button-decrement_active');
     } else {
-      $(`[data-id=${id}]`).find('.button-decrement_active').removeClass('button-decrement_active');
+      this.buttonsDecrement[id].removeClass('button-decrement_active');
     }
     if (this.withControlButtons) {
       if (totalItems === 0) {
@@ -110,14 +109,26 @@ class Dropdown {
   }
 
   handleButtonIncDecClick(itemCount, totalItems) {
+    if (!this.isInitComplete) {
+      const menuOptionsObj = this.$container.find('.js-dropdown__menu-option');
+      this.buttonsDecrement = {};
+      $.each(menuOptionsObj, (_, optionElement) => {
+        const id = $(optionElement).data('id');
+        const buttonDecrement = $(optionElement).find('.button-decrement');
+        this.buttonsDecrement[id] = buttonDecrement;
+      });
+      $.each(itemCount, (id, count) => {
+        if (count > 0) {
+          this.buttonsDecrement[id].addClass('button-decrement_active');
+        }
+      });
+      this.isInitComplete = true;
+    }
     if (totalItems === 0) {
       return this.defaultOutText;
     } else {
       const counts = [];
       $.each(itemCount, (field, count) => {
-        if (count > 0 && !this.isInitComplete) {
-          $(`[data-id=${field}]`).find('.button-decrement').addClass('button-decrement_active');
-        }
         counts.push(count);
       });
       const countArr = [];
