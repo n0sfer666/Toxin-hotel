@@ -153,6 +153,9 @@ $side-padding: round((140 * 100% / $base) * 1000) / 1000;
       & .form-elements__title {
         margin-bottom: 5px;
       }
+      @media screen and (min-width: $desktop) {
+        width: 320px;
+      }
     }
     &-rich-checkbox {
       max-width: 266px;
@@ -197,7 +200,7 @@ $side-padding: round((140 * 100% / $base) * 1000) / 1000;
     }
     &-pagination {
       max-width: 320px;
-      margin-bottom: 233px;
+      margin-bottom: 212px;
       & .form-elements__title {
         margin-bottom: 15px;
       }
