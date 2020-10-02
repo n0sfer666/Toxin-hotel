@@ -23,7 +23,7 @@ block append content
       
       .search-room__menu-title
         +headline({title: 'гости'})
-      +dropdown({type: 'rooms',withControlButtons: false, menu: [ {id: 'bedrooms', count: 2, countGroup: 'bedrooms', title: 'спальни'}, {id: 'beds', count: 2, countGroup: 'beds', title: 'кровати'}, {id: 'bathrooms', count: 0, countGroup: 'bathrooms', title: 'ванные комнаты'} ]})
+      +dropdown()
       .search-room__range-slider
         +range-slider({title: 'Диапазон цены'})
       p.search-room__description Стоимость за сутки пребывания в номере
@@ -47,7 +47,7 @@ block append content
 
       .search-room__menu-title.search-room__menu-title_big
         +headline({title: 'удобства номера'})
-      +dropdown({isGuests: false})
+      +dropdown({type: 'rooms',withControlButtons: false, menu: [ {id: 'bedrooms', count: 2, countGroup: 'bedrooms', title: 'спальни'}, {id: 'beds', count: 2, countGroup: 'beds', title: 'кровати'}, {id: 'bathrooms', count: 0, countGroup: 'bathrooms', title: 'ванные комнаты'} ]})
       .search-room__expandable-checkbox-list
         +expandable-checkbox-list()
 
