@@ -1,10 +1,10 @@
 import 'item-quantity-dropdown/lib/item-quantity-dropdown.min';
-import { each } from 'jquery';
 
 class Dropdown {
   constructor(item, controlButtonsInstances, outTextObj) {
     this.isInitComplete = false;
     this.$container = $(item);
+    this.$selection = this.$container.find('.dropdown__selection');
     this.type = this.$container.data('type');
     this.withControlButtons = this.$container.data('with-control-buttons');
     this.controlButtons = controlButtonsInstances;
@@ -76,10 +76,12 @@ class Dropdown {
   }
 
   handleClearButtonClick() {
-    this.getInnerElement('.iqdropdown-item-controls').remove();
-    this.initInstance();
-    this.getInnerElement('.iqdropdown-item-controls').remove();
-    this.initInstance();
+    $.each(this.itemCount, (item) => {
+      this.itemCount[item] = 0;
+      this.counters[item].html('0');
+      this.buttonsDecrement[item].removeClass('button-decrement_active');
+    });
+    this.$selection.html(this.defaultOutText);
     this.clearButton.setHide();
   }
 
@@ -112,16 +114,20 @@ class Dropdown {
     if (!this.isInitComplete) {
       const menuOptionsObj = this.$container.find('.js-dropdown__menu-option');
       this.buttonsDecrement = {};
+      this.counters = {};
       $.each(menuOptionsObj, (_, optionElement) => {
         const id = $(optionElement).data('id');
         const buttonDecrement = $(optionElement).find('.button-decrement');
+        const counterElement = $(optionElement).find('.counter');
         this.buttonsDecrement[id] = buttonDecrement;
+        this.counters[id] = counterElement;
       });
       $.each(itemCount, (id, count) => {
         if (count > 0) {
           this.buttonsDecrement[id].addClass('button-decrement_active');
         }
       });
+      this.itemCount = itemCount;
       this.isInitComplete = true;
     }
     if (totalItems === 0) {
