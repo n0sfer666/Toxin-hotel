@@ -1,3 +1,4 @@
+$cell-single: 226px / 7;
 .datepicker--cell-day.-other-month-,
 .datepicker--cell-year.-other-decade- {
   color: #dedede; }
@@ -112,7 +113,7 @@ Datepicker cells
 
 .datepicker--days-names {
   display: flex;
-  flex-wrap: wrap; 
+  flex-wrap: nowrap; 
 }
 
 .datepicker--day-name {
@@ -199,7 +200,21 @@ Datepicker
 
   @media screen and (min-width: $old-phones) and (max-width: 380px) {
 		width: 310px;
-	}
+  }
+  
+  &.datepicker-single {
+    width: 266px;
+
+    & .datepicker--cell {
+      width: $cell-single;
+      height: $cell-single;
+    }
+
+    & .datepicker--day-name {
+      width: $cell-single;
+      height: $cell-single;
+    }
+  }
 
   position: absolute;
   left: -100000px;

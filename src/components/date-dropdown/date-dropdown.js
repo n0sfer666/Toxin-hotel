@@ -81,8 +81,11 @@ class DateDropdown {
   }
 
   handleDatepickerShow(dp) {
-    const isButtonsCreated = dp.$datepicker.find('button').html() === undefined;
-    if (isButtonsCreated) {
+    const isButtonsNotCreated = dp.$datepicker.find('button').html() === undefined;
+    if (isButtonsNotCreated) {
+      if (this.isSingle) {
+        dp.$datepicker.addClass('datepicker-single');
+      }
       dp.$datepicker.append(this.clearButton.$element);
       dp.$datepicker.append(this.applyButton.$element);
       this.bindDpContext(dp);
