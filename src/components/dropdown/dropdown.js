@@ -218,11 +218,8 @@ class Dropdown {
   }
 
   getCount(counts, groupIndex) {
-    const results = [];
-    groupIndex.map((index) => {
-      results.push(counts[index]);
-    });
-    return results.reduce((previousValue, currentValue) => previousValue + currentValue);
+    return groupIndex.map((index) => counts[index])
+      .reduce((previousVal, currentVal) => previousVal + currentVal);
   }
 }
 
