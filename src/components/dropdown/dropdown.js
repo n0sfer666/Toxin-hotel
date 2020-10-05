@@ -8,7 +8,8 @@ class Dropdown {
     this.type = this.$container.data('type');
     this.withControlButtons = this.$container.data('with-control-buttons');
     this.controlButtons = controlButtonsInstances;
-    this.outTextObj = outTextObj;
+    this.outTextObj = outTextObj[this.type];
+    this.defaultOutText = this.outTextObj.defaultText;
 
     this.bindContext();
     this.initOutText();
@@ -27,27 +28,15 @@ class Dropdown {
   }
 
   initOutText() {
-    this.outText = [];
-    this.countGroupsIndex = [];
     const menuOptionsObj = this.$container.find('.js-dropdown__menu-option');
-    const outTextGroups = [];
+    const { countGroups } = this.outTextObj;
     const groupsArr = [];
     $.each(menuOptionsObj, (_, optionElement) => {
       groupsArr.push($(optionElement).data('count-group'));
     });
-    $.each(this.outTextObj, (type, value) => {
-      if (type === this.type) {
-        this.defaultOutText = value.defaultText;
-        const countGroupsObj = value.countGroups;
-        $.each(countGroupsObj, (group, textArr) => {
-          this.outText.push(textArr);
-          outTextGroups.push(group);
-        });
-      }
-    });
-    outTextGroups.map((group) => {
-      this.countGroupsIndex.push(this.getCountGroupIndex(group, groupsArr));
-    });
+    this.countGroupsIndex = Object.keys(countGroups)
+      .map((group) => this.getCountGroupIndex(group, groupsArr));
+    this.outText = Object.values(countGroups);
   }
 
   initButtons() {
