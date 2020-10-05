@@ -41,7 +41,6 @@ class DateDropdown {
   initDatepicker() {
     if (Array.isArray(this.$container)) {
       this.instance = this.$container[0].datepicker(this.getConfig()).data('datepicker');
-      this.handleDatepickerRightClick = this.handleDatepickerRightClick.bind(this);
       this.$container[1].on('click', this.handleDatepickerRightClick);
     } else {
       this.instance = this.$container.datepicker(this.getConfig()).data('datepicker');
@@ -130,6 +129,7 @@ class DateDropdown {
   bindContext() {
     this.handleDatepickerShow = this.handleDatepickerShow.bind(this);
     this.handleDateCellSelect = this.handleDateCellSelect.bind(this);
+    this.handleDatepickerRightClick = this.handleDatepickerRightClick.bind(this);
   }
 
   bindDpContext(dp) {
