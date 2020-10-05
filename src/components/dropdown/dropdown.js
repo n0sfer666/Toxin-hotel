@@ -197,14 +197,12 @@ class Dropdown {
     const outerStrings = [];
     countArr.map((value, index) => {
       if (value !== 0) {
-        if (outerStrings.length === 0) {
-          outerStrings.push(this.getOuterString(countArr[index], textArr[index], indexArr[index]));
-        } else {
-          outerStrings.push(`, ${this.getOuterString(countArr[index], textArr[index], indexArr[index])}`);
-        }
+        const str = this.getOuterString(countArr[index], textArr[index], indexArr[index]);
+        const outerStr = outerStrings.length === 0 ? str : `, ${str}`;
+        outerStrings.push(outerStr);
       }
     });
-    return outerStrings.reduce((previousValue, currentValue) => previousValue + currentValue);
+    return outerStrings.reduce((previousVal, currentVal) => previousVal + currentVal);
   }
 
   getCountGroupIndex(group, groupsArr) {
