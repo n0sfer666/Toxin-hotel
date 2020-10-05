@@ -11,6 +11,7 @@ $width-multi: 150 * 100% / 320;
 
     &.date-dropdown__datepicker_single {
       width: 100%;
+      cursor: pointer;
     }
   }
 
@@ -26,6 +27,7 @@ $width-multi: 150 * 100% / 320;
       border-radius: 4px;
       font: normal normal 14px/18px Montserrat, sans-serif;
       color: $dark-shade-75;
+      cursor: pointer;
 
       &:hover, &:active, &:focus {
         border: 1px solid $dark-shade-50;
@@ -44,6 +46,7 @@ $width-multi: 150 * 100% / 320;
       border-radius: 4px;
       font: normal normal 14px/18px Montserrat, sans-serif;
       color: $dark-shade-75;
+      cursor: pointer;
   
       &:hover, &:active, &:focus {
         border: 1px solid $dark-shade-50;

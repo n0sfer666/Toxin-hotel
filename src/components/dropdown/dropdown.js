@@ -78,7 +78,7 @@ class Dropdown {
   handleClearButtonClick() {
     $.each(this.itemCount, (item) => {
       this.itemCount[item] = 0;
-      this.counters[item].html('0');
+      this.counters[item].html(this.itemCount[item]);
       this.buttonsDecrement[item].removeClass('button-decrement_active');
     });
     this.$selection.html(this.defaultOutText);
