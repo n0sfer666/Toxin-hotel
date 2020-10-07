@@ -3,17 +3,19 @@ mixin piechart({perfect = 130, good = 65, satisfactorily = 65, disappoint = 0 } 
     const circumference = 364.4;
     const total = perfect + good + satisfactorily + disappoint
 
-    const percent = []
-    percent.push(disappoint / total);
-    percent.push(satisfactorily / total);
-    percent.push(good / total);
-    percent.push(perfect / total);
+    const percent = [
+      disappoint / total,
+      satisfactorily / total,
+      good / total,
+      perfect / total
+    ]
 
-    const style = []
-    style.push('url(#grad-2)');
-    style.push('url(#grad-3)');
-    style.push('url(#grad-4)');
-    style.push('url(#grad-5)');
+    const style = [
+      'url(#grad-2)',
+      'url(#grad-3)',
+      'url(#grad-4)',
+      'url(#grad-5)'
+    ]
 
     const dashStroke = [];
     const dashSpace = [];
