@@ -1,3 +1,4 @@
+$title-width: 270 * 100% / 320;
 .search-room {
   @include font-body;
   display: flex;
@@ -89,8 +90,9 @@
     max-width: 832px;
 
     &-title {
-      width: 98%;
+      width: $title-width;
       max-height: 60px;
+      margin: 0 auto;
       margin-bottom: 20px;
       @include fix-overflow;
       @include font-h1;
