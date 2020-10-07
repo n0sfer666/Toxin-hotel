@@ -11,7 +11,7 @@ $(document).ready(() => {
 
   $('.js-search-room__data-source').remove();
 
-  const paginations = $('.js-pagination');
+  const paginations = $('.js-pagination__buttons');
   $.each(paginations, (_, element) => {
     new Pagination(element, dataSource, '.js-pagination__data-output');
   });
