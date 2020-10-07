@@ -1,7 +1,7 @@
 include ../headline/headline
 include ../rate/rate
 
-mixin room({room = '888', isLux = true, price = '9990', rate = 5, reviews = 145 } = {})
+mixin room({room = '888', isLux = true, price = '9990', rate = 5, reviews = 145, currency = '₽', currencyText = 'в сутки', reviewText = ['Отзывов', 'Отзыв', 'Отзыва'] } = {})
   -
     const slides = ['', '', '', ''].map( (slide, index) => {
       return `img/img-${room}-${(index + 1)}.jpg`
@@ -20,8 +20,8 @@ mixin room({room = '888', isLux = true, price = '9990', rate = 5, reviews = 145 
             if isLux
               +headline({title: ' люкс', isPurple: true})
         span.room__price-line
-          span.room__price.js-room__price #{price}₽ 
-          | в сутки
+          span.room__price.js-room__price #{price}#{currency} 
+          | #{currencyText}
       .room__horizontal-line
       .room__rate
         .room__rate-stars
@@ -29,10 +29,10 @@ mixin room({room = '888', isLux = true, price = '9990', rate = 5, reviews = 145 
         .room__rate-text-block
           if(reviews === 0 || reviews >= 5)
             span.room__rate-text.room__rate-text_bold #{reviews} 
-            | Отзывов
+            | #{reviewText[0]}
           if(reviews === 1)
             span.room__rate-text.room__rate-text_bold #{reviews} 
-            | Отзыв
+            | #{reviewText[1]}
           if(reviews > 1 && reviews < 5)
             span.room__rate-text.room__rate-text_bold #{reviews} 
-            | Отзыва
+            | #{reviewText[2]}
