@@ -13,6 +13,6 @@ mixin control-button({isApply = true} = {})
     const dataType = isApply
       ? 'apply'
       : 'clear';
-  button(class = classButton, data-type = dataType)
+  button(type ='button', class = classButton, data-type = dataType)
     .control-button__wrapper
       h3.control-button__label #{titleButton}
