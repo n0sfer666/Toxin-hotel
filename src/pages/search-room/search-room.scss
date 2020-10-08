@@ -92,10 +92,12 @@ $title-width: 270 * 100% / 320;
     &-title {
       width: $title-width;
       max-height: 60px;
-      margin: 0 auto;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       @include fix-overflow;
       @include font-h1;
+      @media screen and (min-width: $old-phones) and (max-width: $new-phones) {
+        margin: 0 auto 10px;
+      }
     }
   }
 

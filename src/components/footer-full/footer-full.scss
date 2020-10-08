@@ -6,7 +6,7 @@ $side-padding: round((140 * 100% / $base) * 1000) / 1000;
   box-sizing: border-box;
   background-color: #fff;
   justify-content: space-between;
-  padding: 104px $side-padding 102px;
+  padding: 100px $side-padding 104px;
   box-shadow: 0px 1px 0px rgba(31, 32, 65, 0.1);
 
   @media screen and (min-width: $old-phones) and (max-width: $desktop) {
@@ -41,6 +41,10 @@ $side-padding: round((140 * 100% / $base) * 1000) / 1000;
       align-items: flex-start;
       max-width: 260px;
       margin-top: 4px;
+
+      & .footer-full__description {
+        margin-top: -7px;
+      }
 
       & .footer-full__block-title {
         margin-bottom: 18px;
@@ -91,7 +95,7 @@ $side-padding: round((140 * 100% / $base) * 1000) / 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 22px 9.7223% 22px;
+    padding: 23px 9.7223%;
     background-color: #fff;
     box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 

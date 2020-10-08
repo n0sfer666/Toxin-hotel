@@ -37,7 +37,7 @@ block append content
           +piechart({perfect: 130, good: 65, satisfactorily: 65, disappoint: 0})
         .room-detail__reviews
           .room-detail__title
-            +headline({type: 'h2', title: 'Впечатления от номера'})
+            +headline({type: 'h2', title: 'Отзывы посетителей номера'})
           p.room-detail__title-reviews 2 отзыва
           .room-detail__reviews-element
             +review({ login: 'user-1', likeCount: '10', isLiked: true, name: 'Мурад Сарафанов', timeAgo: '5 дней назад', review: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей'})
@@ -45,13 +45,13 @@ block append content
             +review({ login: 'user-2', likeCount: '2', name: 'Патрисия Стёклышкова', timeAgo: 'Неделю назад', review: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент'})
         .room-detail__rules
           .room-detail__title
-            +headline({type: 'h2', title: 'Впечатления от номера'})
+            +headline({type: 'h2', title: 'Правила'})
           -
             const bullets = ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00']
           +bullet-list({titles: bullets})
         .room-detail__cancel
           .room-detail__title
-            +headline({type: 'h2', title: 'Впечатления от номера'})
+            +headline({type: 'h2', title: 'Отмена'})
           p.room-detail__cancel-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
 
       .room-detail__booking

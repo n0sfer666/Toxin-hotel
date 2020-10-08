@@ -201,9 +201,9 @@ $side-padding: round((140 * 100% / $base) * 1000) / 1000;
     &-pagination {
       max-width: 320px;
       width: fit-content;
-      margin-bottom: 212px;
+      margin-bottom: 232px;
       & .form-elements__title {
-        margin-bottom: 15px;
+        margin-bottom: -5px;
       }
     }
     &-dropdown-guests-3 {

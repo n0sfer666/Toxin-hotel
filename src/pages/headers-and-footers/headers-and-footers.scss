@@ -1,10 +1,11 @@
 .headers-and-footers {
   background-color: #e5e5e5;
   box-sizing: border-box;
+  margin-top: 3px;
   &__header {
-    margin-bottom: 35px;
+    margin-bottom: 38px;
   }
   &__footer {
-    margin-bottom: 41px;
+    margin-bottom: 40px;
   }
 }
