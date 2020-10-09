@@ -14,6 +14,6 @@
   outline: none;
   }
 }
-::-webkit-input-placeholder { color: $dark-shade-25; }
-::-moz-placeholder          { color: $dark-shade-25; }
-:-moz-placeholder           { color: $dark-shade-25; }
+::placeholder {
+  color: $dark-shade-25;
+}
