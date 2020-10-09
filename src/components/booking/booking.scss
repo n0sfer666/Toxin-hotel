@@ -112,9 +112,13 @@ $side-padding: round((30 * 100% / $base) * 1000) / 1000;
     border-radius: 50%;
 
     &-symbol {
+      display: inline-flex;
       @include font-body;
+      margin-top: -6px;
+      margin-left: 1px;
       font-size: 12px;
-      line-height: 21px;
+      vertical-align: middle;
+      text-align: center;
       color: $dark-shade-25;
 
       &_bold {
@@ -138,9 +142,10 @@ $side-padding: round((30 * 100% / $base) * 1000) / 1000;
     }
 
     &-text {
-      display: flex;
+      display: inline-flex;
       justify-content: space-between;
       align-items: baseline;
+      height: min-content;
       width: 75%;
     }
   }
