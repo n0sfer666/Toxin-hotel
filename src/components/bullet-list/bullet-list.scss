@@ -7,6 +7,7 @@
     padding-left: 20px;
     position: relative;
     color: $dark-shade-75;
+
     &:before {
       content: '';
       position: absolute;
@@ -17,6 +18,7 @@
       border-radius: 50%;
       background: $dark-shade-25;
     }
+    
     &:not(:last-child) {
       margin-bottom: 10px;
     }

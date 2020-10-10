@@ -1,5 +1,5 @@
 $base: 320;
-$width-multi: 150 * 100% / 320;
+$width-multi: 150 * 100% / $base;
 .date-dropdown {
   &__container {
     display: flex;

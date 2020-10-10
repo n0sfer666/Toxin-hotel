@@ -6,6 +6,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+
         & .counter {
           width: calc(100% - 60px);
           height: inherit;
@@ -17,6 +18,7 @@
           color: #1F2041;
           margin-top: -3px;
         }
+
         & .button {
           &-increment, &-decrement {
             width: 30px;
@@ -27,19 +29,22 @@
             font: normal normal 18px/22px Montserrat, sans-serif;
             outline: none;
           }
+
           &-increment {
             cursor: pointer;
             color: $dark-shade-50;
             border-color: $dark-shade-50;
-      
+
             &::after {
               content: '+';
               color: inherit;
             }
+
             &:hover, &:focus, &:active {
               box-shadow: 0 0 10px $dark-shade-25;
             }
           }
+
           &-decrement {
             border-color: $dark-shade-25;
             color: $dark-shade-25;
@@ -48,11 +53,12 @@
               content: '-';
               color: inherit;
             }
+
             &_active {
               cursor: pointer;
               color: $dark-shade-50;
               border-color: $dark-shade-50;
-        
+
               &:hover, &:focus, &:active {
                 box-shadow: 0 0 10px $dark-shade-25;
               }

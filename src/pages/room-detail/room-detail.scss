@@ -89,9 +89,11 @@ $width-additional: 100% - $width-main;
   &__amenities {
     margin-bottom: 21px;
   }
+
   &__piechart {
     margin-bottom: 21px;
   }
+
   &__reviews {
     margin-bottom: 21px;
     
@@ -105,10 +107,12 @@ $width-additional: 100% - $width-main;
       margin-bottom: 16px;
     }
   }
+
   &__title-reviews {
     line-height: 32px;
     float: right;
   }
+
   &__rules {
     max-width: 272px;
     margin-bottom: 21px;
@@ -123,6 +127,7 @@ $width-additional: 100% - $width-main;
       margin-right: 90px;
     }
   }
+  
   &__cancel {
     min-width: 310px;
     max-width: 325px;

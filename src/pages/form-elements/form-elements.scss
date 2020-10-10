@@ -54,43 +54,54 @@ $side-padding: round((140 * 100% / $base) * 1000) / 1000;
       max-width: 320px;
       margin-bottom: 105px;
     }
+
     &-dropdown-guests {
       max-width: 320px;
       margin-bottom: 24px;
     }
+
     &-masked-text-field {
       max-width: 320px;
       margin-bottom: 40px;
     }
+
     &-date-dropdown {
       max-width: 320px;
       margin-bottom: 41px;
     }
+
     &-filter-date-dropdown {
       max-width: 266px;
       margin-bottom: 41px;
     }
+
     &-subscription-field {
       max-width: 266px;
       margin-bottom: 100px;
     }
+
     &-dropdown-rooms {
       max-width: 266px;
       margin-bottom: 221px;
+
       & .form-elements__title {
         margin-bottom: 5px;
       }
     }
+
     &-expandable-checkbox-list {
       max-width: 263px;
       margin-bottom: 56px;
     }
+
     &-checkbox {
       max-width: 231px;
       margin-bottom: 34px;
+
       & .form-elements__title {
         margin-bottom: 15px;
       }
+
       &-element:not(:last-child) {
         margin-bottom: 6px;
       }
@@ -101,9 +112,11 @@ $side-padding: round((140 * 100% / $base) * 1000) / 1000;
       &-container {
         display: flex;
       }
+
       &-element:not(:last-child) {
         margin-right: 10px;
       }
+
       & .form-elements__title {
         margin-bottom: 16px;
       }
@@ -112,9 +125,11 @@ $side-padding: round((140 * 100% / $base) * 1000) / 1000;
     &-toggle {
       max-width: 260px;
       margin-bottom: 45px;
+
       & .form-elements__title {
         margin-bottom: 16px;
       }
+
       &-element:not(:last-child) {
         margin-bottom: 14px;
       }
@@ -123,9 +138,11 @@ $side-padding: round((140 * 100% / $base) * 1000) / 1000;
     &-like {
       width: 120px;
       margin-bottom: 40px;
+
       & .form-elements__title {
         margin-bottom: 16px;
       }
+
       &-element {
         display: inline-block;
         &:not(:last-child) {
@@ -137,9 +154,11 @@ $side-padding: round((140 * 100% / $base) * 1000) / 1000;
     &-rate {
       width: 260px;
       margin-bottom: 192px;
+
       & .form-elements__title {
         margin-bottom: 16px;
       }
+
       &-element {
         display: inline-block;
         &:not(:last-child) {
@@ -150,18 +169,22 @@ $side-padding: round((140 * 100% / $base) * 1000) / 1000;
     &-dropdown-guests-2 {
       max-width: 320px;
       margin-bottom: 256px;
+
       & .form-elements__title {
         margin-bottom: 5px;
       }
+
       @media screen and (min-width: $desktop) {
         width: 320px;
       }
     }
     &-rich-checkbox {
       max-width: 266px;
+
       & .form-elements__title {
         margin-bottom: 14px;
       }
+
       &-element:not(:last-child) {
         margin-bottom: -1px;
       }
@@ -171,6 +194,7 @@ $side-padding: round((140 * 100% / $base) * 1000) / 1000;
       max-width: 266px;
       margin-bottom: 43px;
     }
+
     &-buttons {
       width: 320px;
       margin-bottom: 40px;
@@ -191,9 +215,11 @@ $side-padding: round((140 * 100% / $base) * 1000) / 1000;
         display: flex;
         margin: 0 -10px 32px;
       }
+
       &-action-line {
         height: 44px;
       }
+
       & .form-elements__title {
         margin-bottom: 16px;
       }
@@ -202,19 +228,24 @@ $side-padding: round((140 * 100% / $base) * 1000) / 1000;
       max-width: 320px;
       width: fit-content;
       margin-bottom: 232px;
+
       & .form-elements__title {
         margin-bottom: -5px;
       }
     }
+
     &-dropdown-guests-3 {
       max-width: 320px;
       margin-bottom: 256px;
+
       & .form-elements__title {
         margin-bottom: 5px;
       }
     }
+
     &-bullet-list {
       max-width: 281px;
+
       & .form-elements__title {
         margin-bottom: 13px;
       }
@@ -224,6 +255,7 @@ $side-padding: round((140 * 100% / $base) * 1000) / 1000;
       max-width: 291px;
       margin-top: -1px;
     }
+
     &-reviews {
       width: 61.5517%;
       margin-top: 9px;
@@ -240,12 +272,14 @@ $side-padding: round((140 * 100% / $base) * 1000) / 1000;
       height: 44px;
       margin-right: 20px;
     }
+
     &_small {
       display: inline-block;
       width: 81px;
       margin-right: 20px;
       margin-bottom: 30px;
     }
+
     &_big {
       height: 44px;
       margin-bottom: 40px;
@@ -260,6 +294,7 @@ $side-padding: round((140 * 100% / $base) * 1000) / 1000;
     width: 90%;
     height: 15px;
     margin-bottom: 4px;
+    
     &_big {
       margin-bottom: 20px;
     }

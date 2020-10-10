@@ -7,16 +7,19 @@
         position: relative;
         z-index: 1;
       }
+
       & .noUi-connects {
         overflow: hidden;
         z-index: 0;
         border-radius: 3px;
+
         & .noUi-state-tap {
           & .noUi-connect, & .noUi-origin {
             -webkit-transition: transform 0.3s;
             transition: transform 0.3s;
           }
         }
+
         & .noUi-connect {
           height: calc(100% + 2px);
           top: -1px;
@@ -35,6 +38,7 @@
           background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
         }
       }
+
       & .noUi-origin {
         height: 10%;
         width: 10%;
@@ -48,6 +52,7 @@
         -webkit-transform-style: preserve-3d;
         transform-origin: 0 0;
         transform-style: flat;
+
         & .noUi-handle {
           -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
@@ -57,9 +62,11 @@
           background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);;
           cursor: pointer;
           outline: none;
+
           &:hover, &:focus, &:active {
             box-shadow: 0 0 5px $dark-shade-25;
           }
+
           & .noUi-touch-area {
             cursor: inherit !important;
             height: 100%;
@@ -68,6 +75,7 @@
         }
       }
     }
+
     &.noUi-state-tap {
       & .noUi-connect, & .noUi-origin {
         -webkit-transition: transform 0.3s;
@@ -87,6 +95,7 @@
         -moz-box-sizing: border-box;
         box-sizing: border-box;
       }
+
       & {
         position: relative;
         direction: ltr;
@@ -95,26 +104,32 @@
         border: 1px solid $dark-shade-25;
       }
     }
+
     &.noUi-horizontal {
       height: 6px;
       border-radius: 3px;
+
       & .noUi-handle {
         width: 16px;
         height: 16px;
         top: -6px;
       }
+
       & .noUi-origin {
         height: 0;
+
         html:not([dir="rtl"]) & {
           left: auto;
           right: 0;
         }
       }
+
       html:not([dir="rtl"]) & .noUi-handle {
         right: -6px;
         left: auto;
       }
     }
+    
     &.noUi-vertical {
       & .noUi-origin {
         width: 0;
