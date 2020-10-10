@@ -33,6 +33,10 @@ $width-multi: 150 * 100% / 320;
         border: 1px solid $dark-shade-50;
         outline: none;
       }
+
+      &::placeholder {
+        color: $dark-shade-25;
+      }
     }
 
     &-right {
@@ -52,12 +56,25 @@ $width-multi: 150 * 100% / 320;
         border: 1px solid $dark-shade-50;
         outline: none;
       }
+
+      &::placeholder {
+        color: $dark-shade-25;
+      }
     }
   }
 
   &__filter {
     @extend .date-dropdown__input-left;
     background: url(./img/expand_more.svg) no-repeat right;
+  
+    &:hover, &:active, &:focus {
+      border: 1px solid $dark-shade-50;
+      outline: none;
+    }
+
+    &::placeholder {
+      color: $dark-shade-25;
+    }
   }
 
   &__label {

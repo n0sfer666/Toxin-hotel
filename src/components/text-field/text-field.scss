@@ -13,7 +13,8 @@
     border: 1px solid $dark-shade-50;
   outline: none;
   }
-}
-::placeholder {
-  color: $dark-shade-25;
+  
+  &::placeholder {
+    color: $dark-shade-25;
+  }
 }
