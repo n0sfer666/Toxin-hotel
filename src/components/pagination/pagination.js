@@ -1,7 +1,6 @@
 import 'paginationjs';
-import Room from '../room/room';
 
-class Pagination {
+class PaginationJS {
   constructor(item, dataSource, dataOutput) {
     this.$element = $(item);
     this.dataOutput = dataOutput;
@@ -24,7 +23,7 @@ class Pagination {
       showNavigator: true,
 
       formatNavigator: this.handlePaginationPageClick,
-      callback: this.callback,
+      callback: this.refreshSlide,
     };
   }
 
@@ -41,19 +40,17 @@ class Pagination {
 
   bindContext() {
     this.handlePaginationPageClick = this.handlePaginationPageClick.bind(this);
-    this.callback = this.callback.bind(this);
+    this.refreshSlide = this.refreshSlide.bind(this);
   }
 
-  callback(data) {
+  refreshSlide(data) {
     const html = data;
-    if (this.dataOutput) $(this.dataOutput).html(html);
-    const $rooms = $('.js-room__slider');
-    $.each($rooms, (_, roomElement) => {
-      new Room(roomElement);
-    });
+    if (this.dataOutput) {
+      $(this.dataOutput).html(html);
+    }
   }
 
-  handlePaginationPageClick(currentPage, totalPage, totalNumber) {
+  handlePaginationPageClick(currentPage, _, totalNumber) {
     const first = this.elementsOnPage * currentPage - (this.elementsOnPage - 1);
     const last = (this.elementsOnPage * currentPage) > totalNumber
       ? totalNumber
@@ -64,4 +61,4 @@ class Pagination {
   }
 }
 
-export default Pagination;
+export default PaginationJS;

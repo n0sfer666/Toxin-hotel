@@ -1,18 +1,13 @@
-import Pagination from './pagination';
+import PaginationJS from './pagination';
+import roomInstances from '../room/room-init';
 
 $(document).ready(() => {
-  const $rooms = $('.js-search-room__room');
-
   const dataSource = [];
-
-  $.each($rooms, (_, element) => {
-    dataSource.push(element.cloneNode(true));
+  $.each(roomInstances, (_, element) => {
+    dataSource.push(element.$element);
   });
-
-  $('.js-search-room__data-source').remove();
-
   const paginations = $('.js-pagination__buttons');
   $.each(paginations, (_, element) => {
-    new Pagination(element, dataSource, '.js-pagination__data-output');
+    new PaginationJS(element, dataSource, '.js-pagination__data-output');
   });
 });

@@ -6,7 +6,7 @@ mixin room({room = '888', isLux = true, price = '9990', rate = 5, reviews = 145,
     const slides = ['', '', '', ''].map( (slide, index) => {
       return `img/img-${room}-${(index + 1)}.jpg`
     })
-  .room
+  .room.js-room
     .room__slider.js-room__slider
       each val, i in slides
         .room__slider-image
@@ -18,7 +18,7 @@ mixin room({room = '888', isLux = true, price = '9990', rate = 5, reviews = 145,
             span.room__header-number № 
             | #{room}
             if isLux
-              .room__header-lux
+              span.room__header-lux
                 +headline({title: ' люкс', isPurple: true})
         span.room__price-line
           span.room__price.js-room__price #{price}#{currency} 

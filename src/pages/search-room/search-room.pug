@@ -71,11 +71,6 @@ block append content
             { room: '352', isLux: false, price: '5000', rate: '3', reviews: 55 },
           ]
 
-          while(rooms.length < 180) {
-            const index = (-0.5 + Math.random() * 13).toFixed(0);
-            rooms.push(rooms[index])
-          }
-
         each value in rooms
           .search-room__room.js-search-room__room
             +room(value)
