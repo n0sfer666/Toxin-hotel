@@ -44,7 +44,7 @@ class PaginationJS {
   }
 
   refreshSlide(data) {
-    const html = data;
+    const html = data.map((room) => $(document.createElement('div')).addClass('pagination__card').append(room));
     if (this.dataOutput) {
       $(this.dataOutput).html(html);
     }
