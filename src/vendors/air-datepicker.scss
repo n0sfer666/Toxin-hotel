@@ -114,6 +114,9 @@ Datepicker cells
 
 .datepicker--cell.-range-to- {
   position: relative;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  font-weight: bold;
+  color: white;
 
   &:before {
     content: '';
