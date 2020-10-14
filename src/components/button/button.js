@@ -5,6 +5,7 @@ class Button {
     this.type = this.getType();
     this.mod = this.getMod();
     this.$parentElement = this.getParentElement();
+    console.log(this.mod);
   }
 
   getType() {
@@ -21,11 +22,7 @@ class Button {
 
   getMod() {
     const isActive = this.$element.hasClass('button_active');
-    const result = ['inactive'];
-    if (isActive) {
-      result.push('active');
-    }
-    return result[result.length - 1];
+    return isActive ? 'active' : 'inactive';
   }
 
   getParentElement() {
