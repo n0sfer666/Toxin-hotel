@@ -19,10 +19,10 @@
     border-color: $dark-shade-50;
     border-bottom-left-radius:0;
     border-bottom-right-radius: 0;
-    cursor: unset;
 
     & .dropdown__menu {
       display: block;
+      cursor: default;
     }
   }
 
