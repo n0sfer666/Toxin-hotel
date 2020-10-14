@@ -20,7 +20,7 @@ mixin date-dropdown({isSingle = true, isInline = false, label = ['Даты пе�
           div(class = classDatepicker)
             .date-dropdown__label
               +headline({title: label[index]})
-            input(type='text', class = value, placeholder = placeholder)
+            input(type='text', class = value, placeholder = placeholder, readonly)
             if(index === 0)
               +control-button({isApply: false})
               +control-button()
