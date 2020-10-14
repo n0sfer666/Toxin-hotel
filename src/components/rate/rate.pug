@@ -1,11 +1,12 @@
 mixin rate({rate = 0} = {})
   -
-    const stars = [5, 4, 3, 2, 1]
-    const name = Math.floor(Math.random() * 10000) + Math.floor(Math.random() * 1000)
-  .rate
+    const stars = [1, 2, 3, 4, 5]
+  .rate.js-rate
     each value in stars
       -
-        const isRated = (rate == value)
-        const id = Math.floor(Math.random() * 10000) + Math.floor(Math.random() * 1000)
-      input(type='radio', class='rate__input', name=name, id=id, value=value, checked=isRated)
-      label(for=id, class='rate__label', title=value) #{value} stars
+        const isRated = value <= rate
+        const classStar = isRated
+          ? 'rate__star js-rate__star rate__star_rated'
+          : 'rate__star js-rate__star'
+      button(type = 'button', class = 'rate__button')
+        span(class = classStar, data-value = value)

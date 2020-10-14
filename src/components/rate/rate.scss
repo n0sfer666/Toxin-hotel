@@ -5,50 +5,33 @@ $container-size: $star-size * 5;
   display: inline-block;
   width: $container-size;
   height: $star-size;
-
-  & &__label {
-    height: inherit;
-  }
-
-  &:not(:checked) > &__input {
-    position:absolute;
-    visibility: hidden;
-  }
-
-  &:not(:checked) > &__label {
-    float: right;
+  
+  &__button {
     width: $star-size;
-    overflow: hidden;
-    white-space: nowrap;
+    height: $star-size;
     cursor: pointer;
-    color: $purple;
+    outline: none;
+    background: none;
+    border: none;
+    
   }
 
-  &:not(:checked) > &__label:before {
-    font: normal normal 24px/24px materialIcons;
-    content: 'star_border';
-  }
+  &__star {
+    width: inherit;
+    height: inherit;
 
-  & > &__input:checked ~ &__label {
     &:before {
+      font: normal normal 24px/24px materialIcons;
+      color: $purple;
+      content: 'star_border';
+    }
+
+    &.rate__star_rated:before {
       content: 'star';
     }
-  }
 
-  &:not(:checked) > &__label:hover,
-  &:not(:checked) > &__label:hover ~ &__label {
-    text-shadow: 0 0 5px $purple;
-  }
-
-  & > &__input:checked + &__label:hover,
-  & > &__input:checked + &__label:hover ~ &__label,
-  & > &__input:checked ~ &__label:hover,
-  & > &__input:checked ~ &__label:hover ~ &__label,
-  & > &__label:hover ~ &__input:checked ~ &__label {
-    text-shadow: 0 0 5px $purple;
-  }
-
-  & > &__label:active {
-    position:relative;
+    &:hover, &:focus, &:active {
+      text-shadow: 0 0 5px $purple;
+    }
   }
 }
