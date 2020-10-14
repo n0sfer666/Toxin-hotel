@@ -19,9 +19,9 @@ class Rate {
 
   getRate(ratesElements) {
     const result = [];
-    ratesElements.forEach((element, index) => {
+    ratesElements.forEach((element) => {
       if (element.hasClass('rate__star_rated')) {
-        result.push(index);
+        result.push('');
       }
     });
     return result.length - 1;
