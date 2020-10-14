@@ -9,7 +9,7 @@ $width-multi: 150 * 100% / $base;
   &__datepicker {
     width: $width-multi;
 
-    &.date-dropdown__datepicker_single {
+    &_single {
       width: 100%;
       cursor: pointer;
     }
