@@ -25,7 +25,8 @@ mixin booking({room = '888', isLux = true, price = '9990', discount = '2179', co
     .booking__guests
       .booking__guests-text
         +headline({title: 'гости'})
-      +dropdown()
+      .booking__guests-dropdown
+        +dropdown()
     .booking__calculation
       .booking__calculation-row
         p.booking__calculation-left-column
