@@ -5,7 +5,6 @@ class Button {
     this.type = this.getType();
     this.mod = this.getMod();
     this.$parentElement = this.getParentElement();
-    console.log(this.mod);
   }
 
   getType() {
