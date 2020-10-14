@@ -163,11 +163,6 @@ $width-additional: 100% - $width-main;
     }
   }
 
-  &__line {
-    height: min-content;
-    border-bottom: 1px solid $dark-shade-25;
-  }
-
   &__footer {
     flex-shrink: 0;
   }

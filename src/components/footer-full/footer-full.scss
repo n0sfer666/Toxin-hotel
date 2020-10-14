@@ -8,6 +8,7 @@ $side-padding: round((140 * 100% / $base) * 1000) / 1000;
   justify-content: space-between;
   padding: 100px $side-padding 104px;
   box-shadow: 0px 1px 0px rgba(31, 32, 65, 0.1);
+  border-top: 1px solid $dark-shade-25;
 
   @media screen and (min-width: $old-phones) and (max-width: $desktop) {
     flex-direction: column;
@@ -98,6 +99,7 @@ $side-padding: round((140 * 100% / $base) * 1000) / 1000;
     padding: 23px 9.7223%;
     background-color: #fff;
     box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    border-top: 1px solid $dark-shade-25;
 
     &-text {
       line-height: 17px;
