@@ -53,6 +53,7 @@ class DateDropdown {
 
   getConfig() {
     return {
+      offset: 7,
       language: 'ru',
       minDate: new Date(),
       range: true,
@@ -91,7 +92,6 @@ class DateDropdown {
       this.applyButton.onClick(this.handleApplyButtonClick);
       this.clearButton.onClick(this.handleClearButtonClick);
     }
-    $(dp.$datepicker).css('top', '-=3');
   }
 
   handleApplyButtonClick(dp) {
