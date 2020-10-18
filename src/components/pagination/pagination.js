@@ -1,6 +1,6 @@
 import 'paginationjs';
 
-class PaginationJS {
+class Pagination {
   constructor(item, dataSource, dataOutput) {
     this.$element = $(item);
     this.dataOutput = dataOutput;
@@ -61,4 +61,4 @@ class PaginationJS {
   }
 }
 
-export default PaginationJS;
+export default Pagination;
