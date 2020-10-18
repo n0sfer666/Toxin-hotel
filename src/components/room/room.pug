@@ -1,7 +1,7 @@
 include ../headline/headline
 include ../rate/rate
 
-mixin room({room = '888', isLux = true, price = '9990', rate = 5, reviews = 145, currency = '₽', currencyText = 'в сутки', reviewText = ['Отзывов', 'Отзыв', 'Отзыва'] } = {})
+mixin room({room = '888', isLux = true, price = '9990', rate = 5, reviews = 145, currency = '₽', currencyText = 'в сутки', reviewText = ['Отзывов', 'Отзыв', 'Отзыва'], luxText = 'люкс' } = {})
   -
     const slides = ['', '', '', ''].map( (slide, index) => {
       return `img/img-${room}-${(index + 1)}.jpg`
@@ -18,8 +18,7 @@ mixin room({room = '888', isLux = true, price = '9990', rate = 5, reviews = 145,
             span.room__header-number № 
             | #{room}
             if isLux
-              span.room__header-lux
-                +headline({title: ' люкс', isPurple: true})
+              span.room__header-lux #{luxText}
         span.room__price-line
           span.room__price.js-room__price #{price}#{currency} 
           | #{currencyText}
