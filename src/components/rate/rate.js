@@ -18,19 +18,13 @@ class Rate {
   }
 
   getRate(ratesElements) {
-    const result = [];
-    ratesElements.forEach((element) => {
-      if (element.hasClass('rate__star_rated')) {
-        result.push('');
-      }
-    });
-    return result.length - 1;
+    return ratesElements.filter((element) => element.hasClass('rate__star_rated')).length - 1;
   }
 
   handleRateClick(event) {
-    const rateClicked = $(event.target).data('value') - 1;
+    this.rate = $(event.target).data('value') - 1;
     this.ratesElements.forEach((element, index) => {
-      if (index <= rateClicked) {
+      if (index <= this.rate) {
         if (!element.hasClass('rate__star_rated')) {
           element.addClass('rate__star_rated');
         }
