@@ -89,8 +89,8 @@ class DateDropdown {
       dp.$datepicker.append(this.clearButton.$element);
       dp.$datepicker.append(this.applyButton.$element);
       this.bindDpContext(dp);
-      this.applyButton.onClick(this.handleApplyButtonClick);
-      this.clearButton.onClick(this.handleClearButtonClick);
+      this.applyButton.handleControlButtonClick(this.handleApplyButtonClick);
+      this.clearButton.handleControlButtonClick(this.handleClearButtonClick);
     }
   }
 
@@ -98,7 +98,7 @@ class DateDropdown {
     dp.hide();
   }
 
-  handleClearButtonClick(dp) {
+  handleClearButtonClick(dp, event) {
     if (Array.isArray(this.$container)) {
       this.$container.map((container) => {
         container.val('');
@@ -107,6 +107,7 @@ class DateDropdown {
       this.$container.val('');
     }
     dp.clear();
+    event.stopPropagation();
   }
 
   handleDateCellSelect(fd, date) {

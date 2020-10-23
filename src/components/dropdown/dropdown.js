@@ -59,7 +59,7 @@ class Dropdown {
 
   bindHandlers() {
     if (this.withControlButtons) {
-      this.clearButton.onClick(this.handleClearButtonClick);
+      this.clearButton.handleControlButtonClick(this.handleClearButtonClick);
       this.$iqMenu.on('click', this.handleApplyButtonClick);
     }
   }

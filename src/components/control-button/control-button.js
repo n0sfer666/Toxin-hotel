@@ -13,7 +13,7 @@ class ControlButton {
     this.$element.show();
   }
 
-  onClick(callback) {
+  handleControlButtonClick(callback) {
     this.$element.on('click', callback);
   }
 }
