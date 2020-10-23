@@ -31,13 +31,12 @@ class Booking {
   }
 
   calculate(daysIn) {
-    const { price: priceValue, discount: discountValue } = this.values;
-    const { complementaryFee: complementaryValue } = this.values;
-    const { $cost: $costElement, $total: $totalElement } = this.elements;
-    const cost = priceValue * daysIn;
-    $costElement.text(this.getStringWithSeparate(cost));
-    const total = cost - discountValue + complementaryValue;
-    $totalElement.text(this.getStringWithSeparate(total));
+    const { price, discount, complementaryFee } = this.values;
+    const { $cost, $total } = this.elements;
+    const cost = price * daysIn;
+    $cost.text(this.getStringWithSeparate(cost));
+    const total = cost - discount + complementaryFee;
+    $total.text(this.getStringWithSeparate(total));
   }
 
   initiate() {
