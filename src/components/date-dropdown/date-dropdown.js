@@ -72,10 +72,10 @@ class DateDropdown {
     };
   }
 
-  getFormattedDate(DateText) {
-    const day = (DateText.getDate() < 10) ? `0${DateText.getDate()}` : DateText.getDate();
-    const month = (DateText.getMonth() < 9) ? `0${DateText.getMonth() + 1}` : (DateText.getMonth() + 1);
-    const year = DateText.getFullYear();
+  getFormattedDate(date) {
+    const day = (date.getDate() < 10) ? `0${date.getDate()}` : date.getDate();
+    const month = (date.getMonth() < 9) ? `0${date.getMonth() + 1}` : (date.getMonth() + 1);
+    const year = date.getFullYear();
 
     return (`${day}.${month}.${year}`);
   }
