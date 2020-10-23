@@ -14,7 +14,7 @@ mixin dropdown( {type = 'guests', withControlButtons = true, defaultOutText = 'Ð
               data-count-group=countGroup)
             .dropdown__item.iqdropdown-content
               p.dropdown__item-text.iqdropdown-item #{title}
-        if(withControlButtons)
+        if withControlButtons
           .dropdown__buttons
             +control-button({isApply: false})
             +control-button()
