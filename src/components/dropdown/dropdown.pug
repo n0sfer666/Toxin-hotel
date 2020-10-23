@@ -1,7 +1,7 @@
 include ../control-button/control-button
 mixin dropdown( {type = 'guests', withControlButtons = true, defaultOutText = 'Сколько гостей',  menu = [ {id: 'adults', count: 0, countGroup: 'guests', title: 'взрослые'}, {id: 'children', outTextSingle: 'гость', count: 0, countGroup: 'guests', title: 'дети'}, {id: 'babies', count: 0, countGroup: 'babies', title: 'младенцы'} ] } = {})
   div(class='dropdown js-dropdown iqdropdown',
-      data-with-control-buttons=withControl,
+      data-with-control-buttons=withControlButtons,
       data-type=type)
     p.dropdown__selection.iqdropdown-selection
       .dropdown__menu.iqdropdown-menu

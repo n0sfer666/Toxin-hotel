@@ -6,7 +6,7 @@ class Dropdown {
     this.$container = $(item);
     this.$selection = this.$container.find('.dropdown__selection');
     this.type = this.$container.data('type');
-    this.withControlButtons = this.$container.data('with-control-buttons');
+    this.withControlButtons = this.$container.data('with-control-buttons') !== undefined;
     this.controlButtons = controlButtonsInstances;
     this.outTextObj = outTextObj[this.type];
     this.defaultOutText = this.outTextObj.defaultText;
