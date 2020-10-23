@@ -2,13 +2,13 @@ mixin rate({rate = 0} = {})
   -
     const stars = [1, 2, 3, 4, 5]
   .rate.js-rate
-    each value in stars
+    each starNumber in stars
       -
-        const isRated = value <= rate
+        const isRated = starNumber <= rate
         const classDefault = 'rate__star'
         const classDefaultLine = `${classDefault} js-${classDefault}`
         const classStar = isRated
           ? `${classDefaultLine} ${classDefault}_rated`
           : `${classDefaultLine}`
       button(type = 'button', class = 'rate__button')
-        span(class = classStar, data-value = value)
+        span(class = classStar, data-value = starNumber)

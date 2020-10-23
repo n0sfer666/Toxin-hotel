@@ -1,11 +1,11 @@
 include ../logo/logo
 include ../icon-social/icon-social
 
-mixin footer-short({description = 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»', socNets = ['tweeter', 'facebook', 'instagram']} = {})
+mixin footer-short({description = 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»', socialNetworks = ['tweeter', 'facebook', 'instagram']} = {})
   footer.footer-short
       .footer-short__logo
         +logo({isFull: true})
       p.footer-short__description.footer-short__description_short #{description}
       .footer-short__icons
-        each val in socNets
-          +icon-social({socialNetwork: val})
+        each socialNetwork in socialNetworks
+          +icon-social({socialNetwork: socialNetwork})

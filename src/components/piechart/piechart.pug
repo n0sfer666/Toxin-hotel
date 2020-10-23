@@ -53,8 +53,8 @@ mixin piechart({perfect = 130, good = 65, satisfactorily = 65, disappoint = 0 } 
   .piechart
     svg(width='120', height='120', viewbox='0 0 120 120', fill='none', class='piechart__chart')
       circle(cx='60', cy='60', r='59.5', fill='white')
-      each value, index in isEnableStroke
-        if value
+      each isEnable, index in isEnableStroke
+        if isEnable
           circle(cx='60', cy='60', r='58', stroke=style[index], stroke-width='4', Stroke-dasharray=`${dashStroke[index]} ${dashSpace[index]}`, stroke-dashoffset=dashOffset[index])
       g( class='piechart__label')
         text(x='60', y='60', class='piechart__total') #{total}

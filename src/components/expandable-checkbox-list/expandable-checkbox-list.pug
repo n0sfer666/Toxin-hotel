@@ -6,5 +6,5 @@ mixin expandable-checkbox-list({title = 'Дополнительные удобс
     p.expandable-checkbox-list__arrow-down.js-expandable-checkbox-list__arrow-down keyboard_arrow_down
     p.expandable-checkbox-list__arrow-up.js-expandable-checkbox-list__arrow-up keyboard_arrow_up
   .expandable-checkbox-list__container.js-expandable-checkbox-list__container
-    each val in list
-      +checkbox(val)
+    each checkboxParameter in list
+      +checkbox(checkboxParameter)

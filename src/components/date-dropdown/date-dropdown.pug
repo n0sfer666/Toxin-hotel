@@ -16,11 +16,11 @@ mixin date-dropdown({isSingle = true, isInline = false, label = ['Даты пе�
       if(isInline)
         .date-dropdown__datepicker.date-dropdown__datepicker_inline.js-date-dropdown__datepicker_inline
       else
-        each value, index in classDateDropdown
+        each classStr, index in classDateDropdown
           div(class = classDatepicker)
             .date-dropdown__label
               +headline({title: label[index]})
-            input(type='text', class = value, placeholder = placeholder, readonly)
+            input(type='text', class = classStr, placeholder = placeholder, readonly)
             if(index === 0)
               +control-button({isApply: false})
               +control-button()

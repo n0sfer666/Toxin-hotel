@@ -4,15 +4,15 @@ include ../icon-social/icon-social
 include ../subscription-field/subscription-field
 include ../footer-menu/footer-menu
 
-mixin footer-full({description = 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»', titles = [ { title: 'навигация', links: ['О нас', 'Новости', 'Служба поддержки', 'Услуги'] }, { title: 'о нас', links: ['О сервисе', 'Наша команда', 'Вакансии', 'Инвесторы'] }, { title: 'служба поддержки', links: ['Соглашения', 'Сообщества', 'Связь с нами'] } ], subscription = {title: 'Подписка', description: 'Получайте специальные предложения и новости сервиса'}, copyright = 'отель. Все права зачищены.', socNets = ['tweeter', 'facebook', 'instagram'] } = {})
+mixin footer-full({description = 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»', titles = [ { title: 'навигация', links: ['О нас', 'Новости', 'Служба поддержки', 'Услуги'] }, { title: 'о нас', links: ['О сервисе', 'Наша команда', 'Вакансии', 'Инвесторы'] }, { title: 'служба поддержки', links: ['Соглашения', 'Сообщества', 'Связь с нами'] } ], subscription = {title: 'Подписка', description: 'Получайте специальные предложения и новости сервиса'}, copyright = 'отель. Все права зачищены.', socialNetworks = ['tweeter', 'facebook', 'instagram'] } = {})
   footer.footer-full
     .footer-full__block
       .footer-full__logo
         +logo({isFull: true})
       p.footer-full__description #{description}
     .footer-full__menu
-      each val in titles
-        +footer-menu(val)
+      each title in titles
+        +footer-menu(title)
     .footer-full__block-subscription
       .footer-full__block-title
         +headline({title: subscription.title})
@@ -21,5 +21,5 @@ mixin footer-full({description = 'Бронирование номеров в л�
   .footer-full__copyright
     p.footer-full__copyright-text Copyright © 2018 Toxin #{copyright}
     .footer-full__icons
-      each val in socNets
-        +icon-social({socialNetwork: val})
+      each socialNetwork in socialNetworks
+        +icon-social({socialNetwork: socialNetwork})

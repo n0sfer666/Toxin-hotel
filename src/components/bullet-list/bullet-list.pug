@@ -1,6 +1,6 @@
 mixin bullet-list({titles = ['item1', 'item2', 'item3'] } = {})
   ul.bullet-list
-    each val in titles
+    each title in titles
       li.bullet-list__item
         .bullet-list__wrapper
-          p.bullet-list__title #{val}
+          p.bullet-list__title #{title}
