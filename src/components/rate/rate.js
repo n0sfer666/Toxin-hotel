@@ -10,8 +10,8 @@ class Rate {
 
   getRateElementsArray(container) {
     const result = [];
-    const rates = container.find('.js-rate__star');
-    $.each(rates, (_, element) => {
+    const $rates = container.find('.js-rate__star');
+    $.each($rates, (_, element) => {
       result.push($(element));
     });
     return result;
