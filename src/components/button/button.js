@@ -8,15 +8,11 @@ class Button {
   }
 
   getType() {
-    const types = ['textual', 'border', 'gradient', 'submitting'];
-    const result = [types[0]];
-    types.map((value) => {
-      const equalType = this.$element.hasClass(`button_${value}`);
-      if (equalType) {
-        result.push(value);
+    return ['textual', 'border', 'gradient', 'submitting'].find((type) => {
+      if (this.$element.hasClass(`button_${type}`)) {
+        return type;
       }
     });
-    return result[result.length - 1];
   }
 
   getMod() {
