@@ -32,8 +32,8 @@ class Button {
     this.$element.show();
   }
 
-  handleControlButtonClick(callback) {
-    this.$element.on('click', callback);
+  onClick(handleButtonClick) {
+    this.$element.on('click', handleButtonClick);
   }
 }
 
