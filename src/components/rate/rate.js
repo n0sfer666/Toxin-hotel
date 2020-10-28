@@ -1,8 +1,8 @@
 class Rate {
   constructor(item) {
-    this.container = $(item);
-    this.ratesElements = this.getRateElementsArray(this.container);
-    this.rate = this.getRate(this.ratesElements);
+    this.$container = $(item);
+    this.$ratesElements = this.getRateElementsArray(this.$container);
+    this.rate = this.getRate(this.$ratesElements);
 
     this.bindContext();
     this.bindHandlers();
@@ -23,13 +23,13 @@ class Rate {
 
   handleRateClick(event) {
     this.rate = $(event.target).data('value') - 1;
-    this.ratesElements.forEach((element, index) => {
+    this.$ratesElements.forEach(($element, index) => {
       if (index <= this.rate) {
-        if (!element.hasClass('rate__star_rated')) {
-          element.addClass('rate__star_rated');
+        if (!$element.hasClass('rate__star_rated')) {
+          $element.addClass('rate__star_rated');
         }
-      } else if (element.hasClass('rate__star_rated')) {
-        element.removeClass('rate__star_rated');
+      } else if ($element.hasClass('rate__star_rated')) {
+        $element.removeClass('rate__star_rated');
       }
     });
   }
@@ -39,8 +39,8 @@ class Rate {
   }
 
   bindHandlers() {
-    this.ratesElements.forEach((element) => {
-      element.on('click', this.handleRateClick);
+    this.$ratesElements.forEach(($element) => {
+      $element.on('click', this.handleRateClick);
     });
   }
 }
