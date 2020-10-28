@@ -1,6 +1,6 @@
 mixin color-block ({ color = 'dark-shade-100' } = {})
   -
-    const colorsObj = {
+    const colors = {
       'dark-shade-100': {
         hex: '#1F2041',
         text: 'Dark Shade 100%'
@@ -30,7 +30,7 @@ mixin color-block ({ color = 'dark-shade-100' } = {})
         text: 'Purple'
       }
     }
-    const {hex, text} = colorsObj[color]
+    const {hex, text} = colors[color]
   .color-block
     div(class = `color-block__colors-cell color-block__colors-cell_background_${color}`)
     p.color-block__colors-text #{text}

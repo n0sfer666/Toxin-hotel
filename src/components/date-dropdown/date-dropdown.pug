@@ -4,7 +4,7 @@ include ../control-button/control-button
 mixin date-dropdown({isSingle = true, isInline = false, label = ['Даты пербывания в отеле'] } = {})
   -
     const placeholder = isSingle ? 'Выберите даты пребывания' : 'ДД.ММ.ГГГГ'
-    const classDateDropdown = isSingle
+    const classesDateDropdown = isSingle
       ? ['date-dropdown__filter js-date-dropdown__filter']
       : [ 'date-dropdown__input-left js-date-dropdown__input-left',
           'date-dropdown__input-right js-date-dropdown__input-right'];
@@ -16,11 +16,11 @@ mixin date-dropdown({isSingle = true, isInline = false, label = ['Даты пе�
       if isInline
         .date-dropdown__datepicker.date-dropdown__datepicker_inline.js-date-dropdown__datepicker_inline
       else
-        each classStr, index in classDateDropdown
+        each classValue, index in classesDateDropdown
           div(class = classDatepicker)
             .date-dropdown__label
               +headline({title: label[index]})
-            input(type='text', class = classStr, placeholder = placeholder, readonly)
+            input(type='text', class = classValue, placeholder = placeholder, readonly)
             if (index === 0)
               +control-button({isApply: false})
               +control-button()
