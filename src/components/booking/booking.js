@@ -21,7 +21,8 @@ class Booking {
   getDaysInAndCalculate(daysIn) {
     const { $daysIn } = this.elements;
     if (!Number.isNaN(Number(daysIn))) {
-      $daysIn.text(`${daysIn + (daysIn === 1 ? ' сутки' : ' суток')}`);
+      const daysInText = daysIn + (daysIn === 1 ? ' сутки' : ' суток');
+      $daysIn.text(`${daysInText}`);
       this.calculate(daysIn);
     }
   }
