@@ -4,6 +4,7 @@ class Dropdown {
   constructor(item, controlButtonsInstances, outTextObj) {
     this.isInitComplete = false;
     this.$container = $(item);
+    this.$menuOptions = this.$container.find('.js-dropdown__menu-option');
     this.$selection = this.$container.find('.dropdown__selection');
     this.type = this.$container.data('type');
     this.withControlButtons = this.$container.data('with-control-buttons') !== undefined;
@@ -28,14 +29,13 @@ class Dropdown {
   }
 
   initOutText() {
-    const menuOptionsObj = this.$container.find('.js-dropdown__menu-option');
     const { countGroups } = this.outTextObj;
     const groupsArr = [];
-    $.each(menuOptionsObj, (_, optionElement) => {
+    $.each(this.$menuOptions, (_, optionElement) => {
       groupsArr.push($(optionElement).data('count-group'));
     });
     this.countGroupsIndex = Object.keys(countGroups)
-      .map((group) => this.getCountGroupIndex(group, groupsArr));
+      .map((group) => this.getCountGroupIndexes(group, groupsArr));
     this.outText = Object.values(countGroups);
   }
 
@@ -65,9 +65,9 @@ class Dropdown {
   }
 
   handleClearButtonClick() {
-    $.each(this.itemCount, (item) => {
-      this.itemCount[item] = 0;
-      this.counters[item].html(this.itemCount[item]);
+    $.each(this.itemCounts, (item) => {
+      this.itemCounts[item] = 0;
+      this.counters[item].html(this.itemCounts[item]);
       this.buttonsDecrement[item].removeClass('button-decrement_active');
     });
     this.$selection.html(this.defaultOutText);
@@ -101,10 +101,9 @@ class Dropdown {
 
   handleButtonIncDecClick(itemCount, totalItems) {
     if (!this.isInitComplete) {
-      const menuOptionsObj = this.$container.find('.js-dropdown__menu-option');
       this.buttonsDecrement = {};
       this.counters = {};
-      $.each(menuOptionsObj, (_, optionElement) => {
+      $.each(this.$menuOptions, (_, optionElement) => {
         const id = $(optionElement).data('id');
         const buttonDecrement = $(optionElement).find('.button-decrement');
         const counterElement = $(optionElement).find('.counter');
@@ -116,7 +115,7 @@ class Dropdown {
           this.buttonsDecrement[id].addClass('button-decrement_active');
         }
       });
-      this.itemCount = itemCount;
+      this.itemCounts = itemCount;
       this.isInitComplete = true;
     }
     if (totalItems === 0) {
@@ -165,7 +164,7 @@ class Dropdown {
     };
   }
 
-  getButtons(index, button) {
+  getButtons(_, button) {
     const isDropdownButton = button.$parentElement.is(this.$buttonsContainer);
     if (isDropdownButton) {
       const isClearButton = button.type === 'clear';
@@ -182,11 +181,11 @@ class Dropdown {
     return `${count} ${text[index]}`;
   }
 
-  getOuterText(countArr, textArr, indexArr) {
+  getOuterText(counts, texts, indexes) {
     const outerStrings = [];
-    countArr.map((value, index) => {
+    counts.map((value, index) => {
       if (value !== 0) {
-        const str = this.getOuterString(countArr[index], textArr[index], indexArr[index]);
+        const str = this.getOuterString(counts[index], texts[index], indexes[index]);
         const outerStr = outerStrings.length === 0 ? str : `, ${str}`;
         outerStrings.push(outerStr);
       }
@@ -194,18 +193,18 @@ class Dropdown {
     return outerStrings.reduce((previousVal, currentVal) => previousVal + currentVal);
   }
 
-  getCountGroupIndex(group, groupsArr) {
+  getCountGroupIndexes(group, groups) {
     const result = [];
-    groupsArr.map((value, index) => {
-      if (value === group) {
+    groups.map((currentGroup, index) => {
+      if (currentGroup === group) {
         result.push(index);
       }
     });
     return result;
   }
 
-  getCount(counts, groupIndex) {
-    return groupIndex.map((index) => counts[index])
+  getCount(counts, groupIndexes) {
+    return groupIndexes.map((index) => counts[index])
       .reduce((previousVal, currentVal) => previousVal + currentVal);
   }
 }
