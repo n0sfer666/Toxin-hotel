@@ -17,7 +17,7 @@ mixin date-dropdown({isSingle = true, isInline = false, label = ['Даты пе�
         .date-dropdown__datepicker.date-dropdown__datepicker_inline.js-date-dropdown__datepicker_inline
       else
         each classValue, index in dateDropdownClasses
-          div(class = classDatepicker)
+          div(class = datepickerClass)
             .date-dropdown__label
               +headline({title: label[index]})
             input(type='text', class = classValue, placeholder = placeholder, readonly)
