@@ -1,0 +1,11 @@
+include ../logo/logo
+include ../icon-social/icon-social
+
+mixin footer-shortcut({description = 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»', socialNetworks = ['tweeter', 'facebook', 'instagram']} = {})
+  footer.footer-shortcut
+      .footer-shortcut__logo
+        +logo({isFull: true})
+      p.footer-shortcut__description.footer-shortcut__description_short #{description}
+      .footer-shortcut__icons
+        each socialNetwork in socialNetworks
+          +icon-social({socialNetwork: socialNetwork})

@@ -1,8 +1,8 @@
 extends ../template-ui-kit/template-ui-kit
 
 include ../../components/header/header
-include ../../components/footer-full/footer-full
-include ../../components/footer-short/footer-short
+include ../../components/footer/footer
+include ../../components/footer-shortcut/footer-shortcut
 
 block append head
   title Headers & Footers
@@ -48,6 +48,6 @@ block append content
       copyright: 'UI Kit. All rights reserved.'
       }
   .headers-and-footers__footer
-    +footer-full(configFooterFull)
+    +footer(configFooterFull)
   .headers-and-footers__footer 
-    +footer-short({description: 'Lopx ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.'})
+    +footer-shortcut({description: 'Lopx ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.'})
