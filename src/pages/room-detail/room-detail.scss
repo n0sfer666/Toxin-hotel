@@ -48,7 +48,7 @@ $width-additional: 100% - $width-main;
     @include fix-overflow;
     @include font-h2;
 
-    &-reviews {
+    &-comments {
       display: inline-block;
       width: 15%;
       height: 32px;
@@ -94,7 +94,7 @@ $width-additional: 100% - $width-main;
     margin-bottom: 21px;
   }
 
-  &__reviews {
+  &__comments {
     margin-bottom: 21px;
     
     & .room-detail__title {
@@ -108,7 +108,7 @@ $width-additional: 100% - $width-main;
     }
   }
 
-  &__title-reviews {
+  &__title-comments {
     line-height: 32px;
     float: right;
   }

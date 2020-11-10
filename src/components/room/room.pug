@@ -1,7 +1,7 @@
 include ../headline/headline
 include ../rate/rate
 
-mixin room({room = '888', isLux = true, price = '9990', rate = 5, reviews = 145, currency = '₽', currencyText = 'в сутки', reviewText = ['Отзывов', 'Отзыв', 'Отзыва'], luxText = 'люкс' } = {})
+mixin room({room = '888', isLux = true, price = '9990', rate = 5, comments = 145, currency = '₽', currencyText = 'в сутки', commentText = ['Отзывов', 'Отзыв', 'Отзыва'], luxText = 'люкс' } = {})
   -
     const slides = ['', '', '', ''].map( (slide, index) => {
       return `img/img-${room}-${(index + 1)}.jpg`
@@ -27,12 +27,12 @@ mixin room({room = '888', isLux = true, price = '9990', rate = 5, reviews = 145,
         .room__rate-stars
           +rate({rate: rate})
         .room__rate-text-block
-          if (reviews === 0 || reviews >= 5)
-            span.room__rate-text.room__rate-text_bold #{reviews} 
-            | #{reviewText[0]}
-          if (reviews === 1)
-            span.room__rate-text.room__rate-text_bold #{reviews} 
-            | #{reviewText[1]}
-          if (reviews > 1 && reviews < 5)
-            span.room__rate-text.room__rate-text_bold #{reviews} 
-            | #{reviewText[2]}
+          if (comments === 0 || comments >= 5)
+            span.room__rate-text.room__rate-text_bold #{comments} 
+            | #{commentText[0]}
+          if (comments === 1)
+            span.room__rate-text.room__rate-text_bold #{comments} 
+            | #{commentText[1]}
+          if (comments > 1 && comments < 5)
+            span.room__rate-text.room__rate-text_bold #{comments} 
+            | #{commentText[2]}
