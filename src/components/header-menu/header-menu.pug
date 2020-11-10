@@ -1,10 +1,4 @@
-mixin header-menu({type = 'link', href = 'change me', title = 'change me', popup = [] } = {})
-  -
-    const popupItems = popup.length === 0
-      ? [ {href: 'change_me_1', title: 'change_me_1'},
-          {href: 'change_me_2', title: 'change_me_2'} ]
-      : popup
-
+mixin header-menu({type = 'link', href = 'change me', title = 'change me', popupItems = [{href: 'change_me_1', title: 'change_me_1'}, {href: 'change_me_2', title: 'change_me_2'}] } = {})
   case type
     when 'link'
       a(href = href, class = 'header-menu__link') #{title}
