@@ -1,6 +1,6 @@
 include ../headline/headline
 include ../logo/logo
-include ../icon-social/icon-social
+include ../social-link/social-link
 include ../subscription-field/subscription-field
 include ../footer-menu/footer-menu
 
@@ -23,4 +23,4 @@ mixin footer({description = 'Бронирование номеров в лучш
       p.footer__copyright-text Copyright © 2018 Toxin #{copyright}
       .footer__icons
         each socialNetwork in socialNetworks
-          +icon-social({socialNetwork: socialNetwork})
+          +social-link({socialNetwork: socialNetwork})

@@ -1,5 +1,5 @@
 include ../logo/logo
-include ../icon-social/icon-social
+include ../social-link/social-link
 
 mixin short-footer({description = 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»', socialNetworks = ['tweeter', 'facebook', 'instagram']} = {})
   footer.short-footer
@@ -8,4 +8,4 @@ mixin short-footer({description = 'Бронирование номеров в л
       p.short-footer__description.short-footer__description_short #{description}
       .short-footer__icons
         each socialNetwork in socialNetworks
-          +icon-social({socialNetwork: socialNetwork})
+          +social-link({socialNetwork: socialNetwork})
