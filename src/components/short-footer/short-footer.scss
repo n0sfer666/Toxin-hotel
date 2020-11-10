@@ -1,4 +1,4 @@
-.footer-shortcut {
+.short-footer {
   @include font-body;
   display: flex;
   box-sizing: border-box;
@@ -7,11 +7,11 @@
   align-items: center;
   padding: 100px 0 110px;
 
-  & .footer-shortcut__logo {
+  & .short-footer__logo {
     margin-bottom: 15px;
   }
 
-  & .footer-shortcut__description {
+  & .short-footer__description {
     margin-top: -6px;
     margin-bottom: 28px;
     width: 70%;

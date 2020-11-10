@@ -2,7 +2,7 @@ extends ../template-ui-kit/template-ui-kit
 
 include ../../components/header/header
 include ../../components/footer/footer
-include ../../components/footer-shortcut/footer-shortcut
+include ../../components/short-footer/short-footer
 
 block append head
   title Headers & Footers
@@ -50,4 +50,4 @@ block append content
   .headers-and-footers__footer
     +footer(configFooterFull)
   .headers-and-footers__footer 
-    +footer-shortcut({description: 'Lopx ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.'})
+    +short-footer({description: 'Lopx ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.'})
