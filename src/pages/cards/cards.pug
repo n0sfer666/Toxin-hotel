@@ -15,20 +15,20 @@ block prepend container
     const pageClass = 'cards'
 
 block append content
-  .cards__container
-    section.cards__section
+  main.cards__container
+    article.cards__section
       .cards__block
         +find-room()
       .cards__block
         +registration()
 
-    section.cards__section
+    article.cards__section
       .cards__block
         +booking()
       .cards__block
         +sign-in()
 
-    section.cards__section
+    aside.cards__section
       .cards__block-datepicker
         +date-dropdown({isInline: true})
       .cards__block-room

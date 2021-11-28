@@ -28,8 +28,8 @@ block prepend container
     const pageClass = 'form-elements'
 
 block append content
-  .form-elements__container
-    section.form-elements__column-section
+  main.form-elements__container
+    article.form-elements__column-section
       .form-elements__block-text-field
         .form-elements__title
           +headline({title: 'text field'})
@@ -57,7 +57,7 @@ block append content
       .form-elements__block-expandable-checkbox-list
         +expandable-checkbox-list({title: 'expandable checkbox list'})
 
-    section.form-elements__column-section
+    article.form-elements__column-section
       .form-elements__block-checkbox
         .form-elements__title.form-elements__title_big
           +headline({title: 'checkbox buttons'})
@@ -108,7 +108,7 @@ block append content
         .form-elements__block-rich-checkbox-element
           +rich-checkbox({title: 'Помощник для инвалидов', description: 'На 1 этаже вас встретит специалист и проводит до номера.'})
 
-    section.form-elements__column-section
+    article.form-elements__column-section
       .form-elements__block-range-slider
         +range-slider({title: 'range slider'})
       .form-elements__block-buttons
@@ -141,7 +141,7 @@ block append content
         .form-elements__title
           +headline({title: 'bullet list'})
         +bullet-list({titles: ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00']})
-    section.form-elements__row-section
+    article.form-elements__row-section
       .form-elements__block-amenity
         +amenity({icon: 'tag_faces', withLine: true, title: 'Комфорт', description: 'Шумопоглощающие стены'})
         +amenity({icon: 'location_city', withLine: true, title: 'Удобство', description: 'Окно в каждой из спален'}) 

@@ -11,8 +11,8 @@ block prepend container
     const pageClass = 'colors-and-type'
 
 block append content
-  .colors-and-type__container
-    section.color-block__colors
+  main.colors-and-type__container
+    article.color-block__colors
       +color-block({color: 'dark-shade-100'})
       +color-block({color: 'dark-shade-75'})
       +color-block({color: 'dark-shade-50'})
@@ -20,7 +20,7 @@ block append content
       +color-block({color: 'dark-shade-5'})
       +color-block({color: 'purple'})
       +color-block({color: 'green'})
-    section.type-block__type
+    article.type-block__type
       +type-block({type: 'h1', text: 'This one is the sub-section or widget title'})
       +type-block({type: 'h2', text: 'Next one is the item title inside widgets'})
       +type-block({type: 'h3', text: 'This is a label or CTA text'})
