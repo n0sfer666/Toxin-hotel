@@ -1,7 +1,7 @@
 mixin rich-checkbox({title='title', description='description', isChecked = false} = {})
   label.rich-checkbox
-    input(type='checkbox', class = 'rich-checkbox__input', checked=isChecked)
+    input.rich-checkbox__input(type='checkbox', checked=isChecked)
     span.rich-checkbox__checkmark
-    .rich-checkbox__wrapper
+    span.rich-checkbox__wrapper
       span.rich-checkbox__title #{title}
-      p.rich-checkbox__description #{description}
+      span.rich-checkbox__description #{description}

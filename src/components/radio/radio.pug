@@ -1,7 +1,7 @@
 mixin radio({isChecked = false, name = 'sex', title = 'change me'} = {})
   label.radio
-    input(type='radio',class='radio__input', name=name, checked=isChecked)
-    span(class='radio__checkmark')
-    span(class='radio__label')
-      .radio__wrapper
-        p.radio__title #{title}
+    input.radio__input(type='radio', name=name, checked=isChecked)
+    span.radio__checkmark
+    span.radio__label
+      span.radio__wrapper
+        span.radio__title #{title}
