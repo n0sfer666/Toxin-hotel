@@ -4,5 +4,5 @@ mixin button({ style = 'textual', isActive = true, title = 'click me' } = {})
     const arrayStyles = ['textual', 'gradient', 'border', 'submitting'];
     const modifierStyle = arrayStyles[arrayStyles.indexOf(style)]
   button(class=`button js-button button_${modifierStyle} button_${modifierActivity}`)
-    span.button__wrapper
-      h3.button__label #{title}
+    p.button__wrapper
+      span.button__label #{title}
