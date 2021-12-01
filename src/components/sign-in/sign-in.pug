@@ -2,7 +2,7 @@ include ../headline/headline
 include ../text-field/text-field
 include ../button/button
 
-mixin sign-in({action = 'change me'}={})
+mixin sign-in({action = 'landing-page.html'}={})
   .sign-in
     form(class='sign-in__main-form', action=action)
       .sign-in__title
@@ -12,7 +12,7 @@ mixin sign-in({action = 'change me'}={})
         +text-field({type: 'Password', placeholder: 'Пароль'})
       .sign-in__button-submitting
         +button({style: 'submitting', title: 'Войти'})
-    form(class='sign-in__sign-up-form', action='registration.html')
+    form(class='sign-in__sign-up-form', action='registration-page.html')
       .sign-in__sign-up
         p.sign-in__sign-up-text Нет аккаунта на Toxin?
         +button({style: 'border', title: 'Создать'})

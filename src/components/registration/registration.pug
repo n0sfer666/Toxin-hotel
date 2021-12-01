@@ -5,7 +5,7 @@ include ../radio/radio
 include ../toggle/toggle
 include ../button/button
 
-mixin registration({action = 'change me'} = {})
+mixin registration({action = 'registration-page.html'} = {})
   .registration
     form(class='registration__main-form', action=action)
       .registration__title
@@ -28,7 +28,7 @@ mixin registration({action = 'change me'} = {})
         +toggle()
       .registration__block-registering
         +button({style: 'submitting', title: 'зарегистрироваться'})
-    form(class='registration__sign-in-form', action='sign-in.html')
+    form(class='registration__sign-in-form', action='sign-in-page.html')
       .registration__block-sign-up
         p.registration__text-sign-up Уже есть аккаунт на Toxin
         +button({style: 'border', title: 'войти'})
