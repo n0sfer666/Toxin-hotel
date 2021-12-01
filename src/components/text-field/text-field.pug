@@ -1,2 +1,2 @@
-mixin text-field({placeholder = 'Email'} = {})
-  input(class = `text-field`, type = 'text', placeholder = placeholder)
+mixin text-field({placeholder = 'Email', type = 'text'} = {})
+  input(class = `text-field`, type = type, placeholder = placeholder)
