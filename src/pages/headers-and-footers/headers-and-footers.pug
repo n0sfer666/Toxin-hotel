@@ -17,12 +17,12 @@ block append content
       loginButton: 'login',
       signUpButton: 'register',
       links: [
-        {type: 'home', title: 'Home'},
-        {title: 'About Us'},
-        {type: 'popup', title: 'Services'},
-        {title: 'Careers'},
-        {title: 'News'},
-        {title: 'Documentation'}
+        {type: 'home', title: 'Home', href: 'index.html'},
+        {title: 'About Us', href: 'https://www.metalamp.ru/'},
+        {type: 'popup', title: 'Services', popupItems: [{title: 'Booking', href: 'https://www.booking.com/'}, {title: 'Bugging', href: 'http://xn--80aexocohdp.xn--p1ai/30-%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BD%D1%8B%D1%85-%D1%84%D0%B0%D0%BA%D1%82%D0%BE%D0%B2-%D0%BE-%D0%B6%D1%83%D0%BA%D0%B0%D1%85/'}]},
+        {title: 'Careers', href: 'https://www.hh.ru/'},
+        {title: 'News', href: 'https://ria.ru/'},
+        {title: 'Documentation', href: 'https://workspace.google.com/intl/ru/products/docs/'}
       ]
     }
   .headers-and-footers__header
@@ -36,9 +36,22 @@ block append content
     const configFooterFull = {
       description: 'Lopx ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.',
       titles: [
-        {title: 'navigation', links: ['About Us', 'News', 'Support', 'Products']},
-        {title: 'about us', links: ['Who we are', 'Our teem', 'Careers', 'Investors']},
-        {title: 'support', links: ['Documentation', 'Community', 'Get in Touch']}
+        {title: 'navigation', links: [
+          {text: 'About Us', href: 'https://www.metalamp.ru/'},
+          {text: 'News', href: 'https://ria.ru/'},
+          {text: 'Support', href: 'http://govita.ru/besplatnaya-psihologicheskaya-pomoshh-v-sankt-peterburge/'},
+          {text: 'Products', href: 'https://www.booking.com/'}
+        ]},
+        {title: 'about us', links: [
+          {text: 'Who we are', href: 'https://www.metalamp.ru/'},
+          {text: 'Our teem', href: 'https://pokemon.fandom.com/ru/wiki/%D0%9A%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%B0_R_(%D0%B0%D0%BD%D0%B8%D0%BC%D0%B5)'},
+          {text: 'Careers', href: 'https://www.hh.ru/'},
+          {text: 'Investors', href: 'https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B2%D1%80%D0%BE%D0%B4%D0%B8,_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9_%D0%9F%D0%B0%D0%BD%D1%82%D0%B5%D0%BB%D0%B5%D0%B5%D0%B2%D0%B8%D1%87'}]},
+        {title: 'support', links: [
+          {text: 'Documentation', href: 'https://ru.wikipedia.org/wiki/%D0%94%D0%B5%D0%B9%D1%82%D0%BE%D0%BD%D1%81%D0%BA%D0%B8%D0%B5_%D1%81%D0%BE%D0%B3%D0%BB%D0%B0%D1%88%D0%B5%D0%BD%D0%B8%D1%8F'},
+          {text: 'Community', href: 'https://habr.com/ru/all/'},
+          {text: 'Get in Touch', href: 'https://www.metalamp.ru/'}
+        ]}
         ],
       subscription: {
         title: 'subscribe to our newsletter',
