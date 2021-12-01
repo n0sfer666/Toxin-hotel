@@ -11,7 +11,7 @@ mixin booking({room = '888', isLux = true, price = '9990', discount = '2179', co
     .booking__header
       .booking__header-room
         span.booking__header-room-number № 
-        span.booking__header-room-text
+        .booking__header-room-text
           +headline({type: 'h1', title: room})
         if isLux
           .booking__header-room-lux
