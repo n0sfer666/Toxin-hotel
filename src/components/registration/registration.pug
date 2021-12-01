@@ -23,8 +23,8 @@ mixin registration({action = 'registration-page.html'} = {})
       .registration__block-sign-in
         .registration__block-title
           +headline({title: 'данные для входа в сервис'})
-        +text-field({placeholder: 'Email', type: 'Email'})
-        +text-field({placeholder: 'Пароль', type: 'Password'})
+        +text-field({placeholder: 'Email', type: 'email'})
+        +text-field({placeholder: 'Пароль', type: 'password'})
         +toggle()
       .registration__block-registering
         +button({style: 'submitting', title: 'зарегистрироваться'})

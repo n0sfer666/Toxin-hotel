@@ -1,5 +1,5 @@
 include ../text-field/text-field
 mixin subscription-field({placeholder = 'Email'} = {})
-  .subscribe-field
-    +text-field({placeholder: placeholder, type: 'Email'})
+  form.subscribe-field(action='#')
+    +text-field({placeholder: placeholder, type: 'email'})
     button(type='submit', class = `subscribe-field__button`) arrow_forward

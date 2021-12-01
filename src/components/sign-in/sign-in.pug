@@ -8,8 +8,8 @@ mixin sign-in({action = 'landing-page.html'}={})
       .sign-in__title
         +headline({type: 'h1', title: 'Войти'})
       .sign-in__details
-        +text-field({type: 'Email', placeholder: 'Email'})
-        +text-field({type: 'Password', placeholder: 'Пароль'})
+        +text-field({type: 'email', placeholder: 'Email'})
+        +text-field({type: 'password', placeholder: 'Пароль'})
       .sign-in__button-submitting
         +button({style: 'submitting', title: 'Войти'})
     form(class='sign-in__sign-up-form', action='registration-page.html')
