@@ -15,24 +15,26 @@
       text-transform: capitalize;
       color: $dark-shade-25;
 
-      &_h1 {
-        font-size: 24px;
-        line-height: 29px;
-      }
-
-      &_h2 {
-        font-size: 19px;
-        line-height: 23px;
-      }
-
-      &_h3 {
-        font-size: 12px;
-        line-height: 15px;
-      }
-      
-      &_body {
-        font-size: 14px;
-        line-height: 19px;
+      &_font-style {
+        &_h1 {
+          font-size: 24px;
+          line-height: 29px;
+        }
+  
+        &_h2 {
+          font-size: 19px;
+          line-height: 23px;
+        }
+  
+        &_h3 {
+          font-size: 12px;
+          line-height: 15px;
+        }
+        
+        &_body {
+          font-size: 14px;
+          line-height: 19px;
+        }
       }
     }
   }
