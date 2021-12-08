@@ -10,16 +10,18 @@
   &__picture {
     display: inline-block;
 
-    &_full {
-      width: 106px;
-      height: 40px;
-      background: url(./img/logo-full-form.svg) no-repeat;
-    }
-
-    &_short {
-      width: 48px;
-      height: 48px;
-      background: url(./img/logo-short-form.svg) no-repeat;
+    &_style {
+      &_full {
+        width: 106px;
+        height: 40px;
+        background: url(./img/logo-full-form.svg) no-repeat;
+      }
+  
+      &_short {
+        width: 48px;
+        height: 48px;
+        background: url(./img/logo-short-form.svg) no-repeat;
+      }
     }
 
     &:hover, &:focus, &:active {
