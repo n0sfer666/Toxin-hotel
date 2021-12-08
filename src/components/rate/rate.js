@@ -18,18 +18,18 @@ class Rate {
   }
 
   getRate(ratesElements) {
-    return ratesElements.filter((element) => element.hasClass('rate__star_rated')).length - 1;
+    return ratesElements.filter((element) => element.hasClass('rate__star_mark_rated')).length - 1;
   }
 
   handleRateClick(event) {
     this.rate = $(event.target).data('value') - 1;
     this.$ratesElements.forEach(($element, index) => {
       if (index <= this.rate) {
-        if (!$element.hasClass('rate__star_rated')) {
-          $element.addClass('rate__star_rated');
+        if (!$element.hasClass('rate__star_mark_rated')) {
+          $element.addClass('rate__star_mark_rated');
         }
-      } else if ($element.hasClass('rate__star_rated')) {
-        $element.removeClass('rate__star_rated');
+      } else if ($element.hasClass('rate__star_mark_rated')) {
+        $element.removeClass('rate__star_mark_rated');
       }
     });
     return false;
