@@ -1,8 +1,8 @@
-mixin button({ style = 'textual', isActive = true, title = 'click me' } = {})
+mixin button({ style = 'textual', isActive = true, title = 'click me', type = 'submit' } = {})
   -
     const modifierActivity = isActive ? 'active' : 'inactive';
     const arrayStyles = ['textual', 'gradient', 'border', 'submitting'];
     const modifierStyle = arrayStyles[arrayStyles.indexOf(style)]
-  button(class=`button js-button button_${modifierStyle} button_${modifierActivity}`)
+  button(class=`button js-button button_${modifierStyle} button_${modifierActivity}`, type = type)
     span.button__wrapper
       span.button__label #{title}

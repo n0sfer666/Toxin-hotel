@@ -14,7 +14,7 @@ mixin header({isAuth = false, login = 'Cosmin Negoita', loginButton = 'Войт�
         p.header__login #{login}
       else
         .header__buttons
-          form(class='header__button-sign-in', action='sign-in-page.html')
-            +button({style: 'border', title: loginButton})
-          form(class='header__button-sign-up', action='registration-page.html')
-            +button({style: 'gradient', title: signUpButton})
+          a(class = 'header__button-sign-in', href = '/sign-in-page.html')
+            +button({style: 'border', title: loginButton, type: 'button'})
+          a(class = 'header__button-sign-up', href = '/registration-page.html')
+            +button({style: 'gradient', title: signUpButton, type: 'button'})
