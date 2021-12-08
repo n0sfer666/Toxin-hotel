@@ -21,17 +21,19 @@
   }
 
   &__container {
-    &_left {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 48px;
-    }
-    
-    &_right {
-      width: 100%;
-      padding-left: 10px;
-      box-sizing: border-box;
+    &_position {
+      &_left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 48px;
+      }
+      
+      &_right {
+        width: 100%;
+        padding-left: 10px;
+        box-sizing: border-box;
+      }
     }
   }
   

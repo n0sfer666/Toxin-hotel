@@ -1,11 +1,11 @@
 include ../like/like
 mixin comment({login='user-1', likeCount=0, isLicked=false, name='change me', timeAgo='менее часа назад', comment='change me'} = {})
   .comment
-    .comment__container.comment__container_left
+    .comment__container.comment__container_position_left
       .comment__pictures
         img(class = 'comment__img', src=`img/${login}.png`, alt=`${login}-${name}`)
       +like({counter: likeCount, isChecked: isLiked})
-    .comment__container.comment__container_right
+    .comment__container.comment__container_position_right
       p.comment__name #{name}
       p.comment__days-ago #{timeAgo}
       p.comment__text #{comment}
