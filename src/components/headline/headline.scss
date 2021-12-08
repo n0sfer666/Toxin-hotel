@@ -6,8 +6,10 @@
     vertical-align: inherit;
     text-align: inherit;
 
-    &_purple {
-      color: $purple;
+    &_color {
+      &_purple {
+        color: $purple;
+      }
     }
   }
 
@@ -18,8 +20,10 @@
     vertical-align: inherit;
     text-align: inherit;
 
-    &_purple {
-      color: $purple;
+    &_color {
+      &_purple {
+        color: $purple;
+      }
     }
   }
 
@@ -30,8 +34,10 @@
     vertical-align: inherit;
     text-align: inherit;
 
-    &_purple {
-      color: $purple;
+    &_color {
+      &_purple {
+        color: $purple;
+      }
     }
   }
 }
