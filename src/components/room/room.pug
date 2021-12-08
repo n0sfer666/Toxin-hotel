@@ -28,11 +28,11 @@ mixin room({room = '888', isLux = true, price = '9990', rate = 5, comments = 145
           +rate({rate: rate})
         .room__rate-text-block
           if (comments === 0 || comments >= 5)
-            span.room__rate-text.room__rate-text_bold #{comments} 
+            span.room__rate-text.room__rate-text_font-weight_bold #{comments} 
             | #{commentText[0]}
           if (comments === 1)
-            span.room__rate-text.room__rate-text_bold #{comments} 
+            span.room__rate-text.room__rate-text_font-weight_bold #{comments} 
             | #{commentText[1]}
           if (comments > 1 && comments < 5)
-            span.room__rate-text.room__rate-text_bold #{comments} 
+            span.room__rate-text.room__rate-text_font-weight_bold #{comments} 
             | #{commentText[2]}
