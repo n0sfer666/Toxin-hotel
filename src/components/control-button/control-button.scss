@@ -18,25 +18,27 @@
     @include fix-overflow;
   }
 
-  &_gray {
-    & .control-button__label {
-      color: $dark-shade-50;
+  &_action {
+    &_clearing {
+      & .control-button__label {
+        color: $dark-shade-50;
+      }
+  
+      &:active, &:focus, &:hover {
+        box-shadow: unset;
+        text-shadow: 0 0 6px $dark-shade-50;
+      }
     }
-
-    &:active, &:focus, &:hover {
-      box-shadow: unset;
-      text-shadow: 0 0 6px $dark-shade-50;
-    }
-  }
-
-  &_purple {
-    & .control-button__label {
-      color: $purple;
-    }
-
-    &:active, &:focus, &:hover {
-      box-shadow: unset;
-      text-shadow: 0 0 6px $purple;
+  
+    &_applying {
+      & .control-button__label {
+        color: $purple;
+      }
+  
+      &:active, &:focus, &:hover {
+        box-shadow: unset;
+        text-shadow: 0 0 6px $purple;
+      }
     }
   }
 }

@@ -73,18 +73,20 @@
     }
     
     & .dropdown__buttons {
-      & .control-button_gray {
-        margin-top: 20px;
-        margin-bottom: 3px;
-        width: fit-content;
-        float: left;
-      }
+      & .control-button_action {
+        &_clearing {
+          margin-top: 20px;
+          margin-bottom: 3px;
+          width: fit-content;
+          float: left;
+        }
 
-      & .control-button_purple {
-        margin-top: 20px;
-        margin-bottom: 3px;
-        width: fit-content;
-        float: right;
+        &_applying {
+          margin-top: 20px;
+          margin-bottom: 3px;
+          width: fit-content;
+          float: right;
+        }
       }
     }
 

@@ -8,8 +8,8 @@ mixin control-button({isApply = true} = {})
       ? titles.apply
       : titles.clear;
     const classButton = isApply
-      ? 'control-button_purple'
-      : 'control-button_gray';
+      ? 'control-button_action_applying'
+      : 'control-button_action_clearing';
     const dataType = isApply
       ? 'apply'
       : 'clear';

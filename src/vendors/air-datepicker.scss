@@ -484,11 +484,13 @@ Navigation
   border: none;
 }
 
-.datepicker .control-button_purple {
-  margin-top: 20px;
-  float: right;
-}
-.datepicker .control-button_gray {
-  margin-top: 20px;
-  float: left;
+.datepicker .control-button_action {
+  &_applying {
+    margin-top: 20px;
+    float: right;
+  }
+  &_clearing {
+    margin-top: 20px;
+    float: left;
+  }
 }
