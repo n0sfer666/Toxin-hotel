@@ -58,9 +58,11 @@
       font: normal bold 19px/30px Quicksand, Montserrat, sans-serif;
       text-transform: capitalize;
 
-      &_regular {
-        font-weight: normal;
-        text-transform: uppercase;
+      &_font-weight {
+        &_normal {
+          font-weight: normal;
+          text-transform: uppercase;
+        }
       }
     }
   }
