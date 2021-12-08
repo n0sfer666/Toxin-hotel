@@ -38,7 +38,7 @@
   }
   &__description {
     display: inline-block;
-    max-height: 40px;
+    max-height: 41px;
     width: 100%;
     @include fix-overflow;
     margin-top: -7px;
@@ -48,8 +48,10 @@
     margin: 13px 0 19px;
     width: 95%;
 
-    &_horizontal {
-      border-top: 1px solid rgba(31, 32, 65, 0.1);
+    &_direction {
+      &_horizontal {
+        border-top: 1px solid rgba(31, 32, 65, 0.1);
+      }
     }
   }
 }
