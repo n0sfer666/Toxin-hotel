@@ -6,12 +6,14 @@
     box-shadow: 0 0 5px $dark-shade-50;
   }
 
-  &_active {
-    display: inline-block;
-    border-radius: 10px;
-
-    &:active, &:focus, &:hover {
-      box-shadow: 0 0 5px $purple;
+  &state {
+    &_active {
+      display: inline-block;
+      border-radius: 10px;
+  
+      &:active, &:focus, &:hover {
+        box-shadow: 0 0 5px $purple;
+      }
     }
   }
 
@@ -52,7 +54,7 @@
   }
 }
 
-.like.like_active {
+.like.like_state_active {
   & .like__button {
     position: relative;
     background-color: #fff;

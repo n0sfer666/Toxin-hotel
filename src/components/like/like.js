@@ -26,12 +26,12 @@ class LikeButton {
   }
 
   handleElementClick() {
-    const isActive = this.$element.hasClass('like_active');
+    const isActive = this.$element.hasClass('like_state_active');
     if (isActive) {
-      this.$element.removeClass('like_active');
+      this.$element.removeClass('like_state_active');
       this.$counter.text(Number(this.$counter.text()) - 1);
     } else {
-      this.$element.addClass('like_active');
+      this.$element.addClass('like_state_active');
       this.$counter.text(Number(this.$counter.text()) + 1);
     }
   }
