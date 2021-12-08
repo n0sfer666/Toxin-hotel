@@ -1,7 +1,7 @@
 include ../headline/headline
 include ../rate/rate
 
-mixin room({room = '888', isLux = true, price = '9990', rate = 5, comments = 145, currency = '₽', currencyText = 'в сутки', commentText = ['Отзывов', 'Отзыв', 'Отзыва'], luxText = 'люкс' } = {})
+mixin room({room = '888', isLux = true, price = '9990', rate = 5, comments = 145, currency = '₽', currencyText = 'в сутки', commentText = ['Отзывов', 'Отзыв', 'Отзыва'], luxText = 'люкс', link = '//change-me' } = {})
   -
     const slides = ['', '', '', ''].map( (slide, index) => {
       return `img/img-${room}-${(index + 1)}.jpg`
@@ -9,9 +9,9 @@ mixin room({room = '888', isLux = true, price = '9990', rate = 5, comments = 145
   .room.js-room
     .room__slider.js-room__slider
       each image, index in slides
-        .room__slider-image
+        a.room__slider-image(href = link)
           img(src=image, alt=`room-${index+1}`)
-    .room__text
+    a.room__text(href = link)
       .room__header
         .room__header-title
           h1.room__header-title-text

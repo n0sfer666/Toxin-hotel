@@ -32,6 +32,7 @@ class Rate {
         $element.removeClass('rate__star_rated');
       }
     });
+    return false;
   }
 
   bindContext() {

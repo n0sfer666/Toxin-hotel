@@ -8,6 +8,7 @@
   @include font-body;
 
   &__text {
+    display: block;
     padding: 13px 17px 12px 20px;
   }
 
