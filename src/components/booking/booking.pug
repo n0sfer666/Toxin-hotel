@@ -17,8 +17,8 @@ mixin booking({room = '888', isLux = true, price = '9990', discount = '2179', co
           .booking__header-room-lux
             +headline({title: ' люкс', isPurple: true})
       span.booking__header-price
-        span.booking__header-price-text.booking__header-price-text_bold.js-booking__header-price-text #{price}
-        span.booking__header-price-text.booking__header-price-text_bold #{currency} 
+        span.booking__header-price-text.booking__header-price-text_font-weight_bold.js-booking__header-price-text #{price}
+        span.booking__header-price-text.booking__header-price-text_font-weight_bold #{currency} 
         | #{priceText}
     .booking__arrival-departure
       +date-dropdown({isSingle: false, label: ['прибытие', 'выезд']})
@@ -44,7 +44,7 @@ mixin booking({room = '888', isLux = true, price = '9990', discount = '2179', co
               span.booking__discount.js-booking__discount #{discount}
               span.booking__currency #{currency}
           span.booking__exclamation
-            span.booking__exclamation-symbol.booking__exclamation-symbol_bold i
+            span.booking__exclamation-symbol.booking__exclamation-symbol_font-weight_bold i
         .booking__calculation-additional-fee
           span.booking__additional-fee.js-booking__additional-fee #{additionalFee}
           span.booking__currency #{currency}
@@ -52,13 +52,13 @@ mixin booking({room = '888', isLux = true, price = '9990', discount = '2179', co
         .booking__calculation-text
           p.booking__description Сбор за дополнительные услуги
           span.booking__exclamation
-            span.booking__exclamation-symbol.booking__exclamation-symbol_bold i
+            span.booking__exclamation-symbol.booking__exclamation-symbol_font-weight_bold i
         .booking__calculation-complementary-fee
           span.booking__complementary-fee.js-booking__complementary-fee #{complementaryFee}
           span.booking__currency #{currency}
     .booking__total
       h2.booking__total-text Итого
-      .booking__total-line.booking__total-line_dashed
+      .booking__total-line.booking__total-line_style_dashed
       h2.booking__total-text.js-booking__total-text #{total}
       h2.booking__total-text #{currency}
     .booking__submit-button
