@@ -37,8 +37,10 @@ $title-width: 270 * 100% / 320;
         margin-bottom: 5px;
       }
 
-      &.search-room__menu-title_big {
-        margin-top: 36px;
+      &.search-room__menu-title_margin {
+        &_big {
+          margin-top: 36px;
+        }
       }
     }
 

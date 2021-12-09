@@ -45,7 +45,7 @@ block append content
       .search-room__rich-checkbox
         +rich-checkbox({title: 'Помощник для инвалидов', description: 'На 1 этаже вас встретит специалист и проводит до номера.'})
 
-      .search-room__menu-title.search-room__menu-title_big
+      .search-room__menu-title.search-room__menu-title_margin_big
         +headline({title: 'удобства номера'})
       +dropdown({type: 'rooms', withControlButtons: false, menu: [ {id: 'bedrooms', count: 2, countGroup: 'bedrooms', title: 'спальни'}, {id: 'beds', count: 2, countGroup: 'beds', title: 'кровати'}, {id: 'bathrooms', count: 0, countGroup: 'bathrooms', title: 'ванные комнаты'} ]})
       .search-room__expandable-checkbox-list
