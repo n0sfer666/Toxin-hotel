@@ -1,5 +1,14 @@
 include ../like/like
-mixin comment({login='user-1', likeCount=0, isLicked=false, name='change me', timeAgo='менее часа назад', comment='change me'} = {})
+mixin comment(options = {})
+  -
+    const {
+      login = 'user-1',
+      likeCount = 0,
+      isLicked = false,
+      name = 'change me',
+      timeAgo = 'менее часа назад',
+      comment = 'change me',
+    } = options;
   .comment
     .comment__container.comment__container_position_left
       .comment__pictures

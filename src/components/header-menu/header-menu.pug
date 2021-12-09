@@ -1,4 +1,14 @@
-mixin header-menu({type = 'link', href = 'change me', title = 'change me', popupItems = [{href: 'change_me_1', title: 'change_me_1'}, {href: 'change_me_2', title: 'change_me_2'}] } = {})
+mixin header-menu(options = {})
+  -
+    const {
+      type = 'link',
+      href = 'change me',
+      title = 'change me',
+      popupItems = [
+        {href: 'change_me_1', title: 'change_me_1'},
+        {href: 'change_me_2', title: 'change_me_2'}
+      ]
+    } = options;
   case type
     when 'link'
       a(href = href, class = 'header-menu__link') #{title}

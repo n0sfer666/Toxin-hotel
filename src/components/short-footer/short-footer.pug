@@ -1,7 +1,12 @@
 include ../logo/logo
 include ../social-link/social-link
 
-mixin short-footer({description = 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»', socialNetworks = ['tweeter', 'facebook', 'instagram']} = {})
+mixin short-footer(options = {})
+  -
+    const {
+      description = 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»',
+      socialNetworks = ['tweeter', 'facebook', 'instagram']
+    } = options;
   footer.short-footer
       .short-footer__logo
         +logo({isFull: true})

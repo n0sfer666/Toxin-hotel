@@ -2,8 +2,16 @@ mixin headline({ type = 'h3', title = 'change me', isPurple = false } = {})
   -
     const types = ['h1', 'h2', 'h3'];
     const classes = ['headline-subsection', 'headline-widget', 'headline-label'];
-    const isTypeCorrect = types.map((value) => value === type).reduce((prev, current) => prev || current);
-    const correctIndex = types.map((value, index) => value === type ? index : 0).reduce((prev, current) => prev + current);
+    const isTypeCorrect = types.map(
+        (value) => value === type
+      ).reduce(
+        (prev, current) => prev || current
+      );
+    const correctIndex = types.map(
+        (value, index) => value === type ? index : 0
+      ).reduce(
+        (prev, current) => prev + current
+      );
     const correctClass = isPurple
       ? `${classes[correctIndex]} ${classes[correctIndex]}_color_purple`
       : `${classes[correctIndex]}`;

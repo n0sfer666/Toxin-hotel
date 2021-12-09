@@ -1,2 +1,4 @@
 mixin masked-text-field({placeholder = 'Email'} = {})
-  input(class = `masked-text-field js-masked-text-field`, type = 'text', placeholder = placeholder)
+  -
+    const className = 'masked-text-field js-masked-text-field';
+  input(class = className, type = 'text', placeholder = placeholder)

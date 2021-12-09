@@ -1,8 +1,10 @@
 include ../headline/headline
 
 mixin type-block ({type = 'h3', text = 'This is a label or CTA text' } = {})
+  -
+    const className = `type-block__label-title type-block__label-title_font-style_${type}`;
   .type-block
-    span(class = `type-block__label-title type-block__label-title_font-style_${type}`) #{type}
+    span(class = className) #{type}
     if (type !== 'body')
       +headline({type: type, title: text})
     else

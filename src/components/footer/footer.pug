@@ -4,7 +4,45 @@ include ../social-link/social-link
 include ../subscription-field/subscription-field
 include ../footer-menu/footer-menu
 
-mixin footer({description = 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»', titles = [ { title: 'навигация', links: [ {text: 'О нас', href: 'https://www.metalamp.ru/'}, {text: 'Новости', href: 'https://ria.ru/'}, {text: 'Служба поддержки', href: 'http://govita.ru/besplatnaya-psihologicheskaya-pomoshh-v-sankt-peterburge/'}, {text: 'Услуги', href: 'https://www.booking.com/'}] }, { title: 'о нас', links: [{text: 'О сервисе', href: 'https://www.metalamp.ru/'}, {text: 'Наша команда', href: 'https://pokemon.fandom.com/ru/wiki/%D0%9A%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%B0_R_(%D0%B0%D0%BD%D0%B8%D0%BC%D0%B5)'}, {text: 'Вакансии', href: 'https://www.hh.ru/'}, {text: 'Инвесторы', href: 'https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B2%D1%80%D0%BE%D0%B4%D0%B8,_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9_%D0%9F%D0%B0%D0%BD%D1%82%D0%B5%D0%BB%D0%B5%D0%B5%D0%B2%D0%B8%D1%87'}] }, { title: 'служба поддержки', links: [{text: 'Соглашения', href: 'https://ru.wikipedia.org/wiki/%D0%94%D0%B5%D0%B9%D1%82%D0%BE%D0%BD%D1%81%D0%BA%D0%B8%D0%B5_%D1%81%D0%BE%D0%B3%D0%BB%D0%B0%D1%88%D0%B5%D0%BD%D0%B8%D1%8F'}, {text: 'Сообщества', href: 'https://habr.com/ru/all/'}, {text: 'Связь с нами', href: 'https://www.metalamp.ru/'} ] } ], subscription = {title: 'Подписка', description: 'Получайте специальные предложения и новости сервиса'}, copyright = 'отель. Все права зачищены.', socialNetworks = ['tweeter', 'facebook', 'instagram'] } = {})
+mixin footer(options = {})
+  -
+    const {
+      description = 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»',
+      titles = [
+        {
+          title: 'навигация',
+          links: [
+            {text: 'О нас', href: 'https://www.metalamp.ru/'},
+            {text: 'Новости', href: 'https://ria.ru/'},
+            {text: 'Служба поддержки', href: 'http://govita.ru/besplatnaya-psihologicheskaya-pomoshh-v-sankt-peterburge/'},
+            {text: 'Услуги', href: 'https://www.booking.com/'}
+          ]
+        },
+        {
+          title: 'о нас',
+          links: [
+            {text: 'О сервисе', href: 'https://www.metalamp.ru/'},
+            {text: 'Наша команда', href: 'https://www.pokemon.com/ru/'},
+            {text: 'Вакансии', href: 'https://www.hh.ru/'},
+            {text: 'Инвесторы', href: 'https://royalsociety.org/'}
+          ]
+        },
+        {
+          title: 'служба поддержки',
+          links: [
+            {text: 'Соглашения', href: 'https://www.google.ru/intl/ru/docs/about/'},
+            {text: 'Сообщества', href: 'https://habr.com/ru/all/'},
+            {text: 'Связь с нами', href: 'https://www.metalamp.ru/'}
+          ]
+        }
+      ],
+      subscription = {
+        title: 'Подписка',
+        description: 'Получайте специальные предложения и новости сервиса'
+      },
+      copyright = 'отель. Все права зачищены.',
+      socialNetworks = ['tweeter', 'facebook', 'instagram']
+    } = options;
   footer.footer
     .footer__wrapper
       .footer__block
