@@ -59,7 +59,7 @@ block append content
 
     article.form-elements__column-section
       .form-elements__block-checkbox
-        .form-elements__title.form-elements__title_big
+        .form-elements__title.form-elements__title_margin_big
           +headline({title: 'checkbox buttons'})
         .form-elements__block-checkbox-element
           +checkbox({title: 'Можно курить'})
@@ -115,12 +115,12 @@ block append content
         .form-elements__title
           +headline({title: 'buttons'})
         .form-elements__block-buttons-line
-          .form-elements__block-buttons-element.form-elements__block-buttons-element_active
+          .form-elements__block-buttons-element.form-elements__block-buttons-element_margin_right
             +button({style: 'gradient'})
           .form-elements__block-buttons-element-inactive
             +button({style: 'gradient', isActive: false})
         .form-elements__block-buttons-line
-          .form-elements__block-buttons-element.form-elements__block-buttons-element_active
+          .form-elements__block-buttons-element.form-elements__block-buttons-element_margin_right
             +button({style: 'border'})
           .form-elements__block-buttons-element
             +button({style: 'border', isActive: false})
