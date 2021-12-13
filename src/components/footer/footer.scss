@@ -24,12 +24,8 @@ $side-padding: round((140 * 100% / $base) * 1000) / 1000;
     align-items: flex-start;
     max-width: 260px;
 
-    & .footer__description {
-      margin-top: -7px;
-    }
-
     & .footer__logo {
-      margin-bottom: 17px;
+      margin-bottom: 10px;
     }
 
     & .footer__menu-link {
@@ -44,10 +40,6 @@ $side-padding: round((140 * 100% / $base) * 1000) / 1000;
       align-items: flex-start;
       max-width: 260px;
       margin-top: 4px;
-
-      & .footer__description {
-        margin-top: -7px;
-      }
 
       & .footer__block-title {
         margin-bottom: 18px;

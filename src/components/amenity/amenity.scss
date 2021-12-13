@@ -34,14 +34,15 @@
     font-weight: bold;
     max-height: 24px;
     width: 100%;
+    line-height: 18px;
     @include fix-overflow;
   }
   &__description {
     display: inline-block;
     max-height: 41px;
     width: 100%;
+    line-height: 16px;
     @include fix-overflow;
-    margin-top: -7px;
   }
 
   &__row {

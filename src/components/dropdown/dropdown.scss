@@ -101,10 +101,10 @@
     flex: 1;
 
     &-text {
-      font: normal bold 12px/15px Montserrat, sans-serif;
+      font: normal bold 12px/12px Montserrat, sans-serif;
+      height: 12px;
       text-transform: uppercase;
       color: #1F2041;
-      margin-top: -3px;
     }
   }
 }

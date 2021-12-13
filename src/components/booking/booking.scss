@@ -94,10 +94,7 @@ $side-padding: round((30 * 100% / $base) * 1000) / 1000;
       min-height: 10px;
       height: fit-content;
       max-height: 20px;
-    }
-
-    &-dropdown {
-      margin-top: -3px; 
+      margin-bottom: 3px;
     }
   }
 
@@ -114,8 +111,7 @@ $side-padding: round((30 * 100% / $base) * 1000) / 1000;
     &-symbol {
       display: inline-flex;
       @include font-body;
-      margin-top: -6px;
-      margin-left: 1px;
+      margin-bottom: 6px;
       font-size: 12px;
       vertical-align: middle;
       text-align: center;
