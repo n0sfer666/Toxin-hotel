@@ -10,7 +10,7 @@ mixin short-footer(options = {})
   footer.short-footer
       .short-footer__logo
         +logo({isFull: true})
-      p.short-footer__description #{description}
+      article.short-footer__description #{description}
       .short-footer__icons
         each socialNetwork in socialNetworks
           +social-link({socialNetwork: socialNetwork})

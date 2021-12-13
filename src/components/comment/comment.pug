@@ -9,7 +9,7 @@ mixin comment(options = {})
       timeAgo = 'менее часа назад',
       comment = 'change me',
     } = options;
-  article.comment
+  .comment
     .comment__container.comment__container_position_left
       .comment__pictures
         img(class = 'comment__img', src=`img/${login}.png`, alt=`${login}-${name}`)
@@ -17,4 +17,4 @@ mixin comment(options = {})
     .comment__container.comment__container_position_right
       p.comment__name #{name}
       p.comment__days-ago #{timeAgo}
-      p.comment__text #{comment}
+      article.comment__text #{comment}
