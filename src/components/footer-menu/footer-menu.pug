@@ -1,6 +1,6 @@
 include ../headline/headline
 mixin footer-menu({title = 'change me', links = [ {text: 'change me', href: 'changeme'} ] } = {})
-  .footer-menu
+  nav.footer-menu
     .footer-menu__title
       +headline({title: title})
     each link in links
