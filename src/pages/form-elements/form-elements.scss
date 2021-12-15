@@ -185,8 +185,8 @@ $side-padding: round((140 * 100% / $base) * 1000) / 1000;
         margin-bottom: 14px;
       }
 
-      &-element:not(:last-child) {
-        margin-bottom: -1px;
+      &-element:not(:first-child) {
+        margin-top: 1px;
       }
     }
     
@@ -232,7 +232,7 @@ $side-padding: round((140 * 100% / $base) * 1000) / 1000;
       margin-bottom: 218px;
 
       & .form-elements__title {
-        margin-bottom: -5px;
+        margin-bottom: 0;
       }
     }
 

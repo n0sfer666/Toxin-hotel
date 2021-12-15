@@ -77,9 +77,8 @@ $title-width: 270 * 100% / 320;
       }
     }
 
-    &__rich-checkbox {
+    &__rich-checkbox .rich-checkbox:first-child {
       margin-top: 16px;
-      margin-bottom: -15px;
     }
 
     &__expandable-checkbox-list {

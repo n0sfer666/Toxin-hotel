@@ -27,7 +27,6 @@ $width-additional: 100% - $width-main;
 
       @media screen and (min-width: $old-phones) and (max-width: $new-phones) {
         width: 100%;
-        margin-bottom: -7px;
       }
     }
 
@@ -38,6 +37,12 @@ $width-additional: 100% - $width-main;
 
       @media screen and (min-width: $old-phones) and (max-width: $new-phones) {
         width: 100%;
+      }
+      
+      & .room-detail__img:first-child {
+        @media screen and (min-width: $old-phones) and (max-width: $new-phones) {
+          margin-bottom: 7px;
+        }
       }
     }
   }
