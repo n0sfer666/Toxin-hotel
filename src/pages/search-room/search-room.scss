@@ -102,16 +102,6 @@ $title-width: 270 * 100% / 320;
     }
   }
 
-  &__pagination {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-
-    @media screen and (min-width: $desktop ) {
-      margin-left: -15px;
-    }
-  }
-
   &__data-source {
     visibility: hidden;
   }
