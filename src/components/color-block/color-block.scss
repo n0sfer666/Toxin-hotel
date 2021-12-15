@@ -49,17 +49,18 @@
     }
 
     &-text {
-      display: block;
+      display: inline-block;
       min-width: 120px;
       width: max-content;
       max-width: 160px;
       @include fix-overflow;
       white-space: nowrap;
-      font: normal bold 19px/30px Quicksand, Montserrat, sans-serif;
+      font: normal bold 19px/28px Quicksand, sans-serif;
       text-transform: capitalize;
 
       &_font-weight {
         &_normal {
+          vertical-align: bottom;
           font-weight: normal;
           text-transform: uppercase;
         }

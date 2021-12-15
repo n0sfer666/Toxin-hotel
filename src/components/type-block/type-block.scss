@@ -44,7 +44,7 @@
     &_font-style {
       &_body {
         max-height: 48px;
-        line-height: 21.5px;
+        line-height: 21px;
         @include fix-overflow;
       }
     }
