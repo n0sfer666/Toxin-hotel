@@ -7,7 +7,7 @@ $side-padding: round((140 * 100% / $base) * 1000) / 1000;
   align-items: center;
   width: inherit;
   height: fit-content;
-  padding: 15px $side-padding 9px;
+  padding: 11px $side-padding 12px;
   background-color: #fff;
   box-sizing: border-box;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
@@ -30,6 +30,11 @@ $side-padding: round((140 * 100% / $base) * 1000) / 1000;
   }
 
   &__logo {
+    @media screen and (min-width: $desktop) {
+      height: 44px;
+      margin-top: 3px;
+    }
+
     @media screen and (min-width: $old-phones) and (max-width: $pads) {
       margin-bottom: 10px;
     }
@@ -48,8 +53,14 @@ $side-padding: round((140 * 100% / $base) * 1000) / 1000;
   }
 
   &__menu {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-end;
     @media screen and (min-width: $desktop) {
       height: 21px;
+      width: 446px;
+      margin-right: 21px;
     }
 
     @media screen and (min-width: $notebook) and (max-width: $desktop) {
@@ -61,7 +72,6 @@ $side-padding: round((140 * 100% / $base) * 1000) / 1000;
     }
 
     @media screen and (min-width: $old-phones) and (max-width: $pads) {
-      display: flex;
       flex-direction: column;
       margin-bottom: 15px;
     }
@@ -90,6 +100,7 @@ $side-padding: round((140 * 100% / $base) * 1000) / 1000;
   }
 
   &__button-sign-up {
+    width: 197px;
     height: 34px;
   }
 

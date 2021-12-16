@@ -6,7 +6,7 @@ mixin find-room({action = 'search-room.html'} = {})
   form(class='find-room', action=action)
     h1.find-room__title Найдём номера под ваши пожелания
     .find-room__arrival-departure
-      +date-dropdown({isSingle: false, label: ['прибытие', 'отъезд']})
+      +date-dropdown({isSingle: false, label: ['прибытие', 'выезд']})
     .find-room__guests
       h3.find-room__guests-title гости
       +dropdown()

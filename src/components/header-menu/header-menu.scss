@@ -5,7 +5,7 @@
     max-width: 117px;
     max-height: 20px;
     text-align: center;
-    line-height: 27px;
+    line-height: 20px;
     color: $dark-shade-50;
     @include fix-overflow;
 
@@ -23,6 +23,7 @@
         cursor: pointer;
         position: relative;
         display: inline-block;
+        height: 20px;
   
         &-text {
           display: inline-block;
@@ -43,7 +44,7 @@
 
     @media screen and (min-width: $pads) {
       &:not(&-popup) {
-        margin-right: 30px;
+        // margin-right: 30px;
       }
     }
   }
@@ -78,7 +79,6 @@
   &__arrow-down {
     cursor: pointer;
     display: inline-block;
-    margin-right: 21px;
     font: normal normal 24px/23px materialIcons;
     color: $dark-shade-50;
     vertical-align: top;

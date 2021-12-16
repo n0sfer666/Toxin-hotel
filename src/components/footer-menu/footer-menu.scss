@@ -5,10 +5,16 @@
     align-items: flex-start;
     max-width: 260px;
 
+    &:last-child {
+      @media screen and (min-width: $desktop) {
+        margin-left: 37px;
+      }
+    }
+
     &__title {
       width: 100%;
       max-height: 15px;
-      margin-bottom: 22px;
+      margin-bottom: 24px;
     }
 
     &__link {

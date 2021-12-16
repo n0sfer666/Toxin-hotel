@@ -9,18 +9,23 @@ $side-padding: round((30 * 100% / $base) * 1000) / 1000;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 
+  @media screen and (min-width: $desktop) {
+    padding: 39px 29px 29px;
+  }
+
   &__title {
     width: 98%;
     max-height: 60px;
     @include fix-overflow;
     @include font-h1;
     margin-bottom: 20px;
+    line-height: 29px;
   }
 
   &__arrival-departure {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-bottom: 21px;
   }
 
   &__guests {
