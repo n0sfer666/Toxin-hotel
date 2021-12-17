@@ -59,7 +59,6 @@
   }
   
   &__label {
-    white-space: nowrap;
     padding-left: 50px;
     color: $dark-shade-75;
     @include font-body;
@@ -75,6 +74,9 @@
   }
 
   &__title {
+    display: inline-block;
+    max-width: 250px;
     @include fix-overflow;
+    // white-space: nowrap;
   }
 }

@@ -1,4 +1,4 @@
 @mixin fix-overflow {
-  white-space: normal;
+  white-space: pre-wrap;
   overflow: hidden;
 }

@@ -31,4 +31,5 @@ mixin registration({action = 'registration-page.html'} = {})
     form(class='registration__sign-in-form', action='sign-in-page.html')
       .registration__block-sign-up
         p.registration__text-sign-up Уже есть аккаунт на Toxin
-        +button({style: 'border', title: 'войти'})
+        .registration__button-sign-up
+          +button({style: 'border', title: 'войти'})
