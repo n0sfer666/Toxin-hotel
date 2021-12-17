@@ -15,4 +15,5 @@ mixin sign-in({action = 'landing-page.html'}={})
     form(class='sign-in__sign-up-form', action='registration-page.html')
       .sign-in__sign-up
         p.sign-in__sign-up-text Нет аккаунта на Toxin?
-        +button({style: 'border', title: 'Создать'})
+        .sign-in__sign-up-button
+          +button({style: 'border', title: 'Создать'})
