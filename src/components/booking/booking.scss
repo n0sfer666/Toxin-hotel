@@ -2,8 +2,9 @@ $base: 380;
 $side-padding: round((30 * 100% / $base) * 1000) / 1000;
 .booking {
   @include font-body;
+  display: inline-block;
   height: fit-content;
-  padding: 39px $side-padding 29px;
+  padding: 38px $side-padding 29px;
   box-sizing: border-box;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   background-color: #FFFFFF;
@@ -82,19 +83,18 @@ $side-padding: round((30 * 100% / $base) * 1000) / 1000;
   &__arrival-departure {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
   }
 
   &__guests {
-    margin-bottom: 17px;
+    margin-bottom: 18px;
 
     &-text {
-      display: inline-block;
       width: 98%;
       min-height: 10px;
       height: fit-content;
-      max-height: 20px;
-      margin-bottom: 3px;
+      max-height: 14px;
+      margin-bottom: 7px;
     }
   }
 
@@ -102,6 +102,7 @@ $side-padding: round((30 * 100% / $base) * 1000) / 1000;
     display: inline-block;
     text-align: center;
     vertical-align: middle;
+    line-height: 20px;
     width: 20px;
     height: 20px;
     border: 1px solid $dark-shade-25; 
@@ -111,9 +112,9 @@ $side-padding: round((30 * 100% / $base) * 1000) / 1000;
     &-symbol {
       display: inline-flex;
       @include font-body;
-      margin-bottom: 6px;
       font-size: 12px;
-      vertical-align: middle;
+      line-height: 19px;
+      vertical-align: top;
       text-align: center;
       color: $dark-shade-25;
 
@@ -126,17 +127,28 @@ $side-padding: round((30 * 100% / $base) * 1000) / 1000;
     }
 
   &__calculation {
-    margin-bottom: 30px;
+    margin-bottom: 27px;
 
     &-row {
       display: flex;
       justify-content: space-between;
+      align-items: baseline;
       width: 100%;
       min-height: 24px;
       height: fit-content;
-      max-height: 40px;
-      margin-bottom: 10px;
+      max-height: 48px;
+      margin-bottom: 9px;
       @include fix-overflow;
+
+      &:first-child {
+        margin-bottom: 11px;
+      }
+
+      &:last-child {
+        .booking__exclamation {
+          line-height: 17px;
+        }
+      }
     }
 
     &-text {
@@ -150,7 +162,7 @@ $side-padding: round((30 * 100% / $base) * 1000) / 1000;
 
   &__description {
     display: inline-block;
-    width: 90%;
+    width: 91%;
     line-height: 19px;
   }
 
@@ -180,7 +192,7 @@ $side-padding: round((30 * 100% / $base) * 1000) / 1000;
   }
 
   &__submit-button {
-    margin-top: 20px;
+    margin-top: 21px;
     height: 44px;
   }
 }

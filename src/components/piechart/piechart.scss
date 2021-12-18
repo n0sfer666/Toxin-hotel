@@ -1,5 +1,7 @@
 .piechart {
   @include font-body;
+  letter-spacing: -0.5px;
+  line-height: 20px;
   display: flex;
   flex-direction: row;
   align-items: flex-end;
@@ -22,14 +24,20 @@
 
   &__text {
     @include font-h3;
+    line-height: 20px;
     transform: translateY(15px);
   }
 
   &__legend {
     display: inline-block;
-    min-width: 162px;
-    vertical-align: bottom;
+    min-width: 159px;
     text-align: left;
+
+    &-line {
+      &:not(:last-child) {
+        margin-bottom: 4px;
+      }
+    }
 
     &-circle {
       display: inline-block;

@@ -50,6 +50,7 @@ $width-additional: 100% - $width-main;
   &__title {
     width: 85%;
     height: 24px;
+    margin-bottom: 23px;
     @include fix-overflow;
     @include font-h2;
 
@@ -65,7 +66,7 @@ $width-additional: 100% - $width-main;
   &__container {
     display: flex;
     margin: 0 auto;
-    padding: 63px 5px 53px;
+    padding: 63px 5px 51px;
     width: fit-content;
     max-width: 1160px;
 
@@ -87,15 +88,15 @@ $width-additional: 100% - $width-main;
       margin-right: 0;
     }
   }
-  &__title {
-    margin-bottom: 20px;
-  }
 
   &__amenities {
-    margin-bottom: 21px;
+    margin-bottom: 28px;
   }
 
   &__piechart {
+    & .room-detail__title {
+      margin-bottom: 21px;
+    }
     margin-bottom: 21px;
   }
 
@@ -104,12 +105,11 @@ $width-additional: 100% - $width-main;
     
     & .room-detail__title {
       display: inline-block;
-      margin-top: 2px;
       margin-bottom: 16px;
     }
 
     &-element:not(:last-child) {
-      margin-bottom: 16px;
+      margin-bottom: 18px;
     }
   }
 
@@ -119,17 +119,17 @@ $width-additional: 100% - $width-main;
   }
 
   &__rules {
-    max-width: 272px;
+    max-width: 281px;
     margin-bottom: 21px;
 
     & .room-detail__title {
-      margin-bottom: 16px;
+      margin-bottom: 18px;
       margin-left: 20px;
     }
 
     @media screen and (min-width: $desktop) {
-      margin-top: 3px;
-      margin-right: 90px;
+      margin-top: 4px;
+      margin-right: 80px;
     }
   }
   
@@ -139,11 +139,11 @@ $width-additional: 100% - $width-main;
     margin-bottom: 21px;
 
     & .room-detail__title {
-      margin-bottom: 16px;
+      margin-bottom: 18px;
     }
 
     @media screen and (min-width: $desktop) {
-      margin-top: 3px;
+      margin-top: 4px;
     }
   }
 
