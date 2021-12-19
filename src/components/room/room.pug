@@ -28,12 +28,12 @@ mixin room(options = {})
         .room__header-title
           h1.room__header-title-text
             span.room__header-number № 
-            | #{room}
+            span.room__header-number-room #{room}
             if isLux
               span.room__header-lux #{luxText}
         span.room__price-line
           span.room__price.js-room__price #{price}#{currency} 
-          | #{currencyText}
+          span.room__price-currency-text #{currencyText}
       .room__horizontal-line
       .room__rate
         .room__rate-stars
