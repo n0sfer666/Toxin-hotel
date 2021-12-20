@@ -4,10 +4,14 @@ $side-padding: round((140 * 100% / $base) * 1000) / 1000;
   background-color: #e5e5e5;
   
   &__container {
-    padding: 3px $side-padding 140px;
+    padding: 7px $side-padding 140px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    
+    @media screen and (min-width: $desktop) {
+      padding-left: 138px;
+    }
 
     @media screen and (min-width: $old-phones) and (max-width: 380px) {
       flex-direction: column;
@@ -31,7 +35,7 @@ $side-padding: round((140 * 100% / $base) * 1000) / 1000;
   }
 
   &__block {
-    margin-bottom: 39px;
+    margin-bottom: 41px;
 
     &-datepicker {
       margin-bottom: 71px;
