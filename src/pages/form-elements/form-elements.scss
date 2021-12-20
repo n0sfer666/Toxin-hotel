@@ -41,6 +41,10 @@ $side-padding: round((140 * 100% / $base) * 1000) / 1000;
     justify-content: space-between;
     width: 100%;
 
+    @media screen and (min-width: $desktop) {
+      margin-top: 176px;
+    }
+
     @media screen and (min-width: $old-phones) and (max-width: $pads) {
       flex-direction: column;
       justify-content: center;
@@ -82,7 +86,7 @@ $side-padding: round((140 * 100% / $base) * 1000) / 1000;
 
     &-dropdown-rooms {
       max-width: 266px;
-      margin-bottom: 221px;
+      margin-bottom: 241px;
 
       & .form-elements__title {
         margin-bottom: 5px;
@@ -215,7 +219,7 @@ $side-padding: round((140 * 100% / $base) * 1000) / 1000;
 
       &-text-line {
         display: flex;
-        margin: 0 0 32px;
+        margin: 0 0 31px;
       }
 
       &-action-line {
@@ -229,7 +233,7 @@ $side-padding: round((140 * 100% / $base) * 1000) / 1000;
     &-pagination {
       max-width: 320px;
       width: fit-content;
-      margin-bottom: 218px;
+      margin-bottom: 215px;
 
       & .form-elements__title {
         margin-bottom: 0;
