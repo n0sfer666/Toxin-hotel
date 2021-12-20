@@ -25,6 +25,14 @@ $right-margin: round((191 * 100% / $base) * 1000) / 1000;
     }
   }
 
+  &__colors {
+    max-width: 300px;
+    
+    @media screen and (min-width: $desktop) {
+      width: 300px;
+    }
+  }
+
   &__type {
     letter-spacing: 0.9px;
     

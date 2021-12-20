@@ -4,6 +4,7 @@
   flex-wrap: wrap;
   margin-bottom: 20px;
   letter-spacing: 0.8px;
+  width: 100%;
 
   &__colors {
     display: inline-block;
@@ -53,7 +54,7 @@
       display: inline-block;
       min-width: 120px;
       width: max-content;
-      max-width: 160px;
+      max-width: 170px;
       @include fix-overflow;
       white-space: nowrap;
       font: normal bold 19px/28px Quicksand, sans-serif;
