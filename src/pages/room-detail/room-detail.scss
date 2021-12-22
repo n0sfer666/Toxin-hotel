@@ -111,17 +111,10 @@ $width-additional: 100% - $width-main;
     }
 
     @media screen and (min-width: $old-phones) and (max-width: $desktop) {
-      // width: 75%;
       flex-direction: column;
       align-items: center;
-      // justify-content: center;
       margin-right: 0;
     }
-    // @media screen and (min-width: 740px) and (max-width: $desktop) {
-    //   display: flex;
-    //   justify-content: center;
-    //   margin-right: 0;
-    // }
   }
 
   &__amenities {
