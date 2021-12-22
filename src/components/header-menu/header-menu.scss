@@ -41,12 +41,6 @@
       margin-right: 0;
       margin-bottom: 5px;
     }
-
-    @media screen and (min-width: $pads) {
-      &:not(&-popup) {
-        // margin-right: 30px;
-      }
-    }
   }
 
   &__link-text_is-popup:hover &__popup,
