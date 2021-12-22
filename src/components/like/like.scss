@@ -56,19 +56,7 @@
 
 .like.like_state_active {
   & .like__button {
-    position: relative;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid transparent;
-
-    &:before {
-      content: '';
-      position: absolute;
-      top: 0; right: 0; bottom: 0; left: 0;
-      z-index: -1;
-      border-radius: inherit;
-      background: linear-gradient(180deg, $purple 0%, #8BA4F9 100%);
-    }
+    border: 1px solid $purple;
   }
 
   & .like__heart {
