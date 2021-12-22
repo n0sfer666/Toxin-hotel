@@ -48,18 +48,26 @@ $width-additional: 100% - $width-main;
   }
 
   &__title {
-    width: 85%;
-    height: 24px;
+    width: 80%;
+    max-height: 48px;
     margin-bottom: 23px;
     @include fix-overflow;
     @include font-h2;
 
     &-comments {
       display: inline-block;
-      width: 15%;
-      height: 32px;
+      width: 20%;
+      max-height: 48px;
       text-align: right;
       @include fix-overflow;
+
+      @media screen and (max-width: $desktop) {
+        line-height: 20px;
+      }
+
+      @media screen and (min-width: $desktop) {
+        line-height: 32px;
+      }
     }
   }
 
@@ -68,10 +76,21 @@ $width-additional: 100% - $width-main;
     margin: 0 auto;
     padding: 63px 5px 51px;
     width: fit-content;
-    max-width: 1160px;
 
     @media screen and (min-width: $old-phones) and (max-width: 840px) {
       flex-direction: column-reverse;
+      padding: 0;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @media screen and (min-width: 840px) and (max-width: $desktop) {
+      justify-content: space-around;
+      width: 90%;
+    }
+
+    @media screen and (min-width: $desktop) {
+      width: 1160px;
     }
   }
 
@@ -81,12 +100,28 @@ $width-additional: 100% - $width-main;
     flex-direction: row;
     margin-right: 70px;
     min-width: 310px;
-    width: fit-content;
-    max-width: 711px;
+    width: 90%;
 
-    @media screen and (min-width: $old-phones) and (max-width: 450px) {
+    @media screen and (max-width: 840px) {
+      width: 75%;
+    }
+
+    @media screen and (min-width: 840px) and (max-width: $desktop) {
+      width: 45%;
+    }
+
+    @media screen and (min-width: $old-phones) and (max-width: $desktop) {
+      // width: 75%;
+      flex-direction: column;
+      align-items: center;
+      // justify-content: center;
       margin-right: 0;
     }
+    // @media screen and (min-width: 740px) and (max-width: $desktop) {
+    //   display: flex;
+    //   justify-content: center;
+    //   margin-right: 0;
+    // }
   }
 
   &__amenities {
@@ -108,13 +143,16 @@ $width-additional: 100% - $width-main;
       margin-bottom: 16px;
     }
 
+    &-element {
+      width: 90%;
+    }
+
     &-element:not(:last-child) {
       margin-bottom: 18px;
     }
   }
 
   &__title-comments {
-    line-height: 32px;
     float: right;
   }
 
@@ -148,7 +186,6 @@ $width-additional: 100% - $width-main;
   }
 
   &__amenities {
-    margin-right: 80px;
     min-width: 250px;
     max-width: 280px;
 
