@@ -12,6 +12,7 @@ $title-width: 270 * 100% / 320;
     margin: 0 auto;
     padding: 28px 0px 71px;
     width: fit-content;
+    max-width: 90%;
   
     @media screen and (min-width: $old-phones) and (max-width: $new-phones) {
       flex-wrap: wrap;

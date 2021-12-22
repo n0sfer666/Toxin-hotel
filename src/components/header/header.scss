@@ -26,6 +26,7 @@ $side-padding: round((140 * 100% / $base) * 1000) / 1000;
 
   @media screen and (min-width: $old-phones) and (max-width: $pads) {
     justify-content: unset;
+    align-items: center;
     flex-direction: column;
   }
 
@@ -57,23 +58,25 @@ $side-padding: round((140 * 100% / $base) * 1000) / 1000;
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: flex-end;
+
     @media screen and (min-width: $desktop) {
       height: 21px;
       width: 446px;
       margin-right: 21px;
     }
 
-    @media screen and (min-width: $notebook) and (max-width: $desktop) {
-      width: 45%;
+    @media screen and (min-width: $old-phones) and (max-width: $desktop) {
+      min-width: 65%;
     }
 
-    @media screen and (min-width: $pads) and (max-width: $notebook) {
-      width: 35%;
-    }
-
-    @media screen and (min-width: $old-phones) and (max-width: $pads) {
+    @media screen and (min-width: $old-phones) and (max-width: 900px) {
       flex-direction: column;
+      align-items: center;
       margin-bottom: 15px;
+
+      & .header-menu__link-text_is-popup-text {
+        margin-left: 24px;
+      }
     }
   }
 
@@ -83,7 +86,7 @@ $side-padding: round((140 * 100% / $base) * 1000) / 1000;
 
     @media screen and (min-width: $old-phones) and (max-width: $new-phones) {
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
     }
   }
 
