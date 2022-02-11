@@ -31,7 +31,7 @@ class Dropdown {
   initOutText() {
     const { countGroups } = this.outTextObj;
     const groupsArr = [];
-    $.each(this.$menuOptions, (_, optionElement) => {
+    $(this.$menuOptions).each((_, optionElement) => {
       groupsArr.push($(optionElement).data('count-group'));
     });
     this.countGroupsIndex = Object.keys(countGroups)
@@ -103,7 +103,7 @@ class Dropdown {
     if (!this.isInitComplete) {
       this.buttonsDecrement = {};
       this.counters = {};
-      $.each(this.$menuOptions, (_, optionElement) => {
+      $(this.$menuOptions).each((_, optionElement) => {
         const id = $(optionElement).data('id');
         const buttonDecrement = $(optionElement).find('.button-decrement');
         const counterElement = $(optionElement).find('.counter');

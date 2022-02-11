@@ -24,7 +24,7 @@ class DateDropdown {
   }
 
   initButtons() {
-    $.each(this.controlButtons, (_, controlButtonInstance) => {
+    $(this.controlButtons).each((_, controlButtonInstance) => {
       const isSameParent = controlButtonInstance.$parentElement.is(this.$parentElement);
       if (isSameParent) {
         const isClearButton = controlButtonInstance.type === 'clear';

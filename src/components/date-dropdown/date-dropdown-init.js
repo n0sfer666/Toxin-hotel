@@ -13,7 +13,12 @@ $(document).ready(() => {
 
   $.each($datepickerLeft, (key, element) => {
     if ($(element).closest('.js-booking').length > 0) {
-      new DateDropdown([element, $datepickerRight[key]], false, controlButtonArr, bookingInstances[0]);
+      new DateDropdown(
+        [element, $datepickerRight[key]],
+        false,
+        controlButtonArr,
+        bookingInstances[0],
+      );
     } else {
       new DateDropdown([element, $datepickerRight[key]], false, controlButtonArr);
     }

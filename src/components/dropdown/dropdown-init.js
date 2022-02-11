@@ -19,7 +19,7 @@ $(document).ready(() => {
         bathrooms: ['ванная', 'ванные', 'ванных'],
       },
     },
-  }
+  };
   $.each($dropdowns, (_, element) => {
     new Dropdown(element, controlButtonArr, outTextObj);
   });
