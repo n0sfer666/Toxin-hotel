@@ -167,26 +167,28 @@ $side-padding: round((30 * 100% / $base) * 1000) / 1000;
   }
 
   &__total {
-    display: flex;
-    justify-content: space-between;
+    display: block;
     width: 100%;
     max-height: 24px;
     @include fix-overflow;
 
-    &-text {
-      @include font-h2;
+    &:after {
+      content: '................................................................................................................................';
+      display: block;
+      color: $dark-shade-25;
+      line-height: 28px;
       white-space: nowrap;
+      overflow: hidden;
     }
 
-    &-line {
-      margin: 0 5px;
-      width: 100%;
-      max-height: 18px;
+    &-text {
+      display: block;
+      @include font-h2;
+      white-space: nowrap;
+      float: right;
 
-      &_style {
-        &_dashed {
-          border-bottom: 1px dotted $dark-shade-25;
-        }
+      &:first-of-type {
+        float: left;
       }
     }
   }

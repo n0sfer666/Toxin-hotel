@@ -72,8 +72,7 @@ mixin booking(options = {})
           span.booking__currency #{currency}
     .booking__total
       h2.booking__total-text Итого
-      .booking__total-line.booking__total-line_style_dashed
-      h2.booking__total-text.js-booking__total-text #{total}
       h2.booking__total-text #{currency}
+      h2.booking__total-text.js-booking__total-text #{total}
     .booking__submit-button
       +button({style: 'submitting', title: 'забронировать'})
