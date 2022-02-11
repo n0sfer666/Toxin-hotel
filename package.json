@@ -7,7 +7,10 @@
     "build": "webpack --mode production",
     "dev": "webpack --mode development",
     "start": "webpack-dev-server",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "lint": "eslint --quiet src/**/*.js",
+    "lint:full": "eslint src/**/*.js",
+    "lint:fix": "eslint --quiet --fix src/**/*.js"
   },
   "browserslist": [
     "> 1%",
