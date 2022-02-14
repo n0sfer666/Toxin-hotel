@@ -174,7 +174,9 @@ $side-padding: round((30 * 100% / $base) * 1000) / 1000;
     @include fix-overflow;
 
     &:after {
-      content: '................................................................................................................................';
+      $dots: '...............................';
+      $manyDots: $dots $dots $dots $dots;
+      content: $manyDots;
       display: block;
       color: $dark-shade-25;
       line-height: 28px;
