@@ -1,6 +1,5 @@
 .bullet-list {
   @include font-body;
-  list-style-type: none;
   width: calc(100% - 10px);
 
   &__item {

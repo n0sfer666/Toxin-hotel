@@ -19,4 +19,5 @@ mixin expandable-checkbox-list(options = {})
     p.expandable-checkbox-list__arrow-up.js-expandable-checkbox-list__arrow-up keyboard_arrow_up
   ul.expandable-checkbox-list__container.js-expandable-checkbox-list__container
     each checkboxParameter in list
-      +checkbox(checkboxParameter)
+      li
+        +checkbox(checkboxParameter)
